@@ -22,13 +22,14 @@ read-investment-suite -> harvest-scrolling-android-table -> value-a-property -> 
 ## B · Singapore landed research
 
 ```
-landed-area-research  ->  landed-property-due-diligence
- (area report + shortlist)   (per-house score + go/no-go; researcher/landed/scorecard.py)
+landed-area-research  ->  screen-landed-listings  ->  landed-property-due-diligence
+ (area report + benchmark)   (PropertyGuru -> rank)      (per-house score + go/no-go)
 ```
 
 | Slug | Description |
 |---|---|
-| [landed-area-research](landed-area-research/SKILL.md) | Desktop-first research of a landed AREA (e.g. a school's 1km zone): OneMap school zone, URA Master Plan zoning/GCBA/plot-ratio, transaction structure, hazards & future planning → area report + screening shortlist. |
+| [landed-area-research](landed-area-research/SKILL.md) | Desktop-first research of a landed AREA (e.g. a school's 1km zone): OneMap school zone, URA Master Plan zoning/GCBA/plot-ratio, transaction structure, hazards & future planning → area report + benchmark + screening shortlist. |
+| [screen-landed-listings](screen-landed-listings/SKILL.md) | Pull the ACTUAL for-sale listings (PropertyGuru, via WebSearch — WebFetch is 403-blocked) → normalise → rank by quality score + land-value flag (psf vs area band). Tool: `researcher/sources/propertyguru.py`. |
 | [landed-property-due-diligence](landed-property-due-diligence/SKILL.md) | Evaluate a specific landed house — land, structure, SLA INLIS title, rebuild economics, hazards, negotiation → a 0–100 screening score via `researcher/landed/scorecard.py`. |
 
 ## Backing code & data
