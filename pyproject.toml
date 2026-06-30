@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "researcher"
+version = "0.1.0"
+description = "Cross-source research agent: accumulate skills to find, compare and analyse data"
+requires-python = ">=3.10"
+# Core stays tiny on purpose. Pillow is only needed to downscale screenshots in the
+# HTML report; the valuation engine itself is pure stdlib.
+dependencies = ["pillow>=10"]
+
+[project.optional-dependencies]
+# Heavy, source-specific deps live here behind import guards so a plain install
+# (and the Android-only path) never pulls them in.
+web = ["requests>=2.31", "beautifulsoup4>=4.12"]
+xiaohongshu = []  # filled in when that source is built
+android = []      # `pip install -e ../mobile_bridge` if a skill wants the tested Appium path
+
+[tool.setuptools.packages.find]
+include = ["researcher*"]

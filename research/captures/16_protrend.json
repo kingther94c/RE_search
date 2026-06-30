@@ -1,0 +1,132 @@
+[
+  {
+    "text": "",
+    "desc": "Bg",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[1160,636][1400,876]",
+    "center": [
+      1280,
+      756
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[1208,684][1352,828]",
+    "center": [
+      1280,
+      756
+    ]
+  },
+  {
+    "text": "Plot Graph",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1128,876][1432,956]",
+    "center": [
+      1280,
+      916
+    ]
+  },
+  {
+    "text": "Add chart by tapping on + at top right corner",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1002,956][1559,996]",
+    "center": [
+      1280,
+      976
+    ]
+  },
+  {
+    "text": "",
+    "desc": "More",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2480,168][2528,216]",
+    "center": [
+      2504,
+      192
+    ]
+  },
+  {
+    "text": "Market",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[212,1472][288,1504]",
+    "center": [
+      250,
+      1488
+    ]
+  },
+  {
+    "text": "Property Analysis",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[669,1472][861,1504]",
+    "center": [
+      765,
+      1488
+    ]
+  },
+  {
+    "text": "ProTrend",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1231,1472][1330,1504]",
+    "center": [
+      1280,
+      1488
+    ]
+  },
+  {
+    "text": "ProMap",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1753,1472][1837,1504]",
+    "center": [
+      1795,
+      1488
+    ]
+  },
+  {
+    "text": "More",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1472][2338,1504]",
+    "center": [
+      2310,
+      1488
+    ]
+  }
+]

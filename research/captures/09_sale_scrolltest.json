@@ -1,0 +1,1354 @@
+[
+  {
+    "text": "Property Info",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,272][198,312]",
+    "center": [
+      115,
+      292
+    ]
+  },
+  {
+    "text": "Sale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[292,272][348,312]",
+    "center": [
+      320,
+      292
+    ]
+  },
+  {
+    "text": "Rent",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[471,272][529,312]",
+    "center": [
+      500,
+      292
+    ]
+  },
+  {
+    "text": "Tower View",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[622,272][770,312]",
+    "center": [
+      696,
+      292
+    ]
+  },
+  {
+    "text": "Maps",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[857,272][928,312]",
+    "center": [
+      892,
+      292
+    ]
+  },
+  {
+    "text": "Planning Decisions",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1014,272][1255,312]",
+    "center": [
+      1134,
+      292
+    ]
+  },
+  {
+    "text": "Nearby Properties",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1319,272][1547,312]",
+    "center": [
+      1433,
+      292
+    ]
+  },
+  {
+    "text": "Profitability",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1611,272][1757,312]",
+    "center": [
+      1684,
+      292
+    ]
+  },
+  {
+    "text": "6M",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[219,372][261,412]",
+    "center": [
+      240,
+      392
+    ]
+  },
+  {
+    "text": "1Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[637,372][672,412]",
+    "center": [
+      654,
+      392
+    ]
+  },
+  {
+    "text": "2Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1051,372][1086,412]",
+    "center": [
+      1068,
+      392
+    ]
+  },
+  {
+    "text": "5Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1465,372][1500,412]",
+    "center": [
+      1482,
+      392
+    ]
+  },
+  {
+    "text": "...",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2297,372][2323,412]",
+    "center": [
+      2310,
+      392
+    ]
+  },
+  {
+    "text": "10Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1871,372][1922,412]",
+    "center": [
+      1896,
+      392
+    ]
+  },
+  {
+    "text": "1, 2, 3 Bedrooms",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[64,450][278,490]",
+    "center": [
+      171,
+      470
+    ]
+  },
+  {
+    "text": "",
+    "desc": "down",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[294,446][342,494]",
+    "center": [
+      318,
+      470
+    ]
+  },
+  {
+    "text": "Street Name",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,534][440,598]",
+    "center": [
+      367,
+      566
+    ]
+  },
+  {
+    "text": "Level",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,534][640,598]",
+    "center": [
+      609,
+      566
+    ]
+  },
+  {
+    "text": "Unit",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,534][910,598]",
+    "center": [
+      886,
+      566
+    ]
+  },
+  {
+    "text": "Unit Type",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,534][1257,598]",
+    "center": [
+      1201,
+      566
+    ]
+  },
+  {
+    "text": "Area\n(sqft)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,518][1495,614]",
+    "center": [
+      1462,
+      566
+    ]
+  },
+  {
+    "text": "PSF",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,534][1761,598]",
+    "center": [
+      1737,
+      566
+    ]
+  },
+  {
+    "text": "Price",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,534][2059,598]",
+    "center": [
+      2028,
+      566
+    ]
+  },
+  {
+    "text": "Sale\nType",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,518][2340,614]",
+    "center": [
+      2311,
+      566
+    ]
+  },
+  {
+    "text": "16 Spottiswoode Park Road",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,634][562,714]",
+    "center": [
+      428,
+      674
+    ]
+  },
+  {
+    "text": "28",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,654][612,694]",
+    "center": [
+      595,
+      674
+    ]
+  },
+  {
+    "text": "04",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,654][896,694]",
+    "center": [
+      879,
+      674
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,654][1199,694]",
+    "center": [
+      1172,
+      674
+    ]
+  },
+  {
+    "text": "441",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,654][1481,694]",
+    "center": [
+      1455,
+      674
+    ]
+  },
+  {
+    "text": "$2,352",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,654][1804,694]",
+    "center": [
+      1759,
+      674
+    ]
+  },
+  {
+    "text": "$1,038,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,654][2144,694]",
+    "center": [
+      2071,
+      674
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,654][2369,694]",
+    "center": [
+      2325,
+      674
+    ]
+  },
+  {
+    "text": "16 Spottiswoode Park Road",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,730][562,810]",
+    "center": [
+      428,
+      770
+    ]
+  },
+  {
+    "text": "9",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,750][596,790]",
+    "center": [
+      587,
+      770
+    ]
+  },
+  {
+    "text": "08",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,750][896,790]",
+    "center": [
+      879,
+      770
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,750][1199,790]",
+    "center": [
+      1172,
+      770
+    ]
+  },
+  {
+    "text": "452",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,750][1481,790]",
+    "center": [
+      1455,
+      770
+    ]
+  },
+  {
+    "text": "$2,146",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,750][1804,790]",
+    "center": [
+      1759,
+      770
+    ]
+  },
+  {
+    "text": "$970,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,750][2121,790]",
+    "center": [
+      2059,
+      770
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,750][2369,790]",
+    "center": [
+      2325,
+      770
+    ]
+  },
+  {
+    "text": "16 Spottiswoode Park Road",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,826][562,906]",
+    "center": [
+      428,
+      866
+    ]
+  },
+  {
+    "text": "23",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,846][612,886]",
+    "center": [
+      595,
+      866
+    ]
+  },
+  {
+    "text": "06",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,846][896,886]",
+    "center": [
+      879,
+      866
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,846][1199,886]",
+    "center": [
+      1172,
+      866
+    ]
+  },
+  {
+    "text": "452",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,846][1481,886]",
+    "center": [
+      1455,
+      866
+    ]
+  },
+  {
+    "text": "$2,389",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,846][1804,886]",
+    "center": [
+      1759,
+      866
+    ]
+  },
+  {
+    "text": "$1,080,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,846][2144,886]",
+    "center": [
+      2071,
+      866
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,846][2369,886]",
+    "center": [
+      2325,
+      866
+    ]
+  },
+  {
+    "text": "16 Spottiswoode Park Road",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,922][562,1002]",
+    "center": [
+      428,
+      962
+    ]
+  },
+  {
+    "text": "19",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,942][612,982]",
+    "center": [
+      595,
+      962
+    ]
+  },
+  {
+    "text": "08",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,942][896,982]",
+    "center": [
+      879,
+      962
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,942][1199,982]",
+    "center": [
+      1172,
+      962
+    ]
+  },
+  {
+    "text": "441",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,942][1481,982]",
+    "center": [
+      1455,
+      962
+    ]
+  },
+  {
+    "text": "$2,275",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,942][1804,982]",
+    "center": [
+      1759,
+      962
+    ]
+  },
+  {
+    "text": "$1,003,888",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,942][2144,982]",
+    "center": [
+      2071,
+      962
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,942][2369,982]",
+    "center": [
+      2325,
+      962
+    ]
+  },
+  {
+    "text": "16 Spottiswoode Park Road",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,1018][562,1098]",
+    "center": [
+      428,
+      1058
+    ]
+  },
+  {
+    "text": "25",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,1038][612,1078]",
+    "center": [
+      595,
+      1058
+    ]
+  },
+  {
+    "text": "04",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,1038][896,1078]",
+    "center": [
+      879,
+      1058
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,1038][1199,1078]",
+    "center": [
+      1172,
+      1058
+    ]
+  },
+  {
+    "text": "452",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,1038][1481,1078]",
+    "center": [
+      1455,
+      1058
+    ]
+  },
+  {
+    "text": "$2,278",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,1038][1804,1078]",
+    "center": [
+      1759,
+      1058
+    ]
+  },
+  {
+    "text": "$1,030,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,1038][2144,1078]",
+    "center": [
+      2071,
+      1058
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1038][2369,1078]",
+    "center": [
+      2325,
+      1058
+    ]
+  },
+  {
+    "text": "16 Spottiswoode Park Road",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,1114][562,1194]",
+    "center": [
+      428,
+      1154
+    ]
+  },
+  {
+    "text": "25",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,1134][612,1174]",
+    "center": [
+      595,
+      1154
+    ]
+  },
+  {
+    "text": "06",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,1134][896,1174]",
+    "center": [
+      879,
+      1154
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,1134][1199,1174]",
+    "center": [
+      1172,
+      1154
+    ]
+  },
+  {
+    "text": "463",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,1134][1481,1174]",
+    "center": [
+      1455,
+      1154
+    ]
+  },
+  {
+    "text": "$2,344",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,1134][1804,1174]",
+    "center": [
+      1759,
+      1154
+    ]
+  },
+  {
+    "text": "$1,085,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,1134][2144,1174]",
+    "center": [
+      2071,
+      1154
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1134][2369,1174]",
+    "center": [
+      2325,
+      1154
+    ]
+  },
+  {
+    "text": "16 Spottiswoode Park Road",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,1210][562,1290]",
+    "center": [
+      428,
+      1250
+    ]
+  },
+  {
+    "text": "10",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,1230][612,1270]",
+    "center": [
+      595,
+      1250
+    ]
+  },
+  {
+    "text": "01",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,1230][896,1270]",
+    "center": [
+      879,
+      1250
+    ]
+  },
+  {
+    "text": "2BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,1230][1199,1270]",
+    "center": [
+      1172,
+      1250
+    ]
+  },
+  {
+    "text": "581",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,1230][1481,1270]",
+    "center": [
+      1455,
+      1250
+    ]
+  },
+  {
+    "text": "$2,581",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,1230][1804,1270]",
+    "center": [
+      1759,
+      1250
+    ]
+  },
+  {
+    "text": "$1,500,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,1230][2144,1270]",
+    "center": [
+      2071,
+      1250
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1230][2369,1270]",
+    "center": [
+      2325,
+      1250
+    ]
+  },
+  {
+    "text": "16 Spottiswoode Park Road",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,1306][562,1376]",
+    "center": [
+      428,
+      1341
+    ]
+  },
+  {
+    "text": "17",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,1326][612,1366]",
+    "center": [
+      595,
+      1346
+    ]
+  },
+  {
+    "text": "01",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,1326][896,1366]",
+    "center": [
+      879,
+      1346
+    ]
+  },
+  {
+    "text": "2BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,1326][1199,1366]",
+    "center": [
+      1172,
+      1346
+    ]
+  },
+  {
+    "text": "581",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,1326][1481,1366]",
+    "center": [
+      1455,
+      1346
+    ]
+  },
+  {
+    "text": "$2,581",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,1326][1804,1366]",
+    "center": [
+      1759,
+      1346
+    ]
+  },
+  {
+    "text": "$1,500,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,1326][2144,1366]",
+    "center": [
+      2071,
+      1346
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1326][2369,1366]",
+    "center": [
+      2325,
+      1346
+    ]
+  },
+  {
+    "text": "â–¼\nContract Date",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,534][172,599]",
+    "center": [
+      91,
+      566
+    ]
+  },
+  {
+    "text": "03 Feb 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,654][172,694]",
+    "center": [
+      91,
+      674
+    ]
+  },
+  {
+    "text": "09 Jan 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,750][171,790]",
+    "center": [
+      90,
+      770
+    ]
+  },
+  {
+    "text": "03 Dec 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,846][174,886]",
+    "center": [
+      92,
+      866
+    ]
+  },
+  {
+    "text": "10 Sep 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,942][174,982]",
+    "center": [
+      92,
+      962
+    ]
+  },
+  {
+    "text": "16 Jul 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,1038][163,1078]",
+    "center": [
+      86,
+      1058
+    ]
+  },
+  {
+    "text": "16 May 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,1134][178,1174]",
+    "center": [
+      94,
+      1154
+    ]
+  },
+  {
+    "text": "25 Mar 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,1230][174,1270]",
+    "center": [
+      92,
+      1250
+    ]
+  },
+  {
+    "text": "15 Oct 2024",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,1326][169,1366]",
+    "center": [
+      89,
+      1346
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Back",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,168][80,216]",
+    "center": [
+      56,
+      192
+    ]
+  },
+  {
+    "text": "Spottiswoode Suites",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1021,156][1540,228]",
+    "center": [
+      1280,
+      192
+    ]
+  },
+  {
+    "text": "Market",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[212,1472][288,1504]",
+    "center": [
+      250,
+      1488
+    ]
+  },
+  {
+    "text": "Property Analysis",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[669,1472][861,1504]",
+    "center": [
+      765,
+      1488
+    ]
+  },
+  {
+    "text": "ProTrend",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1231,1472][1330,1504]",
+    "center": [
+      1280,
+      1488
+    ]
+  },
+  {
+    "text": "ProMap",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1753,1472][1837,1504]",
+    "center": [
+      1795,
+      1488
+    ]
+  },
+  {
+    "text": "More",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1472][2338,1504]",
+    "center": [
+      2310,
+      1488
+    ]
+  }
+]

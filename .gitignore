@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# envs
+.venv/
+venv/
+env/
+
+# tooling
+.pytest_cache/
+.pytest-tmp/
+.mypy_cache/
+.ruff_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# scratch — temporary screen captures from ad-hoc runs (keep research/captures/ which is curated)
+research/_mbx.*
+*.tmp

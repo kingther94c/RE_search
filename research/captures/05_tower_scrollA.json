@@ -1,0 +1,2134 @@
+[
+  {
+    "text": "Property Info",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,272][198,312]",
+    "center": [
+      115,
+      292
+    ]
+  },
+  {
+    "text": "Sale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[292,272][348,312]",
+    "center": [
+      320,
+      292
+    ]
+  },
+  {
+    "text": "Rent",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[471,272][529,312]",
+    "center": [
+      500,
+      292
+    ]
+  },
+  {
+    "text": "Tower View",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[622,272][770,312]",
+    "center": [
+      696,
+      292
+    ]
+  },
+  {
+    "text": "Maps",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[857,272][928,312]",
+    "center": [
+      892,
+      292
+    ]
+  },
+  {
+    "text": "Planning Decisions",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1014,272][1255,312]",
+    "center": [
+      1134,
+      292
+    ]
+  },
+  {
+    "text": "Nearby Properties",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1319,272][1547,312]",
+    "center": [
+      1433,
+      292
+    ]
+  },
+  {
+    "text": "Profitability",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1611,272][1757,312]",
+    "center": [
+      1684,
+      292
+    ]
+  },
+  {
+    "text": "16",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,352][68,390]",
+    "center": [
+      50,
+      371
+    ]
+  },
+  {
+    "text": "13 Mar 2019",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,410][227,431]",
+    "center": [
+      157,
+      420
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,431][306,463]",
+    "center": [
+      197,
+      447
+    ]
+  },
+  {
+    "text": "PP: $1,268,000 ($2,181 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,463][397,495]",
+    "center": [
+      242,
+      479
+    ]
+  },
+  {
+    "text": "Est. Val: $1,355,000 ($2,331 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,495][447,527]",
+    "center": [
+      267,
+      511
+    ]
+  },
+  {
+    "text": "Est. P/L: â–²$87,000 ($150 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,527][420,559]",
+    "center": [
+      254,
+      543
+    ]
+  },
+  {
+    "text": "Holding: 7yrs 3mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[195,559][297,591]",
+    "center": [
+      246,
+      575
+    ]
+  },
+  {
+    "text": "2 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[88,559][195,599]",
+    "center": [
+      141,
+      579
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[88,599][188,695]",
+    "center": [
+      138,
+      647
+    ]
+  },
+  {
+    "text": "",
+    "desc": "file icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[224,635][248,659]",
+    "center": [
+      236,
+      647
+    ]
+  },
+  {
+    "text": "09 Apr 2014",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,410][625,431]",
+    "center": [
+      557,
+      420
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,431][708,463]",
+    "center": [
+      599,
+      447
+    ]
+  },
+  {
+    "text": "PP: $1,709,000 ($2,146 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,463][799,495]",
+    "center": [
+      644,
+      479
+    ]
+  },
+  {
+    "text": "Est. Val: $1,781,000 ($2,236 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,495][849,527]",
+    "center": [
+      669,
+      511
+    ]
+  },
+  {
+    "text": "Est. P/L: â–²$72,000 ($90 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,527][808,559]",
+    "center": [
+      649,
+      543
+    ]
+  },
+  {
+    "text": "Holding: 12yrs 2mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[597,559][713,591]",
+    "center": [
+      655,
+      575
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[490,559][597,599]",
+    "center": [
+      543,
+      579
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[490,599][590,695]",
+    "center": [
+      540,
+      647
+    ]
+  },
+  {
+    "text": "",
+    "desc": "file icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[626,635][650,659]",
+    "center": [
+      638,
+      647
+    ]
+  },
+  {
+    "text": "31 Jan 2013",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,410][1028,431]",
+    "center": [
+      960,
+      420
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,431][1110,463]",
+    "center": [
+      1001,
+      447
+    ]
+  },
+  {
+    "text": "PP: $1,755,000 ($2,233 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,463][1201,495]",
+    "center": [
+      1046,
+      479
+    ]
+  },
+  {
+    "text": "Est. Val: $1,757,000 ($2,236 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,495][1251,527]",
+    "center": [
+      1071,
+      511
+    ]
+  },
+  {
+    "text": "Est. P/L: â–²$2,000 ($3 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,527][1182,559]",
+    "center": [
+      1037,
+      543
+    ]
+  },
+  {
+    "text": "Holding: 13yrs 4mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[999,559][1115,591]",
+    "center": [
+      1057,
+      575
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[892,559][999,599]",
+    "center": [
+      945,
+      579
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[892,599][992,695]",
+    "center": [
+      942,
+      647
+    ]
+  },
+  {
+    "text": "",
+    "desc": "file icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[1028,635][1052,659]",
+    "center": [
+      1040,
+      647
+    ]
+  },
+  {
+    "text": "16 Jul 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,410][1424,431]",
+    "center": [
+      1359,
+      420
+    ]
+  },
+  {
+    "text": "Est. SSD: 3yrs 2w left (16%)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,431][1593,463]",
+    "center": [
+      1443,
+      447
+    ]
+  },
+  {
+    "text": "PP: $1,030,000 ($2,278 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,463][1603,495]",
+    "center": [
+      1448,
+      479
+    ]
+  },
+  {
+    "text": "Est. Val: $1,056,000 ($2,336 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,495][1653,527]",
+    "center": [
+      1473,
+      511
+    ]
+  },
+  {
+    "text": "Est. P/L: â–²$26,000 ($58 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,527][1612,559]",
+    "center": [
+      1453,
+      543
+    ]
+  },
+  {
+    "text": "Holding: 11mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1401,559][1464,591]",
+    "center": [
+      1432,
+      575
+    ]
+  },
+  {
+    "text": "2 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1294,559][1401,599]",
+    "center": [
+      1347,
+      579
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1294,599][1394,695]",
+    "center": [
+      1344,
+      647
+    ]
+  },
+  {
+    "text": "",
+    "desc": "file icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[1430,635][1454,659]",
+    "center": [
+      1442,
+      647
+    ]
+  },
+  {
+    "text": "02 Jul 2014",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,410][1826,431]",
+    "center": [
+      1761,
+      420
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,431][1914,463]",
+    "center": [
+      1805,
+      447
+    ]
+  },
+  {
+    "text": "PP: $1,100,000 ($2,433 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,463][2005,495]",
+    "center": [
+      1850,
+      479
+    ]
+  },
+  {
+    "text": "Est. Val: $1,056,000 ($2,336 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,495][2055,527]",
+    "center": [
+      1875,
+      511
+    ]
+  },
+  {
+    "text": "Est. P/L: â–¼-$44,000 (-$97 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,527][2030,559]",
+    "center": [
+      1863,
+      543
+    ]
+  },
+  {
+    "text": "Holding: 11yrs 11mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1803,559][1933,591]",
+    "center": [
+      1868,
+      575
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1696,559][1803,599]",
+    "center": [
+      1749,
+      579
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1696,599][1796,695]",
+    "center": [
+      1746,
+      647
+    ]
+  },
+  {
+    "text": "",
+    "desc": "file icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[1832,635][1856,659]",
+    "center": [
+      1844,
+      647
+    ]
+  },
+  {
+    "text": "16 May 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,410][2240,431]",
+    "center": [
+      2169,
+      420
+    ]
+  },
+  {
+    "text": "Est. SSD: 1yr 10mos left (8%)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,431][2413,463]",
+    "center": [
+      2255,
+      447
+    ]
+  },
+  {
+    "text": "PP: $1,085,000 ($2,344 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,463][2407,495]",
+    "center": [
+      2252,
+      479
+    ]
+  },
+  {
+    "text": "Est. Val: $1,082,000 ($2,338 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,495][2457,527]",
+    "center": [
+      2277,
+      511
+    ]
+  },
+  {
+    "text": "Est. P/L: â–¼-$3,000 (-$6 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,527][2404,559]",
+    "center": [
+      2251,
+      543
+    ]
+  },
+  {
+    "text": "Holding: 1yr 1mo",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2205,559][2283,591]",
+    "center": [
+      2244,
+      575
+    ]
+  },
+  {
+    "text": "2 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[2098,559][2205,599]",
+    "center": [
+      2151,
+      579
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[2098,599][2198,695]",
+    "center": [
+      2148,
+      647
+    ]
+  },
+  {
+    "text": "",
+    "desc": "file icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2234,635][2258,659]",
+    "center": [
+      2246,
+      647
+    ]
+  },
+  {
+    "text": "04 Feb 2013",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,410][2560,431]",
+    "center": [
+      2530,
+      420
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,431][2560,463]",
+    "center": [
+      2530,
+      447
+    ]
+  },
+  {
+    "text": "PP: $1,306,000 ($2,333 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,463][2560,495]",
+    "center": [
+      2530,
+      479
+    ]
+  },
+  {
+    "text": "Est. Val: $1,305,000 ($2,331 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,495][2560,527]",
+    "center": [
+      2530,
+      511
+    ]
+  },
+  {
+    "text": "Est. P/L: â–¼-$1,000 (-$2 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,527][2560,559]",
+    "center": [
+      2530,
+      543
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[2500,559][2560,599]",
+    "center": [
+      2530,
+      579
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[2500,599][2560,695]",
+    "center": [
+      2530,
+      647
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,833][99,881]",
+    "center": [
+      93,
+      857
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,833][501,881]",
+    "center": [
+      495,
+      857
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,833][903,881]",
+    "center": [
+      897,
+      857
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,833][1305,881]",
+    "center": [
+      1299,
+      857
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,833][1707,881]",
+    "center": [
+      1701,
+      857
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,833][2109,881]",
+    "center": [
+      2103,
+      857
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,833][2511,881]",
+    "center": [
+      2505,
+      857
+    ]
+  },
+  {
+    "text": "#23-01",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,1053][184,1086]",
+    "center": [
+      136,
+      1069
+    ]
+  },
+  {
+    "text": "581 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,1086][179,1118]",
+    "center": [
+      133,
+      1102
+    ]
+  },
+  {
+    "text": "07 Jul 2023",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,1118][218,1150]",
+    "center": [
+      153,
+      1134
+    ]
+  },
+  {
+    "text": "Est. SSD: 1w left (4%)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,1150][320,1182]",
+    "center": [
+      204,
+      1166
+    ]
+  },
+  {
+    "text": "PP: $1,450,000 ($2,495 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,1182][397,1214]",
+    "center": [
+      242,
+      1198
+    ]
+  },
+  {
+    "text": "Est. Val: $1,371,000 ($2,359 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,1214][447,1246]",
+    "center": [
+      267,
+      1230
+    ]
+  },
+  {
+    "text": "Est. P/L: â–¼-$79,000 (-$136 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[88,1246][436,1278]",
+    "center": [
+      262,
+      1262
+    ]
+  },
+  {
+    "text": "Holding: 2yrs 11mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[195,1278][311,1304]",
+    "center": [
+      253,
+      1291
+    ]
+  },
+  {
+    "text": "3 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[88,1278][195,1318]",
+    "center": [
+      141,
+      1298
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[88,1318][188,1332]",
+    "center": [
+      138,
+      1325
+    ]
+  },
+  {
+    "text": "2BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[423,1055][468,1087]",
+    "center": [
+      445,
+      1071
+    ]
+  },
+  {
+    "text": "#23-02",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,1053][586,1086]",
+    "center": [
+      538,
+      1069
+    ]
+  },
+  {
+    "text": "743 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,1086][581,1118]",
+    "center": [
+      535,
+      1102
+    ]
+  },
+  {
+    "text": "30 Sep 2022",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,1118][627,1150]",
+    "center": [
+      558,
+      1134
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,1150][708,1182]",
+    "center": [
+      599,
+      1166
+    ]
+  },
+  {
+    "text": "PP: $1,720,000 ($2,316 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,1182][799,1214]",
+    "center": [
+      644,
+      1198
+    ]
+  },
+  {
+    "text": "Est. Val: $1,661,000 ($2,236 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,1214][849,1246]",
+    "center": [
+      669,
+      1230
+    ]
+  },
+  {
+    "text": "Est. P/L: â–¼-$59,000 (-$79 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[490,1246][824,1278]",
+    "center": [
+      657,
+      1262
+    ]
+  },
+  {
+    "text": "Holding: 3yrs 8mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[597,1278][699,1304]",
+    "center": [
+      648,
+      1291
+    ]
+  },
+  {
+    "text": "2 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[490,1278][597,1318]",
+    "center": [
+      543,
+      1298
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[490,1318][590,1332]",
+    "center": [
+      540,
+      1325
+    ]
+  },
+  {
+    "text": "3BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[825,1055][870,1087]",
+    "center": [
+      847,
+      1071
+    ]
+  },
+  {
+    "text": "#23-03",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,1053][988,1086]",
+    "center": [
+      940,
+      1069
+    ]
+  },
+  {
+    "text": "743 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,1086][983,1118]",
+    "center": [
+      937,
+      1102
+    ]
+  },
+  {
+    "text": "13 Apr 2022",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,1118][1027,1150]",
+    "center": [
+      959,
+      1134
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,1150][1110,1182]",
+    "center": [
+      1001,
+      1166
+    ]
+  },
+  {
+    "text": "PP: $1,650,000 ($2,222 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,1182][1201,1214]",
+    "center": [
+      1046,
+      1198
+    ]
+  },
+  {
+    "text": "Est. Val: $1,661,000 ($2,236 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,1214][1251,1246]",
+    "center": [
+      1071,
+      1230
+    ]
+  },
+  {
+    "text": "Est. P/L: â–²$11,000 ($15 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[892,1246][1210,1278]",
+    "center": [
+      1051,
+      1262
+    ]
+  },
+  {
+    "text": "Holding: 4yrs 2mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[999,1278][1101,1304]",
+    "center": [
+      1050,
+      1291
+    ]
+  },
+  {
+    "text": "2 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[892,1278][999,1318]",
+    "center": [
+      945,
+      1298
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[892,1318][992,1332]",
+    "center": [
+      942,
+      1325
+    ]
+  },
+  {
+    "text": "3BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1227,1055][1272,1087]",
+    "center": [
+      1249,
+      1071
+    ]
+  },
+  {
+    "text": "#23-04",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,1053][1390,1086]",
+    "center": [
+      1342,
+      1069
+    ]
+  },
+  {
+    "text": "441 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,1086][1385,1118]",
+    "center": [
+      1339,
+      1102
+    ]
+  },
+  {
+    "text": "23 Sep 2016",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,1118][1431,1150]",
+    "center": [
+      1362,
+      1134
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,1150][1512,1182]",
+    "center": [
+      1403,
+      1166
+    ]
+  },
+  {
+    "text": "PP: $1,030,000 ($2,334 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,1182][1603,1214]",
+    "center": [
+      1448,
+      1198
+    ]
+  },
+  {
+    "text": "Est. Val: $1,035,000 ($2,345 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,1214][1653,1246]",
+    "center": [
+      1473,
+      1230
+    ]
+  },
+  {
+    "text": "Est. P/L: â–²$5,000 ($11 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1294,1246][1598,1278]",
+    "center": [
+      1446,
+      1262
+    ]
+  },
+  {
+    "text": "Holding: 9yrs 9mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1401,1278][1503,1304]",
+    "center": [
+      1452,
+      1291
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1294,1278][1401,1318]",
+    "center": [
+      1347,
+      1298
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1294,1318][1394,1332]",
+    "center": [
+      1344,
+      1325
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1629,1055][1674,1087]",
+    "center": [
+      1651,
+      1071
+    ]
+  },
+  {
+    "text": "#23-05",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,1053][1792,1086]",
+    "center": [
+      1744,
+      1069
+    ]
+  },
+  {
+    "text": "441 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,1086][1787,1118]",
+    "center": [
+      1741,
+      1102
+    ]
+  },
+  {
+    "text": "30 Aug 2023",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,1118][1835,1150]",
+    "center": [
+      1765,
+      1134
+    ]
+  },
+  {
+    "text": "Est. SSD: 2mos left (4%)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,1150][1956,1182]",
+    "center": [
+      1826,
+      1166
+    ]
+  },
+  {
+    "text": "PP: $1,050,000 ($2,379 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,1182][2005,1214]",
+    "center": [
+      1850,
+      1198
+    ]
+  },
+  {
+    "text": "Est. Val: $1,035,000 ($2,345 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,1214][2055,1246]",
+    "center": [
+      1875,
+      1230
+    ]
+  },
+  {
+    "text": "Est. P/L: â–¼-$15,000 (-$34 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,1246][2030,1278]",
+    "center": [
+      1863,
+      1262
+    ]
+  },
+  {
+    "text": "Holding: 2yrs 9mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1803,1278][1905,1304]",
+    "center": [
+      1854,
+      1291
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1696,1278][1803,1318]",
+    "center": [
+      1749,
+      1298
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1696,1318][1796,1332]",
+    "center": [
+      1746,
+      1325
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2031,1055][2076,1087]",
+    "center": [
+      2053,
+      1071
+    ]
+  },
+  {
+    "text": "#23-06",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,1053][2194,1086]",
+    "center": [
+      2146,
+      1069
+    ]
+  },
+  {
+    "text": "452 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,1086][2189,1118]",
+    "center": [
+      2143,
+      1102
+    ]
+  },
+  {
+    "text": "03 Dec 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,1118][2235,1150]",
+    "center": [
+      2166,
+      1134
+    ]
+  },
+  {
+    "text": "Est. SSD: 3yrs 5mos left (16%)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,1150][2425,1182]",
+    "center": [
+      2261,
+      1166
+    ]
+  },
+  {
+    "text": "PP: $1,080,000 ($2,389 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,1182][2407,1214]",
+    "center": [
+      2252,
+      1198
+    ]
+  },
+  {
+    "text": "Est. Val: $1,060,000 ($2,345 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,1214][2457,1246]",
+    "center": [
+      2277,
+      1230
+    ]
+  },
+  {
+    "text": "Est. P/L: â–¼-$20,000 (-$44 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2098,1246][2432,1278]",
+    "center": [
+      2265,
+      1262
+    ]
+  },
+  {
+    "text": "Holding: 6mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2205,1278][2254,1304]",
+    "center": [
+      2229,
+      1291
+    ]
+  },
+  {
+    "text": "2 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[2098,1278][2205,1318]",
+    "center": [
+      2151,
+      1298
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[2098,1318][2198,1332]",
+    "center": [
+      2148,
+      1325
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2433,1055][2478,1087]",
+    "center": [
+      2455,
+      1071
+    ]
+  },
+  {
+    "text": "#23-07",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,1045][2560,1078]",
+    "center": [
+      2530,
+      1061
+    ]
+  },
+  {
+    "text": "538 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,1078][2560,1110]",
+    "center": [
+      2530,
+      1094
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,1110][2509,1142]",
+    "center": [
+      2504,
+      1126
+    ]
+  },
+  {
+    "text": "Est. SSD: -",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,1142][2560,1174]",
+    "center": [
+      2530,
+      1158
+    ]
+  },
+  {
+    "text": "PP: - (- psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,1174][2560,1206]",
+    "center": [
+      2530,
+      1190
+    ]
+  },
+  {
+    "text": "Est. Val: $1,273,000 (- psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,1206][2560,1238]",
+    "center": [
+      2530,
+      1222
+    ]
+  },
+  {
+    "text": "Est. P/L: -",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,1238][2560,1270]",
+    "center": [
+      2530,
+      1254
+    ]
+  },
+  {
+    "text": "Holding: -",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,1270][2560,1302]",
+    "center": [
+      2530,
+      1286
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2500,1302][2511,1304]",
+    "center": [
+      2505,
+      1303
+    ]
+  },
+  {
+    "text": "Floor Plans",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[2500,1326][2560,1352]",
+    "center": [
+      2530,
+      1339
+    ]
+  },
+  {
+    "text": "#25",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[0,482][43,514]",
+    "center": [
+      21,
+      498
+    ]
+  },
+  {
+    "text": "#24",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[0,841][43,873]",
+    "center": [
+      21,
+      857
+    ]
+  },
+  {
+    "text": "#23",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[0,1201][43,1233]",
+    "center": [
+      21,
+      1217
+    ]
+  },
+  {
+    "text": "Disclaimer: The data and information obtained and derived from this Investment Suite is for your personal use only. You shall be solely responsible for any issues and matters arising out of your usage of such data and information. Valuation figures are estimates only and may vary; they are based on the latest available data as of 24 Jun 2026.",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,1332][2552,1368]",
+    "center": [
+      1280,
+      1350
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Back",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,168][80,216]",
+    "center": [
+      56,
+      192
+    ]
+  },
+  {
+    "text": "Spottiswoode Suites",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1021,156][1540,228]",
+    "center": [
+      1280,
+      192
+    ]
+  },
+  {
+    "text": "Market",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[212,1472][288,1504]",
+    "center": [
+      250,
+      1488
+    ]
+  },
+  {
+    "text": "Property Analysis",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[669,1472][861,1504]",
+    "center": [
+      765,
+      1488
+    ]
+  },
+  {
+    "text": "ProTrend",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1231,1472][1330,1504]",
+    "center": [
+      1280,
+      1488
+    ]
+  },
+  {
+    "text": "ProMap",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1753,1472][1837,1504]",
+    "center": [
+      1795,
+      1488
+    ]
+  },
+  {
+    "text": "More",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1472][2338,1504]",
+    "center": [
+      2310,
+      1488
+    ]
+  }
+]

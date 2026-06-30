@@ -1,0 +1,217 @@
+{
+  "subject": {
+    "unit": "#18-03",
+    "bedrooms": 3,
+    "size_sqft": 743,
+    "floor": 18,
+    "tenure": "Freehold",
+    "last_txn_date": "2021-05-07",
+    "last_txn_price": 1500000,
+    "last_txn_psf": 2020,
+    "app_est_val": 1661000,
+    "app_est_psf": 2236,
+    "app_est_pl": 161000,
+    "holding": "5y 1m",
+    "caveats": 2
+  },
+  "valuation": {
+    "estimate_psf": 2269,
+    "estimate_price": 1686000,
+    "low_psf": 2152,
+    "high_psf": 2417,
+    "low_price": 1599000.0,
+    "high_price": 1796000.0,
+    "anchor_psf": 2214,
+    "grid": [
+      {
+        "label": "2026-02-03 L28 #04 1BR 441sf",
+        "raw_psf": 2352,
+        "time": 1.007,
+        "floor": 0.97,
+        "size": 0.959,
+        "type": 0.97,
+        "adj_psf": 2139,
+        "weight": 0.27
+      },
+      {
+        "label": "2026-01-09 L9 #08 1BR 452sf",
+        "raw_psf": 2146,
+        "time": 1.008,
+        "floor": 1.027,
+        "size": 0.961,
+        "type": 0.97,
+        "adj_psf": 2072,
+        "weight": 0.27
+      },
+      {
+        "label": "2025-12-03 L23 #06 1BR 452sf",
+        "raw_psf": 2389,
+        "time": 1.01,
+        "floor": 0.985,
+        "size": 0.961,
+        "type": 0.97,
+        "adj_psf": 2216,
+        "weight": 0.28
+      },
+      {
+        "label": "2025-09-10 L19 #08 1BR 441sf",
+        "raw_psf": 2275,
+        "time": 1.014,
+        "floor": 0.997,
+        "size": 0.959,
+        "type": 0.97,
+        "adj_psf": 2141,
+        "weight": 0.28
+      },
+      {
+        "label": "2025-07-16 L25 #04 1BR 452sf",
+        "raw_psf": 2278,
+        "time": 1.017,
+        "floor": 0.979,
+        "size": 0.961,
+        "type": 0.97,
+        "adj_psf": 2115,
+        "weight": 0.26
+      },
+      {
+        "label": "2025-05-16 L25 #06 1BR 463sf",
+        "raw_psf": 2344,
+        "time": 1.02,
+        "floor": 0.979,
+        "size": 0.963,
+        "type": 0.97,
+        "adj_psf": 2187,
+        "weight": 0.26
+      },
+      {
+        "label": "2025-03-25 L10 #01 2BR 581sf",
+        "raw_psf": 2581,
+        "time": 1.023,
+        "floor": 1.024,
+        "size": 0.981,
+        "type": 0.97,
+        "adj_psf": 2572,
+        "weight": 0.3
+      },
+      {
+        "label": "2024-10-15 L17 #01 2BR 581sf",
+        "raw_psf": 2581,
+        "time": 1.031,
+        "floor": 1.003,
+        "size": 0.981,
+        "type": 0.97,
+        "adj_psf": 2538,
+        "weight": 0.31
+      },
+      {
+        "label": "2024-09-05 L12 #05 1BR 441sf",
+        "raw_psf": 2358,
+        "time": 1.033,
+        "floor": 1.018,
+        "size": 0.959,
+        "type": 0.97,
+        "adj_psf": 2307,
+        "weight": 0.23
+      },
+      {
+        "label": "2024-08-29 L13 #07 2BR 538sf",
+        "raw_psf": 2453,
+        "time": 1.033,
+        "floor": 1.015,
+        "size": 0.975,
+        "type": 0.97,
+        "adj_psf": 2432,
+        "weight": 0.27
+      },
+      {
+        "label": "2024-08-15 L15 #04 1BR 452sf",
+        "raw_psf": 2327,
+        "time": 1.034,
+        "floor": 1.009,
+        "size": 0.961,
+        "type": 0.97,
+        "adj_psf": 2263,
+        "weight": 0.24
+      },
+      {
+        "label": "2024-07-25 L19 #05 1BR 441sf",
+        "raw_psf": 2426,
+        "time": 1.035,
+        "floor": 0.997,
+        "size": 0.959,
+        "type": 0.97,
+        "adj_psf": 2329,
+        "weight": 0.24
+      },
+      {
+        "label": "2024-07-19 L18 #07 2BR 538sf",
+        "raw_psf": 2471,
+        "time": 1.035,
+        "floor": 1.0,
+        "size": 0.975,
+        "type": 0.97,
+        "adj_psf": 2418,
+        "weight": 0.28
+      },
+      {
+        "label": "2024-05-09 L30 #07 3BR 1033sf",
+        "raw_psf": 2419,
+        "time": 1.039,
+        "floor": 0.965,
+        "size": 1.027,
+        "type": 0.97,
+        "adj_psf": 2415,
+        "weight": 0.28
+      },
+      {
+        "label": "2024-04-26 L16 #05 1BR 441sf",
+        "raw_psf": 2266,
+        "time": 1.04,
+        "floor": 1.006,
+        "size": 0.959,
+        "type": 0.97,
+        "adj_psf": 2205,
+        "weight": 0.23
+      }
+    ],
+    "params": {
+      "asof": "2026-06-30",
+      "time_trend_pa": 0.018,
+      "floor_premium_pp": 0.003,
+      "size_elasticity": -0.08,
+      "compact3br_discount": 0.03,
+      "compact3br_max_sqft": 800
+    }
+  },
+  "advisory": {
+    "estimate_price": 1686000,
+    "estimate_psf": 2269,
+    "range_price": [
+      1599000.0,
+      1796000.0
+    ],
+    "range_psf": [
+      2152,
+      2417
+    ],
+    "app_est_val": 1661000,
+    "vs_app_pct": 1.5,
+    "monthly_rent_est": 4525,
+    "annual_rent_est": 54300,
+    "gross_yield_pct": 3.22,
+    "net_yield_pct": 2.12,
+    "dev_avg_yield_pct": 2.91,
+    "owner_cost_2021": 1500000,
+    "unrealised_gain": 186000,
+    "unrealised_gain_pct": 12.4,
+    "cagr_since_2021_pct": 2.3,
+    "bsd_on_estimate": 53900,
+    "absd_sc_2nd": 337200,
+    "absd_foreigner": 1011600,
+    "ssd_if_flip_1yr": 269760
+  },
+  "validation_1br": {
+    "estimate_psf": 2425,
+    "estimate_price": 1096000.0
+  }
+}

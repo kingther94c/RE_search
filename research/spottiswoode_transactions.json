@@ -1,0 +1,178 @@
+[
+  {
+    "date": "04 Feb 2026",
+    "street": "16 Spottiswoode Park Road",
+    "level": "28",
+    "unit": "04",
+    "unit_type": "1BR",
+    "area_sqft": "441",
+    "psf": "$2,352",
+    "price": "$1,038,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "03 Feb 2026",
+    "street": "16 Spottiswoode Park Road",
+    "level": "28",
+    "unit": "04",
+    "unit_type": "1BR",
+    "area_sqft": "441",
+    "psf": "$2,352",
+    "price": "$1,038,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "09 Jan 2026",
+    "street": "16 Spottiswoode Park Road",
+    "level": "9",
+    "unit": "08",
+    "unit_type": "1BR",
+    "area_sqft": "452",
+    "psf": "$2,146",
+    "price": "$970,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "03 Dec 2025",
+    "street": "16 Spottiswoode Park Road",
+    "level": "23",
+    "unit": "06",
+    "unit_type": "1BR",
+    "area_sqft": "452",
+    "psf": "$2,389",
+    "price": "$1,080,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "10 Sep 2025",
+    "street": "16 Spottiswoode Park Road",
+    "level": "19",
+    "unit": "08",
+    "unit_type": "1BR",
+    "area_sqft": "441",
+    "psf": "$2,275",
+    "price": "$1,003,888",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "16 Jul 2025",
+    "street": "16 Spottiswoode Park Road",
+    "level": "25",
+    "unit": "04",
+    "unit_type": "1BR",
+    "area_sqft": "452",
+    "psf": "$2,278",
+    "price": "$1,030,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "16 May 2025",
+    "street": "16 Spottiswoode Park Road",
+    "level": "25",
+    "unit": "06",
+    "unit_type": "1BR",
+    "area_sqft": "463",
+    "psf": "$2,344",
+    "price": "$1,085,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "25 Mar 2025",
+    "street": "16 Spottiswoode Park Road",
+    "level": "10",
+    "unit": "01",
+    "unit_type": "2BR",
+    "area_sqft": "581",
+    "psf": "$2,581",
+    "price": "$1,500,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "15 Oct 2024",
+    "street": "16 Spottiswoode Park Road",
+    "level": "17",
+    "unit": "01",
+    "unit_type": "2BR",
+    "area_sqft": "581",
+    "psf": "$2,581",
+    "price": "$1,500,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "05 Sep 2024",
+    "street": "16 Spottiswoode Park Road",
+    "level": "12",
+    "unit": "05",
+    "unit_type": "1BR",
+    "area_sqft": "441",
+    "psf": "$2,358",
+    "price": "$1,040,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "29 Aug 2024",
+    "street": "16 Spottiswoode Park Road",
+    "level": "13",
+    "unit": "07",
+    "unit_type": "2BR",
+    "area_sqft": "538",
+    "psf": "$2,453",
+    "price": "$1,320,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "15 Aug 2024",
+    "street": "16 Spottiswoode Park Road",
+    "level": "15",
+    "unit": "04",
+    "unit_type": "1BR",
+    "area_sqft": "452",
+    "psf": "$2,327",
+    "price": "$1,052,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "25 Jul 2024",
+    "street": "16 Spottiswoode Park Road",
+    "level": "19",
+    "unit": "05",
+    "unit_type": "1BR",
+    "area_sqft": "441",
+    "psf": "$2,426",
+    "price": "$1,070,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "19 Jul 2024",
+    "street": "16 Spottiswoode Park Road",
+    "level": "18",
+    "unit": "07",
+    "unit_type": "2BR",
+    "area_sqft": "538",
+    "psf": "$2,471",
+    "price": "$1,330,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "09 May 2024",
+    "street": "16 Spottiswoode Park Road",
+    "level": "30",
+    "unit": "07",
+    "unit_type": "3BR",
+    "area_sqft": "1,033",
+    "psf": "$2,419",
+    "price": "$2,500,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "26 Apr 2024",
+    "street": "16 Spottiswoode Park Road",
+    "level": "16",
+    "unit": "05",
+    "unit_type": "1BR",
+    "area_sqft": "441",
+    "psf": "$2,266",
+    "price": "$1,000,000",
+    "sale_type": "Resale"
+  }
+]
