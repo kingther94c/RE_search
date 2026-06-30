@@ -32,9 +32,21 @@ landed-area-research  ->  screen-landed-listings  ->  landed-property-due-dilige
 | [screen-landed-listings](screen-landed-listings/SKILL.md) | Pull the ACTUAL for-sale listings (PropertyGuru, via WebSearch — WebFetch is 403-blocked) → normalise → rank by quality score + land-value flag (psf vs area band). Tool: `researcher/sources/propertyguru.py`. |
 | [landed-property-due-diligence](landed-property-due-diligence/SKILL.md) | Evaluate a specific landed house — land, structure, SLA INLIS title, rebuild economics, hazards, negotiation → a 0–100 screening score via `researcher/landed/scorecard.py`. |
 
+## C · Singapore new launch (新盘)
+
+```
+new-launch-research  ->  scorecard (BUY/SELECTIVE/WAIT/AVOID)  +  pricing (breakeven/ROI)
+ (identity -> verify -> thesis)   researcher/newlaunch/scorecard.py        researcher/newlaunch/pricing.py
+```
+
+| Slug | Description |
+|---|---|
+| [new-launch-research](new-launch-research/SKILL.md) | Research a SG new launch / pre-launch: establish identity (developer/site/tenure/units/TOP), price-position vs new-launch + resale comps, demand/take-up/supply, payment scheme, thesis & risks — with a verify-before-trust (验收) step. Tools: `researcher/newlaunch/scorecard.py` (quality + stance) and `pricing.py` (entry cost, breakeven psf, ROI scenarios with BUC progressive payment). |
+
 ## Backing code & data
 
 `research/` (harness), `researcher/valuation/` (condo engine), `researcher/landed/`
-(landed scorecard), `deliverables/` (report generators → output to
+(landed scorecard + listings), `researcher/sources/` (PropertyGuru), `researcher/newlaunch/`
+(new-launch scorecard + pricing), `deliverables/` (report generators → output to
 `G:\My Drive\004 RES\REsearch_Reports`). The optional Investment Suite bridge profile lives
 in the separate `mobile_bridge` repo at `mobile_bridge/apps/investment_suite.py`.
