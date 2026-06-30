@@ -35,7 +35,8 @@ deliverables/          报告生成器 + 产物(HTML 报告、开发简报)
 ```powershell
 # 估值模型(任意房源:改 researcher/valuation/run.py 里的 Subject/Comp 即可)
 python -m researcher.valuation.run
-# 生成 HTML 报告
+# 生成 HTML 报告（默认输出到 G:\My Drive\004 RES\REsearch_Reports；
+# 可用 RESEARCH_REPORTS_DIR 覆盖，G: 未挂载时回退到 deliverables/）
 python deliverables/build_report.py
 # 读一个安卓 App(需先登录、adb 可连):见 .claude/skills/read-investment-suite
 python research/mbx.py cap my_screen
