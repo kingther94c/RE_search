@@ -1,0 +1,317 @@
+﻿{
+    "area_name":  "Nanyang Primary School 1km balloting zone â€” King\u0027s Road / Coronation, District 10 (Bukit Timah)",
+    "summary":  "Nanyang Primary (52 King\u0027s Road, 268097) is a SAP/GEP top-10 primary; balloting is routine even within 1km (Phase 2C 2025: 63 applicants/42 places; 2024: 79/40), so genuine \u003c1km address is the price of entry. The tight 1km ring is dominated by prime freehold landed on King\u0027s Road, King\u0027s Drive/Kingsmead, Coronation Road / Coronation Road West, and Prince/Princess of Wales Road â€” terrace, semi-D and linked-bungalow character â€” plus the only HDB pocket (Farrer Gardens, 99-yr) and a handful of freehold condos (Watten House, The Asana, Duchess cluster). Formal GCB Areas (Leedon Park, Bin Tong Park, Belmont, Cornwall Gardens, Chatsworth) mostly straddle or sit just beyond the 1km line; Leedon Park\u0027s northern edge grazes it.\n\nLand pricing: non-GCBA semi-D/terrace ~S$1,800â€“2,400 psf land (quantum ~S$5â€“20m); GCB land ~S$1,900â€“3,500+ psf (quantum ~S$28â€“60m). Recent prints include Coronation Rd West linked bungalows from ~S$15.98m and a semi-D at S$19.8m (~S$2,202 psf), and a Cornwall Gardens GCB at S$28.3m on 14,681 sqft (~S$1,928 psf, Jul 2025).\n\nHeadline watch-outs: documented April-2025 flash flooding on King\u0027s Road (Prince Rdâ€“Lutheran Rd) and Coronation Walk, with chronic ponding at the Stevens/Balmoral low point in eastern Bukit Timah; PUB Bukit Timah Canal widening completing ~2026. Foreign buyers are largely shut out of landed (LDAU approval, 5-yr no-sell, no-rent, 1,800 sqm cap; 60% ABSD), which thins the resale pool. Sophisticated buyers price land + rebuild (S$350â€“700 psf GFA), not the asking price of an ageing house.",
+    "estates":  [
+                    {
+                        "name":  "King\u0027s Road / King\u0027s Drive / Kingsmead Rd",
+                        "type":  "Detached, Semi-D, Terrace (freehold; some on Kingsville 102-yr)",
+                        "distance":  "\u003c0.2â€“0.5km",
+                        "gcba":  "No",
+                        "indicative_land_psf":  "S$1,900â€“2,800 psf (GCB-grade plots on Kingsmead to ~S$2,770â€“4,182)",
+                        "note":  "School\u0027s doorstep â€” closest addresses; but King\u0027s Rd (Princeâ€“Lutheran) is a flood spot"
+                    },
+                    {
+                        "name":  "Coronation Road / Coronation Road West",
+                        "type":  "Semi-D, Terrace, Linked bungalow (freehold)",
+                        "distance":  "0.7â€“0.9km",
+                        "gcba":  "No (landed housing)",
+                        "indicative_land_psf":  "S$1,900â€“2,300 psf",
+                        "note":  "New 2026 TOP linked-bungalow releases from ~S$15.98m; semi-D S$19.8m/~S$2,202 psf; Coronation Walk flooded Apr 2025"
+                    },
+                    {
+                        "name":  "Prince of Wales Rd / Princess of Wales Rd",
+                        "type":  "Semi-D, Detached (freehold)",
+                        "distance":  "0.9â€“1.0km",
+                        "gcba":  "No",
+                        "indicative_land_psf":  "S$1,800â€“2,200 psf",
+                        "note":  "~2-min walk; broad setbacks; on the 1km edge â€” confirm address falls inside"
+                    },
+                    {
+                        "name":  "Leedon Park",
+                        "type":  "GCB / Detached (freehold)",
+                        "distance":  "0.8â€“1.2km",
+                        "gcba":  "Yes (GCBA)",
+                        "indicative_land_psf":  "S$1,500â€“2,200 psf land",
+                        "note":  "Only northern edge grazes 1km; rest in 1â€“2km band â€” verify the specific plot is inside"
+                    },
+                    {
+                        "name":  "Belmont Road / Belmont Park",
+                        "type":  "GCB + non-GCBA landed (freehold)",
+                        "distance":  "~1.2km",
+                        "gcba":  "Partial (GCBA + mixed)",
+                        "indicative_land_psf":  "GCBA S$1,800â€“2,400; non-GCBA semi-D ~S$1,500â€“2,200",
+                        "note":  "At/just beyond 1km threshold â€” borderline for balloting"
+                    },
+                    {
+                        "name":  "Bin Tong Park",
+                        "type":  "GCB / Detached (freehold)",
+                        "distance":  "~1.5â€“2km",
+                        "gcba":  "Yes (GCBA)",
+                        "indicative_land_psf":  "S$2,000â€“3,500+ psf land",
+                        "note":  "Premium GCB tier; likely outside 1km â€” for prestige not catchment"
+                    },
+                    {
+                        "name":  "Cornwall Gardens",
+                        "type":  "GCB / Detached (freehold)",
+                        "distance":  "~1.5â€“2km",
+                        "gcba":  "Yes (GCBA, 27 conserved bungalows)",
+                        "indicative_land_psf":  "~S$1,900â€“2,500 psf land",
+                        "note":  "Art-Deco/B\u0026W conservation limits teardown; S$28.3m/14,681 sqft Jul 2025; outside 1km"
+                    },
+                    {
+                        "name":  "Chatsworth Park",
+                        "type":  "GCB / Detached (freehold)",
+                        "distance":  "~1.5â€“2km",
+                        "gcba":  "Yes (GCBA, conserved bungalows)",
+                        "indicative_land_psf":  "S$2,000â€“3,500 psf land",
+                        "note":  "Conservation cluster; outside 1km â€” prestige play only"
+                    },
+                    {
+                        "name":  "Maryland Estate / Drive",
+                        "type":  "Landed (freehold/937-yr)",
+                        "distance":  "~1km (edge)",
+                        "gcba":  "No (abuts Bukit Sedap GCBA)",
+                        "indicative_land_psf":  "S$1,500â€“2,000 psf",
+                        "note":  "Sloping ground off Holland Rd; elevation may aid flood resilience; verify 1km"
+                    },
+                    {
+                        "name":  "Greenmead / Greenwood / Greenview",
+                        "type":  "Landed (freehold)",
+                        "distance":  "~1km",
+                        "gcba":  "No",
+                        "indicative_land_psf":  "S$1,500â€“2,000 psf",
+                        "note":  "District 10 freehold estates near 1km edge â€” confirm catchment per address"
+                    },
+                    {
+                        "name":  "Watten House (condo)",
+                        "type":  "Freehold low-rise condo",
+                        "distance":  "~0.95â€“1.0km",
+                        "gcba":  "No",
+                        "indicative_land_psf":  "n/a (built quantum from ~S$4.8m)",
+                        "note":  "Marketed \u00271km to Nanyang\u0027; condo alternative to landed; verify exact distance"
+                    },
+                    {
+                        "name":  "Farrer Gardens (HDB)",
+                        "type":  "HDB 2â€“3rm",
+                        "distance":  "\u003c1.0km",
+                        "gcba":  "No",
+                        "indicative_land_psf":  "n/a (quantum ~S$0.5â€“0.6m)",
+                        "note":  "Only HDB strictly within 1km; cheapest legitimate \u003c1km address; 99-yr lease"
+                    }
+                ],
+    "price_structure":  [
+                            {
+                                "segment":  "Terrace (non-GCBA, freehold)",
+                                "land_psf":  "S$1,800â€“2,200 psf land",
+                                "quantum":  "~S$5â€“9m",
+                                "note":  "Smaller frontage; entry point to landed in zone"
+                            },
+                            {
+                                "segment":  "Semi-Detached (non-GCBA, freehold)",
+                                "land_psf":  "S$1,900â€“2,400 psf land",
+                                "quantum":  "~S$7â€“20m",
+                                "note":  "Coronation Rd W semi-D ~S$2,202 psf (S$19.8m); core product near school"
+                            },
+                            {
+                                "segment":  "Detached / bungalow (non-GCBA, freehold)",
+                                "land_psf":  "S$2,000â€“2,800 psf land",
+                                "quantum":  "~S$15â€“25m",
+                                "note":  "King\u0027s/Kingsmead detached; linked bungalows from ~S$15.98m"
+                            },
+                            {
+                                "segment":  "Good Class Bungalow (GCBA)",
+                                "land_psf":  "S$1,900â€“3,500+ psf land",
+                                "quantum":  "~S$28â€“60m",
+                                "note":  "Min 1,400 sqm plot, 2-storey+attic cap; Cornwall ~S$1,928 psf, Bin Tong premium tier"
+                            },
+                            {
+                                "segment":  "HDB (Farrer Gardens, 99-yr)",
+                                "land_psf":  "n/a",
+                                "quantum":  "~S$0.5â€“0.6m",
+                                "note":  "Cheapest \u003c1km address; lease decay + financing limits beyond ~yr 70"
+                            }
+                        ],
+    "example_transactions":  [
+                                 "Coronation Road West | semi-detached plot | S$19.8m | ~S$2,202 psf | freehold, near-new (2025â€“26 releases)",
+                                 "Coronation Road West | linked bungalow (new TOP Q4 2025) | from ~S$15.98m | ~S$3,163â€“3,882 psf built | brand-new freehold product",
+                                 "Cornwall Gardens | GCB, 14,681 sqft land | S$28.3m | ~S$1,928 psf land | Jul 2025; GCBA conservation cluster",
+                                 "Kingsmead Road | GCB/bungalow | ~S$20â€“23m | ~S$2,770â€“4,182 psf | freehold, walking distance to school",
+                                 "Belmont area | ~19,549 sqft plot | S$40m | ~S$2,046 psf land | Dec 2025; large GCB-grade plot",
+                                 "Watten Estate (condo) | freehold unit | from ~S$4.8m | n/a | ~0.95km; condo comparison point"
+                             ],
+    "hazards_watchouts":  [
+                              {
+                                  "issue":  "Flash flood â€” ankle-deep waters Apr 2025; documented flood-prone",
+                                  "severity":  "High",
+                                  "where":  "King\u0027s Road, between Prince Road and Lutheran Road"
+                              },
+                              {
+                                  "issue":  "Flash flood â€” flooded 20 Apr 2025",
+                                  "severity":  "High",
+                                  "where":  "Coronation Walk"
+                              },
+                              {
+                                  "issue":  "Chronic ponding / undulating low-lying terrain (eastern Bukit Timah)",
+                                  "severity":  "Very High",
+                                  "where":  "Stevens Road / Balmoral Road junction"
+                              },
+                              {
+                                  "issue":  "Arterial flash flooding + traffic noise on road frontage",
+                                  "severity":  "Moderate-High",
+                                  "where":  "Bukit Timah Road / Dunearn Road corridor"
+                              },
+                              {
+                                  "issue":  "PUB Bukit Timah Canal widening/deepening in progress (completes ~2026) â€” interim risk \u0026 works",
+                                  "severity":  "Moderate",
+                                  "where":  "Bukit Timah Canal, Rifle Range Rd to Jalan Kampong Chantek"
+                              },
+                              {
+                                  "issue":  "Density/character shift â€” 15,000â€“20,000 new homes phased to ~2050; traffic \u0026 supply",
+                                  "severity":  "Moderate (long-term)",
+                                  "where":  "Bukit Timah Turf City, off Sixth Avenue (zone periphery)"
+                              },
+                              {
+                                  "issue":  "New high-rise GLS condos add density \u0026 overlapping school demand (MGS 1km)",
+                                  "severity":  "Moderate",
+                                  "where":  "Holland Plain GLS (Sim Lian awards 2025â€“26)"
+                              },
+                              {
+                                  "issue":  "GCBA conservation gazette blocks teardown/rebuild on some plots",
+                                  "severity":  "Moderate",
+                                  "where":  "Cornwall Gardens, Chatsworth Park (conserved bungalows)"
+                              },
+                              {
+                                  "issue":  "CRL Phase 2 construction disruption near King Albert Park (opens ~2032)",
+                                  "severity":  "Low-Moderate (temporary)",
+                                  "where":  "Blackmore Drive / King Albert Park, off Bukit Timah Rd"
+                              }
+                          ],
+    "regulatory":  [
+                       "Foreign ownership: landed residential largely barred â€” LDAU approval required (â‰¥5-yr PR + economic contribution), S$1,220 fee, ~30 working days; owner-occupier only (no renting), 1,800 sqm cap, cannot sell within 5 years.",
+                       "ABSD 2026: Citizen 0%/20%/30%; PR 5%/30%/35%; Foreigner flat 60%. Foreigner on S$2m landed pays ~S$1.27m duty.",
+                       "BSD 2026 progressive 1â€“6%; ~S$69.6k on S$2m, ~S$102.6k on S$2.5m; due within 14 days.",
+                       "SSD (4-yr regime from 4 Jul 2025): 16/12/8/4% yr 1â€“4, 0% after yr 4.",
+                       "Tenure ~73% freehold / ~14% 999-yr / ~13% 99-yr; 99-yr ~S$1â€“1.5m discount, financing tightens \u003c60-yr, CPF needs lease to youngest owner age 95+.",
+                       "Rebuild: standard reconstruction S$250â€“450/psf; full new erection S$300â€“700/psf; +10â€“15% fees/contingency; A\u0026A capped 50% of approved GFA.",
+                       "GCBA: min 1,400 sqm, â‰¤35â€“40% coverage, 2-storey+attic, 3m setbacks, detached only.",
+                       "Financing 2026: LTV 75%, TDSR 55% stressed at 4%; SORA-linked ~1.55â€“1.80% but stress test requires ~S$15â€“18k/mth gross for S$2.5m."
+                   ],
+    "screening_recommendations":  [
+                                      {
+                                          "title":  "Confirm the address is genuinely \u003c1km on the official tool",
+                                          "detail":  "Use OneMap/MOE 1km checker for the exact street number â€” Prince/Princess of Wales, Leedon Park, Belmont, Maryland and Greenmead estates straddle the 1km line; balloting is routine so a borderline address is a real risk."
+                                      },
+                                      {
+                                          "title":  "Avoid documented flood streets unless elevated/rebuilt high",
+                                          "detail":  "Treat King\u0027s Road (Princeâ€“Lutheran), Coronation Walk and the Stevens/Balmoral low point as red flags; request property flood history, check ground elevation, and avoid basements/ground-floor living there."
+                                      },
+                                      {
+                                          "title":  "Prefer higher-ground or rebuilt-post-2015 homes on regular plots",
+                                          "detail":  "Maryland (sloping) and elevated King\u0027s/Coronation sub-roads sit above the eastern Bukit Timah ponding zone; a post-2015 rebuild on a regular (non-corner, rectangular) plot de-risks both flooding and capex."
+                                      },
+                                      {
+                                          "title":  "Price land + rebuild, not the asking price",
+                                          "detail":  "For an ageing semi-D, budget S$350â€“600/psf GFA rebuild + 10â€“15% fees; a 3,000 sqft rebuild is ~S$1.17â€“2.07m all-in. Discount asking accordingly rather than paying for a tired structure."
+                                      },
+                                      {
+                                          "title":  "Verify GCBA 2-storey + attic cap before modelling GFA",
+                                          "detail":  "In Leedon Park / Belmont / Cornwall, the 1,400 sqm min, ~35â€“40% coverage and 2-storey+attic envelope hard-cap buildable area â€” confirm via URA before assuming a large rebuild."
+                                      },
+                                      {
+                                          "title":  "Check conservation gazette on GCB plots",
+                                          "detail":  "Cornwall Gardens and Chatsworth have conserved bungalows (Art-Deco/B\u0026W) where teardown is blocked and subdivision residual must stay â‰¥1,000 sqm â€” this destroys redevelopment optionality, so confirm conservation status."
+                                      },
+                                      {
+                                          "title":  "Run a full SLA INLIS title search",
+                                          "detail":  "Older estates carry easements, drainage right-of-way, restrictive covenants and possible road-reserve gazettes (acquisition risk); also reconcile surveyed vs title land area before pricing."
+                                      },
+                                      {
+                                          "title":  "Factor tenure into financing and resale",
+                                          "detail":  "Strongly prefer freehold/999-yr; on 99-yr (incl. Farrer Gardens HDB) expect a S$1â€“1.5m discount, tighter loans \u003c60-yr remaining and CPF limits â€” price the decay."
+                                      },
+                                      {
+                                          "title":  "Stress-test stamp duty and holding period upfront",
+                                          "detail":  "Citizens pay 20% ABSD on a 2nd property; foreigners 60% plus LDAU 5-yr no-sell/no-rent; SSD bites for 4 years â€” model a â‰¥5-yr hold and full duty before bidding."
+                                      },
+                                      {
+                                          "title":  "Weigh long-term density catalysts",
+                                          "detail":  "Turf City (15â€“20k homes to ~2050), Holland Plain GLS high-rises and CRL King Albert Park (2032) lift amenity/connectivity but add supply, traffic and competing school demand â€” neutral-to-positive long-term, disruptive near-term."
+                                      }
+                                  ],
+    "zoning_planning_notes":  [
+                                  "Most of the tight 1km ring (King\u0027s Rd, Coronation Rd/West, Prince/Princess of Wales) is URA \u0027Landed Housing\u0027 (non-GCBA): 2â€“3 storeys, semi-D/terrace/detached permitted, setbacks vary by road type.",
+                                  "GCBA plots (Leedon Park, Bin Tong, Belmont upper, Cornwall, Chatsworth): detached only, min 1,400 sqm, ~35â€“40% coverage, 2-storey+attic, 3m setbacks; subdivision below 1,400 sqm not allowed.",
+                                  "Conservation overlay on parts of Cornwall Gardens (27 bungalows) and Chatsworth Park limits demolition; subdividing conserved plots requires residual â‰¥1,000 sqm / conserved â‰¥1,800 sqm.",
+                                  "Belmont Road is a blended zone â€” GCBA (premium) plus non-GCBA semi-D â€” so zoning and price tier vary plot by plot.",
+                                  "Low en-bloc/GLS pressure inside the 1km landed core itself; redevelopment intensity is concentrated at the periphery (Turf City, Holland Plain)."
+                              ],
+    "future_planning":  [
+                            "Bukit Timah Turf City: 15,000â€“20,000 public+private homes phased to ~2050 (first BTO in Bukit Timah in ~40 yrs); 22 heritage buildings retained; 10-min car-lite neighbourhood off Sixth Avenue.",
+                            "Cross Island Line Phase 2 (~2032): King Albert Park interchange (DT6/CR15), Singapore\u0027s deepest station (~50m), boosts connectivity; near-term Blackmore Drive construction disruption.",
+                            "Holland Plain GLS: Sim Lian awarded (~S$368m, S$1,423 psf ppr; 2nd site ~S$454m, S$1,491 psf ppr 2026), TOP ~2028â€“30; new high-rise + overlapping MGS 1km school demand.",
+                            "PUB Bukit Timah Canal widening/deepening (Rifle Range Rdâ€“Jalan Kampong Chantek) completing ~2026 to handle ~30% more rainwater; reassess flood risk post-completion.",
+                            "URA Master Plan 2025 emphasises heritage conservation, car-lite design and green corridors across the broader Bukit Timah district."
+                        ],
+    "schools_within_1km":  [
+                               "Nanyang Primary School â€” 52 King\u0027s Road, 268097 (subject school)",
+                               "Nanyang Kindergarten â€” 118 King\u0027s Road, 268155 (on/adjacent campus, affiliated)",
+                               "Raffles Girls\u0027 Primary School â€” 21 Hillcrest Road (~1â€“1.2km, near edge)",
+                               "Nanyang Girls\u0027 High School â€” 2 Linden Drive (~1â€“1.5km; IP with Hwa Chong)"
+                           ],
+    "data_gaps":  [
+                      "Exact 1km boundary per street number not machine-verified here â€” Prince/Princess of Wales, Leedon Park, Belmont, Maryland, Greenmead, Watten House all need OneMap/MOE confirmation.",
+                      "Granular street-level PUB flood-prone mapping for individual GCBA clusters not extracted â€” consult PUB\u0027s flood-prone list directly.",
+                      "Verified 2024â€“26 transaction caveats per estate are thin; several psf figures are tier estimates rather than confirmed caveats (cross-check URA/EdgeProp/SRX caveats).",
+                      "Wollaston listed as a lead but not confirmed in sources â€” verify it is a real estate within zone.",
+                      "Watten Estate ambiguity: some sources place a \u0027Watten Estate\u0027 in D11/Dunearn Rd (condo) vs Watten House condo near Shelford Rd â€” distinguish before relying on it."
+                  ],
+    "best_for":  "Singapore-citizen / long-term-PR families targeting a genuine \u003c1km Nanyang Primary address who want prime freehold landed and will hold 5+ years and rebuild â€” prioritising verified-inside-1km, higher-ground, regular-plot freehold homes over borderline GCB-prestige plots.",
+    "sources":  [
+                    "https://www.nyps.moe.edu.sg/",
+                    "https://www.moe.gov.sg/primary/p1-registration/past-vacancies-and-balloting-data",
+                    "https://sgschooling.com/school/nanyang.html",
+                    "https://www.p1registration.sg/2025/09/06/p1-registration-2026-for-2027-intakes-living-1km-is-your-only-shot-at-top-schools/",
+                    "https://skoolopedia.com/blog/top-10-most-competitive-primary-schools-in-singapore-complete-balloting-history-and-admission-statistics/",
+                    "https://stackedhomes.com/touring-an-expensive-landed-estate-in-bukit-timah-freehold-and-999-year-homes-near-nanyang-primary-from-9-5m/",
+                    "https://www.homeanddecor.com.sg/property/nanyang-primary-school-condo-hdb-near-price",
+                    "https://www.99.co/singapore/insider/property-nanyang-primary-school/",
+                    "https://www.srx.com.sg/landed/prince-of-wales-road-lspri0008",
+                    "https://www.edgeprop.sg/landed-house/coronation-road-west",
+                    "https://www.edgeprop.sg/landed-house/belmont-road",
+                    "https://www.edgeprop.sg/landed-house/bin-tong-park",
+                    "https://www.edgeprop.sg/property-news/rare-freehold-gcb-cornwall-gardens-auction-33-mil",
+                    "https://www.goodclassbungalows.com.sg/location-map/",
+                    "https://www.goodclassbungalows.com.sg/shape-size-specific-gcb/",
+                    "https://www.goodclassbungalows.com.sg/gcb-conservation-areas/",
+                    "https://leeandco.sg/insights/39-gcb-areas-singapore/",
+                    "https://lovelyhomes.com.sg/good-class-bungalow-singapore-guide-2026/",
+                    "https://www.roots.gov.sg/places/places-landing/Places/surveyed-sites/chatsworth-park-conservation-area",
+                    "https://www.ura.gov.sg/Corporate/Planning/Master-Plan",
+                    "https://www.uradraftmasterplan.gov.sg/regional-plans/central-region/bukit-timah-turf-city/",
+                    "https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr24-24",
+                    "https://stackedhomes.com/holland-plain-gls-sim-lian-sole-bid-454-million/",
+                    "https://www.era.com.sg/research-articles/holland-plain-gls-site-analysis",
+                    "https://mothership.sg/2025/04/flash-floods-bukit-timah/",
+                    "https://www.theonlinecitizen.com/2025/04/20/heavy-showers-cause-flash-floods-in-bukit-timah-and-prompt-islandwide-flood-risk-alerts/",
+                    "https://mothership.sg/2024/12/pub-issues-flood-warnings-for-multiple-areas-in-spore-on-dec-29-2024-dunearn-bukit-timah-roads-affected/",
+                    "https://www.pub.gov.sg/-/media/PUB/PDF/Flood-Management/List-of-Flood-Prone-Areas-as-at-Apr-2025.pdf",
+                    "https://www.mse.gov.sg/latest-news/oral-reply-to-pq-on-drainage-improvement-at-bukit-timah-canal/",
+                    "https://www.propertyguru.com.sg/property-guides/flooding-in-singapore-47633",
+                    "https://en.wikipedia.org/wiki/Cross_Island_Line",
+                    "https://www.lta.gov.sg/content/ltagov/en/upcoming_projects/rail_expansion/cross_island_line.html",
+                    "https://en.wikipedia.org/wiki/Farrer_Road_MRT_station",
+                    "https://en.wikipedia.org/wiki/Tan_Kah_Kee_MRT_station",
+                    "https://www.commercialguru.com.sg/project/coronation-shopping-plaza-19326",
+                    "https://www.sla.gov.sg/regulatory/foreign-ownership-of-property/",
+                    "https://www.sla.gov.sg/regulatory/property-ownership/land-titles-search/",
+                    "https://asianprimeproperties.sg/freehold-vs-99-year-leasehold-in-singapore-2026-which-should-you-buy/",
+                    "https://www.3ebuild.com/understanding-the-costs-of-building-a-landed-house-in-singapore-new-erection-reconstruction-and-addition-alteration-works/",
+                    "https://www.hitomoconstruction.com/post/rebuilding-a-landed-property-timeline-cost-regulations-2025-edition",
+                    "https://lovelyhomes.com.sg/buyer-stamp-duty-singapore-2026/",
+                    "https://res.edmundeeadvisory.com/guides/absd-singapore-2026",
+                    "https://lovelyhomes.com.sg/singapore-sellers-stamp-duty-guide-2026/",
+                    "https://www.mas.gov.sg/regulation/explainers/tdsr-for-property-loans/calculating-tdsr",
+                    "https://propertynet.sg/singapore-property-financing-2026-tdsr-interest-rates/",
+                    "https://www.redbrick.sg/blog/caveats-easements-covenants-and-all-other-must-know-legal-jargons-in-your-property-title/"
+                ]
+}
