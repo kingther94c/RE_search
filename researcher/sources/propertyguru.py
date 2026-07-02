@@ -68,6 +68,27 @@ def value_flag(typ: str, psf, bench: dict) -> str:
     return f"BUILD-PRICED (>>{hi})"
 
 
+def screen_verdict(r: dict) -> str:
+    """Final GO/CHECK call: quality score AND value band AND data completeness.
+
+    The scorecard verdict alone is misleading in a shortlist — a high-quality plot
+    asking build-level psf, or one with unconfirmed land area, must not read as an
+    unqualified 'pursue'."""
+    l, s, v = r["lst"], r["score"], r["value"]
+    if l.get("land_sqft") is None or l.get("land_psf") is None or v == "?":
+        return "VERIFY DATA - land size/psf unconfirmed"
+    band = v.split()[0]
+    if band == "BUILD-PRICED":
+        return "BUILD-PLAY - paying for the house, price as land+rebuild"
+    if band == "RICH":
+        return "NEGOTIATE - asking above the area band"
+    if s.total >= 80:
+        return "PURSUE"
+    if s.total >= 65:
+        return "CONSIDER"
+    return "MARGINAL" if s.total >= 50 else "PASS"
+
+
 def rank_listings(data: dict) -> list[dict]:
     """Score + rank a listings payload; pure (no printing) so reports can embed it."""
     bench = data.get("benchmark_land_psf", {})
@@ -103,7 +124,7 @@ def screen(slug: str = "nanyang"):
         label = f"{l.get('street', '?')} / {l.get('type', '?')}"
         print(f"{i:>2}  {label:<42}"
               f"{num(l.get('price'), 'S$'):>12}{num(l.get('land_sqft')):>8}"
-              f"{num(l.get('land_psf')):>7}  {r['value']:<16}{r['score'].total:>5.0f}  {r['score'].verdict}")
+              f"{num(l.get('land_psf')):>7}  {r['value']:<16}{r['score'].total:>5.0f}  {screen_verdict(r)}")
     print("\nTop picks — detail:")
     for r in rows[:3]:
         print("\n" + fmt(r["score"]))

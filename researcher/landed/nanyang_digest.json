@@ -1,77 +1,77 @@
 {
-  "area_name": "Nanyang Primary School 1km balloting zone â€” King's Road / Coronation, District 10 (Bukit Timah)",
+  "area_name": "Nanyang Primary School 1km balloting zone — King's Road / Coronation, District 10 (Bukit Timah)",
   "summary": "【2026-07-03 刷新 / refreshed】Nanyang Primary（52 King's Road, S268097）是 SAP 名校、原九所 GEP 中心之一——注意：MOE 已宣布 GEP 停办（2026 年为最后一届 P4 入选，2027 年起由全校 HAL + 15 校 Advanced Modules 取代），「GEP 学区溢价」逻辑弱化，但 SAP 品牌与 1km 抽签稀缺仍在：2025 年 Phase 2C 为 63 人争 42 位（150%，抽签），2026 年结果 8 月 11 日才公布。区域为 D10 永久地契 landed 核心（King's / Coronation / Namly / Kingsmead），Master Plan 2025 已于 2025-12-01 正式生效，环内 landed 分区不变。市场面：URA landed 指数 2026 Q1 环比 -0.4%（终结 2025 Q4 的 +3.4%），3M SORA 降至约 1.05-1.08%（2 年固定约 1.27-1.40%）——买方谈判筹码增强、月供压力大减。外围 Turf City 首两幅 GLS 高价成交（S$1,410 → S$1,625 psf ppr），首盘 Dunearn House（380 户，约 S$2,900-3,100 psf）2026-07-10 VVIP 预览；CRL 二期（Turf City CR14 / King Albert Park CR15）2032 年通车。King's Road（Prince-Lutheran 段）2025-04 洪水记录仍未解除，Bukit Timah 运河扩容目标 2026 年完工但 2026-02 Dunearn Road 仍有洪水预警。 —— [EN] Nanyang Primary's 1km ring remains D10's freehold-landed core. July-2026 shifts: GEP is being discontinued (last P4 intake 2026; HAL + Advanced Modules from 2027), so the school premium now rests on the SAP brand and 1km balloting scarcity (2025 P2C 63/42; 2026 result due 11 Aug 2026). URA's landed index dipped 0.4% q/q in Q1 2026 while 3M SORA collapsed to ~1.05%, tilting negotiating power to buyers. Turf City's first launches (Dunearn House, ~S$2,900-3,100 psf, VVIP preview 10 Jul 2026) reprice the periphery; CRL Phase 2 (CR14/CR15) opens 2032. King's Road's flash-flood record stands until the Bukit Timah canal works complete.",
   "estates": [
     {
       "name": "King's Road / King's Drive / Kingsmead Rd",
       "type": "Detached, Semi-D, Terrace (freehold; some on Kingsville 102-yr)",
-      "distance": "<0.2â€“0.5km",
+      "distance": "<0.2–0.5km",
       "gcba": "No",
-      "indicative_land_psf": "S$1,900â€“2,800 psf (GCB-grade plots on Kingsmead to ~S$2,770â€“4,182)",
-      "note": "School's doorstep â€” closest addresses; but King's Rd (Princeâ€“Lutheran) is a flood spot"
+      "indicative_land_psf": "S$1,900–2,800 psf (GCB-grade plots on Kingsmead to ~S$2,770–4,182)",
+      "note": "School's doorstep — closest addresses; but King's Rd (Prince–Lutheran) is a flood spot"
     },
     {
       "name": "Coronation Road / Coronation Road West",
       "type": "Semi-D, Terrace, Linked bungalow (freehold)",
-      "distance": "0.7â€“0.9km",
+      "distance": "0.7–0.9km",
       "gcba": "No (landed housing)",
-      "indicative_land_psf": "S$1,900â€“2,300 psf",
+      "indicative_land_psf": "S$1,900–2,300 psf",
       "note": "New 2026 TOP linked-bungalow releases from ~S$15.98m; semi-D S$19.8m/~S$2,202 psf; Coronation Walk flooded Apr 2025"
     },
     {
       "name": "Prince of Wales Rd / Princess of Wales Rd",
       "type": "Semi-D, Detached (freehold)",
-      "distance": "0.9â€“1.0km",
+      "distance": "0.9–1.0km",
       "gcba": "No",
-      "indicative_land_psf": "S$1,800â€“2,200 psf",
-      "note": "~2-min walk; broad setbacks; on the 1km edge â€” confirm address falls inside"
+      "indicative_land_psf": "S$1,800–2,200 psf",
+      "note": "~2-min walk; broad setbacks; on the 1km edge — confirm address falls inside"
     },
     {
       "name": "Leedon Park",
       "type": "GCB / Detached (freehold)",
-      "distance": "0.8â€“1.2km",
+      "distance": "0.8–1.2km",
       "gcba": "Yes (GCBA)",
-      "indicative_land_psf": "S$1,500â€“2,200 psf land",
-      "note": "Only northern edge grazes 1km; rest in 1â€“2km band â€” verify the specific plot is inside"
+      "indicative_land_psf": "S$1,500–2,200 psf land",
+      "note": "Only northern edge grazes 1km; rest in 1–2km band — verify the specific plot is inside"
     },
     {
       "name": "Belmont Road / Belmont Park",
       "type": "GCB + non-GCBA landed (freehold)",
       "distance": "~1.2km",
       "gcba": "Partial (GCBA + mixed)",
-      "indicative_land_psf": "GCBA S$1,800â€“2,400; non-GCBA semi-D ~S$1,500â€“2,200",
-      "note": "At/just beyond 1km threshold â€” borderline for balloting"
+      "indicative_land_psf": "GCBA S$1,800–2,400; non-GCBA semi-D ~S$1,500–2,200",
+      "note": "At/just beyond 1km threshold — borderline for balloting"
     },
     {
       "name": "Bin Tong Park",
       "type": "GCB / Detached (freehold)",
-      "distance": "~1.5â€“2km",
+      "distance": "~1.5–2km",
       "gcba": "Yes (GCBA)",
-      "indicative_land_psf": "S$2,000â€“3,500+ psf land",
-      "note": "Premium GCB tier; likely outside 1km â€” for prestige not catchment"
+      "indicative_land_psf": "S$2,000–3,500+ psf land",
+      "note": "Premium GCB tier; likely outside 1km — for prestige not catchment"
     },
     {
       "name": "Cornwall Gardens",
       "type": "GCB / Detached (freehold)",
-      "distance": "~1.5â€“2km",
+      "distance": "~1.5–2km",
       "gcba": "Yes (GCBA, 27 conserved bungalows)",
-      "indicative_land_psf": "~S$1,900â€“2,500 psf land",
+      "indicative_land_psf": "~S$1,900–2,500 psf land",
       "note": "Art-Deco/B&W conservation limits teardown; S$28.3m/14,681 sqft Jul 2025; outside 1km"
     },
     {
       "name": "Chatsworth Park",
       "type": "GCB / Detached (freehold)",
-      "distance": "~1.5â€“2km",
+      "distance": "~1.5–2km",
       "gcba": "Yes (GCBA, conserved bungalows)",
-      "indicative_land_psf": "S$2,000â€“3,500 psf land",
-      "note": "Conservation cluster; outside 1km â€” prestige play only"
+      "indicative_land_psf": "S$2,000–3,500 psf land",
+      "note": "Conservation cluster; outside 1km — prestige play only"
     },
     {
       "name": "Maryland Estate / Drive",
       "type": "Landed (freehold/937-yr)",
       "distance": "~1km (edge)",
       "gcba": "No (abuts Bukit Sedap GCBA)",
-      "indicative_land_psf": "S$1,500â€“2,000 psf",
+      "indicative_land_psf": "S$1,500–2,000 psf",
       "note": "Sloping ground off Holland Rd; elevation may aid flood resilience; verify 1km"
     },
     {
@@ -79,23 +79,23 @@
       "type": "Landed (freehold)",
       "distance": "~1km",
       "gcba": "No",
-      "indicative_land_psf": "S$1,500â€“2,000 psf",
-      "note": "District 10 freehold estates near 1km edge â€” confirm catchment per address"
+      "indicative_land_psf": "S$1,500–2,000 psf",
+      "note": "District 10 freehold estates near 1km edge — confirm catchment per address"
     },
     {
       "name": "Watten House (condo)",
       "type": "Freehold low-rise condo",
-      "distance": "~0.95â€“1.0km",
+      "distance": "~0.95–1.0km",
       "gcba": "No",
       "indicative_land_psf": "n/a (built quantum from ~S$4.8m)",
       "note": "Marketed '1km to Nanyang'; condo alternative to landed; verify exact distance"
     },
     {
       "name": "Farrer Gardens (HDB)",
-      "type": "HDB 2â€“3rm",
+      "type": "HDB 2–3rm",
       "distance": "<1.0km",
       "gcba": "No",
-      "indicative_land_psf": "n/a (quantum ~S$0.5â€“0.6m)",
+      "indicative_land_psf": "n/a (quantum ~S$0.5–0.6m)",
       "note": "Only HDB strictly within 1km; cheapest legitimate <1km address; 99-yr lease"
     }
   ],
@@ -282,9 +282,10 @@
   ],
   "regulatory": [
     "ABSD 2026 (CONFIRMED, unchanged since 27 Apr 2023): Citizen 0%/20%/30% (1st/2nd/3rd+ property); PR 5%/30%/35%; Foreigner flat 60% regardless of property count; Entities 65%. Source: https://res.edmundeeadvisory.com/guides/absd-singapore-2026, https://www.iras.gov.sg/taxes/stamp-duty/for-property/buying-or-acquiring-property/additional-buyer's-stamp-duty-(absd)",
+    "BSD 买方印花税（住宅，2023-02 起税率，与 ABSD 叠加）：首 18 万 1% / 次 18 万 2% / next 64 万 3% / next 50 万 4% / next 150 万 5% / 超出部分 6%。本区量子下的实际负担：S$6m 购入 BSD ≈ S$299,600 (~5.0%)；S$15m ≈ S$839,600 (~5.6%)；S$20m ≈ S$1,139,600 (~5.7%)。公民首套无 ABSD，但 BSD 在千万级量子下已是七位数成本。[iras.gov.sg/taxes/stamp-duty/for-property/buying-or-acquiring-property/buyer's-stamp-duty-(bsd)]",
     "SSD (CONFIRMED, 4-yr regime effective properties bought on/after 4 Jul 2025 12:00am): 16% (sold within yr1) / 12% (yr2) / 8% (yr3) / 4% (yr4) / 0% (after yr4); rates raised 4ppt per tier and holding period extended from 3 to 4 years; HDB unaffected (MOP). Source: https://www.mas.gov.sg/news/media-releases/2025/extension-of-the-holding-period-of-sellers-stamp-duty-and-higher-ssd-rates",
     "LDAU foreign landed ownership (CORRECTED size cap): ≥5-yr PR + exceptional economic contribution required, case-by-case; S$1,220 application fee; ~1 month to process (some cases 2-6 months); owner-occupier only, no renting (existing tenancy at purchase must end within 1 year of completion); cannot sell within 5 years of legal completion; GCB Areas entirely off-limits to foreign buyers. SIZE CAP CORRECTION: mainland restricted residential property cap is 15,000 sqft (~1,394 sqm), NOT 1,800 sqm as stated in v1 — 1,800 sqm is the separate, larger cap that applies only to Sentosa Cove (Singapore's sole foreign-open waterfront landed enclave, which itself has no 5-year no-sell restriction). Source: https://singaporelegaladvice.com/foreigners-buying-landed-residential-property-singapore/, https://www.sla.gov.sg/regulatory/foreign-ownership-of-property/",
-    "Financing mid-2026 (UPDATED, v1 figure now stale): 3-month compounded SORA has fallen sharply to ~1.05-1.08% as of June 2026 (from a ~2.9-3% peak in 2025/early-2026) — v1's '~1.55-1.80%' estimate is now too high. Fixed mortgage packages have followed rates down; some 2-year fixed packages advertised as low as ~1.27-1.40% p.a. by June 2026 (vs. ~3.45-3.75% quoted for an April 2026 snapshot in one source — sources vary on the April figure but agree on the steep June decline). LTV 75% and TDSR 55% stress-tested at a 4% floor remain in force per MAS rules — re-run affordability stress tests against the lower actual-rate environment. Sources: https://www.homejourney.sg/blog/singapore-sora-rate-outlook-2026-what-homeowners-should-know-homejourney-202601110702, https://housingloansg.com/hl/charts/sora-and-compounded-sora-trend, https://propertynet.sg/latest-bank-mortgage-loan-rates-across-singapore/",
+    "Financing mid-2026 (UPDATED, v1 figure now stale): 3-month compounded SORA has fallen sharply to ~1.05-1.08% as of June 2026 (from a ~2.9-3% peak in 2025/early-2026) — v1's '~1.55-1.80%' estimate is now too high. Fixed mortgage packages have followed rates down; some 2-year fixed packages advertised as low as ~1.27-1.40% p.a. by June 2026. LTV 75% and TDSR 55% stress-tested at a 4% floor remain in force per MAS rules — re-run affordability stress tests against the lower actual-rate environment. Sources: https://www.homejourney.sg/blog/singapore-sora-rate-outlook-2026-what-homeowners-should-know-homejourney-202601110702, https://housingloansg.com/hl/charts/sora-and-compounded-sora-trend, https://propertynet.sg/latest-bank-mortgage-loan-rates-across-singapore/",
     "URA landed price index (UPDATED, material change from v1 framing): landed property prices DECREASED 0.4% q/q in Q1 2026, reversing +3.4% q/q growth in Q4 2025; non-landed rose +1.3% q/q in the same quarter — a landed/non-landed divergence, with landed cooling into 2026. Q2 2026 index not yet published as of this research (typically released late Jul/Aug). Sources: https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr26-31, https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr26-26",
     "D10 landed liquidity/market read (CONFIRMED): resale volumes reported steady through 2023-2026 cooling-measure rounds (owner-occupier-driven, not speculative); D10 land supply for new landed/condo stock remains extremely limited, structurally supporting prices despite the Q1 2026 index dip. Source: https://www.plbinsights.com/unpacking-district-10s-pure-landed-homes-price-growth-and-investment-opportunities/"
   ],
@@ -328,6 +329,10 @@
     {
       "title": "按 SSD 新规规划持有期 / Plan holding around the 4-yr SSD",
       "detail": "2025-07-04 起 SSD 为 4 年 16/12/8/4%。学区自住通常持有 ≥6 年（P1-P6）不受影响，但若计划「用完学额即卖」，第 4 年内出售将吃 4-16% 卖方印花税——现金流测算需计入。"
+    },
+    {
+      "title": "收益率与重建成本参照 / Yield & rebuild-cost reference",
+      "detail": "实测收益率：King's Rd / Kingsmead 两条在售 detached 均报现租 S$15k/月，对 S$19-19.8m 要价即毛收益率 约 0.9%——landed 是保值资产不是现金流资产，贷款测算勿用乐观租金。重建参照：行业常见 landed 重建建安成本约 S$350-550 psf GFA（2025-26 行情，属未经 QS 核实的指示性区间——正式出价前取 2-3 家 QS/承建商报价），「地价 + 重建」总账才是 BUILD-PRICED 房源的对照基准。"
     }
   ],
   "zoning_planning_notes": [
@@ -346,10 +351,10 @@
     "URA Master Plan 2025 (now GAZETTED, not draft, since 1 Dec 2025) emphasises heritage conservation, car-lite design and green corridors across the broader Bukit Timah district; Kranji (former racecourse) is undergoing a parallel racecourse-to-housing transformation, an interesting precedent/comparator for Turf City's pacing."
   ],
   "schools_within_1km": [
-    "Nanyang Primary School — 52 King's Road, 268097 (subject school); SAP school since 1984; was one of 9 original GEP centres since 1990 — NOTE: GEP is being discontinued nationally, last P4 GEP intake 2026, last cohort completes 2028, replaced from 2027 by school-based Higher-Ability-Learner (HAL) provisions (all primary schools, ~10% of cohort) + after-school Advanced Modules at 15 designated centres [confirmed, sgschoolkaki.com/blog/gep-discontinued-advanced-modules-2027, honeykidsasia.com/gifted-programme-gep-moe-changes-primary-school]",
+    "Nanyang Primary School — 52 King's Road, 268097 (subject school); SAP school since 1984; was one of 9 original GEP centres since 1990 — NOTE: GEP is being discontinued nationally, last P4 GEP intake 2026, last cohort completes 2028, replaced from 2027 by school-based Higher-Ability-Learner (HAL) provisions (all primary schools, ~10% of cohort) + after-school Advanced Modules at 15 designated centres [confirmed — PRIMARY SOURCE: moe.gov.sg/news/press-releases/20260303-learning-together-with-different-strengths-and-needs; secondary: sgschoolkaki.com, honeykidsasia.com]",
     "Nanyang Primary Phase 2C balloting — 2025: 63 applicants / 42 places (150.0% demand ratio, balloted, SC <1km) — CONFIRMED matches v1 [kiasuparents.com/kiasu/primary-schools/nanyang-primary-school]",
     "Nanyang Primary Phase 2C balloting — 2024: 79 applicants / 40 places (197.5% demand ratio, balloted, SC <1km) — CONFIRMED matches v1; longer history 2022 ratio 2.17:1, 2023 1.73:1, all balloted SC<1km [kiasuparents.com, p1registration.sg/2025/05/07/nanyang-primary-balloting-history-your-2025-chances-strategies]",
-    "Nanyang Primary Phase 2C balloting — 2026: UNVERIFIABLE/PENDING — registration window ~28-30 Jul 2026, results due 11 Aug 2026, i.e. AFTER this report's date (2026-07-02); do not infer outcome from prior years",
+    "Nanyang Primary Phase 2C balloting — 2026: UNVERIFIABLE/PENDING — registration window ~28-30 Jul 2026, results due 11 Aug 2026, i.e. AFTER this report's as-of date (2026-07-03); do not infer outcome from prior years",
     "MOE 2026 P1 intake reduction (NEW, not in v1): starting with the 2026 P1 Registration Exercise, MOE is gradually cutting P1 intake at most primary schools nationally in response to falling cohort sizes from 2027 onward — reported aggregate: 61 schools cut, 12 increased, 106 unchanged, net -1,460 P1 places nationwide; Nanyang/RGPS-specific 2026 vacancy figures not found in official press release text, check MOE P1 portal directly [moe.gov.sg/news/press-releases/20260429-2026-primary-one-registration-exercise]",
     "Nanyang Kindergarten — 118 King's Road, 268155 (on/adjacent campus, affiliated) — unchanged from v1",
     "Raffles Girls' Primary School — 21 Hillcrest Road (~1-1.2km, near edge); also one of the 9 original GEP centres (same 2027 discontinuation applies); required balloting in Phase 2C both 2024 and 2025, fully subscribed with 0 vacancies left for Phase 2C Supplementary either year; Phase 2B ratio >3:1 across distance bands [p1registration.sg/2025/05/07/raffles-girls-primary-school-rgps-balloting-history-your-2025-chances-strategies, kiasuparents.com/kiasu/primary-schools/raffles-girls-primary-school]",
@@ -435,6 +440,7 @@
     "https://www.lta.gov.sg/content/ltagov/en/upcoming_projects/rail_expansion/cross_island_line.html",
     "https://www.mas.gov.sg/news/media-releases/2025/extension-of-the-holding-period-of-sellers-stamp-duty-and-higher-ssd-rates",
     "https://www.mas.gov.sg/regulation/explainers/tdsr-for-property-loans/calculating-tdsr",
+    "https://www.moe.gov.sg/news/press-releases/20260303-learning-together-with-different-strengths-and-needs",
     "https://www.moe.gov.sg/news/press-releases/20260429-2026-primary-one-registration-exercise",
     "https://www.moe.gov.sg/primary/p1-registration/past-vacancies-and-balloting-data",
     "https://www.moe.gov.sg/primary/p1-registration/vacancies-and-balloting",

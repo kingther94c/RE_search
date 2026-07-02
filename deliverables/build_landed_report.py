@@ -19,7 +19,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)  # so `python deliverables/build_landed_report.py` finds researcher/
 
-from researcher.sources.propertyguru import rank_listings  # noqa: E402
+from researcher.sources.propertyguru import rank_listings, screen_verdict  # noqa: E402
 
 
 def esc(x) -> str:
@@ -65,16 +65,19 @@ def listings_table(slug: str) -> str:
         land = f"{l['land_sqft']:,}" if isinstance(l.get("land_sqft"), (int, float)) else "?"
         url = esc(l.get("url", ""))
         street = f"<a href='{url}'>{esc(l.get('street'))}</a>" if url else esc(l.get("street"))
+        notes = esc(l.get("notes", ""))
         body += (
             f"<tr><td>{i}</td><td class='l'>{street}</td><td>{esc(l.get('type'))}</td>"
             f"<td>{price}</td><td>{land}</td><td>{esc(l.get('land_psf', '?'))}</td>"
             f"<td>{esc(l.get('tenure'))}</td><td class='l'>{esc(r['value'])}</td>"
-            f"<td>{r['score'].total:.0f}</td><td class='l'>{esc(r['score'].verdict)}</td></tr>"
+            f"<td>{r['score'].total:.0f}</td><td class='l'>{esc(screen_verdict(r))}</td></tr>"
+            f"<tr class='notes'><td></td><td class='l' colspan='9'>{notes}</td></tr>"
         )
     pulled = esc(data.get("pulled", ""))
     return (
         f"<p class='sub'>数据拉取 pulled: {pulled} · 质量分 = landed scorecard (0-100) · "
-        f"value = 地价 psf 对比区域基准带</p>"
+        f"value = 地价 psf 对比区域基准带 · verdict 综合「质量分 × 价值带 × 数据完整度」——"
+        f"BUILD-PRICED/数据不明的房源不会被标为 PURSUE</p>"
         f"<table><tr><th>#</th><th class='l'>Street</th><th>Type</th><th>Ask</th>"
         f"<th>Land sqft</th><th>Land psf</th><th>Tenure</th><th class='l'>Value</th>"
         f"<th>Qual</th><th class='l'>Verdict</th></tr>{body}</table>"
@@ -138,6 +141,7 @@ th,td{{padding:7px 9px;text-align:right;border-bottom:1px solid var(--line)}}
 th{{background:var(--bg);font-size:12px;color:var(--mut)}}
 td.l,th.l{{text-align:left}}
 ul{{margin:6px 0;padding-left:20px}} li{{margin:5px 0}}
+tr.notes td{{border-bottom:1px solid var(--line);color:var(--mut);font-size:12px;padding-top:0;text-align:left}}
 .order{{background:#ecfdf5;border:1px solid #a7f3d0;border-radius:10px;padding:12px 16px;margin:12px 0;font-weight:600}}
 .recs{{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:12px 18px;margin:12px 0}}
 .sev-red{{color:#b91c1c}} .sev-amber{{color:#b45309}} .sev-low{{color:#334155}}
@@ -202,6 +206,10 @@ def main():
     digest_path = os.path.join(ROOT, "researcher", "landed", f"{slug}_digest.json")
     d = json.load(open(digest_path, encoding="utf-8-sig"))  # tolerate a BOM
     htmls = render(d, slug)
+    if "â€" in htmls or "Ã©" in htmls:
+        raise SystemExit(
+            "mojibake gate: double-encoded UTF-8 detected in the rendered report — "
+            "fix the digest strings before shipping")
 
     reports = os.environ.get("RESEARCH_REPORTS_DIR", r"G:\My Drive\004 RES\REsearch_Reports")
     # generic name; a digest can pin its own (e.g. keep nanyang's historical `_1km_` name)

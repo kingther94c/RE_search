@@ -15,7 +15,7 @@ blr = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(blr)
 
 from researcher.sources.propertyguru import (  # noqa: E402
-    normalize, rank_listings, screen, value_flag,
+    normalize, rank_listings, screen, screen_verdict, value_flag,
 )
 
 
@@ -109,6 +109,42 @@ def test_screen_tolerates_missing_fields(tmp_path, monkeypatch, capsys):
 def test_normalize_defaults_are_conservative():
     n = normalize({"street": "s", "type": "terrace"})
     assert n["foreign_eligible"] is False  # landed default: restricted
+
+
+def test_screen_verdict_gates_on_value_and_data_not_just_quality():
+    bench = {"terrace": (2000, 2800)}
+    good = {"type": "terrace", "plot_shape": "rectangular", "frontage_m": 11,
+            "rebuild_status": "rebuilt_recent", "topography": "above", "corner": True}
+
+    def row(**over):
+        lst = {**good, **over}
+        rows = rank_listings({"benchmark_land_psf": bench, "listings": [lst]})
+        return rows[0]
+
+    # high quality + fair price -> PURSUE
+    assert screen_verdict(row(land_sqft=2000, land_psf=2400)) == "PURSUE"
+    # high quality but build-level psf must NOT read as unqualified pursue
+    assert screen_verdict(row(land_sqft=2000, land_psf=4000)).startswith("BUILD-PLAY")
+    # asking above band -> NEGOTIATE
+    assert screen_verdict(row(land_sqft=2000, land_psf=3000)).startswith("NEGOTIATE")
+    # unknown land area -> VERIFY DATA regardless of quality
+    assert screen_verdict(row(land_sqft=None, land_psf=None)).startswith("VERIFY DATA")
+
+
+def test_listings_table_carries_notes_into_report(tmp_path, monkeypatch):
+    data = {
+        "area": "T", "pulled": "now", "benchmark_land_psf": {"semi_d": (1900, 2400)},
+        "listings": [{"street": "Multi Rd", "type": "semi_d", "price": 38880000,
+                      "land_sqft": 15658, "land_psf": 2483, "tenure": "freehold",
+                      "notes": "6 semi-D units under ONE title - a development play, not a single home"}],
+    }
+    landed = tmp_path / "researcher" / "landed"
+    landed.mkdir(parents=True)
+    (landed / "t_listings.json").write_text(json.dumps(data), encoding="utf-8")
+    monkeypatch.setattr(blr, "ROOT", str(tmp_path))
+    html = blr.listings_table("t")
+    assert "ONE title" in html            # load-bearing caveat visible in the report
+    assert "NEGOTIATE" in html            # RICH ask not presented as unqualified pursue
 
 
 def test_normalize_maps_portal_vocabulary_to_scorecard_vocabulary():
