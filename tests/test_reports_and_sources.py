@@ -109,3 +109,12 @@ def test_screen_tolerates_missing_fields(tmp_path, monkeypatch, capsys):
 def test_normalize_defaults_are_conservative():
     n = normalize({"street": "s", "type": "terrace"})
     assert n["foreign_eligible"] is False  # landed default: restricted
+
+
+def test_normalize_maps_portal_vocabulary_to_scorecard_vocabulary():
+    n = normalize({"street": "s", "type": "bungalow", "rebuild_status": "rebuilt_new",
+                   "estate_tier": "mid", "tenure": "999_yr", "flood_risk": "unverified"})
+    assert n["rebuild_status"] == "rebuilt_recent"  # must score 9, not default 4
+    assert n["estate_tier"] == "good"
+    assert n["tenure"] == "999"
+    assert n["flood_risk"] == "none"

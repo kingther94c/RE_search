@@ -20,18 +20,32 @@ from researcher.landed.scorecard import fmt, score
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
+# portal/agent vocabulary → scorecard vocabulary (unknown values fall through to
+# the scorecard's own middling defaults, but KNOWN synonyms must not be dropped)
+_REBUILD_ALIASES = {"rebuilt_new": "rebuilt_recent", "renovated": "rebuilt_old",
+                    "original": "original_good"}
+_TIER_ALIASES = {"mid": "good"}
+_TENURE_ALIASES = {"999_yr": "999", "999-year": "999", "99_yr": "99", "99-year": "99"}
+_FLOOD_ALIASES = {"unverified": None, "unknown": None}
+
+
 def normalize(lst: dict) -> dict:
     """PropertyGuru listing fields → scorecard input (omit unknowns → defaults)."""
+    rebuild = lst.get("rebuild_status", "original_good")
+    tier = lst.get("estate_tier", "prime")
+    tenure = lst.get("tenure", "freehold")
+    flood = lst.get("flood_risk", "none")
+    flood = _FLOOD_ALIASES.get(flood, flood) or "none"
     out = {
         "name": f"{lst.get('street')} ({lst.get('type')})",
         "catchment": lst.get("catchment", "1km"),
-        "estate_tier": lst.get("estate_tier", "prime"),
+        "estate_tier": _TIER_ALIASES.get(tier, tier),
         "zoning_risk": lst.get("zoning_risk", "none"),
         "hazards": lst.get("hazards", []),
-        "flood_risk": lst.get("flood_risk", "none"),
+        "flood_risk": flood,
         "future_risk": lst.get("future_risk", "none"),
-        "rebuild_status": lst.get("rebuild_status", "original_good"),
-        "tenure": lst.get("tenure", "freehold"),
+        "rebuild_status": _REBUILD_ALIASES.get(rebuild, rebuild),
+        "tenure": _TENURE_ALIASES.get(tenure, tenure),
         "foreign_eligible": lst.get("foreign_eligible", False),  # landed = restricted
     }
     for k in ("plot_shape", "frontage_m", "lw_ratio", "topography", "corner", "near_water"):

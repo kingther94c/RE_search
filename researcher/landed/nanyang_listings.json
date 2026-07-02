@@ -1,6 +1,6 @@
 {
   "area": "Nanyang Primary 1km — landed for sale",
-  "pulled": "2026-06-30 via WebSearch (propertyguru.com.sg; WebFetch is 403-blocked)",
+  "pulled": "2026-07-02 refresh via WebSearch (PropertyGuru / 99.co / EdgeProp / SRX; direct fetch 403-blocked)",
   "benchmark_land_psf": {
     "terrace": [
       1800,
@@ -23,6 +23,10 @@
       3500
     ]
   },
+  "stale_ids": [
+    "King-terrace",
+    "King-semid"
+  ],
   "listings": [
     {
       "id": "500049095",
@@ -33,14 +37,13 @@
       "builtup_sqft": 5000,
       "land_psf": 2206,
       "tenure": "freehold",
-      "rebuilt": "unknown",
       "beds": 5,
       "url": "https://www.propertyguru.com.sg/listing/for-sale-charming-2-storey-detached-kingsmead-road-king-s-drive-king-s-road-queen-s-road-500049095",
       "estate_tier": "prime",
       "catchment": "1km",
       "flood_risk": "none",
-      "rebuild_status": "original_good",
-      "notes": "Sub-divisible large plot; ~10min MRT; 1km Nanyang/RGPS/Hwa Chong"
+      "rebuild_status": "original",
+      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. Sub-divisible large plot; ~10min MRT; new detail found this pass: currently tenanted at S$15k/mth until 31 Aug 2026. Source: PropertyGuru."
     },
     {
       "id": "500091492",
@@ -51,14 +54,13 @@
       "builtup_sqft": null,
       "land_psf": 2622,
       "tenure": "freehold",
-      "rebuilt": "recent",
       "beds": 6,
       "url": "https://www.propertyguru.com.sg/listing/for-sale-kingsmead-road-almost-brand-new-bungalow-1km-nanyang-pri-sch-500091492",
       "estate_tier": "prime",
       "catchment": "1km",
       "flood_risk": "none",
-      "rebuild_status": "rebuilt_recent",
-      "notes": "Almost brand new; 3 storeys+mezz+basement, lift, lap pool"
+      "rebuild_status": "rebuilt_new",
+      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. 3 storeys+mezz+basement, lift, lap pool. Likely duplicate/relisted as id 500131921 ('Prestigious GCB zone') same price S$25.7m. Source: PropertyGuru."
     },
     {
       "id": "500025693",
@@ -69,49 +71,13 @@
       "builtup_sqft": 5000,
       "land_psf": 2428,
       "tenure": "freehold",
-      "rebuilt": "unknown",
       "beds": 5,
       "url": "https://www.propertyguru.com.sg/listing/for-sale-king-s-road-detached-house-hilltop-cul-de-sac-potential-for-subdivison-500025693",
       "estate_tier": "prime",
       "catchment": "1km",
-      "topography": "above",
       "flood_risk": "none",
-      "rebuild_status": "original_good",
-      "notes": "Hilltop + cul-de-sac (above road, quiet, low flood) + subdivision potential — strong LAND"
-    },
-    {
-      "id": "King-terrace",
-      "street": "King's Road",
-      "type": "terrace",
-      "price": 8280000,
-      "land_sqft": 2033,
-      "builtup_sqft": 4380,
-      "land_psf": 4073,
-      "tenure": "freehold",
-      "rebuilt": "unknown",
-      "beds": 5,
-      "url": "https://www.propertyguru.com.sg/property-for-sale/p/kings-road",
-      "estate_tier": "prime",
-      "catchment": "1km",
-      "flood_risk": "low",
-      "notes": "Tiny 2,033sf plot; psf paying for built-up; King's Rd (Prince-Lutheran) is a flood spot - VERIFY"
-    },
-    {
-      "id": "King-semid",
-      "street": "King's Road",
-      "type": "semi_d",
-      "price": 8280000,
-      "land_sqft": 2600,
-      "builtup_sqft": 3720,
-      "land_psf": 3185,
-      "tenure": "freehold",
-      "rebuilt": "unknown",
-      "beds": 5,
-      "url": "https://www.propertyguru.com.sg/property-for-sale/p/kings-road",
-      "estate_tier": "prime",
-      "catchment": "1km",
-      "flood_risk": "low",
-      "notes": "720m Farrer Rd MRT; small semi-D plot; King's Rd flood - VERIFY"
+      "rebuild_status": "original",
+      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. Hilltop + cul-de-sac (above road, low flood) + subdivision potential; tenanted S$15k/mth until 31 Aug 2026. Source: PropertyGuru."
     },
     {
       "id": "25161234",
@@ -122,14 +88,13 @@
       "builtup_sqft": null,
       "land_psf": 2483,
       "tenure": "freehold",
-      "rebuilt": "recent",
       "beds": 4,
       "url": "https://www.propertyguru.com.sg/listing/for-sale-coronation-road-west-25161234",
       "estate_tier": "prime",
       "catchment": "1km",
       "flood_risk": "low",
-      "rebuild_status": "rebuilt_recent",
-      "notes": "3 pairs / 6 Semi-D units under ONE title — a development/multi-unit play, not a single home"
+      "rebuild_status": "rebuilt_new",
+      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. 3 pairs/6 semi-D units under ONE title — a development/multi-unit play, not a single home. Source: PropertyGuru."
     },
     {
       "id": "25355887",
@@ -140,13 +105,13 @@
       "builtup_sqft": null,
       "land_psf": 4484,
       "tenure": "freehold",
-      "rebuilt": "unknown",
       "beds": 5,
       "url": "https://www.propertyguru.com.sg/listing/for-sale-coronation-drive-coronation-road-25355887",
       "estate_tier": "prime",
       "catchment": "1km",
       "flood_risk": "low",
-      "notes": "Small 3,100sf plot at very high land psf"
+      "rebuild_status": "unknown",
+      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. Small 3,100sf plot at very high land psf. Source: PropertyGuru."
     },
     {
       "id": "500157795",
@@ -157,14 +122,13 @@
       "builtup_sqft": 3990,
       "land_psf": 3339,
       "tenure": "freehold",
-      "rebuilt": "no",
       "beds": 5,
       "url": "https://www.propertyguru.com.sg/listing/for-sale-coronation-gardens-500157795",
       "estate_tier": "prime",
       "catchment": "1km",
       "flood_risk": "low",
-      "rebuild_status": "original_good",
-      "notes": "Classic 2-storey; original condition - price as land + rebuild"
+      "rebuild_status": "original",
+      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. Classic 2-storey, original condition. Related SRX listing #113558841 markets a Coronation Gardens unit as '1km top schools, move-in investment home' — likely same cluster. Source: PropertyGuru, SRX."
     },
     {
       "id": "60132163",
@@ -175,14 +139,115 @@
       "builtup_sqft": 7000,
       "land_psf": 5199,
       "tenure": "freehold",
-      "rebuilt": "recent",
       "beds": 5,
       "url": "https://www.propertyguru.com.sg/listing/for-sale-brand-new-semi-detached-coronation-road-nanyang-pri-sch-60132163",
       "estate_tier": "prime",
       "catchment": "1km",
       "flood_risk": "low",
-      "rebuild_status": "rebuilt_recent",
-      "notes": "Brand new 2026; tiny 2,539sf land, 7,000sf built — paying for the BUILD not the land"
+      "rebuild_status": "rebuilt_new",
+      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. Brand new; tiny land 2,539sf, 7,000sf built — paying for the BUILD not the land. Likely relisted/duplicated as id 60141025 ('Coronation Semi D 1km Nanyang & Raffles') at same S$13.2m price. Source: PropertyGuru."
+    },
+    {
+      "id": "pg-22802877",
+      "street": "Coronation Road",
+      "type": "detached",
+      "price": 14950000,
+      "land_sqft": null,
+      "builtup_sqft": 7500,
+      "land_psf": null,
+      "tenure": "unknown",
+      "beds": null,
+      "url": "https://www.propertyguru.com.sg/listing/for-sale-coronation-road-22802877",
+      "estate_tier": "prime",
+      "catchment": "1km",
+      "flood_risk": "unverified",
+      "rebuild_status": "unknown",
+      "notes": "NEW find 2026-07-02. ~S$3,390 psf quoted appears built-up-referenced; land size and tenure not confirmed via search snippet (WebFetch 403-blocked). Near Holland Village/Coronation Shopping Plaza. Source: PropertyGuru."
+    },
+    {
+      "id": "pg-25584793",
+      "street": "Coronation Drive",
+      "type": "detached",
+      "price": 16000000,
+      "land_sqft": 5150,
+      "builtup_sqft": 5500,
+      "land_psf": 3107,
+      "tenure": "999_yr",
+      "beds": 6,
+      "url": "https://www.propertyguru.com.sg/listing/for-sale-coronation-drive-25584793",
+      "estate_tier": "prime",
+      "catchment": "1km",
+      "flood_risk": "unverified",
+      "rebuild_status": "renovated",
+      "notes": "NEW find 2026-07-02. 999-year leasehold (not freehold — differs from most zone comps), 280m/3-min walk to Tan Kah Kee MRT (DT8). 3-storey, lap pool, wet/dry kitchen. Source: PropertyGuru."
+    },
+    {
+      "id": "99-24-kingsmead",
+      "street": "24 Kingsmead Road",
+      "type": "bungalow",
+      "price": 24000000,
+      "land_sqft": 12168,
+      "builtup_sqft": null,
+      "land_psf": 1972,
+      "tenure": "unknown",
+      "beds": 4,
+      "url": "https://www.99.co/singapore/sale/houses/24-kingsmead-road-adphomKuMJ6YHQENFVXzrxh6",
+      "estate_tier": "prime",
+      "catchment": "1km",
+      "flood_risk": "unverified",
+      "rebuild_status": "original",
+      "notes": "NEW find 2026-07-02. Architect-designed 2.5-storey multi-generation house, pool, 5-car basement parking; URA approval for up to 10,000+ sqft GFA (excl. basement); elevated flat site, unblocked N/E views. GCB-grade plot size suggests Kingsmead GCB pocket. Source: 99.co."
+    },
+    {
+      "id": "99-kingsmead-16m",
+      "street": "Kingsmead Road",
+      "type": "bungalow",
+      "price": 16000000,
+      "land_sqft": 3000,
+      "builtup_sqft": null,
+      "land_psf": 5333,
+      "tenure": "unknown",
+      "beds": 5,
+      "url": "https://www.99.co/singapore/sale/property/kingsmead-road-landed-2bY5wUjcpuHzehFZtpXtUi",
+      "estate_tier": "prime",
+      "catchment": "1km",
+      "flood_risk": "unverified",
+      "rebuild_status": "original",
+      "notes": "NEW find 2026-07-02. Very high psf (S$5,333) vs benchmark suggests 3,000 sqft may be built-up/floor area not land — land_psf unreliable, flag for verification. Wide frontage, 'original condition'. Source: 99.co."
+    },
+    {
+      "id": "99-kingsmead-14.5m",
+      "street": "Kingsmead Road",
+      "type": "bungalow",
+      "price": 14500000,
+      "land_sqft": 5500,
+      "builtup_sqft": null,
+      "land_psf": 2636,
+      "tenure": "unknown",
+      "beds": 5,
+      "url": "https://www.99.co/singapore/sale/property/kingsmead-road-landed-9AZoxRu2iYeHVpeVnnXfpK",
+      "estate_tier": "prime",
+      "catchment": "1km",
+      "flood_risk": "unverified",
+      "rebuild_status": "original",
+      "notes": "NEW find 2026-07-02. Hilltop, Balinese-style resort architecture, walking distance to Farrer/Tan Kah Kee MRT. Psf consistent with detached/bungalow benchmark band if 5,500sqft is land. Source: 99.co."
+    },
+    {
+      "id": "99-pow-6m",
+      "street": "Prince of Wales Road",
+      "type": "semi_d",
+      "price": 6000000,
+      "land_sqft": 3513,
+      "builtup_sqft": null,
+      "land_psf": 1708,
+      "tenure": "freehold",
+      "beds": 5,
+      "url": "https://www.99.co/singapore/sale/property/prince-of-wales-road-landed-SvevtYPdjjy4SaXQNj97RY",
+      "estate_tier": "mid",
+      "catchment": "1km",
+      "flood_risk": "unverified",
+      "rebuild_status": "unknown",
+      "notes": "NEW find 2026-07-02. Smallest quantum in this pull; granny room, minutes to Tan Kah Kee MRT; marketed as 'about 1km to Nanyang Primary and Raffles Girls Primary' — near the 1km edge per v1 area notes, confirm exact address distance on OneMap before relying on catchment. Source: 99.co."
     }
   ]
 }
