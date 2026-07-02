@@ -43,7 +43,8 @@
       "catchment": "1km",
       "flood_risk": "none",
       "rebuild_status": "original",
-      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. Sub-divisible large plot; ~10min MRT; new detail found this pass: currently tenanted at S$15k/mth until 31 Aug 2026. Source: PropertyGuru."
+      "notes": "Reconfirmed live 2026-07-02, unchanged since the prior cycle. Sub-divisible large plot; ~10min MRT; new detail found this pass: currently tenanted at S$15k/mth until 31 Aug 2026. Source: PropertyGuru. OneMap street-ref 0.3km ✓在 1km 圈内（按街道参考点）。",
+      "onemap_km": 0.3
     },
     {
       "id": "500091492",
@@ -60,7 +61,8 @@
       "catchment": "1km",
       "flood_risk": "none",
       "rebuild_status": "rebuilt_new",
-      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. 3 storeys+mezz+basement, lift, lap pool. Likely duplicate/relisted as id 500131921 ('Prestigious GCB zone') same price S$25.7m. Source: PropertyGuru."
+      "notes": "Reconfirmed live 2026-07-02, unchanged since the prior cycle. 3 storeys+mezz+basement, lift, lap pool. Likely duplicate/relisted as id 500131921 ('Prestigious GCB zone') same price S$25.7m. Source: PropertyGuru. OneMap street-ref 0.3km ✓在 1km 圈内（按街道参考点）。",
+      "onemap_km": 0.3
     },
     {
       "id": "500025693",
@@ -77,7 +79,8 @@
       "catchment": "1km",
       "flood_risk": "none",
       "rebuild_status": "original",
-      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. Hilltop + cul-de-sac (above road, low flood) + subdivision potential; tenanted S$15k/mth until 31 Aug 2026. Source: PropertyGuru."
+      "notes": "Reconfirmed live 2026-07-02, unchanged since the prior cycle. Hilltop + cul-de-sac (above road, low flood) + subdivision potential; tenanted S$15k/mth until 31 Aug 2026. Source: PropertyGuru. OneMap street-ref 0.3km ✓在 1km 圈内（按街道参考点）。",
+      "onemap_km": 0.3
     },
     {
       "id": "25161234",
@@ -91,10 +94,11 @@
       "beds": 4,
       "url": "https://www.propertyguru.com.sg/listing/for-sale-coronation-road-west-25161234",
       "estate_tier": "prime",
-      "catchment": "1km",
+      "catchment": "2km",
       "flood_risk": "low",
       "rebuild_status": "rebuilt_new",
-      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. 3 pairs/6 semi-D units under ONE title — a development/multi-unit play, not a single home. Source: PropertyGuru."
+      "notes": "Reconfirmed live 2026-07-02, unchanged since the prior cycle. 3 pairs/6 semi-D units under ONE title — a development/multi-unit play, not a single home. Source: PropertyGuru. OneMap street-ref 1.47km — 街道较长，若门牌在近端可能仍 <1km，逐址核实。",
+      "onemap_km": 1.47
     },
     {
       "id": "25355887",
@@ -111,7 +115,8 @@
       "catchment": "1km",
       "flood_risk": "low",
       "rebuild_status": "unknown",
-      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. Small 3,100sf plot at very high land psf. Source: PropertyGuru."
+      "notes": "Reconfirmed live 2026-07-02, unchanged since the prior cycle. Small 3,100sf plot at very high land psf. Source: PropertyGuru. OneMap street-ref 0.35km ✓在 1km 圈内（按街道参考点）。",
+      "onemap_km": 0.35
     },
     {
       "id": "500157795",
@@ -125,10 +130,11 @@
       "beds": 5,
       "url": "https://www.propertyguru.com.sg/listing/for-sale-coronation-gardens-500157795",
       "estate_tier": "prime",
-      "catchment": "1km",
+      "catchment": "2km",
       "flood_risk": "low",
       "rebuild_status": "original",
-      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. Classic 2-storey, original condition. Related SRX listing #113558841 markets a Coronation Gardens unit as '1km top schools, move-in investment home' — likely same cluster. Source: PropertyGuru, SRX."
+      "notes": "Reconfirmed live 2026-07-02, unchanged since the prior cycle. Classic 2-storey, original condition. Related SRX listing #113558841 markets a Coronation Gardens unit as '1km top schools, move-in investment home' — likely same cluster. Source: PropertyGuru, SRX. 口径冲突：OneMap 'CORONATION GARDENS' 参考点 0.35km，但房源自述 off Coronation Rd West（该街 1.47km）——距离以门牌实测为准，保守按 2km 计分。",
+      "onemap_km": 0.35
     },
     {
       "id": "60132163",
@@ -145,7 +151,8 @@
       "catchment": "1km",
       "flood_risk": "low",
       "rebuild_status": "rebuilt_new",
-      "notes": "Reconfirmed live 2026-07-02, unchanged from v1. Brand new; tiny land 2,539sf, 7,000sf built — paying for the BUILD not the land. Likely relisted/duplicated as id 60141025 ('Coronation Semi D 1km Nanyang & Raffles') at same S$13.2m price. Source: PropertyGuru."
+      "notes": "Reconfirmed live 2026-07-02, unchanged since the prior cycle. Brand new; tiny land 2,539sf, 7,000sf built — paying for the BUILD not the land. Likely relisted/duplicated as id 60141025 ('Coronation Semi D 1km Nanyang & Raffles') at same S$13.2m price. Source: PropertyGuru. OneMap street-ref 0.28km ✓在 1km 圈内（按街道参考点）。",
+      "onemap_km": 0.28
     },
     {
       "id": "pg-22802877",
@@ -162,7 +169,8 @@
       "catchment": "1km",
       "flood_risk": "unverified",
       "rebuild_status": "unknown",
-      "notes": "NEW find 2026-07-02. ~S$3,390 psf quoted appears built-up-referenced; land size and tenure not confirmed via search snippet (WebFetch 403-blocked). Near Holland Village/Coronation Shopping Plaza. Source: PropertyGuru."
+      "notes": "NEW find 2026-07-02. ~S$3,390 psf quoted appears built-up-referenced; land size and tenure not confirmed via search snippet (WebFetch 403-blocked). Near Holland Village/Coronation Shopping Plaza. Source: PropertyGuru. OneMap street-ref 0.28km ✓在 1km 圈内（按街道参考点）。",
+      "onemap_km": 0.28
     },
     {
       "id": "pg-25584793",
@@ -179,7 +187,8 @@
       "catchment": "1km",
       "flood_risk": "unverified",
       "rebuild_status": "renovated",
-      "notes": "NEW find 2026-07-02. 999-year leasehold (not freehold — differs from most zone comps), 280m/3-min walk to Tan Kah Kee MRT (DT8). 3-storey, lap pool, wet/dry kitchen. Source: PropertyGuru."
+      "notes": "NEW find 2026-07-02. 999-year leasehold (not freehold — differs from most zone comps), 280m/3-min walk to Tan Kah Kee MRT (DT8). 3-storey, lap pool, wet/dry kitchen. Source: PropertyGuru. OneMap street-ref 0.35km ✓在 1km 圈内（按街道参考点）。",
+      "onemap_km": 0.35
     },
     {
       "id": "99-24-kingsmead",
@@ -196,7 +205,8 @@
       "catchment": "1km",
       "flood_risk": "unverified",
       "rebuild_status": "original",
-      "notes": "NEW find 2026-07-02. Architect-designed 2.5-storey multi-generation house, pool, 5-car basement parking; URA approval for up to 10,000+ sqft GFA (excl. basement); elevated flat site, unblocked N/E views. GCB-grade plot size suggests Kingsmead GCB pocket. Source: 99.co."
+      "notes": "NEW find 2026-07-02. Architect-designed 2.5-storey multi-generation house, pool, 5-car basement parking; URA approval for up to 10,000+ sqft GFA (excl. basement); elevated flat site, unblocked N/E views. GCB-grade plot size suggests Kingsmead GCB pocket. Source: 99.co. OneMap street-ref 0.3km ✓在 1km 圈内（按街道参考点）。",
+      "onemap_km": 0.3
     },
     {
       "id": "99-kingsmead-16m",
@@ -213,7 +223,8 @@
       "catchment": "1km",
       "flood_risk": "unverified",
       "rebuild_status": "original",
-      "notes": "NEW find 2026-07-02. Very high psf (S$5,333) vs benchmark suggests 3,000 sqft may be built-up/floor area not land — land_psf unreliable, flag for verification. Wide frontage, 'original condition'. Source: 99.co."
+      "notes": "NEW find 2026-07-02. Very high psf (S$5,333) vs benchmark suggests 3,000 sqft may be built-up/floor area not land — land_psf unreliable, flag for verification. Wide frontage, 'original condition'. Source: 99.co. OneMap street-ref 0.3km ✓在 1km 圈内（按街道参考点）。",
+      "onemap_km": 0.3
     },
     {
       "id": "99-kingsmead-14.5m",
@@ -230,7 +241,8 @@
       "catchment": "1km",
       "flood_risk": "unverified",
       "rebuild_status": "original",
-      "notes": "NEW find 2026-07-02. Hilltop, Balinese-style resort architecture, walking distance to Farrer/Tan Kah Kee MRT. Psf consistent with detached/bungalow benchmark band if 5,500sqft is land. Source: 99.co."
+      "notes": "NEW find 2026-07-02. Hilltop, Balinese-style resort architecture, walking distance to Farrer/Tan Kah Kee MRT. Psf consistent with detached/bungalow benchmark band if 5,500sqft is land. Source: 99.co. OneMap street-ref 0.3km ✓在 1km 圈内（按街道参考点）。",
+      "onemap_km": 0.3
     },
     {
       "id": "99-pow-6m",
@@ -247,7 +259,8 @@
       "catchment": "1km",
       "flood_risk": "unverified",
       "rebuild_status": "unknown",
-      "notes": "NEW find 2026-07-02. Smallest quantum in this pull; granny room, minutes to Tan Kah Kee MRT; marketed as 'about 1km to Nanyang Primary and Raffles Girls Primary' — near the 1km edge per v1 area notes, confirm exact address distance on OneMap before relying on catchment. Source: 99.co."
+      "notes": "NEW find 2026-07-02. Smallest quantum in this pull; granny room, minutes to Tan Kah Kee MRT; marketed as 'about 1km to Nanyang Primary and Raffles Girls Primary' — near the 1km edge per prior-cycle area notes, confirm exact address distance on OneMap before relying on catchment. Source: 99.co. OneMap street-ref 0.27km ✓在 1km 圈内（按街道参考点）。",
+      "onemap_km": 0.27
     }
   ]
 }

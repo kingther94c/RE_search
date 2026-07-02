@@ -66,20 +66,23 @@ def listings_table(slug: str) -> str:
         url = esc(l.get("url", ""))
         street = f"<a href='{url}'>{esc(l.get('street'))}</a>" if url else esc(l.get("street"))
         notes = esc(l.get("notes", ""))
+        km = l.get("onemap_km")
+        km_cell = esc(f"{km}" if isinstance(km, (int, float)) else "—")
         body += (
             f"<tr><td>{i}</td><td class='l'>{street}</td><td>{esc(l.get('type'))}</td>"
             f"<td>{price}</td><td>{land}</td><td>{esc(l.get('land_psf', '?'))}</td>"
-            f"<td>{esc(l.get('tenure'))}</td><td class='l'>{esc(r['value'])}</td>"
+            f"<td>{esc(l.get('tenure'))}</td><td>{km_cell}</td><td class='l'>{esc(r['value'])}</td>"
             f"<td>{r['score'].total:.0f}</td><td class='l'>{esc(screen_verdict(r))}</td></tr>"
-            f"<tr class='notes'><td></td><td class='l' colspan='9'>{notes}</td></tr>"
+            f"<tr class='notes'><td></td><td class='l' colspan='10'>{notes}</td></tr>"
         )
     pulled = esc(data.get("pulled", ""))
     return (
         f"<p class='sub'>数据拉取 pulled: {pulled} · 质量分 = landed scorecard (0-100) · "
-        f"value = 地价 psf 对比区域基准带 · verdict 综合「质量分 × 价值带 × 数据完整度」——"
-        f"BUILD-PRICED/数据不明的房源不会被标为 PURSUE</p>"
+        f"value = 地价 psf 对比区域基准带 · ~km = OneMap 街道参考点到学校的直线距离"
+        f"（街道有长度，成交前按门牌复测）· verdict 综合「质量分 × 价值带 × 数据完整度」——"
+        f"BUILD-PRICED、tenure/洪水/地块口径不明的房源不会被标为 PURSUE</p>"
         f"<table><tr><th>#</th><th class='l'>Street</th><th>Type</th><th>Ask</th>"
-        f"<th>Land sqft</th><th>Land psf</th><th>Tenure</th><th class='l'>Value</th>"
+        f"<th>Land sqft</th><th>Land psf</th><th>Tenure</th><th>~km</th><th class='l'>Value</th>"
         f"<th>Qual</th><th class='l'>Verdict</th></tr>{body}</table>"
     )
 

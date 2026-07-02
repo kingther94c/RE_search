@@ -77,6 +77,11 @@ def screen_verdict(r: dict) -> str:
     l, s, v = r["lst"], r["score"], r["value"]
     if l.get("land_sqft") is None or l.get("land_psf") is None or v == "?":
         return "VERIFY DATA - land size/psf unconfirmed"
+    tenure = str(l.get("tenure") or "").lower()
+    flood = str(l.get("flood_risk") or "").lower()
+    if tenure in ("", "unknown", "unverified") or flood in ("unknown", "unverified"):
+        # a S$10m+ decision cannot ride on an unknown tenure or unchecked flood record
+        return "VERIFY DATA - tenure/flood unconfirmed"
     band = v.split()[0]
     if band == "BUILD-PRICED":
         return "BUILD-PLAY - paying for the house, price as land+rebuild"

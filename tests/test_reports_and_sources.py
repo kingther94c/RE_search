@@ -114,15 +114,22 @@ def test_normalize_defaults_are_conservative():
 def test_screen_verdict_gates_on_value_and_data_not_just_quality():
     bench = {"terrace": (2000, 2800)}
     good = {"type": "terrace", "plot_shape": "rectangular", "frontage_m": 11,
-            "rebuild_status": "rebuilt_recent", "topography": "above", "corner": True}
+            "rebuild_status": "rebuilt_recent", "topography": "above", "corner": True,
+            "tenure": "freehold", "flood_risk": "none"}
 
     def row(**over):
         lst = {**good, **over}
         rows = rank_listings({"benchmark_land_psf": bench, "listings": [lst]})
         return rows[0]
 
-    # high quality + fair price -> PURSUE
-    assert screen_verdict(row(land_sqft=2000, land_psf=2400)) == "PURSUE"
+    # high quality + fair price + known tenure/flood -> PURSUE
+    assert screen_verdict(row(land_sqft=2000, land_psf=2400,
+                              tenure="freehold", flood_risk="none")) == "PURSUE"
+    # unknown tenure or unverified flood must never be an unqualified PURSUE
+    assert screen_verdict(row(land_sqft=2000, land_psf=2400,
+                              tenure="unknown", flood_risk="none")).startswith("VERIFY DATA")
+    assert screen_verdict(row(land_sqft=2000, land_psf=2400,
+                              tenure="freehold", flood_risk="unverified")).startswith("VERIFY DATA")
     # high quality but build-level psf must NOT read as unqualified pursue
     assert screen_verdict(row(land_sqft=2000, land_psf=4000)).startswith("BUILD-PLAY")
     # asking above band -> NEGOTIATE
@@ -136,6 +143,7 @@ def test_listings_table_carries_notes_into_report(tmp_path, monkeypatch):
         "area": "T", "pulled": "now", "benchmark_land_psf": {"semi_d": (1900, 2400)},
         "listings": [{"street": "Multi Rd", "type": "semi_d", "price": 38880000,
                       "land_sqft": 15658, "land_psf": 2483, "tenure": "freehold",
+                      "flood_risk": "low", "onemap_km": 1.47,
                       "notes": "6 semi-D units under ONE title - a development play, not a single home"}],
     }
     landed = tmp_path / "researcher" / "landed"
@@ -145,6 +153,7 @@ def test_listings_table_carries_notes_into_report(tmp_path, monkeypatch):
     html = blr.listings_table("t")
     assert "ONE title" in html            # load-bearing caveat visible in the report
     assert "NEGOTIATE" in html            # RICH ask not presented as unqualified pursue
+    assert "1.47" in html                 # OneMap distance column rendered
 
 
 def test_normalize_maps_portal_vocabulary_to_scorecard_vocabulary():

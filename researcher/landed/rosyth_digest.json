@@ -1,0 +1,360 @@
+{
+  "area_name": "Rosyth School 1km zone（OneMap 实测重定义）— Serangoon North pocket + Serangoon Gardens 东北角 margin，D19/28",
+  "asof": "2026-07-03",
+  "report_basename": "rosyth_1km_Landed_Area_Report.html",
+  "subtitle": "学区入手 · OCR 999-yr landed · 与 Nanyang D10 研究同方法可横向对比",
+  "summary": "【2026-07-03｜地理结论经 OneMap 实测重写】Rosyth School（21 Serangoon North Ave 4, S555855，坐标经 OneMap 核实）是政府学校（非 SAP——多家博客称其 SAP 为误传）、原九所 GEP 中心之一（GEP 于 2026 年最后一届 P4 后停办）。Phase 2C 抽签 2022-2024 连续 ~3:1（2024：139 人争 44 位），比 Nanyang（2025：1.5:1）更激烈。本研究最重要的发现：**『买 Serangoon Gardens = Rosyth 1km』是普遍误区**——OneMap 街道参考点实测显示Gardens 核心（Chartwell 1.77km / Cardiff 2.01km / Tavistock 1.45km / Bridport 1.36km / Berwick 1.88km）全部在 1km 圈外，东北角 Walmer/Ripley/Lichfield/Raglan 也只是 1.07-1.14km 的『圈界 margin』（近校端门牌才可能压线入圈）。真正明确在 1km 内的住宅供给是 Serangoon North Ave 1 一带（0.74km，含少量 landed/strata-landed 与大量 HDB）——这意味着 2C『<1km 组』的主力是 HDB 家庭，为学区买 Gardens landed 的家庭实际落在 1-2km 优先级。（注：学校 1956-2001 年位于 Gardens 旁的 Rosyth Road 旧址，大量中介话术仍沿用旧地理。）产权几乎全为 1953-56 起算 999 年地契；同街 psf spread S$1,134-3,472 由地块大小与翻建状态驱动（2026-06 Alnwick 一街四宗：S$1,571-2,815）；量子 S$3.5-8m 约为 Nanyang 圈同类一半；D19 为 2025 年全国成交量最大 landed 区（309 宗）。催化剂：CRL CR9/CR10（2030）、PLAB 搬迁（2030s）。不在 PUB 官方易涝名单。市场背景：URA landed 指数 Q1 2026 -0.4% q/q，3M SORA ~1.07%。 — [EN] The headline finding, ground-truthed on OneMap: **Serangoon Gardens is NOT a Rosyth-1km play** — the estate's core measures 1.36-2.04km from the school's current campus (the school left its eponymous Rosyth Road site in 2001; agent copy still trades on the old geography). Only the Serangoon North Ave 1 pocket (0.74km, mostly HDB + some strata-landed) is clearly inside; the Gardens' NE corner streets are 1.07-1.14km margin cases needing per-address checks. Ballot maths: 2C ran ~3:1 in 2022-24, and the <1km priority group is HDB-dominated. The estate itself remains attractive on its own merits — 999-yr near-freehold, Singapore's most liquid landed district (309 deals in 2025), S$3.5-8m quantum, CRL 2030 — but buy it as a HOME with 1-2km priority, not as a 1km ballot ticket.",
+  "estates": [
+    {
+      "name": "Serangoon North Ave 1 pocket（含 Affinity 周边 landed/strata-landed）",
+      "type": "mixed landed / strata / HDB",
+      "distance": "0.74km ✓OneMap",
+      "gcba": "No",
+      "indicative_land_psf": "数据薄——本轮无成交样本",
+      "note": "唯一明确在 1km 内的住宅群；<1km 组的抽签主力（HDB 为主）。landed 供给极稀少。"
+    },
+    {
+      "name": "Walmer Dr / Ripley Cres / Lichfield Rd / Raglan Grove（Gardens 东北角）",
+      "type": "terrace / semi-D",
+      "distance": "1.07–1.14km ⚠margin ✓OneMap",
+      "gcba": "No",
+      "indicative_land_psf": "S$1,470–2,530（in-ring 口径压缩带）",
+      "note": "街道参考点略超 1km——只有近校端门牌可能压线入圈；把它当 1km 票前先 OneMap 按门牌实测。"
+    },
+    {
+      "name": "Rosyth Road 旧址一带（Rosyth Lodge 等）",
+      "type": "condo / 少量 landed",
+      "distance": "~1.14km ⚠margin ✓OneMap",
+      "gcba": "No",
+      "indicative_land_psf": "n/a",
+      "note": "学校 1956-2001 年旧址所在街——中介话术高发区，按现校址逐址复测。"
+    },
+    {
+      "name": "Alnwick Rd / Sandilands Rd / Huddington Ave / Cowdray Ave",
+      "type": "terrace / semi-D",
+      "distance": "1.18–1.30km ✗OneMap（1-2km 带）",
+      "gcba": "No",
+      "indicative_land_psf": "S$1,571–2,815（2026-06 Alnwick 四宗）",
+      "note": "2026-06 成交簇所在——鲜活基准但属 1-2km 优先级；同街 spread=地块大小+翻建状态。"
+    },
+    {
+      "name": "Serangoon Gardens 核心（Chartwell / Cardiff / Tavistock / Bridport / Berwick / Circus）",
+      "type": "terrace / semi-D / detached",
+      "distance": "1.36–2.04km ✗OneMap（1-2km 带）",
+      "gcba": "No",
+      "indicative_land_psf": "estate-wide S$1,131–3,472（avg ~S$2,114）",
+      "note": "本区招牌街区——但对 Rosyth 是 1-2km 玩法，不是 1km 票。生活配套（Circus/myVillage/Chomp Chomp）为真实卖点。"
+    },
+    {
+      "name": "Burghley Drive（CHIJ OLGC 一带）",
+      "type": "terrace / semi-D",
+      "distance": "~2.1km ✗OneMap",
+      "gcba": "No",
+      "indicative_land_psf": "n/a",
+      "note": "研究初稿曾称 CHIJ OLGC 距 Rosyth 0.65km——OneMap 实测 2.11km，已更正。"
+    }
+  ],
+  "price_structure": [
+    {
+      "segment": "terrace (999-yr, small-medium land 1,600-2,600 sqft)",
+      "land_psf": "$2,100 - $3,472 psf",
+      "quantum": "$3.5M - $7M",
+      "note": "Higher psf band; smaller renovated/newer terraces command premium psf despite lower absolute quantum. E.g. Alnwick Rd 2,301 sqft @ $2,815 psf = $6.48M (Jun 2026); 2,640 sqft @ $2,651 psf = $7.0M (Jun 2026)."
+    },
+    {
+      "segment": "terrace (999-yr, larger/corner land 2,000+ sqft, older unrenovated)",
+      "land_psf": "$1,100 - $1,600 psf",
+      "quantum": "$3.7M - $6.6M",
+      "note": "Lower psf band for bigger or unrenovated plots. E.g. 91 Cardiff Grove: $3.7M at $1,134 psf, Feb 2026 (inside 1km zone); Alnwick Rd 4,200 sqft @ $1,571 psf = $6.6M (Jun 2026)."
+    },
+    {
+      "segment": "semi-detached (999-yr, incl. new/rebuilt with lift+pool)",
+      "land_psf": "$1,760 - $2,280 psf (land); built-up psf sometimes quoted lower e.g. $1,759 psf built vs $1,896 psf land",
+      "quantum": "$6.2M - $8.3M",
+      "note": "Sandilands Rd semi-D listed $6.2M ($1,896 psf land); new-build semi-Ds with lift/pool asking $7.2M-$8.28M, TOP Q4 2026."
+    },
+    {
+      "segment": "detached / large-land (7,000+ sqft)",
+      "land_psf": "$1,570 - $1,600 psf",
+      "quantum": "$11M - $16.8M (portal-quoted top of estate range)",
+      "note": "Alnwick Rd 7,075 sqft @ $1,597 psf = $11.3M (Jun 2026); EdgeProp estate-wide unit quantum tops out ~$16.8M (likely largest detached/near-GCB plots)."
+    },
+    {
+      "segment": "estate-wide aggregate (all types, Serangoon Garden Estate, trailing 12mo)",
+      "land_psf": "$1,131 - $3,472 psf, average ~$2,114 psf (EdgeProp); SquareFoot shows avg $1,891 psf, range $1,448-$3,850 psf",
+      "quantum": "avg sale price ~$6.54M over trailing 6 months",
+      "note": "Wide range reflects land-size heterogeneity more than tenure — nearly all core estate stock is 999-yr from 1953-56, so freehold vs leasehold is not the main driver of psf spread."
+    },
+    {
+      "segment": "adjoining/comparable estates (Tai Hwan Garden, Serangoon Park, Haus@Serangoon Garden)",
+      "land_psf": "Tai Hwan Garden $1,282-$2,521 psf (avg $2,142); Serangoon Park $1,399-$3,389 psf (avg $1,962); Haus@Serangoon Garden $2,155-$2,384 psf (avg $2,270, newer/freehold-status project)",
+      "quantum": "varies by land size",
+      "note": "Used as cross-checks; these sit at or just outside the 1km/2km zone boundary — confirm exact distance before treating as in-zone comps."
+    },
+    {
+      "segment": "D19 (Serangoon Gardens) vs D10/11 prime landed discount",
+      "land_psf": "D19 ~$1,100-3,500 psf vs D10/11 prime (Nassim/Cluny/Bin Tong Park/Ridout Rd) ~$2,000-4,000+ psf",
+      "quantum": "D19 landed generally sub-$17M vs D10 GCBs up to $148M",
+      "note": "D19 trades at roughly half-to-two-thirds of prime D10/11 psf but has far higher liquidity: 309 D19 landed transactions in 2025 (most active landed district by volume) vs D10/11 which dominate by dollar value, not volume. Comparison is portal-synthesized (proppalcrm), not a formal regression — treat ratio as directional."
+    }
+  ],
+  "example_transactions": [
+    {
+      "date": "2026-02",
+      "street": "91 Cardiff Grove",
+      "type": "terrace",
+      "price": "$3,700,000",
+      "land_sqft": "unspecified in source (implied ~3,260 sqft at $1,134 psf)",
+      "land_psf": "$1,134",
+      "note": "Inside Rosyth 1km zone (Cardiff Grove is part of core Serangoon Gardens estate). 999-yr leasehold typical for this street.",
+      "source": "https://www.edgeprop.sg/landed-house/cardiff-grove (via search synthesis)"
+    },
+    {
+      "date": "2026-06",
+      "street": "Alnwick Road",
+      "type": "terrace/semi-detached (mixed cluster)",
+      "price": "$6,480,000",
+      "land_sqft": "2,301",
+      "land_psf": "$2,815",
+      "note": "999-yr leasehold. Part of a cluster of 4 named June 2026 deals on Alnwick Rd.",
+      "source": "https://www.propertyforsale.com.sg/serangoon-garden-estate/sales-transactions"
+    },
+    {
+      "date": "2026-06",
+      "street": "Alnwick Road",
+      "type": "terrace (larger plot)",
+      "price": "$6,600,000",
+      "land_sqft": "4,200",
+      "land_psf": "$1,571",
+      "note": "999-yr leasehold. Lower psf due to larger land size.",
+      "source": "https://www.propertyforsale.com.sg/serangoon-garden-estate/sales-transactions"
+    },
+    {
+      "date": "2026-06",
+      "street": "Alnwick Road",
+      "type": "terrace/semi-detached",
+      "price": "$7,000,000",
+      "land_sqft": "2,640",
+      "land_psf": "$2,651",
+      "note": "999-yr leasehold.",
+      "source": "https://www.propertyforsale.com.sg/serangoon-garden-estate/sales-transactions"
+    },
+    {
+      "date": "2026-06",
+      "street": "Alnwick Road",
+      "type": "detached/large terrace",
+      "price": "$11,300,000",
+      "land_sqft": "7,075",
+      "land_psf": "$1,597",
+      "note": "999-yr leasehold; largest plot in the June 2026 sample cluster.",
+      "source": "https://www.propertyforsale.com.sg/serangoon-garden-estate/sales-transactions"
+    },
+    {
+      "date": "2026-05",
+      "street": "unspecified (Serangoon Garden Estate, highest recorded trailing-12mo transaction)",
+      "type": "unspecified (small plot)",
+      "price": "implied ~$6.39M at stated psf x sqft",
+      "land_sqft": "1,841",
+      "land_psf": "$3,472",
+      "note": "Highest psf transaction recorded estate-wide in trailing 12 months per EdgeProp aggregate; street-level detail not disclosed in public portal view.",
+      "source": "https://www.edgeprop.sg/landed-house/serangoon-garden-estate"
+    },
+    {
+      "date": "2026-01",
+      "street": "Tai Hwan Garden (adjoining estate, confirm distance to school)",
+      "type": "unspecified",
+      "price": "implied ~$5.08M at stated psf x sqft",
+      "land_sqft": "2,015",
+      "land_psf": "$2,521",
+      "note": "Highest transaction in Tai Hwan Garden trailing 12mo per EdgeProp; used as cross-check comp only.",
+      "source": "https://www.edgeprop.sg/landed-house/tai-hwan-garden"
+    }
+  ],
+  "hazards_watchouts": [
+    {
+      "where": "Serangoon Gardens estate roads generally (Chartwell Dr, Tavistock Ave, Bridport Ave etc.)",
+      "issue": "NOT on PUB's official 'List of Flood Prone Areas in Singapore' (as at 31 Jan 2024, 36 nationwide entries checked directly — none reference Serangoon/Chartwell/Tavistock/Bridport/Sandilands/Berwick/Lichfield/Brockhampton/Rosyth Rd). Historical 1970s flood gauge existed at Cambridge Rd/Carlisle Rd (Serangoon Gardens) but described as a resolved/legacy issue, not a current risk. Treat area as NOT officially flood-prone at road/public-infrastructure level, contrary to the task brief's assumption — this is a meaningful de-risking finding worth flagging explicitly in the final report.",
+      "severity": "low (contrary to assumption; verify further if buyer is risk-averse, but no official designation found)"
+    },
+    {
+      "where": "Serangoon Gardens Country Club car park (private, not public road)",
+      "issue": "Flooded on 25 Dec 2023 (not 2024), water reached wheel-height, a member's BMW written off; club/insurer attributed to 'exceptionally heavy rainfall' and denied negligence. Isolated private-car-park incident, not indicative of a public flood-prone designation.",
+      "severity": "low-medium (private property incident, not a public/official flood designation)"
+    },
+    {
+      "where": "Serangoon Garden Circus / Serangoon Garden Way (the roundabout, sole main access road into the estate)",
+      "issue": "Recurring traffic congestion, narrow roads, buses reported at complete standstill during heavy-traffic periods, frequent Saturday-morning jams, exacerbated by Chomp Chomp Food Centre visitor traffic; residents have called for road widening/infrastructure upgrades",
+      "severity": "medium (recurring, well-documented, affects daily commute/access)"
+    },
+    {
+      "where": "Wider Serangoon/Hougang area re: Paya Lebar Airbase flight paths",
+      "issue": "PLAB relocation on track for 2030+ (progressive, not a single cutover); until then, current noise-mitigation measures partially reduce impact (overseas training, simulators, routing away from residential areas); no Serangoon-Gardens-specific noise complaints found in this pass (documented complaints were Punggol-area), so flag as a plausible but unconfirmed nuisance pending decommissioning — height restrictions in the area are expected to relax progressively as PLAB winds down, a long-term positive for redevelopment potential",
+      "severity": "low-medium (legacy/declining risk, with a clear positive long-term catalyst once PLAB relocates)"
+    },
+    {
+      "where": "Serangoon North Avenue 1 (Garden Residences GLS site + Affinity at Serangoon / former Serangoon Ville)",
+      "issue": "Active/recent large-scale residential construction (505-unit Garden Residences plus Affinity at Serangoon on former HUDC Serangoon Ville land) in the broader Serangoon North vicinity — construction noise/dust exposure for nearby residents during build-out; exact distance from Rosyth School (within 1km vs 1-2km) not independently verified via OneMap in this pass",
+      "severity": "low-medium, pending distance verification"
+    }
+  ],
+  "regulatory": [
+    "ABSD (as of mid-2026, unchanged since 27 Apr 2023): Singapore Citizen 0%/20%/30% for 1st/2nd/3rd+ residential property; PR 5%/30%/35%; Foreigner flat 60% on any property count; Entity (company/trust) flat 65%. US nationals (US-SG FTA) and Iceland/Liechtenstein/Norway/Switzerland nationals/PRs (EFTA-SG FTA) taxed at citizen rates. Source: IRAS ABSD page (iras.gov.sg).",
+    "SSD (effective for OTPs exercised on/after 4 July 2025): holding period extended from 3 to 4 years; new rates Year 1=16%, Year 2=12%, Year 3=8%, Year 4=4%, Year 5+=0%. Properties bought 11 Mar 2017-3 Jul 2025 remain on the old 3-year regime: Year 1=12%, Year 2=8%, Year 3=4%, thereafter 0%. HDB flats unaffected (governed by MOP). Source: MAS/MND/IRAS joint media release, 2025; IRAS SSD page.",
+    "LDAU (Land Dealings Approval Unit) governs foreigner/PR purchase of landed residential property under the Residential Property Act. Restricted residential property for PR/foreigner approval generally capped at 15,000 sqft land area and must not be within a Good Class Bungalow Area. Approval requires demonstrated 'exceptional economic contribution to Singapore' (employment/investment/business ties, SG tax residency, 5+ yrs residence history typical, family ties) via Form LD-1 — case-by-case, high bar. Sentosa Cove is a partial exception (1,800 sqm cap, faster ~4-6 week approval for owner-occupation, no 'exceptional contribution' test). Most Serangoon Gardens plots (1,600-8,000 sqft per transaction data) are well under the 15,000 sqft cap, so the LDAU approval bar — not lot size — is the binding constraint for foreign buyers here. Source: SLA LDAU FAQ (app.sla.gov.sg/ldau/faq), SLA foreign ownership page.",
+    "URA landed price index: -0.4% q/q in Q1 2026 (official URA figure, reversing +3.4% q/q in Q4 2025), still +6.7% y/y. No CCR/RCR/OCR breakdown exists for the landed index (URA only splits non-landed by region). A separately-seen -1.8% figure could not be corroborated against the URA release and should be treated as unverified. Source: URA media release pr26-31 (ura.gov.sg).",
+    "Mid-2026 financing backdrop: 3-Month Compounded SORA ~1.07% (June 2026); best 2-year fixed mortgage rates ~1.40% (HSBC) to 1.45% (Citi/DBS/Maybank), with some advertised packages as low as 1.27-1.30%. SORA forecast to stay in 0.7-1.2% range through rest of 2026. Relevant for financing-dependent landed purchases in this zone.",
+    "GEP program context (non-financial but regulatory/policy-adjacent): Gifted Education Programme is being discontinued, with the last P4 GEP intake in 2026; from 2027 it is replaced by the Highly Able Learners (HAL) program plus Advanced Modules across more schools — this removes Rosyth's status as one of the 9 original GEP centres as a durable catchment-demand driver going forward, a demand-side (not price-control) regulatory change worth flagging in the report's forward-looking risk section."
+  ],
+  "zoning_planning_notes": [
+    "GEOGRAPHY CAVEAT (read first): the historic Serangoon Gardens CORE (Chartwell Dr, Cardiff Grove, Tavistock Ave, and the Serangoon Garden Circus/Country Club area) sits at approximately 1.0-1.1km straight-line from Rosyth School by our own coordinate calc -- borderline-to-outside the 1km ring, not safely inside it as portal '1km' badges often imply. The genuinely IN-1km landed streets are the estate's eastern/southern edge: Huddington Ave, Portchester Ave, Ripley Crescent, Raglan Grove, Alnwick Road, Walmer Drive (~350-550m), plus Berwick Drive, Sandilands Road (~700-800m), and Lichfield Road / Brockhampton Drive (~370-450m). Treat exact meter figures as estimates pending a live OneMap road-distance/straight-line check -- WebFetch to onemap.gov.sg did not return usable data in this pass -- but the directional split (core estate borderline/out, eastern edge in) is corroborated by listing language found independently ('Serangoon Garden Estate core ~1.37km from Rosyth' vs a Huddington/Bridport/Portchester-area listing advertised as '1km to Rosyth School').",
+    "URA Master Plan zoning: Serangoon Gardens and the Serangoon North landed pockets in this ring are designated Landed Housing Areas, generally controlled as 2-storey landed (2 storeys + attic allowed under URA's envelope-control guidelines). This is NOT a Good Class Bungalow Area (GCBA) -- Serangoon Gardens does not appear on Singapore's list of 39 gazetted GCBAs, so no plot here, however large, can be classified/marketed as a GCB.",
+    "Site coverage control update (effective 1 Mar 2025, Singapore-wide, applies here too): landed bungalows capped at 50% overall site coverage (all structures incl. eaves/balconies/planters); new sub-control limits building footprint/bulk to 40% for ordinary bungalows and 35% for GCBs. This is a general national control, not Serangoon-specific.",
+    "Could not directly view the URA Master Plan 2025 interactive map (eservice.ura.gov.sg/maps/?service=MP) or the specific Serangoon-area pages of the Draft Master Plan 2025 Written Statement in this session to confirm the precise current gazetted storey-control figure and boundary lines for this exact ring -- flagged as an open item; the Dec 2025 gazette press release (ura.gov.sg/news/media/pr25-64/) covered only headline sites (Bukit Timah Turf City, Kranji racecourse, Marina Bay, Rail Corridor) with no Serangoon-specific content found.",
+    "Adjacent non-landed land uses confirmed near/bordering the ring: HDB Serangoon North estate (incl. newer BTO Serangoon North Vista, 2023 launch) to the north/west; an industrial cluster along Serangoon North Avenue 5 (part of the Ang Mo Kio Industrial Estate -- multi-storey light-industrial/business-park blocks up to 6 storeys, e.g. run by Mapletree Industrial Trust and CapitaLand); and condo development directly touching the landed streets via the Garden Residences GLS site (bounded by Yio Chu Kang Rd / Serangoon North Ave 1 / Lichfield Rd / Walmer Drive, 185,022 sqft, awarded to Keppel Land + Wing Tai for S$446.28M, completed 2021, 613 units, 99-yr LH) whose south-east units directly overlook Ripley Crescent, Lichfield, Raglan Grove, Alnwick and Walmer Drive landed houses plus the Country Club.",
+    "No conservation status was found for any part of this ring (Serangoon Gardens is a mid-20th-century estate but not gazetted as a conservation area in sources reviewed)."
+  ],
+  "future_planning": [
+    "Cross Island Line (CRL) Phase 1 -- two new stations serve this ring directly: Serangoon North MRT (CR9), underground at the junction of Serangoon North Ave 1 / Serangoon North Ave 3 (built with a 3rd track for train parking/withdrawal); and Tavistock MRT (CR10), underground beneath Ang Mo Kio Ave 3 at its junction with Tavistock Ave and Ang Mo Kio Industrial Park 2. Both targeted to open in 2030; station construction was reported to start Q2 2022. LTA has noted an intermediate TBM launch shaft will be built away from the Tavistock site due to space constraints -- no landed-street-specific construction-disruption detail (dust/noise/traffic diversions on Chartwell Dr, Bridport Ave, Tavistock Ave etc.) was found in this pass; recommend follow-up closer to/during construction.",
+    "Paya Lebar Air Base relocation (targeted from the 2030s) is the dominant macro catalyst for the wider northeast region: current ~800ft height caps across Hougang/Punggol/Marine Parade/city-fringe (from the PLAB flight path) can be progressively lifted once the base moves, potentially unlocking an estimated ~150,000 new homes on the ~800ha former airbase footprint itself (redevelopment starting with the Defu area, next to PLAB). This is macro-context, not a site-specific catalyst for the Rosyth 1km ring -- the landed estates here are already low-rise by planning intent (2-storey control) and are not on the former airbase land; no URA statement was found specifically flagging Serangoon Gardens/Serangoon North landed streets as a direct beneficiary of the height-limit lift. Surrounding HDB/condo/industrial parcels are the more plausible longer-term beneficiaries.",
+    "GLS/en-bloc activity is concentrated on NON-landed parcels ringing (not within) the landed streets: The Garden Residences (already completed; GLS site bordering Lichfield/Walmer/Ripley/Raglan/Alnwick) and the Serangoon Ville/Affinity at Serangoon en-bloc (~S$499M, Serangoon North Ave 1, ~239m from the school by our estimate, includes ~40 strata landed units within an otherwise condo project). Landed clusters themselves do not go en bloc as a whole (individual houses transact independently). Kensington Park (S$1.28bil collective-sale relaunch, Kensington Park Drive) and Serenity Park (S$505M collective sale, Tamarind Rd, Yio Chu Kang/D28) surfaced in searches as 'nearby' but are actually OUTSIDE the 1km ring (further towards Yio Chu Kang/District 28 core) -- excluded from in-ring future planning, flagged here only to correct a portal-search false positive."
+  ],
+  "schools_within_1km": [
+    "Rosyth School（21 Serangoon North Ave 4, S555855）— 政府学校（非 SAP，MOE SchoolFinder 核实；多个博客的 SAP 说法为误传）；原九所 GEP 中心之一——GEP 于 2026 年最后一届 P4 后停办，2027 起改 HAL + 15 校 Advanced Modules [moe.gov.sg/schoolfinder；moe.gov.sg/news/press-releases/20260303]",
+    "Phase 2C 抽签史：2022 年 125 人/41 位（~3.05:1）、2023 年 142/41（~3.46:1）、2024 年 139/44（~3.16:1）——全国最挤之列；自 2025 年起校方不再招家长义工（关闭一条 2B 通道）；2025 年精确数字未经官方页面核实；2026 年 2C 注册 7 月 28 日起 [p1registration.sg；moe.gov.sg/primary/p1-registration]",
+    "圈内住宅构成（OneMap 实测推论）：<1km 组以 Serangoon North HDB 为主力 + Ave 1 pocket 少量 landed/strata——为抽签买 Gardens landed 的家庭实际处于 1-2km 优先级，中签概率需按该组测算",
+    "CHIJ Our Lady of Good Counsel（2C Burghley Dr）——OneMap 实测 2.11km，不在 1km 内（更正研究初稿的 0.65km 说法）；Zhonghua Primary ~1.6km（1-2km 带）",
+    "MOE 2026 全国 P1 减招（61 校减/12 校增，净 -1,460 位）——Rosyth 校级 vacancy 是否调整需查 MOE P1 portal [moe.gov.sg/news/press-releases/20260429]"
+  ],
+  "screening_recommendations": [
+    {
+      "title": "地理是本报告最大发现 / Geography is the headline",
+      "detail": "OneMap 实测：Gardens 核心 1.36-2.04km、东北角 Walmer/Ripley/Lichfield/Raglan 1.07-1.14km margin、只有 Serangoon North Ave 1 pocket（0.74km）明确在圈内。学校 2001 年已从 Gardens 旁的 Rosyth Road 旧址搬到 Serangoon North Ave 4——凡说『Gardens 1km 到 Rosyth』的挂牌话术一律按现校址门牌实测（工具：python -m researcher.sources.onemap \"<街名/门牌>\" --anchor \"ROSYTH SCHOOL\"）。"
+    },
+    {
+      "title": "按 1-2km 组算中签率 / Ballot maths in the right band",
+      "detail": "2C ~3:1 且 <1km 组以 HDB 为主——买 Gardens landed 的家庭大多落在 1-2km 优先级，中签概率显著低于宣传口径；把学区溢价按真实 band 折价，或直接把本区当『生活方式 + 土地保值』标的。2025 精确数据出价前查 MOE 官网；2026 年结果 8 月中公布。"
+    },
+    {
+      "title": "按 999-yr 定价 / Price it as 999-yr, not freehold",
+      "detail": "全区基本为 1953-56 起算 999 年地契（余约 925 年）。银行估值与转售习惯将其视作准永久，但对比 D10 freehold 的折价有一部分正来自此——不要按 freehold 逻辑追价；INLIS 核实每一块地的起算年与余期。"
+    },
+    {
+      "title": "读懂同街 spread / Same-street spread = land + rebuild state",
+      "detail": "Alnwick 同月四宗：S$1,571-2,815 psf。大地未翻建（S$1,100-1,600）是『买地重建』入场券——加上重建建安（指示性 S$350-550 psf GFA，QS 报价核实）再和小地新装（S$2,600-3,500 psf）比总账，谁贵一目了然。"
+    },
+    {
+      "title": "邻居与噪音 / Neighbours & noise",
+      "detail": "Garden Residences（613 户 99LH 高层）直接俯瞰 Ripley/Lichfield/Raglan/Alnwick/Walmer 一线——这些街看房先看背向与视线；北侧 Serangoon North Ave 5 为工业区；PLAB 航线噪音持续到 2030s（渐进搬迁）。买前 URA SPACE 查 abutting 地块分区。"
+    },
+    {
+      "title": "交通单点 / The Circus bottleneck",
+      "detail": "Serangoon Garden Way/Circus 是估计唯一主入口，常态拥堵（周六早高峰有公交完全静止记录）——通勤买家试驾早晚高峰各一次；CRL 2030 通车前，CR9/CR10 站点周边街道有施工扰动。"
+    },
+    {
+      "title": "洪水：官方名单无此区 / Not on PUB's list",
+      "detail": "PUB 易涝名单（2024-01 版，36 条）无 Serangoon Gardens 任何道路；唯一记录是 2023-12 乡村俱乐部私家停车场积水。无需为洪水恐慌放弃本区，但低洼单点（下沉车库/背沟渠户）仍应雨后现场复看。"
+    },
+    {
+      "title": "量子与流动性优势 / Quantum & liquidity edge vs D10",
+      "detail": "S$3.5-8m 覆盖 terrace 到 semi-D，约为 Nanyang 圈同类一半；D19 2025 年 309 宗 landed 成交为全国之最——买入容错与退出流动性优于 D10 顶级学区，是『第二学区组合』的合理配置。"
+    },
+    {
+      "title": "detached 基准低置信 / Thin detached benchmark",
+      "detail": "detached/bungalow 基准带仅 2-3 个数据点（S$1,090-1,792）——该段位出价前先用 URA REALIS 补齐 12 个月成交再谈判，勿直接采用本报告基准。"
+    },
+    {
+      "title": "逐套打分 + 新建规 / Score each + the 2025 coverage rule",
+      "detail": "候选跑 researcher/landed/scorecard.py（<65 不看房）；重建方案按 2025-03-01 起的全国新规：bungalow 场地覆盖率上限 50%（建筑体量 40%）——旧 GFA 想象力需要打折。"
+    }
+  ],
+  "data_gaps": [
+    "街道距离为 OneMap 街道参考点（2026-07-03 实测）——margin 街（1.07-1.14km）必须按门牌复测才能定圈内外。",
+    "Serangoon North Ave 1 pocket 的 landed 成交样本不足——该『真 1km』群缺价格基准。",
+    "2025 年 Phase 2C 精确 applicants/vacancies 未经 MOE 官方页面核实（动态页面无法抓取）。",
+    "MP2025 对本环 storey control 的精确值未从 URA SPACE 交互地图确认。",
+    "detached 基准带数据点少（2-3 个），低置信；propertyforsale.com.sg 的 2026-06 Alnwick 成交簇未经 URA REALIS 交叉核验。",
+    "部分房源价格/地块未确认（标 VERIFY DATA）；estate-wide 均价 EdgeProp/SquareFoot 口径差 ~11% 未对账。"
+  ],
+  "best_for": "两类人，且要分清自己是哪类：①预算 S$3.5-8m、要 999-yr 大地块 + 全国最好 landed 流动性 + CRL/PLAB 长线的自住家庭——Gardens 核心随便挑，但请把它当 1-2km 学区（或根本不为学区付钱）；②非要 Rosyth <1km 票的家庭——盯 Serangoon North Ave 1 pocket 的稀缺 landed/strata 或直接 HDB，Gardens 不解决问题。不适合：把 Gardens 当 1km 票的买家（本报告的核心勘误）、非 freehold 不买者、需要 SAP 名片的家庭。 [EN] Two buyer types — know which you are: ① S$3.5-8m families wanting 999-yr land, Singapore's most liquid landed market and CRL/PLAB upside: buy the Gardens core as a HOME (1-2km priority). ② Families needing a true <1km Rosyth ticket: hunt the scarce Serangoon North Ave 1 pocket or go HDB — the Gardens won't deliver it.",
+  "sources": [
+    "(derived from search snippet distance figures, not independently OneMap-verified)",
+    "http://singaporeprimaryschools.appspot.com/?latValue=1.3578102020208&longValue=103.86420040643&label=CHIJ+OUR+LADY+OF+GOOD+COUNSEL",
+    "https://ancourage.academy/articles/gep-gifted-education-programme-singapore-guide",
+    "https://app.sla.gov.sg/ldau/faq",
+    "https://asianprimeproperties.sg/wp-content/uploads/2025/05/Affinity-at-Serangoon.pdf",
+    "https://assets.hdb.gov.sg/residential/buying-a-flat/finding-a-flat/sales-brochure/23MAYBTO_pdf_selection/serangoon_north_vista.pdf",
+    "https://blog.sgtrains.com/2022/01/serangoon-north-tavistock-construction-q2-2022/",
+    "https://defensemirror.com/news/40269/Singapore_to_Scale_Down_Flights_from_Paya_Lebar_Airbase_Before_2030_Closure",
+    "https://dollarbackmortgage.com/",
+    "https://en.wikipedia.org/wiki/Paya_Lebar_Air_Base",
+    "https://en.wikipedia.org/wiki/Special_Assistance_Plan",
+    "https://en.wikipedia.org/wiki/Tavistock_MRT_station",
+    "https://fathership.co/womans-bmw-scrapped-after-flood-at-serangoon-gardens-country-club-car-park-club-denies-negligence/",
+    "https://honeykidsasia.com/gifted-programme-gep-moe-changes-primary-school/",
+    "https://landtransportguru.net/tavistock-station/",
+    "https://m.yoursingaporemap.com/education/schools/secondary/1/15-Serangoon-Avenue-3-Singapore-556108",
+    "https://moehc.moe.edu.sg/school-histories/rosyth-sch/",
+    "https://mothership.sg/2024/09/woman-loses-bmw-christmas-day-flood/",
+    "https://mustsharenews.com/paya-lebar-airbase-2030/",
+    "https://mustsharenews.com/serangoon-gardens-roundabout-jam/",
+    "https://plbinsights.com/what-can-you-really-build-on-your-plot-ura-envelope-control-explained-simply/",
+    "https://propertylaunch-invest.com/property/serangoon-gardens-condo.html",
+    "https://propertylaunch-invest.com/property/serangoon-north-avenue-1-condo.html",
+    "https://propertylaunch-invest.com/property/the-garden-residences.html",
+    "https://propertynet.sg/latest-bank-mortgage-loan-rates-across-singapore/",
+    "https://proppalcrm.com/blog/landed-property-price-singapore-2026/",
+    "https://remembersingapore.org/2021/03/28/singapore-old-flood-gauges/",
+    "https://res.edmundeeadvisory.com/guides/absd-singapore-2026",
+    "https://sgschoolkaki.com/p1-registration/timeline",
+    "https://singaporelegaladvice.com/foreigners-buying-landed-residential-property-singapore/",
+    "https://stackedhomes.com/serenity-park-collective-sale-yio-chu-kang-2026/",
+    "https://stackedhomes.com/singapore-landed-prices-1h-2026-sellers-market/",
+    "https://www.99.co/singapore/sale/houses/39-chartwell-drive-adqaaqLpAmcaLoq8QZTMf9Pb",
+    "https://www.99.co/singapore/sale/houses/71-cardiff-grove-addEgBbARFuN8RAqWCo9XkgR",
+    "https://www.99.co/singapore/sale/property/bridport-avenue-landed-ZLvBKd8dWb9RWmvsoWphwq",
+    "https://www.99.co/singapore/sale/property/brockhampton-drive-landed-erPanDatnYBRL8QzRHYzFP",
+    "https://www.99.co/singapore/sale/property/cowdray-avenue-landed-UWgQ4YBrcW8cQTF4iyoPhK",
+    "https://www.99.co/singapore/sale/property/serangoon-garden-way-landed-eTCLSfmDwbPnfLR3P4rejk",
+    "https://www.99.co/singapore/sale/property/tavistock-avenue-landed-NBmf9jymAgFGwJmzZTQmg4",
+    "https://www.allenandgledhill.com/publication/articles/30981/holding-period-for-seller-s-stamp-duty-extended-for-residential-properties-and-seller-s-stamp-duty-rates-raised",
+    "https://www.edgeprop.sg/landed-house/hausserangoon-garden",
+    "https://www.edgeprop.sg/landed-house/serangoon-garden-estate",
+    "https://www.edgeprop.sg/landed-house/serangoon-park",
+    "https://www.edgeprop.sg/landed-house/tai-hwan-garden",
+    "https://www.edgeprop.sg/property-news/kensington-park-condo-serangoon-gardens-relaunched-collective-sale-128-bil",
+    "https://www.edgeprop.sg/property-news/paya-lebar-airbase-make-way-future-town-150000-new-homes",
+    "https://www.era.com.sg/research-articles/1q-2026-ura-private-quarterly-report",
+    "https://www.gardenresidences-condo.com.sg/the-garden-residences-showflat-gallery-at-woodleigh-lane/",
+    "https://www.goodclassbungalows.com.sg/gcb-lifestyle/",
+    "https://www.homejourney.sg/blog/rosyth-lodge-for-sale-d19-units-rosyth-road-homejourney-2026-guide-202603090401",
+    "https://www.homejourney.sg/blog/singapore-sora-rate-outlook-2026-what-homeowners-should-know-homejourney-202601110702",
+    "https://www.iras.gov.sg/taxes/stamp-duty/for-property/buying-or-acquiring-property/additional-buyer's-stamp-duty-(absd)",
+    "https://www.iras.gov.sg/taxes/stamp-duty/for-property/selling-or-disposing-property/seller's-stamp-duty-(ssd)-for-residential-property",
+    "https://www.joycetaiproperty.sg/lorong-chuan/relocation-of-paya-lebar-airbase-lorong-chuan/",
+    "https://www.lta.gov.sg/content/ltagov/en/upcoming_projects/rail_expansion/cross_island_line.html",
+    "https://www.mapletreeindustrialtrust.com/Asset-Portfolio/Property.aspx?currentProperty=%2FAll-Properties%2FMIT%2FSingapore%2FSerangoon-North",
+    "https://www.mas.gov.sg/news/media-releases/2025/extension-of-the-holding-period-of-sellers-stamp-duty-and-higher-ssd-rates",
+    "https://www.mindef.gov.sg/news-and-events/latest-releases/22sep25-pq2/",
+    "https://www.moe.gov.sg/primary/p1-registration/past-vacancies-and-balloting-data",
+    "https://www.moe.gov.sg/schoolfinder/schooldetail/rosyth-school",
+    "https://www.p1registration.sg/2025/05/07/rosyth-primary-balloting-history-your-2025-chances-strategies/",
+    "https://www.p1registration.sg/2025/05/18/how-to-get-into-rosyth-primary-school/",
+    "https://www.p1registration.sg/2025/09/06/p1-registration-2026-for-2027-intakes-living-1km-is-your-only-shot-at-top-schools/",
+    "https://www.propertyforsale.com.sg/serangoon-garden-estate/sales-transactions",
+    "https://www.propertygiant.com/resource/list-of-good-class-bungalow-areas-gcba-in-singapore",
+    "https://www.propertyguru.com.sg/listing/for-sale-jardine-residences-serangoon-garden-24709258",
+    "https://www.propertyguru.com.sg/listing/for-sale-luxurious-semi-d-berwick-drive-serangoon-garden-500098636",
+    "https://www.propertyguru.com.sg/listing/for-sale-serangoon-garden-estate-500135965",
+    "https://www.propertyguru.com.sg/property-for-sale/near-rosyth-school-482",
+    "https://www.propertyguru.com.sg/property-for-sale/p/lichfield-road",
+    "https://www.pub.gov.sg/-/media/PUB/Flood-Resilience/Documents/List-of-Flood-prone-Areas-in-Singapore.pdf",
+    "https://www.rosyth.moe.edu.sg/about-us/school-history/",
+    "https://www.sla.gov.sg/regulatory/foreign-ownership-of-property/",
+    "https://www.squarefoot.com.sg/trends-and-analysis/landed?p=serangoon-garden-estate",
+    "https://www.srx.com.sg/search/sale/landed/Rosyth+School",
+    "https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr26-31",
+    "https://www.ura.gov.sg/news/media/pr25-64/",
+    "https://www.uradraftmasterplan.gov.sg/regional-plans/east/paya-lebar-air-base/",
+    "https://x.com/SBSTransit_Ltd/status/1955057945504518350"
+  ]
+}
