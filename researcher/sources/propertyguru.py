@@ -54,12 +54,11 @@ def value_flag(typ: str, psf, bench: dict) -> str:
     return f"BUILD-PRICED (>>{hi})"
 
 
-def screen(slug: str = "nanyang"):
-    path = os.path.join(ROOT, "researcher", "landed", f"{slug}_listings.json")
-    data = json.load(open(path, encoding="utf-8-sig"))
-    bench = data["benchmark_land_psf"]
+def rank_listings(data: dict) -> list[dict]:
+    """Score + rank a listings payload; pure (no printing) so reports can embed it."""
+    bench = data.get("benchmark_land_psf", {})
     rows = []
-    for lst in data["listings"]:
+    for lst in data.get("listings", []):
         s = score(normalize(lst))
         rows.append({
             "lst": lst,
@@ -67,22 +66,34 @@ def screen(slug: str = "nanyang"):
             "value": value_flag(lst.get("type"), lst.get("land_psf"), bench),
         })
     # rank: quality score first, then prefer better land value (FAIR/VALUE over RICH)
-    val_rank = {"VALUE": 0, "FAIR": 1, "RICH": 2, "BUILD": 3, "?": 4}
+    val_rank = {"VALUE": 0, "FAIR": 1, "RICH": 2, "BUILD-PRICED": 3, "?": 4}
     rows.sort(key=lambda r: (-r["score"].total, val_rank.get(r["value"].split()[0], 4)))
+    return rows
+
+
+def screen(slug: str = "nanyang"):
+    path = os.path.join(ROOT, "researcher", "landed", f"{slug}_listings.json")
+    data = json.load(open(path, encoding="utf-8-sig"))
+    rows = rank_listings(data)
 
     print(f"\n{data['area']}  —  {data['pulled']}")
     print(f"{'#':>2}  {'street / type':<42}{'price':>12}{'land':>8}{'psf':>7}  "
           f"{'value':<16}{'qual':>5}  verdict")
     print("-" * 110)
+
+    def num(v, unit=""):  # listings scraped off portals routinely miss fields
+        return (unit + format(v, ",")) if isinstance(v, (int, float)) else "?"
+
     for i, r in enumerate(rows, 1):
         l = r["lst"]
-        print(f"{i:>2}  {(l['street'] + ' / ' + l['type']):<42}"
-              f"{'S$' + format(l['price'], ','):>12}{format(l['land_sqft'], ','):>8}"
-              f"{l['land_psf']:>7}  {r['value']:<16}{r['score'].total:>5.0f}  {r['score'].verdict}")
+        label = f"{l.get('street', '?')} / {l.get('type', '?')}"
+        print(f"{i:>2}  {label:<42}"
+              f"{num(l.get('price'), 'S$'):>12}{num(l.get('land_sqft')):>8}"
+              f"{num(l.get('land_psf')):>7}  {r['value']:<16}{r['score'].total:>5.0f}  {r['score'].verdict}")
     print("\nTop picks — detail:")
     for r in rows[:3]:
         print("\n" + fmt(r["score"]))
-        print(f"    land psf {r['lst']['land_psf']} -> {r['value']}   | {r['lst'].get('notes','')}")
+        print(f"    land psf {r['lst'].get('land_psf', '?')} -> {r['value']}   | {r['lst'].get('notes','')}")
     return rows
 
 

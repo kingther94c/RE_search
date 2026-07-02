@@ -37,9 +37,16 @@ _BOUNDS = re.compile(r"\[(\d+),(\d+)\]\[(\d+),(\d+)\]")
 
 
 def sh(*args: str) -> str:
-    return subprocess.run(
-        [ADB, "-s", SERIAL, *args], capture_output=True, text=True, errors="ignore"
-    ).stdout or ""
+    # adb emits UTF-8; without encoding= Python would use the Windows locale
+    # codepage (cp1252/cp936) and silently mojibake all non-ASCII UI text.
+    r = subprocess.run(
+        [ADB, "-s", SERIAL, *args],
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+    )
+    if r.returncode != 0:
+        print(f"[adb!] rc={r.returncode} {' '.join(args[:3])}: {r.stderr.strip()[:200]}",
+              file=sys.stderr)
+    return r.stdout or ""
 
 
 def screen_size() -> tuple[int, int]:
@@ -58,7 +65,13 @@ def _center(bounds: str) -> tuple[int, int] | None:
 
 def dump_xml() -> str:
     sh("shell", "uiautomator", "dump", "/sdcard/_mbx.xml")
-    return sh("exec-out", "cat", "/sdcard/_mbx.xml")
+    xml = sh("exec-out", "cat", "/sdcard/_mbx.xml")
+    if not xml.strip():
+        raise RuntimeError(
+            "uiautomator dump came back empty — device offline / app not in foreground? "
+            f"(adb={ADB}, serial={SERIAL})"
+        )
+    return xml
 
 
 def parse(xml: str) -> list[dict]:

@@ -22,6 +22,9 @@ import statistics
 from dataclasses import dataclass, field
 from datetime import date
 
+def _today() -> str:
+    return date.today().isoformat()
+
 
 def _d(s: str) -> date:
     y, m, dd = (s.split("-") + ["01", "01"])[:3]
@@ -54,7 +57,7 @@ class Comp:
 
 @dataclass
 class Params:
-    asof: str = "2026-06-30"
+    asof: str = field(default_factory=_today)
     time_trend_pa: float = 0.018       # annual PSF appreciation for this segment
     floor_premium_pp: float = 0.003    # +0.3% PSF per floor higher
     size_elasticity: float = -0.08     # psf ∝ size^e  (quantum effect)
@@ -139,6 +142,8 @@ def value(
     anchor_weight: float = 2.0,
 ) -> Valuation:
     p = p or Params()
+    if not comps and same_line_anchor is None:
+        raise ValueError("value() needs at least one comparable or a same-line anchor")
     grid = [adjust(c, subject, p) for c in comps]
 
     rows = list(grid)

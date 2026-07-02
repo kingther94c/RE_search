@@ -13,9 +13,13 @@ import html
 import json
 import os
 import sys
+from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+sys.path.insert(0, ROOT)  # so `python deliverables/build_landed_report.py` finds researcher/
+
+from researcher.sources.propertyguru import rank_listings  # noqa: E402
 
 
 def esc(x) -> str:
@@ -32,8 +36,54 @@ def sev_class(s) -> str:
            "sev-amber" if any(k in s for k in ("med", "amber", "moderate")) else "sev-low"
 
 
-def render(d: dict) -> str:
+def txn_rows(items) -> str:
+    """example_transactions as structured rows (dict) or legacy strings."""
+    if not items or not isinstance(items[0], dict):
+        return ""
+    return "".join(
+        f"<tr><td>{esc(t.get('date'))}</td><td class='l'>{esc(t.get('street'))}</td>"
+        f"<td>{esc(t.get('type'))}</td><td>{esc(t.get('price'))}</td>"
+        f"<td>{esc(t.get('land_sqft'))}</td><td>{esc(t.get('land_psf'))}</td>"
+        f"<td class='l'>{esc(t.get('note'))}{(' · ' + esc(t.get('source'))) if t.get('source') else ''}</td></tr>"
+        for t in items
+    )
+
+
+def listings_table(slug: str) -> str:
+    """Score + rank the live listings file for this area, if one exists."""
+    path = os.path.join(ROOT, "researcher", "landed", f"{slug}_listings.json")
+    if not os.path.exists(path):
+        return ""
+    data = json.load(open(path, encoding="utf-8-sig"))
+    rows = rank_listings(data)
+    if not rows:
+        return ""
+    body = ""
+    for i, r in enumerate(rows, 1):
+        l = r["lst"]
+        price = f"S${l['price']:,}" if isinstance(l.get("price"), (int, float)) else "?"
+        land = f"{l['land_sqft']:,}" if isinstance(l.get("land_sqft"), (int, float)) else "?"
+        url = esc(l.get("url", ""))
+        street = f"<a href='{url}'>{esc(l.get('street'))}</a>" if url else esc(l.get("street"))
+        body += (
+            f"<tr><td>{i}</td><td class='l'>{street}</td><td>{esc(l.get('type'))}</td>"
+            f"<td>{price}</td><td>{land}</td><td>{esc(l.get('land_psf', '?'))}</td>"
+            f"<td>{esc(l.get('tenure'))}</td><td class='l'>{esc(r['value'])}</td>"
+            f"<td>{r['score'].total:.0f}</td><td class='l'>{esc(r['score'].verdict)}</td></tr>"
+        )
+    pulled = esc(data.get("pulled", ""))
+    return (
+        f"<p class='sub'>数据拉取 pulled: {pulled} · 质量分 = landed scorecard (0-100) · "
+        f"value = 地价 psf 对比区域基准带</p>"
+        f"<table><tr><th>#</th><th class='l'>Street</th><th>Type</th><th>Ask</th>"
+        f"<th>Land sqft</th><th>Land psf</th><th>Tenure</th><th class='l'>Value</th>"
+        f"<th>Qual</th><th class='l'>Verdict</th></tr>{body}</table>"
+    )
+
+
+def render(d: dict, slug: str = "") -> str:
     area = esc(d.get("area_name", "Singapore landed area"))
+    asof = esc(d.get("asof") or date.today().isoformat())
 
     estates = "".join(
         f"<tr><td class='l'>{esc(e.get('name'))}</td><td>{esc(e.get('type'))}</td>"
@@ -55,7 +105,9 @@ def render(d: dict) -> str:
         f"<li><b>{esc(r.get('title'))}</b> — {esc(r.get('detail'))}</li>"
         for r in d.get("screening_recommendations", [])
     )
-    txns = li(d.get("example_transactions"))
+    txn_table = txn_rows(d.get("example_transactions"))
+    txns = "" if txn_table else li(d.get("example_transactions"))
+    listings = listings_table(slug) if slug else ""
     sources = "".join(
         f"<li><a href='{esc(u)}'>{esc(u)}</a></li>" for u in d.get("sources", [])
     )
@@ -97,8 +149,8 @@ a{{color:#1d4ed8;word-break:break-all}}
 <header>
 <div class="kicker">Landed 区域研报 · Singapore Landed Area Research</div>
 <h1>{area}</h1>
-<div class="sub">学区入手 · 实战 Checklist 驱动 · 数据通过公开来源(OneMap / URA / EdgeProp / PUB / SLA)交叉验证</div>
-<div class="meta"><span><b>日期 Date</b> 2026-06-30</span>
+<div class="sub">{esc(d.get('subtitle', '实战 Checklist 驱动 · 数据通过公开来源(OneMap / URA / EdgeProp / PUB / SLA)交叉验证'))}</div>
+<div class="meta"><span><b>日期 Date</b> {asof}</span>
 <span><b>方法 Method</b> landed-area-research skill + landed scorecard</span>
 <span><b>输出 Output</b> G:\\My Drive\\004 RES\\REsearch_Reports</span></div>
 </header>
@@ -114,7 +166,10 @@ a{{color:#1d4ed8;word-break:break-all}}
 
 {section('三 · 价格结构', 'Price structure (read the spread, not the average)',
   f"<table><tr><th class='l'>Segment</th><th>Land psf</th><th>Quantum</th><th class='l'>Note</th></tr>{prices}</table>"
+  + (f"<p class='sub'>近期成交样本 / recent deals:</p><table><tr><th>Date</th><th class='l'>Street</th><th>Type</th><th>Price</th><th>Land sqft</th><th>Land psf</th><th class='l'>Note · Source</th></tr>{txn_table}</table>" if txn_table else "")
   + (f"<p class='sub'>近期成交样本 / recent deals:</p><ul>{txns}</ul>" if txns else ""), prices)}
+
+{section('三·五 · 在售房源筛选榜', 'Live listings — screened & ranked', listings, listings)}
 
 {section('四 · 分区与未来规划', 'Zoning & future planning (URA)',
   '<ul>' + li(d.get('zoning_planning_notes')) + '</ul>'
@@ -138,7 +193,7 @@ a{{color:#1d4ed8;word-break:break-all}}
 {section('来源', 'Sources', f"<ul>{sources}</ul>", sources)}
 
 <p class="foot">仅供研究与说明,非正式估值/法律/投资建议。数字含估算,实际以 OneMap / URA / SLA INLIS /
-PUB / 银行估价为准。Generated by RE_search landed-area-research pipeline, 2026-06-30.</p>
+PUB / 银行估价为准。Generated by RE_search landed-area-research pipeline, {asof}.</p>
 </div></body></html>"""
 
 
@@ -146,10 +201,11 @@ def main():
     slug = sys.argv[1] if len(sys.argv) > 1 else "nanyang"
     digest_path = os.path.join(ROOT, "researcher", "landed", f"{slug}_digest.json")
     d = json.load(open(digest_path, encoding="utf-8-sig"))  # tolerate a BOM
-    htmls = render(d)
+    htmls = render(d, slug)
 
     reports = os.environ.get("RESEARCH_REPORTS_DIR", r"G:\My Drive\004 RES\REsearch_Reports")
-    name = f"{slug}_1km_Landed_Area_Report.html"
+    # generic name; a digest can pin its own (e.g. keep nanyang's historical `_1km_` name)
+    name = d.get("report_basename") or f"{slug}_Landed_Area_Report.html"
     try:
         os.makedirs(reports, exist_ok=True)
         out = os.path.join(reports, name)

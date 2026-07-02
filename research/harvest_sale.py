@@ -93,6 +93,11 @@ def harvest(max_scrolls: int = 40, stop_after_stale: int = 6) -> list[dict]:
 
 
 def save(rows: list[dict]) -> None:
+    if not rows:
+        # an adb hiccup must never overwrite the committed dataset with nothing
+        print("no rows harvested — refusing to overwrite existing output files")
+        return
+
     # newest-first by date already; sort by date desc for determinism
     def k(r):
         try:
@@ -111,7 +116,7 @@ def save(rows: list[dict]) -> None:
     print(f"\nsaved {len(rows)} transactions")
     for r in rows:
         print(
-            f"  {r.get('date'):>11} | L{r.get('level'):>2} #{r.get('unit'):>2} | "
+            f"  {r.get('date', ''):>11} | L{r.get('level', '?'):>2} #{r.get('unit', '?'):>2} | "
             f"{r.get('unit_type',''):>4} | {r.get('area_sqft',''):>4} sqft | "
             f"{r.get('psf',''):>7} | {r.get('price',''):>11} | {r.get('sale_type','')}"
         )

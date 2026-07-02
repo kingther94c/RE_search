@@ -27,6 +27,20 @@ def bsd(price: float) -> float:
     return duty
 
 
+def ssd_rate(holding_years: float) -> float:
+    """Seller's Stamp Duty on exit (residential bought on/after 4 Jul 2025):
+    16/12/8/4% within years 1-4, zero after. Holding counts from purchase."""
+    if holding_years <= 1:
+        return .16
+    if holding_years <= 2:
+        return .12
+    if holding_years <= 3:
+        return .08
+    if holding_years <= 4:
+        return .04
+    return 0.0
+
+
 @dataclass
 class Result:
     price: float
@@ -66,15 +80,17 @@ def analyze(p: dict) -> Result:
     gross_yield = (annual_rent / price) if price else 0
     net_yield = gross_yield - 0.011 if annual_rent else 0
 
-    # breakeven: net_sale*(1-sell) = price + duty + net_carry
-    breakeven_exit_price = (price + duty + net_carry) / (1 - sell_cost)
+    # exit-side frictions: selling cost + SSD if exiting inside the 4-year window
+    exit_ssd = ssd_rate(holding)
+    # breakeven: exit*(1 - sell - ssd) = price + duty + net_carry
+    breakeven_exit_price = (price + duty + net_carry) / (1 - sell_cost - exit_ssd)
     breakeven_exit_psf = breakeven_exit_price / size
     breakeven_appr = breakeven_exit_price / price - 1
 
     scenarios = []
     for appr in p.get("appreciation_scenarios", [0.0, 0.02, 0.04]):
         exit_price = price * (1 + appr) ** holding
-        net_sale = exit_price * (1 - sell_cost)
+        net_sale = exit_price * (1 - sell_cost - exit_ssd)
         profit = net_sale - price - duty - net_carry
         roi_cash = profit / cash_outlay if cash_outlay else 0
         annualised = (1 + roi_cash) ** (1 / holding) - 1 if roi_cash > -1 else -1
@@ -96,6 +112,9 @@ def fmt(p: dict, r: Result) -> str:
     ]
     if r.gross_yield:
         out.append(f"  yield: gross {r.gross_yield*100:.2f}%  net ~{r.net_yield*100:.2f}%")
+    hold = p.get("holding_years", 5)
+    if ssd_rate(hold):
+        out.append(f"  NOTE: exit at year {hold} pays {ssd_rate(hold)*100:.0f}% SSD (4yr 16/12/8/4 regime) — included below")
     out.append(f"  BREAKEVEN exit: S${r.breakeven_exit_psf:,.0f} psf  "
                f"(+{r.breakeven_appreciation_pct*100:.1f}% just to break even after costs)")
     out.append(f"  {'appr/yr':>8}{'exit psf':>11}{'profit':>14}{'ROI/cash':>10}{'annualised':>12}")
