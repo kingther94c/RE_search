@@ -80,6 +80,8 @@ def listings_table(slug: str) -> str:
     legend = " · ".join(
         f"{k} {v[0]:,}–{v[1]:,}" for k, v in bench.items()
         if isinstance(v, (list, tuple)) and len(v) == 2)
+    bench_note = (f"<p class='sub'>基准带口径 benchmark provenance: {esc(data.get('benchmark_note'))}</p>"
+                  if data.get("benchmark_note") else "")
     return (
         f"<p class='sub'>数据拉取 pulled: {pulled} · 质量分 = landed scorecard (0-100) · "
         f"value = 地价 psf 对比区域基准带（{esc(legend)}）· ~km = OneMap 街道参考点到学校的直线距离"
@@ -87,7 +89,7 @@ def listings_table(slug: str) -> str:
         f"BUILD-PRICED、tenure/洪水/地块口径不明的房源不会被标为 PURSUE</p>"
         f"<table><tr><th>#</th><th class='l'>Street</th><th>Type</th><th>Ask</th>"
         f"<th>Land sqft</th><th>Land psf</th><th>Tenure</th><th>~km</th><th class='l'>Value</th>"
-        f"<th>Qual</th><th class='l'>Verdict</th></tr>{body}</table>"
+        f"<th>Qual</th><th class='l'>Verdict</th></tr>{body}</table>{bench_note}"
     )
 
 
