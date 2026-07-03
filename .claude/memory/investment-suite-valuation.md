@@ -28,12 +28,30 @@ de-machine-pinned (no baked-in `emulator-5554`/coords/paths). See `RE_search/ARC
 
 **App = PropNex Investment Suite** (`com.investmentsuite` / activity
 `com.propnex.investmentsuite.MainActivity2`), a Singapore property-data app; user logs in
-manually (UI automation only). Emulator: tablet AVD `mb_play` 2560×1600. **Extraction
-reality (non-obvious):** values are native `TextView` (readable) but MOST nodes have NO
-resource-id (Compose classes like `s2.e2`) → use text/desc selectors + full-screen dumps.
-Sale "Past Transactions" table has a **frozen left Contract-Date column**; only swiping the
-*data* columns scrolls it; fling momentum is non-deterministic (dedup + stale-stop).
-**Tower View** = per-unit grid with the app's own **Est. Val** per unit (benchmark AVM).
+manually (UI automation only; session persists across emulator reboots — 2026-07-03 run needed
+no re-login). Emulator: tablet AVD `mb_play` 2560×1600, launch WINDOWED (see
+[[emulator-windowed-visible]]). **Extraction reality (non-obvious):** values are native
+`TextView` (readable) but MOST nodes have NO resource-id (Compose classes like `s2.e2`) →
+use text/desc selectors + full-screen dumps. Sale "Past Transactions" table has a **frozen
+left Contract-Date column**; only swiping the *data* columns scrolls it; fling momentum is
+non-deterministic (dedup + stale-stop). **Tower View** = per-unit grid with the app's own
+**Est. Val** per unit (benchmark AVM).
+
+**2026-07-03 harvest lessons (cost real debugging):**
+- Search: tap bar at (1280,200), `mbx.py clear` (MOVE_END + batched DEL — adb can't select-all)
+  before `mbx.py type` or queries CONCATENATE; landed addresses need precise street names
+  ("Kingsmead Road" works, "Kings Road" doesn't fuzzy-match the Landed section).
+- **Landed coverage is rich**: per-address pages (type/tenure/land size/subtown/history since
+  1998) + Sale tab with **Nearby / District / Street** scopes + a separate "Realtime Agency
+  Data" panel (NOT caveats — tag rows by panel). Street files are the Tier-1 anchor for
+  landed price bands.
+- Tower View block tabs (y≈371): verify the grid actually changed after each tap (first-unit
+  sqft signature) — naive tab taps silently no-op.
+- `swipe down 0.9` from mid-screen pulls the **Android notification shade**; scroll only
+  inside the content region (e.g. region 1280,1250→1280,700).
+- Scrolling harvest can pair one transaction with 2-3 neighbouring frozen-column dates
+  (phantom duplicate rows) — `harvest_sale._collapse_scroll_artifacts` collapses them; verify
+  the true date on a static re-read of the table top.
 
 **Trial result — #18-03 Spottiswoode Suites** (16 Spottiswoode Park Rd, D02, freehold,
 743 sqft compact 3BR): model fair value **S$1.686M ($2,269 psf)**, +1.5% vs app AVM

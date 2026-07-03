@@ -7,12 +7,22 @@ metadata:
   originSessionId: 05a8a0f6-1bf9-4533-9ace-a43bc7336084
 ---
 
-RE_search runs a **study suite, all analyst-PASSED** (2026-07-03): Nanyang Primary 1km landed
-(PASS 8.3, 4 rounds), Rosyth 1km landed (PASS 8.4, 4 rounds), Dunearn House 新盘 (Turf City
-first launch, SELECTIVE 70/100; PASS 8.45, 2 rounds), Gallop Gables condo (in-ring alternative,
-S$2,346 psf / S$4.09m, stable band 2,243–2,346; PASS 8.7, 5 rounds). Verdicts + scores recorded
-in each digest under `review`. Reports → G:\My Drive\004 RES\REsearch_Reports
-(see [[re-search-reports-dir]]).
+RE_search runs a **study suite, REBUILT ON TIER-1 (Investment Suite) DATA and all
+analyst-PASSED** (2026-07-03): Dunearn House 新盘 PASS 8.9 · Rosyth 1km landed PASS 8.6 ·
+Gallop Gables condo PASS 8.55 (model S$2,351 psf / S$4.10m sits INSIDE the app's own 3BR AVM
+band S$2,337–2,411 — model↔AVM cross-validated <2%) · Nanyang 1km landed PASS 8.45. Verdicts in
+each digest under `review`; Tier-1 datasets + app screen captures under `research/`
+(gallop_transactions/towerview/rents/profitability, tier1_comps, tier1_landed_*).
+Reports → G:\My Drive\004 RES\REsearch_Reports (see [[re-search-reports-dir]]).
+
+**The Tier-1 redo's two killer findings (why [[data-source-trust-hierarchy]] exists):**
+- propertyforsale.com.sg's "Jun-2026 Alnwick four-deal cluster (S$1,571–2,815)" — which the
+  web-era Rosyth report used as its freshest benchmark — is ABSENT from official caveats:
+  the street's 2Y file has exactly TWO deals (Oct-2025: rebuilt detached $2,099 vs same-month
+  original semi-D $1,512 = +39% for rebuild state). Aggregator transactions = claims until app-verified.
+- 1 Kingsmead Rd (12,168 sqft, same size as the S$24m "24 Kingsmead" listing) transacted
+  2026-03-30 at $21.998m / $1,808 psf — flipping that listing's web-era "VALUE" call to
+  NEGOTIATE (ask +9% over print, possibly the same lot already sold).
 
 **Tools** (all tested; `python -m pytest tests` in RE_search, 42+ tests):
 - `researcher/sources/onemap.py` — public OneMap Search API geocode + haversine + `ring_check`
