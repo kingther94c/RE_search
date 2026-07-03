@@ -149,7 +149,7 @@
       "price": "$26,800,000",
       "land_sqft": 11802,
       "land_psf": "$2,271",
-      "note": "同街第二笔：较 1 号溢价 26% psf——状态/朝向差异的定价带。",
+      "note": "同街第二笔：较 1 号溢价 26% psf——注意时序：高价笔（2025-11）在前、低价笔（2026-03）在后，跨越 Q1 2026 landed 指数回落——价差含市场时点因素，不宜全读作状态/朝向溢价。",
       "source": "Investment Suite（URA caveat），2Y 街档"
     },
     {
@@ -337,7 +337,7 @@
     },
     {
       "title": "榜单两端的机会 / The two ends of the ranked list",
-      "detail": "大地块玩法：24 Kingsmead Rd（12,168 sqft，S$1,972 psf land，URA 已批 10,000+ sqft GFA）低于 detached 基准带下沿，适合重建/多代同堂——但 tenure 未确认，先 INLIS 核实。量子入场：Prince of Wales Rd 半独立 S$6.0m（S$1,708 psf）为本轮最低总价，OneMap 实测街道参考点 0.27km、明确在 1km 圈内（早前『1km 边缘』说法有误，已更正）；街区档次 mid、非 prime 街——低价的原因是街不是距离；签约前按门牌复测。"
+      "detail": "大地块玩法（Tier-1 更新）：24 Kingsmead Rd 要价 $24m（$1,972 psf）——同街 1 号、地块完全同大（12,168 sqft）已于 2026-03-30 以 $21,998,000（$1,808 psf）成交：要价高于最新同规格成交 ~9%，谈判锚 $1,808、按 NEGOTIATE 处理（且先核实是否同一房源已售）。INLIS 必查项加一条：GCBA 边界确认——app 将 8 Kingsmead 归 LEEDON PARK subtown，若 24 号在 GCBA 内，12,168 sqft 低于 GCB 最低 1,400 m²（15,069 sqft），重建/分割经济学完全不同。量子入场：Prince of Wales Rd 半独立 S$6.0m（$1,708 psf，OneMap 0.27km 圈内）。"
     },
     {
       "title": "用 Dunearn House 做 psf 参照系 / Benchmark against Dunearn House",
@@ -512,20 +512,20 @@
   "report_basename": "nanyang_1km_Landed_Area_Report.html",
   "review": {
     "verdict": "PASS",
-    "overall": 8.3,
-    "rounds": 4,
+    "overall": 8.45,
+    "rounds": 1,
     "date": "2026-07-03",
-    "reviewer": "独立敌对评审：SG 住宅分析师 persona（property-report-review skill）",
+    "basis": "Tier-1 rebuild",
+    "reviewer": "独立敌对评审：SG 住宅分析师 persona（property-report-review skill，含 Tier-1 溯源核查）",
     "scores": {
-      "data_accuracy": 9.0,
-      "method_rigor": 7.5,
+      "data_accuracy": 8.8,
+      "method_rigor": 8.0,
       "completeness": 9.0,
       "decision_usefulness": 8.5,
       "honesty_uncertainty": 8.5,
-      "presentation_bilingual": 6.5
+      "presentation_bilingual": 7.5
     },
-    "note": "（网络数据版验收记录——Tier-1 补锚后待重新验收）",
-    "superseded": true
+    "note": "两笔 Kingsmead Tier-1 成交经报告→digest→数据集→app 截图逐级核对到像素；URA/MAS 抽查全对。"
   },
-  "subtitle": "实战 Checklist 驱动 · 基线研究 2026-06-30 · 本次刷新 2026-07-03 · 独立分析师验收 PASS 8.3/10"
+  "subtitle": "实战 Checklist 驱动 · 基线 2026-06-30 · Tier-1 重做 2026-07-03（Investment Suite caveat 锚定）· 独立分析师验收 PASS 8.45/10"
 }

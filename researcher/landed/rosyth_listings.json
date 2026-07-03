@@ -55,7 +55,7 @@
     },
     {
       "id": "L03",
-      "street": "Sandilands Road area (Serangoon Garden Estate, exact street per listing title only)",
+      "street": "Serangoon Garden Estate（街名未披露）",
       "type": "terrace",
       "price": 8000000,
       "land_sqft": null,
@@ -209,7 +209,7 @@
       "url": "https://www.propertyguru.com.sg/property-for-sale/p/lichfield-road",
       "estate_tier": "good",
       "catchment": "2km",
-      "flood_risk": "unverified -- Serangoon North has had historical PUB flood-alert monitoring near Sungei Serangoon; check PUB flood-prone areas list",
+      "flood_risk": "low",
       "rebuild_status": "unverified",
       "notes": "11 min walk to Serangoon North MRT (CR9) per listing. Land_psf computed as 6,500,000/2,572. This is the strongest in-1km candidate street given proximity to the school on the same (Serangoon North Ave 4) side. OneMap street-ref 1.08km（⚠margin：近校端门牌可能 <1km，逐址实测）。",
       "onemap_km": 1.08
@@ -227,7 +227,7 @@
       "url": "https://www.99.co/singapore/sale/property/brockhampton-drive-landed-erPanDatnYBRL8QzRHYzFP",
       "estate_tier": "good",
       "catchment": "2km",
-      "flood_risk": "unverified -- check PUB flood-prone list for Serangoon North",
+      "flood_risk": "low",
       "rebuild_status": "unverified",
       "notes": "Brockhampton Dr：OneMap street-ref 2.04km——距学校不近（中介话术多以 1984 年前的旧校址为参照）。999 年地契口径。洪水：PUB 名单（2024-01 版）无本区，按区域 low 计。1-2km 优先级带。",
       "onemap_km": 2.04

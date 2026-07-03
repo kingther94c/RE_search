@@ -2,7 +2,7 @@
   "area_name": "Rosyth School 1km zone — Serangoon North pocket + Serangoon Gardens 东北角 margin，D19/28",
   "asof": "2026-07-03",
   "report_basename": "rosyth_1km_Landed_Area_Report.html",
-  "subtitle": "学区入手 · OCR 999-yr landed · OneMap 逐街实测 · 独立分析师验收 PASS 8.4/10",
+  "subtitle": "学区入手 · OCR 999-yr landed · OneMap 逐街实测 · Tier-1 重做（Investment Suite caveat 锚定）· 验收中",
   "summary": "【2026-07-03】Rosyth School（21 Serangoon North Ave 4, S555855，坐标经 OneMap 核实）是政府学校（非 SAP——多家博客称其 SAP 为误传）、原九所 GEP 中心之一（GEP 于 2026 年最后一届 P4 后停办）。Phase 2C 抽签 2022-2024 连续 ~3:1（2024：139 人争 44 位），比 Nanyang（2025：1.5:1）更激烈。本研究最重要的发现：**『买 Serangoon Gardens = Rosyth 1km』是普遍误区**——OneMap 街道参考点实测显示Gardens 核心（Chartwell 1.77km / Cardiff 2.01km / Tavistock 1.45km / Bridport 1.36km / Berwick 1.88km）全部在 1km 圈外，东北角 Walmer/Ripley/Lichfield/Raglan 也只是 1.07-1.14km 的『圈界 margin』（近校端门牌才可能压线入圈）。真正明确在 1km 内的住宅供给是 Serangoon North Ave 1 一带（0.74km，含少量 landed/strata-landed 与大量 HDB）——这意味着 2C『<1km 组』的主力是 HDB 家庭，为学区买 Gardens landed 的家庭实际落在 1-2km 优先级。（注：校史：1956 年建于 Rosyth Road，1984 年因 GEP 扩建迁至 Parry Avenue，2001 年迁入现址 Serangoon North Ave 4——即学校离开 Rosyth Road 已 40+ 年，大量中介话术仍沿用旧地理。）产权几乎全为 1953-56 起算 999 年地契；价格结构（Tier-1 重做）：Alnwick 街 2Y 官方 caveat 仅两笔（2025-10）——重建 detached $2,099 vs 同街同月原状 semi-D $1,512（地块几乎同大），『翻建状态』一项就值 +39% psf；estate-wide 背景带 EdgeProp $1,131–3,472（Tier-2 口径）；量子 S$3.5-8m 约为 Nanyang 圈同类一半；D19 为 2025 年全国成交量最大 landed 区（309 宗）。催化剂：CRL CR9/CR10（2030）、PLAB 搬迁（2030s）。不在 PUB 官方易涝名单。市场背景：URA landed 指数 Q1 2026 -0.4% q/q，3M SORA ~1.07%。 — [EN] The headline finding, ground-truthed on OneMap: **Serangoon Gardens is NOT a Rosyth-1km play** — the estate's core measures 1.36-2.04km from the school's current campus (the school left its eponymous Rosyth Road site back in 1984 (Parry Avenue interim campus, then Serangoon North Ave 4 from 2001); agent copy still trades on the old geography). Only the Serangoon North Ave 1 pocket (0.74km, mostly HDB + some strata-landed) is clearly inside; the Gardens' NE corner streets are 1.07-1.14km margin cases needing per-address checks. Ballot maths: 2C ran ~3:1 in 2022-24, and the <1km priority group is HDB-dominated. The estate itself remains attractive on its own merits — 999-yr near-freehold, Singapore's most liquid landed district (309 deals in 2025), S$3.5-8m quantum, CRL 2030 — but buy it as a HOME with 1-2km priority, not as a 1km ballot ticket.",
   "estates": [
     {
@@ -34,8 +34,8 @@
       "type": "terrace / semi-D",
       "distance": "1.18–1.30km ✗OneMap（1-2km 带）",
       "gcba": "No",
-      "indicative_land_psf": "S$1,571–2,815（2026-06 Alnwick 四宗）",
-      "note": "2026-06 成交簇所在——鲜活基准但属 1-2km 优先级；同街 spread=地块大小+翻建状态。"
+      "indicative_land_psf": "Tier-1（2Y 官方 caveat 仅两笔，2025-10）：$1,512–2,099",
+      "note": "Alnwick 街 2Y 仅 9 号（2016 重建 detached，$2,099）与 15 号（1997 原状 semi-D，$1,512）两笔——同街同月、地块同大，翻建状态差 +39%。网络聚合站的『2026-06 四宗成交』不存在于官方 caveat，已剔除。1-2km 优先级带。"
     },
     {
       "name": "Serangoon Gardens 核心（Chartwell / Cardiff / Tavistock / Bridport / Berwick / Brockhampton / Circus）",
@@ -156,7 +156,7 @@
     "No conservation status was found for any part of this ring (Serangoon Gardens is a mid-20th-century estate but not gazetted as a conservation area in sources reviewed)."
   ],
   "future_planning": [
-    "Cross Island Line (CRL) Phase 1 -- two new stations serve this ring directly: Serangoon North MRT (CR9), underground beneath Ang Mo Kio Ave 3 near the Yio Chu Kang Rd junction (LTA/rail 口径) (built with a 3rd track for train parking/withdrawal); and Tavistock MRT (CR10), underground beneath Ang Mo Kio Ave 3 at its junction with Tavistock Ave and Ang Mo Kio Industrial Park 2. Both targeted to open in 2030; station construction was reported to start Q2 2022. LTA has noted an intermediate TBM launch shaft will be built away from the Tavistock site due to space constraints -- no landed-street-specific construction-disruption detail (dust/noise/traffic diversions on Chartwell Dr, Bridport Ave, Tavistock Ave etc.) was found in this study; recommend follow-up closer to/during construction.",
+    "Cross Island Line (CRL) Phase 1 -- two new stations serve this ring directly: Serangoon North MRT (CR9), underground beneath Ang Mo Kio Ave 3（Serangoon North Ave 1/3 与 Yio Chu Kang Rd 交界地带——不同来源对交叉口表述略异，以 LTA 施工图为准） (built with a 3rd track for train parking/withdrawal); and Tavistock MRT (CR10), underground beneath Ang Mo Kio Ave 3 at its junction with Tavistock Ave and Ang Mo Kio Industrial Park 2. Both targeted to open in 2030; station construction was reported to start Q2 2022. LTA has noted an intermediate TBM launch shaft will be built away from the Tavistock site due to space constraints -- no landed-street-specific construction-disruption detail (dust/noise/traffic diversions on Chartwell Dr, Bridport Ave, Tavistock Ave etc.) was found in this study; recommend follow-up closer to/during construction.",
     "Paya Lebar Air Base relocation (targeted from the 2030s) is the dominant macro catalyst for the wider northeast region: current ~800ft height caps across Hougang/Punggol/Marine Parade/city-fringe (from the PLAB flight path) can be progressively lifted once the base moves, potentially unlocking an estimated ~150,000 new homes on the ~800ha former airbase footprint itself (redevelopment starting with the Defu area, next to PLAB). This is macro-context, not a site-specific catalyst for the Rosyth 1km ring -- the landed estates here are already low-rise by planning intent (2-storey control) and are not on the former airbase land; no URA statement was found specifically flagging Serangoon Gardens/Serangoon North landed streets as a direct beneficiary of the height-limit lift. Surrounding HDB/condo/industrial parcels are the more plausible longer-term beneficiaries.",
     "GLS/en-bloc activity is concentrated on NON-landed parcels ringing (not within) the landed streets: The Garden Residences (already completed; GLS site bordering Lichfield/Walmer/Ripley/Raglan/Alnwick) and the Serangoon Ville/Affinity at Serangoon en-bloc (~S$499M, Serangoon North Ave 1, Serangoon North Ave 1 street-ref 0.74km by OneMap, includes ~40 strata landed units within an otherwise condo project). Landed clusters themselves do not go en bloc as a whole (individual houses transact independently). Kensington Park (S$1.28bil collective-sale relaunch, Kensington Park Drive) and Serenity Park (S$505M collective sale, Tamarind Rd, Yio Chu Kang/D28) surfaced in searches as 'nearby' but are actually OUTSIDE the 1km ring (further towards Yio Chu Kang/District 28 core) -- excluded from in-ring future planning, flagged here only to correct a portal-search false positive."
   ],
@@ -210,7 +210,7 @@
     },
     {
       "title": "榜单条件性首选 / Conditional top pick",
-      "detail": "L01 Berwick Dr semi-D S$9.38m（质量分最高、psf 2,541 在带内、999 年）——但 Berwick 实测 1.88km 在圈外，只作『生活方式+土地』首选。若目标是压线入圈：优先 Lichfield Rd（1.08km margin）带门牌复测；真 <1km 需求转向 Serangoon North Ave 1 pocket 或 HDB。另注：榜单评分集中在 65-74 分——系多项数据不全按保守默认计分所致；tenure/地块补验后重跑评分再定优先序。"
+      "detail": "L01 Berwick Dr semi-D S$9.38m（质量分最高、999 年）——但 psf 2,541 高于 Tier-1 semi-D 带上沿（$2,099，重建盘口径）约 21%：按 NEGOTIATE 处理，谈判锚 $2,099；且 Berwick 实测 1.88km 在圈外，只作『生活方式+土地』标的。若目标是压线入圈：优先 Lichfield Rd（1.08km margin）带门牌复测；真 <1km 需求转向 Serangoon North Ave 1 pocket 或 HDB。榜单评分集中 65-74 系数据不全项保守计分——tenure/地块补验后重跑评分再定序。"
     }
   ],
   "data_gaps": [
@@ -301,7 +301,9 @@
     "https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr26-31",
     "https://www.ura.gov.sg/news/media/pr25-64/",
     "https://www.uradraftmasterplan.gov.sg/regional-plans/east/paya-lebar-air-base/",
-    "https://x.com/SBSTransit_Ltd/status/1955057945504518350"
+    "https://x.com/SBSTransit_Ltd/status/1955057945504518350",
+    "research/captures/landed_alnwick_street_00-01 + nearby_00-04（Investment Suite 屏读留痕，PNG+XML+JSON）",
+    "research/tier1_landed_rosyth.json（Tier-1 数据集）"
   ],
   "review": {
     "verdict": "PASS",
@@ -317,7 +319,7 @@
       "honesty_uncertainty": 9.5,
       "presentation_bilingual": 6.0
     },
-    "note": "（网络数据版验收记录——Tier-1 重做后待重新验收）",
+    "note": "网络数据版验收（8.4）已被 Tier-1 重做取代——本版待重新验收",
     "superseded": true
   }
 }

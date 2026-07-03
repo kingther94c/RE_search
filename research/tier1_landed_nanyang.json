@@ -9,7 +9,8 @@
    "psf": "$1,808",
    "price": "$21,998,000",
    "sale_type": "Resale",
-   "date": "30 Mar 2026"
+   "date": "30 Mar 2026",
+   "panel": "URA caveat（Street Transactions 表）"
   },
   {
    "address": "2 Kingsmead Road",
@@ -20,7 +21,8 @@
    "psf": "$2,271",
    "price": "$26,800,000",
    "sale_type": "Resale",
-   "date": "18 Nov 2025"
+   "date": "18 Nov 2025",
+   "panel": "URA caveat（Street Transactions 表）"
   },
   {
    "address": "1 Kingsmead Road",
@@ -31,7 +33,8 @@
    "psf": "-",
    "price": "$21,988,000",
    "sale_type": "Resale",
-   "date": "03 Apr 2026"
+   "date": "03 Apr 2026",
+   "panel": "Realtime Agency Data（中介实时口径，非 URA caveat；与 caveat 价差 $10k）"
   }
  ],
  "nearby": [
@@ -44,7 +47,8 @@
    "psf": "$1,808",
    "price": "$21,998,000",
    "sale_type": "Resale",
-   "date": "30 Mar 2026"
+   "date": "30 Mar 2026",
+   "panel": "URA caveat（Street Transactions 表）"
   },
   {
    "address": "2 Kingsmead Road",
@@ -55,7 +59,8 @@
    "psf": "$2,271",
    "price": "$26,800,000",
    "sale_type": "Resale",
-   "date": "18 Nov 2025"
+   "date": "18 Nov 2025",
+   "panel": "URA caveat（Street Transactions 表）"
   },
   {
    "address": "1 Kingsmead Road",
@@ -66,7 +71,8 @@
    "psf": "-",
    "price": "$21,988,000",
    "sale_type": "Resale",
-   "date": "03 Apr 2026"
+   "date": "03 Apr 2026",
+   "panel": "Realtime Agency Data（中介实时口径，非 URA caveat；与 caveat 价差 $10k）"
   }
  ],
  "window": "2Y",
