@@ -12,8 +12,8 @@
   },
   "asof": "2026-07-03",
   "report_basename": "gallop_gables_Condo_Valuation_Report.html",
-  "subtitle": "Nanyang Primary 1km 圈内的 condo 替代方案 · OneMap 实测 0.73km · Tier-1 数据重做：Investment Suite（URA caveat + per-unit AVM）",
-  "summary": "【2026-07-03｜Tier-1 重做】Gallop Gables（70-82 Farrer Rd，D10/Tyersall，freehold，TOP 1997，140 户 7 座 5 层——全部经 Investment Suite 官方口径确认）是 OneMap 实测 0.73km、明确在 Nanyang Primary 1km 圈内的 condo 替代方案。估值（可比调整法，输入为 app 内 10 笔 URA caveat 成交，5Y 窗口）：点估 ~S$2,351 psf ≈ 4.10m（1,744 sqft 3BR，3 楼），区间 S$2,170–2,497 psf。**独立交叉验证：app 对同规格 3BR（1,722-1,755 sqft）的 per-unit Est. Val（AVM）带为 S$2,337–2,411 psf——模型点估与 AVM 带中枢差 <2%**。项目纪录价 S$2,421 psf（2025-12-09，2,842sf 4BR，S$6.88m，app caveat 确认）。租金（app 租约口径）：3BR 1,700-1,800 sqft 月租 S$7,500-8,200 → 对点估毛收益率 ~2.3%。买点：freehold 学区稀缺低密度 + 每户土地占比 168 m² 的土地期权（本盘从无整盘集体出售记录）；压点：1997 年楼龄维护、流动性薄（caveat 口径 3-4 宗/年）、GEP 停办后学区溢价逻辑弱化。 — [EN] Tier-1 redo: every load-bearing number now traces to Investment Suite (URA caveats, per-unit AVM, rental contracts). Model ~S$2,351 psf on 10 in-app caveats independently cross-checks against the app's own Est. Val band of S$2,337–2,411 psf for the same stack cohort — agreement within 2%. Yield ~2.3% gross; the case is land-share scarcity inside the school ring, not income.",
+  "subtitle": "Nanyang Primary 1km 圈内的 condo 替代方案 · OneMap 0.73km · Tier-1 重做（Investment Suite caveat+AVM）· 独立分析师验收 PASS 8.55/10",
+  "summary": "【2026-07-03｜Tier-1 重做】Gallop Gables（70-82 Farrer Rd，D10/Tyersall，freehold，TOP 1997，140 户 7 座 5 层——全部经 Investment Suite 官方口径确认）是 OneMap 实测 0.73km、明确在 Nanyang Primary 1km 圈内的 condo 替代方案。估值（可比调整法，输入为 app 内 10 笔 URA caveat 成交，5Y 窗口）：点估 ~S$2,351 psf ≈ 4.10m（1,744 sqft 3BR，3 楼），区间 S$2,170–2,497 psf。独立交叉验证：app 对同规格 3BR（1,722-1,755 sqft）的 per-unit Est. Val（AVM）带为 S$2,337–2,411 psf——模型点估与 AVM 带中枢差 <2%。项目纪录价 S$2,421 psf（2025-12-09，2,842sf 4BR，S$6.88m，app caveat 确认）。租金（app 租约口径）：3BR 1,700-1,800 sqft 月租 S$7,500-8,200 → 对点估毛收益率 ~2.3%。买点：freehold 学区稀缺低密度 + 每户土地占比 168 m² 的土地期权（本盘从无整盘集体出售记录）；压点：1997 年楼龄维护、流动性薄（caveat 口径 3-4 宗/年）、GEP 停办后学区溢价逻辑弱化。 — [EN] Tier-1 redo: every load-bearing number now traces to Investment Suite (URA caveats, per-unit AVM, rental contracts). Model ~S$2,351 psf on 10 in-app caveats independently cross-checks against the app's own Est. Val band of S$2,337–2,411 psf for the same stack cohort — agreement within 2%. Yield ~2.3% gross; the case is land-share scarcity inside the school ring, not income.",
   "development_facts": [
     "Tier-1 确认（Investment Suite Property Info）：140 户、7 座（70-82 Farrer Rd）、5 层（Tower View 有 #05-xx 层），TOP 1997，freehold；地块 253,307 sqft / 23,533 m²，容积率 1.4；开发商 Atbara Holdings + Straits Developments；MCST 管理 SRE Global。每户土地占比 ~168 m²（对照 D'Leedon ~41 m²）——低密度即土地期权。（此前网络口径的『102 户』『4 层』说法均被 app 数据否定。）",
     "户型（Tower View 网格实测）：2BR ~1,130-1,206 sqft、大 2BR 1,518-1,582 sqft、3BR 1,722-1,755 sqft、大 3BR 2,131-2,207 sqft、4BR 2,594-2,971 sqft、顶层大户 3,175-3,412 sqft。",
@@ -336,7 +336,7 @@
   ],
   "risks": [
     "1997-vintage facilities show visible dating: pool 'a bit of a letdown'/'definitely dated', open corridors 'dark' with poor first impressions — though the core structure is 'well maintained despite its age' per Stacked Homes' direct site review. Buyers should budget for cosmetic unit-level renovation to compete on resale.",
-    "En-bloc optionality is real but UNREALIZED and NOT actively in-process: Gallop Gables has large per-unit land allocation (168 sqm/unit across 23,528 sqm total, low-rise 5-storey blocks (Tier-1 confirmed)) giving it 'strong en bloc potential' per Stacked Homes,  Treat en-bloc as speculative long-run optionality, not a near-term catalyst.",
+    "En-bloc optionality is real but UNREALIZED and NOT actively in-process: Gallop Gables has large per-unit land allocation (168 sqm/unit across 23,533 sqm total, low-rise 5-storey blocks (Tier-1 confirmed)) giving it 'strong en bloc potential' per Stacked Homes,  Treat en-bloc as speculative long-run optionality, not a near-term catalyst.",
     "流动性薄（量化口径）：2023-2026 本盘成交表计得约 3-4 宗/年（2025 年 4 宗）——小盘（140 户）+低换手，出售周期可能以季度计；挂牌定价须给流动性折让。REALIS 全量复核仍建议在出价前完成。",
     "D10/CCR is currently the weakest-performing price region (+0.6% qoq vs +2.2% OCR, +0.8% RCR in Q1 2026), meaning near-term capital appreciation tailwind for a CCR asset like Gallop Gables is comparatively muted versus OCR/RCR alternatives."
   ],
@@ -351,7 +351,7 @@
     "cost_stack": [
       "BSD（模型未取整点估 S$4,099,481）≈ S$185,569（对显示价 S$4,100,000 为 S$185,600）；公民首套 ABSD 0%、二套 20%",
       "SSD：2025-07-04 起 4 年 16/12/8/4%——学区持有周期（P1-P6 ≥6 年）天然清窗",
-      "年度房产税按 AV 累进（自住 0-32% 档）——1,743sqft D10 3BR 的 AV 需以 IRAS 为准",
+      "年度房产税按 AV 累进（自住 0-32% 档）——1,744sqft D10 3BR 的 AV 需以 IRAS 为准",
       "维护费未披露（低密度大地块通常偏高）——尽调必问项"
     ]
   },
@@ -455,20 +455,20 @@
   ],
   "review": {
     "verdict": "PASS",
-    "overall": 8.7,
-    "rounds": 5,
+    "overall": 8.55,
+    "rounds": 2,
     "date": "2026-07-03",
-    "reviewer": "独立敌对评审：SG 估值分析师 persona（property-report-review skill）",
+    "basis": "Tier-1 rebuild",
+    "reviewer": "独立敌对评审：SG 分析师 persona（property-report-review skill，含 Tier-1 溯源核查）",
     "scores": {
       "data_accuracy": 9.0,
-      "method_rigor": 9.0,
-      "completeness": 8.5,
+      "method_rigor": 8.5,
+      "completeness": 8.0,
       "decision_usefulness": 9.0,
       "honesty_uncertainty": 8.5,
-      "presentation_bilingual": 7.0
+      "presentation_bilingual": 7.5
     },
-    "note": "（此为网络数据版的验收记录——Tier-1 重做后待重新验收）",
-    "superseded": true
+    "note": "网格 10 行逐行复算到 6-7 位小数；AVM 22 单元带独立重建一致；BSD/收益率/纪录链全对；evidence chain 审计级。"
   },
   "avm_crosscheck": [
     {

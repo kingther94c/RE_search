@@ -2,7 +2,7 @@
   "area_name": "Rosyth School 1km zone — Serangoon North pocket + Serangoon Gardens 东北角 margin，D19/28",
   "asof": "2026-07-03",
   "report_basename": "rosyth_1km_Landed_Area_Report.html",
-  "subtitle": "学区入手 · OCR 999-yr landed · OneMap 逐街实测 · Tier-1 重做（Investment Suite caveat 锚定）· 验收中",
+  "subtitle": "学区入手 · OCR 999-yr landed · OneMap 逐街实测 · Tier-1 重做（Investment Suite caveat 锚定）· 独立分析师验收 PASS 8.6/10",
   "summary": "【2026-07-03】Rosyth School（21 Serangoon North Ave 4, S555855，坐标经 OneMap 核实）是政府学校（非 SAP——多家博客称其 SAP 为误传）、原九所 GEP 中心之一（GEP 于 2026 年最后一届 P4 后停办）。Phase 2C 抽签 2022-2024 连续 ~3:1（2024：139 人争 44 位），比 Nanyang（2025：1.5:1）更激烈。本研究最重要的发现：**『买 Serangoon Gardens = Rosyth 1km』是普遍误区**——OneMap 街道参考点实测显示Gardens 核心（Chartwell 1.77km / Cardiff 2.01km / Tavistock 1.45km / Bridport 1.36km / Berwick 1.88km）全部在 1km 圈外，东北角 Walmer/Ripley/Lichfield/Raglan 也只是 1.07-1.14km 的『圈界 margin』（近校端门牌才可能压线入圈）。真正明确在 1km 内的住宅供给是 Serangoon North Ave 1 一带（0.74km，含少量 landed/strata-landed 与大量 HDB）——这意味着 2C『<1km 组』的主力是 HDB 家庭，为学区买 Gardens landed 的家庭实际落在 1-2km 优先级。（注：校史：1956 年建于 Rosyth Road，1984 年因 GEP 扩建迁至 Parry Avenue，2001 年迁入现址 Serangoon North Ave 4——即学校离开 Rosyth Road 已 40+ 年，大量中介话术仍沿用旧地理。）产权几乎全为 1953-56 起算 999 年地契；价格结构（Tier-1 重做）：Alnwick 街 2Y 官方 caveat 仅两笔（2025-10）——重建 detached $2,099 vs 同街同月原状 semi-D $1,512（地块几乎同大），『翻建状态』一项就值 +39% psf；estate-wide 背景带 EdgeProp $1,131–3,472（Tier-2 口径）；量子 S$3.5-8m 约为 Nanyang 圈同类一半；D19 为 2025 年全国成交量最大 landed 区（309 宗）。催化剂：CRL CR9/CR10（2030）、PLAB 搬迁（2030s）。不在 PUB 官方易涝名单。市场背景：URA landed 指数 Q1 2026 -0.4% q/q，3M SORA ~1.07%。 — [EN] The headline finding, ground-truthed on OneMap: **Serangoon Gardens is NOT a Rosyth-1km play** — the estate's core measures 1.36-2.04km from the school's current campus (the school left its eponymous Rosyth Road site back in 1984 (Parry Avenue interim campus, then Serangoon North Ave 4 from 2001); agent copy still trades on the old geography). Only the Serangoon North Ave 1 pocket (0.74km, mostly HDB + some strata-landed) is clearly inside; the Gardens' NE corner streets are 1.07-1.14km margin cases needing per-address checks. Ballot maths: 2C ran ~3:1 in 2022-24, and the <1km priority group is HDB-dominated. The estate itself remains attractive on its own merits — 999-yr near-freehold, Singapore's most liquid landed district (309 deals in 2025), S$3.5-8m quantum, CRL 2030 — but buy it as a HOME with 1-2km priority, not as a 1km ballot ticket.",
   "estates": [
     {
@@ -178,7 +178,7 @@
     },
     {
       "title": "按 999-yr 定价 / Price it as 999-yr, not freehold",
-      "detail": "全区基本为 1953-56 起算 999 年地契（余约 925 年）。银行估值与转售习惯将其视作准永久，但对比 D10 freehold 的折价有一部分正来自此——不要按 freehold 逻辑追价；INLIS 核实每一块地的起算年与余期。"
+      "detail": "全区基本为 1953-56 起算 999 年地契（余约 926 年）。银行估值与转售习惯将其视作准永久，但对比 D10 freehold 的折价有一部分正来自此——不要按 freehold 逻辑追价；INLIS 核实每一块地的起算年与余期。"
     },
     {
       "title": "读懂同街 spread / Same-street spread = land + rebuild state",
@@ -307,19 +307,19 @@
   ],
   "review": {
     "verdict": "PASS",
-    "overall": 8.4,
-    "rounds": 4,
+    "overall": 8.6,
+    "rounds": 2,
     "date": "2026-07-03",
-    "reviewer": "独立敌对评审：SG 住宅分析师 persona（property-report-review skill）",
+    "basis": "Tier-1 rebuild",
+    "reviewer": "独立敌对评审：SG 分析师 persona（property-report-review skill，含 Tier-1 溯源核查）",
     "scores": {
       "data_accuracy": 9.0,
       "method_rigor": 8.5,
-      "completeness": 8.0,
+      "completeness": 8.5,
       "decision_usefulness": 8.5,
       "honesty_uncertainty": 9.5,
-      "presentation_bilingual": 6.0
+      "presentation_bilingual": 7.0
     },
-    "note": "网络数据版验收（8.4）已被 Tier-1 重做取代——本版待重新验收",
-    "superseded": true
+    "note": "伪造成交簇隔离处置被评审认定『exactly right』；两笔 Tier-1 锚经截图逐元核对（View All (2) 可见）。"
   }
 }

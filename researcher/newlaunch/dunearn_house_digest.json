@@ -279,19 +279,19 @@
   ],
   "review": {
     "verdict": "PASS",
-    "overall": 8.45,
+    "overall": 8.9,
     "rounds": 2,
     "date": "2026-07-03",
-    "reviewer": "独立敌对评审：SG 新盘分析师 persona（property-report-review skill）",
+    "basis": "Tier-1 rebuild",
+    "reviewer": "独立敌对评审：SG 分析师 persona（property-report-review skill，含 Tier-1 溯源核查）",
     "scores": {
-      "data_accuracy": 9.0,
-      "method_rigor": 8.0,
-      "completeness": 8.0,
+      "data_accuracy": 9.5,
+      "method_rigor": 8.5,
+      "completeness": 9.0,
       "decision_usefulness": 9.0,
-      "honesty_uncertainty": 9.0,
-      "presentation_bilingual": 7.0
+      "honesty_uncertainty": 9.5,
+      "presentation_bilingual": 7.5
     },
-    "note": "网络数据版验收（8.45）已被 Tier-1 重做取代——本版待重新验收",
-    "superseded": true
+    "note": "六盘 Tier-1 带全对（含摘要参照系）；BSD 精确到元；The Orie 归属披露被评审称 exemplary。"
   }
 }
