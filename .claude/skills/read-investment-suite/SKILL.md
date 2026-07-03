@@ -37,6 +37,12 @@ Point the harness at your device via env vars: `MBX_ADB` (→ `$ADB`),
 `MBX_SERIAL` (→ `$SERIAL`), `MBX_OUT` (capture output dir).
 
 ## Prerequisites
+- Run the emulator **windowed (visible), never headless** — so the user can watch the
+  automation live and step in at any moment (sign in, correct navigation, tap). Launch via
+  mobile_bridge `scripts\start_emulator.ps1` (windowed by default; for Investment Suite pass
+  `-AvdName mb_play`); do **not** use `-NoWindow` / `-no-window` for a research run. Before
+  driving, confirm the emulator window is up and, if it may be hidden, ask the user to bring
+  it to the foreground.
 - An Android emulator/device with the app **already logged in** (sign-in is the
   operator's job — UI only, no auth bypass).
 - `adb` available (see `$ADB` above).
