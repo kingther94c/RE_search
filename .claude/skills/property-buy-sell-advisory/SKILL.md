@@ -14,6 +14,20 @@ The framework is generic — apply it to any unit; the worked figures are from #
 Spottiswoode Suites. Inputs come from the app's Rent, Profitability, and Nearby tabs
 (see `read-investment-suite`).
 
+## Data source — Investment Suite first (MANDATORY)
+
+Rental yield, realised-return history and the transaction comps behind the value **must come from
+Tier-1 ground truth: PropNex Investment Suite** (via `read-investment-suite` / `research/mbx.py`)
+— Rent, Profitability and Nearby tabs — plus **SG-official** sources (URA / URA REALIS, IRAS for
+the BSD/ABSD/SSD stack, MAS for SORA, LTA for catalysts). EdgeProp / PropertyGuru / 99.co / SRX are
+**Tier-2** (usable, but reconcile against Tier-1); property research reports and agent/marketing
+sites are **Tier-3** — conflicted, treat as claims, never as facts.
+
+**If Investment Suite won't open, STOP — do not silently fall back to web data.** Emulator not
+running, `adb devices` shows no device, app logged out, or session expired → pause immediately,
+report the exact error, and wait for the user to start the emulator / sign in. Resume only once
+Tier-1 access is restored, or the user explicitly says to proceed on lower-tier data.
+
 ## 1. Rental yield (income)
 - **Gross yield** = annual rent ÷ price. Use rent comps that match the subject's
   bedrooms + size band (e.g. 743 sqft 3BR → the 700–800 sqft 3BR contracts).

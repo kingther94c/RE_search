@@ -9,8 +9,24 @@ Goal: do ~80% of the screening on the computer before visiting. Output is an **a
 report** (what this micro-market is, prices, risks, future) + a **shortlist of criteria**
 to filter listings. Pair with `landed-property-due-diligence` for a specific house.
 
-This skill is **tool-agnostic**: gather with `WebFetch`/`WebSearch` against the official
-SG sources below. No fixed scraper required.
+Gather planning/policy/geography context with `WebFetch`/`WebSearch` against the official SG
+sources below; **transaction, land-psf, rent and AVM data must come from Tier-1 — see "Data
+source" next.**
+
+## Data source — Investment Suite first (MANDATORY)
+
+Every load-bearing figure — land-psf bands, named transactions, rents and any per-development
+AVM — **must come from Tier-1 ground truth: PropNex Investment Suite** (via
+`read-investment-suite` / `research/mbx.py`) and **SG-official** sources (URA / URA REALIS,
+OneMap for the 1km school ring via `researcher/sources/onemap.py`, PUB for flood, SLA for title,
+MOE for balloting). EdgeProp / PropertyGuru / 99.co / SRX are **Tier-2** (usable, but reconcile
+against Tier-1); property research reports and agent/marketing sites are **Tier-3** — conflicted,
+treat as claims, never as facts.
+
+**If Investment Suite won't open, STOP — do not silently fall back to web data.** Emulator not
+running, `adb devices` shows no device, app logged out, or session expired → pause immediately,
+report the exact error, and wait for the user to start the emulator / sign in. Resume only once
+Tier-1 access is restored, or the user explicitly says to proceed on lower-tier data.
 
 ## The value ordering (anchor every judgement to this)
 

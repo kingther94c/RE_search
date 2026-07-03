@@ -9,6 +9,20 @@ Run AFTER `landed-area-research` has shortlisted the area. Produces a **screenin
 (score + flags + go/no-go) for one address. The land matters more than the house — score it
 that way. Quantify with `researcher/landed/scorecard.py`.
 
+## Data source — Investment Suite first (MANDATORY)
+
+The plot's transaction history, land-psf comparables and any per-development AVM **must come from
+Tier-1 ground truth: PropNex Investment Suite** (via `read-investment-suite` / `research/mbx.py`)
+and **SG-official** sources (URA / URA REALIS, SLA INLIS for title/easement/covenant, OneMap,
+PUB). EdgeProp / PropertyGuru / 99.co / SRX are **Tier-2** (usable, but reconcile against Tier-1);
+property research reports and agent/marketing sites are **Tier-3** — conflicted, treat as claims,
+never as facts.
+
+**If Investment Suite won't open, STOP — do not silently fall back to web data.** Emulator not
+running, `adb devices` shows no device, app logged out, or session expired → pause immediately,
+report the exact error, and wait for the user to start the emulator / sign in. Resume only once
+Tier-1 access is restored, or the user explicitly says to proceed on lower-tier data.
+
 ## A. The land (more important than the house)
 
 | Check | Prefer / flag |

@@ -44,6 +44,28 @@ Point the harness at your device via env vars: `MBX_ADB` (→ `$ADB`),
   `MBX_ADB`, `MBX_SERIAL`, `MBX_OUT`.
 - App package `com.investmentsuite`, launch activity `com.propnex.investmentsuite.MainActivity2`.
 
+## Open-failure protocol — pause, report, wait (do NOT fall back to web data)
+
+Investment Suite is **Tier-1 ground truth** for property research; every other skill in this repo
+is told to source its load-bearing numbers here first. So if the app cannot be reached, the
+correct move is to **stop and hand back to the user — never silently substitute web-aggregator or
+research-report data** (those are Tier-2/3 and are exactly what this skill exists to replace).
+
+Check readiness before harvesting, and on ANY of these failure modes pause immediately:
+
+| Symptom | Likely cause | What to report / ask |
+|---|---|---|
+| `adb devices` lists no device (or `mbx.dump_xml()` raises "came back empty") | emulator/device not running | "The Android emulator isn't running — please start it, then confirm." |
+| adb device present but app not foreground / wrong package | app not open | "Investment Suite isn't open on the device — please launch it." |
+| Screen shows a login / sign-in page (no bottom-nav `Market`/`ProTrend`) | logged out or session expired | "The app is on the login screen — please sign in (UI only; I don't handle credentials), then confirm." |
+| adb path/serial wrong (`MBX_ADB`/`MBX_SERIAL`) | misconfigured harness | report the resolved path/serial and ask the user to correct it |
+
+When you pause: state the **exact** error (the failing command + its output), say which manual step
+is needed, and **wait for the user to confirm they've done it** before retrying. Only proceed on
+lower-tier data if the user *explicitly* says to. `mbx.dump_xml()` already raises on an empty dump
+(device offline / app not foreground) rather than returning 0 nodes — surface that error, don't
+swallow it.
+
 ## The mbx harness commands
 Run from `research/`. Every `cap` writes a PNG + XML + JSON to `MBX_OUT`
 (default `research/captures/`) so the whole run is auditable and replayable.
@@ -130,8 +152,10 @@ For the full table harvest, drive `research/harvest_sale.py` (it imports `mbx`).
   measured on a 2560x1600 tablet. Re-measure from a live header dump
   (`adb shell wm size`, then read the `bounds`/`center` of the header nodes) on a
   different screen size before reusing.
-- **Login is manual.** If you land on a logged-out screen, stop and have the operator
-  sign in; never attempt an auth bypass.
+- **Login is manual, and opening failures halt the run.** If you land on a logged-out
+  screen — or the emulator/device/app isn't reachable at all — follow the **Open-failure
+  protocol** above: stop, report the exact error, wait for the user; never attempt an auth
+  bypass and never silently fall back to web data.
 
 ## Related files
 - `research/mbx.py` — the harness (this repo, RE_search)

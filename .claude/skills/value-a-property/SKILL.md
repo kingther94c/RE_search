@@ -14,6 +14,21 @@ stdlib and generalises to any unit. Backing code: `researcher/valuation/engine.p
 worked run is `researcher/valuation/run.py` → results JSON. Get the inputs from
 `read-investment-suite` + `harvest-scrolling-android-table`.
 
+## Data source — Investment Suite first (MANDATORY)
+
+The comparable transactions AND the per-unit **Est. Val (AVM)** cross-check **must come from
+Tier-1 ground truth: PropNex Investment Suite** (via `read-investment-suite` / `research/mbx.py`)
+— its Sale, Rent, Tower View and Profitability tabs — backed by **SG-official** sources
+(URA / URA REALIS, OneMap, PUB, SLA, MOE, IRAS, MAS, LTA) for policy/planning/geography. EdgeProp /
+PropertyGuru / 99.co / SRX are **Tier-2** (usable, but reconcile against Tier-1); property research
+reports and agent/marketing sites are **Tier-3** — conflicted, treat as claims, never as facts. A
+valuation built on Tier-2/3 numbers is provisional until re-anchored to Tier-1.
+
+**If Investment Suite won't open, STOP — do not silently fall back to web data.** Emulator not
+running, `adb devices` shows no device, app logged out, or session expired → pause immediately,
+report the exact error, and wait for the user to start the emulator / sign in. Resume only once
+Tier-1 access is restored, or the user explicitly says to proceed on lower-tier data.
+
 ## Inputs needed
 - **Subject**: size (sqft), floor, bedrooms, tenure (freehold/leasehold).
 - **Comparables**: for each — date, floor, bedrooms, size (sqft), transacted **psf**

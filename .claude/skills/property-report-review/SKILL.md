@@ -22,7 +22,7 @@ this rubric. Do NOT give them the chat history — the report must stand alone.
 
 | # | Dimension | Wt | What 10 looks like |
 |---|---|---|---|
-| 1 | data_accuracy | 25% | Every number current & traceable; no contradiction with URA/OneMap/PUB/MOE/SLA; psf math checks |
+| 1 | data_accuracy | 25% | Every number current & traceable; no contradiction with URA/OneMap/PUB/MOE/SLA; psf math checks. **Load-bearing transaction/AVM/rent/yield numbers must trace to Tier-1 (PropNex Investment Suite or SG-official URA REALIS), not Tier-2/3 web aggregators or research reports** — a study that ran only on portal/report data is a data_accuracy downgrade |
 | 2 | method_rigor | 20% | Landed: value-ordering respected, spread explained not averaged. New-launch: price vs real comps, supply counted. Condo: adjustment grid defensible, range honest |
 | 3 | completeness | 15% | Every checklist dimension of the underlying skill present (hazards, future, regulatory ABSD/SSD/LDAU, financing, liquidity) |
 | 4 | decision_usefulness | 20% | Clear best-for/not-for, quantified screening thresholds, explicit go/no-go — buyer could act tomorrow |
@@ -36,6 +36,9 @@ AND zero blocking issues.**
 
 - a load-bearing number is wrong (psf/price/date/policy rate that changes the conclusion)
 - a major claim has no source and cannot be verified
+- a load-bearing transaction/valuation number rests **only** on a Tier-3 source (research
+  report, agent/marketing copy) with no Tier-1 (Investment Suite / URA REALIS) corroboration —
+  conflicted sourcing presented as fact is a blocker, not a caveat
 - internal contradiction (summary vs table, 中文 vs English disagree)
 - misleading advice (ignoring SSD inside 4yr, wrong ABSD tier, wrong 1km/GCBA judgement)
 - broken rendering (empty data section, mojibake, broken table)

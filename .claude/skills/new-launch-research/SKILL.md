@@ -8,7 +8,22 @@ description: Use when researching a Singapore NEW-LAUNCH / pre-launch condo (新
 New-launch data is marketing-heavy and projects get renamed (en-bloc site → launch brand),
 so **establish identity first, verify the load-bearing facts, and treat "indicative PSF" as a
 starting point, not truth.** Output: a research report + a BUY/SELECTIVE/WAIT/AVOID verdict.
-Tool-agnostic: gather with `WebSearch`/`WebFetch`.
+
+## Data source — Investment Suite first (MANDATORY)
+
+Comparable transacted psf (nearby resale + recent launches), rents and take-up context **must come
+from Tier-1 ground truth: PropNex Investment Suite** (via `read-investment-suite` / `research/mbx.py`)
+and **SG-official** sources (URA / URA REALIS for caveats and the price index, URA GLS/planning for
+site origin, LTA for MRT catalysts, MAS for SORA, IRAS for stamp duty). A new launch has no resale
+history of its own, so the *indicative launch psf* is a marketing claim (Tier-3) — position it
+against Tier-1 comps, never treat it as truth. EdgeProp / PropertyGuru / 99.co / SRX are **Tier-2**
+(usable, but reconcile against Tier-1); developer/agent material and research reports are **Tier-3** —
+conflicted, treat as claims, never as facts.
+
+**If Investment Suite won't open, STOP — do not silently fall back to web data.** Emulator not
+running, `adb devices` shows no device, app logged out, or session expired → pause immediately,
+report the exact error, and wait for the user to start the emulator / sign in. Resume only once
+Tier-1 access is restored, or the user explicitly says to proceed on lower-tier data.
 
 ## Step 0 — Establish identity (do this before anything else)
 

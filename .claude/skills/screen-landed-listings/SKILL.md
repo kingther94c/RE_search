@@ -9,6 +9,22 @@ Turns "what's actually for sale here" into a ranked shortlist. Runs AFTER
 `landed-area-research` (which gives the area benchmark + hazards) and feeds
 `landed-property-due-diligence` (per-house deep dive on the top picks).
 
+## Data source — Investment Suite first (MANDATORY)
+
+The **listings themselves** are portal-sourced (a listing only exists on PropertyGuru/99.co — see
+"Access reality" below), but the **benchmark they are scored and value-graded against** — the area's
+transaction / land-psf bands and any per-development AVM — **must come from Tier-1 ground truth:
+PropNex Investment Suite** (via `read-investment-suite` / `research/mbx.py`) and **SG-official**
+sources (URA / URA REALIS, OneMap for the 1km ring). A listing's asking price and self-declared
+"1km" / land size are Tier-3 claims — verify land area and catchment against Tier-1 before the
+value grade counts. Portal transaction summaries are **Tier-2** (reconcile against Tier-1); research
+reports and agent copy are **Tier-3** — conflicted, treat as claims, never as facts.
+
+**If Investment Suite won't open, STOP — do not silently fall back to web data for the benchmark.**
+Emulator not running, `adb devices` shows no device, app logged out, or session expired → pause
+immediately, report the exact error, and wait for the user to start the emulator / sign in. Resume
+only once Tier-1 access is restored, or the user explicitly says to proceed on lower-tier data.
+
 ## Access reality (important)
 
 PropertyGuru blocks server-side fetches — **`WebFetch` → HTTP 403**. Working routes:
