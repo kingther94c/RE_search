@@ -1,0 +1,442 @@
+{
+  "subject": {
+    "name": "Gallop Gables #0X-0X 3BR 1,743 sqft（代表性单位）",
+    "development": "Gallop Gables",
+    "address": "70-82 Farrer Road, D10（Tanglin/Holland）",
+    "district": "D10",
+    "tenure": "Freehold",
+    "top_year": 1997,
+    "size_sqft": 1743,
+    "floor": 3,
+    "bedrooms": 3
+  },
+  "asof": "2026-07-03",
+  "report_basename": "gallop_gables_Condo_Valuation_Report.html",
+  "subtitle": "Nanyang Primary 1km 圈内的 condo 替代方案 · OneMap 实测 0.73km · 与 landed 研究同套件",
+  "summary": "【2026-07-03】Gallop Gables（70-82 Farrer Rd，D10，freehold，1997 年 TOP，140 户 7 座 4 层低密度）是OneMap 实测 0.73km、明确在 Nanyang Primary 1km 圈内的 condo 替代方案——本研究套件中 landed 动辄 S$6-25m，而这里 ~S$4.1m 就能买到 freehold 1,743 sqft 3BR + 同样的抽签资格。估值（可比调整法，11 宗 2023-2026 本盘成交，趋势 4.5%/yr 由两组重复成交拟合）：点估 ~S$2,346 psf ≈ 4.09m，区间 S$2,197–2,475 psf。2025-12 本盘刚创 S$2,421 psf 新高（2,842sf 大户型）；psf 自 2021 年 ~S$1,800 稳步爬升。收益率是软肋：中位租金 S$7,700/mo 对点估仅 ~2.3% 毛收益。买点：freehold 学区稀缺低密度 + 每户土地占比 168 m²（vs 邻盘 D'Leedon 41 m²）的 en-bloc 期权（三次流拍史）；压点：1997 年楼龄的维护与电梯/设施折旧、140 户小盘流动性薄（年成交 3-5 宗）、GEP 停办后学区溢价逻辑弱化。 — [EN] The freehold, 140-unit, low-rise Gallop Gables sits a measured 0.73km from Nanyang Primary — the condo alternative to this suite's S$6-25m landed shortlist at ~S$4.1m for a 1,743 sqft 3BR. Sales-comparison value: ~S$2,346 psf (S$2,197–2,475 range) off 11 same-project 2023-26 comps, 4.5%/yr trend fitted from two repeat-sale pairs. Yield ~2.3% gross is the weak leg; the land-share/en-bloc optionality (168 sqm/unit) and school-zone freehold scarcity are the case.",
+  "development_facts": [
+    "140 户、7 座 4 层（Ascot/Belmont/Churchill/Doncaster/Epsom/Greyville/Flemington），1997 TOP，freehold；地块 ~23,530 m²，每户土地占比 ~168 m²（对照 D'Leedon ~41 m²）——低密度即土地期权",
+    "户型：2BR ~31 户（1,140-1,560 sqft）、3BR ~43 户（1,700-2,170 sqft）、4BR ~57 户（2,600-3,412 sqft）（Stacked Homes 口径；另一来源 2BR 49 户不一致——以 MCST 名册为准）",
+    "MRT：Farrer Road（CC20）与 Tan Kah Kee（DT8）均步行可达；Holland Village 生活圈",
+    "en-bloc 历史：三次尝试未成（2007-08 一轮有据：初叫 S$1,500-1,600 psf ppr，2008 年降 ~40% 重推）——Stacked Homes 视其为长期 en-bloc 候选；这是期权不是承诺",
+    "维护费：公开渠道未披露——看房时向 MCST/中介索取（1997 年低密度大地块，预算偏高）"
+  ],
+  "valuation": {
+    "estimate_psf": 2346,
+    "estimate_price": 4090000.0,
+    "low_psf": 2197,
+    "high_psf": 2475,
+    "low_price": 3830000.0,
+    "high_price": 4310000.0,
+    "params_note": "asof 2026-07-03 · trend 4.5%/yr（重复成交对拟合：1,162sf 2021→2024 +5.6%/yr；2,669sf 2017→2024 +4.3%/yr）· floor ±0.4%/层（4 层低层楼盘）· size elasticity -0.08 · 11 宗 2023-2026 本盘成交，无同线锚（代表性单位非特定门牌）",
+    "grid": [
+      {
+        "label": "2025-12 2842sf L3 4BR",
+        "raw_psf": 2421.0,
+        "time_adj": 1.0261249225195477,
+        "floor_adj": 1.0,
+        "size_adj": 1.0398869663566315,
+        "type_adj": 1.0,
+        "adj_psf": 2583.3375712647035,
+        "weight": 0.2976499798625732
+      },
+      {
+        "label": "2025-08 1744sf L2 3BR",
+        "raw_psf": 2356.0,
+        "time_adj": 1.0413228949813542,
+        "floor_adj": 1.004,
+        "size_adj": 1.000045885768632,
+        "type_adj": 1.0,
+        "adj_psf": 2463.283191994784,
+        "weight": 0.6659210086826584
+      },
+      {
+        "label": "2025-08 1550sf L2 2BR",
+        "raw_psf": 1968.0,
+        "time_adj": 1.0413228949813542,
+        "floor_adj": 1.004,
+        "size_adj": 0.9906557049650401,
+        "type_adj": 1.0,
+        "adj_psf": 2038.2946702132765,
+        "weight": 0.40782744203647225
+      },
+      {
+        "label": "2025-05-08 1733sf L3 3BR",
+        "raw_psf": 2354.0,
+        "time_adj": 1.0520444967440812,
+        "floor_adj": 1.0,
+        "size_adj": 0.999539805457653,
+        "type_adj": 1.0,
+        "adj_psf": 2475.373067686111,
+        "weight": 0.6275183652909581
+      },
+      {
+        "label": "2024-11-20 2669sf L2 4BR",
+        "raw_psf": 2299.0,
+        "time_adj": 1.0736906100293244,
+        "floor_adj": 1.004,
+        "size_adj": 1.0346753316823214,
+        "type_adj": 1.0,
+        "adj_psf": 2564.2238425867654,
+        "weight": 0.2683876186158742
+      },
+      {
+        "label": "2024-09-09 1550sf L1 2BR",
+        "raw_psf": 1923.0,
+        "time_adj": 1.0830473864067103,
+        "floor_adj": 1.008016,
+        "size_adj": 0.9906557049650401,
+        "type_adj": 1.0,
+        "adj_psf": 2079.7776815287452,
+        "weight": 0.340334337679761
+      },
+      {
+        "label": "2024-02-19 1163sf L3 2BR",
+        "raw_psf": 2108.0,
+        "time_adj": 1.109869665202223,
+        "floor_adj": 1.0,
+        "size_adj": 0.9681498582557067,
+        "type_adj": 1.0,
+        "adj_psf": 2265.0884952728484,
+        "weight": 0.2501291201261837
+      },
+      {
+        "label": "2023-08 2131sf L2 3BR",
+        "raw_psf": 1923.0,
+        "time_adj": 1.1372191564142218,
+        "floor_adj": 1.004,
+        "size_adj": 1.0162086445948924,
+        "type_adj": 1.0,
+        "adj_psf": 2231.207950606576,
+        "weight": 0.32220707675165794
+      },
+      {
+        "label": "2023-02 1754sf L2 3BR",
+        "raw_psf": 2103.0,
+        "time_adj": 1.1622973923659958,
+        "floor_adj": 1.004,
+        "size_adj": 1.0005034168647278,
+        "type_adj": 1.0,
+        "adj_psf": 2455.324091430164,
+        "weight": 0.36136407043442564
+      },
+      {
+        "label": "2023-02 1517sf L2 3BR",
+        "raw_psf": 1904.0,
+        "time_adj": 1.1622973923659958,
+        "floor_adj": 1.004,
+        "size_adj": 0.9889516411253173,
+        "type_adj": 1.0,
+        "adj_psf": 2197.3183158394827,
+        "weight": 0.31595196381966995
+      },
+      {
+        "label": "2023-01 1184sf L2 2BR",
+        "raw_psf": 2033.0,
+        "time_adj": 1.166647695562887,
+        "floor_adj": 1.004,
+        "size_adj": 0.9695369055860156,
+        "type_adj": 1.0,
+        "adj_psf": 2308.740727449024,
+        "weight": 0.21973273487946796
+      }
+    ]
+  },
+  "comps_table": [
+    {
+      "date": "2025-12",
+      "size_sqft": 2842,
+      "level": "#03-03 (low-rise, floor 3)",
+      "psf": 2421,
+      "price": 6880000,
+      "note": "URA caveat via aggregator"
+    },
+    {
+      "date": "2025-08",
+      "size_sqft": 1744,
+      "level": "#02-01 (floor 2)",
+      "psf": 2356,
+      "price": 4108000,
+      "note": "URA caveat via aggregator"
+    },
+    {
+      "date": "2025-08",
+      "size_sqft": 1550,
+      "level": "low-rise (01-05 band)",
+      "psf": 1968,
+      "price": 3050000,
+      "note": "URA caveat via aggregator"
+    },
+    {
+      "date": "2025-05-08",
+      "size_sqft": 1733,
+      "level": "3rd floor, #03-01",
+      "psf": 2354,
+      "price": 4080000,
+      "note": "https://sg.news.yahoo.com/three-bedroom-unit-gallop-gables-0"
+    },
+    {
+      "date": "2024-11-20",
+      "size_sqft": 2669,
+      "level": "2nd floor",
+      "psf": 2299,
+      "price": 6138000,
+      "note": "https://sg.news.yahoo.com/four-bedder-freehold-gallop-gables"
+    },
+    {
+      "date": "2024-09-09",
+      "size_sqft": 1550,
+      "level": "1st floor",
+      "psf": 1923,
+      "price": 2980000,
+      "note": "https://sg.news.yahoo.com/four-bedder-freehold-gallop-gables"
+    },
+    {
+      "date": "2024-02-19",
+      "size_sqft": 1163,
+      "level": "3rd floor",
+      "psf": 2108,
+      "price": 2450000,
+      "note": "https://sg.news.yahoo.com/four-bedder-freehold-gallop-gables"
+    },
+    {
+      "date": "2023-08",
+      "size_sqft": 2131,
+      "level": "low-rise (01-05 band)",
+      "psf": 1923,
+      "price": 4100000,
+      "note": "URA caveat via aggregator"
+    },
+    {
+      "date": "2023-02",
+      "size_sqft": 1754,
+      "level": "low-rise (01-05 band)",
+      "psf": 2103,
+      "price": 3690000,
+      "note": "URA caveat via aggregator"
+    },
+    {
+      "date": "2023-02",
+      "size_sqft": 1517,
+      "level": "low-rise (01-05 band)",
+      "psf": 1904,
+      "price": 2890000,
+      "note": "URA caveat via aggregator"
+    },
+    {
+      "date": "2023-01",
+      "size_sqft": 1184,
+      "level": "low-rise (01-05 band)",
+      "psf": 2033,
+      "price": 2408000,
+      "note": "URA caveat via aggregator"
+    }
+  ],
+  "market_comps": [
+    {
+      "project": "Gallop Gables (subject)",
+      "psf": "2025 avg $2,141 psf (45 transactions); Dec 2025 high $2,421 psf (2,841 sqft); May 2025 $2,354 psf (1,732 sqft 3BR)",
+      "note": "Freehold · 0.73km from Nanyang Primary (OneMap); walking distance to Farrer Road MRT · 140 units, low-rise, FH; most popular layout 3BR/~2,174sf median $1,980 psf; flagged by Stacked Homes as en-bloc candidate given larg"
+    },
+    {
+      "project": "Leedon Green",
+      "psf": "12-month range $2,600-$3,417 psf, avg $2,951 psf; high $3,475 psf (Mar 2025, 1,496sf)",
+      "note": "Freehold · 0.99km from Nanyang Primary · ~38-40% premium vs Gallop Gables; brand new, full facilities, higher land cost"
+    },
+    {
+      "project": "Wilshire Residences",
+      "psf": "Asking psf $2,199-$3,113; recent listings $2,833-$3,297 psf (small units, 743-840sf)",
+      "note": "Freehold · 0.93km from Nanyang Primary; same road (30 Farrer Rd) as Gallop Gables · ~40-50% premium vs Gallop Gables; brand new but notably smaller/shoebox unit mix — imperfect comp for a 3BR family unit"
+    },
+    {
+      "project": "Watten House",
+      "psf": "Launch avg ~$3,230 psf (Nov 2023); balance units $3,220-$3,422 psf",
+      "note": "Freehold · ~1.0km from Nanyang Primary; under construction · DEVELOPER LAUNCH PRICING ONLY, not resale — treat as ceiling benchmark; large-format 3BR+ units only, 3.2m ceilings; ~50% premium vs Gallop Gables"
+    },
+    {
+      "project": "Gallop Green",
+      "psf": "Current range $2,259-$2,844 psf, avg ~$2,594 psf",
+      "note": "Freehold · District 10, Farrer/Dunearn vicinity (exact distance to Nanyang Pri not verified) · Only 53 units, low-density; ~20% premium vs Gallop Gables; an older source cited a stale $1,818psf figure — disregard"
+    },
+    {
+      "project": "Spanish Village",
+      "psf": "12-month range $1,978-$2,197 psf, avg $2,079 psf; recent transactions $1,978-$2,000 psf (May 2025)",
+      "note": "Freehold · Farrer Road, near Gallop Gables (exact distance not separately verified) · 226 units (denser than Gallop Gables); ~5-10% discount vs Gallop Gables; 10 years older"
+    },
+    {
+      "project": "Sommerville Park",
+      "psf": "12-month range $1,845-$2,426 psf, avg $2,221 psf; high $2,426psf (Sep 2025, 1,302sf)",
+      "note": "Freehold · Farrer Drive, Tanglin (exact distance not separately verified) · Oldest comp (1985); trades roughly in-line or slightly above Gallop Gables despite age — low-density Farrer/Tanglin premium"
+    },
+    {
+      "project": "Sutton Place",
+      "psf": "Aggregator shows anomalous $1,461psf (single stale transaction); current asking listing $3,080psf (2BR)",
+      "note": "Freehold · Farrer Road (exact distance not separately verified) · LOW CONFIDENCE/UNVERIFIABLE — only 4 transactions in 3 years, wide unexplained spread; reportedly up for en-bloc tender at $268m reserve which may be dist"
+    },
+    {
+      "project": "The Levelz",
+      "psf": "12-month range $1,481-$2,328 psf, avg $2,008 psf; historical high $3.65m/2,465sf (~$1,481psf) Dec 2025",
+      "note": "Freehold · 38 Farrer Road (exact distance not separately verified) · 126 units, 11 floors; ~5-10% discount vs Gallop Gables despite being 7yrs newer — likely unit-mix/size effect"
+    }
+  ],
+  "rentals": [
+    {
+      "unit_type": "3BR",
+      "monthly_rent": 7700,
+      "note": "https://www.99.co/singapore/rent/condos-apartments/gallop-gables (median transacted rent, "
+    },
+    {
+      "unit_type": "3BR",
+      "monthly_rent": 9900,
+      "note": "https://www.propertyguru.com.sg/property-for-rent/at-gallop-gables-309 (current asking lis"
+    },
+    {
+      "unit_type": "All unit types (overall range)",
+      "monthly_rent": "6000-14000",
+      "note": "https://www.99.co/singapore/condos-apartments/gallop-gables"
+    }
+  ],
+  "yield_analysis": [
+    "Blended rent psf: $4.56/sqft/month (6-mo trailing), $4.37/sqft/month (1-yr trailing) per SRX aggregator — source: https://www.99.co/singapore/rent/condos-apartments/gallop-gables",
+    "Indicative gross yield calc: representative 1,732sf 3BR at ~$2,141psf (2025 avg) = ~$3.71m purchase price; against $7,700/mo median rent (=$92,400/yr) → gross yield ≈ 2.5%",
+    "Using current asking rent $9,900/mo (=$118,800/yr) against same ~$3.71m value → gross yield ≈ 3.2%",
+    "Using Dec 2025 high-water psf $2,421 (implies ~$4.19m for 1,732sf) against $7,700/mo median rent → gross yield compresses to ≈ 2.2%",
+    "Gallop Gables sits in a low-2%-to-low-3% gross yield band typical of prime D10 low-rise FH condos — yield-compressed by land value/freehold premium and low density; supports a capital-appreciation/en-bloc-optionality thesis over a pure income thesis",
+    "3BR is the most actively rented configuration (15 rental transactions in trailing 6 months) — reasonable liquidity for the yield estimate",
+    "CAUTION: unit size/count data for 2BR units is inconsistent across sources (99.co vs Stacked Homes) — verify against URA caveats or developer floor plans before finalizing the representative unit for the valuation grid",
+    "对本报告点估（S$4,090,000）：中位租 S$7,700/mo → 毛收益率 ~2.3%；当前要价租 S$9,900/mo → ~2.9%。D10 freehold 学区盘的典型形态：保值>现金流。"
+  ],
+  "catchment": [
+    "Gallop Gables (70-82 Farrer Road, postal 268851/268852/268855/268856; freehold, TOP 1997, 140 units) sits inside Nanyang Primary School's (52 King's Road) 1km ring — corroborated qualitatively by Stacked Homes ('within close walking distance') and an EdgeProp-derived list naming Gallop Gables among '20 condos within 1km of Nanyang Primary School' alongside Duchess Manor and Dukes Residence — but the precise decimal distance is NOT independently verified: search snippets gave 0.56km in one place vs the brief's 0.73km, and neither could be traced to a live OneMap query output during this research (OneMap page fetch returned empty). Report the 1km-ring membership as solidly corroborated; flag the exact metres as unverified pending a direct OneMap distance-tool run.",
+    "Raffles Girls' Primary (21 Hillcrest Road) and Nanyang Primary are described together as 'within a 2km radius' by PLB Insights — i.e. bundled at the 2km band, not both at 1km. Nanyang Girls' High (2 Linden Drive, secondary, Nanyang-affiliated) and St Margaret's Secondary are also nearby/walkable per Stacked Homes. Queenstown Primary's proximity to Gallop Gables specifically could NOT be corroborated by any source found — treat as unverified/likely not applicable.",
+    "Farrer Road MRT (CC20, Circle Line) is a sub-5-minute walk (cited variously as 170m-300m across sources, consistent directionally despite exact-metre variance by block). Holland Village is one MRT stop away — described as 'close by' and undergoing an area revamp, but NOT walkable; day-to-day amenities (Coronation Plaza, Serene Centre, Holland Road Shopping Centre, Empress Road Market) are reachable by short drive rather than on foot. Some sources also cite Tan Kah Kee (DT8) as a nearby MRT option for Gallop Gables, but this looks possibly conflated with neighbouring Duchess Road condos — lower confidence."
+  ],
+  "market_context": [
+    "URA Q1 2026: overall non-landed private residential price index +1.3% qoq (matches brief); CCR sub-index (District 10's region) rose a softer +0.6% qoq, reversing a -3.5% Q4 2025 slide, and lagging OCR (+2.2%) and RCR (+0.8%) — D10 is recovering but is the weakest-performing region right now.",
+    "Gallop Gables pricing: record resale transaction $2,354 psf (8 May 2025, 1,733 sqft 3BR, 3rd floor), prior record $2,299 psf (Nov 2024, larger 4BR); current broader listing/average range cited at roughly $2,165-$2,345 psf (some sources say ~$1,752 psf average historically, so recent prints represent notable appreciation). D10 freehold resale average cited at $2,381 psf, meaning Gallop Gables' 2025 record now sits roughly AT the district average rather than at a discount.",
+    "Age-discount / same-district comp: Leedon Green (D10, ~4-year-old freehold condo near Farrer/Holland, redeveloped from the former Farrer Court en-bloc site) trades $2,502-$3,592 psf resale, ~$2,936-$2,951 psf 12-month average — roughly 25-30% above Gallop Gables' current pricing for a much younger freehold in the same district. CORRECTION to brief: Watten House (UOL/Singland, Shelford Road) is in District 11 (Bukit Timah/Newton), not District 10 — still useful as a 'brand-new CCR freehold' price anchor at $3,220-$3,422 psf (~99% sold by May 2026), but should not be labelled a D10 comp in the report.",
+    "Financing backdrop is favorable: 2-year fixed mortgage rates as low as 1.3%-1.4% (best-in-market late June 2026), 3-month compounded SORA ~1.07% (June 2026) — both at multi-year lows, supporting carrying-cost economics for a buy case.",
+    "ABSD table unchanged since 27 April 2023: SC 0%/20%/30% (1st/2nd/3rd+ property), PR 5%/30%/30%, Foreigner flat 60%, Entities 65% (US/Iceland/Liechtenstein/Norway/Switzerland nationals treated as SC under FTAs). At Gallop Gables' price point, a 60% ABSD makes foreign buyers an unlikely demand source — realistic buyer pool is SC/PR upgraders and owner-occupiers.",
+    "Gross rental yield for Gallop Gables currently estimated ~2%-2.3% (average rent ~$4.37-$4.56 psf/month, ~$6,000-$14,000/month by unit size) — a modest yield typical of prime-district freehold low-rise stock, reinforcing that the investment case rests on capital appreciation/arbitrage rather than income."
+  ],
+  "risks": [
+    "1997-vintage facilities show visible dating: pool 'a bit of a letdown'/'definitely dated', open corridors 'dark' with poor first impressions — though the core structure is 'well maintained despite its age' per Stacked Homes' direct site review. Buyers should budget for cosmetic unit-level renovation to compete on resale.",
+    "En-bloc optionality is real but UNREALIZED and NOT actively in-process: Gallop Gables has large per-unit land allocation (168 sqm/unit across 23,528 sqm total, low-rise 4-storey blocks) giving it 'strong en bloc potential' per Stacked Homes, but — correcting a WebSearch synthesis error that conflated Gallop Gables with a neighbouring project — Stacked Homes' own direct text states 'No en bloc attempts documented for Gallop Gables'; it was Spanish Village nearby that failed en-bloc three times. Treat en-bloc as speculative long-run optionality, not a near-term catalyst.",
+    "Thin liquidity is plausible (only 140 units total; the fact that single transactions in Nov 2024 and May 2025 were individually newsworthy as 'records' suggests low annual transaction counts) but NOT independently quantified in this research — EdgeProp/99.co detail pages with full transaction tables returned 403 Forbidden on direct fetch. Recommend pulling URA caveat/REALIS-style transaction counts directly before finalizing the liquidity risk language.",
+    "D10/CCR is currently the weakest-performing price region (+0.6% qoq vs +2.2% OCR, +0.8% RCR in Q1 2026), meaning near-term capital appreciation tailwind for a CCR asset like Gallop Gables is comparatively muted versus OCR/RCR alternatives."
+  ],
+  "catalysts": [
+    "Turf City precinct redevelopment: 176-hectare former racecourse site planned for ~15,000-20,000 public and private homes over 20-30 years (first public housing in Bukit Timah in 40 years), paired with Cross Island Line Phase 2 (Turf City, King Albert Park, Maju, Clementi, West Coast, Jurong Lake District stations, opening 2032; King Albert Park becomes a Downtown Line interchange, deepest MRT station on the network at 50m). This is a genuine multi-year corridor-level catalyst for the broader Bukit Timah/Dunearn/Farrer area, though Gallop Gables itself is closer to Farrer Rd/Holland V than directly adjacent to the Turf City site — a corridor tailwind, not a doorstep one.",
+    "Holland Village ongoing revamp (mixed-use redevelopment with courtyards/terraces) one MRT stop from Gallop Gables adds to area amenity value over time.",
+    "GEP discontinuation is a genuinely two-sided catalyst/risk for school-zone demand durability, not a simple negative: MOE announced (March 2026) the last GEP P4 intake is 2026 (cohort completes 2028), with GEP fully replaced from 2027 by a 'refreshed approach' — school-based Higher-Ability-Learner provision in ALL primary schools (~10% of each cohort) plus after-school Advanced Modules at 15 centres, and a new standardised P3 identification exercise from August 2026. Because gifted/high-ability provision is being DE-concentrated from the 9 named GEP schools (including Nanyang Primary) into every primary school, the specific 'GEP school' premium may erode over time — but Nanyang Primary's broader academic reputation, SAP bilingual programme, and affiliation with Nanyang Girls' High/Hwa Chong are likely more durable demand drivers than the GEP label alone. Net effect on 1km-zone home demand is genuinely uncertain; recommend the report present this as a balanced two-sided consideration rather than a pure catalyst or pure risk."
+  ],
+  "advisory": {
+    "stance": "BUY-WATCH（自住/学区强需求可买；纯投资等价）",
+    "detail": "合理买入带 = 点估区间下半部 S$2,197–2,346 psf；高于 S$2,42x psf（即 2025-12 大户型创下的项目新高）追价缺乏安全边际。学区自住买家：0.73km 实测 + freehold + 低密度在本套件里独一档，可按区间内出价；投资买家：~2.3% 毛收益率 + 薄流动性（年 3-5 宗）意味着回报几乎全押在 en-bloc/土地重估——把它当 landed-lite 的土地仓位而非收租资产。持有 ≥4 年避开 SSD（16/12/8/4%）。",
+    "cost_stack": [
+      "BSD（点估价 S$4,090,000）≈ S$184,932（~4.5%）；公民首套 ABSD 0%、二套 20%",
+      "SSD：2025-07-04 起 4 年 16/12/8/4%——学区持有周期（P1-P6 ≥6 年）天然清窗",
+      "年度房产税按 AV 累进（自住 0-32% 档）——1,743sqft D10 3BR 的 AV 需以 IRAS 为准",
+      "维护费未披露（低密度大地块通常偏高）——尽调必问项"
+    ]
+  },
+  "verification": [
+    {
+      "claim": "140 户 / 7 座 / freehold / 1997 TOP",
+      "status": "confirmed",
+      "note": "EdgeProp 项目页 + Stacked Homes + SquareFoot + 99.co 一致；一篇 Yahoo/EdgeProp 新闻写 102 户为孤例（疑为笔误），以 140 为准"
+    },
+    {
+      "claim": "2025-12 成交 2,842sf S$6.88m @ S$2,421 psf（项目 psf 新高）",
+      "status": "confirmed",
+      "note": "propertyforsale.com.sg 成交表 + Yahoo/EdgeProp 新闻交叉"
+    },
+    {
+      "claim": "重复成交对：1,162sf 2021→2024 +18.4%；2,669sf 2017→2024 +36%",
+      "status": "confirmed",
+      "note": "同单位两次成交（新闻/成交表）——本报告 4.5%/yr 趋势假设的来源"
+    },
+    {
+      "claim": "OneMap 0.73km 到 Nanyang Primary（街道参考点）",
+      "status": "confirmed",
+      "note": "researcher/sources/onemap.py 实测 2026-07-03；按门牌复测后再签约"
+    },
+    {
+      "claim": "中位租 S$7,700/mo（3BR 1,732sf，12 个月）",
+      "status": "confirmed",
+      "note": "99.co/SRX 租务聚合口径"
+    },
+    {
+      "claim": "2017-2021 段成交行",
+      "status": "unverified",
+      "note": "单一聚合站，未经 REALIS 逐宗核对——仅用于趋势感，不入调整网格（网格只用 2023+）"
+    },
+    {
+      "claim": "en-bloc 三次流拍",
+      "status": "unverified",
+      "note": "仅 2007-08 一轮有据；另两次的年份/价格未找到——按『期权叙事』理解"
+    }
+  ],
+  "data_gaps": [
+    "维护费、车位数、MCST 财务状况未公开——看房尽调必查",
+    "调整网格未含同线锚（研究对象为代表性单位而非特定门牌）——锁定具体单位后用其历史成交重跑",
+    "2BR 户数两来源不一致（31 vs 49）——以 MCST 名册为准",
+    "pre-2023 成交行未经 REALIS 核对；2023-2026 行来自聚合站（与新闻交叉过 4 宗）",
+    "楼层/朝向溢价按 ±0.4%/层近似——低层楼盘该项影响本就有限，但 1 楼带庭院单位另议"
+  ],
+  "sources": [
+    "http://propertyhighlights.blogspot.com/2008/07/en-bloc-site-relaunched-with-40-lower.html",
+    "https://ancourage.academy/articles/gep-gifted-education-programme-singapore-guide",
+    "https://blog.sgtrains.com/2024/05/crl-turf-city-q3-2024/",
+    "https://dollarbackmortgage.com/",
+    "https://en.wikipedia.org/wiki/Cross_Island_Line",
+    "https://en.wikipedia.org/wiki/King_Albert_Park_MRT_station",
+    "https://newlaunch.properties/pricing-updates/gallop-green/",
+    "https://plbinsights.com/a-1997-freehold-condo-hits-2354-psf-in-2025-what-gives/",
+    "https://propertynet.sg/latest-bank-mortgage-loan-rates-across-singapore/",
+    "https://propnex.com/listing-details/247982/sommerville-park",
+    "https://sg.news.yahoo.com/four-bedder-freehold-gallop-gables-014505407.html",
+    "https://sg.news.yahoo.com/three-bedroom-unit-gallop-gables-030000779.html",
+    "https://sgp.postcodebase.com/node/107213",
+    "https://sgp.postcodebase.com/node/107216",
+    "https://stackedhomes.com/gallop-gables-condo-review/",
+    "https://stackedhomes.com/spanish-village-review/",
+    "https://stackedhomes.com/watten-house-review/",
+    "https://stackproperty.sg/private/projects/gallop-gables",
+    "https://www.99.co/singapore/condos-apartments/gallop-gables",
+    "https://www.99.co/singapore/condos-apartments/watten-house",
+    "https://www.99.co/singapore/rent/condos-apartments/gallop-gables",
+    "https://www.cushmanwakefield.com/en/singapore/insights/comments-on-ura-real-estate-statistics-for-q1-2026",
+    "https://www.edgeprop.sg/condo-apartment/gallop-gables",
+    "https://www.edgeprop.sg/condo-apartment/leedon-green",
+    "https://www.edgeprop.sg/condo-apartment/sommerville-park",
+    "https://www.edgeprop.sg/condo-apartment/spanish-village",
+    "https://www.edgeprop.sg/condo-apartment/sutton-place",
+    "https://www.edgeprop.sg/property-news/private-residential-property-prices-inch-03-q-o-q-1q2026-ura-flash-estimate",
+    "https://www.edgeprop.sg/property-news/seller-four-bedroom-unit-gallop-gables-reaps-3-mil-profit",
+    "https://www.era.com.sg/research-articles/1q-2026-ura-private-quarterly-report",
+    "https://www.homejourney.sg/projects/leedon-green",
+    "https://www.iras.gov.sg/taxes/stamp-duty/for-property/buying-or-acquiring-property/additional-buyer's-stamp-duty-(absd)",
+    "https://www.lushhomemedia.com/sutton-place-off-farrer-road-up-for-sale-by-tender-with-s268m-reserve-price/",
+    "https://www.moe.gov.sg/news/press-releases/20260303-we-learn-for-life-together-building-a-we-first-society-through-education",
+    "https://www.nyps.moe.edu.sg/about-us/contact-nyps/",
+    "https://www.propertyforsale.com.sg/gallop-gables/sales-transactions",
+    "https://www.propertyguru.com.sg/project/gallop-gables-309",
+    "https://www.propertyguru.com.sg/project/gallop-green-1945",
+    "https://www.propertyguru.com.sg/project/the-levelz-406",
+    "https://www.propertyguru.com.sg/project/watten-house-25549",
+    "https://www.propertyguru.com.sg/project/wilshire-residences-23733",
+    "https://www.propertyguru.com.sg/property-for-rent/at-gallop-gables-309",
+    "https://www.sg-propertydata.com/leedon-green",
+    "https://www.smartcalculator.sg/articles/absd-rates-singapore-2026",
+    "https://www.smartcalculator.sg/articles/best-home-loan-rates-singapore",
+    "https://www.squarefoot.com.sg/trends-and-analysis/residential?p=gallop-gables",
+    "https://www.srx.com.sg/condo/gallop-gables-789/268855/last-transacted-prices/rent",
+    "https://www.srx.com.sg/condo/the-levelz-191",
+    "https://www.srx.com.sg/condo/wilshire-residences-86522",
+    "https://www.streetdirectory.com/sg/nanyang-girls-high-school/6031_35473.html",
+    "https://www.streetdirectory.com/sg/raffles-girls/21-hillcrest-road-289072/7135_35806.html",
+    "https://www.ura.gov.sg/news/media/pr26-31/",
+    "https://www.watten-house.com/price/"
+  ]
+}

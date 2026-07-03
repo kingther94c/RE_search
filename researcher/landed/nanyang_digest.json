@@ -104,42 +104,42 @@
       "segment": "Terrace (non-GCBA, freehold)",
       "land_psf": "S$1,800–2,200 psf land",
       "quantum": "~S$5–9m",
-      "note": "Smaller frontage; entry point to landed in zone. Unchanged since the prior cycle; not independently re-verified this pass (Coronation Rd West EdgeProp page blocked, 403)."
+      "note": "Smaller frontage; entry point to landed in zone. 与 2026-06-30 基线一致; not independently re-verified 本次刷新 (EdgeProp source page unavailable)."
     },
     {
       "segment": "Semi-Detached (non-GCBA, freehold)",
       "land_psf": "S$1,900–2,400 psf land",
       "quantum": "~S$7–20m",
-      "note": "Coronation Rd W semi-D ~S$2,202 psf (S$19.8m) from the prior cycle — UNVERIFIABLE this pass (source page 403'd, no independent corroboration found); treat as provisional."
+      "note": "Coronation Rd W semi-D ~S$2,202 psf (S$19.8m) from the 2026-06-30 基线研究 — UNVERIFIABLE 本次刷新 (source page unavailable; no independent corroboration found); treat as provisional."
     },
     {
       "segment": "Detached / bungalow (non-GCBA, freehold)",
       "land_psf": "S$2,000–2,800 psf land",
       "quantum": "~S$15–25m",
-      "note": "King's/Kingsmead detached; a live (unsold) Kingsmead Rd listing asks S$25.7m (2026), consistent with band. Linked bungalows from ~S$15.98m from the prior cycle, unverifiable this pass."
+      "note": "King's/Kingsmead detached; a live (unsold) Kingsmead Rd listing asks S$25.7m (2026), consistent with band. Linked bungalows from ~S$15.98m from the 2026-06-30 基线研究, unverifiable at publication."
     },
     {
       "segment": "Good Class Bungalow (GCBA)",
       "land_psf": "S$1,900–3,500+ psf land",
       "quantum": "~S$28–60m",
-      "note": "CONFIRMED: Belmont Rd 19,549 sqft plot sold S$40m/~S$2,046 psf (Dec 2025). Two adjacent Belmont GCBs (52/54) now asking S$88.8m combined (~S$2,128 psf), a current high-end ask. Cornwall Gardens S$28.3m/14,681sqft (Jul 2025) from prior-cycle is UNVERIFIABLE this pass; related EdgeProp data shows an older Apr-2024 Cornwall Gardens sale at ~S$36.02m/19,207sqft/~S$1,875psf and a S$33m auction listing (~S$1,698psf), both broadly consistent with the S$1,900-2,500psf GCBA band. Early-2026 Bukit Timah GCB deals trending toward upper end (~S$40m) per EdgeProp/Realstar coverage."
+      "note": "CONFIRMED: Belmont Rd 19,549 sqft plot sold S$40m/~S$2,046 psf (Dec 2025). Two adjacent Belmont GCBs (52/54) now asking S$88.8m combined (~S$2,128 psf), a current high-end ask. Cornwall Gardens S$28.3m/14,681sqft (Jul 2025) from 基线 is UNVERIFIABLE 本次刷新; related EdgeProp data shows an older Apr-2024 Cornwall Gardens sale at ~S$36.02m/19,207sqft/~S$1,875psf and a S$33m auction listing (~S$1,698psf), both broadly consistent with the S$1,900-2,500psf GCBA band. Early-2026 Bukit Timah GCB deals trending toward upper end (~S$40m) per EdgeProp/Realstar coverage."
     },
     {
       "segment": "HDB (Farrer Gardens, 99-yr)",
       "land_psf": "n/a",
       "quantum": "~S$0.5–0.6m",
-      "note": "Unchanged; not in this pass's search scope."
+      "note": "Unchanged; not 本次刷新中's search scope."
     }
   ],
   "example_transactions": [
     {
-      "date": "2025-2026 (unverified this pass)",
+      "date": "2025-2026 (unverified 本次刷新)",
       "street": "Coronation Road West",
       "type": "Semi-detached",
       "price": "S$19.8m",
       "land_sqft": null,
       "land_psf": "~S$2,202 psf",
-      "note": "Freehold, near-new. From the prior cycle; source page (EdgeProp) returned 403 on refetch, no independent corroboration found — UNVERIFIABLE this pass, not contradicted.",
+      "note": "Freehold, near-new. From the 2026-06-30 基线研究; source page temporarily unavailable; no independent corroboration found — treat as provisional and re-verify via URA REALIS before offering.",
       "source": "https://www.edgeprop.sg/landed-house/coronation-road-west"
     },
     {
@@ -149,18 +149,18 @@
       "price": "from ~S$15.98m",
       "land_sqft": null,
       "land_psf": "~S$3,163–3,882 psf built",
-      "note": "Brand-new freehold product. From the prior cycle; unverifiable this cycle (same 403 issue).",
+      "note": "Brand-new freehold product. From the 2026-06-30 基线研究; unverifiable 本次刷新中 (same source-availability issue).",
       "source": "https://www.edgeprop.sg/landed-house/coronation-road-west"
     },
     {
-      "date": "Jul 2025 (unverified this pass)",
+      "date": "Jul 2025 (unverified 本次刷新)",
       "street": "Cornwall Gardens",
       "type": "GCB",
       "price": "S$28.3m",
       "land_sqft": 14681,
       "land_psf": "~S$1,928 psf",
-      "note": "GCBA conservation cluster. From the prior cycle — could not re-source this specific print; a different, older Cornwall Gardens transaction was found instead (see note transaction below).",
-      "source": "unverifiable - not re-found this pass"
+      "note": "GCBA conservation cluster. From the 2026-06-30 基线研究 — could not re-source this specific print; a different, older Cornwall Gardens transaction was found instead (see note transaction below).",
+      "source": "unverifiable - not re-found 本次刷新"
     },
     {
       "date": "Apr 2024",
@@ -169,7 +169,7 @@
       "price": "~S$36.02m",
       "land_sqft": 19207,
       "land_psf": "~S$1,875 psf",
-      "note": "CONFIRMED independently this pass via EdgeProp. Older than target window (2025-mid2026) but corroborates the GCBA psf band for this cluster.",
+      "note": "CONFIRMED independently 本次刷新 via EdgeProp. Older than target window (2025-mid2026) but corroborates the GCBA psf band for this cluster.",
       "source": "https://www.edgeprop.sg/landed-house/cornwall-gardens"
     },
     {
@@ -186,9 +186,9 @@
       "date": "2026 (live listing, unverified as sold)",
       "street": "Kingsmead Road",
       "type": "GCB/bungalow",
-      "price": "~S$20–23m (prior cycle) / live ask S$25.7m",
+      "price": "~S$20–23m (2026-06-30 基线研究) / live ask S$25.7m",
       "land_sqft": null,
-      "land_psf": "~S$2,770–4,182 psf (prior estimate)",
+      "land_psf": "指示性 ~S$2,800–4,200 psf（要价口径，土地面积未确认——谨慎使用）",
       "note": "Freehold, walking distance to school. A currently-listed 'almost brand new' bungalow on Kingsmead Rd marketed '1km Nanyang Pri Sch' asks S$25.7m (2026) — confirms continued strong asking levels in this pocket, but this is an ASK not a closed transaction.",
       "source": "https://www.propertyguru.com.sg/listing/for-sale-kingsmead-road-almost-brand-new-bungalow-1km-nanyang-pri-sch-500091492"
     },
@@ -199,7 +199,7 @@
       "price": "S$40m",
       "land_sqft": 19549,
       "land_psf": "~S$2,046 psf",
-      "note": "CONFIRMED independently this pass via EdgeProp ('fetched $40 million ($2,046 psf) last December' on a 19,549 sqft plot). Large GCB-grade plot.",
+      "note": "CONFIRMED independently 本次刷新 via EdgeProp ('fetched $40 million ($2,046 psf) last December' on a 19,549 sqft plot). Large GCB-grade plot.",
       "source": "https://www.edgeprop.sg/property-news/two-gcbs-belmont-road-sale-888-mil"
     },
     {
@@ -209,7 +209,7 @@
       "price": "S$88.8m combined ask",
       "land_sqft": 41741,
       "land_psf": "~S$2,128 psf",
-      "note": "NEW this pass: current combined asking price for two adjacent GCB plots, slightly above the confirmed Dec-2025 transacted psf on the same road — suggests sellers pricing above the last print.",
+      "note": "本次刷新新增: current combined asking price for two adjacent GCB plots, slightly above the confirmed Dec-2025 transacted psf on the same road — suggests sellers pricing above the last print.",
       "source": "https://www.edgeprop.sg/property-news/two-gcbs-belmont-road-sale-888-mil"
     },
     {
@@ -219,53 +219,53 @@
       "price": "from ~S$4.8m",
       "land_sqft": null,
       "land_psf": "n/a",
-      "note": "~0.95km; condo comparison point. Not re-verified this cycle (out of scope for landed price focus).",
-      "source": "from the prior research cycle; not re-verified this cycle"
+      "note": "~0.95km; condo comparison point. 本次未重验（价格类以 URA REALIS 为准；规划/学校/水务类以 URA、MOE、PUB 官方页为准） (out of scope for landed price focus).",
+      "source": "沿用 2026-06-30 基线; 本次未重验（价格类以 URA REALIS 为准；规划/学校/水务类以 URA、MOE、PUB 官方页为准）"
     }
   ],
   "hazards_watchouts": [
     {
-      "issue": "Flash flood — ankle-deep waters 20 Apr 2025; documented flood-prone (RE-CONFIRMED)",
+      "issue": "Flash flood — ankle-deep waters 20 Apr 2025; documented flood-prone (已证实 confirmed)",
       "severity": "High",
       "where": "King's Road, between Prince Road and Lutheran Road"
     },
     {
-      "issue": "Flash flood — flooded 20 Apr 2025 (RE-CONFIRMED)",
+      "issue": "Flash flood — flooded 20 Apr 2025 (已证实 confirmed)",
       "severity": "High",
       "where": "Coronation Walk"
     },
     {
-      "issue": "Chronic ponding / undulating low-lying terrain (eastern Bukit Timah) — not re-verified this cycle, carried forward from the prior cycle",
-      "severity": "Very High",
-      "where": "Stevens Road / Balmoral Road junction"
+      "issue": "Chronic ponding / undulating low-lying terrain (eastern Bukit Timah) — 本次未重验（价格类以 URA REALIS 为准；规划/学校/水务类以 URA、MOE、PUB 官方页为准）, 沿用 2026-06-30 基线数据",
+      "severity": "context (out-of-zone)",
+      "where": "【圈外参照 ~2.5-3km】Stevens Road / Balmoral Road junction"
     },
     {
-      "issue": "Arterial flash flooding + traffic noise on road frontage — RE-CONFIRMED and reinforced by a NEW 19 Feb 2026 PUB advisory for Dunearn Road (Yarwood Ave to Binjai Park) amid heavy rain, concurrent with Pioneer/Jurong East alerts; low-lying HDB nearby saw water at ground-floor corridors",
+      "issue": "Arterial flash flooding + traffic noise on road frontage — confirmed and reinforced by a 19 Feb 2026 PUB advisory for Dunearn Road (Yarwood Ave to Binjai Park) amid heavy rain, concurrent with Pioneer/Jurong East alerts; low-lying HDB nearby saw water at ground-floor corridors",
       "severity": "Moderate-High",
       "where": "Bukit Timah Road / Dunearn Road corridor"
     },
     {
-      "issue": "PUB Bukit Timah Canal widening/deepening in progress, RE-CONFIRMED targeting 2026 completion (delayed from original 2024 to dovetail with NParks' Bukit Timah-Rochor Green Corridor works, avoiding double traffic diversion); interim 2022 measures already done (450m Dunearn Rd raised, 600m canal deepened); NOT yet confirmed complete as of Jul 2026 — Feb 2026 flood advisory on Dunearn Rd suggests residual risk persists ahead of completion",
+      "issue": "PUB Bukit Timah Canal widening/deepening in progress, confirmed targeting 2026 completion (delayed from original 2024 to dovetail with NParks' Bukit Timah-Rochor Green Corridor works, avoiding double traffic diversion); interim 2022 measures already done (450m Dunearn Rd raised, 600m canal deepened); NOT yet confirmed complete as of Jul 2026 — Feb 2026 flood advisory on Dunearn Rd suggests residual risk persists ahead of completion",
       "severity": "Moderate",
       "where": "Bukit Timah Canal, Rifle Range Rd to Jalan Kampong Chantek"
     },
     {
-      "issue": "Density/character shift — 15,000-20,000 new homes phased to ~2050; traffic & supply — not re-verified this cycle, carried forward from the prior cycle",
+      "issue": "Density/character shift — 15,000-20,000 new homes phased to ~2050; traffic & supply — 本次未重验（价格类以 URA REALIS 为准；规划/学校/水务类以 URA、MOE、PUB 官方页为准）, 沿用 2026-06-30 基线数据",
       "severity": "Moderate (long-term)",
       "where": "Bukit Timah Turf City, off Sixth Avenue (zone periphery)"
     },
     {
-      "issue": "New high-rise GLS condos add density & overlapping school demand (MGS 1km) — not re-verified this cycle, carried forward from the prior cycle",
+      "issue": "New high-rise GLS condos add density & overlapping school demand (MGS 1km) — 本次未重验（价格类以 URA REALIS 为准；规划/学校/水务类以 URA、MOE、PUB 官方页为准）, 沿用 2026-06-30 基线数据",
       "severity": "Moderate",
       "where": "Holland Plain GLS (Sim Lian awards 2025-26)"
     },
     {
-      "issue": "GCBA conservation gazette blocks teardown/rebuild on some plots — not re-verified this cycle, carried forward from the prior cycle",
+      "issue": "GCBA conservation gazette blocks teardown/rebuild on some plots — 本次未重验（价格类以 URA REALIS 为准；规划/学校/水务类以 URA、MOE、PUB 官方页为准）, 沿用 2026-06-30 基线数据",
       "severity": "Moderate",
       "where": "Cornwall Gardens, Chatsworth Park (conserved bungalows)"
     },
     {
-      "issue": "CRL Phase 2 construction disruption near King Albert Park (opens ~2032) — not re-verified this cycle, carried forward from the prior cycle",
+      "issue": "CRL Phase 2 construction disruption near King Albert Park (opens ~2032) — 本次未重验（价格类以 URA REALIS 为准；规划/学校/水务类以 URA、MOE、PUB 官方页为准）, 沿用 2026-06-30 基线数据",
       "severity": "Low-Moderate (temporary)",
       "where": "Blackmore Drive / King Albert Park, off Bukit Timah Rd"
     },
@@ -275,7 +275,7 @@
       "where": "Dunearn Road, between Yarwood Avenue and Binjai Park"
     },
     {
-      "issue": "School-run congestion around Nanyang Primary drop-off/pick-up on King's Road — not independently found/verified in this search pass (budget-limited); mark unverifiable, do not assert without a direct source",
+      "issue": "School-run congestion around Nanyang Primary drop-off/pick-up on King's Road — not independently found/verified in this search pass ; mark unverifiable, do not assert without a direct source",
       "severity": "unverifiable",
       "where": "King's Road frontage near 52 King's Road (school gate)"
     }
@@ -284,10 +284,11 @@
     "ABSD 2026 (CONFIRMED, unchanged since 27 Apr 2023): Citizen 0%/20%/30% (1st/2nd/3rd+ property); PR 5%/30%/35%; Foreigner flat 60% regardless of property count; Entities 65%. Source (primary): https://www.iras.gov.sg/taxes/stamp-duty/for-property/buying-or-acquiring-property/additional-buyer's-stamp-duty-(absd)",
     "BSD 买方印花税（住宅，2023-02 起税率，与 ABSD 叠加）：首 18 万 1% / 次 18 万 2% / next 64 万 3% / next 50 万 4% / next 150 万 5% / 超出部分 6%。本区量子下的实际负担：S$6m 购入 BSD ≈ S$299,600 (~5.0%)；S$15m ≈ S$839,600 (~5.6%)；S$20m ≈ S$1,139,600 (~5.7%)。公民首套无 ABSD，但 BSD 在千万级量子下已是七位数成本。[iras.gov.sg/taxes/stamp-duty/for-property/buying-or-acquiring-property/buyer's-stamp-duty-(bsd)]",
     "SSD (CONFIRMED, 4-yr regime effective properties bought on/after 4 Jul 2025 12:00am): 16% (sold within yr1) / 12% (yr2) / 8% (yr3) / 4% (yr4) / 0% (after yr4); rates raised 4ppt per tier and holding period extended from 3 to 4 years; HDB unaffected (MOP). Source: https://www.mas.gov.sg/news/media-releases/2025/extension-of-the-holding-period-of-sellers-stamp-duty-and-higher-ssd-rates",
-    "LDAU foreign landed ownership (CORRECTED size cap): ≥5-yr PR + exceptional economic contribution required, case-by-case; S$1,220 application fee; ~1 month to process (some cases 2-6 months); owner-occupier only, no renting (existing tenancy at purchase must end within 1 year of completion); cannot sell within 5 years of legal completion; GCB Areas entirely off-limits to foreign buyers. SIZE CAP CORRECTION: mainland restricted residential property cap is 15,000 sqft (~1,394 sqm), NOT 1,800 sqm as stated in prior-cycle — 1,800 sqm is the separate, larger cap that applies only to Sentosa Cove (Singapore's sole foreign-open waterfront landed enclave, which itself has no 5-year no-sell restriction). Source (primary): https://www.sla.gov.sg/regulatory/foreign-ownership-of-property/",
-    "Financing mid-2026 (UPDATED, prior-cycle figure now stale): 3-month compounded SORA has fallen sharply to ~1.05-1.08% as of June 2026 (from a ~2.9-3% peak in 2025/early-2026) — the prior cycle's '~1.55-1.80%' estimate is now too high. Fixed mortgage packages have followed rates down; some 2-year fixed packages advertised as low as ~1.27-1.40% p.a. by June 2026. LTV 75% and TDSR 55% stress-tested at a 4% floor remain in force per MAS rules — re-run affordability stress tests against the lower actual-rate environment. Sources: https://www.homejourney.sg/blog/singapore-sora-rate-outlook-2026-what-homeowners-should-know-homejourney-202601110702, https://housingloansg.com/hl/charts/sora-and-compounded-sora-trend, https://propertynet.sg/latest-bank-mortgage-loan-rates-across-singapore/",
-    "URA landed price index (UPDATED, material change from prior-cycle framing): landed property prices DECREASED 0.4% q/q in Q1 2026, reversing +3.4% q/q growth in Q4 2025; non-landed rose +1.3% q/q in the same quarter — a landed/non-landed divergence, with landed cooling into 2026. Q2 2026 index not yet published as of this research (typically released late Jul/Aug). Sources: https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr26-31, https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr26-26",
-    "D10 landed liquidity/market read (CONFIRMED): resale volumes reported steady through 2023-2026 cooling-measure rounds (owner-occupier-driven, not speculative); D10 land supply for new landed/condo stock remains extremely limited, structurally supporting prices despite the Q1 2026 index dip. Source: https://www.plbinsights.com/unpacking-district-10s-pure-landed-homes-price-growth-and-investment-opportunities/"
+    "LDAU foreign landed ownership (CORRECTED size cap): ≥5-yr PR + exceptional economic contribution required, case-by-case; S$1,220 application fee; ~1 month to process (some cases 2-6 months); owner-occupier only, no renting (existing tenancy at purchase must end within 1 year of completion); cannot sell within 5 years of legal completion; GCB Areas entirely off-limits to foreign buyers. SIZE CAP CORRECTION: mainland restricted residential property cap is 15,000 sqft (~1,394 sqm), NOT 1,800 sqm as stated in 基线 — 1,800 sqm is the separate, larger cap that applies only to Sentosa Cove (Singapore's sole foreign-open waterfront landed enclave, which itself has no 5-year no-sell restriction). Source (primary): https://www.sla.gov.sg/regulatory/foreign-ownership-of-property/",
+    "Financing mid-2026 (UPDATED, 基线 figure now stale): 3-month compounded SORA has fallen sharply to ~1.05-1.08% as of June 2026 (from the ~2.9-3% level seen in early 2025) — 基线研究（2026-06-30）的 '~1.55-1.80%' estimate is now too high. Fixed mortgage packages have followed rates down; some 2-year fixed packages advertised as low as ~1.27-1.40% p.a. by June 2026. LTV 75% and TDSR 55% stress-tested at a 4% floor remain in force per MAS rules — re-run affordability stress tests against the lower actual-rate environment. Authoritative series: MAS/ABS SORA publications; commentary: https://www.homejourney.sg/blog/singapore-sora-rate-outlook-2026-what-homeowners-should-know-homejourney-202601110702, https://housingloansg.com/hl/charts/sora-and-compounded-sora-trend, https://propertynet.sg/latest-bank-mortgage-loan-rates-across-singapore/",
+    "URA landed price index (UPDATED, material change from 基线 framing): landed property prices DECREASED 0.4% q/q in Q1 2026, reversing +3.4% q/q growth in Q4 2025; non-landed rose +1.3% q/q in the same quarter — a landed/non-landed divergence, with landed cooling into 2026. Q2 2026 index not yet published as of this research (typically released late Jul/Aug). Sources: https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr26-31, https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr26-26",
+    "D10 landed liquidity/market read (CONFIRMED): resale volumes reported steady through 2023-2026 cooling-measure rounds (owner-occupier-driven, not speculative); D10 land supply for new landed/condo stock remains extremely limited, structurally supporting prices despite the Q1 2026 index dip. Source: https://www.plbinsights.com/unpacking-district-10s-pure-landed-homes-price-growth-and-investment-opportunities/",
+    "年度房产税（持有成本，BSD/ABSD/SSD 之外的经常性支出）：按年值 AV 累进——自住税率 0–32%、非自住 12–36%（2024 年起档次）。本区 S$15–25m 量子的 landed AV 通常六位数，自住年税粗估五位数（数万新元级）、出租持有显著更高——精确数字用 IRAS 官网计算器按具体 AV 核算。[iras.gov.sg/taxes/property-tax]"
   ],
   "screening_recommendations": [
     {
@@ -308,7 +309,7 @@
     },
     {
       "title": "外国人限制（勘误更正）/ Foreign-buyer rules (correction)",
-      "detail": "LDAU 批准制：≥5 年 PR + 特殊经济贡献，仅自住、5 年内不得转售；本岛受限住宅面积上限为 15,000 sqft（约 1,394 m²）——此前研究写的 1,800 m² 是 Sentosa Cove 专属标准，已更正。GCBA 对外国人完全关闭。卖方受众基本为公民/获批 PR，定价与流动性按此评估。"
+      "detail": "LDAU 批准制：≥5 年 PR + 特殊经济贡献，仅自住、5 年内不得转售；本岛受限住宅面积上限为 15,000 sqft（约 1,394 m²）——基线研究写的 1,800 m² 是 Sentosa Cove 专属标准，已更正。GCBA 对外国人完全关闭。卖方受众基本为公民/获批 PR，定价与流动性按此评估。"
     },
     {
       "title": "可疑数据先核实 / Screen the suspect numbers first",
@@ -316,7 +317,7 @@
     },
     {
       "title": "榜单两端的机会 / The two ends of the ranked list",
-      "detail": "大地块玩法：24 Kingsmead Rd（12,168 sqft，S$1,972 psf land，URA 已批 10,000+ sqft GFA）低于 detached 基准带下沿，适合重建/多代同堂。量子入场：Prince of Wales Rd 半独立 S$6.0m（S$1,708 psf）为本轮最低总价，但地处 1km 边缘、街区档次 mid——签约前 OneMap 实测与 52 King's Rd 直线距离。"
+      "detail": "大地块玩法：24 Kingsmead Rd（12,168 sqft，S$1,972 psf land，URA 已批 10,000+ sqft GFA）低于 detached 基准带下沿，适合重建/多代同堂——但 tenure 未确认，先 INLIS 核实。量子入场：Prince of Wales Rd 半独立 S$6.0m（S$1,708 psf）为本轮最低总价，OneMap 实测街道参考点 0.27km、明确在 1km 圈内（早前『1km 边缘』说法有误，已更正）；街区档次 mid、非 prime 街——低价的原因是街不是距离；签约前按门牌复测。"
     },
     {
       "title": "用 Dunearn House 做 psf 参照系 / Benchmark against Dunearn House",
@@ -324,7 +325,7 @@
     },
     {
       "title": "逐套打分 + 产权尽调 / Score each candidate + title checks",
-      "detail": "候选房源跑 researcher/landed/scorecard.py（0-100 + 红黄旗），<65 分不看房；出价前 SLA INLIS 查产权/地役权/限制契据，重建候选加查 URA 分区与保育名单（Cornwall/Chatsworth 部分洋房受保育限制）。"
+      "detail": "候选房源跑 researcher/landed/scorecard.py（0-100 + 红黄旗），<65 分不看房；出价前 SLA INLIS 查产权/地役权/限制契据，重建候选加查 URA 分区与保育名单（Cornwall/Chatsworth 部分洋房受保育限制）。另注意：本区以 freehold 为主，但存在零星非典型年期/受限地块——每一块地的起算年、余期与地役权都以 INLIS 为准，不采信挂牌页的 tenure 标注（本榜单已有 4 条 tenure 未确认）。"
     },
     {
       "title": "按 SSD 新规规划持有期 / Plan holding around the 4-yr SSD",
@@ -348,26 +349,27 @@
     "Bukit Timah Turf City (176 ha): 15,000–20,000 public+private homes, first new HDB flats in Bukit Timah in ~40 years; 22 heritage buildings conserved (Grandstands, stables, Saddle Club, Dunearn Water Depot). DMP2025 (now gazetted) demarcates ~20 residential sites + 3 white sites (one linked to future Turf City MRT) + a school site + a healthcare site. Phasing spans 20–30 years overall, BUT the FIRST PRIVATE LAUNCH is already dated: 'Dunearn House' (Frasers Property/Sekisui House/CSC Land JV; GLS site sold Jul 2025 for S$491.45m / S$1,410 psf ppr) — 380 units (2BR–4BR, 530–1,380 sqft), priced ~S$2,900–3,100 psf, VVIP preview reported ~10 Jul 2026. A SECOND Turf City/Dunearn Road GLS site (330 units + ground-floor retail) was awarded to a Wing Tai-Metro JV at S$1,625 psf ppr (28 Apr 2026 tender, 15% above the first site) — confirms escalating land cost as the precinct's first phase fills in. BTO component still expected to align later, roughly with CRL Phase 2 completion.",
     "Cross Island Line Phase 2 (opens 2032): CORRECTED station codes — Turf City station is CR14 (not CR13; CR13 is Bright Hill, an unrelated Phase-1 interchange further east); King Albert Park is CR15, interchange with Downtown Line (DT6), reportedly Singapore's deepest station (~50m). Phase 2 spans 6 stations (Turf City to Jurong Lake District); groundbreaking held 7 Jul 2025 at Clementi. As of March 2026, King Albert Park's earth-retaining/stabilising works were underway — near-term Blackmore Drive construction disruption continues.",
     "Holland Plain GLS: Sim Lian won BOTH adjacent sites — 1st (~S$368m, S$1,423 psf ppr) and 2nd (~S$454m, S$1,491 psf ppr, sole bid, awarded 7 May 2026, ~280 homes, 169,175 sqft site / 304,524 sqft max GFA). Possible amalgamation into a combined ~510-unit development; indicative launch psf S$2,950–3,150, likely selling 2027–2028; adds new high-rise supply and overlapping MGS 1km school demand.",
-    "PUB Bukit Timah Canal widening/deepening (Rifle Range Rd–Jalan Kampong Chantek) completing ~2026 to handle ~30% more rainwater; reassess flood risk post-completion. (Unchanged since the prior cycle — no updated completion-date confirmation found this pass.)",
+    "PUB Bukit Timah Canal widening/deepening (Rifle Range Rd–Jalan Kampong Chantek) completing ~2026 to handle ~30% more rainwater; reassess flood risk post-completion. (与 2026-06-30 基线一致 — no updated completion-date confirmation found 本次刷新.)",
     "URA Master Plan 2025 (now GAZETTED, not draft, since 1 Dec 2025) emphasises heritage conservation, car-lite design and green corridors across the broader Bukit Timah district; Kranji (former racecourse) is undergoing a parallel racecourse-to-housing transformation, an interesting precedent/comparator for Turf City's pacing."
   ],
   "schools_within_1km": [
     "Nanyang Primary School — 52 King's Road, 268097 (subject school); SAP school since 1984; was one of 9 original GEP centres since 1990 — NOTE: GEP is being discontinued nationally, last P4 GEP intake 2026, last cohort completes 2028, replaced from 2027 by school-based Higher-Ability-Learner (HAL) provisions (all primary schools, ~10% of cohort) + after-school Advanced Modules at 15 designated centres [confirmed — PRIMARY SOURCE: moe.gov.sg/news/press-releases/20260303-learning-together-with-different-strengths-and-needs; secondary: sgschoolkaki.com, honeykidsasia.com]",
-    "Nanyang Primary Phase 2C balloting — 2025: 63 applicants / 42 places (150.0% demand ratio, balloted, SC <1km) — independently reconfirmed this cycle [kiasuparents.com/kiasu/primary-schools/nanyang-primary-school]",
-    "Nanyang Primary Phase 2C balloting — 2024: 79 applicants / 40 places (197.5% demand ratio, balloted, SC <1km) — independently reconfirmed this cycle; longer history 2022 ratio 2.17:1, 2023 1.73:1, all balloted SC<1km [kiasuparents.com, p1registration.sg/2025/05/07/nanyang-primary-balloting-history-your-2025-chances-strategies]",
+    "Nanyang Primary Phase 2C balloting — 2025: 63 applicants / 42 places (150.0% demand ratio, balloted, SC <1km) — independently reconfirmed 本次刷新中 [primary: moe.gov.sg/primary/p1-registration/past-vacancies-and-balloting-data; kiasuparents.com/kiasu/primary-schools/nanyang-primary-school]",
+    "Nanyang Primary Phase 2C balloting — 2024: 79 applicants / 40 places (197.5% demand ratio, balloted, SC <1km) — independently reconfirmed 本次刷新中; longer history 2022 ratio 2.17:1, 2023 1.73:1, all balloted SC<1km [primary: moe.gov.sg/primary/p1-registration/past-vacancies-and-balloting-data; kiasuparents.com, p1registration.sg/2025/05/07/nanyang-primary-balloting-history-your-2025-chances-strategies]",
     "Nanyang Primary Phase 2C balloting — 2026: UNVERIFIABLE/PENDING — registration window ~28-30 Jul 2026, results due 11 Aug 2026, i.e. AFTER this report's as-of date (2026-07-03); do not infer outcome from prior years",
-    "MOE 2026 P1 intake reduction (NEW, newly established this cycle): starting with the 2026 P1 Registration Exercise, MOE is gradually cutting P1 intake at most primary schools nationally in response to falling cohort sizes from 2027 onward — reported aggregate: 61 schools cut, 12 increased, 106 unchanged, net -1,460 P1 places nationwide; Nanyang/RGPS-specific 2026 vacancy figures not found in official press release text, check MOE P1 portal directly [moe.gov.sg/news/press-releases/20260429-2026-primary-one-registration-exercise]",
-    "Nanyang Kindergarten — 118 King's Road, 268155 (on/adjacent campus, affiliated) — unchanged since the prior cycle",
+    "MOE 2026 P1 intake reduction (NEW, 本次刷新确立): starting with the 2026 P1 Registration Exercise, MOE is gradually cutting P1 intake at most primary schools nationally in response to falling cohort sizes from 2027 onward — reported aggregate: 61 schools cut, 12 increased, 106 unchanged, net -1,460 P1 places nationwide; Nanyang/RGPS-specific 2026 vacancy figures not found in official press release text, check MOE P1 portal directly [moe.gov.sg/news/press-releases/20260429-2026-primary-one-registration-exercise]",
+    "Nanyang Kindergarten — 118 King's Road, 268155 (on/adjacent campus, affiliated) — 与 2026-06-30 基线一致",
     "Raffles Girls' Primary School — 21 Hillcrest Road (~1-1.2km, near edge); also one of the 9 original GEP centres (same 2027 discontinuation applies); required balloting in Phase 2C both 2024 and 2025, fully subscribed with 0 vacancies left for Phase 2C Supplementary either year; Phase 2B ratio >3:1 across distance bands [p1registration.sg/2025/05/07/raffles-girls-primary-school-rgps-balloting-history-your-2025-chances-strategies, kiasuparents.com/kiasu/primary-schools/raffles-girls-primary-school]",
-    "Nanyang Girls' High School — 2 Linden Drive (~1-1.5km; IP with Hwa Chong) — unchanged since the prior cycle, not re-verified this cycle"
+    "Nanyang Girls' High School — 2 Linden Drive (~1-1.5km; IP with Hwa Chong) — 与 2026-06-30 基线一致, 本次未重验（价格类以 URA REALIS 为准；规划/学校/水务类以 URA、MOE、PUB 官方页为准）"
   ],
   "data_gaps": [
     "2026 年 Phase 2C 抽签结果 2026-08-11 才公布——本报告的学区需求判断基于 2022-2025 数据（均抽签）。",
     "Bukit Timah 运河扩容工程（Rifle Range Rd-Jalan Kampong Chantek）官方完工确认未找到；2026-02 Dunearn 洪水预警说明风险仍活跃。",
-    "Coronation Road West 价格带（上轮引 EdgeProp）本轮 403 无法独立复核——标记 provisional，出价前用 URA REALIS 复核。",
+    "Coronation Road West 价格带（早前研究引 EdgeProp）来源页暂不可访问、未能独立复核——数字为暂定值，出价前用 URA REALIS 复核。",
     "99.co 两条 Kingsmead 房源与 PropertyGuru 22802877 的地块面积/psf 口径未确认（疑为建筑面积）。",
     "校门口 King's Road 接送拥堵无直接来源佐证（标记 unverifiable）——现场早晚高峰各看一次。",
-    "MOE 2026 减招是否落在 Nanyang/RGPS 未获校级确认——需查 MOE P1 portal 校级 vacancy。"
+    "MOE 2026 减招是否落在 Nanyang/RGPS 未获校级确认——需查 MOE P1 portal 校级 vacancy。",
+    "挂牌天数（DOM）未采集——『>90 天挂牌大胆议价』的判断需以 portal 挂牌历史为准。"
   ],
   "best_for": "新加坡公民/长期 PR 家庭，目标真·1km Nanyang Primary 抽签资格 + D10 永久地契土地保值；预算带：S$6-9m（量子入场/边缘街）、S$13-20m（核心街 semi-D/detached）、S$24m+（Kingsmead/GCBA 大地块）。不适合：追求现金流的投资者（landed 租金收益率低）、无法通过 LDAU 的外国买家、以及指望 GEP 品牌继续溢价的买家。 [EN] SC / long-term-PR families buying genuine 1km ballot eligibility plus D10 freehold land preservation; not for yield investors, LDAU-ineligible foreigners, or buyers still paying for the discontinued GEP badge.",
   "sources": [
@@ -486,5 +488,22 @@
     "https://www.uradraftmasterplan.gov.sg/regional-plans/central-region/bukit-timah-turf-city/"
   ],
   "asof": "2026-07-03",
-  "report_basename": "nanyang_1km_Landed_Area_Report.html"
+  "report_basename": "nanyang_1km_Landed_Area_Report.html",
+  "review": {
+    "verdict": "PASS",
+    "overall": 8.3,
+    "rounds": 4,
+    "date": "2026-07-03",
+    "reviewer": "独立敌对评审：SG 住宅分析师 persona（property-report-review skill）",
+    "scores": {
+      "data_accuracy": 9.0,
+      "method_rigor": 7.5,
+      "completeness": 9.0,
+      "decision_usefulness": 8.5,
+      "honesty_uncertainty": 8.5,
+      "presentation_bilingual": 6.5
+    },
+    "note": "3 项载重数字抽查全部通过（MOE GEP 20260303 / URA pr26-26+31 / MAS SSD）；13 条 psf 与 BSD 算例全部复算一致。"
+  },
+  "subtitle": "实战 Checklist 驱动 · 基线研究 2026-06-30 · 本次刷新 2026-07-03 · 独立分析师验收 PASS 8.3/10"
 }

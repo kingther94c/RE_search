@@ -1,241 +1,242 @@
-﻿{
-    "project_name":  "Thomson Reserve (unofficial/marketing name) â€” redevelopment of the former Thomson View Condominium",
-    "confidence_note":  "HIGH confidence on the SITE/TRANSACTION: this is the redevelopment of the former Thomson View Condominium (Bright Hill Drive, District 20, Upper Thomson, beside MacRitchie Reservoir), bought via collective sale for S$810M by a UOL / Singapore Land (SingLand) / CapitaLand Development consortium (vehicle: Tamarind Development Pte Ltd); High Court sale order 1 Jul 2025, completion 2 Oct 2025. It is NOT \u0027The Reserve Residences\u0027 (Beauty World). LOW confidence / DISPUTED on five load-bearing details the raw research over-stated as fact: (1) the official launch NAME \u0027Thomson Reserve\u0027 appears only on agent/SEO microsites â€” no CapitaLand/UOL release, EdgeProp, Business Times or Straits Times confirms it (CapitaLand says plans \u0027announced in due course\u0027); treat as a working/marketing name. (2) Unit count: ~1,240 (deal-stage reporting) vs 1,268 (marketing) â€” use ~1,240. (3) TOP: 2030 vs 2031 conflict, none official. (4) The indicative per-unit PRICE LIST / PSF table is marketing placeholder data the source itself labels \u0027indicative\u0027, mislabelled \u0027[sourced]\u0027 in raw research â€” downgrade to [estimate]. (5) The \u0027Chuan Park $2,836 psf\u0027 benchmark used to argue +12% upside is wrong â€” actual launch avg was ~$2,579 psf â€” so the upside math is unreliable. Project is PRE-LAUNCH (no real sales data); showflat preview targeted ~Oct 2026.",
-    "summary":  "Thomson Reserve is the working name for the 99-year leasehold redevelopment of the en-bloc Thomson View Condominium site (Bright Hill Drive, D20, ~5 ha / ~504,314-540,314 sq ft, plot ratio 2.1), bought for S$810M (~S$1,178 psf ppr, inclusive of land betterment + lease upgrading premium) by UOL/SingLand/CapitaLand. Completion of the en-bloc was 2 Oct 2025; the new project (~1,240 units, 1-5 bedrooms) is pre-launch with a showflat preview targeted around Oct 2026 and no confirmed TOP (2030-2031). The investment case is a capital-appreciation play, not a yield play: first sizeable D20 new launch since JadeScape (2018), ~7-min walk to Upper Thomson MRT (TEL) with a future Bright Hill CRL interchange (~2030), Ai Tong School within 1km, and MacRitchie adjacency. Same developers executed Parktown Residence (87% sold, $2,360 psf, Feb 2025), evidencing strong launch pull. BUT: the high land rate compresses the margin of error, the official name/unit count/TOP/pricing are all still unconfirmed, a Lentor/D26 supply wave plus a 1,200-unit Upper Thomson BTO loom 2026-2027, and 99-yr leasehold caps long-run upside. Stance: SELECTIVE â€” credible site and developers, but buy on confirmed fundamentals at launch pricing, not on the marketing price table.",
-    "identity":  {
-                     "address":  "Bright Hill Drive (former 1-17E), Upper Thomson, District 20, Singapore â€” beside MacRitchie Reservoir",
-                     "district":  "D20 (Upper Thomson; site sits on the Bishan/Upper Thomson fringe â€” EdgeProp classifies the former condo under \u0027Bishan\u0027)",
-                     "developer":  "UOL Group + Singapore Land (SingLand) + CapitaLand Development; JV vehicle \u0027Tamarind Development Pte Ltd\u0027 â€” structure: UOL-SingLand 80:20 vehicle 50:50 with CapitaLand Development [confirmed]",
-                     "architect":  "Not publicly disclosed [data gap]",
-                     "tenure":  "Fresh 99-year leasehold (NOT freehold) [confirmed]",
-                     "site_area":  "~5 ha; ~504,314 sq ft (some sources 540,314 sq ft); ~50,197 sqm [confirmed]",
-                     "plot_ratio":  "2.1 (Master Plan 2019) [confirmed]",
-                     "total_units":  "~1,240 (deal-stage reporting) â€” marketing sites say 1,268; treat as ~1,240-1,268, unconfirmed [disputed/estimate]",
-                     "site_origin":  "Collective sale (en-bloc) of former Thomson View Condominium â€” 255 residential units + 1 commercial, completed 1987, 99-yr lease from 7 Apr 1975 [confirmed]; (raw research\u0027s 206/254 unit figures are errors)",
-                     "expected_top":  "2030-2031, no official/developer-confirmed date [unverified/estimate]",
-                     "launch_status":  "Pre-launch as of Jun 2026; showflat preview targeted ~Q3-Q4 2026 (Oct 2026); official pricing to follow â€” no actual sales data exists yet [confirmed]"
-                 },
-    "pricing_positioning":  "No official pricing â€” project is unlaunched. Land rate ~S$1,178 psf ppr [confirmed] implies a breakeven in the low-S$2,000s psf (~S$2,058 psf is plausible but agent-sourced, not analyst-attributed) [estimate]. Marketing \u0027indicative\u0027 table spans ~$2,159-$2,454 psf across 1-5BR â€” these are placeholder figures the source labels indicative, NOT sourced launch prices [estimate/unverified]. A realistic launch band of ~S$2,300-$3,100 psf is directionally reasonable benchmarked to recent comps but unattributed [estimate]. Positioning: mid-to-upper band vs the Lentor/D26 cluster (which launched ~$1,882-$2,478 psf) and roughly parity-to-premium vs JadeScape resale (~$2,327 psf avg 2026). The \u0027Chuan Park $2,836 psf\u0027 anchor used in raw research is WRONG (actual launch avg ~$2,579 psf), so any \u0027+12% upside\u0027 built on it should be discarded.",
-    "unit_mix":  [
-                     {
-                         "type":  "1 Bedroom",
-                         "size_sqft":  "~484",
-                         "indicative_psf":  "~$2,454 [estimate/marketing â€” not official]",
-                         "indicative_price":  "~S$1.19M [estimate]"
-                     },
-                     {
-                         "type":  "1BR + Study",
-                         "size_sqft":  "~560",
-                         "indicative_psf":  "~$2,354 [estimate]",
-                         "indicative_price":  "~S$1.32M [estimate]"
-                     },
-                     {
-                         "type":  "2 Bedroom",
-                         "size_sqft":  "~700-807",
-                         "indicative_psf":  "~$2,211-$2,216 [estimate]",
-                         "indicative_price":  "~S$1.55-1.79M [estimate]"
-                     },
-                     {
-                         "type":  "3 Bedroom",
-                         "size_sqft":  "~958-1,130",
-                         "indicative_psf":  "~$2,159-$2,211 [estimate]",
-                         "indicative_price":  "~S$2.07-2.50M [estimate]"
-                     },
-                     {
-                         "type":  "4 Bedroom",
-                         "size_sqft":  "~1,206-1,464",
-                         "indicative_psf":  "~$2,312-$2,314 [estimate]",
-                         "indicative_price":  "~S$2.79-3.39M [estimate]"
-                     },
-                     {
-                         "type":  "5 Bedroom",
-                         "size_sqft":  "~1,722",
-                         "indicative_psf":  "~$2,258 [estimate]",
-                         "indicative_price":  "~S$3.89M [estimate]"
-                     }
-                 ],
-    "comparables":  [
-                        {
-                            "name":  "Parktown Residence (Tampines North)",
-                            "kind":  "new launch â€” same developers",
-                            "psf":  "$2,360 psf avg",
-                            "note":  "UOL/SingLand/CapitaLand; 1,041/1,193 units (87%) sold Feb 2025 [confirmed] â€” best direct developer-track-record comp"
-                        },
-                        {
-                            "name":  "Chuan Park (Lorong Chuan, D19)",
-                            "kind":  "new launch â€” en-bloc comp",
-                            "psf":  "$2,579 psf launch avg",
-                            "note":  "76% of 916 units, Nov 2024 [confirmed]. Raw research\u0027s $2,836 psf is UNVERIFIED/wrong â€” do not use for upside math [disputed]"
-                        },
-                        {
-                            "name":  "Lentor Mansion (D26)",
-                            "kind":  "new launch â€” Lentor cluster",
-                            "psf":  "$2,104-$2,478 psf",
-                            "note":  "75% of 533 units, March 2025 (raw research mis-dated 2024) [confirmed]"
-                        },
-                        {
-                            "name":  "Springleaf Residence (D26)",
-                            "kind":  "new launch â€” Lentor cluster",
-                            "psf":  "$2,175 psf avg",
-                            "note":  "870/941 units (92%) sold, 2025 [confirmed]"
-                        },
-                        {
-                            "name":  "Hillock Green / Lentor Hills / Lentor Modern (D26)",
-                            "kind":  "new launch â€” Lentor cluster",
-                            "psf":  "~$1,882-$2,080 psf launch",
-                            "note":  "2022-2024 launches; lower band of the Lentor cluster [confirmed]"
-                        },
-                        {
-                            "name":  "JadeScape (Shunfu, D20)",
-                            "kind":  "same-district resale",
-                            "psf":  "$2,327 psf avg (range $1,856-$2,620)",
-                            "note":  "99-yr LH, last sizeable D20 new launch (2018); 2026 resale benchmark [confirmed]"
-                        },
-                        {
-                            "name":  "Lentor Central (GLS, D20/D26)",
-                            "kind":  "competing future supply",
-                            "psf":  "land $1,278 psf ppr (record)",
-                            "note":  "GuocoLand/Intrepid/TID consortium; ~562 units, 2027 launch â€” direct future competitor [estimate on pricing]"
-                        }
-                    ],
-    "investment_thesis":  [
-                              "First sizeable D20 new launch since JadeScape (2018) â€” ~7-8 year supply void fills pent-up upgrader demand in an established, family-oriented estate [sourced]",
-                              "Strong transport: ~7-min walk to Upper Thomson MRT (TEL), near Bright Hill (future CRL interchange ~2030) and Marymount â€” multi-line, interchange-free access to Orchard/Marina Bay [confirmed]",
-                              "School + nature pull: Ai Tong School within 1km plus MacRitchie Reservoir adjacency are durable, hard-to-replicate family value drivers [confirmed]",
-                              "Developer execution proven: same UOL/SingLand/CapitaLand consortium sold Parktown Residence 87% at launch ($2,360 psf, Feb 2025) [confirmed]",
-                              "Supply timing edge: dominates 2026 RCR new-launch supply; ~18-month first-mover window before Lentor Central/Gardens (2027) enter the same corridor [estimate]",
-                              "Mega-scale en-bloc parcel (~5 ha) in land-scarce SG supports comprehensive masterplan and amenity depth [confirmed]"
-                          ],
-    "risks":  [
-                  "Name, unit count (~1,240 vs 1,268), TOP (2030 vs 2031) and ALL pricing are unconfirmed â€” the marketing price table is placeholder data, not real launch pricing [disputed] â€” so any precise return math is speculative",
-                  "High land rate (~$1,178 psf ppr) compresses margin of error: if launch lands at $2,600+ psf vs a low-$2,000s breakeven, early buyers have a thin cushion if resale softens to ~$2,300 psf [estimate]",
-                  "Supply wave: Lentor/D26 cluster (~4,000+ units 2026-2027) plus a 1,200-unit Upper Thomson BTO (Jun 2026) raise competition and could compress rents/resale velocity [sourced]",
-                  "99-yr leasehold (NOT freehold) â€” value/financing friction accrues as lease nears ~80 yrs; not a perpetual-hold asset [confirmed]",
-                  "Yield, not a yield play: gross ~2.6-3.2%, net ~2.0-2.5% â€” investors must rely on multi-year capital appreciation, not rental income [estimate]",
-                  "Large unit count means phased absorption â€” later phases and 1-2BR tiers may move slower at TOP given concentrated same-project resale supply [estimate]",
-                  "Precedent caution: earlier Upper Thomson projects (Thomson Three/Grand) delivered only modest profits despite location, partly on layout inefficiencies [sourced]",
-                  "SSD applies for properties bought from 4 Jul 2025: 16%/12%/8%/4% for sale within yr 1/2/3/4 â€” penalises any flip exit [confirmed]"
-              ],
-    "payment_regulatory":  [
-                               "Stamp duty (SG citizen, 1st property, ~S$2.5M unit): BSD ~S$94,600 (effective ~3.78%); ABSD 0%. At ~S$3.0M: BSD ~S$119,600; at ~S$3.5M: BSD ~S$149,600 [sourced: IRAS schedule]",
-                               "ABSD by status: SG citizen 1st home 0%; PR 5% (1st)/30% (2nd); foreigner 60% flat (US/CH/NO/IS/LI nationals treated as citizens under FTAs) [confirmed]",
-                               "Financing: LTV 75% (1st mortgage) -\u003e ~25% down (~S$625k on S$2.5M); TDSR cap 55%; MAS stress-test rate 4% (actual fixed rates ~1.3-1.5% mid-2026) [confirmed]",
-                               "Indicative servicing (S$1.875M loan): ~S$6,250/mo at 4% stress (needs gross income ~S$11.4k/mo to clear 55% TDSR); ~S$2,188/mo at ~1.4% actual [estimate]",
-                               "BUC progressive payment (typical UOL/CL): 5% booking, to 20% on S\u0026P, then stage payments (foundation/RC/walls) to 100% at TOP â€” mortgage outflow back-loaded toward completion [sourced]",
-                               "SSD (bought from 4 Jul 2025): 16%/12%/8%/4%/0% for disposal within 1/2/3/4/4+ years [confirmed]"
-                           ],
-    "location":  [
-                     "Bright Hill Drive, D20, Upper Thomson â€” beside MacRitchie Reservoir (Central Catchment Nature Reserve) [confirmed]",
-                     "MRT: ~7-min walk to Upper Thomson (TE8, TEL); near Bright Hill (TE7, future CRL interchange ~2030) and Marymount (CC16) [confirmed/estimate on CRL timing]",
-                     "Expressways: CTE / SLE / PIE network accessible; ~10-min drive to Bishan corridor [estimate]",
-                     "Schools: Ai Tong School within 1km; also CHIJ St Nicholas Girls, Catholic High, Peirce/Whitley/Mayflower Sec, Eunoia JC, Raffles Institution ~2km [confirmed on Ai Tong; others sourced]",
-                     "Retail/amenity: Thomson Plaza (~500m), Junction 8 \u0026 AMK Hub (~10-15 min), Mount Alvernia Hospital nearby [sourced]",
-                     "Nature/recreation: direct MacRitchie trails/TreeTop Walk; Lower Peirce, Bishan-AMK Park, Rail Corridor within short drive [sourced]"
-                 ],
-    "demand_supply":  [
-                          "No take-up data â€” project unlaunched. March 2026 comparable launches were very strong (Pinery 92.5%, River Modern 90%), implying healthy absorption potential [sourced]",
-                          "Thomson Reserve is the only mega-scale RCR launch in 2026 â€” supply scarcity favours strong early take-up [estimate]; large unit count means later-phase absorption may slow",
-                          "Direct future competition: Lentor Central (~562 units, 2027) and Lentor Gardens (~500-530 units, late 2026/2027) enter the same TEL corridor â€” first-mover advantage matters [sourced/estimate]",
-                          "Public-housing overhang: 1,200-unit Upper Thomson BTO (Jun 2026, first in 40+ yrs) + AMK BTO pull some upgrader demand, but staggered 2028-2030 delivery softens near-term impact [sourced]",
-                          "Rental: est gross yield ~3.0-3.8% (1-2BR strongest), net ~2.0-2.5%; tenant base = expats (tech/life-sciences/CBD via TEL) + Ai Tong-catchment families; HDB MOP supply surge is a mild headwind [estimate]",
-                          "Oversupply risk LOW-MODERATE for RCR 2026-2027; competition risk MODERATE from Lentor cluster [estimate]"
-                      ],
-    "verification":  [
-                         {
-                             "claim":  "Site is the former Thomson View en-bloc (Bright Hill Drive, D20); NOT The Reserve Residences/Beauty World",
-                             "status":  "CONFIRMED",
-                             "note":  "Wee Swee Teow (handling firm), CapitaLand release, EdgeProp, 99.co, ETC all corroborate the site and transaction"
-                         },
-                         {
-                             "claim":  "Official project name is \u0027Thomson Reserve\u0027 (renamed from Thomson View Residences Jan 2026)",
-                             "status":  "DISPUTED",
-                             "note":  "Name appears ONLY on agent/SEO microsites and PR wires; no developer release or reputable media confirms it. CapitaLand says plans \u0027announced in due course\u0027. Treat as unofficial working name"
-                         },
-                         {
-                             "claim":  "Developer consortium = UOL + SingLand + CapitaLand Development (vehicle Tamarind Development Pte Ltd)",
-                             "status":  "CONFIRMED",
-                             "note":  "Wee Swee Teow names the consortium; structure UOL-SingLand 80:20 then 50:50 with CapitaLand Development (CapitaLand\u0027s solo release names CLD+UOL 50:50, SingLand inside UOL\u0027s half)"
-                         },
-                         {
-                             "claim":  "En-bloc price S$810M (~S$1,178 psf ppr); High Court order 1 Jul 2025; completion 2 Oct 2025; reserve was S$918M",
-                             "status":  "CONFIRMED",
-                             "note":  "Wee Swee Teow + ETC + 99.co + EdgeProp; ~12% below original reserve; largest court-sanctioned collective sale since Chuan Park\u0027s S$890M (2023)"
-                         },
-                         {
-                             "claim":  "Fresh 99-year leasehold; former condo had 255 residential + 1 commercial unit (1987, 99-yr from 1975)",
-                             "status":  "CONFIRMED",
-                             "note":  "ETC/EdgeProp/99.co. Raw research\u0027s 206 and 254 unit figures are errors; correct is 255+1. New project is NOT freehold"
-                         },
-                         {
-                             "claim":  "Total new units = 1,268",
-                             "status":  "DISPUTED",
-                             "note":  "Better-supported figure is ~1,240 (deal-stage reporting); 1,268 appears mainly on marketing sites. No developer-confirmed count yet"
-                         },
-                         {
-                             "claim":  "Expected TOP 2031 (stated [sourced])",
-                             "status":  "UNVERIFIED",
-                             "note":  "Sources conflict 2030 vs 2031; no developer-confirmed date. Should be an estimate, not sourced"
-                         },
-                         {
-                             "claim":  "Indicative unit-mix price list / PSF table (e.g. 1BR $2,454 psf; range $2,159-$2,454) marked [sourced: launch pricing]",
-                             "status":  "DISPUTED",
-                             "note":  "Source itself states pricing is indicative and official prices come near the Oct 2026 preview. Placeholder/marketing estimates with false precision â€” downgrade to [estimate]"
-                         },
-                         {
-                             "claim":  "Chuan Park benchmark ~$2,836 psf, used to argue +12% upside",
-                             "status":  "DISPUTED",
-                             "note":  "Actual Chuan Park launch avg ~$2,579 psf (76% of 916 units, Nov 2024, EdgeProp). The $2,836 figure is unsupported; derived upside math is unreliable"
-                         },
-                         {
-                             "claim":  "Lentor Mansion 75% sold at $2,104-$2,478 psf",
-                             "status":  "CONFIRMED",
-                             "note":  "EdgeProp â€” 400/533 units over 15-16 Mar 2025. Raw research mis-dated this as Mar 2024"
-                         },
-                         {
-                             "claim":  "Parktown Residence (same developers) 87% sold at $2,360 psf, Feb 2025",
-                             "status":  "CONFIRMED",
-                             "note":  "CapitaLand/UOL releases + EdgeProp; 1,041/1,193 units â€” strongest direct developer comp"
-                         },
-                         {
-                             "claim":  "Pre-launch; showflat preview ~Oct 2026; no actual sales/take-up data",
-                             "status":  "CONFIRMED",
-                             "note":  "Consistent across all sources incl. independent; logically there can be no sales data yet"
-                         }
-                     ],
-    "verdict":  {
-                    "stance":  "SELECTIVE",
-                    "detail":  "The site, transaction (S$810M, ~$1,178 psf ppr) and developer pedigree (UOL/SingLand/CapitaLand, Parktown 87% sold) are genuinely strong, and the location (TEL, Ai Tong, MacRitchie, first big D20 launch since 2018) supports a capital-appreciation thesis. But the official NAME, unit count (~1,240 vs 1,268), TOP (2030/2031) and ALL pricing remain UNCONFIRMED â€” the circulating price table is marketing placeholder, not real launch pricing â€” and the high land rate leaves a thin error margin against a looming Lentor + Upper-Thomson-BTO supply wave on a 99-yr lease. Verdict: a credible upgrader/owner-occupier capital-growth buy IF launch pricing prints near comparables (~mid-$2,000s psf) with a 7+ year hold; AVOID for yield-seekers and flippers (gross yield ~3%, SSD drag). Decide at the Oct 2026 preview on confirmed specs and official price, not on the marketing figures."
-                },
-    "data_gaps":  [
-                      "Official project name not confirmed by any developer/reputable-media source",
-                      "Final unit count (~1,240 vs 1,268) and unit mix unconfirmed",
-                      "Confirmed TOP date (2030 vs 2031)",
-                      "Architect / masterplanner not disclosed",
-                      "No official pricing, floor plans, or showflat location â€” all current price/PSF figures are marketing estimates",
-                      "New lease commencement date (will run from completion, not 1975) not disclosed",
-                      "Bright Hill CRL interchange exact opening (~2030) and CRL Phase 3 alignment near Central Catchment still subject to LTA confirmation"
-                  ],
-    "sources":  [
-                    "https://www.capitaland.com/en/about-capitaland/newsroom/news-releases/international/2025/july/cld-collective-acquisition-thomson-view-condo.html",
-                    "https://wst.com.sg/collective-sale-of-thomson-view-condominium/",
-                    "https://etcsea.com/investment-advisory/thomson-view-condominium-successfully-awarded-to-uol-singland-and-capitaland-development-at-s810-million/",
-                    "https://www.edgeprop.sg/condo-apartment/thomson-view-condominium",
-                    "https://www.99.co/singapore/insider/thomson-view-en-bloc/",
-                    "https://www.99.co/singapore/condos-apartments/thomson-view-condominium",
-                    "https://www.tracygoh.sg/2025/thomson-view-en-bloc-high-court-result-sale-order-granted/",
-                    "https://www.capitaland.com/en/about-capitaland/newsroom/news-releases/international/2025/february/cld-launch-parktown-residence.html",
-                    "https://www.edgeprop.sg/property-news/uol-capitaland-moves-1-041-units-parktown-residence-launch-day-average-price-achieved-2360-psf",
-                    "https://www.edgeprop.sg/property-news/kingsford-achieves-76-sales-chuan-park-2024s-best-performing-weekend-launch",
-                    "https://www.edgeprop.sg/property-news/guocolands-lentor-mansion-achieves-75-sales-launch-prices-2104-psf",
-                    "https://www.edgeprop.sg/property-news/guocoland-sells-92-units-springleaf-residence-average-price-2175-psf",
-                    "https://www.99.co/singapore/condos-apartments/jadescape",
-                    "https://cos.sg/lentor-central-gls-2026-record-1278-psf-land-bid-future-condo-prices-rental-yield-analysis-explained/",
-                    "https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr25-65",
-                    "https://www.lta.gov.sg/content/ltagov/en/upcoming_projects/rail_expansion/cross_island_line.html",
-                    "https://www.era.com.sg/blogs/june-2026-bto-launch-preview",
-                    "https://new-launch-condo.sg/thomson-reserve-price-list-unit-types-psf-analysis-2026/",
-                    "https://www.newlaunchesreview.com/thomson-reserve-price-guide/",
-                    "https://decouplingexpertise.sg/thomson-reserve-new-launch-condo-review-thomson-view-enbloc/",
-                    "https://thomsonview-residences.sg/"
-                ]
+{
+  "project_name": "Thomson Reserve (unofficial/marketing name) — redevelopment of the former Thomson View Condominium",
+  "confidence_note": "HIGH confidence on the SITE/TRANSACTION: this is the redevelopment of the former Thomson View Condominium (Bright Hill Drive, District 20, Upper Thomson, beside MacRitchie Reservoir), bought via collective sale for S$810M by a UOL / Singapore Land (SingLand) / CapitaLand Development consortium (vehicle: Tamarind Development Pte Ltd); High Court sale order 1 Jul 2025, completion 2 Oct 2025. It is NOT 'The Reserve Residences' (Beauty World). LOW confidence / DISPUTED on five load-bearing details the raw research over-stated as fact: (1) the official launch NAME 'Thomson Reserve' appears only on agent/SEO microsites — no CapitaLand/UOL release, EdgeProp, Business Times or Straits Times confirms it (CapitaLand says plans 'announced in due course'); treat as a working/marketing name. (2) Unit count: ~1,240 (deal-stage reporting) vs 1,268 (marketing) — use ~1,240. (3) TOP: 2030 vs 2031 conflict, none official. (4) The indicative per-unit PRICE LIST / PSF table is marketing placeholder data the source itself labels 'indicative', mislabelled '[sourced]' in raw research — downgrade to [estimate]. (5) The 'Chuan Park $2,836 psf' benchmark used to argue +12% upside is wrong — actual launch avg was ~$2,579 psf — so the upside math is unreliable. Project is PRE-LAUNCH (no real sales data); showflat preview targeted ~Oct 2026.",
+  "summary": "Thomson Reserve is the working name for the 99-year leasehold redevelopment of the en-bloc Thomson View Condominium site (Bright Hill Drive, D20, ~5 ha / ~504,314-540,314 sq ft, plot ratio 2.1), bought for S$810M (~S$1,178 psf ppr, inclusive of land betterment + lease upgrading premium) by UOL/SingLand/CapitaLand. Completion of the en-bloc was 2 Oct 2025; the new project (~1,240 units, 1-5 bedrooms) is pre-launch with a showflat preview targeted around Oct 2026 and no confirmed TOP (2030-2031). The investment case is a capital-appreciation play, not a yield play: first sizeable D20 new launch since JadeScape (2018), ~7-min walk to Upper Thomson MRT (TEL) with a future Bright Hill CRL interchange (~2030), Ai Tong School within 1km, and MacRitchie adjacency. Same developers executed Parktown Residence (87% sold, $2,360 psf, Feb 2025), evidencing strong launch pull. BUT: the high land rate compresses the margin of error, the official name/unit count/TOP/pricing are all still unconfirmed, a Lentor/D26 supply wave plus a 1,200-unit Upper Thomson BTO loom 2026-2027, and 99-yr leasehold caps long-run upside. Stance: SELECTIVE — credible site and developers, but buy on confirmed fundamentals at launch pricing, not on the marketing price table.",
+  "identity": {
+    "address": "Bright Hill Drive (former 1-17E), Upper Thomson, District 20, Singapore — beside MacRitchie Reservoir",
+    "district": "D20 (Upper Thomson; site sits on the Bishan/Upper Thomson fringe — EdgeProp classifies the former condo under 'Bishan')",
+    "developer": "UOL Group + Singapore Land (SingLand) + CapitaLand Development; JV vehicle 'Tamarind Development Pte Ltd' — structure: UOL-SingLand 80:20 vehicle 50:50 with CapitaLand Development [confirmed]",
+    "architect": "Not publicly disclosed [data gap]",
+    "tenure": "Fresh 99-year leasehold (NOT freehold) [confirmed]",
+    "site_area": "~5 ha; ~504,314 sq ft (some sources 540,314 sq ft); ~50,197 sqm [confirmed]",
+    "plot_ratio": "2.1 (Master Plan 2019) [confirmed]",
+    "total_units": "~1,240 (deal-stage reporting) — marketing sites say 1,268; treat as ~1,240-1,268, unconfirmed [disputed/estimate]",
+    "site_origin": "Collective sale (en-bloc) of former Thomson View Condominium — 255 residential units + 1 commercial, completed 1987, 99-yr lease from 7 Apr 1975 [confirmed]; (raw research's 206/254 unit figures are errors)",
+    "expected_top": "2030-2031, no official/developer-confirmed date [unverified/estimate]",
+    "launch_status": "Pre-launch as of Jun 2026; showflat preview targeted ~Q3-Q4 2026 (Oct 2026); official pricing to follow — no actual sales data exists yet [confirmed]"
+  },
+  "pricing_positioning": "No official pricing — project is unlaunched. Land rate ~S$1,178 psf ppr [confirmed] implies a breakeven in the low-S$2,000s psf (~S$2,058 psf is plausible but agent-sourced, not analyst-attributed) [estimate]. Marketing 'indicative' table spans ~$2,159-$2,454 psf across 1-5BR — these are placeholder figures the source labels indicative, NOT sourced launch prices [estimate/unverified]. A realistic launch band of ~S$2,300-$3,100 psf is directionally reasonable benchmarked to recent comps but unattributed [estimate]. Positioning: mid-to-upper band vs the Lentor/D26 cluster (which launched ~$1,882-$2,478 psf) and roughly parity-to-premium vs JadeScape resale (~$2,327 psf avg 2026). The 'Chuan Park $2,836 psf' anchor used in raw research is WRONG (actual launch avg ~$2,579 psf), so any '+12% upside' built on it should be discarded.",
+  "unit_mix": [
+    {
+      "type": "1 Bedroom",
+      "size_sqft": "~484",
+      "indicative_psf": "~$2,454 [estimate/marketing — not official]",
+      "indicative_price": "~S$1.19M [estimate]"
+    },
+    {
+      "type": "1BR + Study",
+      "size_sqft": "~560",
+      "indicative_psf": "~$2,354 [estimate]",
+      "indicative_price": "~S$1.32M [estimate]"
+    },
+    {
+      "type": "2 Bedroom",
+      "size_sqft": "~700-807",
+      "indicative_psf": "~$2,211-$2,216 [estimate]",
+      "indicative_price": "~S$1.55-1.79M [estimate]"
+    },
+    {
+      "type": "3 Bedroom",
+      "size_sqft": "~958-1,130",
+      "indicative_psf": "~$2,159-$2,211 [estimate]",
+      "indicative_price": "~S$2.07-2.50M [estimate]"
+    },
+    {
+      "type": "4 Bedroom",
+      "size_sqft": "~1,206-1,464",
+      "indicative_psf": "~$2,312-$2,314 [estimate]",
+      "indicative_price": "~S$2.79-3.39M [estimate]"
+    },
+    {
+      "type": "5 Bedroom",
+      "size_sqft": "~1,722",
+      "indicative_psf": "~$2,258 [estimate]",
+      "indicative_price": "~S$3.89M [estimate]"
+    }
+  ],
+  "comparables": [
+    {
+      "name": "Parktown Residence (Tampines North)",
+      "kind": "new launch — same developers",
+      "psf": "$2,360 psf avg",
+      "note": "UOL/SingLand/CapitaLand; 1,041/1,193 units (87%) sold Feb 2025 [confirmed] — best direct developer-track-record comp"
+    },
+    {
+      "name": "Chuan Park (Lorong Chuan, D19)",
+      "kind": "new launch — en-bloc comp",
+      "psf": "$2,579 psf launch avg",
+      "note": "76% of 916 units, Nov 2024 [confirmed]. Raw research's $2,836 psf is UNVERIFIED/wrong — do not use for upside math [disputed]"
+    },
+    {
+      "name": "Lentor Mansion (D26)",
+      "kind": "new launch — Lentor cluster",
+      "psf": "$2,104-$2,478 psf",
+      "note": "75% of 533 units, March 2025 (raw research mis-dated 2024) [confirmed]"
+    },
+    {
+      "name": "Springleaf Residence (D26)",
+      "kind": "new launch — Lentor cluster",
+      "psf": "$2,175 psf avg",
+      "note": "870/941 units (92%) sold, 2025 [confirmed]"
+    },
+    {
+      "name": "Hillock Green / Lentor Hills / Lentor Modern (D26)",
+      "kind": "new launch — Lentor cluster",
+      "psf": "~$1,882-$2,080 psf launch",
+      "note": "2022-2024 launches; lower band of the Lentor cluster [confirmed]"
+    },
+    {
+      "name": "JadeScape (Shunfu, D20)",
+      "kind": "same-district resale",
+      "psf": "$2,327 psf avg (range $1,856-$2,620)",
+      "note": "99-yr LH, last sizeable D20 new launch (2018); 2026 resale benchmark [confirmed]"
+    },
+    {
+      "name": "Lentor Central (GLS, D20/D26)",
+      "kind": "competing future supply",
+      "psf": "land $1,278 psf ppr (record)",
+      "note": "GuocoLand/Intrepid/TID consortium; ~562 units, 2027 launch — direct future competitor [estimate on pricing]"
+    }
+  ],
+  "investment_thesis": [
+    "First sizeable D20 new launch since JadeScape (2018) — ~7-8 year supply void fills pent-up upgrader demand in an established, family-oriented estate [sourced]",
+    "Strong transport: ~7-min walk to Upper Thomson MRT (TEL), near Bright Hill (future CRL interchange ~2030) and Marymount — multi-line, interchange-free access to Orchard/Marina Bay [confirmed]",
+    "School + nature pull: Ai Tong School within 1km plus MacRitchie Reservoir adjacency are durable, hard-to-replicate family value drivers [confirmed]",
+    "Developer execution proven: same UOL/SingLand/CapitaLand consortium sold Parktown Residence 87% at launch ($2,360 psf, Feb 2025) [confirmed]",
+    "Supply timing edge: dominates 2026 RCR new-launch supply; ~18-month first-mover window before Lentor Central/Gardens (2027) enter the same corridor [estimate]",
+    "Mega-scale en-bloc parcel (~5 ha) in land-scarce SG supports comprehensive masterplan and amenity depth [confirmed]"
+  ],
+  "risks": [
+    "Name, unit count (~1,240 vs 1,268), TOP (2030 vs 2031) and ALL pricing are unconfirmed — the marketing price table is placeholder data, not real launch pricing [disputed] — so any precise return math is speculative",
+    "High land rate (~$1,178 psf ppr) compresses margin of error: if launch lands at $2,600+ psf vs a low-$2,000s breakeven, early buyers have a thin cushion if resale softens to ~$2,300 psf [estimate]",
+    "Supply wave: Lentor/D26 cluster (~4,000+ units 2026-2027) plus a 1,200-unit Upper Thomson BTO (Jun 2026) raise competition and could compress rents/resale velocity [sourced]",
+    "99-yr leasehold (NOT freehold) — value/financing friction accrues as lease nears ~80 yrs; not a perpetual-hold asset [confirmed]",
+    "Yield, not a yield play: gross ~2.6-3.2%, net ~2.0-2.5% — investors must rely on multi-year capital appreciation, not rental income [estimate]",
+    "Large unit count means phased absorption — later phases and 1-2BR tiers may move slower at TOP given concentrated same-project resale supply [estimate]",
+    "Precedent caution: earlier Upper Thomson projects (Thomson Three/Grand) delivered only modest profits despite location, partly on layout inefficiencies [sourced]",
+    "SSD applies for properties bought from 4 Jul 2025: 16%/12%/8%/4% for sale within yr 1/2/3/4 — penalises any flip exit [confirmed]"
+  ],
+  "payment_regulatory": [
+    "Stamp duty (SG citizen, 1st property, ~S$2.5M unit): BSD ~S$94,600 (effective ~3.78%); ABSD 0%. At ~S$3.0M: BSD ~S$119,600; at ~S$3.5M: BSD ~S$149,600 [sourced: IRAS schedule]",
+    "ABSD by status: SG citizen 1st home 0%; PR 5% (1st)/30% (2nd); foreigner 60% flat (US/CH/NO/IS/LI nationals treated as citizens under FTAs) [confirmed]",
+    "Financing: LTV 75% (1st mortgage) -> ~25% down (~S$625k on S$2.5M); TDSR cap 55%; MAS stress-test rate 4% (actual fixed rates ~1.3-1.5% mid-2026) [confirmed]",
+    "Indicative servicing (S$1.875M loan): ~S$6,250/mo at 4% stress (needs gross income ~S$11.4k/mo to clear 55% TDSR); ~S$2,188/mo at ~1.4% actual [estimate]",
+    "BUC progressive payment (typical UOL/CL): 5% booking, to 20% on S&P, then stage payments (foundation/RC/walls) to 100% at TOP — mortgage outflow back-loaded toward completion [sourced]",
+    "SSD (bought from 4 Jul 2025): 16%/12%/8%/4%/0% for disposal within 1/2/3/4/4+ years [confirmed]"
+  ],
+  "location": [
+    "Bright Hill Drive, D20, Upper Thomson — beside MacRitchie Reservoir (Central Catchment Nature Reserve) [confirmed]",
+    "MRT: ~7-min walk to Upper Thomson (TE8, TEL); near Bright Hill (TE7, future CRL interchange ~2030) and Marymount (CC16) [confirmed/estimate on CRL timing]",
+    "Expressways: CTE / SLE / PIE network accessible; ~10-min drive to Bishan corridor [estimate]",
+    "Schools: Ai Tong School within 1km; also CHIJ St Nicholas Girls, Catholic High, Peirce/Whitley/Mayflower Sec, Eunoia JC, Raffles Institution ~2km [confirmed on Ai Tong; others sourced]",
+    "Retail/amenity: Thomson Plaza (~500m), Junction 8 & AMK Hub (~10-15 min), Mount Alvernia Hospital nearby [sourced]",
+    "Nature/recreation: direct MacRitchie trails/TreeTop Walk; Lower Peirce, Bishan-AMK Park, Rail Corridor within short drive [sourced]"
+  ],
+  "demand_supply": [
+    "No take-up data — project unlaunched. March 2026 comparable launches were very strong (Pinery 92.5%, River Modern 90%), implying healthy absorption potential [sourced]",
+    "Thomson Reserve is the only mega-scale RCR launch in 2026 — supply scarcity favours strong early take-up [estimate]; large unit count means later-phase absorption may slow",
+    "Direct future competition: Lentor Central (~562 units, 2027) and Lentor Gardens (~500-530 units, late 2026/2027) enter the same TEL corridor — first-mover advantage matters [sourced/estimate]",
+    "Public-housing overhang: 1,200-unit Upper Thomson BTO (Jun 2026, first in 40+ yrs) + AMK BTO pull some upgrader demand, but staggered 2028-2030 delivery softens near-term impact [sourced]",
+    "Rental: est gross yield ~3.0-3.8% (1-2BR strongest), net ~2.0-2.5%; tenant base = expats (tech/life-sciences/CBD via TEL) + Ai Tong-catchment families; HDB MOP supply surge is a mild headwind [estimate]",
+    "Oversupply risk LOW-MODERATE for RCR 2026-2027; competition risk MODERATE from Lentor cluster [estimate]"
+  ],
+  "verification": [
+    {
+      "claim": "Site is the former Thomson View en-bloc (Bright Hill Drive, D20); NOT The Reserve Residences/Beauty World",
+      "status": "CONFIRMED",
+      "note": "Wee Swee Teow (handling firm), CapitaLand release, EdgeProp, 99.co, ETC all corroborate the site and transaction"
+    },
+    {
+      "claim": "Official project name is 'Thomson Reserve' (renamed from Thomson View Residences Jan 2026)",
+      "status": "DISPUTED",
+      "note": "Name appears ONLY on agent/SEO microsites and PR wires; no developer release or reputable media confirms it. CapitaLand says plans 'announced in due course'. Treat as unofficial working name"
+    },
+    {
+      "claim": "Developer consortium = UOL + SingLand + CapitaLand Development (vehicle Tamarind Development Pte Ltd)",
+      "status": "CONFIRMED",
+      "note": "Wee Swee Teow names the consortium; structure UOL-SingLand 80:20 then 50:50 with CapitaLand Development (CapitaLand's solo release names CLD+UOL 50:50, SingLand inside UOL's half)"
+    },
+    {
+      "claim": "En-bloc price S$810M (~S$1,178 psf ppr); High Court order 1 Jul 2025; completion 2 Oct 2025; reserve was S$918M",
+      "status": "CONFIRMED",
+      "note": "Wee Swee Teow + ETC + 99.co + EdgeProp; ~12% below original reserve; largest court-sanctioned collective sale since Chuan Park's S$890M (2023)"
+    },
+    {
+      "claim": "Fresh 99-year leasehold; former condo had 255 residential + 1 commercial unit (1987, 99-yr from 1975)",
+      "status": "CONFIRMED",
+      "note": "ETC/EdgeProp/99.co. Raw research's 206 and 254 unit figures are errors; correct is 255+1. New project is NOT freehold"
+    },
+    {
+      "claim": "Total new units = 1,268",
+      "status": "DISPUTED",
+      "note": "Better-supported figure is ~1,240 (deal-stage reporting); 1,268 appears mainly on marketing sites. No developer-confirmed count yet"
+    },
+    {
+      "claim": "Expected TOP 2031 (stated [sourced])",
+      "status": "UNVERIFIED",
+      "note": "Sources conflict 2030 vs 2031; no developer-confirmed date. Should be an estimate, not sourced"
+    },
+    {
+      "claim": "Indicative unit-mix price list / PSF table (e.g. 1BR $2,454 psf; range $2,159-$2,454) marked [sourced: launch pricing]",
+      "status": "DISPUTED",
+      "note": "Source itself states pricing is indicative and official prices come near the Oct 2026 preview. Placeholder/marketing estimates with false precision — downgrade to [estimate]"
+    },
+    {
+      "claim": "Chuan Park benchmark ~$2,836 psf, used to argue +12% upside",
+      "status": "DISPUTED",
+      "note": "Actual Chuan Park launch avg ~$2,579 psf (76% of 916 units, Nov 2024, EdgeProp). The $2,836 figure is unsupported; derived upside math is unreliable"
+    },
+    {
+      "claim": "Lentor Mansion 75% sold at $2,104-$2,478 psf",
+      "status": "CONFIRMED",
+      "note": "EdgeProp — 400/533 units over 15-16 Mar 2025. Raw research mis-dated this as Mar 2024"
+    },
+    {
+      "claim": "Parktown Residence (same developers) 87% sold at $2,360 psf, Feb 2025",
+      "status": "CONFIRMED",
+      "note": "CapitaLand/UOL releases + EdgeProp; 1,041/1,193 units — strongest direct developer comp"
+    },
+    {
+      "claim": "Pre-launch; showflat preview ~Oct 2026; no actual sales/take-up data",
+      "status": "CONFIRMED",
+      "note": "Consistent across all sources incl. independent; logically there can be no sales data yet"
+    }
+  ],
+  "verdict": {
+    "stance": "SELECTIVE",
+    "detail": "The site, transaction (S$810M, ~$1,178 psf ppr) and developer pedigree (UOL/SingLand/CapitaLand, Parktown 87% sold) are genuinely strong, and the location (TEL, Ai Tong, MacRitchie, first big D20 launch since 2018) supports a capital-appreciation thesis. But the official NAME, unit count (~1,240 vs 1,268), TOP (2030/2031) and ALL pricing remain UNCONFIRMED — the circulating price table is marketing placeholder, not real launch pricing — and the high land rate leaves a thin error margin against a looming Lentor + Upper-Thomson-BTO supply wave on a 99-yr lease. Verdict: a credible upgrader/owner-occupier capital-growth buy IF launch pricing prints near comparables (~mid-$2,000s psf) with a 7+ year hold; AVOID for yield-seekers and flippers (gross yield ~3%, SSD drag). Decide at the Oct 2026 preview on confirmed specs and official price, not on the marketing figures."
+  },
+  "data_gaps": [
+    "Official project name not confirmed by any developer/reputable-media source",
+    "Final unit count (~1,240 vs 1,268) and unit mix unconfirmed",
+    "Confirmed TOP date (2030 vs 2031)",
+    "Architect / masterplanner not disclosed",
+    "No official pricing, floor plans, or showflat location — all current price/PSF figures are marketing estimates",
+    "New lease commencement date (will run from completion, not 1975) not disclosed",
+    "Bright Hill CRL interchange exact opening (~2030) and CRL Phase 3 alignment near Central Catchment still subject to LTA confirmation"
+  ],
+  "sources": [
+    "https://www.capitaland.com/en/about-capitaland/newsroom/news-releases/international/2025/july/cld-collective-acquisition-thomson-view-condo.html",
+    "https://wst.com.sg/collective-sale-of-thomson-view-condominium/",
+    "https://etcsea.com/investment-advisory/thomson-view-condominium-successfully-awarded-to-uol-singland-and-capitaland-development-at-s810-million/",
+    "https://www.edgeprop.sg/condo-apartment/thomson-view-condominium",
+    "https://www.99.co/singapore/insider/thomson-view-en-bloc/",
+    "https://www.99.co/singapore/condos-apartments/thomson-view-condominium",
+    "https://www.tracygoh.sg/2025/thomson-view-en-bloc-high-court-result-sale-order-granted/",
+    "https://www.capitaland.com/en/about-capitaland/newsroom/news-releases/international/2025/february/cld-launch-parktown-residence.html",
+    "https://www.edgeprop.sg/property-news/uol-capitaland-moves-1-041-units-parktown-residence-launch-day-average-price-achieved-2360-psf",
+    "https://www.edgeprop.sg/property-news/kingsford-achieves-76-sales-chuan-park-2024s-best-performing-weekend-launch",
+    "https://www.edgeprop.sg/property-news/guocolands-lentor-mansion-achieves-75-sales-launch-prices-2104-psf",
+    "https://www.edgeprop.sg/property-news/guocoland-sells-92-units-springleaf-residence-average-price-2175-psf",
+    "https://www.99.co/singapore/condos-apartments/jadescape",
+    "https://cos.sg/lentor-central-gls-2026-record-1278-psf-land-bid-future-condo-prices-rental-yield-analysis-explained/",
+    "https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr25-65",
+    "https://www.lta.gov.sg/content/ltagov/en/upcoming_projects/rail_expansion/cross_island_line.html",
+    "https://www.era.com.sg/blogs/june-2026-bto-launch-preview",
+    "https://new-launch-condo.sg/thomson-reserve-price-list-unit-types-psf-analysis-2026/",
+    "https://www.newlaunchesreview.com/thomson-reserve-price-guide/",
+    "https://decouplingexpertise.sg/thomson-reserve-new-launch-condo-review-thomson-view-enbloc/",
+    "https://thomsonview-residences.sg/"
+  ],
+  "asof": "2026-06-30"
 }

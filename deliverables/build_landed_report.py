@@ -76,9 +76,13 @@ def listings_table(slug: str) -> str:
             f"<tr class='notes'><td></td><td class='l' colspan='10'>{notes}</td></tr>"
         )
     pulled = esc(data.get("pulled", ""))
+    bench = data.get("benchmark_land_psf") or {}
+    legend = " · ".join(
+        f"{k} {v[0]:,}–{v[1]:,}" for k, v in bench.items()
+        if isinstance(v, (list, tuple)) and len(v) == 2)
     return (
         f"<p class='sub'>数据拉取 pulled: {pulled} · 质量分 = landed scorecard (0-100) · "
-        f"value = 地价 psf 对比区域基准带 · ~km = OneMap 街道参考点到学校的直线距离"
+        f"value = 地价 psf 对比区域基准带（{esc(legend)}）· ~km = OneMap 街道参考点到学校的直线距离"
         f"（街道有长度，成交前按门牌复测）· verdict 综合「质量分 × 价值带 × 数据完整度」——"
         f"BUILD-PRICED、tenure/洪水/地块口径不明的房源不会被标为 PURSUE</p>"
         f"<table><tr><th>#</th><th class='l'>Street</th><th>Type</th><th>Ask</th>"

@@ -79,9 +79,12 @@ def screen_verdict(r: dict) -> str:
         return "VERIFY DATA - land size/psf unconfirmed"
     tenure = str(l.get("tenure") or "").lower()
     flood = str(l.get("flood_risk") or "").lower()
-    if tenure in ("", "unknown", "unverified") or flood in ("unknown", "unverified"):
-        # a S$10m+ decision cannot ride on an unknown tenure or unchecked flood record
-        return "VERIFY DATA - tenure/flood unconfirmed"
+    # a S$10m+ decision cannot ride on an unknown tenure or unchecked flood record;
+    # name exactly which field is unconfirmed so the caveat is actionable
+    missing = [w for w, bad in (("tenure", tenure in ("", "unknown", "unverified")),
+                                ("flood", flood in ("unknown", "unverified"))) if bad]
+    if missing:
+        return f"VERIFY DATA - {'/'.join(missing)} unconfirmed"
     band = v.split()[0]
     if band == "BUILD-PRICED":
         return "BUILD-PLAY - paying for the house, price as land+rebuild"

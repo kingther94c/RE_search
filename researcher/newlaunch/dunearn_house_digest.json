@@ -1,0 +1,260 @@
+{
+  "project_name": "Dunearn House（Turf City 首盘 · Bukit Timah）",
+  "asof": "2026-07-03",
+  "confidence_note": "身份与地价：高置信（URA GLS 招标、EdgeProp 交叉验证）。户型/座数/朝向：中置信——目前只有中介营销站口径，发展商官方图册未发布。VVIP 预览日（~2026-07-10）：低置信——仅中介网络声称，未见官方/主流媒体确认。定价 S$2,900-3,100 psf 为分析师预估（CBRE/SRI），非价单。本报告为 pre-launch 研判：所有结论以正式价单为准重校。",
+  "summary": "【2026-07-03，预览前一周】Dunearn House 是 Bukit Timah Turf City 重建区（176 公顷、15,000-20,000 户、20-30 年分期）的第一个私宅盘：Frasers Property + Sekisui House + CSC Land 联合体，2025-07 以 S$491.45m（S$1,410 psf ppr）拿地，99 年地契，约 380 户（2BR 530-680 / 3BR 870-1,010 / 4BR 1,180-1,380 sqft），5 座（前排 3×10 层沿 Dunearn Rd、后排 2×19 层面向重建区绿地），预估 S$2,900-3,100 psf，预计 TOP ~2030 年底。关键坐标：现有 Sixth Ave 地铁（DT）步行约 5 分钟；未来 CRL CR14 Turf City 换乘站 2032 年通车。定价参照系：邻近 99LH 新盘 8@BT 开盘均价 S$2,719、隔壁旧盘 Sixth Avenue Residences 转售 S$2,359、freehold 的 Royalgreen S$2,784-3,010 / Watten House ~S$3,265——以 99LH 身份要价接近 FH 邻居，是『首发+新区叙事』溢价；但第二幅地 Wing Tai-Metro 拿价已 +15.2%（S$1,625 psf ppr，预计 2H2027 以 S$3,150-3,300 开盘），为本盘定价提供前向支撑。同一联合体今年 1 月 The Orie 首周去化 86%（均价 S$2,704）。模型结论：评分 70/100 → SELECTIVE；6 年持有 base case 需 +7.6% 总涨幅才保本（含 4 年 BUC 利息与交易成本）。 — [EN] The first private launch in the 176-ha Turf City redevelopment: Frasers/Sekisui/CSC JV, 99-yr LH, ~380 units, est. S$2,900-3,100 psf (analyst estimates; no official price list yet), TOP ~end-2030. Priced near freehold neighbours despite 99-yr tenure — a first-mover premium partially underwritten by Site 2's land price (+15.2%) and the precinct's 2032 CRL interchange. Scorecard 70/100 → SELECTIVE (right stack, right price).",
+  "identity": {
+    "address": "760-770 Dunearn Road（Turf City 首幅 GLS，145,173 sqft）",
+    "district": "D11/Bukit Timah（Swiss Club/Turf City 分区；紧邻 D10 Sixth Ave）",
+    "developer": "Frasers Property + Sekisui House + CSC Land Group JV（The Orie 同班底：2025-01 首周 86% 去化）",
+    "tenure": "99-yr leasehold（2025 起算）",
+    "site_price": "S$491.45m = S$1,410 psf ppr（2025-06 收标 9 家，2025-07 授出）",
+    "units": "~380 户：2BR/2BR+S 530-680 sqft（~46%）、3BR 870-1,010、4BR 1,180-1,380（营销站口径，待官方图册确认）",
+    "blocks": "5 座：3×10 层（沿 Dunearn Rd）+ 2×19 层（面向重建区）；南北朝向；'Canopy of Memory' 呼应保育看台",
+    "top": "预计 ~2030 Q4（非官方承诺）",
+    "preview": "VVIP 预览 ~2026-07-10（中介口径，未官方确认）"
+  },
+  "pricing_positioning": "预估 S$2,900-3,100（base ~S$3,000）。土地占比 ~47%（S$1,410 psf ppr）；RLB 建安 S$330-575 psf GFA + 融资/软成本，开发商保本约 S$2,400-2,600 psf → 要价隐含 ~15-20% 毛利，属正常区间、非暴利。对买家：这是用 99LH 价格贴着 FH 邻居（Royalgreen S$2,78k-3,01k）买『新区第一张票』——溢价的对价是 CR14 + 全新精装 + Site 2 的 S$3,150-3,300 前向定价。模型（2BR+S 678 sqft @ S$3,000，75% LTV @2.8%，持有 6 年含 4 年 BUC）：保本退出 S$3,227 psf（总涨幅 +7.6%）；年涨 2% 情形 ROI（对现金）约 17%、年化 ~2.7%；毛租金收益率 ~3.2%（rent S$8 psf/mo 假设）。",
+  "unit_mix": [
+    {
+      "type": "2BR / 2BR+Study",
+      "size_sqft": "530-680",
+      "indicative_price": "~S$1.59-2.04m",
+      "indicative_psf": "S$2,900-3,100（估）"
+    },
+    {
+      "type": "3BR / 3BR+Flexi",
+      "size_sqft": "870-1,010",
+      "indicative_price": "~S$2.61-3.13m",
+      "indicative_psf": "S$2,900-3,100（估）"
+    },
+    {
+      "type": "4BR / 4BR+Study",
+      "size_sqft": "1,180-1,380",
+      "indicative_price": "~S$3.54-4.28m",
+      "indicative_psf": "S$2,900-3,100（估）"
+    }
+  ],
+  "comparables": [
+    {
+      "name": "Dunearn House (subject, Site 1) - analyst pre-launch estimate",
+      "kind": "new/GLS",
+      "psf": "S$2,900-3,100 psf (CBRE 2,900-3,000; SRI 2,910-3,100; base case ~S$3,000)",
+      "note": "380 units, 99-yr LH, land S$1,410 psf ppr (S$491.45m, 145,173 sqft site). Not yet a confirmed developer price — VVIP preview ~10 Jul 2026."
+    },
+    {
+      "name": "Turf City GLS Site 2 (Wing Tai-Metro JV, ~330 units, adjacent) - projected future launch",
+      "kind": "new/GLS",
+      "psf": "S$3,150-3,300 (SRI 3,150-3,250; Newmark 3,300); expected launch 2H2027",
+      "note": "Land S$1,625 psf ppr, 15.2% above Site 1's S$1,410 psf ppr (includes mandatory supermarket+childcare). Sets forward pricing marker for precinct."
+    },
+    {
+      "name": "Watten House (D11, Shelford Rd, freehold, UOL/SingLand, 180 units)",
+      "kind": "new launch",
+      "psf": "Trailing 12mo transacted S$3,118-3,386, avg ~S$3,265; peak S$3,576 (Jan 2024)",
+      "note": "Nearest ultra-prime Bukit Timah freehold comp; sets belt ceiling. Dunearn House is 99-yr LH so should trade at a discount to this."
+    },
+    {
+      "name": "Royalgreen (D10, Anamalai Ave, freehold, AllGreen, 285 units)",
+      "kind": "resale",
+      "psf": "~S$2,784-3,010 avg (Apr 2026); range S$2,566-3,454; 2026 transactions S$2,851-2,981",
+      "note": "~21.3% above broader Tanglin/Holland/Bukit Timah district avg of S$2,481 psf — confirms D10 core premium. Freehold vs Dunearn's LH."
+    },
+    {
+      "name": "8@BT (Bukit Timah Link, 99-yr LH, 158 units, near Beauty World MRT)",
+      "kind": "new launch",
+      "psf": "Launched from S$2,530; 53% sold launch weekend at avg S$2,719; current range ~S$2,422-3,332",
+      "note": "Closest recent 99-yr LH new-launch precedent for the belt. Dunearn House's ~S$3,000 psf base case is a 10%+ premium over 8@BT's launch psf."
+    },
+    {
+      "name": "The Reserve Residences (D21, Beauty World, Far East Org, 732 units, MRT-linked)",
+      "kind": "new launch",
+      "psf": "Trailing 12mo avg ~S$2,494-2,571; range S$2,347-3,106",
+      "note": "Ceiling for MRT-linked mixed-use product in the wider cluster is well below Dunearn House's target, despite MRT linkage advantage Dunearn lacks (no MRT until 2032)."
+    },
+    {
+      "name": "The LINQ @ Beauty World (D21, 99-yr LH, 120 units, TOP 2025)",
+      "kind": "resale",
+      "psf": "Trailing 12mo avg ~S$2,800-2,815; range S$2,608-3,038",
+      "note": "Very illiquid comp (1 sale/12mo) — use cautiously."
+    },
+    {
+      "name": "Pinetree Hill (D21, Pine Grove, 99-yr LH, 520 units, launched Jul 2023) / Nava Grove (adjacent, Nov 2024)",
+      "kind": "new launch",
+      "psf": "Pinetree Hill launched ~S$2,460 avg, now listing ~S$2,435+; Nava Grove launched avg S$2,448, remaining units now S$2,677-2,804",
+      "note": "Ulu Pandan cluster ~S$450-600 psf below Dunearn House target, reflecting less prestigious address one MRT stop further out."
+    },
+    {
+      "name": "The Sixth Avenue Residences (D10, adjacent to Turf City, older project)",
+      "kind": "resale",
+      "psf": "PSF grew S$2,101 (2023) to S$2,359 (2026), +12.28%; range S$2,000-2,655",
+      "note": "Existing D10 stock right next to the site trades far below Dunearn House's S$3,000 target — shows scale of new-launch premium being asked."
+    }
+  ],
+  "location": [
+    "First private residential launch inside the URA-designated Bukit Timah Turf City precinct, which is officially planned (URA Draft Master Plan 2025) to yield 15,000-20,000 homes across ~20 residential sites + 3 white sites + a school site + a healthcare site, built out over 20-30 years -- early buyers face a multi-decade construction-neighbor environment.",
+    "North Grandstand (1980s Modernist structure) and other heritage clusters (27 buildings across 5 clusters) will be conserved/repurposed; Dunearn House's marketed 'Canopy of Memory' design concept references the Grandstand roofline, and back blocks (19-storey) reportedly face the Turf City precinct/green space side.",
+    "Sixth Avenue MRT (Downtown Line, existing) reported within ~4-6 min walk (~0.52km, unverified precise figure); future Turf City MRT interchange (Cross Island Line Phase 2) planned nearby but CRL Phase 2 is targeted around 2032 -- roughly 6 years post-preview.",
+    "School catchments: Methodist Girls' School (Primary), 11 Blackmore Drive S599986, plausibly within 1km given King Albert Park-area geography (needs OneMap confirmation). Nanyang Primary (52 King's Road S268097) and Raffles Girls' Primary are described by marketing sources only as 'in the neighbourhood,' NOT confirmed within 1km -- likely outside 1km and possibly outside 2km for Nanyang Primary specifically; independent OneMap/MOE distance verification strongly recommended before treating any school catchment as a buy thesis pillar.",
+    "Second Turf City GLS site (Wing Tai-Metro win) is on a larger plot (~205,000 sqft, ~330 units) immediately following/adjacent in the same precinct, expected to launch 2H 2027 at a projected S$3,150-3,300 psf -- both a future comp and future construction-noise neighbor for Dunearn House residents.",
+    "Sixth Ave MRT（DT7）步行约 5 分钟（营销口径 ~0.52km——URA 通稿确认全区在地铁 800m 内）；CRL CR14 Turf City 换乘站 2032 年通车（约 7 分钟步行，届时本盘已 TOP ~2 年）"
+  ],
+  "demand_supply": [
+    "NUS Law faculty relocated from Bukit Timah campus back to Kent Ridge (effective Aug 2025) — only LKYSPP remains at 469C Bukit Timah Rd; this weakens (does not eliminate) the NUS-linked tenant-pool thesis.",
+    "Chinese International School (CNIS) sits at 60 Dunearn Road, essentially on the same road as the GLS site — a concrete, proximate international-school rental catchment (fees S$28k-50k/yr imply tenant affordability for premium rents); Holland International School (Bukit Tinggi Rd) and Wise Oaks International (Upper Bukit Timah Rd) are secondary catchment; Hwa Chong International and SJI International are further away than initially assumed.",
+    "Realistic new-launch 2BR rent in the belt: nearest comparable Fourth Avenue Residences (off Dunearn Rd) achieves ~S$3,600-10,500/month across unit types, gross yield reported ~2.77-3.5%; Forett-area 2BR comps run S$4,200-4,800/month (~2.6-2.9% yield); a defensible band for a new ~600-680sqft 2BR is roughly S$4,000-4,800/month — gross yield on a S$2,900-3,100 psf purchase likely lands ~2.6-3.2%, unexceptional, in line with district norms not a premium.",
+    "Sixth Avenue MRT (DTL) is ~500m from the site today for CBD access; future CR14 Turf City MRT (CRL) is sited at the former Grandstand within the precinct but exact walk distance from the Dunearn House plot to the station entrance is unverified; CR14 targeted completion 2032.",
+    "Only 2 Turf City residential GLS sites transacted so far: Site 1 (Dunearn House, 380 units) and Site 2 (Wing Tai-Metro JV, ~330 units, ~2H2027 launch) — precinct-wide masterplan cites ~176ha supporting 15,000-20,000 residents over 2-3 decades, but this figure is sourced from secondary commentary, not verified in the original 2022 URA press release (which covered only tenant-transition timing). [Needs further verification against an official URA masterplan doc]",
+    "Nearby but non-Turf-City competing supply: Holland Plain + Holland Link combined ~510 units (Holland Plain ~280 units awarded to Sim Lian, sole bidder, S$1,491 psf ppr, 7 May 2026; Holland Link ~230 units), expected launch ~H2 2027 — competes for the same prime-CCR buyer pool. Sim Lian's status as sole bidder (vs 9 bids for Dunearn Site 1) may signal developer caution on absorption capacity for further prime-CCR supply.",
+    "URA developer sales momentum: Q1 2026 sales fell to 2,013 units (ex-EC), a second consecutive quarterly decline (-19.2% qoq); May 2026 new home sales collapsed to 447 units (-71.1% mom from April's 1,548), the lowest in 3 months, mainly due to lack of fresh launches (only Hudson Place Residences, 327 units, launched in May, selling 201 units/61.5% at avg S$2,458 psf). Jan-May 2026 total new home sales: 4,008 units.",
+    "Forward GLS supply pipeline remains very high: 2H2026 Confirmed List will add 4,745 private residential units, bringing full-year 2026 Confirmed List supply to 9,320 units — more than 50% above the 10-year annual average — meaning absorption risk is a market-wide dynamic, not unique to Turf City, and Dunearn House will be competing against a historically large supply wave through 2026-2027."
+  ],
+  "investment_thesis": [
+    "URA Turf City masterplan (unveiled 2025) confirms development is phased to start with areas closest to Dunearn Road first — Dunearn House benefits from being nearest the earliest-built amenities (Racecourse Neighbourhood: 2 conserved heritage grandstands + new central open space; Stables Commune F&B/lifestyle cluster explicitly sited on Dunearn Road). Precinct overall targets 15,000-20,000 homes (incl. first Bukit Timah HDB in ~40 years) over 20-30 years.",
+    "CR14 Turf City MRT station (Cross Island Line Phase 2): LTA awarded the S$530m civil contract May 2024, construction started Q3 2024, targeted completion 2032 — a real but decade-out catalyst.",
+    "Bukit Timah-Rochor Green Corridor: linear park along Bukit Timah Canal linking the Rail Corridor to Kallang Riverside Park; Phase 1 (~1km, Rifle Range Rd to Jalan Kampong Chantek) targeted complete by 2027 — a NEAR-TERM amenity catalyst, and it doubles as the canal-widening flood-mitigation project.",
+    "Wing Tai-Metro JV won the second Turf City GLS site (28 Apr 2026) at S$532.99m / ~S$1,625 psf ppr — 15% above Dunearn House's own S$1,410 psf ppr land cost, and beat out a re-bid from the SAME Frasers/CSC/Sekisui JV (S$1,576 psf ppr) — bullish for precinct land-value trajectory, though it confirms Dunearn House itself locked in land at the cheaper end of the curve."
+  ],
+  "risks": [
+    "99-yr leasehold Dunearn House competes directly against freehold landed alternatives on/near the same road: Dunearn Estate freehold semi-detached ~S$7.4-14.2M, detached ~S$13M+ — a real competing-capital risk for the targeted affluent buyer segment.",
+    "First-mover-into-empty-precinct risk is real: buyers purchase years ahead of the MRT (2032), parks, and most amenities, implying likely construction noise/disruption from the wider Turf City build-out (15-20k homes over 20-30 years) for a decade or more.",
+    "Dunearn Road has a live, recent flash-flood history: 5 of 7 flash floods in the wider area since 2018 were specifically on Dunearn Road, most recently 29 Dec 2024; PUB is widening/deepening a 900m stretch of Bukit Timah Canal, targeted complete by 2026 — verify the specific plot's flood/elevation history before committing.",
+    "Q1 2026 URA data: landed prices -0.40% q-o-q (still +6.73% y-o-y) vs non-landed +1.3% q-o-q, but Dunearn House's likely CCR/RCR-boundary segment posted the weakest sub-segment growth (CCR +0.6%, RCR +0.8%) versus OCR's +2.2% — not the hottest corner of an already-cooling landed market.",
+    "SSD tightened 4 Jul 2025: holding period 3→4 years, rates raised to 16/12/8/4/0% by year — this is now structurally an own-stay-or-long-hold play, not a flip play, for any 2026 buyer.",
+    "VVIP preview date (10 Jul 2026) and price band (S$2,900-3,100 psf, though some sites claim S$2,4xx-2,8xx or S$3,000-3,200) are sourced ONLY from marketing/agent/SEO sites, not confirmed by any primary source found — treat as unverified developer guidance.",
+    "District classification (D10 vs D11) is inconsistent across sources — verify via URA/OneMap before finalizing comps or cooling-measure segment analysis."
+  ],
+  "payment_regulatory": [
+    "ABSD (unchanged since 27 Apr 2023, per multiple secondary sources; IRAS page itself only yielded navigation on fetch, not the table): Singapore Citizen 0%/20%/30% (1st/2nd/3rd+); PR 5%/30%/35%; Foreigner 60% flat; Entity 65% flat. US citizens/PRs (US-SG FTA) and Iceland/Liechtenstein/Norway/Switzerland nationals (EFTA) get SC-equivalent treatment (0/20/30).",
+    "SSD for residential property, effective for purchases on/after 4 Jul 2025: Year 1 = 16%, Year 2 = 12%, Year 3 = 8%, Year 4 = 4%, Year 5+ = 0% (up from pre-4-Jul-2025 regime of 12/8/4/0% over 3 years). Applies to condos, landed, HDB, ECs alike.",
+    "Mortgage backdrop: 2-year fixed home loan rates as low as 1.30-1.40% p.a. as of June 2026; 3-month compounded SORA fell to ~1.07% from a ~3% peak in early 2025 — a genuine affordability tailwind partially offsetting ABSD/SSD friction for long-term holders.",
+    "BUC 累进付款：签约 20%（含 5% 现金）→ 地基 10% →…→ TOP 25%；SSD 4 年 16/12/8/4%（2025-07 起）——『炒楼花』在本规则下 4 年内退出成本极高，按 ≥6 年持有规划",
+    "模型现金流参考（2BR+S 678sqft @S$3,000）：总价 ~S$2.034m、BSD ~S$71,300、首付+印花现金 ~S$579,800；保本退出 S$3,227 psf（+7.6%）"
+  ],
+  "verification": [
+    {
+      "claim": "土地 S$491.45m / S$1,410 psf ppr，Frasers+Sekisui+CSC JV，145,173 sqft，99LH",
+      "status": "confirmed",
+      "note": "EdgeProp/99.co 多源一致（2025-06 收标）"
+    },
+    {
+      "claim": "Site 2 由 Wing Tai-Metro 以 S$533m / S$1,625 psf ppr 竞得（2026-04-28，6 标）",
+      "status": "confirmed",
+      "note": "EdgeProp/StackedHomes；同 JV 次高标 S$1,576——班底对本区持续看多"
+    },
+    {
+      "claim": "~380 户及户型面积带",
+      "status": "unverified",
+      "note": "仅中介/营销站口径，发展商官方未发布——以图册为准"
+    },
+    {
+      "claim": "VVIP 预览 2026-07-10",
+      "status": "unverified",
+      "note": "仅中介 lead-gen 站声称，未见 Frasers 官方或主流媒体确认"
+    },
+    {
+      "claim": "预计 TOP 2030 Q4",
+      "status": "unverified",
+      "note": "聚合站估算（拿地+5 年），非官方承诺"
+    },
+    {
+      "claim": "The Orie 首周 86%（668/777 户，均价 S$2,704）",
+      "status": "confirmed",
+      "note": "CDL 新闻稿（JV 需求侧佐证；建造质量记录尚无——无一项目 TOP）"
+    },
+    {
+      "claim": "同盘评分 70/100 → SELECTIVE；保本 +7.6%（6 年）",
+      "status": "confirmed",
+      "note": "researcher.newlaunch scorecard+pricing 模型输出，输入假设见定价段"
+    }
+  ],
+  "verdict": {
+    "stance": "SELECTIVE (right unit & price)",
+    "detail": "评分 70/100。买点：顶级班底、CR14 兑现前的首发价、Site 2 地价 +15% 的前向支撑；压点：99LH 却贴着 FH 邻居定价、身后 10-15 幅地/约 15-20k 户的长期供应管道、精装新区头几年『工地环绕』。执行建议：只在实际价单 ≤~S$2,950 psf 的高效 2BR/2BR+S（后排朝绿地栈）出手；若均价 >S$3,100 或首周去化 <50%，等 2H2027 Site 2 双盘竞价再议。自住>投资；投资者按 ≥6 年持有并接受 ~2% 毛租金收益率。"
+  },
+  "data_gaps": [
+    "发展商官方价单/图册未发布——户型、朝向、面积、价格全部以 VVIP 实际资料为准",
+    "VVIP 日期与 TOP 日期均未获官方确认",
+    "维护费、车位比、smart-home 规格未知",
+    "学区：报告未逐校核实本址 1km 学校名单（MGS？Raffles Girls' Pri 新址？）——用 OneMap School Query 按 760 Dunearn Rd 实测",
+    "Dunearn Rd 本段洪水记录未单独核实（Bukit Timah 运河扩容 2026 完工目标沿线）"
+  ],
+  "sources": [
+    "http://www.street.com.sg/street-directory/Dunearn-Road/Chinese-International-School-60-Dunearn-Road-Postal-Code-309434.html",
+    "https://bukittimahcollection.sg/dunearn-house/site-plan/",
+    "https://cos.sg/dunearn-house-gls-analysis-expected-launch-price-land-cost-first-mover-advantage-in-turf-city/",
+    "https://darrenong.sg/singapore-new-launch/dunearn-house/",
+    "https://dunearn-house-condo.sg/showflat",
+    "https://dunearnhouse-official.sg/location.html",
+    "https://en.wikipedia.org/wiki/Turf_City_MRT_station",
+    "https://fotp.nparks.gov.sg/our-fotp-projects/bukit-timah-rochor-green-corridor/",
+    "https://goodmenproject.com/everyday-life-2/dunearn-house-upcoming-new-launch-condominium-along-dunearn-road-in-singapore/",
+    "https://lkyspp.nus.edu.sg/explore-lkyspp/bukit-timah-campus",
+    "https://lovelyhomes.com.sg/holland-plain-gls-tender-result-2026/",
+    "https://mothership.sg/2019/08/11km-bukit-timah-rochor-green-corridor/",
+    "https://mothership.sg/2021/08/why-are-there-flash-floods/",
+    "https://mothership.sg/2024/05/nus-law-relocates-utown-kent-ridge/",
+    "https://mothership.sg/2024/12/pub-issues-flood-warnings-for-multiple-areas-in-spore-on-dec-29-2024-dunearn-bukit-timah-roads-affected/",
+    "https://news.nus.edu.sg/nus-law-returns-to-kent-ridge-campus-in-academic-year-2025/",
+    "https://preview.thedunearnhouse.sg/",
+    "https://propertynet.sg/latest-bank-mortgage-loan-rates-across-singapore/",
+    "https://propertypathway.sg/articles/new-launch-condo-psf-prices-in-singapore-understanding-the-trajectory-and-future-outlook/",
+    "https://propertyreviewsg.com/dunearn-house/",
+    "https://reviewhomes.sg/reviews/nava-grove-remaining-units",
+    "https://stackedhomes.com/dunearn-road-gls-second-site-533-million/",
+    "https://stackedhomes.com/holland-plain-morrison-lane-gls-2026/",
+    "https://the-dunearnhouse.com.sg/",
+    "https://vilanaga.com/major-housing-development-set-for-turf-city/",
+    "https://www.99.co/singapore/condos-apartments/8bt",
+    "https://www.99.co/singapore/condos-apartments/fourth-avenue-residences",
+    "https://www.99.co/singapore/insider/dunearn-road-condo-gls-tender-result/",
+    "https://www.cdl.com.sg/newsroom/the-orie-kickstarts-2025-on-a-high-note-86-of-units-sold-on-launch-weekend",
+    "https://www.dunearnhouse.newlaunches.sg/project-details.html",
+    "https://www.edarabia.com/hollandse-school-preschool-bukit-timah-singapore/",
+    "https://www.edgeprop.sg/condo-apartment/THE-LINQ-@-BEAUTY-WORLD",
+    "https://www.edgeprop.sg/condo-apartment/sixth-avenue-centre",
+    "https://www.edgeprop.sg/condo-apartment/the-reserve-residences",
+    "https://www.edgeprop.sg/condo-apartment/watten-house",
+    "https://www.edgeprop.sg/landed-house/dunearn-estate",
+    "https://www.edgeprop.sg/property-news/csc-land-sekisui-house-and-frasers-jv-submits-top-bid-1410-psf-ppr-dunearn-gls-site",
+    "https://www.edgeprop.sg/property-news/frasers-property-redevelop-robertson-walk-joint-venture-sekisui-house",
+    "https://www.edgeprop.sg/property-news/hudson-place-residences-sells-over-61-units-average-2458-psf-launch-weekend",
+    "https://www.edgeprop.sg/property-news/nava-grove-achieves-65-sales-launch-weekend-average-price-2448-psf",
+    "https://www.edgeprop.sg/property-news/new-home-sales-plunge-711-m-o-m-may-447-units-sold",
+    "https://www.edgeprop.sg/property-news/private-residential-property-prices-inch-03-q-o-q-1q2026-ura-flash-estimate",
+    "https://www.edgeprop.sg/property-news/two-bedder-royalgreen-going-195-mil",
+    "https://www.edgeprop.sg/property-news/wing-tai-metro-jv-tops-six-bids-second-dunearn-road-gls-site-1625-psf-ppr",
+    "https://www.homejourney.sg/blog/singapore-mortgage-interest-rate-forecast-2026-what-to-expect-homejourney-benefits-202603042003",
+    "https://www.homejourney.sg/projects/the-reserve-residences",
+    "https://www.iras.gov.sg/taxes/stamp-duty/for-property/buying-or-acquiring-property/additional-buyer's-stamp-duty-(absd)",
+    "https://www.iras.gov.sg/taxes/stamp-duty/for-property/selling-or-disposing-property/seller's-stamp-duty-(ssd)-for-residential-property",
+    "https://www.lta.gov.sg/content/ltagov/en/newsroom/2024/5/news-releases/lta_awards_civil_contract_for_design_and_construction_of_crl_turf_city.html",
+    "https://www.mas.gov.sg/news/media-releases/2025/extension-of-the-holding-period-of-sellers-stamp-duty-and-higher-ssd-rates",
+    "https://www.mingtiandi.com/real-estate/projects/frasers-jv-with-sekisui-house-to-add-348-homes-in-singapore/",
+    "https://www.moe.gov.sg/schoolfinder/schooldetail/nanyang-primary-school",
+    "https://www.mychoicehomez.com/dunearn-house-turf-city-first-mover-guide/",
+    "https://www.newlaunchesreview.com/dunearn-house-floor-plan-analysis/",
+    "https://www.newlaunchesreview.com/dunearn-house-price-guide/",
+    "https://www.newlaunchesreview.com/dunearn-house/",
+    "https://www.newlaunchportal.com.sg/news/8-at-bt-new-luxury-condo-launch-at-upper-bukit-timah-with-prices-starting-from-s2530-psf",
+    "https://www.pinetreehills.com.sg/",
+    "https://www.propertyguru.com.sg/listing/for-sale-dunearn-estate-25483908",
+    "https://www.propertyguru.com.sg/listing/for-sale-dunearn-estate-60079952",
+    "https://www.propertyguru.com.sg/project/royalgreen-23808",
+    "https://www.propertyguru.com.sg/project/the-sixth-avenue-residences-118",
+    "https://www.propertyguru.com.sg/property-for-rent/p/bukit-timah-condo",
+    "https://www.propertyguru.com.sg/property-guides/absd-singapore-13034",
+    "https://www.propnex.com/picks-details/1069/debutant-condo-project-in-dunearn-road-in-bukit-timah-turf-city",
+    "https://www.redbrick.sg/blog/absd-singapore/",
+    "https://www.srx.com.sg/condo/the-sixth-avenue-residences-1045",
+    "https://www.streetdirectory.com/sd_mobile/place/14183_111141/",
+    "https://www.theedgesingapore.com/cityandcountry/property/dunearn-road-gls-site-draws-six-bids-wing-tai-metro-consortium-top-1625-psf",
+    "https://www.theedgesingapore.com/cityandcountry/property/private-home-prices-inch-09-1q2026-outlook-turns-cautious-ura",
+    "https://www.ura.gov.sg/-/media/Corporate/Media-Room/2019/Aug/pr19-38c.pdf",
+    "https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr22-35",
+    "https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr24-24",
+    "https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr26-31",
+    "https://www.ura.gov.sg/news/media/pr26-41/",
+    "https://www.uradraftmasterplan.gov.sg/regional-plans/central-region/bukit-timah-turf-city/"
+  ]
+}
