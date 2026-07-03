@@ -3,7 +3,12 @@
 The table shows ~5-8 rows at a time; swiping the *data* columns scrolls it
 (the Contract Date column on the left is frozen). We dump the tree, rebuild
 each row by snapping cells to the nearest header column, scroll, and repeat
-until no new rows appear. Output: research/spottiswoode_transactions.json + .csv
+until no new rows appear.
+
+Usage:  python harvest_sale.py [slug]        (default slug: spottiswoode)
+Output: research/<slug>_transactions.json + .csv
+Seeds:  captures/<slug>_sale*.json dumps already on disk are ingested first
+        (legacy spottiswoode also seeds from the historical 08_/09_/10_ captures).
 """
 from __future__ import annotations
 
@@ -68,14 +73,18 @@ def _ingest(seen: dict, nodes: list[dict]) -> int:
     return len(seen) - before
 
 
-def harvest(max_scrolls: int = 40, stop_after_stale: int = 6) -> list[dict]:
+def harvest(slug: str = "spottiswoode", max_scrolls: int = 40, stop_after_stale: int = 6) -> list[dict]:
     seen: dict[tuple, dict] = {}
-    # 1) recover rows from every Sale capture already on disk
+    # 1) recover rows from every Sale capture already on disk for THIS development
+    prefixes = (f"{slug}_sale",)
+    if slug == "spottiswoode":  # legacy capture naming from the first study
+        prefixes += ("08_", "09_", "10_")
     cap_dir = os.path.join(OUT, "captures")
-    for fn in sorted(os.listdir(cap_dir)):
-        if fn.endswith(".json") and (fn.startswith(("08_", "09_", "10_"))):
-            with open(os.path.join(cap_dir, fn), encoding="utf-8") as f:
-                _ingest(seen, json.load(f))
+    if os.path.isdir(cap_dir):
+        for fn in sorted(os.listdir(cap_dir)):
+            if fn.endswith(".json") and fn.startswith(prefixes):
+                with open(os.path.join(cap_dir, fn), encoding="utf-8") as f:
+                    _ingest(seen, json.load(f))
     print(f"seeded {len(seen)} rows from existing captures")
 
     # 2) keep scrolling (gentle: short distance, slow = minimal fling)
@@ -92,11 +101,34 @@ def harvest(max_scrolls: int = 40, stop_after_stale: int = 6) -> list[dict]:
     return list(seen.values())
 
 
-def save(rows: list[dict]) -> None:
+def _collapse_scroll_artifacts(rows: list[dict]) -> list[dict]:
+    """During region-scrolls the frozen date column drifts against the data rows
+    mid-animation, so one transaction can be keyed under 2-3 neighbouring dates.
+    Collapse rows identical in (level, unit, area, psf, price) to a single row —
+    genuine same-unit re-trades at the identical price inside one window are
+    vanishingly rare; when collapsing, keep the row whose date is most common."""
+    from collections import defaultdict
+    groups: dict[tuple, list[dict]] = defaultdict(list)
+    for r in rows:
+        groups[(r.get("level"), r.get("unit"), r.get("area_sqft"),
+                r.get("psf"), r.get("price"))].append(r)
+    out = []
+    for g in groups.values():
+        if len(g) > 1:
+            print(f"  [dedup] collapsed {len(g)} scroll-artifact rows for "
+                  f"L{g[0].get('level')} #{g[0].get('unit')} {g[0].get('price')} "
+                  f"(dates: {sorted(set(r.get('date') for r in g))}) — verify the true "
+                  f"date on a static re-read of the table top")
+        out.append(g[0])
+    return out
+
+
+def save(rows: list[dict], slug: str = "spottiswoode") -> None:
     if not rows:
         # an adb hiccup must never overwrite the committed dataset with nothing
         print("no rows harvested — refusing to overwrite existing output files")
         return
+    rows = _collapse_scroll_artifacts(rows)
 
     # newest-first by date already; sort by date desc for determinism
     def k(r):
@@ -107,9 +139,9 @@ def save(rows: list[dict]) -> None:
 
     rows = sorted(rows, key=k, reverse=True)
     fields = [c[0] for c in COLUMNS]
-    with open(os.path.join(OUT, "spottiswoode_transactions.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(OUT, f"{slug}_transactions.json"), "w", encoding="utf-8") as f:
         json.dump(rows, f, ensure_ascii=False, indent=2)
-    with open(os.path.join(OUT, "spottiswoode_transactions.csv"), "w", newline="", encoding="utf-8") as f:
+    with open(os.path.join(OUT, f"{slug}_transactions.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         w.writeheader()
         w.writerows(rows)
@@ -123,4 +155,6 @@ def save(rows: list[dict]) -> None:
 
 
 if __name__ == "__main__":
-    save(harvest())
+    import sys
+    _slug = sys.argv[1] if len(sys.argv) > 1 else "spottiswoode"
+    save(harvest(_slug), _slug)

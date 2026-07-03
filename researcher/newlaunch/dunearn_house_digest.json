@@ -14,7 +14,7 @@
     "top": "预计 ~2030 Q4（非官方承诺）",
     "preview": "VVIP 预览 ~2026-07-10（中介口径，未官方确认）"
   },
-  "pricing_positioning": "预估 S$2,900-3,100（base ~S$3,000）。土地占比 ~47%（S$1,410 psf ppr）；RLB 建安 S$330-575 psf GFA + 融资/软成本，开发商保本约 S$2,400-2,600 psf → 要价隐含 ~15-20% 毛利，属正常区间、非暴利。对买家：这是用 99LH 价格贴着 FH 邻居（Royalgreen S$2,784-3,010）买『新区第一张票』——溢价的对价是 CR14 + 全新精装 + Site 2 的 S$3,150-3,300 前向定价。模型（2BR+S 678 sqft @ S$3,000，75% LTV @2.8%，持有 6 年含 4 年 BUC）：base 租金 S$6.75 psf/mo（comps 带 S$5.9-8.0 的中段）→ 毛收益率 ~2.7%、保本退出 S$3,256 psf（+8.5%）；bull 租金 S$8.0 psf/mo（小户型 psf 上限口径——高于本报告 2BR 月租带 S$4.0-4.8k 的中枢，仅作上限敏感性） → ~3.2%、保本 S$3,227 psf（+7.6%）。贷款利率取 2.8% 为 6 年持有的保守常态化假设（2026-06 市场 2 年固定仅 ~1.3-1.4%——若按 1.5-2% 融资，保本 psf 显著下移）。",
+  "pricing_positioning": "定位（Tier-1 重做，比价全部换用 Investment Suite 2Y 成交带）：预估 S$2,900-3,100（base ~S$3,000）vs 8@BT（99LH）2Y 均 S$2,735、Sixth Avenue Residences（99LH 旧盘、贴着 Turf City）均 S$2,154、Reserve Residences 均 S$2,579、Royalgreen（FH）均 S$2,806、Leedon Green（FH）均 S$2,959、Watten House（FH 新盘）均 S$3,274。判读不变但更锋利：以 99LH 身份要价贴着 FH 邻居（Royalgreen/Leedon），较同类 99LH 新盘先例（8@BT）+10%、较隔壁存量（Sixth Ave Res.）+39%——溢价买的是全新+新区叙事+CR14；Site 2 地价 +15.2% 是前向支撑。模型（2BR+S 678 sqft @ S$3,000，75% LTV @2.8%，持有 6 年含 4 年 BUC）：base 租金 S$6.75 psf/mo（comps 带 S$5.9-8.0 的中段）→ 毛收益率 ~2.7%、保本退出 S$3,256 psf（+8.5%）；bull 租金 S$8.0 psf/mo（小户型 psf 上限口径——高于本报告 2BR 月租带 S$4.0-4.8k 的中枢，仅作上限敏感性） → ~3.2%、保本 S$3,227 psf（+7.6%）。贷款利率取 2.8% 为 6 年持有的保守常态化假设（2026-06 市场 2 年固定仅 ~1.3-1.4%——若按 1.5-2% 融资，保本 psf 显著下移）。",
   "unit_mix": [
     {
       "type": "2BR / 2BR+Study",
@@ -51,26 +51,26 @@
     {
       "name": "Watten House (D11, Shelford Rd, freehold, UOL/SingLand, 180 units)",
       "kind": "new launch",
-      "psf": "Trailing 12mo transacted S$3,118-3,386, avg ~S$3,265; peak S$3,576 (Jan 2024)",
-      "note": "Nearest ultra-prime Bukit Timah freehold comp; sets belt ceiling. Dunearn House is 99-yr LH so should trade at a discount to this."
+      "psf": "2Y 成交带 $3,118 PSF–$3,386 PSF（均 $3,274 PSF）【Tier-1：Investment Suite（URA caveat）】",
+      "note": "FH 新盘（D11 Shelford）——belt 天花板。Nearest ultra-prime Bukit Timah freehold comp; sets belt ceiling. Dunearn House is 99-yr LH so should trade at a discount to this."
     },
     {
       "name": "Royalgreen (D10, Anamalai Ave, freehold, AllGreen, 285 units)",
       "kind": "resale",
-      "psf": "~S$2,784-3,010 avg (Apr 2026); range S$2,566-3,454; 2026 transactions S$2,851-2,981",
-      "note": "~21.3% above broader Tanglin/Holland/Bukit Timah district avg of S$2,481 psf — confirms D10 core premium. Freehold vs Dunearn's LH."
+      "psf": "2Y 成交带 $2,592 PSF–$2,981 PSF（均 $2,806 PSF）【Tier-1：Investment Suite（URA caveat）】",
+      "note": "FH（D10 Anamalai）——freehold 参照。~21.3% above broader Tanglin/Holland/Bukit Timah district avg of S$2,481 psf — confirms D10 core premium. Freehold vs Dunearn's LH."
     },
     {
       "name": "8@BT (Bukit Timah Link, 99-yr LH, 158 units, near Beauty World MRT)",
       "kind": "new launch",
-      "psf": "Launched from S$2,530; 53% sold launch weekend at avg S$2,719; current range ~S$2,422-3,332",
-      "note": "Closest recent 99-yr LH new-launch precedent for the belt. Dunearn House's ~S$3,000 psf base case is a 10%+ premium over 8@BT's launch psf."
+      "psf": "2Y 成交带 $2,527 PSF–$3,033 PSF（均 $2,735 PSF）【Tier-1：Investment Suite（URA caveat）】",
+      "note": "99LH（Beauty World）——最近的 99LH 新盘先例。Closest recent 99-yr LH new-launch precedent for the belt. Dunearn House's ~S$3,000 psf base case is a 10%+ premium over 8@BT's launch psf."
     },
     {
       "name": "The Reserve Residences (D21, Beauty World, Far East Org, 732 units, MRT-linked)",
       "kind": "new launch",
-      "psf": "Trailing 12mo avg ~S$2,494-2,571; range S$2,347-3,106",
-      "note": "Ceiling for MRT-linked mixed-use product in the wider cluster is well below Dunearn House's target, despite MRT linkage advantage Dunearn lacks (no MRT until 2032)."
+      "psf": "2Y 成交带 $2,304 PSF–$3,106 PSF（均 $2,579 PSF）【Tier-1：Investment Suite（URA caveat）】",
+      "note": "99LH 综合体（D21）。Ceiling for MRT-linked mixed-use product in the wider cluster is well below Dunearn House's target, despite MRT linkage advantage Dunearn lacks (no MRT until 2032)."
     },
     {
       "name": "The LINQ @ Beauty World (D21, 99-yr LH, 120 units, TOP 2025)",
@@ -87,8 +87,8 @@
     {
       "name": "The Sixth Avenue Residences (D10, adjacent to Turf City, older project)",
       "kind": "resale",
-      "psf": "PSF grew S$2,101 (2023) to S$2,359 (2026), +12.28%; range S$2,000-2,655",
-      "note": "Existing D10 stock right next to the site trades far below Dunearn House's S$3,000 target — shows scale of new-launch premium being asked."
+      "psf": "2Y 成交带 $1,612 PSF–$2,359 PSF（均 $2,154 PSF）【Tier-1：Investment Suite（URA caveat）】",
+      "note": "99LH 旧盘，紧邻 Turf City——存量地板价。Existing D10 stock right next to the site trades far below Dunearn House's S$3,000 target — shows scale of new-launch premium being asked."
     }
   ],
   "location": [
@@ -167,6 +167,11 @@
       "claim": "模型输出（假设已在文中披露）：评分 70/100 → SELECTIVE；base 保本 +8.5%（6 年）",
       "status": "model-output",
       "note": "researcher.newlaunch 评分明细：location_connectivity 17/20, developer 8/8, tenure_site 8/10, price_positioning 9/22, product 10/10, rental_demand 8/12, supply_competition 2/10, catalysts 8/8；输出为假设的函数，非事实"
+    },
+    {
+      "claim": "比价带（Royalgreen 2,806 / 8@BT 2,735 / Sixth Ave 2,154 / Reserve 2,579 / Leedon 2,959 / Watten 3,274，2Y 均值）",
+      "status": "confirmed-tier1",
+      "note": "Investment Suite（URA caveat） 逐盘 Sale 屏读（capture 留痕）；网络口径的 Sixth Ave 2,359 偏高 ~10%，已更正"
     }
   ],
   "verdict": {
@@ -272,6 +277,7 @@
       "honesty_uncertainty": 9.0,
       "presentation_bilingual": 7.0
     },
-    "note": "3 项抽查（Site1 九标/Site2 次高标反解 S$1,576/The Orie 归属）全部通过；模型金额逐项复算一致。"
+    "note": "（网络数据版验收记录——Tier-1 重做后待重新验收）",
+    "superseded": true
   }
 }

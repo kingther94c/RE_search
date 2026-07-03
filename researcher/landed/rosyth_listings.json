@@ -3,19 +3,19 @@
   "pulled": "2026-07-03 via WebSearch + OneMap 距离实测（PropertyGuru / 99.co / EdgeProp / SRX; portal 直接访问受限，经站内搜索采集）",
   "benchmark_land_psf": {
     "terrace": [
-      1134,
-      2815
+      1470,
+      2530
     ],
     "semi_d": [
-      1469,
-      3003
+      1512,
+      2099
     ],
     "detached": [
-      1500,
-      1597
+      1512,
+      2099
     ]
   },
-  "benchmark_note": "每个边界均可溯源（土地 psf 口径）：terrace 下界 1,134 = 91 Cardiff Grove 成交（2026-02），上界 2,815 = Alnwick Rd 2,301sqft 成交（2026-06）；semi_d 下界 1,469 = Tavistock Ave 挂牌，上界 3,003 = L05 Bridport Ave 挂牌（2,158sqft）；detached 下界 1,500 = Serangoon Garden Way 挂牌，上界 1,597 = Alnwick Rd 7,075sqft 成交（2026-06）——detached 仅 2-3 个数据点，低置信。L06 Cowdray 的 1,792 为建筑面积 psf，已从基准带剔除。全部为 999 年地契口径；estate-wide 参考带 EdgeProp S$1,131–3,472（12 个月）。 方法注记：L05/L08/L10 本身定义了带边界，对照该带评级时天然为 FAIR——跨带判断以成交锚（1,134 / 2,815 / 1,597）为准。（terrace 上界按来源页 2,815；原始计算 6,480,000/2,301=2,816，取来源口径。）",
+  "benchmark_note": "Tier-1 锚（Investment Suite 2Y caveat）：semi-D 原状 $1,512（15 Alnwick，2025-10-02）、detached 重建 $2,099（9 Alnwick，2025-10-29）——semi-D/detached 带以此两点为界（重建状态是主变量）。terrace [1,470–2,530] 为挂牌口径（无 Tier-1 成交锚，低置信）。重要勘误：网络聚合站 propertyforsale.com.sg 声称的『2026-06 Alnwick 一街四宗成交（S$1,571–2,815 psf）』在 Investment Suite 的官方 caveat 表（2Y 窗口）中不存在——该街 2Y 仅两笔（2025-10）。本报告已全部改以官方口径为准。",
   "listings": [
     {
       "id": "L01",

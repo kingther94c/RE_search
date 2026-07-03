@@ -1,0 +1,1185 @@
+[
+ {
+  "unit": "#01-01",
+  "blk": "70",
+  "sqft": "3,175 sqft",
+  "pp": "PP: $3,580,000 ($1,127 psf)",
+  "est_val": "Est. Val: $7,383,000 ($2,325 psf)",
+  "holding": "Holding: 17yrs 3mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-02",
+  "blk": "70",
+  "sqft": "3,186 sqft",
+  "pp": "PP: $5,300,000 ($1,663 psf)",
+  "est_val": "Est. Val: $7,408,000 ($2,325 psf)",
+  "holding": "Holding: 14yrs 3mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#01-03",
+  "blk": "70",
+  "sqft": "3,186 sqft",
+  "pp": "PP: $3,468,000 ($1,088 psf)",
+  "est_val": "Est. Val: $7,408,000 ($2,325 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-04",
+  "blk": "70",
+  "sqft": "3,175 sqft",
+  "pp": "PP: $5,400,000 ($1,701 psf)",
+  "est_val": "Est. Val: $7,383,000 ($2,325 psf)",
+  "holding": "Holding: 12yrs 3mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#02-01",
+  "blk": "70",
+  "sqft": "2,648 sqft",
+  "pp": "PP: $4,600,000 ($1,737 psf)",
+  "est_val": "Est. Val: $6,302,000 ($2,380 psf)",
+  "holding": "Holding: 11yrs 1mo",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#02-02",
+  "blk": "70",
+  "sqft": "2,669 sqft",
+  "pp": "PP: $6,138,000 ($2,299 psf)",
+  "est_val": "Est. Val: $6,399,000 ($2,397 psf)",
+  "holding": "Holding: 1yr 7mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#02-03",
+  "blk": "70",
+  "sqft": "2,669 sqft",
+  "pp": "PP: $3,133,100 ($1,174 psf)",
+  "est_val": "Est. Val: $6,399,000 ($2,397 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-04",
+  "blk": "70",
+  "sqft": "2,648 sqft",
+  "pp": "PP: $3,209,900 ($1,212 psf)",
+  "est_val": "Est. Val: $6,302,000 ($2,380 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-01",
+  "blk": "70",
+  "sqft": "2,648 sqft",
+  "pp": "PP: $4,220,000 ($1,594 psf)",
+  "est_val": "Est. Val: $6,315,000 ($2,385 psf)",
+  "holding": "Holding: 9yrs 2mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#03-02",
+  "blk": "70",
+  "sqft": "2,669 sqft",
+  "pp": "PP: $4,600,000 ($1,723 psf)",
+  "est_val": "Est. Val: $6,420,000 ($2,405 psf)",
+  "holding": "Holding: 13yrs 6mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#03-03",
+  "blk": "70",
+  "sqft": "2,648 sqft",
+  "pp": "PP: $3,120,400 ($1,178 psf)",
+  "est_val": "Est. Val: $6,315,000 ($2,385 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-04",
+  "blk": "70",
+  "sqft": "2,648 sqft",
+  "pp": "PP: $4,700,000 ($1,775 psf)",
+  "est_val": "Est. Val: $6,315,000 ($2,385 psf)",
+  "holding": "Holding: 5yrs 9mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#04-01",
+  "blk": "70",
+  "sqft": "2,648 sqft",
+  "pp": "PP: $3,130,700 ($1,182 psf)",
+  "est_val": "Est. Val: $6,310,000 ($2,383 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-02",
+  "blk": "70",
+  "sqft": "2,669 sqft",
+  "pp": "PP: $3,153,700 ($1,181 psf)",
+  "est_val": "Est. Val: $6,375,000 ($2,388 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-03",
+  "blk": "70",
+  "sqft": "2,648 sqft",
+  "pp": "PP: $2,965,000 ($1,120 psf)",
+  "est_val": "Est. Val: $6,310,000 ($2,383 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-04",
+  "blk": "70",
+  "sqft": "2,594 sqft",
+  "pp": "PP: $3,075,200 ($1,185 psf)",
+  "est_val": "Est. Val: $6,184,000 ($2,384 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#05-01",
+  "blk": "70",
+  "sqft": "2,691 sqft",
+  "pp": "PP: $3,202,290 ($1,190 psf)",
+  "est_val": "Est. Val: $6,310,000 ($2,345 psf)",
+  "holding": "Holding: 17yrs 7mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#05-02",
+  "blk": "70",
+  "sqft": "2,669 sqft",
+  "pp": "PP: $4,270,400 ($1,600 psf)",
+  "est_val": "Est. Val: $6,260,000 ($2,345 psf)",
+  "holding": "Holding: 14yrs 11mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#05-03",
+  "blk": "70",
+  "sqft": "2,691 sqft",
+  "pp": "PP: $3,157,200 ($1,173 psf)",
+  "est_val": "Est. Val: $6,310,000 ($2,345 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#05-04",
+  "blk": "70",
+  "sqft": "2,659 sqft",
+  "pp": "PP: $3,300,800 ($1,242 psf)",
+  "est_val": "Est. Val: $6,235,000 ($2,345 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-01",
+  "blk": "72",
+  "sqft": "3,358 sqft",
+  "pp": "PP: $5,037,000 ($1,500 psf)",
+  "est_val": "Est. Val: $7,812,000 ($2,326 psf)",
+  "holding": "Holding: 16yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-02",
+  "blk": "72",
+  "sqft": "3,412 sqft",
+  "pp": "PP: $4,045,300 ($1,186 psf)",
+  "est_val": "Est. Val: $7,937,000 ($2,326 psf)",
+  "holding": "Holding: 17yrs 1mo",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-03",
+  "blk": "72",
+  "sqft": "3,401 sqft",
+  "pp": "PP: $3,840,000 ($1,129 psf)",
+  "est_val": "Est. Val: $7,912,000 ($2,326 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-04",
+  "blk": "72",
+  "sqft": "3,401 sqft",
+  "pp": "PP: $5,000,000 ($1,470 psf)",
+  "est_val": "Est. Val: $7,912,000 ($2,326 psf)",
+  "holding": "Holding: 8yrs 4mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#02-01",
+  "blk": "72",
+  "sqft": "2,842 sqft",
+  "pp": "PP: $3,642,600 ($1,282 psf)",
+  "est_val": "Est. Val: $6,857,000 ($2,413 psf)",
+  "holding": "Holding: 17yrs 1mo",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-02",
+  "blk": "72",
+  "sqft": "2,852 sqft",
+  "pp": "PP: $4,180,000 ($1,465 psf)",
+  "est_val": "Est. Val: $6,837,000 ($2,397 psf)",
+  "holding": "Holding: 16yrs 6mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-03",
+  "blk": "72",
+  "sqft": "2,852 sqft",
+  "pp": "PP: $4,300,000 ($1,507 psf)",
+  "est_val": "Est. Val: $6,837,000 ($2,397 psf)",
+  "holding": "Holding: 9yrs 7mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#02-04",
+  "blk": "72",
+  "sqft": "2,842 sqft",
+  "pp": "PP: $3,322,500 ($1,169 psf)",
+  "est_val": "Est. Val: $6,857,000 ($2,413 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-01",
+  "blk": "72",
+  "sqft": "0 sqft",
+  "pp": "PP: - (- psf)",
+  "est_val": "Est. Val: - (- psf)",
+  "holding": "Holding: -"
+ },
+ {
+  "unit": "#03-02",
+  "blk": "72",
+  "sqft": "2,863 sqft",
+  "pp": "PP: $5,880,000 ($2,054 psf)",
+  "est_val": "Est. Val: $6,932,000 ($2,421 psf)",
+  "holding": "Holding: 5yrs 2mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#03-03",
+  "blk": "72",
+  "sqft": "2,842 sqft",
+  "pp": "PP: $6,880,000 ($2,421 psf)",
+  "est_val": "Est. Val: $6,880,000 ($2,421 psf)",
+  "holding": "Holding: 6mos",
+  "caveats": "4 Caveats"
+ },
+ {
+  "unit": "#03-04",
+  "blk": "72",
+  "sqft": "2,852 sqft",
+  "pp": "PP: $3,666,000 ($1,285 psf)",
+  "est_val": "Est. Val: $6,906,000 ($2,421 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-01",
+  "blk": "72",
+  "sqft": "2,745 sqft",
+  "pp": "PP: $3,388,800 ($1,235 psf)",
+  "est_val": "Est. Val: $6,571,000 ($2,394 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-02",
+  "blk": "72",
+  "sqft": "2,766 sqft",
+  "pp": "PP: $4,400,000 ($1,591 psf)",
+  "est_val": "Est. Val: $6,612,000 ($2,390 psf)",
+  "holding": "Holding: 9yrs 6mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#04-03",
+  "blk": "72",
+  "sqft": "2,745 sqft",
+  "pp": "PP: $3,236,900 ($1,179 psf)",
+  "est_val": "Est. Val: $6,571,000 ($2,394 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-04",
+  "blk": "72",
+  "sqft": "2,756 sqft",
+  "pp": "PP: $5,100,000 ($1,851 psf)",
+  "est_val": "Est. Val: $6,591,000 ($2,392 psf)",
+  "holding": "Holding: 7yrs 6mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#05-03",
+  "blk": "72",
+  "sqft": "2,756 sqft",
+  "pp": "PP: $4,500,000 ($1,633 psf)",
+  "est_val": "Est. Val: $6,470,000 ($2,348 psf)",
+  "holding": "Holding: 8yrs 9mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#05-04",
+  "blk": "72",
+  "sqft": "2,745 sqft",
+  "pp": "PP: $3,247,300 ($1,183 psf)",
+  "est_val": "Est. Val: $6,445,000 ($2,348 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-01",
+  "blk": "74",
+  "sqft": "2,196 sqft",
+  "pp": "PP: $1,538,000 ($700 psf)",
+  "est_val": "Est. Val: $5,088,000 ($2,317 psf)",
+  "holding": "Holding: 20yrs 3mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-02",
+  "blk": "74",
+  "sqft": "1,561 sqft",
+  "pp": "PP: $1,800,000 ($1,153 psf)",
+  "est_val": "Est. Val: $3,591,000 ($2,301 psf)",
+  "holding": "Holding: 16yrs 8mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#01-03",
+  "blk": "74",
+  "sqft": "1,528 sqft",
+  "pp": "PP: $2,430,000 ($1,590 psf)",
+  "est_val": "Est. Val: $3,517,000 ($2,301 psf)",
+  "holding": "Holding: 12yrs",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#01-04",
+  "blk": "74",
+  "sqft": "0 sqft",
+  "pp": "PP: - (- psf)",
+  "est_val": "Est. Val: - (- psf)",
+  "holding": "Holding: -"
+ },
+ {
+  "unit": "#02-01",
+  "blk": "74",
+  "sqft": "1,755 sqft",
+  "pp": "PP: $2,676,375 ($1,525 psf)",
+  "est_val": "Est. Val: $4,202,000 ($2,395 psf)",
+  "holding": "Holding: 18yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-02",
+  "blk": "74",
+  "sqft": "1,206 sqft",
+  "pp": "PP: $1,784,880 ($1,481 psf)",
+  "est_val": "Est. Val: $2,864,000 ($2,376 psf)",
+  "holding": "Holding: 18yrs 11mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#02-03",
+  "blk": "74",
+  "sqft": "1,184 sqft",
+  "pp": "PP: $1,006,400 ($850 psf)",
+  "est_val": "Est. Val: $2,798,000 ($2,363 psf)",
+  "holding": "Holding: 19yrs 10mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-04",
+  "blk": "74",
+  "sqft": "1,755 sqft",
+  "pp": "PP: $2,750,000 ($1,567 psf)",
+  "est_val": "Est. Val: $4,202,000 ($2,395 psf)",
+  "holding": "Holding: 10yrs 11mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#03-01",
+  "blk": "74",
+  "sqft": "1,744 sqft",
+  "pp": "PP: $1,240,000 ($711 psf)",
+  "est_val": "Est. Val: $4,159,000 ($2,385 psf)",
+  "holding": "Holding: 20yrs 10mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-02",
+  "blk": "74",
+  "sqft": "1,152 sqft",
+  "pp": "PP: $1,081,040 ($939 psf)",
+  "est_val": "Est. Val: $2,703,000 ($2,347 psf)",
+  "holding": "Holding: 19yrs 7mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-03",
+  "blk": "74",
+  "sqft": "1,152 sqft",
+  "pp": "PP: $1,209,600 ($1,050 psf)",
+  "est_val": "Est. Val: $2,703,000 ($2,347 psf)",
+  "holding": "Holding: 19yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-04",
+  "blk": "74",
+  "sqft": "1,733 sqft",
+  "pp": "PP: $3,000,000 ($1,731 psf)",
+  "est_val": "Est. Val: $4,163,000 ($2,402 psf)",
+  "holding": "Holding: 8yrs 5mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#04-01",
+  "blk": "74",
+  "sqft": "0 sqft",
+  "pp": "PP: - (- psf)",
+  "est_val": "Est. Val: - (- psf)",
+  "holding": "Holding: -"
+ },
+ {
+  "unit": "#04-02",
+  "blk": "74",
+  "sqft": "2,960 sqft",
+  "pp": "PP: $3,569,900 ($1,206 psf)",
+  "est_val": "Est. Val: $6,980,000 ($2,358 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-01",
+  "blk": "76",
+  "sqft": "2,207 sqft",
+  "pp": "PP: $2,870,000 ($1,301 psf)",
+  "est_val": "Est. Val: $5,113,000 ($2,317 psf)",
+  "holding": "Holding: 18yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-02",
+  "blk": "76",
+  "sqft": "1,561 sqft",
+  "pp": "PP: $1,620,000 ($1,038 psf)",
+  "est_val": "Est. Val: $3,591,000 ($2,301 psf)",
+  "holding": "Holding: 17yrs 9mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#01-03",
+  "blk": "76",
+  "sqft": "1,572 sqft",
+  "pp": "PP: $2,400,000 ($1,527 psf)",
+  "est_val": "Est. Val: $3,616,000 ($2,301 psf)",
+  "holding": "Holding: 13yrs 3mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#01-04",
+  "blk": "76",
+  "sqft": "2,174 sqft",
+  "pp": "PP: $2,800,000 ($1,288 psf)",
+  "est_val": "Est. Val: $5,038,000 ($2,317 psf)",
+  "holding": "Holding: 16yrs 10mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#02-01",
+  "blk": "76",
+  "sqft": "1,755 sqft",
+  "pp": "PP: $2,191,900 ($1,249 psf)",
+  "est_val": "Est. Val: $4,188,000 ($2,387 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-02",
+  "blk": "76",
+  "sqft": "1,195 sqft",
+  "pp": "PP: $1,960,000 ($1,640 psf)",
+  "est_val": "Est. Val: $2,841,000 ($2,378 psf)",
+  "holding": "Holding: 16yrs 1w",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#02-03",
+  "blk": "76",
+  "sqft": "1,206 sqft",
+  "pp": "PP: $1,386,900 ($1,150 psf)",
+  "est_val": "Est. Val: $2,862,000 ($2,374 psf)",
+  "holding": "Holding: 17yrs 3mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-04",
+  "blk": "76",
+  "sqft": "1,733 sqft",
+  "pp": "PP: $1,992,950 ($1,150 psf)",
+  "est_val": "Est. Val: $4,164,000 ($2,403 psf)",
+  "holding": "Holding: 17yrs 7mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-01",
+  "blk": "76",
+  "sqft": "1,733 sqft",
+  "pp": "PP: $2,175,300 ($1,255 psf)",
+  "est_val": "Est. Val: $4,157,000 ($2,399 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-02",
+  "blk": "76",
+  "sqft": "1,163 sqft",
+  "pp": "PP: $1,930,000 ($1,660 psf)",
+  "est_val": "Est. Val: $2,754,000 ($2,369 psf)",
+  "holding": "Holding: 13yrs 2mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#03-03",
+  "blk": "76",
+  "sqft": "1,163 sqft",
+  "pp": "PP: $2,450,000 ($2,108 psf)",
+  "est_val": "Est. Val: $2,754,000 ($2,369 psf)",
+  "holding": "Holding: 2yrs 4mos",
+  "caveats": "4 Caveats"
+ },
+ {
+  "unit": "#03-04",
+  "blk": "76",
+  "sqft": "1,744 sqft",
+  "pp": "PP: $2,023,000 ($1,160 psf)",
+  "est_val": "Est. Val: $4,134,000 ($2,371 psf)",
+  "holding": "Holding: 17yrs 3w",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#04-01",
+  "blk": "76",
+  "sqft": "0 sqft",
+  "pp": "PP: - (- psf)",
+  "est_val": "Est. Val: - (- psf)",
+  "holding": "Holding: -"
+ },
+ {
+  "unit": "#04-02",
+  "blk": "76",
+  "sqft": "2,960 sqft",
+  "pp": "PP: $2,100,000 ($709 psf)",
+  "est_val": "Est. Val: $6,971,000 ($2,355 psf)",
+  "holding": "Holding: 22yrs 9mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-01",
+  "blk": "78",
+  "sqft": "2,174 sqft",
+  "pp": "PP: $2,900,000 ($1,334 psf)",
+  "est_val": "Est. Val: $5,038,000 ($2,317 psf)",
+  "caveats": "2 Caveats",
+  "type": "3BR"
+ },
+ {
+  "unit": "#01-02",
+  "blk": "78",
+  "sqft": "1,582 sqft",
+  "pp": "PP: $1,575,000 ($995 psf)",
+  "est_val": "Est. Val: $3,641,000 ($2,301 psf)",
+  "caveats": "2 Caveats",
+  "type": "2BR"
+ },
+ {
+  "unit": "#01-03",
+  "blk": "78",
+  "sqft": "1,582 sqft",
+  "pp": "PP: $1,575,000 ($995 psf)",
+  "est_val": "Est. Val: $3,641,000 ($2,301 psf)",
+  "caveats": "2 Caveats",
+  "type": "2BR"
+ },
+ {
+  "unit": "#01-04",
+  "blk": "78",
+  "sqft": "0 sqft",
+  "pp": "PP: - (- psf)",
+  "est_val": "Est. Val: - (- psf)",
+  "holding": "Holding: -"
+ },
+ {
+  "unit": "#02-01",
+  "blk": "78",
+  "sqft": "1,755 sqft",
+  "pp": "PP: $2,281,500 ($1,300 psf)",
+  "est_val": "Est. Val: $4,174,000 ($2,379 psf)",
+  "holding": "Holding: 19yrs 1mo",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-02",
+  "blk": "78",
+  "sqft": "1,163 sqft",
+  "pp": "PP: $1,980,000 ($1,703 psf)",
+  "est_val": "Est. Val: $2,718,000 ($2,338 psf)",
+  "holding": "Holding: 7yrs 4mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#02-03",
+  "blk": "78",
+  "sqft": "1,195 sqft",
+  "pp": "PP: $1,135,250 ($950 psf)",
+  "est_val": "Est. Val: $2,826,000 ($2,365 psf)",
+  "holding": "Holding: 19yrs 5mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-04",
+  "blk": "78",
+  "sqft": "0 sqft",
+  "pp": "PP: - (- psf)",
+  "est_val": "Est. Val: - (- psf)",
+  "holding": "Holding: -"
+ },
+ {
+  "unit": "#03-01",
+  "blk": "78",
+  "sqft": "1,733 sqft",
+  "pp": "PP: $4,080,000 ($2,354 psf)",
+  "est_val": "Est. Val: $4,178,000 ($2,411 psf)",
+  "holding": "Holding: 1yr 1mo",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#03-02",
+  "blk": "78",
+  "sqft": "1,163 sqft",
+  "pp": "PP: $1,337,450 ($1,150 psf)",
+  "est_val": "Est. Val: $2,732,000 ($2,350 psf)",
+  "holding": "Holding: 19yrs 1mo",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-03",
+  "blk": "78",
+  "sqft": "1,163 sqft",
+  "pp": "PP: $808,000 ($695 psf)",
+  "est_val": "Est. Val: $2,732,000 ($2,350 psf)",
+  "holding": "Holding: 21yrs 5mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-04",
+  "blk": "78",
+  "sqft": "0 sqft",
+  "pp": "PP: - (- psf)",
+  "est_val": "Est. Val: - (- psf)",
+  "holding": "Holding: -"
+ },
+ {
+  "unit": "#04-01",
+  "blk": "78",
+  "sqft": "2,852 sqft",
+  "pp": "PP: $5,200,000 ($1,757 psf)",
+  "est_val": "Est. Val: $6,763,000 ($2,285 psf)",
+  "holding": "Holding: 5yrs 6mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#04-02",
+  "blk": "78",
+  "sqft": "2,960 sqft",
+  "pp": "PP: $2,050,000 ($693 psf)",
+  "est_val": "Est. Val: $6,989,000 ($2,361 psf)",
+  "holding": "Holding: 21yrs 3mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-01",
+  "blk": "80",
+  "sqft": "2,174 sqft",
+  "pp": "PP: $3,700,000 ($1,702 psf)",
+  "est_val": "Est. Val: $5,047,000 ($2,321 psf)",
+  "holding": "Holding: 8yrs 1mo",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#01-02",
+  "blk": "80",
+  "sqft": "1,561 sqft",
+  "pp": "PP: $1,400,000 ($897 psf)",
+  "est_val": "Est. Val: $3,591,000 ($2,301 psf)",
+  "holding": "Holding: 19yrs 3mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-03",
+  "blk": "80",
+  "sqft": "1,561 sqft",
+  "pp": "PP: $1,170,750 ($750 psf)",
+  "est_val": "Est. Val: $3,591,000 ($2,301 psf)",
+  "holding": "Holding: 19yrs 8mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-04",
+  "blk": "80",
+  "sqft": "2,164 sqft",
+  "pp": "PP: $2,813,000 ($1,300 psf)",
+  "est_val": "Est. Val: $5,026,000 ($2,323 psf)",
+  "holding": "Holding: 17yrs 9mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-05",
+  "blk": "80",
+  "sqft": "2,153 sqft",
+  "pp": "PP: $2,784,000 ($1,293 psf)",
+  "est_val": "Est. Val: $4,997,000 ($2,321 psf)",
+  "holding": "Holding: 17yrs 11mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-06",
+  "blk": "80",
+  "sqft": "1,550 sqft",
+  "pp": "PP: $1,162,500 ($750 psf)",
+  "est_val": "Est. Val: $3,567,000 ($2,301 psf)",
+  "holding": "Holding: 19yrs 9mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-07",
+  "blk": "80",
+  "sqft": "1,518 sqft",
+  "pp": "PP: $2,890,000 ($1,904 psf)",
+  "est_val": "Est. Val: $3,492,000 ($2,301 psf)",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#02-01",
+  "blk": "80",
+  "sqft": "1,744 sqft",
+  "pp": "PP: $4,108,000 ($2,356 psf)",
+  "est_val": "Est. Val: $4,189,000 ($2,402 psf)",
+  "holding": "Holding: 10mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#02-02",
+  "blk": "80",
+  "sqft": "1,195 sqft",
+  "pp": "PP: $1,254,750 ($1,050 psf)",
+  "est_val": "Est. Val: $2,826,000 ($2,365 psf)",
+  "holding": "Holding: 19yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-03",
+  "blk": "80",
+  "sqft": "1,195 sqft",
+  "pp": "PP: $2,020,000 ($1,691 psf)",
+  "est_val": "Est. Val: $2,826,000 ($2,365 psf)",
+  "holding": "Holding: 14yrs 1w",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#02-04",
+  "blk": "80",
+  "sqft": "1,733 sqft",
+  "pp": "PP: $2,167,000 ($1,250 psf)",
+  "est_val": "Est. Val: $4,137,000 ($2,387 psf)",
+  "holding": "Holding: 17yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-05",
+  "blk": "80",
+  "sqft": "1,744 sqft",
+  "pp": "PP: $2,180,000 ($1,250 psf)",
+  "est_val": "Est. Val: $4,189,000 ($2,402 psf)",
+  "holding": "Holding: 19yrs 1mo",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-06",
+  "blk": "80",
+  "sqft": "1,206 sqft",
+  "pp": "PP: $2,050,000 ($1,700 psf)",
+  "est_val": "Est. Val: $2,846,000 ($2,361 psf)",
+  "holding": "Holding: 7yrs 1mo",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#02-07",
+  "blk": "80",
+  "sqft": "1,173 sqft",
+  "pp": "PP: $2,160,000 ($1,841 psf)",
+  "est_val": "Est. Val: $2,776,000 ($2,366 psf)",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#03-01",
+  "blk": "80",
+  "sqft": "1,722 sqft",
+  "pp": "PP: $1,635,900 ($950 psf)",
+  "est_val": "Est. Val: $4,083,000 ($2,371 psf)",
+  "holding": "Holding: 25yrs 4mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-02",
+  "blk": "80",
+  "sqft": "1,141 sqft",
+  "pp": "PP: $1,650,000 ($1,446 psf)",
+  "est_val": "Est. Val: $2,727,000 ($2,390 psf)",
+  "holding": "Holding: 16yrs 5mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#03-03",
+  "blk": "80",
+  "sqft": "1,152 sqft",
+  "pp": "PP: $2,160,000 ($1,875 psf)",
+  "est_val": "Est. Val: $2,756,000 ($2,393 psf)",
+  "holding": "Holding: 5yrs 3mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#03-04",
+  "blk": "80",
+  "sqft": "1,733 sqft",
+  "pp": "PP: $2,820,000 ($1,627 psf)",
+  "est_val": "Est. Val: $4,130,000 ($2,383 psf)",
+  "holding": "Holding: 9yrs 4mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#03-05",
+  "blk": "80",
+  "sqft": "1,722 sqft",
+  "pp": "PP: $1,205,400 ($700 psf)",
+  "est_val": "Est. Val: $4,083,000 ($2,371 psf)",
+  "holding": "Holding: 22yrs 6mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-06",
+  "blk": "80",
+  "sqft": "1,141 sqft",
+  "pp": "PP: $1,930,000 ($1,692 psf)",
+  "est_val": "Est. Val: $2,727,000 ($2,390 psf)",
+  "holding": "Holding: 7yrs 8mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#03-07",
+  "blk": "80",
+  "sqft": "0 sqft",
+  "pp": "PP: - (- psf)",
+  "est_val": "Est. Val: - (- psf)",
+  "holding": "Holding: -"
+ },
+ {
+  "unit": "#04-01",
+  "blk": "80",
+  "sqft": "2,852 sqft",
+  "pp": "PP: $3,583,375 ($1,256 psf)",
+  "est_val": "Est. Val: $6,755,000 ($2,368 psf)",
+  "holding": "Holding: 28yrs 8mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-02",
+  "blk": "80",
+  "sqft": "2,971 sqft",
+  "pp": "PP: $2,700,000 ($909 psf)",
+  "est_val": "Est. Val: $6,987,000 ($2,352 psf)",
+  "holding": "Holding: 25yrs 1mo",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-05",
+  "blk": "80",
+  "sqft": "2,971 sqft",
+  "pp": "PP: $4,300,000 ($1,447 psf)",
+  "est_val": "Est. Val: $6,987,000 ($2,352 psf)",
+  "holding": "Holding: 17yrs 2w",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#04-06",
+  "blk": "80",
+  "sqft": "2,949 sqft",
+  "pp": "PP: $2,700,000 ($915 psf)",
+  "est_val": "Est. Val: $6,946,000 ($2,355 psf)",
+  "holding": "Holding: 25yrs 2mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-01",
+  "blk": "82",
+  "sqft": "2,196 sqft",
+  "pp": "PP: $1,466,000 ($668 psf)",
+  "est_val": "Est. Val: $5,039,000 ($2,295 psf)",
+  "holding": "Holding: 20yrs 9mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-02",
+  "blk": "82",
+  "sqft": "1,561 sqft",
+  "pp": "PP: $2,168,000 ($1,389 psf)",
+  "est_val": "Est. Val: $3,507,000 ($2,247 psf)",
+  "holding": "Holding: 5yrs 10mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#01-03",
+  "blk": "82",
+  "sqft": "1,550 sqft",
+  "pp": "PP: $3,050,000 ($1,968 psf)",
+  "est_val": "Est. Val: $3,481,000 ($2,246 psf)",
+  "holding": "Holding: 10mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#01-04",
+  "blk": "82",
+  "sqft": "2,131 sqft",
+  "pp": "PP: $4,100,000 ($1,924 psf)",
+  "est_val": "Est. Val: $4,883,000 ($2,291 psf)",
+  "holding": "Holding: 2yrs 10mos",
+  "caveats": "4 Caveats"
+ },
+ {
+  "unit": "#01-05",
+  "blk": "82",
+  "sqft": "2,131 sqft",
+  "pp": "PP: $3,400,000 ($1,595 psf)",
+  "est_val": "Est. Val: $4,883,000 ($2,291 psf)",
+  "holding": "Holding: 8yrs 7mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#01-06",
+  "blk": "82",
+  "sqft": "1,550 sqft",
+  "pp": "PP: $2,980,000 ($1,923 psf)",
+  "est_val": "Est. Val: $3,481,000 ($2,246 psf)",
+  "holding": "Holding: 1yr 9mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#01-07",
+  "blk": "82",
+  "sqft": "1,475 sqft",
+  "pp": "PP: $900,000 ($610 psf)",
+  "est_val": "Est. Val: $3,300,000 ($2,238 psf)",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-01",
+  "blk": "82",
+  "sqft": "1,744 sqft",
+  "pp": "PP: $2,900,000 ($1,663 psf)",
+  "est_val": "Est. Val: $4,075,000 ($2,337 psf)",
+  "holding": "Holding: 8yrs 10mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#02-02",
+  "blk": "82",
+  "sqft": "1,173 sqft",
+  "pp": "PP: $997,050 ($850 psf)",
+  "est_val": "Est. Val: $2,699,000 ($2,300 psf)",
+  "holding": "Holding: 20yrs 1mo",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-03",
+  "blk": "82",
+  "sqft": "1,184 sqft",
+  "pp": "PP: $1,980,000 ($1,672 psf)",
+  "est_val": "Est. Val: $2,723,000 ($2,300 psf)",
+  "holding": "Holding: 7yrs 3mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#02-04",
+  "blk": "82",
+  "sqft": "1,744 sqft",
+  "pp": "PP: $1,220,800 ($700 psf)",
+  "est_val": "Est. Val: $4,075,000 ($2,337 psf)",
+  "holding": "Holding: 20yrs 11mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-05",
+  "blk": "82",
+  "sqft": "1,744 sqft",
+  "pp": "PP: $1,260,000 ($723 psf)",
+  "est_val": "Est. Val: $4,075,000 ($2,337 psf)",
+  "holding": "Holding: 23yrs 8mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#02-06",
+  "blk": "82",
+  "sqft": "1,184 sqft",
+  "pp": "PP: $2,038,000 ($1,721 psf)",
+  "est_val": "Est. Val: $2,723,000 ($2,300 psf)",
+  "holding": "Holding: 6yrs 8mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#02-07",
+  "blk": "82",
+  "sqft": "1,184 sqft",
+  "pp": "PP: $2,408,000 ($2,034 psf)",
+  "est_val": "Est. Val: $2,723,000 ($2,300 psf)",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#03-01",
+  "blk": "82",
+  "sqft": "1,647 sqft",
+  "pp": "PP: $2,067,390 ($1,255 psf)",
+  "est_val": "Est. Val: $3,908,000 ($2,373 psf)",
+  "holding": "Holding: 28yrs 6mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-02",
+  "blk": "82",
+  "sqft": "1,141 sqft",
+  "pp": "PP: $798,700 ($700 psf)",
+  "est_val": "Est. Val: $2,660,000 ($2,331 psf)",
+  "holding": "Holding: 22yrs 1mo",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-03",
+  "blk": "82",
+  "sqft": "1,141 sqft",
+  "pp": "PP: $1,600,000 ($1,402 psf)",
+  "est_val": "Est. Val: $2,660,000 ($2,331 psf)",
+  "holding": "Holding: 16yrs 10mos",
+  "caveats": "2 Caveats"
+ },
+ {
+  "unit": "#03-04",
+  "blk": "82",
+  "sqft": "1,733 sqft",
+  "pp": "PP: $1,200,000 ($692 psf)",
+  "est_val": "Est. Val: $4,121,000 ($2,378 psf)",
+  "holding": "Holding: 21yrs 4mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-05",
+  "blk": "82",
+  "sqft": "1,647 sqft",
+  "pp": "PP: $2,029,000 ($1,232 psf)",
+  "est_val": "Est. Val: $3,908,000 ($2,373 psf)",
+  "holding": "Holding: 28yrs 8mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-06",
+  "blk": "82",
+  "sqft": "1,130 sqft",
+  "pp": "PP: $895,000 ($792 psf)",
+  "est_val": "Est. Val: $2,624,000 ($2,322 psf)",
+  "holding": "Holding: 24yrs 1w",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#03-07",
+  "blk": "82",
+  "sqft": "1,130 sqft",
+  "pp": "PP: $960,500 ($850 psf)",
+  "est_val": "Est. Val: $2,624,000 ($2,322 psf)",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-01",
+  "blk": "82",
+  "sqft": "1,744 sqft",
+  "pp": "PP: $3,230,000 ($1,852 psf)",
+  "est_val": "Est. Val: $4,164,000 ($2,388 psf)",
+  "holding": "Holding: 8yrs 7mos",
+  "caveats": "3 Caveats"
+ },
+ {
+  "unit": "#04-02",
+  "blk": "82",
+  "sqft": "1,130 sqft",
+  "pp": "PP: $1,011,350 ($895 psf)",
+  "est_val": "Est. Val: $2,622,000 ($2,320 psf)",
+  "holding": "Holding: 19yrs 8mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-03",
+  "blk": "82",
+  "sqft": "1,130 sqft",
+  "pp": "PP: $960,500 ($850 psf)",
+  "est_val": "Est. Val: $2,622,000 ($2,320 psf)",
+  "holding": "Holding: 19yrs 10mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-04",
+  "blk": "82",
+  "sqft": "1,755 sqft",
+  "pp": "PP: $1,213,000 ($691 psf)",
+  "est_val": "Est. Val: $4,192,000 ($2,389 psf)",
+  "holding": "Holding: 21yrs 8mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-05",
+  "blk": "82",
+  "sqft": "1,647 sqft",
+  "pp": "PP: $2,043,000 ($1,241 psf)",
+  "est_val": "Est. Val: $3,926,000 ($2,384 psf)",
+  "holding": "Holding: 28yrs 8mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-06",
+  "blk": "82",
+  "sqft": "1,130 sqft",
+  "pp": "PP: $795,000 ($703 psf)",
+  "est_val": "Est. Val: $2,622,000 ($2,320 psf)",
+  "holding": "Holding: 20yrs 10mos",
+  "caveats": "1 Caveats"
+ },
+ {
+  "unit": "#04-07",
+  "blk": "82",
+  "sqft": "1,152 sqft",
+  "pp": "PP: $1,990,000 ($1,728 psf)",
+  "est_val": "Est. Val: $2,690,000 ($2,336 psf)",
+  "caveats": "2 Caveats"
+ }
+]

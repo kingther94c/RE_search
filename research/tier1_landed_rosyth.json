@@ -1,0 +1,52 @@
+{
+ "street_alnwick": [
+  {
+   "address": "9 Alnwick Road",
+   "type": "Detached House",
+   "tenure": "999 yrs from 01/01/1953",
+   "top": "2016",
+   "area_sqft": "4,731",
+   "psf": "$2,099",
+   "price": "$9,930,000",
+   "sale_type": "Resale",
+   "date": "29 Oct 2025"
+  },
+  {
+   "address": "15 Alnwick Road",
+   "type": "Semi-Detached House",
+   "tenure": "999 yrs from 01/01/1953",
+   "top": "1997",
+   "area_sqft": "4,794",
+   "psf": "$1,512",
+   "price": "$7,250,000",
+   "sale_type": "Resale",
+   "date": "02 Oct 2025"
+  }
+ ],
+ "nearby": [
+  {
+   "address": "9 Alnwick Road",
+   "type": "Detached House",
+   "tenure": "999 yrs from 01/01/1953",
+   "top": "2016",
+   "area_sqft": "4,731",
+   "psf": "$2,099",
+   "price": "$9,930,000",
+   "sale_type": "Resale",
+   "date": "29 Oct 2025"
+  },
+  {
+   "address": "15 Alnwick Road",
+   "type": "Semi-Detached House",
+   "tenure": "999 yrs from 01/01/1953",
+   "top": "1997",
+   "area_sqft": "4,794",
+   "psf": "$1,512",
+   "price": "$7,250,000",
+   "sale_type": "Resale",
+   "date": "02 Oct 2025"
+  }
+ ],
+ "window": "2Y",
+ "scope_note": "street=Alnwick Rd, nearby=around 7 Alnwick Rd (D19/28 Serangoon)"
+}

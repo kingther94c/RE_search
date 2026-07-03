@@ -1,0 +1,74 @@
+{
+ "street_kingsmead": [
+  {
+   "address": "1 Kingsmead Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "top": "-",
+   "area_sqft": "12,168",
+   "psf": "$1,808",
+   "price": "$21,998,000",
+   "sale_type": "Resale",
+   "date": "30 Mar 2026"
+  },
+  {
+   "address": "2 Kingsmead Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "top": "1985",
+   "area_sqft": "11,802",
+   "psf": "$2,271",
+   "price": "$26,800,000",
+   "sale_type": "Resale",
+   "date": "18 Nov 2025"
+  },
+  {
+   "address": "1 Kingsmead Road",
+   "type": "Detached House",
+   "tenure": "-",
+   "top": "-",
+   "area_sqft": "0",
+   "psf": "-",
+   "price": "$21,988,000",
+   "sale_type": "Resale",
+   "date": "03 Apr 2026"
+  }
+ ],
+ "nearby": [
+  {
+   "address": "1 Kingsmead Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "top": "-",
+   "area_sqft": "12,168",
+   "psf": "$1,808",
+   "price": "$21,998,000",
+   "sale_type": "Resale",
+   "date": "30 Mar 2026"
+  },
+  {
+   "address": "2 Kingsmead Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "top": "1985",
+   "area_sqft": "11,802",
+   "psf": "$2,271",
+   "price": "$26,800,000",
+   "sale_type": "Resale",
+   "date": "18 Nov 2025"
+  },
+  {
+   "address": "1 Kingsmead Road",
+   "type": "Detached House",
+   "tenure": "-",
+   "top": "-",
+   "area_sqft": "0",
+   "psf": "-",
+   "price": "$21,988,000",
+   "sale_type": "Resale",
+   "date": "03 Apr 2026"
+  }
+ ],
+ "window": "2Y",
+ "scope_note": "Investment Suite landed Sale tab; street=Kingsmead Rd, nearby=around 8 Kingsmead Rd (D10)"
+}

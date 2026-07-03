@@ -167,6 +167,22 @@ def swipe_region(x1, y1, x2, y2, dur=400) -> None:
     print(f"[swipe_region] {(x1,y1)}->{(x2,y2)}")
 
 
+def type_text(text: str) -> None:
+    """Type into the focused field via real key events (adb input text).
+    Spaces must be %s-escaped for adb; tap the field first to focus it."""
+    sh("shell", "input", "text", text.replace(" ", "%s"))
+    print(f"[type] {text!r}")
+
+
+def clear_field(chars: int = 40) -> None:
+    """Clear the focused text field: jump to end, then backspace `chars` times.
+    (adb has no select-all; keyevent 123=MOVE_END, 67=DEL accepts a batch.)"""
+    sh("shell", "input", "keyevent", "123")
+    for _ in range(0, chars, 10):
+        sh("shell", "input", "keyevent", *(["67"] * 10))
+    print(f"[clear] up to {chars} chars")
+
+
 def back() -> None:
     sh("shell", "input", "keyevent", "4")
     print("[back]")
@@ -184,6 +200,10 @@ if __name__ == "__main__":
         swipe(sys.argv[2], float(sys.argv[3]) if len(sys.argv) > 3 else 0.6)
     elif cmd == "region":
         swipe_region(*map(int, sys.argv[2:6]))
+    elif cmd == "type":
+        type_text(sys.argv[2])
+    elif cmd == "clear":
+        clear_field(int(sys.argv[2]) if len(sys.argv) > 2 else 40)
     elif cmd == "back":
         back()
     elif cmd == "texts":

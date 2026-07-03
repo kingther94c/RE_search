@@ -205,7 +205,7 @@
       "catchment": "1km",
       "flood_risk": "low",
       "rebuild_status": "original",
-      "notes": "2026-07-02 新发现. Architect-designed 2.5-storey multi-generation house, pool, 5-car basement parking; URA approval for up to 10,000+ sqft GFA (excl. basement); elevated flat site, unblocked N/E views. GCB-grade plot size suggests Kingsmead GCB pocket. Source: 99.co. OneMap street-ref 0.3km ✓在 1km 圈内（按街道参考点）。 洪水依据：Kingsmead Rd 不在 PUB 易涝名单，且不属于 2025-04 有记录的 King's Rd（Prince–Lutheran）段——按区域证据计 low；每址平台高度仍需现场核实。",
+      "notes": "Tier-1 重要更新：同街 1 Kingsmead Road（地块同为 12,168 sqft）已于 2026-03-30 以 $21,998,000（$1,808 psf）成交（Investment Suite caveat）——本挂牌要价 $24m（$1,972 psf）较该成交高 ~9%，且极可能就是同一房源/孪生地块（先向卖方核实是否已售）。谈判锚：$1,808 psf。URA 已批 10,000+ sqft GFA；tenure 仍未确认，INLIS 先行。",
       "onemap_km": 0.3
     },
     {
@@ -262,5 +262,6 @@
       "notes": "发现于 2026-07-02（99.co）。本轮最低量子；granny room；数分钟到 Tan Kah Kee MRT。OneMap 实测街道参考点 0.27km——明确在 1km 圈内（挂牌页自述『约 1km』偏保守/含 RGPS 口径）；街区档次 mid。签约前按门牌于 OneMap School Query 复测。",
       "onemap_km": 0.27
     }
-  ]
+  ],
+  "benchmark_note": " Tier-1 锚（Investment Suite 2Y caveat，Kingsmead 街）：大地块 detached 成交 $1,808（2026-03-30，12,168sf）与 $2,271（2025-11-18，11,802sf）——detached 带下沿的官方参照。"
 }

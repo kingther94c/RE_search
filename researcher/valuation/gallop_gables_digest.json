@@ -6,305 +6,320 @@
     "district": "D10",
     "tenure": "Freehold",
     "top_year": 1997,
-    "size_sqft": 1743,
+    "size_sqft": 1744,
     "floor": 3,
     "bedrooms": 3
   },
   "asof": "2026-07-03",
   "report_basename": "gallop_gables_Condo_Valuation_Report.html",
-  "subtitle": "Nanyang Primary 1km 圈内的 condo 替代方案 · OneMap 实测 0.73km · 与 landed 研究同套件 · 独立分析师验收 PASS 8.7/10",
-  "summary": "【2026-07-03】Gallop Gables（70-82 Farrer Rd，D10，freehold，1997 年 TOP，140 户 7 座 4-5 层低密度）是OneMap 实测 0.73km、明确在 Nanyang Primary 1km 圈内的 condo 替代方案——本研究套件中 landed 动辄 S$6-25m，而这里 ~S$4.1m 就能买到 freehold 1,743 sqft 3BR + 同样的抽签资格。估值（可比调整法，11 宗 2023-2026 本盘成交，趋势 4.5%/yr 由两组重复成交拟合）：点估 ~S$2,346 psf ≈ 4.09m，区间 S$2,197–2,475 psf。2025-12 本盘刚创 S$2,421 psf 新高（2,842sf 大户型）；psf 自 2021 年 ~S$1,800 稳步爬升。收益率是软肋：中位租金 S$7,700/mo 对点估仅 ~2.3% 毛收益。买点：freehold 学区稀缺低密度 + 每户土地占比 168 m²（vs 邻盘 D'Leedon 41 m²）的 土地期权（注意：本盘从无整盘集体出售记录——2008-09 年间仅为开发商 Straits Trading 对自持 2 座 38 户的整批求售未果（2008-07 EOI）、2009 年起逐户售出；『三次流拍』属隔壁 Spanish Village）；压点：1997 年楼龄的维护与电梯/设施折旧、140 户小盘流动性薄（年成交 3-5 宗）、GEP 停办后学区溢价逻辑弱化。 — [EN] The freehold, 140-unit, low-rise Gallop Gables sits a measured 0.73km from Nanyang Primary — the condo alternative to this suite's S$6-25m landed shortlist at ~S$4.1m for a 1,743 sqft 3BR. Sales-comparison value: ~S$2,346 psf (S$2,197–2,475 range) off 11 same-project 2023-26 comps, 4.5%/yr trend fitted from two repeat-sale pairs. Yield ~2.3% gross is the weak leg; the land-share optionality (168 sqm/unit; NO documented development-wide en-bloc attempt — the 2008-09 event was the developer's failed two-block bulk-sale EOI (Jul 2008), sold off unit-by-unit from Mar 2009) and school-zone freehold scarcity are the case.",
+  "subtitle": "Nanyang Primary 1km 圈内的 condo 替代方案 · OneMap 实测 0.73km · Tier-1 数据重做：Investment Suite（URA caveat + per-unit AVM）",
+  "summary": "【2026-07-03｜Tier-1 重做】Gallop Gables（70-82 Farrer Rd，D10/Tyersall，freehold，TOP 1997，140 户 7 座 5 层——全部经 Investment Suite 官方口径确认）是 OneMap 实测 0.73km、明确在 Nanyang Primary 1km 圈内的 condo 替代方案。估值（可比调整法，输入为 app 内 10 笔 URA caveat 成交，5Y 窗口）：点估 ~S$2,351 psf ≈ 4.10m（1,744 sqft 3BR，3 楼），区间 S$2,170–2,497 psf。**独立交叉验证：app 对同规格 3BR（1,722-1,755 sqft）的 per-unit Est. Val（AVM）带为 S$2,337–2,411 psf——模型点估与 AVM 带中枢差 <2%**。项目纪录价 S$2,421 psf（2025-12-09，2,842sf 4BR，S$6.88m，app caveat 确认）。租金（app 租约口径）：3BR 1,700-1,800 sqft 月租 S$7,500-8,200 → 对点估毛收益率 ~2.3%。买点：freehold 学区稀缺低密度 + 每户土地占比 168 m² 的土地期权（本盘从无整盘集体出售记录）；压点：1997 年楼龄维护、流动性薄（caveat 口径 3-5 宗/年）、GEP 停办后学区溢价逻辑弱化。 — [EN] Tier-1 redo: every load-bearing number now traces to Investment Suite (URA caveats, per-unit AVM, rental contracts). Model ~S$2,351 psf on 10 in-app caveats independently cross-checks against the app's own Est. Val band of S$2,337–2,411 psf for the same stack cohort — agreement within 2%. Yield ~2.3% gross; the case is land-share scarcity inside the school ring, not income.",
   "development_facts": [
-    "140 户、7 座低层（层数口径不一：本研究多数来源记 4 层、99.co 记 5 层——以 BCA/MCST 为准；成交楼层带 01-05 与 5 层一致），1997 TOP，freehold；地块 ~23,530 m²，每户土地占比 ~168 m²（对照 D'Leedon ~41 m²）——低密度即土地期权。户数口径：EdgeProp/Stacked/SquareFoot/99.co 记 140，PropertyGuru 页面与一篇新闻记 102——以多数口径 140 为准，MCST 名册终核。",
-    "户型：2BR ~31 户（1,140-1,560 sqft）、3BR ~43 户（1,700-2,170 sqft）、4BR ~57 户（2,600-3,412 sqft）（Stacked Homes 口径；另一来源 2BR 49 户不一致——以 MCST 名册为准）（注：31+43+57=131 户 ≠ 140 总户数——9 户差额来源口径不齐，以 MCST 名册为准）",
-    "MRT：Farrer Road（CC20）步行可达；Tan Kah Kee（DT8）距离较远（个别来源提及、疑与 Duchess Rd 一带混淆——低置信，不作卖点）；Holland Village 生活圈。",
-    "en-bloc 视角：本盘并无整盘集体出售（LTSA collective sale）的记录。开发商 Straits Trading 曾持有 2 座 38 户：2008-07 以 EOI 寻求整批出售（均价口径约 S$1,500 psf；总价约 S$162m 之说仅见单一二级来源，未获旁证），未觅得整批买家；2009-03 起改为逐户出售并附 2 年 7% 租金保证（GFC 后典型促销）——首批 10 户三天售罄，约六周售出 ~40 户（S$1,118–1,300 psf；『~40 户』与『38 户』的差额未在来源中解释，可能含少量其他持仓）。『三次流拍』的是隔壁 Spanish Village（2018-06、2018-10 @S$882m、2019-03）。土地期权 = 每户土地占比 168 m² 的纯潜在价值，无整盘行权先例。",
-    "维护费：公开渠道未披露——看房时向 MCST/中介索取（1997 年低密度大地块，预算偏高）"
+    "Tier-1 确认（Investment Suite Property Info）：140 户、7 座（70-82 Farrer Rd）、5 层（Tower View 有 #05-xx 层），TOP 1997，freehold；地块 253,307 sqft / 23,533 m²，容积率 1.4；开发商 Atbara Holdings + Straits Developments；MCST 管理 SRE Global。每户土地占比 ~168 m²（对照 D'Leedon ~41 m²）——低密度即土地期权。（此前网络口径的『102 户』『4 层』说法均被 app 数据否定。）",
+    "户型（Tower View 网格实测）：2BR ~1,130-1,206 sqft、大 2BR 1,518-1,582 sqft、3BR 1,722-1,755 sqft、大 3BR 2,131-2,207 sqft、4BR 2,594-2,971 sqft、顶层大户 3,175-3,412 sqft。",
+    "en-bloc 视角：本盘并无整盘集体出售（LTSA collective sale）的记录。开发商 Straits Trading 曾持有 2 座 38 户：2008-07 以 EOI 寻求整批出售未果，2009-03 起逐户出售（附 2 年 7% 租金保证）。『三次流拍』的是隔壁 Spanish Village。土地期权无行权先例。",
+    "MRT：Farrer Road（CC20）步行可达；Holland Village 生活圈。"
   ],
   "valuation": {
-    "estimate_psf": 2346,
-    "estimate_price": 4090000.0,
-    "low_psf": 2197,
-    "high_psf": 2475,
-    "low_price": 3830000.0,
-    "high_price": 4310000.0,
-    "params_note": "【读数指引】保守稳健带 S$2,243–2,346 psf（趋势/弹性敏感性变体的下沿到点估）——鉴于趋势拟合仅两对重复成交（其中 2017 腿属未经 REALIS 核对的历史段）且 comps 无 2026 年成交、CCR 指数 2026H1 放缓，建议谈判以稳健带为锚、点估为上参考。 asof 2026-07-03 · trend 4.5%/yr（重复成交对拟合：1,163sf 2021→2024 +5.6%/yr；2,669sf 2017→2024 +4.3%/yr）· floor ±0.4%/层（4-5 层低层楼盘）· size elasticity -0.08 · 11 宗 2023-2026 本盘成交，无同线锚（代表性单位非特定门牌）。区间口径=调整后 comps 的四分位距（Q1–Q3）；权重=1/(1+面积差+楼层差+时间差+户型差) 的相似度函数，两宗近同规格 3BR（1,732/1,744sf）权重最高。敏感性：趋势 2%/yr → 2,245 psf；面积弹性 0（本盘横截面大户型 raw psf 反而更高，与通用先验相反，故给出该变体）→ 2,344 psf；两者叠加 → 2,243 psf——点估稳健带约 S$2,243–2,346 psf。点估低于两宗最高权重 comp 的调整值（2,463/2,475）约 5%：因两宗 1,550sf 低价 comp 拉低加权均值——偏保守。网格注记：type_adj 全部为 1.0（无 compact-3BR 修正适用），2/4BR comps 仅按面积弹性归一——而本盘横截面 4BR 的 raw psf 反而最高（2,842sf @2,421），通用『小户型 psf 更高』先验在此可能反号，elasticity=0 变体（2,344 psf）即为该情形的显式覆盖。趋势第三锚：URA 非有地指数方向一致（2024-2025 上行、2026Q1 全国 +1.3%/CCR +0.6% 放缓）——2%/yr 变体（2,245 psf）覆盖减速情形。拟合规则披露：两对重复成交年化 5.6%/4.3%（简单均值 4.95%、按持有期加权 4.68%），取 4.5%/yr 为保守取整；『01-05 band』未注明楼层的 comps 一律按 L2 计入；1,517/1,550 sqft 介于 2/3BR 面积带边界，bedrooms 标签按面积推断、仅影响相似度权重。权重函数口径：diff 项分别为 |ln(面积比)|×3、楼层差/25、年差/2、异户型 +0.6（无量纲），权重=1/(1+Σdiff)。",
+    "estimate_psf": 2351,
+    "estimate_price": 4100000.0,
+    "low_psf": 2170,
+    "high_psf": 2497,
+    "low_price": 3780000.0,
+    "high_price": 4360000.0,
+    "params_note": "【读数指引】模型点估 S$2,351 psf 与 app AVM 带 S$2,337–2,411 psf（同规格 3BR 22 个单元的 Est. Val）互相印证——谈判锚建议取 S$2,250–2,351（模型敏感带）与 AVM 带的交集下沿。 输入：app 内 5Y 全部 10 笔 caveat（真实楼层/户型/面积，无网络聚合行）；asof 2026-07-03；趋势 4.5%/yr（两对重复成交拟合的保守取整，敏感性：2%/yr → 2,256；弹性 0 → 2,344；叠加 → 2,250）；楼层 ±0.4%/层（5 层低层盘）；面积弹性 -0.08；区间=调整后 comps 四分位距；权重=1/(1+|ln 面积比|×3+楼层差/25+年差/2+异户型0.6)。",
     "grid": [
       {
-        "label": "2025-12 2842sf L3 4BR",
+        "label": "2025-12-09 L3 4BR 2842sf",
         "raw_psf": 2421.0,
-        "time_adj": 1.0261249225195477,
+        "time_adj": 1.0251361190672945,
         "floor_adj": 1.0,
-        "size_adj": 1.0398869663566315,
+        "size_adj": 1.0398392525332751,
         "type_adj": 1.0,
-        "adj_psf": 2583.3375712647035,
-        "weight": 0.2976499798625732
+        "adj_psf": 2580.729774201627,
+        "weight": 0.29877691990142724
       },
       {
-        "label": "2025-08 1744sf L2 3BR",
+        "label": "2025-08-05 L2 3BR 1744sf",
         "raw_psf": 2356.0,
-        "time_adj": 1.0413228949813542,
+        "time_adj": 1.0408210497265384,
         "floor_adj": 1.004,
-        "size_adj": 1.000045885768632,
+        "size_adj": 1.0,
         "type_adj": 1.0,
-        "adj_psf": 2463.283191994784,
-        "weight": 0.6659210086826584
+        "adj_psf": 2461.983090728347,
+        "weight": 0.669127615139413
       },
       {
-        "label": "2025-08 1550sf L2 2BR",
+        "label": "2025-08-05 L1 2BR 1550sf",
         "raw_psf": 1968.0,
-        "time_adj": 1.0413228949813542,
-        "floor_adj": 1.004,
-        "size_adj": 0.9906557049650401,
+        "time_adj": 1.0408210497265384,
+        "floor_adj": 1.008016,
+        "size_adj": 0.9906102500523016,
         "type_adj": 1.0,
-        "adj_psf": 2038.2946702132765,
-        "weight": 0.40782744203647225
+        "adj_psf": 2045.367750004692,
+        "weight": 0.40188687263876544
       },
       {
-        "label": "2025-05-08 1733sf L3 3BR",
+        "label": "2025-05-08 L3 3BR 1733sf",
         "raw_psf": 2354.0,
         "time_adj": 1.0520444967440812,
         "floor_adj": 1.0,
-        "size_adj": 0.999539805457653,
+        "size_adj": 0.9994939429098395,
         "type_adj": 1.0,
-        "adj_psf": 2475.373067686111,
-        "weight": 0.6275183652909581
+        "adj_psf": 2475.259488501917,
+        "weight": 0.6268415291868995
       },
       {
-        "label": "2024-11-20 2669sf L2 4BR",
+        "label": "2024-11-20 L2 4BR 2669sf",
         "raw_psf": 2299.0,
         "time_adj": 1.0736906100293244,
         "floor_adj": 1.004,
-        "size_adj": 1.0346753316823214,
+        "size_adj": 1.0346278569878553,
         "type_adj": 1.0,
-        "adj_psf": 2564.2238425867654,
-        "weight": 0.2683876186158742
+        "adj_psf": 2564.106186603539,
+        "weight": 0.26851161952687697
       },
       {
-        "label": "2024-09-09 1550sf L1 2BR",
+        "label": "2024-09-09 L1 2BR 1550sf",
         "raw_psf": 1923.0,
         "time_adj": 1.0830473864067103,
         "floor_adj": 1.008016,
-        "size_adj": 0.9906557049650401,
+        "size_adj": 0.9906102500523016,
         "type_adj": 1.0,
-        "adj_psf": 2079.7776815287452,
-        "weight": 0.340334337679761
+        "adj_psf": 2079.6822537100234,
+        "weight": 0.34013515269251693
       },
       {
-        "label": "2024-02-19 1163sf L3 2BR",
+        "label": "2024-02-19 L3 2BR 1163sf",
         "raw_psf": 2108.0,
         "time_adj": 1.109869665202223,
         "floor_adj": 1.0,
-        "size_adj": 0.9681498582557067,
+        "size_adj": 0.9681054359936593,
         "type_adj": 1.0,
-        "adj_psf": 2265.0884952728484,
-        "weight": 0.2501291201261837
+        "adj_psf": 2264.984564715157,
+        "weight": 0.2500215130207425
       },
       {
-        "label": "2023-08 2131sf L2 3BR",
-        "raw_psf": 1923.0,
-        "time_adj": 1.1372191564142218,
-        "floor_adj": 1.004,
-        "size_adj": 1.0162086445948924,
+        "label": "2023-08-07 L1 3BR 2131sf",
+        "raw_psf": 1924.0,
+        "time_adj": 1.1363971645889814,
+        "floor_adj": 1.008016,
+        "size_adj": 1.0161620172196775,
         "type_adj": 1.0,
-        "adj_psf": 2231.207950606576,
-        "weight": 0.32220707675165794
+        "adj_psf": 2239.5749041086187,
+        "weight": 0.3191156742550355
       },
       {
-        "label": "2023-02 1754sf L2 3BR",
-        "raw_psf": 2103.0,
-        "time_adj": 1.1622973923659958,
-        "floor_adj": 1.004,
-        "size_adj": 1.0005034168647278,
-        "type_adj": 1.0,
-        "adj_psf": 2455.324091430164,
-        "weight": 0.36136407043442564
-      },
-      {
-        "label": "2023-02 1517sf L2 3BR",
+        "label": "2023-02-23 L1 2BR 1518sf",
         "raw_psf": 1904.0,
-        "time_adj": 1.1622973923659958,
-        "floor_adj": 1.004,
-        "size_adj": 0.9889516411253173,
+        "time_adj": 1.1592199250945692,
+        "floor_adj": 1.008016,
+        "size_adj": 0.9889583992212962,
         "type_adj": 1.0,
-        "adj_psf": 2197.3183158394827,
-        "weight": 0.31595196381966995
+        "adj_psf": 2200.2814141878434,
+        "weight": 0.2649241389479658
       },
       {
-        "label": "2023-01 1184sf L2 2BR",
-        "raw_psf": 2033.0,
-        "time_adj": 1.166647695562887,
-        "floor_adj": 1.004,
-        "size_adj": 0.9695369055860156,
+        "label": "2023-02-23 L3 3BR 1755sf",
+        "raw_psf": 2103.0,
+        "time_adj": 1.1592199250945692,
+        "floor_adj": 1.0,
+        "size_adj": 1.0005031290414617,
         "type_adj": 1.0,
-        "adj_psf": 2308.740727449024,
-        "weight": 0.21973273487946796
+        "adj_psf": 2439.066050325996,
+        "weight": 0.3707596505908184
       }
     ]
   },
   "comps_table": [
     {
-      "date": "2025-12",
+      "date": "2025-12-09",
       "size_sqft": 2842,
-      "level": "#03-03 (low-rise, floor 3)",
+      "level": "L3 #03",
       "psf": 2421,
       "price": 6880000,
-      "note": "URA caveat via aggregator"
+      "note": "4BR · 72 Farrer Road · Investment Suite（URA caveat）"
     },
     {
-      "date": "2025-08",
+      "date": "2025-08-05",
       "size_sqft": 1744,
-      "level": "#02-01 (floor 2)",
+      "level": "L2 #01",
       "psf": 2356,
       "price": 4108000,
-      "note": "URA caveat via aggregator"
+      "note": "3BR · 80 Farrer Road · Investment Suite（URA caveat）"
     },
     {
-      "date": "2025-08",
+      "date": "2025-08-05",
       "size_sqft": 1550,
-      "level": "low-rise (01-05 band)",
+      "level": "L1 #03",
       "psf": 1968,
       "price": 3050000,
-      "note": "URA caveat via aggregator"
+      "note": "2BR · 82 Farrer Road · Investment Suite（URA caveat）"
     },
     {
       "date": "2025-05-08",
       "size_sqft": 1733,
-      "level": "3rd floor, #03-01",
+      "level": "L3 #01",
       "psf": 2354,
       "price": 4080000,
-      "note": "EdgeProp/Yahoo 新闻报道交叉（全文链接见来源节）"
+      "note": "3BR · 78 Farrer Road · Investment Suite（URA caveat）"
     },
     {
       "date": "2024-11-20",
       "size_sqft": 2669,
-      "level": "2nd floor",
+      "level": "L2 #02",
       "psf": 2299,
       "price": 6138000,
-      "note": "EdgeProp/Yahoo 新闻报道交叉（全文链接见来源节）"
+      "note": "4BR · 70 Farrer Road · Investment Suite（URA caveat）"
     },
     {
       "date": "2024-09-09",
       "size_sqft": 1550,
-      "level": "1st floor",
+      "level": "L1 #06",
       "psf": 1923,
       "price": 2980000,
-      "note": "EdgeProp/Yahoo 新闻报道交叉（全文链接见来源节）"
+      "note": "2BR · 82 Farrer Road · Investment Suite（URA caveat）"
     },
     {
       "date": "2024-02-19",
       "size_sqft": 1163,
-      "level": "3rd floor",
+      "level": "L3 #03",
       "psf": 2108,
       "price": 2450000,
-      "note": "EdgeProp/Yahoo 新闻报道交叉（全文链接见来源节）"
+      "note": "2BR · 76 Farrer Road · Investment Suite（URA caveat）"
     },
     {
-      "date": "2023-08",
+      "date": "2023-08-07",
       "size_sqft": 2131,
-      "level": "low-rise (01-05 band)",
-      "psf": 1923,
+      "level": "L1 #04",
+      "psf": 1924,
       "price": 4100000,
-      "note": "URA caveat via aggregator"
+      "note": "3BR · 82 Farrer Road · Investment Suite（URA caveat）"
     },
     {
-      "date": "2023-02",
-      "size_sqft": 1754,
-      "level": "low-rise (01-05 band)",
-      "psf": 2103,
-      "price": 3690000,
-      "note": "URA caveat via aggregator"
-    },
-    {
-      "date": "2023-02",
-      "size_sqft": 1517,
-      "level": "low-rise (01-05 band)",
+      "date": "2023-02-23",
+      "size_sqft": 1518,
+      "level": "L1 #07",
       "psf": 1904,
       "price": 2890000,
-      "note": "URA caveat via aggregator"
+      "note": "2BR · 80 Farrer Road · Investment Suite（URA caveat）"
     },
     {
-      "date": "2023-01",
-      "size_sqft": 1184,
-      "level": "low-rise (01-05 band)",
-      "psf": 2033,
-      "price": 2408000,
-      "note": "URA caveat via aggregator"
+      "date": "2023-02-23",
+      "size_sqft": 1755,
+      "level": "L3 #08",
+      "psf": 2103,
+      "price": 3690000,
+      "note": "3BR · 82 Farrer Road · Investment Suite（URA caveat）"
     }
   ],
   "market_comps": [
     {
-      "project": "Gallop Gables（本标的）",
-      "psf": "2025 年转售 caveat 约 4 宗，3BR 段 ~S$2,35x psf（见本报告成交表）",
-      "note": "标的自身行。年成交 3-5 宗的『薄流动性』直接由成交表计得；此前来源页的『45 宗』为含租赁/多年累计口径，不作转售流动性依据。"
+      "project": "Royalgreen（FH，D10）",
+      "psf": "2Y 成交带 $2,592 PSF–$2,981 PSF（均 $2,806 PSF）",
+      "note": "量 $1,730,000–$3,980,000（均 $2,401,324）· Investment Suite（URA caveat）"
     },
     {
-      "project": "Leedon Green",
-      "psf": "12 个月均价约 S$2,951 psf（EdgeProp 口径）",
-      "note": "D10 freehold 新盘（TOP 2023）。对本盘点估 S$2,346 psf 溢价约 26%——即『新旧年龄差价』的市场定价；对本盘 2025 年 3BR 成交口径（~S$2,14x）则约 38%，本报告统一以点估口径引用 26%。"
+      "project": "The Sixth Avenue Residences（99LH，Turf City 旁）",
+      "psf": "2Y 成交带 $1,612 PSF–$2,359 PSF（均 $2,154 PSF）",
+      "note": "量 $2,250,000–$4,200,000（均 $3,026,161）· Investment Suite（URA caveat）"
     },
     {
-      "project": "Wilshire Residences",
-      "psf": "Asking psf $2,199-$3,113; recent listings $2,833-$3,297 psf (small units, 743-840sf)",
-      "note": "Freehold · 0.93km from Nanyang Primary; same road (30 Farrer Rd) as Gallop Gables · ~40-50% premium vs Gallop Gables; brand new but notably smaller/shoebox unit mix — imperfect comp for a 3BR family unit"
+      "project": "8@BT（99LH，Beauty World）",
+      "psf": "2Y 成交带 $2,527 PSF–$3,033 PSF（均 $2,735 PSF）",
+      "note": "量 $1,338,000–$4,180,000（均 $2,299,580）· Investment Suite（URA caveat）"
     },
     {
-      "project": "Watten House",
-      "psf": "Launch avg ~$3,230 psf (Nov 2023); balance units $3,220-$3,422 psf",
-      "note": "D11（Shelford）· Freehold · ~1.0km from Nanyang Primary; under construction · DEVELOPER LAUNCH PRICING ONLY, not resale — treat as ceiling benchmark; large-format 3BR+ units only, 3.2m ceilings; ~50% premium vs Gallop Gables"
+      "project": "The Reserve Residences（99LH，D21）",
+      "psf": "2Y 成交带 $2,304 PSF–$3,106 PSF（均 $2,579 PSF）",
+      "note": "量 $1,780,000–$7,823,020（均 $4,395,376）· Investment Suite（URA caveat）"
     },
     {
-      "project": "Gallop Green",
-      "psf": "Current range $2,259-$2,844 psf, avg ~$2,594 psf",
-      "note": "Freehold · District 10, Farrer/Dunearn vicinity (exact distance to Nanyang Pri not verified) · Only 53 units, low-density; ~20% premium vs Gallop Gables; an older source cited a stale $1,818psf figure — disregard"
+      "project": "Leedon Green（FH，D10）",
+      "psf": "2Y 成交带 $2,581 PSF–$3,496 PSF（均 $2,959 PSF）",
+      "note": "量 $1,290,000–$5,200,000（均 $2,646,169）· Investment Suite（URA caveat）"
     },
     {
-      "project": "Spanish Village",
-      "psf": "12-month range $1,978-$2,197 psf, avg $2,079 psf; recent transactions $1,978-$2,000 psf (May 2025)",
-      "note": "Freehold · Farrer Road, near Gallop Gables (exact distance not separately verified) · 226 units (denser than Gallop Gables); ~5-10% discount vs Gallop Gables; 10 years older"
-    },
-    {
-      "project": "Sommerville Park",
-      "psf": "12-month range $1,845-$2,426 psf, avg $2,221 psf; high $2,426psf (Sep 2025, 1,302sf)",
-      "note": "Freehold · Farrer Drive, Tanglin (exact distance not separately verified) · Oldest comp (1985); trades roughly in-line or slightly above Gallop Gables despite age — low-density Farrer/Tanglin premium"
-    },
-    {
-      "project": "Sutton Place",
-      "psf": "Aggregator shows anomalous $1,461psf (single stale transaction); current asking listing $3,080psf (2BR)",
-      "note": "Freehold · Farrer Road (exact distance not separately verified) · LOW CONFIDENCE/UNVERIFIABLE — only 4 transactions in 3 years, wide unexplained spread; reportedly up for en-bloc tender at $268m reserve which may be distorting resale pricing; do not use for adjustment grid without further verification"
-    },
-    {
-      "project": "The Levelz",
-      "psf": "12-month range $1,481-$2,328 psf, avg $2,008 psf; historical high $3.65m/2,465sf (~$1,481psf) Dec 2025",
-      "note": "Freehold · 38 Farrer Road (exact distance not separately verified) · 126 units, 11 floors; ~5-10% discount vs Gallop Gables despite being 7yrs newer — likely unit-mix/size effect"
+      "project": "Watten House（FH，D11 新盘）",
+      "psf": "2Y 成交带 $3,118 PSF–$3,386 PSF（均 $3,274 PSF）",
+      "note": "量 $4,799,000–$7,968,000（均 $5,412,139）· Investment Suite（URA caveat）"
     }
   ],
   "rentals": [
     {
-      "unit_type": "3BR",
-      "monthly_rent": 7700,
-      "note": "https://www.99.co/singapore/rent/condos-apartments/gallop-gables 12 个月中位成交租金"
+      "unit_type": "2BR",
+      "monthly_rent": "$4,400",
+      "note": "1,100 - 1,200 sqft · $3.83/sqft · Investment Suite（URA 租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$4,800",
+      "note": "1,100 - 1,200 sqft · $4.17/sqft · Investment Suite（URA 租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$5,000",
+      "note": "1,100 - 1,200 sqft · $4.35/sqft · Investment Suite（URA 租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$5,100",
+      "note": "1,100 - 1,200 sqft · $4.43/sqft · Investment Suite（URA 租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$5,800",
+      "note": "1,100 - 1,200 sqft · $5.04/sqft · Investment Suite（URA 租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$7,000",
+      "note": "1,500 - 1,600 sqft · $4.52/sqft · Investment Suite（URA 租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$5,800",
+      "note": "1130 sqft · $5.13/sqft · Investment Suite（URA 租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$7,000",
+      "note": "1550 sqft · $4.52/sqft · Investment Suite（URA 租约）"
     },
     {
       "unit_type": "3BR",
-      "monthly_rent": 9900,
-      "note": "https://www.propertyguru.com.sg/property-for-rent/at-gallop-gables-309 当前要价盘（78 Farrer Rd，2026-06-10 起租）"
+      "monthly_rent": "$7,500",
+      "note": "1,700 - 1,800 sqft · $4.29/sqft · Investment Suite（URA 租约）"
     },
     {
-      "unit_type": "All unit types (overall range)",
-      "monthly_rent": "6000-14000",
-      "note": "https://www.99.co/singapore/condos-apartments/gallop-gables"
+      "unit_type": "3BR",
+      "monthly_rent": "$7,700",
+      "note": "1,700 - 1,800 sqft · $4.40/sqft · Investment Suite（URA 租约）"
+    },
+    {
+      "unit_type": "3BR",
+      "monthly_rent": "$8,200",
+      "note": "1,700 - 1,800 sqft · $4.69/sqft · Investment Suite（URA 租约）"
+    },
+    {
+      "unit_type": "3BR",
+      "monthly_rent": "$8,000",
+      "note": "1744 sqft · $4.59/sqft · Investment Suite（URA 租约）"
+    },
+    {
+      "unit_type": "3BR",
+      "monthly_rent": "$7,800",
+      "note": "1755 sqft · $4.45/sqft · Investment Suite（URA 租约）"
+    },
+    {
+      "unit_type": "4BR",
+      "monthly_rent": "$13,500",
+      "note": "2,900 - 3,000 sqft · $4.58/sqft · Investment Suite（URA 租约）"
     }
   ],
   "yield_analysis": [
-    "Blended rent psf: $4.56/sqft/month (6-mo trailing), $4.37/sqft/month (1-yr trailing) per SRX aggregator — source: https://www.99.co/singapore/rent/condos-apartments/gallop-gables。",
-    "Indicative gross yield calc: representative 1,732sf 3BR at ~$2,141psf (2025 avg) = ~$3.71m purchase price; against $7,700/mo median rent (=$92,400/yr) → gross yield ≈ 2.5%",
-    "Using current asking rent $9,900/mo (=$118,800/yr) against same ~$3.71m value → gross yield ≈ 3.2%",
-    "Using Dec 2025 high-water psf $2,421 (implies ~$4.19m for 1,732sf) against $7,700/mo median rent → gross yield compresses to ≈ 2.2%",
-    "Gallop Gables sits in a low-2%-to-low-3% gross yield band typical of prime D10 low-rise FH condos — yield-compressed by land value/freehold premium and low density; supports a capital-appreciation/en-bloc-optionality thesis over a pure income thesis。",
-    "3BR is the most actively rented configuration (15 rental transactions in trailing 6 months) — reasonable liquidity for the yield estimate。",
-    "户型面积带在不同来源间略有出入（99.co vs Stacked Homes）——锁定具体单位后以 URA caveat/开发商图则确认实际面积，再复算收益率。",
-    "对本报告点估（S$4,090,000）：中位租 S$7,700/mo → 毛收益率 ~2.3%；当前要价租 S$9,900/mo → ~2.9%。D10 freehold 学区盘的典型形态：保值>现金流。"
+    "app 租约口径（2Y）：全盘租金带 S$3,500–17,000/mo（均 S$7,702、S$4.18 psf）；3BR 1,700-1,800 sqft 实际成交租约 S$7,500 / 7,700 / 7,800 / 8,000 / 8,200。",
+    "对模型点估（S$4,100,000）：3BR 中位租 ~S$7,800/mo → 毛收益率 ~2.3%。D10 freehold 学区盘的典型形态：保值>现金流。"
   ],
   "catchment": [
     "到 Nanyang Primary（52 King's Rd）的距离：0.73km——本所直连 OneMap 官方 Search API 实测（2026-07-03，项目参考点直线距离）✓在 1km 圈内。网络快照另见 0.56km（不同参考点口径）；签约前按具体门牌于 OneMap School Query 复测。",
@@ -342,48 +357,41 @@
   },
   "verification": [
     {
-      "claim": "140 户 / 7 座 / freehold / 1997 TOP",
+      "claim": "140 户 / 7 座 / 5 层 / freehold / TOP 1997 / 地块 253,307 sqft / 容积率 1.4 / Atbara+Straits",
+      "status": "confirmed-tier1",
+      "note": "Investment Suite Property Info 屏读（capture 留痕）；否定网络的 102 户与 4 层说法"
+    },
+    {
+      "claim": "10 笔 5Y caveat 成交（含 2025-12-09 纪录 S$6.88m @ S$2,421）",
+      "status": "confirmed-tier1",
+      "note": "app Sale 表逐行收割 + 顶部复核；收割器滚动伪影（同价三连行）已由静态复核剔除"
+    },
+    {
+      "claim": "同规格 3BR AVM 带 S$2,337–2,411 psf（22 个单元）",
+      "status": "confirmed-tier1",
+      "note": "Tower View per-unit Est. Val 全网格采集（7 座逐座验证切换）"
+    },
+    {
+      "claim": "3BR 月租 S$7,500-8,200（5 笔实际租约）",
+      "status": "confirmed-tier1",
+      "note": "app Rent 表"
+    },
+    {
+      "claim": "OneMap 0.73km 到 Nanyang Primary",
       "status": "confirmed",
-      "note": "EdgeProp 项目页 + Stacked Homes + SquareFoot + 99.co 一致；一篇 Yahoo/EdgeProp 新闻写 102 户为孤例（疑为笔误），以 140 为准"
+      "note": "OneMap 官方 API 实测（2026-07-03）"
     },
     {
-      "claim": "2025-12 成交 2,842sf S$6.88m @ S$2,421 psf（项目 psf 新高）",
-      "status": "confirmed",
-      "note": "propertyforsale.com.sg 成交表 + Yahoo/EdgeProp 新闻交叉"
-    },
-    {
-      "claim": "重复成交对：1,162sf 2021→2024 +18.4%；2,669sf 2017→2024 +36%",
-      "status": "confirmed",
-      "note": "同单位两次成交（新闻/成交表）——本报告 4.5%/yr 趋势假设的来源"
-    },
-    {
-      "claim": "OneMap 0.73km 到 Nanyang Primary（街道参考点）",
-      "status": "confirmed",
-      "note": "本所 OneMap Search API 直连实测（2026-07-03）；另一检索通道无数据，不影响 API 实测结论；按门牌复测后再签约"
-    },
-    {
-      "claim": "中位租 S$7,700/mo（3BR 1,732sf，12 个月）",
-      "status": "confirmed",
-      "note": "99.co/SRX 租务聚合口径"
-    },
-    {
-      "claim": "2017-2021 段成交行",
-      "status": "unverified",
-      "note": "单一聚合站，未经 REALIS 逐宗核对——仅用于趋势感，不入调整网格（网格只用 2023+）"
-    },
-    {
-      "claim": "本盘无整盘集体出售记录；2008-07 Straits Trading 2 座 38 户 EOI 整批求售未果，2009-03 起逐户售出（附 7%×2 年租金保证）；『三次流拍』属 Spanish Village",
+      "claim": "en-bloc 史（无整盘尝试；2008-09 开发商 2 座整批求售未果）",
       "status": "partially-verified",
-      "note": "实质（无 LTSA、Spanish Village 归属）已证实；日期与逐户价格来自同期二级报道，S$162m 总价仅单一来源未获旁证——按部分核实处理。"
+      "note": "实质证实；日期与金额来自二级来源——不影响估值"
     }
   ],
   "data_gaps": [
-    "维护费、车位数、MCST 财务状况未公开——看房尽调必查。",
-    "调整网格未含同线锚（研究对象为代表性单位而非特定门牌）——锁定具体单位后用其历史成交重跑。",
-    "2BR 户数两来源不一致（31 vs 49）——以 MCST 名册为准。",
-    "pre-2023 成交行未经 REALIS 核对；2023-2026 行来自聚合站（与新闻交叉过 4 宗）",
-    "楼层/朝向溢价按 ±0.4%/层近似——低层楼盘该项影响本就有限，但 1 楼带庭院单位另议。",
-    "『45 宗/2025』的来源口径（疑含租赁或多年累计）未再核——本报告流动性判断只采用成交表 caveat 计数（3-5 宗/年）。"
+    "维护费、MCST 财务未公开——看房尽调必查。",
+    "app 5Y 窗口外的更早成交未采集（够用：趋势由两对重复成交+AVM 交叉锚定）。",
+    "楼层/朝向溢价按 ±0.4%/层近似；1 楼带庭院单位另议。",
+    "网络聚合站曾出现的『Jan 2023 1,184sf $2,408,000』在 app 5Y caveat 表中不存在——已剔除,不入模型。"
   ],
   "sources": [
     "http://propertyhighlights.blogspot.com/2008/07/en-bloc-site-relaunched-with-40-lower.html",
@@ -454,6 +462,213 @@
       "honesty_uncertainty": 8.5,
       "presentation_bilingual": 7.0
     },
-    "note": "调整网格/权重/敏感性/区间/BSD/收益率全部独立复算一致；Straits Trading 事件与 Spanish Village 归属经第三方源证实。"
-  }
+    "note": "（此为网络数据版的验收记录——Tier-1 重做后待重新验收）",
+    "superseded": true
+  },
+  "avm_crosscheck": [
+    {
+      "blk": "74",
+      "unit": "#02-01",
+      "sqft": "1,755",
+      "est_val": "$4,202,000",
+      "est_psf": 2395
+    },
+    {
+      "blk": "74",
+      "unit": "#02-04",
+      "sqft": "1,755",
+      "est_val": "$4,202,000",
+      "est_psf": 2395
+    },
+    {
+      "blk": "74",
+      "unit": "#03-01",
+      "sqft": "1,744",
+      "est_val": "$4,159,000",
+      "est_psf": 2385
+    },
+    {
+      "blk": "74",
+      "unit": "#03-04",
+      "sqft": "1,733",
+      "est_val": "$4,163,000",
+      "est_psf": 2402
+    },
+    {
+      "blk": "76",
+      "unit": "#02-01",
+      "sqft": "1,755",
+      "est_val": "$4,188,000",
+      "est_psf": 2387
+    },
+    {
+      "blk": "76",
+      "unit": "#02-04",
+      "sqft": "1,733",
+      "est_val": "$4,164,000",
+      "est_psf": 2403
+    },
+    {
+      "blk": "76",
+      "unit": "#03-01",
+      "sqft": "1,733",
+      "est_val": "$4,157,000",
+      "est_psf": 2399
+    },
+    {
+      "blk": "76",
+      "unit": "#03-04",
+      "sqft": "1,744",
+      "est_val": "$4,134,000",
+      "est_psf": 2371
+    },
+    {
+      "blk": "78",
+      "unit": "#02-01",
+      "sqft": "1,755",
+      "est_val": "$4,174,000",
+      "est_psf": 2379
+    },
+    {
+      "blk": "78",
+      "unit": "#03-01",
+      "sqft": "1,733",
+      "est_val": "$4,178,000",
+      "est_psf": 2411
+    },
+    {
+      "blk": "80",
+      "unit": "#02-01",
+      "sqft": "1,744",
+      "est_val": "$4,189,000",
+      "est_psf": 2402
+    },
+    {
+      "blk": "80",
+      "unit": "#02-04",
+      "sqft": "1,733",
+      "est_val": "$4,137,000",
+      "est_psf": 2387
+    },
+    {
+      "blk": "80",
+      "unit": "#02-05",
+      "sqft": "1,744",
+      "est_val": "$4,189,000",
+      "est_psf": 2402
+    },
+    {
+      "blk": "80",
+      "unit": "#03-01",
+      "sqft": "1,722",
+      "est_val": "$4,083,000",
+      "est_psf": 2371
+    },
+    {
+      "blk": "80",
+      "unit": "#03-04",
+      "sqft": "1,733",
+      "est_val": "$4,130,000",
+      "est_psf": 2383
+    },
+    {
+      "blk": "80",
+      "unit": "#03-05",
+      "sqft": "1,722",
+      "est_val": "$4,083,000",
+      "est_psf": 2371
+    },
+    {
+      "blk": "82",
+      "unit": "#02-01",
+      "sqft": "1,744",
+      "est_val": "$4,075,000",
+      "est_psf": 2337
+    },
+    {
+      "blk": "82",
+      "unit": "#02-04",
+      "sqft": "1,744",
+      "est_val": "$4,075,000",
+      "est_psf": 2337
+    },
+    {
+      "blk": "82",
+      "unit": "#02-05",
+      "sqft": "1,744",
+      "est_val": "$4,075,000",
+      "est_psf": 2337
+    },
+    {
+      "blk": "82",
+      "unit": "#03-04",
+      "sqft": "1,733",
+      "est_val": "$4,121,000",
+      "est_psf": 2378
+    },
+    {
+      "blk": "82",
+      "unit": "#04-01",
+      "sqft": "1,744",
+      "est_val": "$4,164,000",
+      "est_psf": 2388
+    },
+    {
+      "blk": "82",
+      "unit": "#04-04",
+      "sqft": "1,755",
+      "est_val": "$4,192,000",
+      "est_psf": 2389
+    }
+  ],
+  "profitability": [
+    {
+      "unit": "Blk 80 #2-01 (1,744 sqft)",
+      "bought": "Aug 2005 @ $1,240,000 ($711)",
+      "sold": "05 Aug 2025 @ $4,108,000 ($2,356)",
+      "profit": "▲$2,868,000 (▲$1,645 psf)",
+      "holding": "19y 11m 18d",
+      "annualised": "6.18%"
+    },
+    {
+      "unit": "Blk 82 #1-06 (1,550 sqft)",
+      "bought": "May 2004 @ $980,000 ($632)",
+      "sold": "09 Sep 2024 @ $2,980,000 ($1,923)",
+      "profit": "▲$2,000,000 (▲$1,291 psf)",
+      "holding": "20y 3m 26d",
+      "annualised": "5.62%"
+    },
+    {
+      "unit": "Blk 82 #1-03 (1,550 sqft)",
+      "bought": "Sep 2002 @ $990,000 ($639)",
+      "sold": "05 Aug 2025 @ $3,050,000 ($1,968)",
+      "profit": "▲$2,060,000 (▲$1,329 psf)",
+      "holding": "22y 10m 14d",
+      "annualised": "5.04%"
+    },
+    {
+      "unit": "Blk 70 #2-02 (2,669 sqft)",
+      "bought": "Jul 2017 @ $4,500,000 ($1,686)",
+      "sold": "20 Nov 2024 @ $6,138,000 ($2,299)",
+      "profit": "▲$1,638,000 (▲$613 psf)",
+      "holding": "7y 4m 11d",
+      "annualised": "4.31%"
+    },
+    {
+      "unit": "Blk 72 #3-03 (2,842 sqft)",
+      "bought": "Jan 2014 @ $4,800,000 ($1,689)",
+      "sold": "09 Dec 2025 @ $6,880,000 ($2,421)",
+      "profit": "▲$2,080,000 (▲$732 psf)",
+      "holding": "11y 10m 18d",
+      "annualised": "3.08%"
+    },
+    {
+      "unit": "Blk 78 #3-01 (1,733 sqft)",
+      "bought": "Oct 2013 @ $3,100,000 ($1,789)",
+      "sold": "08 May 2025 @ $4,080,000 ($2,354)",
+      "profit": "▲$980,000 (▲$565 psf)",
+      "holding": "11y 7m 9d",
+      "annualised": "2.39%"
+    }
+  ]
 }

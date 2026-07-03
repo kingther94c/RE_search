@@ -1,0 +1,782 @@
+[
+  {
+    "text": "1:24",
+    "desc": "1:24 PM",
+    "id": "clock",
+    "full_id": "com.android.systemui:id/clock",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[80,0][148,112]",
+    "center": [
+      114,
+      56
+    ]
+  },
+  {
+    "text": "Fri, Jul 3",
+    "desc": "",
+    "id": "date",
+    "full_id": "com.android.systemui:id/date",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[164,0][271,112]",
+    "center": [
+      217,
+      56
+    ]
+  },
+  {
+    "text": "T-Mobile",
+    "desc": "",
+    "id": "shade_carrier_text",
+    "full_id": "com.android.systemui:id/shade_carrier_text",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2220,37][2330,75]",
+    "center": [
+      2275,
+      56
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Wifi signal full.",
+    "id": "wifi_signal",
+    "full_id": "com.android.systemui:id/wifi_signal",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[2343,41][2373,71]",
+    "center": [
+      2358,
+      56
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Phone three bars.",
+    "id": "mobile_combo",
+    "full_id": "com.android.systemui:id/mobile_combo",
+    "cls": "android.widget.FrameLayout",
+    "clickable": false,
+    "bounds": "[2373,34][2403,78]",
+    "center": [
+      2388,
+      56
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Battery 100 percent.",
+    "id": "batteryRemainingIcon",
+    "full_id": "com.android.systemui:id/batteryRemainingIcon",
+    "cls": "android.widget.LinearLayout",
+    "clickable": false,
+    "bounds": "[2415,0][2510,112]",
+    "center": [
+      2462,
+      56
+    ]
+  },
+  {
+    "text": "100%",
+    "desc": "",
+    "id": "battery_percentage_view",
+    "full_id": "com.android.systemui:id/battery_percentage_view",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2431,0][2510,112]",
+    "center": [
+      2470,
+      56
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Display brightness",
+    "id": "brightness_slider",
+    "full_id": "com.android.systemui:id/brightness_slider",
+    "cls": "android.widget.FrameLayout",
+    "clickable": false,
+    "bounds": "[80,144][1200,240]",
+    "center": [
+      640,
+      192
+    ]
+  },
+  {
+    "text": "Display brightness",
+    "desc": "",
+    "id": "slider",
+    "full_id": "com.android.systemui:id/slider",
+    "cls": "android.widget.SeekBar",
+    "clickable": false,
+    "bounds": "[80,144][1200,240]",
+    "center": [
+      640,
+      192
+    ]
+  },
+  {
+    "text": "Internet, AndroidWifi",
+    "desc": "Internet,AndroidWifi",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.Switch",
+    "clickable": true,
+    "bounds": "[80,272][442,432]",
+    "center": [
+      261,
+      352
+    ]
+  },
+  {
+    "text": "Internet",
+    "desc": "",
+    "id": "tile_label",
+    "full_id": "com.android.systemui:id/tile_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[172,314][358,352]",
+    "center": [
+      265,
+      333
+    ]
+  },
+  {
+    "text": "AndroidWifi",
+    "desc": "",
+    "id": "app_label",
+    "full_id": "com.android.systemui:id/app_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[172,352][358,390]",
+    "center": [
+      265,
+      371
+    ]
+  },
+  {
+    "text": "Bluetooth, On",
+    "desc": "Bluetooth.",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.Switch",
+    "clickable": true,
+    "bounds": "[458,272][820,432]",
+    "center": [
+      639,
+      352
+    ]
+  },
+  {
+    "text": "Bluetooth",
+    "desc": "",
+    "id": "tile_label",
+    "full_id": "com.android.systemui:id/tile_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[550,314][776,352]",
+    "center": [
+      663,
+      333
+    ]
+  },
+  {
+    "text": "On",
+    "desc": "",
+    "id": "app_label",
+    "full_id": "com.android.systemui:id/app_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[550,352][776,390]",
+    "center": [
+      663,
+      371
+    ]
+  },
+  {
+    "text": "Flashlight, Off",
+    "desc": "Flashlight",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.Switch",
+    "clickable": true,
+    "bounds": "[836,272][1198,432]",
+    "center": [
+      1017,
+      352
+    ]
+  },
+  {
+    "text": "Flashlight",
+    "desc": "",
+    "id": "tile_label",
+    "full_id": "com.android.systemui:id/tile_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[928,314][1154,352]",
+    "center": [
+      1041,
+      333
+    ]
+  },
+  {
+    "text": "Off",
+    "desc": "",
+    "id": "app_label",
+    "full_id": "com.android.systemui:id/app_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[928,352][1154,390]",
+    "center": [
+      1041,
+      371
+    ]
+  },
+  {
+    "text": "Do Not Disturb, Off",
+    "desc": "Do Not Disturb.",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.Switch",
+    "clickable": true,
+    "bounds": "[80,448][442,608]",
+    "center": [
+      261,
+      528
+    ]
+  },
+  {
+    "text": "Do Not Disturb",
+    "desc": "",
+    "id": "tile_label",
+    "full_id": "com.android.systemui:id/tile_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[172,490][398,528]",
+    "center": [
+      285,
+      509
+    ]
+  },
+  {
+    "text": "Off",
+    "desc": "",
+    "id": "app_label",
+    "full_id": "com.android.systemui:id/app_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[172,528][398,566]",
+    "center": [
+      285,
+      547
+    ]
+  },
+  {
+    "text": "Alarm, No alarm set",
+    "desc": "Alarm, No alarm set",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.LinearLayout",
+    "clickable": true,
+    "bounds": "[458,448][820,608]",
+    "center": [
+      639,
+      528
+    ]
+  },
+  {
+    "text": "Alarm",
+    "desc": "",
+    "id": "tile_label",
+    "full_id": "com.android.systemui:id/tile_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[550,490][736,528]",
+    "center": [
+      643,
+      509
+    ]
+  },
+  {
+    "text": "No alarm set",
+    "desc": "",
+    "id": "app_label",
+    "full_id": "com.android.systemui:id/app_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[550,528][736,566]",
+    "center": [
+      643,
+      547
+    ]
+  },
+  {
+    "text": "Airplane mode, Off",
+    "desc": "Airplane mode",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.Switch",
+    "clickable": true,
+    "bounds": "[836,448][1198,608]",
+    "center": [
+      1017,
+      528
+    ]
+  },
+  {
+    "text": "Airplane mode",
+    "desc": "",
+    "id": "tile_label",
+    "full_id": "com.android.systemui:id/tile_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[928,490][1154,528]",
+    "center": [
+      1041,
+      509
+    ]
+  },
+  {
+    "text": "Off",
+    "desc": "",
+    "id": "app_label",
+    "full_id": "com.android.systemui:id/app_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[928,528][1154,566]",
+    "center": [
+      1041,
+      547
+    ]
+  },
+  {
+    "text": "Device controls, Unavailable",
+    "desc": "Device controls",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.LinearLayout",
+    "clickable": false,
+    "bounds": "[80,624][442,784]",
+    "center": [
+      261,
+      704
+    ]
+  },
+  {
+    "text": "Device controls",
+    "desc": "",
+    "id": "tile_label",
+    "full_id": "com.android.systemui:id/tile_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[172,666][358,704]",
+    "center": [
+      265,
+      685
+    ]
+  },
+  {
+    "text": "Unavailable",
+    "desc": "",
+    "id": "app_label",
+    "full_id": "com.android.systemui:id/app_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[172,704][358,742]",
+    "center": [
+      265,
+      723
+    ]
+  },
+  {
+    "text": "Auto-rotate, On / folded",
+    "desc": "Auto-rotate screen",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.Switch",
+    "clickable": true,
+    "bounds": "[458,624][820,784]",
+    "center": [
+      639,
+      704
+    ]
+  },
+  {
+    "text": "Auto-rotate",
+    "desc": "",
+    "id": "tile_label",
+    "full_id": "com.android.systemui:id/tile_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[550,666][776,704]",
+    "center": [
+      663,
+      685
+    ]
+  },
+  {
+    "text": "On / folded",
+    "desc": "",
+    "id": "app_label",
+    "full_id": "com.android.systemui:id/app_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[550,704][776,742]",
+    "center": [
+      663,
+      723
+    ]
+  },
+  {
+    "text": "QR code scanner",
+    "desc": "QR code scanner",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.LinearLayout",
+    "clickable": true,
+    "bounds": "[836,624][1198,784]",
+    "center": [
+      1017,
+      704
+    ]
+  },
+  {
+    "text": "QR code scanner",
+    "desc": "",
+    "id": "tile_label",
+    "full_id": "com.android.systemui:id/tile_label",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[928,685][1114,723]",
+    "center": [
+      1021,
+      704
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Page 1 of 2",
+    "id": "footer_page_indicator",
+    "full_id": "com.android.systemui:id/footer_page_indicator",
+    "cls": "android.view.ViewGroup",
+    "clickable": false,
+    "bounds": "[624,824][656,840]",
+    "center": [
+      640,
+      832
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Edit order of settings.",
+    "id": "edit",
+    "full_id": "android:id/edit",
+    "cls": "android.widget.ImageView",
+    "clickable": true,
+    "bounds": "[1100,784][1196,880]",
+    "center": [
+      1148,
+      832
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Signed in as Owner",
+    "id": "icon",
+    "full_id": "com.android.systemui:id/icon",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[948,1460][988,1500]",
+    "center": [
+      968,
+      1480
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Open settings.",
+    "id": "icon",
+    "full_id": "com.android.systemui:id/icon",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[1044,1460][1084,1500]",
+    "center": [
+      1064,
+      1480
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Power menu",
+    "id": "icon",
+    "full_id": "com.android.systemui:id/icon",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[1140,1460][1180,1500]",
+    "center": [
+      1160,
+      1480
+    ]
+  },
+  {
+    "text": "Find Hub",
+    "desc": "",
+    "id": "app_name_text",
+    "full_id": "android:id/app_name_text",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1416,183][1511,216]",
+    "center": [
+      1463,
+      199
+    ]
+  },
+  {
+    "text": "•",
+    "desc": "",
+    "id": "header_text_divider",
+    "full_id": "android:id/header_text_divider",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1519,183][1527,216]",
+    "center": [
+      1523,
+      199
+    ]
+  },
+  {
+    "text": "kingther94c@gmail.com",
+    "desc": "",
+    "id": "header_text",
+    "full_id": "android:id/header_text",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1535,183][1795,216]",
+    "center": [
+      1665,
+      199
+    ]
+  },
+  {
+    "text": "•",
+    "desc": "",
+    "id": "time_divider",
+    "full_id": "android:id/time_divider",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1803,183][1811,216]",
+    "center": [
+      1807,
+      199
+    ]
+  },
+  {
+    "text": "3 minutes ago",
+    "desc": "",
+    "id": "time",
+    "full_id": "android:id/time",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1819,183][1853,216]",
+    "center": [
+      1836,
+      199
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Collapse",
+    "id": "expand_button",
+    "full_id": "android:id/expand_button",
+    "cls": "android.widget.Button",
+    "clickable": true,
+    "bounds": "[2368,144][2480,256]",
+    "center": [
+      2424,
+      200
+    ]
+  },
+  {
+    "text": "Find Hub network",
+    "desc": "",
+    "id": "title",
+    "full_id": "android:id/title",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1416,244][2248,287]",
+    "center": [
+      1832,
+      265
+    ]
+  },
+  {
+    "text": "This device is now part of the network, which helps owners securely find their lost items. Set a PIN, pattern, or password to locate your items with the network.",
+    "desc": "",
+    "id": "big_text",
+    "full_id": "android:id/big_text",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1416,299][2448,377]",
+    "center": [
+      1932,
+      338
+    ]
+  },
+  {
+    "text": "Set a screen lock",
+    "desc": "",
+    "id": "title",
+    "full_id": "android:id/title",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1416,461][1628,499]",
+    "center": [
+      1522,
+      480
+    ]
+  },
+  {
+    "text": "•",
+    "desc": "",
+    "id": "time_divider",
+    "full_id": "android:id/time_divider",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1636,465][1644,498]",
+    "center": [
+      1640,
+      481
+    ]
+  },
+  {
+    "text": "6 minutes ago",
+    "desc": "",
+    "id": "time",
+    "full_id": "android:id/time",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1652,465][1686,498]",
+    "center": [
+      1669,
+      481
+    ]
+  },
+  {
+    "text": "For added security, set a PIN, pattern, or password for this device.",
+    "desc": "",
+    "id": "text",
+    "full_id": "android:id/text",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1416,503][2368,543]",
+    "center": [
+      1892,
+      523
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Expand",
+    "id": "expand_button",
+    "full_id": "android:id/expand_button",
+    "cls": "android.widget.Button",
+    "clickable": true,
+    "bounds": "[2368,421][2480,587]",
+    "center": [
+      2424,
+      504
+    ]
+  },
+  {
+    "text": "Silent",
+    "desc": "",
+    "id": "header_label",
+    "full_id": "com.android.systemui:id/header_label",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1320,623][1438,719]",
+    "center": [
+      1379,
+      671
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Clear all silent notifications",
+    "id": "btn_clear_all",
+    "full_id": "com.android.systemui:id/btn_clear_all",
+    "cls": "android.widget.ImageView",
+    "clickable": true,
+    "bounds": "[2376,623][2472,719]",
+    "center": [
+      2424,
+      671
+    ]
+  },
+  {
+    "text": "Configure physical keyboards",
+    "desc": "",
+    "id": "title",
+    "full_id": "android:id/title",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1416,763][1780,801]",
+    "center": [
+      1598,
+      782
+    ]
+  },
+  {
+    "text": "Tap to select language and layout",
+    "desc": "",
+    "id": "text",
+    "full_id": "android:id/text",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1416,805][2368,845]",
+    "center": [
+      1892,
+      825
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Expand",
+    "id": "expand_button",
+    "full_id": "android:id/expand_button",
+    "cls": "android.widget.Button",
+    "clickable": true,
+    "bounds": "[2368,723][2480,889]",
+    "center": [
+      2424,
+      806
+    ]
+  },
+  {
+    "text": "Manage",
+    "desc": "Manage",
+    "id": "manage_text",
+    "full_id": "com.android.systemui:id/manage_text",
+    "cls": "android.widget.Button",
+    "clickable": true,
+    "bounds": "[1344,917][1524,1013]",
+    "center": [
+      1434,
+      965
+    ]
+  },
+  {
+    "text": "Clear all",
+    "desc": "Clear all notifications.",
+    "id": "dismiss_text",
+    "full_id": "com.android.systemui:id/dismiss_text",
+    "cls": "android.widget.Button",
+    "clickable": true,
+    "bounds": "[2268,917][2448,1013]",
+    "center": [
+      2358,
+      965
+    ]
+  }
+]

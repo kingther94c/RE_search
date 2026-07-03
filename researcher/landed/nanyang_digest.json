@@ -133,6 +133,26 @@
   ],
   "example_transactions": [
     {
+      "date": "2026-03-30",
+      "street": "1 Kingsmead Road",
+      "type": "Detached（freehold）",
+      "price": "$21,998,000",
+      "land_sqft": 12168,
+      "land_psf": "$1,808",
+      "note": "本环 2Y 最新大地块成交。地块面积与榜单上要价 $24m 的『24 Kingsmead』完全相同（12,168 sqft）——极可能为同一房源/孪生地块：要价较此成交高 ~9%。",
+      "source": "Investment Suite（URA caveat），2Y 街档"
+    },
+    {
+      "date": "2025-11-18",
+      "street": "2 Kingsmead Road",
+      "type": "Detached（freehold，TOP 1985）",
+      "price": "$26,800,000",
+      "land_sqft": 11802,
+      "land_psf": "$2,271",
+      "note": "同街第二笔：较 1 号溢价 26% psf——状态/朝向差异的定价带。",
+      "source": "Investment Suite（URA caveat），2Y 街档"
+    },
+    {
       "date": "2025-2026 (unverified 本次刷新)",
       "street": "Coronation Road West",
       "type": "Semi-detached",
@@ -140,7 +160,7 @@
       "land_sqft": null,
       "land_psf": "~S$2,202 psf",
       "note": "Freehold, near-new. From the 2026-06-30 基线研究; source page temporarily unavailable; no independent corroboration found — treat as provisional and re-verify via URA REALIS before offering.",
-      "source": "https://www.edgeprop.sg/landed-house/coronation-road-west"
+      "source": "https://www.edgeprop.sg/landed-house/coronation-road-west（Tier-2/3 口径，未经 app 复核）"
     },
     {
       "date": "Q4 2025 (new TOP)",
@@ -150,7 +170,7 @@
       "land_sqft": null,
       "land_psf": "~S$3,163–3,882 psf built",
       "note": "Brand-new freehold product. From the 2026-06-30 基线研究; unverifiable 本次刷新中 (same source-availability issue).",
-      "source": "https://www.edgeprop.sg/landed-house/coronation-road-west"
+      "source": "https://www.edgeprop.sg/landed-house/coronation-road-west（Tier-2/3 口径，未经 app 复核）"
     },
     {
       "date": "Jul 2025 (unverified 本次刷新)",
@@ -160,7 +180,7 @@
       "land_sqft": 14681,
       "land_psf": "~S$1,928 psf",
       "note": "GCBA conservation cluster. From the 2026-06-30 基线研究 — could not re-source this specific print; a different, older Cornwall Gardens transaction was found instead (see note transaction below).",
-      "source": "unverifiable - not re-found 本次刷新"
+      "source": "unverifiable - not re-found 本次刷新（Tier-2/3 口径，未经 app 复核）"
     },
     {
       "date": "Apr 2024",
@@ -170,7 +190,7 @@
       "land_sqft": 19207,
       "land_psf": "~S$1,875 psf",
       "note": "CONFIRMED independently 本次刷新 via EdgeProp. Older than target window (2025-mid2026) but corroborates the GCBA psf band for this cluster.",
-      "source": "https://www.edgeprop.sg/landed-house/cornwall-gardens"
+      "source": "https://www.edgeprop.sg/landed-house/cornwall-gardens（Tier-2/3 口径，未经 app 复核）"
     },
     {
       "date": "current listing, 2026 (not a closed sale)",
@@ -180,7 +200,7 @@
       "land_sqft": 19440,
       "land_psf": "~S$1,698 psf",
       "note": "Auction listing, not a confirmed transacted price — asking/reserve level only.",
-      "source": "https://www.edgeprop.sg/property-news/rare-freehold-gcb-cornwall-gardens-auction-33-mil"
+      "source": "https://www.edgeprop.sg/property-news/rare-freehold-gcb-cornwall-gardens-auction-33-mil（Tier-2/3 口径，未经 app 复核）"
     },
     {
       "date": "2026 (live listing, unverified as sold)",
@@ -190,7 +210,7 @@
       "land_sqft": null,
       "land_psf": "指示性 ~S$2,800–4,200 psf（要价口径，土地面积未确认——谨慎使用）",
       "note": "Freehold, walking distance to school. A currently-listed 'almost brand new' bungalow on Kingsmead Rd marketed '1km Nanyang Pri Sch' asks S$25.7m (2026) — confirms continued strong asking levels in this pocket, but this is an ASK not a closed transaction.",
-      "source": "https://www.propertyguru.com.sg/listing/for-sale-kingsmead-road-almost-brand-new-bungalow-1km-nanyang-pri-sch-500091492"
+      "source": "https://www.propertyguru.com.sg/listing/for-sale-kingsmead-road-almost-brand-new-bungalow-1km-nanyang-pri-sch-500091492（Tier-2/3 口径，未经 app 复核）"
     },
     {
       "date": "Dec 2025",
@@ -200,7 +220,7 @@
       "land_sqft": 19549,
       "land_psf": "~S$2,046 psf",
       "note": "CONFIRMED independently 本次刷新 via EdgeProp ('fetched $40 million ($2,046 psf) last December' on a 19,549 sqft plot). Large GCB-grade plot.",
-      "source": "https://www.edgeprop.sg/property-news/two-gcbs-belmont-road-sale-888-mil"
+      "source": "https://www.edgeprop.sg/property-news/two-gcbs-belmont-road-sale-888-mil（Tier-2/3 口径，未经 app 复核）"
     },
     {
       "date": "2026 (live listing, not a closed sale)",
@@ -210,7 +230,7 @@
       "land_sqft": 41741,
       "land_psf": "~S$2,128 psf",
       "note": "本次刷新新增: current combined asking price for two adjacent GCB plots, slightly above the confirmed Dec-2025 transacted psf on the same road — suggests sellers pricing above the last print.",
-      "source": "https://www.edgeprop.sg/property-news/two-gcbs-belmont-road-sale-888-mil"
+      "source": "https://www.edgeprop.sg/property-news/two-gcbs-belmont-road-sale-888-mil（Tier-2/3 口径，未经 app 复核）"
     },
     {
       "date": "n/a",
@@ -220,7 +240,7 @@
       "land_sqft": null,
       "land_psf": "n/a",
       "note": "~0.95km; condo comparison point. 本次未重验（价格类以 URA REALIS 为准；规划/学校/水务类以 URA、MOE、PUB 官方页为准） (out of scope for landed price focus).",
-      "source": "沿用 2026-06-30 基线; 本次未重验（价格类以 URA REALIS 为准；规划/学校/水务类以 URA、MOE、PUB 官方页为准）"
+      "source": "沿用 2026-06-30 基线; 本次未重验（价格类以 URA REALIS 为准；规划/学校/水务类以 URA、MOE、PUB 官方页为准）（Tier-2/3 口径，未经 app 复核）"
     }
   ],
   "hazards_watchouts": [
@@ -338,6 +358,7 @@
   ],
   "zoning_planning_notes": [
     "OneMap 实测（2026-07-03，公共 Search API，街道参考点直线距离到 52 King's Rd 校址）：Kingsmead/King's Rd ~0.30km、Coronation Rd 0.28km、Coronation Dr 0.35km、Prince of Wales Rd 0.27km 均在圈内；Coronation Rd WEST 1.47km、Namly Ave 1.27km 的街道参考点在圈外（两街均较长，圈界附近的门牌需逐址复测）。街道参考点≠门牌：签约前用 OneMap School Query 按确切地址复核。",
+    "Tier-1 佐证（Investment Suite）：8 Kingsmead Road 的官方 subtown 归属为 LEEDON PARK——支持『Kingsmead 属 GCBA 口袋』的判断；该址地块 7,165.59 sqft、freehold、1998 年以来有本址成交史。",
     "Most of the tight 1km ring (King's Rd, Coronation Rd/West, Prince/Princess of Wales) remains URA 'Landed Housing' (non-GCBA): 2–3 storeys, semi-D/terrace/detached permitted, setbacks vary by road type — UNCHANGED under the now-gazetted Master Plan 2025 (adopted 1 Dec 2025); no landed-zoning revision found specific to this ring.",
     "URA Master Plan 2025 status update: formally GAZETTED on 1 December 2025 (no longer 'draft') after Singapore's largest-ever public engagement exercise, becoming the official land-use blueprint for the next 10–15 years. [https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr25-64]",
     "GCBA plots (Leedon Park, Bin Tong, Belmont upper, Cornwall, Chatsworth): unchanged — detached only, min 1,400 sqm, ~35–40% coverage, 2-storey+attic, 3m setbacks; subdivision below 1,400 sqm not allowed. Confirmed still 39 gazetted GCB Areas islandwide (~2,700–2,800 GCB units total) with no boundary revisions as of 2026.",
@@ -365,11 +386,11 @@
   "data_gaps": [
     "2026 年 Phase 2C 抽签结果 2026-08-11 才公布——本报告的学区需求判断基于 2022-2025 数据（均抽签）。",
     "Bukit Timah 运河扩容工程（Rifle Range Rd-Jalan Kampong Chantek）官方完工确认未找到；2026-02 Dunearn 洪水预警说明风险仍活跃。",
-    "Coronation Road West 价格带（早前研究引 EdgeProp）来源页暂不可访问、未能独立复核——数字为暂定值，出价前用 URA REALIS 复核。",
     "99.co 两条 Kingsmead 房源与 PropertyGuru 22802877 的地块面积/psf 口径未确认（疑为建筑面积）。",
     "校门口 King's Road 接送拥堵无直接来源佐证（标记 unverifiable）——现场早晚高峰各看一次。",
     "MOE 2026 减招是否落在 Nanyang/RGPS 未获校级确认——需查 MOE P1 portal 校级 vacancy。",
-    "挂牌天数（DOM）未采集——『>90 天挂牌大胆议价』的判断需以 portal 挂牌历史为准。"
+    "挂牌天数（DOM）未采集——『>90 天挂牌大胆议价』的判断需以 portal 挂牌历史为准。",
+    "Kingsmead 外的环内街（King's Rd/Coronation 段）的 app 街档 caveat 待补采——本轮 Tier-1 锚以 Kingsmead 为主。"
   ],
   "best_for": "新加坡公民/长期 PR 家庭，目标真·1km Nanyang Primary 抽签资格 + D10 永久地契土地保值；预算带：S$6-9m（量子入场/边缘街）、S$13-20m（核心街 semi-D/detached）、S$24m+（Kingsmead/GCBA 大地块）。不适合：追求现金流的投资者（landed 租金收益率低）、无法通过 LDAU 的外国买家、以及指望 GEP 品牌继续溢价的买家。 [EN] SC / long-term-PR families buying genuine 1km ballot eligibility plus D10 freehold land preservation; not for yield investors, LDAU-ineligible foreigners, or buyers still paying for the discontinued GEP badge.",
   "sources": [
@@ -503,7 +524,8 @@
       "honesty_uncertainty": 8.5,
       "presentation_bilingual": 6.5
     },
-    "note": "3 项载重数字抽查全部通过（MOE GEP 20260303 / URA pr26-26+31 / MAS SSD）；13 条 psf 与 BSD 算例全部复算一致。"
+    "note": "（网络数据版验收记录——Tier-1 补锚后待重新验收）",
+    "superseded": true
   },
   "subtitle": "实战 Checklist 驱动 · 基线研究 2026-06-30 · 本次刷新 2026-07-03 · 独立分析师验收 PASS 8.3/10"
 }

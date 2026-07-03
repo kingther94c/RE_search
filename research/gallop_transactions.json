@@ -1,0 +1,134 @@
+[
+  {
+    "date": "10 Dec 2025",
+    "street": "72 Farrer Road",
+    "level": "3",
+    "unit": "03",
+    "unit_type": "4BR",
+    "area_sqft": "2,842",
+    "psf": "$2,421",
+    "price": "$6,880,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "09 Dec 2025",
+    "street": "72 Farrer Road",
+    "level": "3",
+    "unit": "03",
+    "unit_type": "4BR",
+    "area_sqft": "2,842",
+    "psf": "$2,421",
+    "price": "$6,880,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "04 Dec 2025",
+    "street": "72 Farrer Road",
+    "level": "3",
+    "unit": "03",
+    "unit_type": "4BR",
+    "area_sqft": "2,842",
+    "psf": "$2,421",
+    "price": "$6,880,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "05 Aug 2025",
+    "street": "80 Farrer Road",
+    "level": "2",
+    "unit": "01",
+    "unit_type": "3BR",
+    "area_sqft": "1,744",
+    "psf": "$2,356",
+    "price": "$4,108,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "05 Aug 2025",
+    "street": "82 Farrer Road",
+    "level": "1",
+    "unit": "03",
+    "unit_type": "2BR",
+    "area_sqft": "1,550",
+    "psf": "$1,968",
+    "price": "$3,050,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "08 May 2025",
+    "street": "78 Farrer Road",
+    "level": "3",
+    "unit": "01",
+    "unit_type": "3BR",
+    "area_sqft": "1,733",
+    "psf": "$2,354",
+    "price": "$4,080,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "20 Nov 2024",
+    "street": "70 Farrer Road",
+    "level": "2",
+    "unit": "02",
+    "unit_type": "4BR",
+    "area_sqft": "2,669",
+    "psf": "$2,299",
+    "price": "$6,138,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "09 Sep 2024",
+    "street": "82 Farrer Road",
+    "level": "1",
+    "unit": "06",
+    "unit_type": "2BR",
+    "area_sqft": "1,550",
+    "psf": "$1,923",
+    "price": "$2,980,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "19 Feb 2024",
+    "street": "76 Farrer Road",
+    "level": "3",
+    "unit": "03",
+    "unit_type": "2BR",
+    "area_sqft": "1,163",
+    "psf": "$2,108",
+    "price": "$2,450,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "07 Aug 2023",
+    "street": "82 Farrer Road",
+    "level": "1",
+    "unit": "04",
+    "unit_type": "3BR",
+    "area_sqft": "2,131",
+    "psf": "$1,924",
+    "price": "$4,100,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "23 Feb 2023",
+    "street": "80 Farrer Road",
+    "level": "1",
+    "unit": "07",
+    "unit_type": "2BR",
+    "area_sqft": "1,518",
+    "psf": "$1,904",
+    "price": "$2,890,000",
+    "sale_type": "Resale"
+  },
+  {
+    "date": "23 Feb 2023",
+    "street": "82 Farrer Road",
+    "level": "3",
+    "unit": "08",
+    "unit_type": "3BR",
+    "area_sqft": "1,755",
+    "psf": "$2,103",
+    "price": "$3,690,000",
+    "sale_type": "Resale"
+  }
+]
