@@ -15,9 +15,9 @@
   "subtitle": "Nanyang Primary 1km 圈内的 condo 替代方案 · OneMap 实测 0.73km · 与 landed 研究同套件",
   "summary": "【2026-07-03】Gallop Gables（70-82 Farrer Rd，D10，freehold，1997 年 TOP，140 户 7 座 4 层低密度）是OneMap 实测 0.73km、明确在 Nanyang Primary 1km 圈内的 condo 替代方案——本研究套件中 landed 动辄 S$6-25m，而这里 ~S$4.1m 就能买到 freehold 1,743 sqft 3BR + 同样的抽签资格。估值（可比调整法，11 宗 2023-2026 本盘成交，趋势 4.5%/yr 由两组重复成交拟合）：点估 ~S$2,346 psf ≈ 4.09m，区间 S$2,197–2,475 psf。2025-12 本盘刚创 S$2,421 psf 新高（2,842sf 大户型）；psf 自 2021 年 ~S$1,800 稳步爬升。收益率是软肋：中位租金 S$7,700/mo 对点估仅 ~2.3% 毛收益。买点：freehold 学区稀缺低密度 + 每户土地占比 168 m²（vs 邻盘 D'Leedon 41 m²）的 土地期权（注意：并无本盘整体集体出售的记录——2007-08 为 Straits Trading 抛售自持 2 座 38 户的大宗交易；『三次流拍』属隔壁 Spanish Village）；压点：1997 年楼龄的维护与电梯/设施折旧、140 户小盘流动性薄（年成交 3-5 宗）、GEP 停办后学区溢价逻辑弱化。 — [EN] The freehold, 140-unit, low-rise Gallop Gables sits a measured 0.73km from Nanyang Primary — the condo alternative to this suite's S$6-25m landed shortlist at ~S$4.1m for a 1,743 sqft 3BR. Sales-comparison value: ~S$2,346 psf (S$2,197–2,475 range) off 11 same-project 2023-26 comps, 4.5%/yr trend fitted from two repeat-sale pairs. Yield ~2.3% gross is the weak leg; the land-share optionality (168 sqm/unit; NO documented development-wide en-bloc attempt — the 2007-08 event was an investor's two-block bulk sale) and school-zone freehold scarcity are the case.",
   "development_facts": [
-    "140 户、7 座 4 层（Ascot/Belmont/Churchill/Doncaster/Epsom/Greyville/Flemington），1997 TOP，freehold；地块 ~23,530 m²，每户土地占比 ~168 m²（对照 D'Leedon ~41 m²）——低密度即土地期权",
+    "140 户、7 座 4 层（Ascot/Belmont/Churchill/Doncaster/Epsom/Greyville/Flemington），1997 TOP，freehold；地块 ~23,530 m²，每户土地占比 ~168 m²（对照 D'Leedon ~41 m²）——低密度即土地期权。",
     "户型：2BR ~31 户（1,140-1,560 sqft）、3BR ~43 户（1,700-2,170 sqft）、4BR ~57 户（2,600-3,412 sqft）（Stacked Homes 口径；另一来源 2BR 49 户不一致——以 MCST 名册为准）（注：31+43+57=131 户 ≠ 140 总户数——9 户差额来源口径不齐，以 MCST 名册为准）",
-    "MRT：Farrer Road（CC20）与 Tan Kah Kee（DT8）均步行可达；Holland Village 生活圈",
+    "MRT：Farrer Road（CC20）与 Tan Kah Kee（DT8）均步行可达；Holland Village 生活圈。",
     "en-bloc 视角：本盘并无整盘集体出售（LTSA collective sale）的记录——2007-08 那一轮实为 Straits Trading 抛售其自持的 2 座 38 户（初叫 S$1,500-1,600 psf ppr，2008 年降 ~40% 重推），属投资者大宗交易；『三次流拍』的是隔壁 Spanish Village。土地期权 = 每户土地占比 168 m² 的纯潜在价值，无行权先例。",
     "维护费：公开渠道未披露——看房时向 MCST/中介索取（1997 年低密度大地块，预算偏高）"
   ],
@@ -28,7 +28,7 @@
     "high_psf": 2475,
     "low_price": 3830000.0,
     "high_price": 4310000.0,
-    "params_note": "asof 2026-07-03 · trend 4.5%/yr（重复成交对拟合：1,162sf 2021→2024 +5.6%/yr；2,669sf 2017→2024 +4.3%/yr）· floor ±0.4%/层（4 层低层楼盘）· size elasticity -0.08 · 11 宗 2023-2026 本盘成交，无同线锚（代表性单位非特定门牌）。区间口径=调整后 comps 的四分位距（Q1–Q3）；权重=1/(1+面积差+楼层差+时间差+户型差) 的相似度函数，两宗近同规格 3BR（1,732/1,744sf）权重最高。敏感性：趋势 2%/yr → 2,245 psf；面积弹性 0（本盘横截面大户型 raw psf 反而更高，与通用先验相反，故给出该变体）→ 2,344 psf；两者叠加 → 2,243 psf——点估稳健带约 S$2,243–2,346 psf。点估低于两宗最高权重 comp 的调整值（2,463/2,475）约 5%：因两宗 1,550sf 低价 comp 拉低加权均值——偏保守。",
+    "params_note": "asof 2026-07-03 · trend 4.5%/yr（重复成交对拟合：1,162sf 2021→2024 +5.6%/yr；2,669sf 2017→2024 +4.3%/yr）· floor ±0.4%/层（4 层低层楼盘）· size elasticity -0.08 · 11 宗 2023-2026 本盘成交，无同线锚（代表性单位非特定门牌）。区间口径=调整后 comps 的四分位距（Q1–Q3）；权重=1/(1+面积差+楼层差+时间差+户型差) 的相似度函数，两宗近同规格 3BR（1,732/1,744sf）权重最高。敏感性：趋势 2%/yr → 2,245 psf；面积弹性 0（本盘横截面大户型 raw psf 反而更高，与通用先验相反，故给出该变体）→ 2,344 psf；两者叠加 → 2,243 psf——点估稳健带约 S$2,243–2,346 psf。点估低于两宗最高权重 comp 的调整值（2,463/2,475）约 5%：因两宗 1,550sf 低价 comp 拉低加权均值——偏保守。。网格注记：type_adj 全部为 1.0（无 compact-3BR 修正适用），2/4BR comps 仅按面积弹性归一——而本盘横截面 4BR 的 raw psf 反而最高（2,842sf @2,421），通用『小户型 psf 更高』先验在此可能反号，elasticity=0 变体（2,344 psf）即为该情形的显式覆盖。趋势第三锚：URA 非有地指数方向一致（2024-2025 上行、2026Q1 全国 +1.3%/CCR +0.6% 放缓）——2%/yr 变体（2,245 psf）覆盖减速情形。",
     "grid": [
       {
         "label": "2025-12 2842sf L3 4BR",
@@ -234,9 +234,9 @@
   ],
   "market_comps": [
     {
-      "project": "Gallop Gables (subject)",
-      "psf": "2025 avg $2,141 psf (45 transactions); Dec 2025 high $2,421 psf (2,841 sqft); May 2025 $2,354 psf (1,732 sqft 3BR)",
-      "note": "Freehold · 0.73km from Nanyang Primary (OneMap); walking distance to Farrer Road MRT · 140 units, low-rise, FH; most popular layout 3BR/~2,174sf median $1,980 psf; flagged by Stacked Homes as en-bloc candidate given large land-to-unit ratio"
+      "project": "Gallop Gables（本标的）",
+      "psf": "2025 年转售 caveat 约 4 宗，3BR 段 ~S$2,35x psf（见本报告成交表）",
+      "note": "标的自身行。年成交 3-5 宗的『薄流动性』直接由成交表计得；此前来源页的『45 宗』为含租赁/多年累计口径，不作转售流动性依据。"
     },
     {
       "project": "Leedon Green",
@@ -297,38 +297,38 @@
     }
   ],
   "yield_analysis": [
-    "Blended rent psf: $4.56/sqft/month (6-mo trailing), $4.37/sqft/month (1-yr trailing) per SRX aggregator — source: https://www.99.co/singapore/rent/condos-apartments/gallop-gables",
+    "Blended rent psf: $4.56/sqft/month (6-mo trailing), $4.37/sqft/month (1-yr trailing) per SRX aggregator — source: https://www.99.co/singapore/rent/condos-apartments/gallop-gables。",
     "Indicative gross yield calc: representative 1,732sf 3BR at ~$2,141psf (2025 avg) = ~$3.71m purchase price; against $7,700/mo median rent (=$92,400/yr) → gross yield ≈ 2.5%",
     "Using current asking rent $9,900/mo (=$118,800/yr) against same ~$3.71m value → gross yield ≈ 3.2%",
     "Using Dec 2025 high-water psf $2,421 (implies ~$4.19m for 1,732sf) against $7,700/mo median rent → gross yield compresses to ≈ 2.2%",
-    "Gallop Gables sits in a low-2%-to-low-3% gross yield band typical of prime D10 low-rise FH condos — yield-compressed by land value/freehold premium and low density; supports a capital-appreciation/en-bloc-optionality thesis over a pure income thesis",
-    "3BR is the most actively rented configuration (15 rental transactions in trailing 6 months) — reasonable liquidity for the yield estimate",
-    "CAUTION: unit size/count data for 2BR units is inconsistent across sources (99.co vs Stacked Homes) — verify against URA caveats or developer floor plans before finalizing the representative unit for the valuation grid",
+    "Gallop Gables sits in a low-2%-to-low-3% gross yield band typical of prime D10 low-rise FH condos — yield-compressed by land value/freehold premium and low density; supports a capital-appreciation/en-bloc-optionality thesis over a pure income thesis。",
+    "3BR is the most actively rented configuration (15 rental transactions in trailing 6 months) — reasonable liquidity for the yield estimate。",
+    "CAUTION: unit size/count data for 2BR units is inconsistent across sources (99.co vs Stacked Homes) — verify against URA caveats or developer floor plans before finalizing the representative unit for the valuation grid。",
     "对本报告点估（S$4,090,000）：中位租 S$7,700/mo → 毛收益率 ~2.3%；当前要价租 S$9,900/mo → ~2.9%。D10 freehold 学区盘的典型形态：保值>现金流。"
   ],
   "catchment": [
     "到 Nanyang Primary（52 King's Rd）的距离：0.73km——本所直连 OneMap 官方 Search API 实测（2026-07-03，项目参考点直线距离）✓在 1km 圈内。网络快照另见 0.56km（不同参考点口径）；签约前按具体门牌于 OneMap School Query 复测。",
     "Raffles Girls' Primary (21 Hillcrest Road) and Nanyang Primary are described together as 'within a 2km radius' by PLB Insights — i.e. bundled at the 2km band, not both at 1km. Nanyang Girls' High (2 Linden Drive, secondary, Nanyang-affiliated) and St Margaret's Secondary are also nearby/walkable per Stacked Homes. Queenstown Primary's proximity to Gallop Gables specifically could NOT be corroborated by any source found — treat as unverified/likely not applicable.",
-    "Farrer Road MRT (CC20, Circle Line) is a sub-5-minute walk (cited variously as 170m-300m across sources, consistent directionally despite exact-metre variance by block). Holland Village is one MRT stop away — described as 'close by' and undergoing an area revamp, but NOT walkable; day-to-day amenities (Coronation Plaza, Serene Centre, Holland Road Shopping Centre, Empress Road Market) are reachable by short drive rather than on foot. Some sources also cite Tan Kah Kee (DT8) as a nearby MRT optio"
+    "Farrer Road MRT (CC20, Circle Line) is a sub-5-minute walk (cited variously as 170m-300m across sources, consistent directionally despite exact-metre variance by block). Holland Village is one MRT stop away — described as 'close by' and undergoing an area revamp, but NOT walkable; day-to-day amenities (Coronation Plaza, Serene Centre, Holland Road Shopping Centre, Empress Road Market) are reachable by short drive rather than on foot. Some sources also cite Tan Kah Kee (DT8) as a nearby MRT option for Gallop Gables, but this looks possibly conflated with neighbouring Duchess Road condos — lower confidence."
   ],
   "market_context": [
-    "URA Q1 2026: overall non-landed private residential price index +1.3% qoq (与研究基线一致); CCR sub-index (District 10's region) rose a softer +0.6% qoq, reversing a -3.5% Q4 2025 slide, and lagging OCR (+2.2%) and RCR (+0.8%) — D10 is recovering but is the weakest-performing region right now.",
-    "本盘纪录价：S$2,421 psf（2025-12，2,842sf，S$6.88m）；此前纪录 S$2,354（2025-05）与 S$2,299（2024-11）。对照 D10 freehold 转售均价 ~S$2,381 psf——本盘纪录价已站上区域均值。",
-    "Age-discount / same-district comp: Leedon Green (D10, ~4-year-old freehold condo near Farrer/Holland, redeveloped from the former Farrer Court en-bloc site) trades $2,502-$3,592 psf resale, ~$2,936-$2,951 psf 12-month average — roughly 25-30% above Gallop Gables' current pricing for a much younger freehold in the same district. 更正： Watten House (UOL/Singland, Shelford Road) is in District 11 (Bukit Timah/Newton), not District 10 — still useful as a 'brand-new CCR freehold' price anchor at $3,220",
+    "URA Q1 2026: overall non-landed private residential price index +1.3% qoq (与基线数据一致); CCR sub-index (District 10's region) rose a softer +0.6% qoq, reversing a -3.5% Q4 2025 slide, and lagging OCR (+2.2%) and RCR (+0.8%) — D10 is recovering but is the weakest-performing region right now.",
+    "本盘纪录价：S$2,421 psf（2025-12，2,842sf，S$6.88m）；此前纪录 S$2,354（2025-05）与 S$2,299（2024-11）。对照 EdgeProp 口径的 D10 freehold 转售均价 ~S$2,381 psf（滚动 12 个月）——本盘纪录价已站上区域均值。",
+    "Age-discount / same-district comp: Leedon Green (D10, ~4-year-old freehold condo near Farrer/Holland, redeveloped from the former Farrer Court en-bloc site) trades $2,502-$3,592 psf resale, ~$2,936-$2,951 psf 12-month average — roughly 25-30% above Gallop Gables' current pricing for a much younger freehold in the same district. 更正： Watten House (UOL/Singland, Shelford Road) is in District 11 (Bukit Timah/Newton), not District 10 — still useful as a 'brand-new CCR freehold' price anchor at $3,220-$3,422 psf (~99% sold by May 2026), but should not be labelled a D10 comp in the report.",
     "Financing backdrop is favorable: 2-year fixed mortgage rates as low as 1.3%-1.4% (best-in-market late June 2026), 3-month compounded SORA ~1.07% (June 2026) — both at multi-year lows, supporting carrying-cost economics for a buy case.",
     "ABSD table unchanged since 27 April 2023: SC 0%/20%/30% (1st/2nd/3rd+ property), PR 5%/30%/30%, Foreigner flat 60%, Entities 65% (US/Iceland/Liechtenstein/Norway/Switzerland nationals treated as SC under FTAs). At Gallop Gables' price point, a 60% ABSD makes foreign buyers an unlikely demand source — realistic buyer pool is SC/PR upgraders and owner-occupiers.",
     "Gross rental yield for Gallop Gables currently estimated ~2%-2.3% (average rent ~$4.37-$4.56 psf/month, ~$6,000-$14,000/month by unit size) — a modest yield typical of prime-district freehold low-rise stock, reinforcing that the investment case rests on capital appreciation/arbitrage rather than income."
   ],
   "risks": [
     "1997-vintage facilities show visible dating: pool 'a bit of a letdown'/'definitely dated', open corridors 'dark' with poor first impressions — though the core structure is 'well maintained despite its age' per Stacked Homes' direct site review. Buyers should budget for cosmetic unit-level renovation to compete on resale.",
-    "En-bloc optionality is real but UNREALIZED and NOT actively in-process: Gallop Gables has large per-unit land allocation (168 sqm/unit across 23,528 sqm total, low-rise 4-storey blocks) giving it 'strong en bloc potential' per Stacked Homes, but — 更正一处早期检索误读 that conflated Gallop Gables with a neighbouring project — Stacked Homes' own direct text states 'No en bloc attempts documented for Gallop Gables'; it was Spanish Village nearby that failed en-bloc three times. Treat en-bloc as speculative ",
-    "Thin liquidity is plausible (only 140 units total; the fact that single transactions in Nov 2024 and May 2025 were individually newsworthy as 'records' suggests low annual transaction counts) but NOT independently quantified in this research — EdgeProp/99.co detail pages with full transaction tables 来源页暂不可直接访问. Recommend pulling URA caveat/REALIS-style transaction counts directly before finalizing the liquidity risk language.",
+    "En-bloc optionality is real but UNREALIZED and NOT actively in-process: Gallop Gables has large per-unit land allocation (168 sqm/unit across 23,528 sqm total, low-rise 4-storey blocks) giving it 'strong en bloc potential' per Stacked Homes, but — 更正一处早期检索误读 that conflated Gallop Gables with a neighbouring project — Stacked Homes' own direct text states 'No en bloc attempts documented for Gallop Gables'; it was Spanish Village nearby that failed en-bloc three times. Treat en-bloc as speculative long-run optionality, not a near-term catalyst.",
+    "Thin liquidity is plausible (only 140 units total; the fact that single transactions in Nov 2024 and May 2025 were individually newsworthy as 'records' suggests low annual transaction counts) but NOT independently quantified in this research — EdgeProp/99.co detail pages with full transaction tables 来源页当时无法访问. Recommend pulling URA caveat/REALIS-style transaction counts directly before finalizing the liquidity risk language.",
     "D10/CCR is currently the weakest-performing price region (+0.6% qoq vs +2.2% OCR, +0.8% RCR in Q1 2026), meaning near-term capital appreciation tailwind for a CCR asset like Gallop Gables is comparatively muted versus OCR/RCR alternatives."
   ],
   "catalysts": [
-    "Turf City precinct redevelopment: 176-hectare former racecourse site planned for ~15,000-20,000 public and private homes over 20-30 years (first public housing in Bukit Timah in 40 years), paired with Cross Island Line Phase 2 (Turf City, King Albert Park, Maju, Clementi, West Coast, Jurong Lake District stations, opening 2032; King Albert Park becomes a Downtown Line interchange, deepest MRT station on the network at 50m). This is a genuine multi-year corridor-level catalyst for the broader Buk",
+    "Turf City precinct redevelopment: 176-hectare former racecourse site planned for ~15,000-20,000 public and private homes over 20-30 years (first public housing in Bukit Timah in 40 years), paired with Cross Island Line Phase 2 (Turf City, King Albert Park, Maju, Clementi, West Coast, Jurong Lake District stations, opening 2032; King Albert Park becomes a Downtown Line interchange, deepest MRT station on the network at 50m). This is a genuine multi-year corridor-level catalyst for the broader Bukit Timah/Dunearn/Farrer area, though Gallop Gables itself is closer to Farrer Rd/Holland V than directly adjacent to the Turf City site — a corridor tailwind, not a doorstep one.",
     "Holland Village ongoing revamp (mixed-use redevelopment with courtyards/terraces) one MRT stop from Gallop Gables adds to area amenity value over time.",
-    "GEP discontinuation is a genuinely two-sided catalyst/risk for school-zone demand durability, not a simple negative: MOE announced (March 2026) the last GEP P4 intake is 2026 (cohort completes 2028), with GEP fully replaced from 2027 by a 'refreshed approach' — school-based Higher-Ability-Learner provision in ALL primary schools (~10% of each cohort) plus after-school Advanced Modules at 15 centres, and a new standardised P3 identification exercise from August 2026. Because gifted/high-ability p"
+    "GEP discontinuation is a genuinely two-sided catalyst/risk for school-zone demand durability, not a simple negative: MOE announced (March 2026) the last GEP P4 intake is 2026 (cohort completes 2028), with GEP fully replaced from 2027 by a 'refreshed approach' — school-based Higher-Ability-Learner provision in ALL primary schools (~10% of each cohort) plus after-school Advanced Modules at 15 centres, and a new standardised P3 identification exercise from August 2026. Because gifted/high-ability provision is being DE-concentrated from the 9 named GEP schools (including Nanyang Primary) into every primary school, the specific 'GEP school' premium may erode over time — but Nanyang Primary's broader academic reputation, SAP bilingual programme, and affiliation with Nanyang Girls' High/Hwa Chong are likely more durable demand drivers than the GEP label alone. Net effect on 1km-zone home demand is genuinely uncertain; 本报告按此口径呈现： a balanced two-sided consideration rather than a pure catalyst or pure risk."
   ],
   "advisory": {
     "stance": "BUY-WATCH（自住/学区强需求可买；纯投资等价）",
@@ -359,7 +359,7 @@
     {
       "claim": "OneMap 0.73km 到 Nanyang Primary（街道参考点）",
       "status": "confirmed",
-      "note": "本所 OneMap Search API 直连实测（2026-07-03）；研究代理侧网页抓取未成功，不影响 API 实测结论；按门牌复测后再签约"
+      "note": "本所 OneMap Search API 直连实测（2026-07-03）；另一检索通道未返回数据，不影响 API 实测结论；按门牌复测后再签约"
     },
     {
       "claim": "中位租 S$7,700/mo（3BR 1,732sf，12 个月）",
@@ -378,11 +378,12 @@
     }
   ],
   "data_gaps": [
-    "维护费、车位数、MCST 财务状况未公开——看房尽调必查",
-    "调整网格未含同线锚（研究对象为代表性单位而非特定门牌）——锁定具体单位后用其历史成交重跑",
-    "2BR 户数两来源不一致（31 vs 49）——以 MCST 名册为准",
+    "维护费、车位数、MCST 财务状况未公开——看房尽调必查。",
+    "调整网格未含同线锚（研究对象为代表性单位而非特定门牌）——锁定具体单位后用其历史成交重跑。",
+    "2BR 户数两来源不一致（31 vs 49）——以 MCST 名册为准。",
     "pre-2023 成交行未经 REALIS 核对；2023-2026 行来自聚合站（与新闻交叉过 4 宗）",
-    "楼层/朝向溢价按 ±0.4%/层近似——低层楼盘该项影响本就有限，但 1 楼带庭院单位另议"
+    "楼层/朝向溢价按 ±0.4%/层近似——低层楼盘该项影响本就有限，但 1 楼带庭院单位另议。",
+    "『45 宗/2025』的来源口径（疑含租赁或多年累计）未再核——本报告流动性判断只采用成交表 caveat 计数（3-5 宗/年）。"
   ],
   "sources": [
     "http://propertyhighlights.blogspot.com/2008/07/en-bloc-site-relaunched-with-40-lower.html",

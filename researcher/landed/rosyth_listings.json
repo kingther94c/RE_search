@@ -121,7 +121,7 @@
       "catchment": "2km",
       "flood_risk": "low",
       "rebuild_status": "likely",
-      "notes": "99.co/PropertyGuru 口径：9 房 corner terrace，要价 S$14,880,000；土地面积未披露——land psf 不可计算（VERIFY DATA）。此前来源引用的 1,792 psf 为建筑面积口径，不入土地基准。洪水：PUB 名单（2024-01 版）无本区，按区域 low 计。OneMap street-ref 1.30km（1-2km 带）。",
+      "notes": "99.co/PropertyGuru 口径：9 房 corner terrace，要价 S$14,880,000；土地面积未披露——land psf 不可计算（VERIFY DATA）。来源页的 1,792 psf 为建筑面积口径，不入土地基准。洪水：PUB 名单（2024-01 版）无本区，按区域 low 计。OneMap street-ref 1.30km（1-2km 带）。",
       "onemap_km": 1.3
     },
     {
@@ -157,7 +157,7 @@
       "catchment": "2km",
       "flood_risk": "low",
       "rebuild_status": "unverified",
-      "notes": "99.co listing gives S$1,469.48 psf explicitly (land basis) -- lowest-priced entry in this sample, useful as lower benchmark anchor. OneMap street-ref 1.45km（1-2km 带）。 洪水：PUB 官方易涝名单（2024-01 版）无本区任何道路——按区域低风险计；低洼单点仍应雨后现场复看。",
+      "notes": "99.co listing gives S$1,469.48 psf explicitly (land basis) -- 本样本最低 psf（1,469 psf/land）, useful as lower benchmark anchor. OneMap street-ref 1.45km（1-2km 带）。 洪水：PUB 官方易涝名单（2024-01 版）无本区任何道路——按区域低风险计；低洼单点仍应雨后现场复看。",
       "onemap_km": 1.45
     },
     {
@@ -229,7 +229,7 @@
       "catchment": "2km",
       "flood_risk": "unverified -- check PUB flood-prone list for Serangoon North",
       "rebuild_status": "unverified",
-      "notes": "6-bed terrace. Land_psf computed as 5,500,000/2,796. Alongside Lichfield Rd, this is OneMap street-ref 2.04km — 距学校不近——中介话术多以 1984 年前的旧校址为参照. OneMap street-ref 2.04km（1-2km 带）。",
+      "notes": "Brockhampton Dr：OneMap street-ref 2.04km——距学校不近（中介话术多以 1984 年前的旧校址为参照）。999 年地契口径。洪水：PUB 名单（2024-01 版）无本区，按区域 low 计。1-2km 优先级带。",
       "onemap_km": 2.04
     },
     {
@@ -247,7 +247,7 @@
       "catchment": "2km",
       "flood_risk": "low",
       "rebuild_status": "unverified",
-      "notes": "Lowest total quantum in the sample. 99.co explicitly states S$1,477 psf. Listed 5 days before search (recency noted in search snippet, exact listing date not independently confirmed). OneMap street-ref 2.04km（1-2km 带）。 洪水：PUB 官方易涝名单（2024-01 版）无本区任何道路——按区域低风险计；低洼单点仍应雨后现场复看。",
+      "notes": "Brockhampton Dr：OneMap street-ref 2.04km——距学校不近（中介话术多以 1984 年前的旧校址为参照）。999 年地契口径。洪水：PUB 名单（2024-01 版）无本区，按区域 low 计。1-2km 优先级带。",
       "onemap_km": 2.04
     }
   ]

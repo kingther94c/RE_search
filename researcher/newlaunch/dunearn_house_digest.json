@@ -14,7 +14,7 @@
     "top": "预计 ~2030 Q4（非官方承诺）",
     "preview": "VVIP 预览 ~2026-07-10（中介口径，未官方确认）"
   },
-  "pricing_positioning": "预估 S$2,900-3,100（base ~S$3,000）。土地占比 ~47%（S$1,410 psf ppr）；RLB 建安 S$330-575 psf GFA + 融资/软成本，开发商保本约 S$2,400-2,600 psf → 要价隐含 ~15-20% 毛利，属正常区间、非暴利。对买家：这是用 99LH 价格贴着 FH 邻居（Royalgreen S$2,78k-3,01k）买『新区第一张票』——溢价的对价是 CR14 + 全新精装 + Site 2 的 S$3,150-3,300 前向定价。模型（2BR+S 678 sqft @ S$3,000，75% LTV @2.8%，持有 6 年含 4 年 BUC）：base 租金 S$6.75 psf/mo（comps 带 S$5.9-8.0 的中段）→ 毛收益率 ~2.7%、保本退出 S$3,256 psf（+8.5%）；bull 租金 S$8.0 → ~3.2%、保本 S$3,227 psf（+7.6%）。贷款利率取 2.8% 为 6 年持有的保守常态化假设（2026-06 市场 2 年固定仅 ~1.3-1.4%——若按 1.5-2% 融资，保本 psf 显著下移）。",
+  "pricing_positioning": "预估 S$2,900-3,100（base ~S$3,000）。土地占比 ~47%（S$1,410 psf ppr）；RLB 建安 S$330-575 psf GFA + 融资/软成本，开发商保本约 S$2,400-2,600 psf → 要价隐含 ~15-20% 毛利，属正常区间、非暴利。对买家：这是用 99LH 价格贴着 FH 邻居（Royalgreen S$2,784-3,010）买『新区第一张票』——溢价的对价是 CR14 + 全新精装 + Site 2 的 S$3,150-3,300 前向定价。模型（2BR+S 678 sqft @ S$3,000，75% LTV @2.8%，持有 6 年含 4 年 BUC）：base 租金 S$6.75 psf/mo（comps 带 S$5.9-8.0 的中段）→ 毛收益率 ~2.7%、保本退出 S$3,256 psf（+8.5%）；bull 租金 S$8.0 psf/mo（小户型 psf 上限口径——高于本报告 2BR 月租带 S$4.0-4.8k 的中枢，仅作上限敏感性） → ~3.2%、保本 S$3,227 psf（+7.6%）。贷款利率取 2.8% 为 6 年持有的保守常态化假设（2026-06 市场 2 年固定仅 ~1.3-1.4%——若按 1.5-2% 融资，保本 psf 显著下移）。",
   "unit_mix": [
     {
       "type": "2BR / 2BR+Study",
@@ -98,7 +98,7 @@
     "School catchments: Methodist Girls' School (Primary), 11 Blackmore Drive S599986, plausibly within 1km given King Albert Park-area geography (needs OneMap confirmation). Nanyang Primary (52 King's Road S268097) and Raffles Girls' Primary are described by marketing sources only as 'in the neighbourhood,' NOT confirmed within 1km -- likely outside 1km and possibly outside 2km for Nanyang Primary specifically; independent OneMap/MOE distance verification strongly recommended before treating any school catchment as a buy thesis pillar.",
     "Second Turf City GLS site (Wing Tai-Metro win) is on a larger plot (~205,000 sqft, ~330 units) immediately following/adjacent in the same precinct, expected to launch 2H 2027 at a projected S$3,150-3,300 psf -- both a future comp and future construction-noise neighbor for Dunearn House residents.",
     "Sixth Ave MRT（DT7）步行约 5 分钟（营销口径 ~0.52km——URA 通稿确认全区在地铁 800m 内）；CRL CR14 Turf City 换乘站 2032 年通车（约 7 分钟步行，届时本盘已 TOP ~2 年）",
-    "MRT 汇总：Sixth Avenue（DT7）约 0.5km/5 分钟（营销口径；URA 通稿确认全精 precinct 处于地铁 800m 内）；CRL CR14 Turf City 换乘站 2032 年通车——届时本盘已 TOP 约 2 年"
+    "MRT 汇总：Sixth Avenue（DT7）约 0.5km/5 分钟（营销口径；URA 通稿确认整个 precinct 处于地铁 800m 内）；CRL CR14 Turf City 换乘站 2032 年通车（到站入口的实际步距未经实测）——届时本盘已 TOP 约 2 年"
   ],
   "demand_supply": [
     "NUS Law faculty relocated from Bukit Timah campus back to Kent Ridge (effective Aug 2025) — only LKYSPP remains at 469C Bukit Timah Rd; this weakens (does not eliminate) the NUS-linked tenant-pool thesis.",
@@ -130,7 +130,7 @@
     "SSD for residential property, effective for purchases on/after 4 Jul 2025: Year 1 = 16%, Year 2 = 12%, Year 3 = 8%, Year 4 = 4%, Year 5+ = 0% (up from pre-4-Jul-2025 regime of 12/8/4/0% over 3 years). Applies to condos, landed, HDB, ECs alike.",
     "Mortgage backdrop: 2-year fixed home loan rates as low as 1.30-1.40% p.a. as of June 2026; 3-month compounded SORA fell to ~1.07% from a ~3% peak in early 2025 — a genuine affordability tailwind partially offsetting ABSD/SSD friction for long-term holders.",
     "BUC 累进付款：签约 20%（含 5% 现金）→ 地基 10% →…→ TOP 25%；SSD 4 年 16/12/8/4%（2025-07 起）——『炒楼花』在本规则下 4 年内退出成本极高，按 ≥6 年持有规划",
-    "模型现金流参考（2BR+S 678sqft @S$3,000）：总价 ~S$2.034m、BSD ~S$71,300、首付+印花现金 ~S$579,800；保本退出 S$3,227 psf（+7.6%）"
+    "模型现金流参考（2BR+S 678sqft @S$3,000）：总价 ~S$2.034m、BSD ~S$71,300、首付+印花现金 ~S$579,800；base 保本退出 S$3,256 psf（+8.5%）；bull（租金 S$8 psf/mo 上限口径）S$3,227 psf（+7.6%）"
   ],
   "verification": [
     {
@@ -171,7 +171,7 @@
   ],
   "verdict": {
     "stance": "SELECTIVE (right unit & price)",
-    "detail": "评分 70/100（明细：location_connectivity 17/20, developer 8/8, tenure_site 8/10, price_positioning 9/22, product 10/10, rental_demand 8/12, supply_competition 2/10, catalysts 8/8）。买点：三家大型开发商组合（各自履历成熟——但此确切 JV 组合无已完成项目记录）、CR14 兑现前的首发价、Site 2 地价 +15% 的前向支撑；压点：99LH 却贴着 FH 邻居定价、身后 10-15 幅地/约 15-20k 户的长期供应管道、新区头几年『工地环绕』。执行建议：只在实际价单 ≤~S$2,950 psf 的高效 2BR/2BR+S（后排朝绿地栈）出手；若均价 >S$3,100 或首周去化 <50%，等 2H2027 Site 2 双盘竞价再议。自住>投资；投资者按 ≥6 年持有并接受 base ~2.7% 毛租金收益率（bull 情形 ~3.2%）。"
+    "detail": "评分 70/100（明细：location_connectivity 17/20, developer 8/8（按三家成员各自履历计——该确切组合无合作先例已另列风险）, tenure_site 8/10, price_positioning 9/22, product 10/10, rental_demand 8/12, supply_competition 2/10, catalysts 8/8）。买点：三家大型开发商组合（各自履历成熟——但此确切 JV 组合无已完成项目记录）、CR14 兑现前的首发价、Site 2 地价 +15% 的前向支撑；压点：99LH 却贴着 FH 邻居定价、身后 10-15 幅地/约 15-20k 户的长期供应管道、新区头几年『工地环绕』。执行建议：只在实际价单 ≤~S$2,950 psf 的高效 2BR/2BR+S（后排朝绿地栈）出手；若均价 >S$3,100 或首周去化 <50%，等 2H2027 Site 2 双盘竞价再议。自住>投资；投资者按 ≥6 年持有并接受 base ~2.7% 毛租金收益率（bull 情形 ~3.2%）。"
   },
   "data_gaps": [
     "发展商官方价单/图册未发布——户型、朝向、面积、价格全部以 VVIP 实际资料为准",
@@ -257,5 +257,21 @@
     "https://www.ura.gov.sg/Corporate/Media-Room/Media-Releases/pr26-31",
     "https://www.ura.gov.sg/news/media/pr26-41/",
     "https://www.uradraftmasterplan.gov.sg/regional-plans/central-region/bukit-timah-turf-city/"
-  ]
+  ],
+  "review": {
+    "verdict": "PASS",
+    "overall": 8.45,
+    "rounds": 2,
+    "date": "2026-07-03",
+    "reviewer": "独立敌对评审：SG 新盘分析师 persona（property-report-review skill）",
+    "scores": {
+      "data_accuracy": 9.0,
+      "method_rigor": 8.0,
+      "completeness": 8.0,
+      "decision_usefulness": 9.0,
+      "honesty_uncertainty": 9.0,
+      "presentation_bilingual": 7.0
+    },
+    "note": "3 项抽查（Site1 九标/Site2 次高标反解 S$1,576/The Orie 归属）全部通过；模型金额逐项复算一致。"
+  }
 }

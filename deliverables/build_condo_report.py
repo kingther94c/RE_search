@@ -86,6 +86,7 @@ body{{font:15px/1.7 -apple-system,Segoe UI,Roboto,"Microsoft YaHei","PingFang SC
 .wrap{{max-width:980px;margin:0 auto;padding:0 22px 80px;background:#fff;box-shadow:0 1px 40px rgba(15,23,42,.06)}}
 header{{padding:36px 0 22px;border-bottom:3px solid var(--accent);margin-bottom:6px}}
 .kicker{{color:var(--accent);font-weight:700;font-size:12px;letter-spacing:.04em}}
+.sub{{color:var(--mut);font-size:13.5px}}
 h1{{font-size:27px;margin:6px 0 4px}}
 h2{{font-size:20px;margin:34px 0 10px;padding-top:12px;border-top:1px solid var(--line)}}
 .en{{color:var(--mut);font-weight:400;font-size:.8em}}
