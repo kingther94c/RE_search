@@ -1,0 +1,1614 @@
+[
+  {
+    "text": "Property Info",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,272][198,312]",
+    "center": [
+      115,
+      292
+    ]
+  },
+  {
+    "text": "Sale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[292,272][348,312]",
+    "center": [
+      320,
+      292
+    ]
+  },
+  {
+    "text": "Rent",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[471,272][529,312]",
+    "center": [
+      500,
+      292
+    ]
+  },
+  {
+    "text": "Tower View",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[622,272][770,312]",
+    "center": [
+      696,
+      292
+    ]
+  },
+  {
+    "text": "Maps",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[857,272][928,312]",
+    "center": [
+      892,
+      292
+    ]
+  },
+  {
+    "text": "Planning Decisions",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1014,272][1255,312]",
+    "center": [
+      1134,
+      292
+    ]
+  },
+  {
+    "text": "Nearby Properties",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1319,272][1547,312]",
+    "center": [
+      1433,
+      292
+    ]
+  },
+  {
+    "text": "Profitability",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1611,272][1757,312]",
+    "center": [
+      1684,
+      292
+    ]
+  },
+  {
+    "text": "6M",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[219,372][261,412]",
+    "center": [
+      240,
+      392
+    ]
+  },
+  {
+    "text": "1Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[637,372][672,412]",
+    "center": [
+      654,
+      392
+    ]
+  },
+  {
+    "text": "2Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1051,372][1086,412]",
+    "center": [
+      1068,
+      392
+    ]
+  },
+  {
+    "text": "10Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1871,372][1922,412]",
+    "center": [
+      1896,
+      392
+    ]
+  },
+  {
+    "text": "...",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2297,372][2323,412]",
+    "center": [
+      2310,
+      392
+    ]
+  },
+  {
+    "text": "5Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1465,372][1500,412]",
+    "center": [
+      1482,
+      392
+    ]
+  },
+  {
+    "text": "1, 2, 3 Bedrooms",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[64,450][278,490]",
+    "center": [
+      171,
+      470
+    ]
+  },
+  {
+    "text": "",
+    "desc": "down",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[294,446][342,494]",
+    "center": [
+      318,
+      470
+    ]
+  },
+  {
+    "text": "16",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[183,516][217,526]",
+    "center": [
+      200,
+      521
+    ]
+  },
+  {
+    "text": "23",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[353,516][387,526]",
+    "center": [
+      370,
+      521
+    ]
+  },
+  {
+    "text": "08",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[523,516][557,526]",
+    "center": [
+      540,
+      521
+    ]
+  },
+  {
+    "text": "441",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[693,516][744,526]",
+    "center": [
+      718,
+      521
+    ]
+  },
+  {
+    "text": "Jul 2017",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[863,516][976,526]",
+    "center": [
+      919,
+      521
+    ]
+  },
+  {
+    "text": "$2,232",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1033,516][1123,526]",
+    "center": [
+      1078,
+      521
+    ]
+  },
+  {
+    "text": "$985,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1203,516][1326,526]",
+    "center": [
+      1264,
+      521
+    ]
+  },
+  {
+    "text": "26 May 2023",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1373,516][1527,546]",
+    "center": [
+      1450,
+      531
+    ]
+  },
+  {
+    "text": "$2,447",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1543,516][1633,526]",
+    "center": [
+      1588,
+      521
+    ]
+  },
+  {
+    "text": "$1,080,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1713,516][1859,526]",
+    "center": [
+      1786,
+      521
+    ]
+  },
+  {
+    "text": "▲$215",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1883,516][1979,526]",
+    "center": [
+      1931,
+      521
+    ]
+  },
+  {
+    "text": "▲$95,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2053,516][2188,526]",
+    "center": [
+      2120,
+      521
+    ]
+  },
+  {
+    "text": "5y 10m 10d",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2223,516][2376,526]",
+    "center": [
+      2299,
+      521
+    ]
+  },
+  {
+    "text": "1.58%",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2393,516][2472,526]",
+    "center": [
+      2432,
+      521
+    ]
+  },
+  {
+    "text": "16",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[183,582][217,622]",
+    "center": [
+      200,
+      602
+    ]
+  },
+  {
+    "text": "30",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[353,582][387,622]",
+    "center": [
+      370,
+      602
+    ]
+  },
+  {
+    "text": "07",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[523,582][557,622]",
+    "center": [
+      540,
+      602
+    ]
+  },
+  {
+    "text": "1,033",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[693,582][766,622]",
+    "center": [
+      729,
+      602
+    ]
+  },
+  {
+    "text": "Jan 2013",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[863,582][984,622]",
+    "center": [
+      923,
+      602
+    ]
+  },
+  {
+    "text": "$2,084",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1033,582][1123,622]",
+    "center": [
+      1078,
+      602
+    ]
+  },
+  {
+    "text": "$2,154,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1203,582][1349,622]",
+    "center": [
+      1276,
+      602
+    ]
+  },
+  {
+    "text": "09 May 2024",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1373,562][1527,642]",
+    "center": [
+      1450,
+      602
+    ]
+  },
+  {
+    "text": "$2,419",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1543,582][1633,622]",
+    "center": [
+      1588,
+      602
+    ]
+  },
+  {
+    "text": "$2,500,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1713,582][1859,622]",
+    "center": [
+      1786,
+      602
+    ]
+  },
+  {
+    "text": "▲$335",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1883,582][1979,622]",
+    "center": [
+      1931,
+      602
+    ]
+  },
+  {
+    "text": "▲$346,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2053,582][2204,622]",
+    "center": [
+      2128,
+      602
+    ]
+  },
+  {
+    "text": "11y 3m 16d",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2223,582][2376,622]",
+    "center": [
+      2299,
+      602
+    ]
+  },
+  {
+    "text": "1.33%",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2393,582][2472,622]",
+    "center": [
+      2432,
+      602
+    ]
+  },
+  {
+    "text": "16",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[183,678][217,718]",
+    "center": [
+      200,
+      698
+    ]
+  },
+  {
+    "text": "13",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[353,678][387,718]",
+    "center": [
+      370,
+      698
+    ]
+  },
+  {
+    "text": "07",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[523,678][557,718]",
+    "center": [
+      540,
+      698
+    ]
+  },
+  {
+    "text": "538",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[693,678][744,718]",
+    "center": [
+      718,
+      698
+    ]
+  },
+  {
+    "text": "Jan 2013",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[863,678][984,718]",
+    "center": [
+      923,
+      698
+    ]
+  },
+  {
+    "text": "$2,135",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1033,678][1123,718]",
+    "center": [
+      1078,
+      698
+    ]
+  },
+  {
+    "text": "$1,149,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1203,678][1349,718]",
+    "center": [
+      1276,
+      698
+    ]
+  },
+  {
+    "text": "29 Aug 2024",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1373,658][1527,738]",
+    "center": [
+      1450,
+      698
+    ]
+  },
+  {
+    "text": "$2,453",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1543,678][1633,718]",
+    "center": [
+      1588,
+      698
+    ]
+  },
+  {
+    "text": "$1,320,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1713,678][1859,718]",
+    "center": [
+      1786,
+      698
+    ]
+  },
+  {
+    "text": "▲$318",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1883,678][1979,718]",
+    "center": [
+      1931,
+      698
+    ]
+  },
+  {
+    "text": "▲$171,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2053,678][2204,718]",
+    "center": [
+      2128,
+      698
+    ]
+  },
+  {
+    "text": "11y 7m 3d",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2223,678][2360,718]",
+    "center": [
+      2291,
+      698
+    ]
+  },
+  {
+    "text": "1.20%",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2393,678][2472,718]",
+    "center": [
+      2432,
+      698
+    ]
+  },
+  {
+    "text": "16",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[183,774][217,814]",
+    "center": [
+      200,
+      794
+    ]
+  },
+  {
+    "text": "23",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[353,774][387,814]",
+    "center": [
+      370,
+      794
+    ]
+  },
+  {
+    "text": "02",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[523,774][557,814]",
+    "center": [
+      540,
+      794
+    ]
+  },
+  {
+    "text": "743",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[693,774][744,814]",
+    "center": [
+      718,
+      794
+    ]
+  },
+  {
+    "text": "Mar 2014",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[863,774][987,814]",
+    "center": [
+      925,
+      794
+    ]
+  },
+  {
+    "text": "$2,095",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1033,774][1123,814]",
+    "center": [
+      1078,
+      794
+    ]
+  },
+  {
+    "text": "$1,556,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1203,774][1349,814]",
+    "center": [
+      1276,
+      794
+    ]
+  },
+  {
+    "text": "30 Sep 2022",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1373,754][1527,834]",
+    "center": [
+      1450,
+      794
+    ]
+  },
+  {
+    "text": "$2,316",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1543,774][1633,814]",
+    "center": [
+      1588,
+      794
+    ]
+  },
+  {
+    "text": "$1,720,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1713,774][1859,814]",
+    "center": [
+      1786,
+      794
+    ]
+  },
+  {
+    "text": "▲$221",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1883,774][1979,814]",
+    "center": [
+      1931,
+      794
+    ]
+  },
+  {
+    "text": "▲$164,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2053,774][2204,814]",
+    "center": [
+      2128,
+      794
+    ]
+  },
+  {
+    "text": "8y 6m 13d",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2223,774][2360,814]",
+    "center": [
+      2291,
+      794
+    ]
+  },
+  {
+    "text": "1.18%",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2393,774][2472,814]",
+    "center": [
+      2432,
+      794
+    ]
+  },
+  {
+    "text": "16",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[183,870][217,910]",
+    "center": [
+      200,
+      890
+    ]
+  },
+  {
+    "text": "32",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[353,870][387,910]",
+    "center": [
+      370,
+      890
+    ]
+  },
+  {
+    "text": "07",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[523,870][557,910]",
+    "center": [
+      540,
+      890
+    ]
+  },
+  {
+    "text": "1,033",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[693,870][766,910]",
+    "center": [
+      729,
+      890
+    ]
+  },
+  {
+    "text": "Jul 2017",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[863,870][976,910]",
+    "center": [
+      919,
+      890
+    ]
+  },
+  {
+    "text": "$1,834",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1033,870][1123,910]",
+    "center": [
+      1078,
+      890
+    ]
+  },
+  {
+    "text": "$1,895,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1203,870][1349,910]",
+    "center": [
+      1276,
+      890
+    ]
+  },
+  {
+    "text": "19 Apr 2022",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1373,850][1527,930]",
+    "center": [
+      1450,
+      890
+    ]
+  },
+  {
+    "text": "$1,935",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1543,870][1633,910]",
+    "center": [
+      1588,
+      890
+    ]
+  },
+  {
+    "text": "$2,000,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1713,870][1859,910]",
+    "center": [
+      1786,
+      890
+    ]
+  },
+  {
+    "text": "▲$101",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1883,870][1979,910]",
+    "center": [
+      1931,
+      890
+    ]
+  },
+  {
+    "text": "▲$105,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2053,870][2204,910]",
+    "center": [
+      2128,
+      890
+    ]
+  },
+  {
+    "text": "4y 8m 24d",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2223,870][2360,910]",
+    "center": [
+      2291,
+      890
+    ]
+  },
+  {
+    "text": "1.15%",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2393,870][2472,910]",
+    "center": [
+      2432,
+      890
+    ]
+  },
+  {
+    "text": "16",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[183,966][217,1006]",
+    "center": [
+      200,
+      986
+    ]
+  },
+  {
+    "text": "16",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[353,966][387,1006]",
+    "center": [
+      370,
+      986
+    ]
+  },
+  {
+    "text": "01",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[523,966][557,1006]",
+    "center": [
+      540,
+      986
+    ]
+  },
+  {
+    "text": "581",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[693,966][744,1006]",
+    "center": [
+      718,
+      986
+    ]
+  },
+  {
+    "text": "Jan 2013",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[863,966][984,1006]",
+    "center": [
+      923,
+      986
+    ]
+  },
+  {
+    "text": "$2,264",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1033,966][1123,1006]",
+    "center": [
+      1078,
+      986
+    ]
+  },
+  {
+    "text": "$1,316,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1203,966][1349,1006]",
+    "center": [
+      1276,
+      986
+    ]
+  },
+  {
+    "text": "26 May 2023",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1373,946][1527,1026]",
+    "center": [
+      1450,
+      986
+    ]
+  },
+  {
+    "text": "$2,495",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1543,966][1633,1006]",
+    "center": [
+      1588,
+      986
+    ]
+  },
+  {
+    "text": "$1,450,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1713,966][1859,1006]",
+    "center": [
+      1786,
+      986
+    ]
+  },
+  {
+    "text": "▲$231",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1883,966][1979,1006]",
+    "center": [
+      1931,
+      986
+    ]
+  },
+  {
+    "text": "▲$134,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2053,966][2204,1006]",
+    "center": [
+      2128,
+      986
+    ]
+  },
+  {
+    "text": "10y 3m 28d",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2223,966][2376,1006]",
+    "center": [
+      2299,
+      986
+    ]
+  },
+  {
+    "text": "0.94%",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2393,966][2472,1006]",
+    "center": [
+      2432,
+      986
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[13,516][66,526]",
+    "center": [
+      39,
+      521
+    ]
+  },
+  {
+    "text": "3BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[13,582][66,622]",
+    "center": [
+      39,
+      602
+    ]
+  },
+  {
+    "text": "2BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[13,678][66,718]",
+    "center": [
+      39,
+      698
+    ]
+  },
+  {
+    "text": "3BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[13,774][66,814]",
+    "center": [
+      39,
+      794
+    ]
+  },
+  {
+    "text": "3BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[13,870][66,910]",
+    "center": [
+      39,
+      890
+    ]
+  },
+  {
+    "text": "2BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[13,966][66,1006]",
+    "center": [
+      39,
+      986
+    ]
+  },
+  {
+    "text": "View All (26)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2356,1063][2536,1101]",
+    "center": [
+      2446,
+      1082
+    ]
+  },
+  {
+    "text": "Unprofitable Transactions",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,1210][447,1252]",
+    "center": [
+      239,
+      1231
+    ]
+  },
+  {
+    "text": "-$3,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,1268][1215,1306]",
+    "center": [
+      623,
+      1287
+    ]
+  },
+  {
+    "text": "-$54,474",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1215,1268][1344,1306]",
+    "center": [
+      1279,
+      1287
+    ]
+  },
+  {
+    "text": "-$185,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1344,1268][2528,1306]",
+    "center": [
+      1936,
+      1287
+    ]
+  },
+  {
+    "text": "-$7 PSF",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,1306][1221,1338]",
+    "center": [
+      626,
+      1322
+    ]
+  },
+  {
+    "text": "-$101 PSF",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1221,1306][1338,1338]",
+    "center": [
+      1279,
+      1322
+    ]
+  },
+  {
+    "text": "-$419 PSF",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1338,1306][2528,1338]",
+    "center": [
+      1933,
+      1322
+    ]
+  },
+  {
+    "text": "LEAST LOSS",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,1364][864,1376]",
+    "center": [
+      448,
+      1370
+    ]
+  },
+  {
+    "text": "AVERAGE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[864,1364][1696,1376]",
+    "center": [
+      1280,
+      1370
+    ]
+  },
+  {
+    "text": "MAX LOSS",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,1364][2528,1376]",
+    "center": [
+      2112,
+      1370
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Back",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,168][80,216]",
+    "center": [
+      56,
+      192
+    ]
+  },
+  {
+    "text": "Spottiswoode Suites",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1021,156][1540,228]",
+    "center": [
+      1280,
+      192
+    ]
+  },
+  {
+    "text": "Market",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[212,1472][288,1504]",
+    "center": [
+      250,
+      1488
+    ]
+  },
+  {
+    "text": "Property Analysis",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[669,1472][861,1504]",
+    "center": [
+      765,
+      1488
+    ]
+  },
+  {
+    "text": "ProTrend",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1231,1472][1330,1504]",
+    "center": [
+      1280,
+      1488
+    ]
+  },
+  {
+    "text": "ProMap",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1753,1472][1837,1504]",
+    "center": [
+      1795,
+      1488
+    ]
+  },
+  {
+    "text": "More",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1472][2338,1504]",
+    "center": [
+      2310,
+      1488
+    ]
+  }
+]

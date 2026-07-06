@@ -1,13 +1,13 @@
 [
   {
-    "date": "04 Feb 2026",
+    "date": "23 Jun 2026",
     "street": "16 Spottiswoode Park Road",
-    "level": "28",
-    "unit": "04",
-    "unit_type": "1BR",
-    "area_sqft": "441",
-    "psf": "$2,352",
-    "price": "$1,038,000",
+    "level": "18",
+    "unit": "02",
+    "unit_type": "3BR",
+    "area_sqft": "743",
+    "psf": "$2,330",
+    "price": "$1,730,900",
     "sale_type": "Resale"
   },
   {

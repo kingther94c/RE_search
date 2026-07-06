@@ -1,0 +1,1104 @@
+{
+  "subject": {
+    "name": "#18-03 Spottiswoode Suites（743 sqft 紧凑 3BR）",
+    "development": "Spottiswoode Suites",
+    "address": "16 Spottiswoode Park Road, D2（Anson/Tanjong Pagar，Everton Park）",
+    "district": "D2（RCR）",
+    "tenure": "Freehold",
+    "top_year": 2017,
+    "size_sqft": 743,
+    "floor": 18,
+    "bedrooms": 3
+  },
+  "asof": "2026-07-03",
+  "report_basename": "spottiswoode_1803_Condo_Valuation_Report.html",
+  "subtitle": "Tier-1 重做（Investment Suite caveat + 全网格 AVM，三面重构 37 笔）· 2026-06-23 同层孪生成交为上锚 · 独立分析师验收 PASS 8.8/10",
+  "summary": "【2026-07-03｜Tier-1 深度重做】#18-03（743 sqft 紧凑 3BR，18 楼，freehold，Spottiswoode Suites 183 户/36 层/TOP 2017，D2 Everton Park）。本次重做的决定性新证据：同层同规格孪生 #18-02 于 2026-06-23 以 $1,730,900（$2,330 psf）成交（app caveat，3 caveats 登记）——同面积、同户型、同楼层、10 天前，是教科书级直接可比。三角定价：模型（37 笔 5Y 三面重构集 + 自身 2021 锚，拟合趋势 2.5%/yr）点估 ~S$2,309 psf ≈ 1.72m；app 对 #18-03 的最新 Est. Val 为 S$2,250 psf（$1,671,000，较 6/24 的 2,236 已上调）；同 743sf cohort 15 个单元的 AVM 带几乎持平在 S$2,244–2,250。关键判读：app AVM 对着 #18-02 的新成交低了 3.6%（app 给该买家标 −$59,900 Est. P/L）——AVM 滞后于最新市场，合理市场价以孪生成交为上锚。方法论修正：2021 年自身买入价 $2,020 psf 是 COVID 低点（同 stack 2013 年即成交 $2,107-2,258）——旧版把它当中性锚导致估值系统性偏低（旧版 2,269 psf）。租金（app 6-7 月合约）：3BR 700-800 sqft 月租 $4,450-4,600 → 毛收益率 ~3.2%。催化剂：Cantonment MRT（CC 环线延伸）2026-07-12 开通——本单元步行圈第 4 个地铁站，孪生成交价大概率已部分计价。 — [EN] The decisive new evidence: the same-floor, same-size twin #18-02 printed $1,730,900 ($2,330 psf) on 23 Jun 2026 — a textbook direct comp. Model on a reconstructed 37-caveat three-surface 5Y set lands ~S$2,309 psf; the app's own AVM ($2,250, cohort-flat across 15 units) demonstrably LAGS the newest print by 3.6%. The 2021 own-purchase at $2,020 was a covid-era dip print — the old report's neutral-anchor treatment underpriced the unit. Gross yield ~3.2%; Cantonment MRT opens 12 Jul 2026.",
+  "development_facts": [
+    "Tier-1（app Property Info）：Spottiswoode Suites，16 Spottiswoode Park Rd，D2/Everton Park（RCR），freehold，TOP 2017，183 户 36 层，地块 38,911 sqft，容积率 2.8。开发商 Centurion + Lian Beng JV（Tier-2 口径：capture 中 Developer 字段未回吐值,以外部记录为准）。",
+    "户型结构：1BR 441-463 sqft、2BR 538-581 sqft、紧凑 3BR 743 sqft（#02/#03 stack）、大户 1,033-1,378 sqft。成交流动性以 1BR 为主（5Y 16 笔中 1BR 占 10 笔）。",
+    "#18-03 自身：2 caveats；上次成交 2021-05-07 $1,500,000（$2,020 psf，持有 5y1m）——该价为 COVID 期低点（同 stack #17-03 2013 年成交 $2,107、#20~22-02 2013 年 $2,217-2,258）。",
+    "口径注记：孪生 #18-02 成交 psf——caveat 表记 $2,330、Tower View PP 字段记 $2,331（$1,730,900/743 = $2,329.6，两处为不同取整），本报告统一按 caveat 表 $2,330 引用。"
+  ],
+  "valuation": {
+    "estimate_psf": 2309,
+    "estimate_price": 1716000.0,
+    "low_psf": 2203,
+    "high_psf": 2435,
+    "low_price": 1637000.0,
+    "high_price": 1809000.0,
+    "params_note": "【读数指引】三角定价：孪生直接成交 $2,330（2026-06-23）· 去锚口径 $2,312（仅 comps；含锚点估为 $2,309） · app AVM $2,250（对孪生实际成交滞后 ~3.6%，作下锚）→ 谈判带 $2,250–2,330 psf（≈ $1.67–1.73m；模型点估落在 AVM 下锚与孪生上锚之间）。 模型输入：37 笔 5Y 三面重构集 = Sale 表 16 ∪ Profitability 卖出腿 6 ∪ Tower View PP 面（5Y 窗口内、前两面未含的最后成交）——三面均为 app/URA caveat 口径，逐笔可溯源。Sale 表 UI 懒加载且可跳行（#21-03 2024-05 即在其日期范围内被跳过）——单面不完整是系统性风险，三面互补是本报告的采集方法论。自身 2021 锚（$2,020，COVID 低点——趋势前推 ≈ $2,294，权重 2.0）。趋势 2.5%/yr 项目内拟合（cohort 对 +2.35%/yr、长对 +2.83%/yr、1-2BR 持平）。敏感性：趋势 0% → 2,155；4.5% → 2,440；去锚 → 2,312。区间=调整后值的四分位距（exclusive/type-6，含前推锚共 38 个值（锚在分位集合计 1 次；其 2.0 权重只作用于加权均值）；仅 comps 口径为略宽带）。楼层 ±0.3%/层；面积弹性 -0.08；紧凑 3BR 折价 3% 对称抵消；872sf 行户型未确认（type-uncertain，低权重）。 补充披露：①趋势拟合的『长对 +2.83%/yr』以自身 2021 低点为基（与锚修正论证存在轻度循环）——2.5%/yr 的主要依据是干净的 cohort 跨单元对 +2.35%/yr，长对仅作旁证；②权重公式 = 1/(1 + |ln(面积比)|×3 + 楼层差/25 + 年差/2 + 异户型 0.6)——『异户型』按卧室数不同判定（1,033-1,378sf 大 3BR 与主体同为 3 房，不吃 0.6 罚项；×0.97 的 type_adj 则按『紧凑 3BR≤800sf』判定，两者口径不同）——孪生权重 ~0.99、其余 0.16-0.46 由此可复算。",
+    "grid": [
+      {
+        "label": "2026-06-23 L18 #02 743sf",
+        "raw_psf": 2330.0,
+        "time_adj": 1.0006762754593719,
+        "floor_adj": 1.0,
+        "size_adj": 1.0,
+        "type_adj": 1.0,
+        "adj_psf": 2331.5757218203366,
+        "weight": 0.9864956110735988
+      },
+      {
+        "label": "2026-02-03 L28 #04 441sf",
+        "raw_psf": 2352.0,
+        "time_adj": 1.0101922944972683,
+        "floor_adj": 0.9704891174321388,
+        "size_adj": 0.9591267023933653,
+        "type_adj": 0.97,
+        "adj_psf": 2145.2591105302363,
+        "weight": 0.2652314239751317
+      },
+      {
+        "label": "2026-01-09 L9 #08 452sf",
+        "raw_psf": 2146.0,
+        "time_adj": 1.0119010815085512,
+        "floor_adj": 1.0273262782366783,
+        "size_adj": 0.961018990336615,
+        "type_adj": 0.97,
+        "adj_psf": 2079.600335578163,
+        "weight": 0.27095839191606436
+      },
+      {
+        "label": "2025-12-03 L23 #06 452sf",
+        "raw_psf": 2389.0,
+        "time_adj": 1.0144353923520901,
+        "floor_adj": 0.9851340606395349,
+        "size_adj": 0.961018990336615,
+        "type_adj": 0.97,
+        "adj_psf": 2225.561405339887,
+        "weight": 0.2792318171131146
+      },
+      {
+        "label": "2025-09-10 L19 #08 441sf",
+        "raw_psf": 2275.0,
+        "time_adj": 1.0202125499482417,
+        "floor_adj": 0.9970089730807579,
+        "size_adj": 0.9591267023933653,
+        "type_adj": 0.97,
+        "adj_psf": 2152.875155249767,
+        "weight": 0.2769963844954407
+      },
+      {
+        "label": "2025-07-16 L25 #04 452sf",
+        "raw_psf": 2278.0,
+        "time_adj": 1.0240822549220128,
+        "floor_adj": 0.9792497488984045,
+        "size_adj": 0.961018990336615,
+        "type_adj": 0.97,
+        "adj_psf": 2129.53966352765,
+        "weight": 0.2595445339583895
+      },
+      {
+        "label": "2025-05-16 L25 #06 463sf",
+        "raw_psf": 2344.0,
+        "time_adj": 1.0283141733914105,
+        "floor_adj": 0.9792497488984045,
+        "size_adj": 0.9628693759198639,
+        "type_adj": 0.97,
+        "adj_psf": 2204.529965501429,
+        "weight": 0.2587808777331885
+      },
+      {
+        "label": "2025-03-25 L10 #01 581sf",
+        "raw_psf": 2581.0,
+        "time_adj": 1.0319355156789105,
+        "floor_adj": 1.0242535176836276,
+        "size_adj": 0.9805166787571522,
+        "type_adj": 0.97,
+        "adj_psf": 2594.6258947716256,
+        "weight": 0.30354668454444667
+      },
+      {
+        "label": "2024-10-15 L17 #01 581sf",
+        "raw_psf": 2581.0,
+        "time_adj": 1.0432288167211203,
+        "floor_adj": 1.003,
+        "size_adj": 0.9805166787571522,
+        "type_adj": 0.97,
+        "adj_psf": 2568.5926307096483,
+        "weight": 0.30913973226239616
+      },
+      {
+        "label": "2024-09-05 L12 #05 441sf",
+        "raw_psf": 2358.0,
+        "time_adj": 1.0460537209158143,
+        "floor_adj": 1.018135541216458,
+        "size_adj": 0.9591267023933653,
+        "type_adj": 0.97,
+        "adj_psf": 2336.4210149275405,
+        "weight": 0.23166070643439193
+      },
+      {
+        "label": "2024-08-29 L13 #07 538sf",
+        "raw_psf": 2453.0,
+        "time_adj": 1.0465488650198123,
+        "floor_adj": 1.0150902704052425,
+        "size_adj": 0.9745036653645507,
+        "type_adj": 0.97,
+        "adj_psf": 2463.2978941237916,
+        "weight": 0.27101745487951634
+      },
+      {
+        "label": "2024-08-15 L15 #04 452sf",
+        "raw_psf": 2327.0,
+        "time_adj": 1.0475398564604297,
+        "floor_adj": 1.0090270269999997,
+        "size_adj": 0.961018990336615,
+        "type_adj": 0.97,
+        "adj_psf": 2292.8383765413632,
+        "weight": 0.24087717794368843
+      },
+      {
+        "label": "2024-07-25 L19 #05 441sf",
+        "raw_psf": 2426.0,
+        "time_adj": 1.049028103367791,
+        "floor_adj": 0.9970089730807579,
+        "size_adj": 0.9591267023933653,
+        "type_adj": 0.97,
+        "adj_psf": 2360.6125022079123,
+        "weight": 0.23956957857444222
+      },
+      {
+        "label": "2024-07-19 L18 #07 538sf",
+        "raw_psf": 2471.0,
+        "time_adj": 1.0494537049908816,
+        "floor_adj": 1.0,
+        "size_adj": 0.9745036653645507,
+        "type_adj": 0.97,
+        "adj_psf": 2451.270517156542,
+        "weight": 0.28201384629380233
+      },
+      {
+        "label": "2024-05-28 L21 #03 743sf",
+        "raw_psf": 2222.0,
+        "time_adj": 1.0531494928920861,
+        "floor_adj": 0.9910537312099177,
+        "size_adj": 1.0,
+        "type_adj": 1.0,
+        "adj_psf": 2319.1630259535323,
+        "weight": 0.4611276638723361
+      },
+      {
+        "label": "2024-05-09 L30 #07 1033sf",
+        "raw_psf": 2419.0,
+        "time_adj": 1.0545031210974494,
+        "floor_adj": 0.9646922815125303,
+        "size_adj": 1.026712668148926,
+        "type_adj": 0.97,
+        "adj_psf": 2450.7171868811697,
+        "weight": 0.28223189035241203
+      },
+      {
+        "label": "2024-04-26 L16 #05 441sf",
+        "raw_psf": 2266.0,
+        "time_adj": 1.0554302900837382,
+        "floor_adj": 1.0060089999999997,
+        "size_adj": 0.9591267023933653,
+        "type_adj": 0.97,
+        "adj_psf": 2238.406930736939,
+        "weight": 0.23055520609412056
+      },
+      {
+        "label": "2024-02-19 L32 #06 872sf",
+        "raw_psf": 2374.0,
+        "time_adj": 1.060221719750078,
+        "floor_adj": 0.9589300707175885,
+        "size_adj": 1.0128898372451252,
+        "type_adj": 0.97,
+        "adj_psf": 2371.3644081750854,
+        "weight": 0.26147888357025
+      },
+      {
+        "label": "2024-02-02 L28 #05 441sf",
+        "raw_psf": 2447.0,
+        "time_adj": 1.061440911522555,
+        "floor_adj": 0.9704891174321388,
+        "size_adj": 0.9591267023933653,
+        "type_adj": 0.97,
+        "adj_psf": 2345.136781447542,
+        "weight": 0.20954056177558336
+      },
+      {
+        "label": "2023-08-30 L23 #05 441sf",
+        "raw_psf": 2379.0,
+        "time_adj": 1.072694456698364,
+        "floor_adj": 0.9851340606395349,
+        "size_adj": 0.9591267023933653,
+        "type_adj": 0.97,
+        "adj_psf": 2338.9101017605585,
+        "weight": 0.20894719990681662
+      },
+      {
+        "label": "2023-07-07 L23 #01 581sf",
+        "raw_psf": 2495.0,
+        "time_adj": 1.0766176488951094,
+        "floor_adj": 0.9851340606395349,
+        "size_adj": 0.9805166787571522,
+        "type_adj": 0.97,
+        "adj_psf": 2516.831260502891,
+        "weight": 0.2479726750091067
+      },
+      {
+        "label": "2023-05-26 L23 #08 441sf",
+        "raw_psf": 2447.0,
+        "time_adj": 1.0796789377929286,
+        "floor_adj": 0.9851340606395349,
+        "size_adj": 0.9591267023933653,
+        "type_adj": 0.97,
+        "adj_psf": 2421.428500922325,
+        "weight": 0.20336301813065247
+      },
+      {
+        "label": "2023-05-26 L16 #01 581sf",
+        "raw_psf": 2495.0,
+        "time_adj": 1.0796789377929286,
+        "floor_adj": 1.0060089999999997,
+        "size_adj": 0.9805166787571522,
+        "type_adj": 0.97,
+        "adj_psf": 2577.470866317396,
+        "weight": 0.25187665361111644
+      },
+      {
+        "label": "2022-12-21 L32 #04 840sf",
+        "raw_psf": 2144.0,
+        "time_adj": 1.0911258450770975,
+        "floor_adj": 0.9589300707175885,
+        "size_adj": 1.0098648073344194,
+        "type_adj": 0.97,
+        "adj_psf": 2197.462809325527,
+        "weight": 0.23288139520993714
+      },
+      {
+        "label": "2022-10-05 L27 #05 441sf",
+        "raw_psf": 2442.0,
+        "time_adj": 1.0968205765413042,
+        "floor_adj": 0.9734005847844351,
+        "size_adj": 0.9591267023933653,
+        "type_adj": 0.97,
+        "adj_psf": 2425.6077303770276,
+        "weight": 0.1853130333051516
+      },
+      {
+        "label": "2022-09-30 L23 #02 743sf",
+        "raw_psf": 2316.0,
+        "time_adj": 1.097191390278467,
+        "floor_adj": 0.9851340606395349,
+        "size_adj": 1.0,
+        "type_adj": 1.0,
+        "adj_psf": 2503.3194918423146,
+        "weight": 0.32486880725784933
+      },
+      {
+        "label": "2022-09-08 L34 #05 840sf",
+        "raw_psf": 2150.0,
+        "time_adj": 1.0988244606280406,
+        "floor_adj": 0.9532022782277183,
+        "size_adj": 1.0098648073344194,
+        "type_adj": 0.97,
+        "adj_psf": 2205.905086966255,
+        "weight": 0.22141530906325482
+      },
+      {
+        "label": "2022-05-26 L30 #01 1012sf",
+        "raw_psf": 2135.0,
+        "time_adj": 1.1066522073601668,
+        "floor_adj": 0.9646922815125303,
+        "size_adj": 1.0250270724730157,
+        "type_adj": 0.97,
+        "adj_psf": 2266.234819118062,
+        "weight": 0.22426640651346705
+      },
+      {
+        "label": "2022-04-19 L32 #07 1033sf",
+        "raw_psf": 1935.0,
+        "time_adj": 1.109423822827716,
+        "floor_adj": 0.9589300707175885,
+        "size_adj": 1.026712668148926,
+        "type_adj": 0.97,
+        "adj_psf": 2050.1519436447797,
+        "weight": 0.2149960299455599
+      },
+      {
+        "label": "2022-04-13 L23 #03 743sf",
+        "raw_psf": 2222.0,
+        "time_adj": 1.1098739276229783,
+        "floor_adj": 0.9851340606395349,
+        "size_adj": 1.0,
+        "type_adj": 1.0,
+        "adj_psf": 2429.47838145836,
+        "weight": 0.30203423468122054
+      },
+      {
+        "label": "2021-12-07 L22 #06 452sf",
+        "raw_psf": 2400.0,
+        "time_adj": 1.1194441031694013,
+        "floor_adj": 0.9880894628214534,
+        "size_adj": 0.961018990336615,
+        "type_adj": 0.97,
+        "adj_psf": 2474.649105451897,
+        "weight": 0.18064307964977905
+      },
+      {
+        "label": "2021-10-20 L12 #07 538sf",
+        "raw_psf": 2059.0,
+        "time_adj": 1.1230826276998354,
+        "floor_adj": 1.018135541216458,
+        "size_adj": 0.9745036653645507,
+        "type_adj": 0.97,
+        "adj_psf": 2225.50649157063,
+        "weight": 0.1938376170415668
+      },
+      {
+        "label": "2021-09-13 L18 #01 581sf",
+        "raw_psf": 2159.0,
+        "time_adj": 1.1258953932295712,
+        "floor_adj": 1.0,
+        "size_adj": 0.9805166787571522,
+        "type_adj": 0.97,
+        "adj_psf": 2311.944499703701,
+        "weight": 0.21101805431951082
+      },
+      {
+        "label": "2021-09-09 L36 #01 1259sf",
+        "raw_psf": 1652.0,
+        "time_adj": 1.1261998976303649,
+        "floor_adj": 0.9475086984586804,
+        "size_adj": 1.0430928135313318,
+        "type_adj": 0.97,
+        "adj_psf": 1783.6244609802873,
+        "weight": 0.15851121675075397
+      },
+      {
+        "label": "2021-09-09 L36 #07 1259sf",
+        "raw_psf": 1735.0,
+        "time_adj": 1.1261998976303649,
+        "floor_adj": 0.9475086984586804,
+        "size_adj": 1.0430928135313318,
+        "type_adj": 0.97,
+        "adj_psf": 1873.2375543588369,
+        "weight": 0.17517117434146875
+      },
+      {
+        "label": "2021-07-27 L5 #04 1087sf",
+        "raw_psf": 1571.0,
+        "time_adj": 1.129554886361359,
+        "floor_adj": 1.0397097802289943,
+        "size_adj": 1.0309064537346821,
+        "type_adj": 0.97,
+        "adj_psf": 1844.9586866210595,
+        "weight": 0.17457350555719686
+      },
+      {
+        "label": "2021-07-12 L12 #06 452sf",
+        "raw_psf": 2196.0,
+        "time_adj": 1.1307009154391048,
+        "floor_adj": 1.018135541216458,
+        "size_adj": 0.961018990336615,
+        "type_adj": 0.97,
+        "adj_psf": 2356.6190370068184,
+        "weight": 0.17186917421927644
+      }
+    ]
+  },
+  "comps_table": [
+    {
+      "date": "2026-06-23",
+      "size_sqft": 743,
+      "level": "L18 #02",
+      "psf": 2330,
+      "price": 1730900,
+      "note": "3BR　⭐同层同规格孪生（最强直接可比） · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2026-02-03",
+      "size_sqft": 441,
+      "level": "L28 #04",
+      "psf": 2352,
+      "price": 1038000,
+      "note": "1BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2026-01-09",
+      "size_sqft": 452,
+      "level": "L9 #08",
+      "psf": 2146,
+      "price": 970000,
+      "note": "1BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2025-12-03",
+      "size_sqft": 452,
+      "level": "L23 #06",
+      "psf": 2389,
+      "price": 1080000,
+      "note": "1BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2025-09-10",
+      "size_sqft": 441,
+      "level": "L19 #08",
+      "psf": 2275,
+      "price": 1003888,
+      "note": "1BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2025-07-16",
+      "size_sqft": 452,
+      "level": "L25 #04",
+      "psf": 2278,
+      "price": 1030000,
+      "note": "1BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2025-05-16",
+      "size_sqft": 463,
+      "level": "L25 #06",
+      "psf": 2344,
+      "price": 1085000,
+      "note": "1BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2025-03-25",
+      "size_sqft": 581,
+      "level": "L10 #01",
+      "psf": 2581,
+      "price": 1500000,
+      "note": "2BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2024-10-15",
+      "size_sqft": 581,
+      "level": "L17 #01",
+      "psf": 2581,
+      "price": 1500000,
+      "note": "2BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2024-09-05",
+      "size_sqft": 441,
+      "level": "L12 #05",
+      "psf": 2358,
+      "price": 1040000,
+      "note": "1BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2024-08-29",
+      "size_sqft": 538,
+      "level": "L13 #07",
+      "psf": 2453,
+      "price": 1320000,
+      "note": "2BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2024-08-15",
+      "size_sqft": 452,
+      "level": "L15 #04",
+      "psf": 2327,
+      "price": 1052000,
+      "note": "1BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2024-07-25",
+      "size_sqft": 441,
+      "level": "L19 #05",
+      "psf": 2426,
+      "price": 1070000,
+      "note": "1BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2024-07-19",
+      "size_sqft": 538,
+      "level": "L18 #07",
+      "psf": 2471,
+      "price": 1330000,
+      "note": "2BR · Investment Suite（URA caveat）（PP 面日期 2024-07-23 与 caveat 表差 4 天——同笔，两面日期口径不同）"
+    },
+    {
+      "date": "2024-05-28",
+      "size_sqft": 743,
+      "level": "L21 #03",
+      "psf": 2222,
+      "price": 1650000,
+      "beds": 3,
+      "note": "3BR　⭐cohort（743sf） · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2024-05-09",
+      "size_sqft": 1033,
+      "level": "L30 #07",
+      "psf": 2419,
+      "price": 2500000,
+      "note": "3BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2024-04-26",
+      "size_sqft": 441,
+      "level": "L16 #05",
+      "psf": 2266,
+      "price": 1000000,
+      "note": "1BR · Investment Suite（URA caveat）"
+    },
+    {
+      "date": "2024-02-19",
+      "size_sqft": 872,
+      "level": "L32 #06",
+      "psf": 2374,
+      "price": 2070000,
+      "note": "2BR（面积推断） · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2024-02-02",
+      "size_sqft": 441,
+      "level": "L28 #05",
+      "psf": 2447,
+      "price": 1080000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-08-30",
+      "size_sqft": 441,
+      "level": "L23 #05",
+      "psf": 2379,
+      "price": 1050000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-07-07",
+      "size_sqft": 581,
+      "level": "L23 #01",
+      "psf": 2495,
+      "price": 1450000,
+      "note": "2BR · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2023-05-26",
+      "size_sqft": 441,
+      "level": "L23 #08",
+      "psf": 2447,
+      "price": 1080000,
+      "note": "1BR · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2023-05-26",
+      "size_sqft": 581,
+      "level": "L16 #01",
+      "psf": 2495,
+      "price": 1450000,
+      "note": "2BR · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2022-12-21",
+      "size_sqft": 840,
+      "level": "L32 #04",
+      "psf": 2144,
+      "price": 1800000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-10-05",
+      "size_sqft": 441,
+      "level": "L27 #05",
+      "psf": 2442,
+      "price": 1077500,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-09-30",
+      "size_sqft": 743,
+      "level": "L23 #02",
+      "psf": 2316,
+      "price": 1720000,
+      "note": "3BR　⭐cohort 自身转售 · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2022-09-08",
+      "size_sqft": 840,
+      "level": "L34 #05",
+      "psf": 2150,
+      "price": 1805000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-05-26",
+      "size_sqft": 1012,
+      "level": "L30 #01",
+      "psf": 2135,
+      "price": 2160000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-19",
+      "size_sqft": 1033,
+      "level": "L32 #07",
+      "psf": 1935,
+      "price": 2000000,
+      "note": "3BR · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-13",
+      "size_sqft": 743,
+      "level": "L23 #03",
+      "psf": 2222,
+      "price": 1650000,
+      "beds": 3,
+      "note": "3BR　⭐cohort（743sf） · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-07",
+      "size_sqft": 452,
+      "level": "L22 #06",
+      "psf": 2400,
+      "price": 1085000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-10-20",
+      "size_sqft": 538,
+      "level": "L12 #07",
+      "psf": 2059,
+      "price": 1108000,
+      "beds": 1,
+      "note": "? · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-09-13",
+      "size_sqft": 581,
+      "level": "L18 #01",
+      "psf": 2159,
+      "price": 1255000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-09-09",
+      "size_sqft": 1259,
+      "level": "L36 #01",
+      "psf": 1652,
+      "price": 2080000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-09-09",
+      "size_sqft": 1259,
+      "level": "L36 #07",
+      "psf": 1735,
+      "price": 2185000,
+      "beds": 3,
+      "note": "? · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-07-27",
+      "size_sqft": 1087,
+      "level": "L5 #04",
+      "psf": 1571,
+      "price": 1708000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-07-12",
+      "size_sqft": 452,
+      "level": "L12 #06",
+      "psf": 2196,
+      "price": 993000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    }
+  ],
+  "avm_crosscheck": [
+    {
+      "blk": "16",
+      "unit": "#23-02",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#22-02",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#21-02",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#20-02",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#19-02",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#18-02",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#17-02",
+      "sqft": "743",
+      "est_val": "$1,670,000",
+      "est_psf": 2248
+    },
+    {
+      "blk": "16",
+      "unit": "#23-03",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#22-03",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#21-03",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#20-03",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#19-03",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#18-03",
+      "sqft": "743",
+      "est_val": "$1,671,000",
+      "est_psf": 2250
+    },
+    {
+      "blk": "16",
+      "unit": "#17-03",
+      "sqft": "743",
+      "est_val": "$1,670,000",
+      "est_psf": 2248
+    },
+    {
+      "blk": "16",
+      "unit": "#16-03",
+      "sqft": "743",
+      "est_val": "$1,667,000",
+      "est_psf": 2244
+    }
+  ],
+  "rentals": [
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$4,300",
+      "note": "500 - 600 sqft · $7.82/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "3BR",
+      "monthly_rent": "$4,600",
+      "note": "700 - 800 sqft · $6.13/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "1BR",
+      "monthly_rent": "$3,400",
+      "note": "400 - 500 sqft · $7.56/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$4,300",
+      "note": "600 - 700 sqft · $6.62/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "3BR",
+      "monthly_rent": "$4,450",
+      "note": "700 - 800 sqft · $5.93/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$4,000",
+      "note": "500 - 600 sqft · $7.27/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$4,500",
+      "note": "800 - 900 sqft · $5.29/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$3,600",
+      "note": "500 - 600 sqft · $6.55/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$4,200",
+      "note": "500 - 600 sqft · $7.64/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "3BR",
+      "monthly_rent": "$4,800",
+      "note": "786 sqft · $6.11/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$4,800",
+      "note": "840 sqft · $5.71/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$5,200",
+      "note": "1238 sqft · $4.20/sqft · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$4,000",
+      "note": "581 sqft · $6.88/sqft · Investment Suite（租约）"
+    }
+  ],
+  "yield_analysis": [
+    "3BR 700-800 sqft 最新合约 $4,450–4,800/mo（app Rent 表）→ 对点估（S$1,716,000）毛收益率 ~3.2%（按 $4,600 中枢；对谈判带上沿 $1.73m 为 ~3.2%）。",
+    "全盘租金带（app）：$1,500–7,000/mo；1BR $3,400（$7.56 psf）——小户型租金 psf 显著更高，但 3BR 743sf 的 ~3.2% 毛收益率在 CCR 边缘 freehold 里已属可观（对照 Gallop Gables ~2.3%）。"
+  ],
+  "profitability": [
+    {
+      "unit": "#17-01 (581 sqft)",
+      "bought": "Apr 2021 @ $1,238,000 ($2,130)",
+      "sold": "15 Oct 2024 @ $1,500,000 ($2,581)",
+      "profit": "▲$262,000 (▲$451 psf)",
+      "holding": "3y 5m 18d",
+      "annualised": "5.69%"
+    },
+    {
+      "unit": "#10-01 (581 sqft)",
+      "bought": "Oct 2019 @ $1,233,000 ($2,121)",
+      "sold": "25 Mar 2025 @ $1,500,000 ($2,581)",
+      "profit": "▲$267,000 (▲$460 psf)",
+      "holding": "5y 5m 16d",
+      "annualised": "3.65%"
+    },
+    {
+      "unit": "#32-06 (872 sqft)",
+      "bought": "Sep 2017 @ $1,825,000 ($2,093)",
+      "sold": "19 Feb 2024 @ $2,070,000 ($2,374)",
+      "profit": "▲$245,000 (▲$281 psf)",
+      "holding": "6y 5m 17d",
+      "annualised": "1.97%"
+    },
+    {
+      "unit": "#23-01 (581 sqft)",
+      "bought": "Apr 2018 @ $1,320,000 ($2,271)",
+      "sold": "07 Jul 2023 @ $1,450,000 ($2,495)",
+      "profit": "▲$130,000 (▲$224 psf)",
+      "holding": "5y 2m 19d",
+      "annualised": "1.82%"
+    },
+    {
+      "unit": "#23-08 (441 sqft)",
+      "bought": "Jul 2017 @ $985,000 ($2,232)",
+      "sold": "26 May 2023 @ $1,080,000 ($2,447)",
+      "profit": "▲$95,000 (▲$215 psf)",
+      "holding": "5y 10m 10d",
+      "annualised": "1.58%"
+    },
+    {
+      "unit": "#30-07 (1,033 sqft)",
+      "bought": "Jan 2013 @ $2,154,000 ($2,084)",
+      "sold": "09 May 2024 @ $2,500,000 ($2,419)",
+      "profit": "▲$346,000 (▲$335 psf)",
+      "holding": "11y 3m 16d",
+      "annualised": "1.33%"
+    },
+    {
+      "unit": "#13-07 (538 sqft)",
+      "bought": "Jan 2013 @ $1,149,000 ($2,135)",
+      "sold": "29 Aug 2024 @ $1,320,000 ($2,453)",
+      "profit": "▲$171,000 (▲$318 psf)",
+      "holding": "11y 7m 3d",
+      "annualised": "1.20%"
+    },
+    {
+      "unit": "#23-02 (743 sqft)",
+      "bought": "Mar 2014 @ $1,556,000 ($2,095)",
+      "sold": "30 Sep 2022 @ $1,720,000 ($2,316)",
+      "profit": "▲$164,000 (▲$221 psf)",
+      "holding": "8y 6m 13d",
+      "annualised": "1.18%"
+    },
+    {
+      "unit": "#32-07 (1,033 sqft)",
+      "bought": "Jul 2017 @ $1,895,000 ($1,834)",
+      "sold": "19 Apr 2022 @ $2,000,000 ($1,935)",
+      "profit": "▲$105,000 (▲$101 psf)",
+      "holding": "4y 8m 24d",
+      "annualised": "1.15%"
+    },
+    {
+      "unit": "#16-01 (581 sqft)",
+      "bought": "Jan 2013 @ $1,316,000 ($2,264)",
+      "sold": "26 May 2023 @ $1,450,000 ($2,495)",
+      "profit": "▲$134,000 (▲$231 psf)",
+      "holding": "10y 3m 28d",
+      "annualised": "0.94%"
+    }
+  ],
+  "market_comps": [
+    {
+      "project": "Spottiswoode 18（FH，TOP 2015，251 户，隔壁）",
+      "psf": "10Y 带 $1,433–2,529（app Nearby）",
+      "note": "小户型为主的直接竞品；租约量大（1,638 笔）· yield 3.19%。"
+    },
+    {
+      "project": "Sky Everton（FH，TOP 2023，262 户）",
+      "psf": "带 $2,053–3,406（app Nearby）",
+      "note": "新一代 FH 定价天花板——支撑本盘补涨叙事。"
+    },
+    {
+      "project": "Spottiswoode Residences（FH，TOP 2014）",
+      "psf": "yield 2.94%（app Nearby）",
+      "note": "同街 FH 参照。"
+    }
+  ],
+  "catchment": [
+    "Cantonment MRT（Circle Line 6）2026-07-12 开通——步行圈内第 4 个站（Outram Park/Tanjong Pagar/Cantonment/[Prince Edward]）；CBD/Tanjong Pagar 通勤盘的核心卖点。",
+    "Everton Park 保育街区生活圈；D2 CBD 边缘 freehold 稀缺段。"
+  ],
+  "market_context": [
+    "URA 私宅指数 2026Q1：flash +0.3% → 终值 +0.9%（pr26-31）；RCR 非有地 +0.9% q-o-q（终值口径，勿与全国终值混读）；成交量 q-o-q -40%——量缩价稳。Q2 flash（约 7/1 发布）未及采集——8 月复核时并入。",
+    "利率：3M SORA ~1.0%（2026-02），2 年固定 ~1.40% 起——持有成本处于本周期低位。",
+    "同盘 5Y 价带（app）：低 $1,968 / 均 ~$2,36x / 高 $2,581（2BR #01 stack）；孪生成交 $2,330 处于带内中上、创 743sf cohort 新高。"
+  ],
+  "risks": [
+    "紧凑 3BR（743sf）是小众段位：买家池窄于 1-2BR（本盘 5Y 成交 1BR 10 笔 vs 3BR 2 笔）——出售周期可能更长。",
+    "AVM cohort 几乎持平（$2,244-2,250 覆盖 16-23 层，下沿即 16 层）——app 对楼层/朝向不敏感,楼层溢价以模型口径为准。",
+    "MRT 开通利好可能已在孪生成交里计价（cohort 2024→2026 +4.9% 正是通车前窗口）——开通后『利好出尽』回调风险。",
+    "D2 供应：Sky Everton 之后 Everton 一带仍有改造潜力地块——新盘定价会拉高带,也会分流买家。"
+  ],
+  "catalysts": [
+    "Cantonment MRT 2026-07-12 开通（9 天后）——事件驱动的流动性/关注度窗口。",
+    "Sky Everton（FH 新盘）带 $2,053–3,406 的定价梯度——本盘 743sf 的 $2,33x 相对新盘仍有 20-30% 折价。",
+    "freehold + CBD 边缘 + 四站步行圈的长期稀缺组合。"
+  ],
+  "advisory": {
+    "stance": "卖方：SELL-INTO-STRENGTH 窗口 / 买方：FAIR@$2,25x-2,33x（勿追高于孪生价）",
+    "detail": "持有人视角（2021 年 $1.5m 购入）：当前三角定价 $1.67–1.73m → 账面 +$17–23 万（+11-15%），SSD 已过窗（2021 年购入）。7/12 地铁开通是天然的挂牌时点——孪生 $2,331 成交给了明确的定价参照，挂 $1.73-1.76m、底线 $1.70m 是有据可依的。若不卖：~3.2% 毛收益率 + 低利率环境持有成本极低，继续持有的机会成本不高。 买方视角：$2,250（AVM/下锚）–$2,331（孪生/上锚）间成交属公允；高于 $2,330 即为 cohort 新高，需要 MRT 开通后的新证据支撑。买入后 4 年内出售吃 SSD 16/12/8/4%——按 ≥4 年持有规划。",
+    "cost_stack": [
+      "BSD（点估 S$1,716,000）≈ S$55,400；公民首套 ABSD 0%、二套 20%、PR 首套 5%",
+      "SSD（买方新购）：2025-07-04 起 4 年 16/12/8/4%——短炒通道已死",
+      "月供参考：75% LTV @1.4% 固定 ≈ S$4,380/mo（30 年）——与 $4,600 租金基本打平",
+      "年度房产税按 AV 累进（自住 0-32% 档）——以 IRAS 计算器为准"
+    ]
+  },
+  "verification": [
+    {
+      "claim": "孪生成交：#18-02，2026-06-23，$1,730,900（$2,330 psf，caveat 表口径），Resale，3 caveats",
+      "status": "confirmed-tier1",
+      "note": "app Sale caveat 表 + Tower View PP 字段双重印证（capture 留痕）"
+    },
+    {
+      "claim": "#18-03 现 Est. Val $1,671,000（$2,250 psf）；6/24 快照为 $1,661,000（$2,236）",
+      "status": "confirmed-tier1",
+      "note": "Tower View 全网格采集（harvest_towerview.py，161/183 单元）；AVM 为活数据，同日内亦会刷新"
+    },
+    {
+      "claim": "743sf cohort AVM 带 $2,244–2,250（15 个单元，16-23 层；下沿为 16 层）",
+      "status": "confirmed-tier1",
+      "note": "cohort 内 AVM 对楼层不敏感——楼层调整由模型承担"
+    },
+    {
+      "claim": "app AVM 滞后最新成交 ~3.6%（对 #18-02 估 $2,250 vs 实际成交 $2,331，标 −$59,900 P/L）",
+      "status": "confirmed-tier1",
+      "note": "AVM 作谈判下锚、孪生成交作上锚的依据"
+    },
+    {
+      "claim": "37 笔 5Y 三面重构集：Sale 表 16 ∪ Profitability 卖出腿 6 ∪ Tower View PP 面 16，跨面同笔去重 1（L18 #07，两面日期差 4 天）→ 净 37 笔",
+      "status": "confirmed-tier1（重构口径）",
+      "note": "三面均 app caveat 口径。Sale 表懒加载且可跳行（#21-03 在其日期范围内被跳过）——三面交叉是完整性的保证；带头 $1,968 为 app 聚合口径，不与单笔对账。"
+    },
+    {
+      "claim": "趋势 2.5%/yr 拟合",
+      "status": "model-input",
+      "note": "两对项目内配对（+2.35%/+2.83%）+ 1-2BR 持平系列——敏感性 0%/4.5% 已列"
+    },
+    {
+      "claim": "3BR 月租 $4,450-4,600（700-800 sqft 段）",
+      "status": "confirmed-tier1",
+      "note": "app Rent 表最新合约"
+    },
+    {
+      "claim": "Cantonment MRT 2026-07-12 开通",
+      "status": "tier2-verify",
+      "note": "基线研究口径（LTA 通稿方向一致）——签约前以 LTA 官宣日期为准"
+    },
+    {
+      "claim": "2021 年 $2,020 psf 为 COVID 低点（同 stack 2013 年 $2,107-2,258）",
+      "status": "confirmed-tier1",
+      "note": "Tower View PP 历史——旧版报告把它当中性锚导致低估（旧点估 2,269）"
+    }
+  ],
+  "data_gaps": [
+    "#02 vs #03 stack 的朝向/景观差异未实勘——孪生锚含此不确定性（同层同面积，但 stack 不同）。",
+    "Tower View 采集 161/183 单元——余 22 个为无成交史空格或翻页遗漏；cohort（743sf）15/16 已齐。",
+    "Nearby 竞品带沿用 app Nearby 口径（10Y 宽带）——逐盘 2Y 精带未展开（对本估值非载重）。",
+    "Cantonment 开通后的首批成交（7 月中下旬）是检验『利好出尽 vs 重估』的关键数据——建议 8 月复核一次。",
+    "legacy researcher/valuation/dataset.py 保留为 2026-06-24 快照（旧管线）——新管线以本 digest + Tier-1 数据集为准。",
+    "app 5Y 价带头部的下沿 $1,968 与任何单笔成交都不吻合（重构集含更低的 $1,935/2022-04）——该带头为 app 自有聚合口径（疑似含过滤），不作单笔成交的存在性推断；带头数字仅作背景参照。",
+    "PP 面只暴露每个单元的『最后一次』成交——若某单元 2021-07 后成交过两次，较早那笔对三面均不可见（除非恰在 Sale 表/Profitability 中）；残余不完整性方向上偏漏旧印。",
+    "Profitability 采集为列表前段（View All (26) 未全展开）——未采集尾部可能含窗口内卖出腿；对点估影响有限（尾部为低年化对，多为旧印）。"
+  ],
+  "sources": [
+    "research/spottiswoode_transactions.json + captures/spottiswoode_sale_fresh00（caveat 表）",
+    "research/spottiswoode_towerview.json + captures/towerview via harvest_towerview.py*（AVM 全网格）",
+    "research/captures/spottiswoode_rent_f00-03 / profit_f0-2 / nearby_f0-2（Investment Suite 屏读留痕）",
+    "URA pr26-26/pr26-31（指数）；MAS（SSD 2025-07）；IRAS（BSD/ABSD）；LTA（CCL6 Cantonment）"
+  ],
+  "review": {
+    "verdict": "PASS",
+    "overall": 8.8,
+    "rounds": 4,
+    "date": "2026-07-03",
+    "basis": "Tier-1 rebuild (three-surface)",
+    "reviewer": "独立敌对评审：SG 估值分析师 persona（property-report-review skill，含 Tier-1 溯源核查）",
+    "scores": {
+      "data_accuracy": 9.2,
+      "method_rigor": 8.5,
+      "completeness": 8.7,
+      "decision_usefulness": 9.0,
+      "honesty_uncertainty": 9.0,
+      "presentation_bilingual": 7.5
+    },
+    "note": "37 行网格/加权均值/分位区间/敏感性/BSD/月供全部独立复算到元；三面重构经独立清点（TV 34 笔 5Y 印全对账，零遗漏）；两项外部抽查（CCL6 7/12 开通、SSD 新规）经 LTA/MAS 官源证实。"
+  }
+}

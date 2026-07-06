@@ -71,7 +71,16 @@ def render(d: dict) -> str:
         f"<td>{esc(x.get('status'))}</td><td class='l'>{esc(x.get('note'))}</td></tr>"
         for x in d.get("verification", [])
     )
-    sources = "".join(f"<li><a href='{esc(u)}'>{esc(u)}</a></li>" for u in d.get("sources", []))
+    profits = "".join(
+        f"<tr><td class='l'>{esc(p.get('unit'))}</td><td class='l'>{esc(p.get('bought'))}</td>"
+        f"<td class='l'>{esc(p.get('sold'))}</td><td>{esc(p.get('profit'))}</td>"
+        f"<td>{esc(p.get('holding'))}</td><td>{esc(p.get('annualised'))}</td></tr>"
+        for p in d.get("profitability", [])
+    )
+    sources = "".join(
+        (f"<li><a href='{esc(u)}'>{esc(u)}</a></li>" if str(u).startswith("http")
+         else f"<li>{esc(u)}</li>")
+        for u in d.get("sources", []))
 
     def sec(zh, en, body, when=True):
         return f"<h2>{zh} <span class='en'>{en}</span></h2>{body}" if when else ""
@@ -139,6 +148,10 @@ a{{color:#1d4ed8;word-break:break-all}}
 {sec('五 · 租金与收益率', 'Rentals & yield',
   (f"<table><tr><th class='l'>Type</th><th>Rent / mo</th><th class='l'>Note</th></tr>{rents}</table>" if rents else "")
   + ('<ul>' + li(d.get('yield_analysis')) + '</ul>' if d.get('yield_analysis') else ''), rents or d.get('yield_analysis'))}
+
+{sec('五·五 · 已实现回报（买卖配对）', 'Realised returns (matched pairs)',
+  f"<table><tr><th class='l'>Unit</th><th class='l'>Bought</th><th class='l'>Sold</th>"
+  f"<th>Profit</th><th>Holding</th><th>Ann.</th></tr>{profits}</table>", profits)}
 
 {sec('六 · 学区与位置', 'Catchment & location', '<ul>' + li(d.get('catchment')) + '</ul>', d.get('catchment'))}
 

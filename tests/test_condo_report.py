@@ -39,3 +39,16 @@ def test_render_full_sections_and_grid():
 def test_render_escapes_html():
     html = bcr.render({"subject": {"name": "<script>x</script>"}, "summary": ""})
     assert "<script>x" not in html
+
+
+def test_profitability_table_and_plain_sources():
+    html = bcr.render({
+        "subject": {"name": "X"}, "summary": "",
+        "profitability": [{"unit": "#01-01 (500 sqft)", "bought": "2020 @ $1m",
+                           "sold": "2025 @ $1.2m", "profit": "$200,000", "holding": "5y",
+                           "annualised": "3.7%"}],
+        "sources": ["https://example.com/a", "research/captures/foo (screen dump)"],
+    })
+    assert "已实现回报" in html and "$200,000" in html and "3.7%" in html
+    assert "<a href='https://example.com/a'>" in html
+    assert "<a href='research/captures" not in html  # non-URL sources are plain text
