@@ -26,4 +26,8 @@ expires the main-loop cache too.
 - Structured-output schemas + "every claim needs a source URL" keeps sonnet gatherers honest;
   synthesis stays with me so judgment isn't delegated.
 - Check the limit-reset time before launching a wave (failures say "resets HH:MM").
+- **Digest/data patches: always write a .py file and run it — never inline python -c with
+  regex inside bash double quotes.** Bash eats `\$` → `$` becomes a regex end-anchor and
+  substitutions silently no-op (cost a full review round on 2026-07-03: three stale 点估
+  bases survived because the sed-style patch never matched).
 See [[kelvin-user]], [[landed-research-capability]].

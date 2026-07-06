@@ -37,6 +37,18 @@ left Contract-Date column**; only swiping the *data* columns scrolls it; fling m
 non-deterministic (dedup + stale-stop). **Tower View** = per-unit grid with the app's own
 **Est. Val** per unit (benchmark AVM).
 
+**#18-03 re-valuation (2026-07-03, analyst PASS 8.8/10, 4 rounds):** point S$1,716,000
+(2,309 psf), negotiation band $1.67–1.73m — twin #18-02 (same floor/743sf/type) printed
+$1,730,900 ($2,330) on 2026-06-23 = the ceiling anchor; app AVM $2,250 = floor (it LAGS the
+twin print ~3.6% — the app itself marks that buyer −$59,900). Old 2,269-psf report underpriced
+by treating the 2021 covid-dip own-purchase ($2,020) as neutral (stack's 2013 prints $2,107-2,258).
+**Three-surface 5Y comp reconstruction is now the method**: Sale table (lazy-loads AND skips
+mid-window rows) ∪ Profitability sell-legs ∪ Tower View PP fields, fuzzy-dedup cross-surface
+(same unit+price within 30 days = one caveat, date fields differ ~4 days between surfaces).
+Band-head figures (e.g. 5Y low $1,968) are the app's own opaque aggregates — never
+force-reconcile per-print. NEW tool `research/harvest_towerview.py` (block-verified, dual-axis,
+offline-testable parser). CCL6 Cantonment opens 2026-07-12 (LTA) — re-check prints in August.
+
 **2026-07-03 harvest lessons (cost real debugging):**
 - Search: tap bar at (1280,200), `mbx.py clear` (MOVE_END + batched DEL — adb can't select-all)
   before `mbx.py type` or queries CONCATENATE; landed addresses need precise street names
