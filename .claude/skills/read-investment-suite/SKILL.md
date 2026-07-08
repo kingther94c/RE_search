@@ -57,7 +57,12 @@ is told to source its load-bearing numbers here first. So if the app cannot be r
 correct move is to **stop and hand back to the user — never silently substitute web-aggregator or
 research-report data** (those are Tier-2/3 and are exactly what this skill exists to replace).
 
-Check readiness before harvesting, and on ANY of these failure modes pause immediately:
+**The protocol is automated: run `python research/doctor.py` FIRST, every session.** It checks
+adb → device → app-foreground → UI dump → logged-in, prints PASS/FAIL per step with the exact
+remediation (including the emulator start command and the launch intent), and exits 0 only when
+READY. On NOT READY do what it prints; if the fix is the user's (start emulator, sign in), stop
+and wait for their confirmation, then re-run doctor. The table below is the same logic for
+reference:
 
 | Symptom | Likely cause | What to report / ask |
 |---|---|---|
@@ -140,7 +145,21 @@ python mbx.py region 1300 1300 1300 860    # then re-cap; repeat until stale
 # EXAMPLE coordinate (2560x1600) — tap a no-id cell/control. Re-measure per device:
 python mbx.py xy 886 1450
 ```
-For the full table harvest, drive `research/harvest_sale.py` (it imports `mbx`).
+For full-table harvests, drive the dedicated harvesters (they import `mbx`), one per tab.
+**Before each harvest: put the app on that tab and select the time window** (5Y for valuation
+work). The selected window tab renders right after the `...` token in the dump and every
+harvester records it in `meta.window` — check the "saved ..." line says the window you meant.
+
+| Tab open on screen | Command | Output |
+|---|---|---|
+| Sale (Past Transactions) | `python harvest_sale.py <slug>` | `<slug>_transactions.json/csv` |
+| Profitability | `python harvest_profitability.py <slug>` | `<slug>_profitability.json` (buy→sell pairs, both sections; auto-expands `View All (N)`) |
+| Rent | `python harvest_rent.py <slug>` | `<slug>_rents.json` (recent contracts + the app's band head) |
+| Tower View | `python harvest_towerview.py <slug>` | `<slug>_towerview.json` (per-unit PP + Est. Val AVM grid) |
+
+All four are dedup-on-scroll with stale-stop; zero-row runs refuse to overwrite existing files.
+Then reconstruct the complete comp set: `python reconstruct_comps.py <slug> --asof YYYY-MM-DD
+--subject "#NN-SS"` — or go straight to the condo pipeline (see `value-a-property`).
 
 ## Gotchas
 - **No resource-ids.** UI is Compose-style (classes like `s2.e2`). Do **not** build
@@ -162,10 +181,20 @@ For the full table harvest, drive `research/harvest_sale.py` (it imports `mbx`).
   screen — or the emulator/device/app isn't reachable at all — follow the **Open-failure
   protocol** above: stop, report the exact error, wait for the user; never attempt an auth
   bypass and never silently fall back to web data.
+- **"Realtime Agency Data" is a separate Tier-2 panel** (agency LISTINGS, asking prices) that
+  sits below the Rent/Sale caveat tables. Never mix its rows into caveat data — `harvest_rent`
+  cuts the parse at that marker; on other screens tag rows by panel. The `View All (N)`
+  footer between the two panels is ambiguous — don't tap it on the Rent tab.
+- **Frozen right-hand columns** (Unit Type on Profitability, Contract Date on Rent) arrive as
+  a trailing token list pairing with the visible rows in order; the harvesters pair them only
+  on an exact count match — a partial screen would misalign every value below it.
 
 ## Related files
 - `research/mbx.py` — the harness (this repo, RE_search)
-- `research/harvest_sale.py` — the table harvester (this repo)
+- `research/doctor.py` — automated readiness gate (run it first, every session)
+- `research/harvest_sale.py`, `harvest_profitability.py`, `harvest_rent.py`,
+  `harvest_towerview.py` — one harvester per tab (all offline-testable parsers)
+- `research/reconstruct_comps.py` — three-surface comp reconstruction + trend ladder
 - `mobile_bridge/apps/investment_suite.py` — the bridge profile, in the SEPARATE
   mobile_bridge repo (optional; selectors, ready/detail-ready)
 - `researcher/valuation/dataset.py` — example of a persisted, single-source-of-truth dataset

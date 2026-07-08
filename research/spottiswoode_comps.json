@@ -1,0 +1,539 @@
+{
+ "meta": {
+  "asof": "2026-07-03",
+  "window_years": 5,
+  "window_start": "2021-07-03",
+  "surface_counts": {
+   "sale": 16,
+   "profitability": 6,
+   "towerview": 15
+  },
+  "total": 37,
+  "cross_surface_merges": [
+   "L30 #07 2500000: sale + profitability",
+   "L17 #01 1500000: sale + profitability",
+   "L10 #01 1500000: sale + profitability",
+   "L13 #07 1320000: sale + profitability",
+   "L23 #01 1450000: profitability + towerview",
+   "L17 #01 1500000: sale + towerview",
+   "L16 #01 1450000: profitability + towerview",
+   "L10 #01 1500000: sale + towerview",
+   "L23 #02 1720000: profitability + towerview",
+   "L18 #02 1730900: sale + towerview",
+   "L28 #04 1038000: sale + towerview",
+   "L25 #04 1030000: sale + towerview",
+   "L15 #04 1052000: sale + towerview",
+   "L19 #05 1070000: sale + towerview",
+   "L16 #05 1000000: sale + towerview",
+   "L12 #05 1040000: sale + towerview",
+   "L32 #06 2070000: profitability + towerview",
+   "L25 #06 1085000: sale + towerview",
+   "L23 #06 1080000: sale + towerview",
+   "L32 #07 2000000: profitability + towerview",
+   "L30 #07 2500000: sale + towerview",
+   "L18 #07 1330000: sale + towerview",
+   "L13 #07 1320000: sale + towerview"
+  ],
+  "dropped_outside_window": 118,
+  "subject_excluded": "#18-03",
+  "data_gaps": [
+   "Profitability 采集 10/26 对（View All 尾部未展开）——残余不完整性方向上偏漏旧印",
+   "Tower View 只暴露每单元最后一笔——窗口内再交易单元的较早一笔仅当 Sale/Profitability 捕获时可见"
+  ],
+  "fitted_trend": {
+   "by_beds": {
+    "1": {
+     "rate_pa": -0.01085538884402991,
+     "n_pairs": 31
+    },
+    "2": {
+     "rate_pa": 0.049902517482981676,
+     "n_pairs": 8
+    },
+    "3": {
+     "rate_pa": 0.010259430267910357,
+     "n_pairs": 6
+    }
+   },
+   "repeat_sales": {
+    "rate_pa": 0.01455,
+    "n_pairs": 10
+   },
+   "note": "同规格跨单元对、楼层校正、按卧室数分段取中位——各段趋势可以不同（#18-03 研究中 1-2BR 持平、3BR 上行），估值管线用 choose_trend() 的阶梯规则选段"
+  },
+  "chosen_trend": {
+   "rate_pa": 0.010259430267910357,
+   "method": "cross-unit 3BR pairs (n=6, median)",
+   "raw_rate_pa": 0.010259430267910357,
+   "clamped": false,
+   "segment_fit": {
+    "rate_pa": 0.010259430267910357,
+    "n_pairs": 6
+   },
+   "repeat_sales": {
+    "rate_pa": 0.01455,
+    "n_pairs": 10
+   }
+  }
+ },
+ "comps": [
+  {
+   "date": "2026-06-23",
+   "floor": 18,
+   "stack": "02",
+   "level": "L18 #02",
+   "size_sqft": 743,
+   "psf": 2330,
+   "price": 1730900,
+   "beds": 3,
+   "surface": "sale",
+   "note": "3BR · Sale caveat 表 · Resale · 亦见于 towerview 面（2026-06-23，±31d 同价判同笔）"
+  },
+  {
+   "date": "2026-02-03",
+   "floor": 28,
+   "stack": "04",
+   "level": "L28 #04",
+   "size_sqft": 441,
+   "psf": 2352,
+   "price": 1038000,
+   "beds": 1,
+   "surface": "sale",
+   "note": "1BR · Sale caveat 表 · Resale · 亦见于 towerview 面（2026-02-03，±31d 同价判同笔）"
+  },
+  {
+   "date": "2026-01-09",
+   "floor": 9,
+   "stack": "08",
+   "level": "L9 #08",
+   "size_sqft": 452,
+   "psf": 2146,
+   "price": 970000,
+   "beds": 1,
+   "surface": "sale",
+   "note": "1BR · Sale caveat 表 · Resale"
+  },
+  {
+   "date": "2025-12-03",
+   "floor": 23,
+   "stack": "06",
+   "level": "L23 #06",
+   "size_sqft": 452,
+   "psf": 2389,
+   "price": 1080000,
+   "beds": 1,
+   "surface": "sale",
+   "note": "1BR · Sale caveat 表 · Resale · 亦见于 towerview 面（2025-12-03，±31d 同价判同笔）"
+  },
+  {
+   "date": "2025-09-10",
+   "floor": 19,
+   "stack": "08",
+   "level": "L19 #08",
+   "size_sqft": 441,
+   "psf": 2275,
+   "price": 1003888,
+   "beds": 1,
+   "surface": "sale",
+   "note": "1BR · Sale caveat 表 · Resale"
+  },
+  {
+   "date": "2025-07-16",
+   "floor": 25,
+   "stack": "04",
+   "level": "L25 #04",
+   "size_sqft": 452,
+   "psf": 2278,
+   "price": 1030000,
+   "beds": 1,
+   "surface": "sale",
+   "note": "1BR · Sale caveat 表 · Resale · 亦见于 towerview 面（2025-07-16，±31d 同价判同笔）"
+  },
+  {
+   "date": "2025-05-16",
+   "floor": 25,
+   "stack": "06",
+   "level": "L25 #06",
+   "size_sqft": 463,
+   "psf": 2344,
+   "price": 1085000,
+   "beds": 1,
+   "surface": "sale",
+   "note": "1BR · Sale caveat 表 · Resale · 亦见于 towerview 面（2025-05-16，±31d 同价判同笔）"
+  },
+  {
+   "date": "2025-03-25",
+   "floor": 10,
+   "stack": "01",
+   "level": "L10 #01",
+   "size_sqft": 581,
+   "psf": 2581,
+   "price": 1500000,
+   "beds": 2,
+   "surface": "sale",
+   "note": "2BR · Sale caveat 表 · Resale · 亦见于 profitability 面（2025-03-25，±31d 同价判同笔） · 亦见于 towerview 面（2025-03-25，±31d 同价判同笔）"
+  },
+  {
+   "date": "2024-10-15",
+   "floor": 17,
+   "stack": "01",
+   "level": "L17 #01",
+   "size_sqft": 581,
+   "psf": 2581,
+   "price": 1500000,
+   "beds": 2,
+   "surface": "sale",
+   "note": "2BR · Sale caveat 表 · Resale · 亦见于 profitability 面（2024-10-15，±31d 同价判同笔） · 亦见于 towerview 面（2024-10-15，±31d 同价判同笔）"
+  },
+  {
+   "date": "2024-09-05",
+   "floor": 12,
+   "stack": "05",
+   "level": "L12 #05",
+   "size_sqft": 441,
+   "psf": 2358,
+   "price": 1040000,
+   "beds": 1,
+   "surface": "sale",
+   "note": "1BR · Sale caveat 表 · Resale · 亦见于 towerview 面（2024-09-05，±31d 同价判同笔）"
+  },
+  {
+   "date": "2024-08-29",
+   "floor": 13,
+   "stack": "07",
+   "level": "L13 #07",
+   "size_sqft": 538,
+   "psf": 2453,
+   "price": 1320000,
+   "beds": 2,
+   "surface": "sale",
+   "note": "2BR · Sale caveat 表 · Resale · 亦见于 profitability 面（2024-08-29，±31d 同价判同笔） · 亦见于 towerview 面（2024-08-29，±31d 同价判同笔）"
+  },
+  {
+   "date": "2024-08-15",
+   "floor": 15,
+   "stack": "04",
+   "level": "L15 #04",
+   "size_sqft": 452,
+   "psf": 2327,
+   "price": 1052000,
+   "beds": 1,
+   "surface": "sale",
+   "note": "1BR · Sale caveat 表 · Resale · 亦见于 towerview 面（2024-08-15，±31d 同价判同笔）"
+  },
+  {
+   "date": "2024-07-25",
+   "floor": 19,
+   "stack": "05",
+   "level": "L19 #05",
+   "size_sqft": 441,
+   "psf": 2426,
+   "price": 1070000,
+   "beds": 1,
+   "surface": "sale",
+   "note": "1BR · Sale caveat 表 · Resale · 亦见于 towerview 面（2024-07-25，±31d 同价判同笔）"
+  },
+  {
+   "date": "2024-07-19",
+   "floor": 18,
+   "stack": "07",
+   "level": "L18 #07",
+   "size_sqft": 538,
+   "psf": 2471,
+   "price": 1330000,
+   "beds": 2,
+   "surface": "sale",
+   "note": "2BR · Sale caveat 表 · Resale · 亦见于 towerview 面（2024-07-23，±31d 同价判同笔）"
+  },
+  {
+   "date": "2024-05-28",
+   "floor": 21,
+   "stack": "03",
+   "level": "L21 #03",
+   "size_sqft": 743,
+   "psf": 2222,
+   "price": 1650000,
+   "beds": 3,
+   "surface": "towerview",
+   "note": "3BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2024-05-09",
+   "floor": 30,
+   "stack": "07",
+   "level": "L30 #07",
+   "size_sqft": 1033,
+   "psf": 2419,
+   "price": 2500000,
+   "beds": 3,
+   "surface": "sale",
+   "note": "3BR · Sale caveat 表 · Resale · 亦见于 profitability 面（2024-05-09，±31d 同价判同笔） · 亦见于 towerview 面（2024-05-09，±31d 同价判同笔）"
+  },
+  {
+   "date": "2024-04-26",
+   "floor": 16,
+   "stack": "05",
+   "level": "L16 #05",
+   "size_sqft": 441,
+   "psf": 2266,
+   "price": 1000000,
+   "beds": 1,
+   "surface": "sale",
+   "note": "1BR · Sale caveat 表 · Resale · 亦见于 towerview 面（2024-04-26，±31d 同价判同笔）"
+  },
+  {
+   "date": "2024-02-19",
+   "floor": 32,
+   "stack": "06",
+   "level": "L32 #06",
+   "size_sqft": 872,
+   "psf": 2374,
+   "price": 2070000,
+   "beds": 2,
+   "surface": "profitability",
+   "note": "2BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2024-02-19，±31d 同价判同笔）"
+  },
+  {
+   "date": "2024-02-02",
+   "floor": 28,
+   "stack": "05",
+   "level": "L28 #05",
+   "size_sqft": 441,
+   "psf": 2447,
+   "price": 1080000,
+   "beds": 1,
+   "surface": "towerview",
+   "note": "1BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2023-08-30",
+   "floor": 23,
+   "stack": "05",
+   "level": "L23 #05",
+   "size_sqft": 441,
+   "psf": 2379,
+   "price": 1050000,
+   "beds": 1,
+   "surface": "towerview",
+   "note": "1BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2023-07-07",
+   "floor": 23,
+   "stack": "01",
+   "level": "L23 #01",
+   "size_sqft": 581,
+   "psf": 2495,
+   "price": 1450000,
+   "beds": 2,
+   "surface": "profitability",
+   "note": "2BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2023-07-07，±31d 同价判同笔）"
+  },
+  {
+   "date": "2023-05-26",
+   "floor": 23,
+   "stack": "08",
+   "level": "L23 #08",
+   "size_sqft": 441,
+   "psf": 2447,
+   "price": 1080000,
+   "beds": 1,
+   "surface": "profitability",
+   "note": "1BR · Profitability 卖出腿（app caveat 口径）"
+  },
+  {
+   "date": "2023-05-26",
+   "floor": 16,
+   "stack": "01",
+   "level": "L16 #01",
+   "size_sqft": 581,
+   "psf": 2495,
+   "price": 1450000,
+   "beds": 2,
+   "surface": "profitability",
+   "note": "2BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2023-05-26，±31d 同价判同笔）"
+  },
+  {
+   "date": "2022-12-21",
+   "floor": 32,
+   "stack": "04",
+   "level": "L32 #04",
+   "size_sqft": 840,
+   "psf": 2144,
+   "price": 1800000,
+   "beds": 2,
+   "surface": "towerview",
+   "note": "2BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2022-10-05",
+   "floor": 27,
+   "stack": "05",
+   "level": "L27 #05",
+   "size_sqft": 441,
+   "psf": 2442,
+   "price": 1077500,
+   "beds": 1,
+   "surface": "towerview",
+   "note": "1BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2022-09-30",
+   "floor": 23,
+   "stack": "02",
+   "level": "L23 #02",
+   "size_sqft": 743,
+   "psf": 2316,
+   "price": 1720000,
+   "beds": 3,
+   "surface": "profitability",
+   "note": "3BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2022-09-30，±31d 同价判同笔）"
+  },
+  {
+   "date": "2022-09-08",
+   "floor": 34,
+   "stack": "05",
+   "level": "L34 #05",
+   "size_sqft": 840,
+   "psf": 2150,
+   "price": 1805000,
+   "beds": 2,
+   "surface": "towerview",
+   "note": "2BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2022-05-26",
+   "floor": 30,
+   "stack": "01",
+   "level": "L30 #01",
+   "size_sqft": 1012,
+   "psf": 2135,
+   "price": 2160000,
+   "beds": 3,
+   "surface": "towerview",
+   "note": "3BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2022-04-19",
+   "floor": 32,
+   "stack": "07",
+   "level": "L32 #07",
+   "size_sqft": 1033,
+   "psf": 1935,
+   "price": 2000000,
+   "beds": 3,
+   "surface": "profitability",
+   "note": "3BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2022-04-19，±31d 同价判同笔）"
+  },
+  {
+   "date": "2022-04-13",
+   "floor": 23,
+   "stack": "03",
+   "level": "L23 #03",
+   "size_sqft": 743,
+   "psf": 2222,
+   "price": 1650000,
+   "beds": 3,
+   "surface": "towerview",
+   "note": "3BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2021-12-07",
+   "floor": 22,
+   "stack": "06",
+   "level": "L22 #06",
+   "size_sqft": 452,
+   "psf": 2400,
+   "price": 1085000,
+   "beds": 1,
+   "surface": "towerview",
+   "note": "1BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2021-10-20",
+   "floor": 12,
+   "stack": "07",
+   "level": "L12 #07",
+   "size_sqft": 538,
+   "psf": 2059,
+   "price": 1108000,
+   "beds": null,
+   "surface": "towerview",
+   "note": "? · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2021-09-13",
+   "floor": 18,
+   "stack": "01",
+   "level": "L18 #01",
+   "size_sqft": 581,
+   "psf": 2159,
+   "price": 1255000,
+   "beds": 2,
+   "surface": "towerview",
+   "note": "2BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2021-09-09",
+   "floor": 36,
+   "stack": "01",
+   "level": "L36 #01",
+   "size_sqft": 1259,
+   "psf": 1652,
+   "price": 2080000,
+   "beds": 2,
+   "surface": "towerview",
+   "note": "2BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2021-09-09",
+   "floor": 36,
+   "stack": "07",
+   "level": "L36 #07",
+   "size_sqft": 1259,
+   "psf": 1735,
+   "price": 2185000,
+   "beds": null,
+   "surface": "towerview",
+   "note": "? · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2021-07-27",
+   "floor": 5,
+   "stack": "04",
+   "level": "L5 #04",
+   "size_sqft": 1087,
+   "psf": 1571,
+   "price": 1708000,
+   "beds": 2,
+   "surface": "towerview",
+   "note": "2BR · Tower View PP 面（app caveat 口径）"
+  },
+  {
+   "date": "2021-07-12",
+   "floor": 12,
+   "stack": "06",
+   "level": "L12 #06",
+   "size_sqft": 452,
+   "psf": 2196,
+   "price": 993000,
+   "beds": 1,
+   "surface": "towerview",
+   "note": "1BR · Tower View PP 面（app caveat 口径）"
+  }
+ ],
+ "subject_rows": [
+  {
+   "date": "2021-05-07",
+   "floor": 18,
+   "stack": "03",
+   "level": "L18 #03",
+   "size_sqft": 743,
+   "psf": 2020,
+   "price": 1500000,
+   "beds": 3,
+   "surface": "towerview",
+   "note": "3BR · Tower View PP 面（app caveat 口径）"
+  }
+ ]
+}
