@@ -186,6 +186,12 @@ def fill_beds(rows: list[dict], tower: list[dict]) -> list[str]:
             r["note"] = f"{b}BR{suffix} · " + r["note"][4:]
 
     for r in rows:
+        # implausible type parse (e.g. a 431sf "3BR" — the frozen type column
+        # can misalign like any other wide-grid field): void it and re-resolve
+        if r["beds"] and r["size_sqft"] < 200 * r["beds"]:
+            r["note"] = "? · " + re.sub(r"^\dBR[^·]*· ", "", r["note"])
+            r["beds"] = None
+    for r in rows:
         if r["beds"] is not None:
             continue
         if (b := _unit_beds_lookup(unit_map, r["block"], r["floor"], r["stack"])) is not None:

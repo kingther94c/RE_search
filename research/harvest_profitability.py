@@ -116,7 +116,12 @@ def parse_profitability_texts(texts: list[str]) -> dict:
             meta.setdefault("view_all", {})[sec] = int(m.group(1))
         r = _row_at(texts, i)
         if r:
-            r["section"] = section
+            # section from the PROFIT SIGN, not screen position — the section
+            # header scrolls off and rows first seen mid-list would inherit the
+            # wrong section (OPB: 14/5 vs the true 10/1/8, caught by review).
+            r["section"] = ("profitable" if r["profit_amt"] > 0
+                            else "breakeven" if r["profit_amt"] == 0
+                            else "unprofitable")
             rows.append(r)
             i += 14
             last_field_idx = i

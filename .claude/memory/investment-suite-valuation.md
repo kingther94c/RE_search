@@ -49,6 +49,34 @@ Band-head figures (e.g. 5Y low $1,968) are the app's own opaque aggregates — n
 force-reconcile per-print. NEW tool `research/harvest_towerview.py` (block-verified, dual-axis,
 offline-testable parser). CCL6 Cantonment opens 2026-07-12 (LTA) — re-check prints in August.
 
+**2026-07-08 harvest lessons (One Pearl Bank run + hostile review findings):**
+- **Stale-panel artifact is the #1 multi-block trap:** naive block-tab taps silently no-op,
+  so the SAME Tower View grid gets captured under several block names → identical
+  (unit,sqft,pp_date,pp_price) fingerprints across blocks → one real sale enters the comp
+  set N times (Gallop: 1 print counted 7×, +$62k on the estimate — caught by review).
+  `reconstruct_comps.strip_stale_panel_artifacts` gates it; only trust `twr_`-era captures.
+- **Rent tab is TWO lists:** Past Rentals (Tier-1 contracts: area BANDS + month-year dates)
+  then a live/agency list (EXACT sqft + full dates + "live data" badges + "Unit Mix
+  Rentals" footer) — Tier-2, never mix. Contract rows can have type '-' and psf without
+  cents ('$6'). Rows have no unit identity → identical contracts collapse on dedup; on
+  high-volume devs read volume from the app band + advertised totals, not row counts.
+- Profitability: break-even rows print unsigned "$0"; a "View All (N)" footer belongs to
+  the section of the rows ABOVE it (scrolled headers lie).
+- Big Tower View grids (OPB 774 units) need the SERPENTINE scan + cross-run seed
+  accumulation — a single vertical+horizontal pass covered only 34%.
+- Floor premium must be FITTED per development (OPB 0.44%/层 vs 0.30% default) — the
+  default overprices low floors from high-floor comps.
+- **Wide-grid cross-cell misalignment:** during horizontal panning, a Tower View cell's
+  sqft can pair with a NEIGHBOUR column's PP/Est strings (OPB: 62/450 units; 41 impossible
+  rows reached a comp set). Defense: price/psf implies sqft — >2% off the cell's sqft →
+  quarantine those fields (parser) + per-row price=psf×sqft gates in reconstruct AND
+  validate_digest. Zero false positives on clean data (Spottiswoode 0/161).
+- **Profitability section labels come from the PROFIT SIGN, never screen position** — the
+  section header scrolls off and mid-list rows inherit the wrong section (OPB mislabelled
+  14/5 vs the true 10/1/8; the fixed counts reconciled exactly with the app's View All (9)
+  for losses+breakeven). Break-even rows print unsigned "$0".
+  See [[condo-valuation-pipeline]].
+
 **2026-07-03 harvest lessons (cost real debugging):**
 - Search: tap bar at (1280,200), `mbx.py clear` (MOVE_END + batched DEL — adb can't select-all)
   before `mbx.py type` or queries CONCATENATE; landed addresses need precise street names

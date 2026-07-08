@@ -14,7 +14,7 @@
   },
   "asof": "2026-07-08",
   "report_basename": "onepearl_0316_Condo_Valuation_Report.html",
-  "subtitle": "新 TOP（2024）99 年地契高层盘的低层小两房估值 · 三面重构 + 阶梯趋势 + 自动门禁 · capture 口径 2026-07-08 · 自身 2019 首购锚 + 2026-06-22 低一层同规格 subsale 直接可比",
+  "subtitle": "交易锚公允价 ~$2,334 psf（≈$1.63m，#02-15 成交楼层校正）——模型点估 $1.78m 为首售面主导的上参考，勿当『the value』读 · 三面重构 163 笔（逐行算术门）· capture 口径 2026-07-08 · 独立分析师验收 PASS 8.7/10",
   "summary": "主体为 One Pearl Bank #03-16（700 sqft 2BR，99 年地契自 2019-03-01，D3 珍珠山，TOP 2024，自身 2019-07-24 以 $2,261 psf（约 $1.58m）首购）。管线以三面重构的 5Y 成交集为输入（本轮起每行过 price=psf×sqft 算术门：Tower View 宽网格横移会把邻列 PP 字符串错配到本列，62/450 单元的错位 PP/AVM 字段被隔离——评审发现后已在解析、重构、门禁三层工具化修复），点估、区间、敏感性与三角谈判带由 researcher/pipelines/condo_valuation.py 确定性生成并过 13 项门禁。读数要点：① 最硬的直接可比是 #02-15（同 700sf 2BR，低一层）2026-06-22 以 $2,323 psf subsale 成交——楼层校正后对主体 ≈$2,334，这是买方出价锚；② app AVM 对主体现值 $2,410（2026-07-08 capture），高于该最新成交 ~3.7%——本盘 AVM 与新近低层成交的偏差方向与 Spottiswoode 案例相反（AVM 偏高而非滞后偏低），因此三角包络的上锚是模型/AVM 腿而非成交腿；③ 模型集中开发商首售/PP 印占比高（见 params_note 面构成披露与 resale_surfaces_only 敏感性）——launch 印前推口径使模型腿偏高，读数以成交锚为主、模型腿只作卖方还价区间参考；④ 低层段实现回报分化（Profitability 面含 $0 打平与负年化对）——『新盘溢价消化』仍在进行，买方无须追价。",
   "development_facts": [
     "One Pearl Bank，1 Pearl Bank，D3 / RCR，Subtown Pearl's Hill（app Property Info 口径）",
@@ -24,8 +24,8 @@
   ],
   "market_context": [
     "数据缺口：本轮未采集 URA 2026Q2 flash——RCR 非有地指数以 URA pr 为准，后续复核并入；本报告市场面结论仅基于盘内 Tier-1 成交与租约。",
-    "盘内节奏：TOP（2024）后 5Y 窗内 Sale 表可见成交以 2025-2026 年 Resale/Sub Sale 为主，高层大户型 psf（$2,6xx-2,7xx）显著高于低层小户型（$2,3xx）——垂直溢价陡峭，楼层调整（±0.3%/层）对本盘尤其敏感，读区间勿读点。",
-    "实现回报（Profitability 面，5Y 窗）：14 对盈利 / 5 对非盈利（含 $0 打平与 -0.4%~-4% 年化）——盈亏分界大致在楼层与入手批次：低层 2019 首批购入者在当前低层价位下基本打平。"
+    "盘内节奏：TOP（2024）后 5Y 窗内 Sale 表可见成交以 2025-2026 年 Resale/Sub Sale 为主，高层大户型 psf（$2,6xx-2,7xx）显著高于低层小户型（$2,3xx）——垂直溢价陡峭，楼层调整（本盘拟合 0.44%/层）对本盘尤其敏感，读区间勿读点。",
+    "实现回报（Profitability 面，5Y 窗，按盈亏符号计）：19 对 = 10 盈利 / 1 打平（$0）/ 8 亏损（年化 -0.39% ~ -4.04%）——亏损+打平共 9 对，与 app 亏损列表的 View All (9) 完全对账（capture 留痕）。盈亏分界大致在楼层与入手批次：低层 2019 首批购入者在当前低层价位下基本打平或小亏。"
   ],
   "catchment": [
     "Outram Park MRT（EWL/NEL/TEL 三线换乘）步行圈、毗邻 Pearl's Hill City Park——Tier-2 常识口径，本轮未用 OneMap 实测步距（数据缺口，购房决策前以 OneMap API 复核）。",
@@ -39,12 +39,12 @@
     "个体差异未建模：朝向（内筒/外筒景观差异大）、装修未调整——成交前实地核验。"
   ],
   "catalysts": [
-    "TOP 后入伙潮 + 三线换乘枢纽：租赁需求厚（app 全窗租金带 $2,500-10,800/mo、advertised 344 条 live 挂牌为 Tier-2 供给信号），空置风险低。",
+    "TOP 后入伙潮 + 三线换乘枢纽：租赁需求厚（app 全窗租金带 $2,500-10,800/mo；harvest meta 记录 advertised_total 499 条，capture 留痕——为租赁市场深度的 Tier-1 信号；另有 Tier-2 live 挂牌若干，分开存放），空置风险低。",
     "新盘溢价消化后的价值回归：低层段与 launch 价打平意味着下行有限；高层段 $2,7xx 的成交为整盘树立天花板锚。"
   ],
   "yield_analysis": [
     "2BR 近期合约中位 $5,400/mo（n=2，app 全窗带 $2,500–$10,800，均值 $4,842）→ 对点估（S$1,780,000）毛收益率 ~3.6%。",
-    "以买方锚价（~$2,334 psf ≈ $1.63m）计，同口径毛收益率会高 ~6%（分母更低）——收租视角下在锚价成交比在模型价成交的收益率差异要读进决策。",
+    "以买方锚价（~$2,334 psf ≈ $1.634m）为分母，同月租下毛收益率 ≈3.97%，比按模型点估（$1.78m 分母，≈3.6%)高约 0.3-0.4 个百分点（相对高 ~9%）——收租视角下在锚价成交与在模型价成交的差异要读进决策。",
     "注意：2BR 合约样本 n 小（去重后合约为『不同组合』计数——高量盘同租金合约会合并），读收益率时以 app 全窗带（$2,500–$10,800，均值 $4,842）与带头 psf（$5.45–$9.78）为主参照。"
   ],
   "market_comps": [],
@@ -90,9 +90,24 @@
     "户型未解析行（已排除出调整网格）：['B1 L19 #14 431sf @2021-12-02: beds unresolved']",
     "Tower View 覆盖 450/774 户（大网格蛇形扫描两轮的累计）——PP 面对未覆盖单元缺失；对估值影响有限（主体 cohort 与低层段已覆盖），下轮补扫。",
     "Rent 合约为『不同组合』去重计数（n=10）+ 9 条 Tier-2 live 挂牌（分开存放未混入）——高量盘的合约总量以 app 带头与 advertised 数为准。",
-    "Unprofitable 段 View All 计 9 对、5Y 窗内可见 5 对——差额疑为窗口口径差异，未强行对账。"
+    "Profitability 段落归属曾按屏上标题判定（滚动后误标 14/5）——已改为按盈亏符号判定（10/1/8），亏损+打平 9 对与 app View All (9) 对账一致；工具修复见 harvest_profitability.py。"
   ],
-  "review": {},
+  "review": {
+    "verdict": "PASS",
+    "overall": 8.7,
+    "rounds": 3,
+    "date": "2026-07-08",
+    "reviewer": "独立敌对评审（property-report-review skill，fresh agent per round）",
+    "scores": {
+      "data_accuracy": 9.5,
+      "method_rigor": 8.5,
+      "completeness": 7.5,
+      "decision_usefulness": 8.5,
+      "honesty_uncertainty": 9.5,
+      "presentation_bilingual": 8.5
+    },
+    "note": "R1 REVISE 5.8：发现 Tower View 宽网格跨列错位（62/450 单元、41 行不可能数字入集）+ 买方上限授权超付——已三层工具化修复（解析隔离/重构算术门/digest 门禁）并重锚建议。R2 REVISE 8.4：段落归属误标（14/5 vs 真实 10/1/8）——改按盈亏符号判定，与 app View All (9) 对账一致。R3 PASS 8.7：评审用原始 capture 重跑管线得到逐字节一致输出；163/163 行过算术门；所有计数与原始 meta 对账。遗留 P2/P3：外盘参照与 Pearl's Hill GLS 供给未纳入（已列缺口）、利率敏感行、431sf 户型标注噪声。"
+  },
   "comps_table": [
     {
       "date": "2026-06-22",
@@ -1118,7 +1133,7 @@
       "psf": 2708,
       "price": 1166000,
       "beds": 3,
-      "note": "3BR · Tower View PP 面（app caveat 口径）"
+      "note": "3BR（同单元他面口径） · Tower View PP 面（app caveat 口径）"
     },
     {
       "date": "2022-03-11",
@@ -1352,7 +1367,7 @@
       "psf": 2741,
       "price": 1180000,
       "beds": 3,
-      "note": "3BR · Tower View PP 面（app caveat 口径）"
+      "note": "3BR（同单元他面口径） · Tower View PP 面（app caveat 口径）"
     },
     {
       "date": "2021-12-02",
