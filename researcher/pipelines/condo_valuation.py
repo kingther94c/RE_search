@@ -62,8 +62,9 @@ SKELETON_NARRATIVE = {
     "subtitle": "TODO：一句话副标题（方法 + 关键锚 + 验收状态）",
     "summary": "TODO：中文摘要——结论先行（点估/区间/谈判带），然后是三角依据与关键风险。",
     "development_facts": ["TODO：楼盘事实（地址/区/权属/TOP/户数）——来自 Property Info tab，标注口径"],
-    "market_context": ["TODO：URA 季度指数/成交量背景（官方 pr 编号）"],
-    "catchment": ["TODO：学区/交通/配套（OneMap/LTA/MOE 口径）"],
+    "market_context": ["TODO：URA 季度指数/成交量背景（官方 pr 编号）。本轮若未采集官方源，"
+                       "如实写『数据缺口：本轮未采集』——绝不编造数字"],
+    "catchment": ["TODO：学区/交通/配套（OneMap/LTA/MOE 口径）。未采集则如实声明缺口，勿编造"],
     "risks": ["TODO：风险（数据面/市场面/政策面/个体面）"],
     "catalysts": ["TODO：催化剂（交通开通/供给/政策）"],
     "yield_analysis": ["（管线会自动写入第 1 条收益率计算行）", "TODO：租赁市场解读"],
@@ -194,7 +195,17 @@ def run(args: argparse.Namespace) -> int:
 
     # ── 1. reconstruct the three-surface comp set ────────────────────────────
     sale, profit, tower, rents = load_inputs(args.slug)
-    res = rc.reconstruct(sale, profit, tower, args.asof, args.years, subject=unit)
+    window_gaps = []
+    for label, data in (("Profitability", profit), ("Rent", rents or {})):
+        w = (data.get("meta") or {}).get("window")
+        m = re.match(r"(\d+)Y$", str(w or ""))
+        if m and int(m.group(1)) < args.years:
+            msg = (f"{label} 面在 {w} 窗口下采集，短于重构窗 {args.years}Y——"
+                   f"该面早于 {w} 的记录缺失；建议在 app 选 {args.years}Y 后重采")
+            window_gaps.append(msg)
+            print(f"[warn] {msg}")
+    res = rc.reconstruct(sale, profit, tower, args.asof, args.years, subject=unit,
+                         subject_block=d.get("subject", {}).get("block"))
     comps_rows = res["comps"]
     if not comps_rows:
         die("0 comps in window — widen --years or check the harvests")
@@ -221,13 +232,24 @@ def run(args: argparse.Namespace) -> int:
         anchor = Comp(f"{unit} own {a['date']}", a["date"], a["floor"],
                       subj.bedrooms, float(a["size_sqft"]), float(a["psf"]), float(a["price"]))
 
+    # floor premium: fitted from same-spec close-in-time cross-floor pairs when
+    # the data supports it (high-rise towers are far steeper than the 0.3%
+    # default); else the segment default
+    ffit = rc.fit_floor_premium(comps_rows, beds=subj.bedrooms)
+    if ffit["rate_per_floor"] is None:
+        ffit = rc.fit_floor_premium(comps_rows)  # all segments pooled
+    floor_pp = ffit["rate_per_floor"] if ffit["rate_per_floor"] is not None else 0.003
+    floor_pp = min(max(floor_pp, 0.0), 0.02)  # clamp to [0%, 2%]/floor
+    floor_method = (f"拟合 {floor_pp:.2%}/层（同规格 ±90 天跨楼层对 n={ffit['n_pairs']}，中位）"
+                    if ffit["rate_per_floor"] is not None else "缺省 0.30%/层（可拟合对不足）")
+
     # ── 3. engine + sensitivities ────────────────────────────────────────────
     engine_comps, skipped = to_engine_comps(comps_rows)
     if skipped:
         print(f"[warn] {len(skipped)} rows excluded from the grid (beds unresolved): {skipped}")
 
     def _value(tr, use_anchor=True):
-        p = Params(asof=args.asof, time_trend_pa=tr, floor_premium_pp=0.003,
+        p = Params(asof=args.asof, time_trend_pa=tr, floor_premium_pp=floor_pp,
                    size_elasticity=-0.08, compact3br_discount=0.03)
         return value(subj, engine_comps, p,
                      same_line_anchor=anchor if use_anchor else None, anchor_weight=2.0)
@@ -280,7 +302,7 @@ def run(args: argparse.Namespace) -> int:
             f"{anchor_txt}。时间趋势 {trend['rate_pa'] * 100:+.2f}%/yr（{trend['method']}"
             f"{'，超界截断' if trend['clamped'] else ''}）；"
             f"敏感性：趋势 0% → {sens['trend_0pc']:,}；+2pp → {sens['trend_plus2pp']:,}；"
-            f"去锚 → {sens['no_anchor']:,}（psf）。楼层 ±0.3%/层；面积弹性 -0.08；"
+            f"去锚 → {sens['no_anchor']:,}（psf）。楼层 {floor_method}；面积弹性 -0.08；"
             f"紧凑 3BR（≤800sf）折价 3%；权重 = 1/(1+|ln(面积比)|×3+楼层差/25+年差/2+异卧室数 0.6)。"
             f"区间 = 调整后值的四分位距（exclusive/type-6，含前推锚共 "
             f"{len(engine_comps) + (1 if anchor else 0)} 个值），点估恒在区间内。"),
@@ -313,14 +335,20 @@ def run(args: argparse.Namespace) -> int:
         f"月供参考：{MORTGAGE_LTV:.0%} LTV @{MORTGAGE_RATE:.1%} 固定 ≈ S${mort:,.0f}/mo（{MORTGAGE_YEARS} 年）",
         "年度房产税按 AV 累进（自住 0-32% 档）——以 IRAS 计算器为准",
     ]
-    gaps = list(res["meta"]["data_gaps"])
+    gaps = list(res["meta"]["data_gaps"]) + window_gaps
+    if res["meta"].get("stale_panel_artifacts"):
+        gaps.append(f"Tower View 采集中检出 {len(res['meta']['stale_panel_artifacts'])} 组跨座重复"
+                    "指纹（切座失败伪影）——已按指纹门去重、座位标记为未知；受影响单元的座位归属"
+                    "以下轮重采为准")
     if res["meta"]["beds_warnings"]:
         gaps.append(f"户型未解析行（已排除出调整网格）：{res['meta']['beds_warnings']}")
     hand = [g for g in d.get("data_gaps", []) if not any(
-        k in g for k in ("Tower View 只暴露", "View All 尾部", "户型未解析"))]
+        k in g for k in ("Tower View 只暴露", "View All 尾部", "户型未解析",
+                         "窗口下采集", "跨座重复"))]
     d["data_gaps"] = gaps + hand
     d["pipeline"] = {"tool": "researcher.pipelines.condo_valuation", "asof": args.asof,
                      "harvest_slug": args.slug, "trend": trend,
+                     "floor_premium": {"rate_per_floor": floor_pp, "method": floor_method},
                      "cross_surface_merges": res["meta"]["cross_surface_merges"]}
 
     json.dump(d, open(digest_path, "w", encoding="utf-8", newline="\n"),

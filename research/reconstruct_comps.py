@@ -68,17 +68,30 @@ def _beds(t) -> int | None:
     return int(m.group(1)) if m else None
 
 
-def _mk(dt: str, floor: int, stack: str, sqft: int, psf: int, price: int,
-        beds: int | None, surface: str, note: str) -> dict:
-    return {"date": dt, "floor": floor, "stack": stack,
-            "level": f"L{floor} #{stack}", "size_sqft": sqft, "psf": psf,
+def _blk_norm(b) -> str | None:
+    """'(single)' / '?' / '' -> None (wildcard: single-block devs and legacy data)."""
+    b = str(b or "").strip()
+    return b if b and b not in ("(single)", "?") else None
+
+
+def _blk_match(a: str | None, b: str | None) -> bool:
+    return a is None or b is None or a == b
+
+
+def _mk(dt: str, block: str | None, floor: int, stack: str, sqft: int, psf: int,
+        price: int, beds: int | None, surface: str, note: str) -> dict:
+    lvl = f"L{floor} #{stack}" if block is None else f"B{block} L{floor} #{stack}"
+    return {"date": dt, "block": block, "floor": floor, "stack": stack,
+            "level": lvl, "size_sqft": sqft, "psf": psf,
             "price": price, "beds": beds, "surface": surface, "note": note}
 
 
 def rows_from_sale(sale: list[dict]) -> list[dict]:
     out = []
     for r in sale:
-        out.append(_mk(iso(r["date"]), int(r["level"]), r["unit"],
+        m = re.match(r"^(\d+[A-Za-z]?)\s", r.get("street", ""))
+        out.append(_mk(iso(r["date"]), _blk_norm(m.group(1) if m else None),
+                       int(r["level"]), r["unit"],
                        _num(r["area_sqft"]), _num(r["psf"]), _num(r["price"]),
                        _beds(r.get("unit_type")), "sale",
                        f"{r.get('unit_type', '?')} · Sale caveat 表 · {r.get('sale_type', '')}".strip(" ·")))
@@ -88,11 +101,40 @@ def rows_from_sale(sale: list[dict]) -> list[dict]:
 def rows_from_profitability(profit: dict) -> list[dict]:
     out = []
     for r in profit.get("rows", []):
-        out.append(_mk(iso(r["sell_date"]), r["level"], r["stack"], r["sqft"],
-                       r["sell_psf"], r["sell_price"], _beds(r.get("type")),
-                       "profitability",
+        out.append(_mk(iso(r["sell_date"]), _blk_norm(r.get("block")), r["level"],
+                       r["stack"], r["sqft"], r["sell_psf"], r["sell_price"],
+                       _beds(r.get("type")), "profitability",
                        f"{r.get('type', '?')} · Profitability 卖出腿（app caveat 口径）"))
     return out
+
+
+def strip_stale_panel_artifacts(tower: list[dict], min_blocks: int = 3) -> tuple[list[dict], list[str]]:
+    """Kill the stale-panel capture artifact: when a block-tab tap silently
+    no-ops, the SAME grid gets captured under several block names — the
+    fingerprint (unit, sqft, pp_date, pp_price) then repeats identically across
+    blocks, and each phantom copy would enter the comp set as an 'independent'
+    transaction (caught by a hostile review on Gallop Gables: one $6.138m sale
+    counted 7x, +$62k on the point estimate). Identical fingerprint under
+    >= min_blocks different blocks -> keep ONE copy with block=None (uncertain)
+    and report it."""
+    fp: dict[tuple, list[dict]] = {}
+    for u in tower:
+        key = (u.get("unit"), u.get("sqft"), u.get("pp_date"), u.get("pp_price"),
+               u.get("est_val"))
+        fp.setdefault(key, []).append(u)
+    out, warnings = [], []
+    for key, group in fp.items():
+        blocks = {_blk_norm(u.get("block")) for u in group}
+        if len(group) >= min_blocks and len(blocks) >= min_blocks:
+            keep = dict(group[0])
+            keep["block"] = None
+            out.append(keep)
+            warnings.append(f"{key[0]} ({key[1]}sf, PP {key[2]}): identical under "
+                            f"{len(blocks)} blocks — stale-panel artifact, kept 1 "
+                            f"copy with block=unknown")
+        else:
+            out.extend(group)
+    return out, warnings
 
 
 def rows_from_towerview(tower: list[dict]) -> list[dict]:
@@ -100,17 +142,24 @@ def rows_from_towerview(tower: list[dict]) -> list[dict]:
     for u in tower:
         if not all(u.get(k) for k in ("pp_date", "pp_price", "pp_psf", "sqft")):
             continue
-        out.append(_mk(iso(u["pp_date"]), u["floor"], u["stack"], int(u["sqft"]),
-                       u["pp_psf"], u["pp_price"], _beds(u.get("type")),
-                       "towerview",
+        out.append(_mk(iso(u["pp_date"]), _blk_norm(u.get("block")), u["floor"],
+                       u["stack"], int(u["sqft"]), u["pp_psf"], u["pp_price"],
+                       _beds(u.get("type")), "towerview",
                        f"{u.get('type', '?')} · Tower View PP 面（app caveat 口径）"))
     return out
 
 
 def unit_beds_map(tower: list[dict]) -> dict[tuple, int]:
-    """Tower View carries a type for most units — the primary beds source."""
-    return {(u["floor"], u["stack"]): b for u in tower
+    """Tower View carries a type for most units — the primary beds source.
+    Keyed (block, floor, stack); block None acts as wildcard for lookups."""
+    return {(_blk_norm(u.get("block")), u["floor"], u["stack"]): b for u in tower
             if (b := _beds(u.get("type"))) is not None}
+
+
+def _unit_beds_lookup(unit_map: dict, block: str | None, floor: int, stack: str) -> int | None:
+    hits = {b for (bl, fl, st), b in unit_map.items()
+            if fl == floor and st == stack and _blk_match(bl, block)}
+    return next(iter(hits)) if len(hits) == 1 else None
 
 
 def fill_beds(rows: list[dict], tower: list[dict]) -> list[str]:
@@ -131,20 +180,24 @@ def fill_beds(rows: list[dict], tower: list[dict]) -> list[str]:
             size_map.setdefault(r["size_sqft"], set()).add(r["beds"])
     unanimous = {s: next(iter(bs)) for s, bs in size_map.items() if len(bs) == 1}
     warnings = []
+    def _resolve(r, b, suffix=""):
+        r["beds"] = b
+        if r["note"].startswith("? · "):  # the surface had no type field
+            r["note"] = f"{b}BR{suffix} · " + r["note"][4:]
+
     for r in rows:
         if r["beds"] is not None:
             continue
-        if (b := unit_map.get((r["floor"], r["stack"]))) is not None:
-            r["beds"] = b
+        if (b := _unit_beds_lookup(unit_map, r["block"], r["floor"], r["stack"])) is not None:
+            _resolve(r, b, "（同单元他面口径）")
             continue
         if (b := unanimous.get(r["size_sqft"])) is not None:
-            r["beds"] = b
+            _resolve(r, b, "（同面积全体一致）")
             continue
         near = min(unanimous, default=None,
                    key=lambda s: abs(math.log(s / r["size_sqft"])))
         if near is not None and abs(math.log(near / r["size_sqft"])) <= math.log(1.15):
-            r["beds"] = unanimous[near]
-            r["note"] += f" · 户型按面积就近推断（{r['size_sqft']}sf ≈ 已知 {near}sf {r['beds']}BR）"
+            _resolve(r, unanimous[near], f"（按面积就近推断，{r['size_sqft']}sf ≈ {near}sf）")
             continue
         warnings.append(f"{r['level']} {r['size_sqft']}sf @{r['date']}: beds unresolved")
     return warnings
@@ -152,8 +205,11 @@ def fill_beds(rows: list[dict], tower: list[dict]) -> list[str]:
 
 def reconstruct(sale: list[dict], profit: dict, tower: list[dict],
                 asof: str, years: int = 5, subject: str | None = None,
-                fuzzy_days: int = 31) -> dict:
-    """Three-surface union -> deduped, windowed, provenance-tagged comps."""
+                fuzzy_days: int = 31, subject_block: str | None = None) -> dict:
+    """Three-surface union -> deduped, windowed, provenance-tagged comps.
+    Multi-block developments: pass subject_block (e.g. '80') — stack numbers
+    repeat across blocks, and without it the exclusion would eat same-numbered
+    units in OTHER blocks too."""
     a = date.fromisoformat(asof)
     start = (a - timedelta(days=round(years * 365.25))).isoformat()
 
@@ -163,7 +219,11 @@ def reconstruct(sale: list[dict], profit: dict, tower: list[dict],
         if not m:
             raise ValueError(f"subject must look like '#18-03', got {subject!r}")
         subj = (int(m.group(1)), m.group(2))
+    subj_blk = _blk_norm(subject_block)
 
+    tower, artifact_warnings = strip_stale_panel_artifacts(tower)
+    for w in artifact_warnings:
+        print(f"  [artifact] {w}")
     all_rows = (rows_from_sale(sale) + rows_from_profitability(profit)
                 + rows_from_towerview(tower))
     beds_warnings = fill_beds(all_rows, tower)
@@ -173,7 +233,8 @@ def reconstruct(sale: list[dict], profit: dict, tower: list[dict],
     subject_rows: list[dict] = []
     merges: list[str] = []
     for row in all_rows:
-        if subj and (row["floor"], row["stack"]) == subj:
+        if (subj and (row["floor"], row["stack"]) == subj
+                and _blk_match(subj_blk, row["block"])):
             subject_rows.append(row)
             continue
         if not (start <= row["date"] <= asof):
@@ -182,10 +243,16 @@ def reconstruct(sale: list[dict], profit: dict, tower: list[dict],
         dup = next((m2 for m2 in merged
                     if (m2["floor"], m2["stack"], m2["price"]) ==
                        (row["floor"], row["stack"], row["price"])
+                    and _blk_match(m2["block"], row["block"])
                     and abs((date.fromisoformat(m2["date"])
                              - date.fromisoformat(row["date"])).days) <= fuzzy_days), None)
         if dup:
             dup["note"] += f" · 亦见于 {row['surface']} 面（{row['date']}，±{fuzzy_days}d 同价判同笔）"
+            if dup["block"] is None and row["block"]:  # keep the more specific identity
+                dup["block"] = row["block"]
+                dup["level"] = f"B{row['block']} L{dup['floor']} #{dup['stack']}"
+            if dup["beds"] is None and row["beds"]:
+                dup["beds"] = row["beds"]
             merges.append(f"{dup['level']} {dup['price']}: {dup['surface']} + {row['surface']}")
             continue
         merged.append(row)
@@ -204,6 +271,7 @@ def reconstruct(sale: list[dict], profit: dict, tower: list[dict],
                      "surface_counts": counts, "total": len(merged),
                      "cross_surface_merges": merges, "dropped_outside_window": len(dropped),
                      "subject_excluded": subject, "beds_warnings": beds_warnings,
+                     "stale_panel_artifacts": artifact_warnings,
                      "data_gaps": gaps},
             "comps": merged, "subject_rows": subject_rows}
 
@@ -263,6 +331,30 @@ def choose_trend(comps: list[dict], profit: dict, subject_beds: int,
             "repeat_sales": rs}
 
 
+def fit_floor_premium(comps: list[dict], beds: int | None = None,
+                      max_gap_days: int = 90, min_dfloor: int = 3) -> dict:
+    """Deterministic per-floor premium from same-spec pairs traded close in
+    time at different floors: median of ln(psf_hi/psf_lo)/Δfloor. High-rise
+    new-TOP towers price floors far steeper than the 0.3%/floor default
+    (One Pearl Bank launch grid: ~0.5-1%/floor) — using the default there makes
+    high-floor comps land too hot on a low-floor subject. rate is None when
+    < 8 qualifying pairs (caller keeps the default and says so)."""
+    rates = []
+    rows = sorted(comps, key=lambda r: r["date"])
+    for a2, b in itertools.combinations(rows, 2):
+        if a2["size_sqft"] != b["size_sqft"] or a2["beds"] != b["beds"] or not a2["beds"]:
+            continue
+        if beds is not None and a2["beds"] != beds:
+            continue
+        days = abs((date.fromisoformat(b["date"]) - date.fromisoformat(a2["date"])).days)
+        dfloor = b["floor"] - a2["floor"]
+        if days > max_gap_days or abs(dfloor) < min_dfloor:
+            continue
+        rates.append(math.log(b["psf"] / a2["psf"]) / dfloor)
+    rate = statistics.median(rates) if len(rates) >= 8 else None
+    return {"rate_per_floor": rate, "n_pairs": len(rates)}
+
+
 def repeat_sales_trend(profit: dict) -> dict:
     """Corroboration: median annualised return of realised same-unit pairs
     (holding >= 2y). Long holdings smooth over regimes — use as a cross-check,
@@ -282,6 +374,8 @@ def main() -> None:
     ap.add_argument("--asof", required=True, help="YYYY-MM-DD")
     ap.add_argument("--years", type=int, default=5)
     ap.add_argument("--subject", default=None, help="e.g. '#18-03' — excluded (anchor, not comp)")
+    ap.add_argument("--subject-block", default=None,
+                    help="block of the subject (multi-block devs, e.g. '80')")
     ap.add_argument("--subject-beds", type=int, default=None,
                     help="subject bedroom count — fits the trend on that segment")
     args = ap.parse_args()
@@ -300,7 +394,8 @@ def main() -> None:
     sale = load("transactions")
     profit = load("profitability") or {"meta": {}, "rows": []}
     tower = load("towerview")
-    res = reconstruct(sale, profit, tower, args.asof, args.years, args.subject)
+    res = reconstruct(sale, profit, tower, args.asof, args.years, args.subject,
+                      subject_block=args.subject_block)
 
     by_beds = {b: fit_time_trend(res["comps"], beds=b) for b in (1, 2, 3, 4)}
     res["meta"]["fitted_trend"] = {

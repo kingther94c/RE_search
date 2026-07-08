@@ -77,13 +77,46 @@ def render(d: dict) -> str:
         f"<td>{esc(p.get('holding'))}</td><td>{esc(p.get('annualised'))}</td></tr>"
         for p in d.get("profitability", [])
     )
+    avm_rows = "".join(
+        f"<tr><td>{esc(a.get('blk'))}</td><td>{esc(a.get('unit'))}</td><td>{esc(a.get('sqft'))}</td>"
+        f"<td>{esc(a.get('est_val'))}</td><td><b>{esc(a.get('est_psf'))}</b></td></tr>"
+        for a in d.get("avm_crosscheck", [])
+    )
+    tri = v.get("triangulation") or {}
+    fresh = tri.get("freshest_same_spec") or {}
+    band = tri.get("negotiation_band_psf") or []
+    tri_html = ""
+    if band:
+        tri_html = (
+            "<div class='tri'><b>三角定价 Triangulation</b>　"
+            f"AVM cohort 中位 <b>{tri.get('avm_cohort_median_psf') or '—'}</b> psf · "
+            f"模型点估 <b>{tri.get('model_psf') or '—'}</b> psf · "
+            f"最新同规格成交 <b>{fresh.get('psf', '—')}</b> psf"
+            + (f"（{esc(fresh.get('level'))}，{esc(fresh.get('date'))}）" if fresh else "")
+            + f" → <b>谈判带 {band[0]:,}–{band[1]:,} psf</b>"
+            + f"<div class='note'>{esc(tri.get('note'))}</div></div>")
+    sens = v.get("sensitivity") or {}
+    sens_html = ("<div class='note'>敏感性 sensitivity（psf）：趋势 0% → "
+                 f"{sens.get('trend_0pc', '—'):,} · 趋势 +2pp → {sens.get('trend_plus2pp', '—'):,} · "
+                 f"去锚 → {sens.get('no_anchor', '—'):,}</div>" if sens else "")
     sources = "".join(
         (f"<li><a href='{esc(u)}'>{esc(u)}</a></li>" if str(u).startswith("http")
          else f"<li>{esc(u)}</li>")
         for u in d.get("sources", []))
 
-    def sec(zh, en, body, when=True):
-        return f"<h2>{zh} <span class='en'>{en}</span></h2>{body}" if when else ""
+    # numbered sections are auto-counted — hand-numbered headings drift when a
+    # section is empty/skipped (a review once caught a missing 四 + a 五·五 hack)
+    _nums = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十",
+             "十一", "十二", "十三", "十四"]
+    _ctr = {"i": 0}
+
+    def sec(zh, en, body, when=True, numbered=True):
+        if not when:
+            return ""
+        if numbered:
+            _ctr["i"] += 1
+            zh = f"{_nums[_ctr['i'] - 1]} · {zh}"
+        return f"<h2>{zh} <span class='en'>{en}</span></h2>{body}"
 
     return f"""<!doctype html><html lang="zh"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -109,6 +142,8 @@ ul{{margin:6px 0;padding-left:20px}} li{{margin:5px 0}}
 .cn{{background:#f1f5f9;border-radius:10px;padding:14px 18px;margin:10px 0}}
 .val{{background:#f5f3ff;border:1px solid #ddd6fe;border-radius:10px;padding:14px 18px;margin:12px 0}}
 .val .big{{font-size:22px;font-weight:800}}
+.tri{{background:#fff;border:1px dashed #a78bfa;border-radius:8px;padding:8px 12px;margin:10px 0 6px}}
+.note{{color:var(--mut);font-size:12.5px;margin-top:6px;line-height:1.6}}
 .stance{{display:inline-block;background:#ede9fe;border-radius:8px;padding:2px 12px;font-weight:700;margin-right:10px}}
 .two{{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}}
 .v-ok td{{color:#166534}} .v-warn td{{color:#b45309}} .v-bad td{{color:#b91c1c}}
@@ -131,50 +166,54 @@ a{{color:#1d4ed8;word-break:break-all}}
 <div class="val"><span class="stance">{esc(adv.get('stance', '—'))}</span>
 <span class="big">{money(v.get('estimate_price'))}</span>
 &nbsp;({v.get('estimate_psf', 0):,.0f} psf) · 区间 range {money(v.get('low_price'))} – {money(v.get('high_price'))}
-({v.get('low_psf', 0):,.0f}–{v.get('high_psf', 0):,.0f} psf)<br>
-<span class='en'>{esc(v.get('params_note'))}</span></div>
+({v.get('low_psf', 0):,.0f}–{v.get('high_psf', 0):,.0f} psf)
+{tri_html}{sens_html}
+<div class='note'>{esc(v.get('params_note'))}</div></div>
 
-{sec('一 · 项目事实', 'Development facts', '<ul>' + li(d.get('development_facts')) + '</ul>', d.get('development_facts'))}
+{sec('项目事实', 'Development facts', '<ul>' + li(d.get('development_facts')) + '</ul>', d.get('development_facts'))}
 
-{sec('二 · 本盘成交（估值输入）', 'Subject-project transactions (valuation inputs)',
+{sec('本盘成交（估值输入）', 'Subject-project transactions (valuation inputs)',
   f"<table><tr><th>Date</th><th>Sqft</th><th>Level</th><th>PSF</th><th>Price</th><th class='l'>Note · Source</th></tr>{txns}</table>", txns)}
 
-{sec('三 · 调整网格', 'Adjustment grid (comp → subject)',
+{sec('调整网格', 'Adjustment grid (comp → subject)',
   f"<table><tr><th class='l'>Comp</th><th>Raw psf</th><th>×time</th><th>×floor</th><th>×size</th><th>×type</th><th>Adj psf</th><th>Wt</th></tr>{grid}</table>"
   "<p class='sub'>time=市场趋势归一到估值日 · floor=楼层差 · size=面积/总价效应 · type=户型修正 · weight=相似度权重</p>", grid)}
 
-{sec('四 · 跨盘参照', 'Cross-project comps', f"<table><tr><th class='l'>Project</th><th>PSF</th><th class='l'>Note</th></tr>{xcomps}</table>", xcomps)}
+{sec('AVM 逐户对照（app Est. Val）', 'Per-unit AVM crosscheck (cohort)',
+  f"<table><tr><th>Blk</th><th>Unit</th><th>Sqft</th><th>Est. Val</th><th>Est. psf</th></tr>{avm_rows}</table>"
+  "<p class='sub'>app 自有 AVM 为 LIVE 值（随行情日变）——以 capture 日期口径读；对新近成交存在滞后</p>", avm_rows)}
 
-{sec('五 · 租金与收益率', 'Rentals & yield',
+{sec('跨盘参照', 'Cross-project comps', f"<table><tr><th class='l'>Project</th><th>PSF</th><th class='l'>Note</th></tr>{xcomps}</table>", xcomps)}
+
+{sec('租金与收益率', 'Rentals & yield',
   (f"<table><tr><th class='l'>Type</th><th>Rent / mo</th><th class='l'>Note</th></tr>{rents}</table>" if rents else "")
   + ('<ul>' + li(d.get('yield_analysis')) + '</ul>' if d.get('yield_analysis') else ''), rents or d.get('yield_analysis'))}
 
-{sec('五·五 · 已实现回报（买卖配对）', 'Realised returns (matched pairs)',
+{sec('已实现回报（买卖配对）', 'Realised returns (matched pairs)',
   f"<table><tr><th class='l'>Unit</th><th class='l'>Bought</th><th class='l'>Sold</th>"
   f"<th>Profit</th><th>Holding</th><th>Ann.</th></tr>{profits}</table>", profits)}
 
-{sec('六 · 学区与位置', 'Catchment & location', '<ul>' + li(d.get('catchment')) + '</ul>', d.get('catchment'))}
+{sec('学区与位置', 'Catchment & location', '<ul>' + li(d.get('catchment')) + '</ul>', d.get('catchment'))}
 
-{sec('七 · 市场背景', 'Market context', '<ul>' + li(d.get('market_context')) + '</ul>', d.get('market_context'))}
+{sec('市场背景', 'Market context', '<ul>' + li(d.get('market_context')) + '</ul>', d.get('market_context'))}
 
-<h2>八 · 论点 vs 风险 <span class="en">Bull vs bear</span></h2>
-<div class="two">
-<div><h3 style="color:#15803d">看多 Bull</h3><ul>{li(d.get('catalysts'))}</ul></div>
-<div><h3 style="color:#b91c1c">看空 Bear</h3><ul>{li(d.get('risks'))}</ul></div>
-</div>
+{sec('论点 vs 风险', 'Bull vs bear',
+  f"<div class='two'><div><h3 style='color:#15803d'>看多 Bull</h3><ul>{li(d.get('catalysts'))}</ul></div>"
+  f"<div><h3 style='color:#b91c1c'>看空 Bear</h3><ul>{li(d.get('risks'))}</ul></div></div>",
+  d.get('catalysts') or d.get('risks'))}
 
-{sec('九 · 建议与成本', 'Advisory & cost stack',
+{sec('建议与成本', 'Advisory & cost stack',
   (f"<p><b>{esc(adv.get('stance'))}</b> — {esc(adv.get('detail'))}</p>" if adv.get('detail') else '')
   + ('<ul>' + li(adv.get('cost_stack')) + '</ul>' if adv.get('cost_stack') else ''),
   adv.get('detail') or adv.get('cost_stack'))}
 
-{sec('十 · 验收：事实核查', 'Acceptance — fact-check',
+{sec('验收：事实核查', 'Acceptance — fact-check',
   f"<table><tr><th class='l'>Claim</th><th>Status</th><th class='l'>Note</th></tr>{verif}</table>"
   "<p class='sub'>confirmed = 已证实 · unverified = 未能证实（谨慎对待）</p>", verif)}
 
-{sec('数据缺口', 'Data gaps', '<ul>' + li(d.get('data_gaps')) + '</ul>', d.get('data_gaps'))}
+{sec('数据缺口', 'Data gaps', '<ul>' + li(d.get('data_gaps')) + '</ul>', d.get('data_gaps'), numbered=False)}
 
-{sec('来源', 'Sources', f"<ul>{sources}</ul>", sources)}
+{sec('来源', 'Sources', f"<ul>{sources}</ul>", sources, numbered=False)}
 
 <p class="foot">仅供研究与说明，非正式估值/投资建议。实际以银行估价、URA REALIS 与律师尽调为准。
 Generated by RE_search value-a-property pipeline, {asof}.</p>

@@ -43,31 +43,39 @@ import mbx
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 
-_TYPE = re.compile(r"^\d(BR|Br)$")
+_TYPE = re.compile(r"^(\d(BR|Br)|-)$")            # unit type can be '-' (not disclosed)
 _BAND = re.compile(r"^[\d,]+ - [\d,]+$")
-_PSF = re.compile(r"^\$[\d.]+$")
-_RENT = re.compile(r"^\$[\d,]+$")
+_EXACT = re.compile(r"^[\d,]{3,}$")               # live-data rows carry exact sqft
+_PSF = re.compile(r"^\$\d{1,2}(\.\d+)?$")         # '$7.82' but also '$6' (no cents)
+_RENT = re.compile(r"^\$[\d,]{3,}$")
 _MONYEAR = re.compile(r"^\w{3} \d{4}$")
+_FULLDATE = re.compile(r"^\d{2} \w{3} \d{4}$")
 _VIEWALL = re.compile(r"^View All \((\d+)\)$")
 
 
 def _row_at(texts: list[str], i: int) -> dict | None:
-    """Validate texts[i:i+5] as one Past-Rentals row; None if not a row."""
+    """Validate texts[i:i+5] as one rental row; None if not a row.
+    Two row shapes share the layout: Past Rentals (Tier-1 contracts, AREA BAND)
+    and realtime agency/live rows (Tier-2 listings, EXACT sqft) — tagged via
+    'panel' so the caller can keep the tiers apart."""
     t = texts[i : i + 5]
     if len(t) < 5:
         return None
     ok = (
         t[0] and not t[0].startswith("$") and not _TYPE.match(t[0])
         and not _MONYEAR.match(t[0]) and not t[0][0].isdigit()   # street name
-        and _TYPE.match(t[1])                                     # unit type
-        and _BAND.match(t[2])                                     # area band
-        and _PSF.match(t[3]) and "." in t[3]                      # $/sqft has cents
+        and _TYPE.match(t[1])                                     # unit type (or '-')
+        and (_BAND.match(t[2]) or _EXACT.match(t[2]))             # band | exact sqft
+        and _PSF.match(t[3])                                      # $/sqft
         and _RENT.match(t[4])                                     # monthly rent
     )
     if not ok:
         return None
     return {
-        "street": t[0], "type": t[1].upper(), "area_band_sqft": t[2],
+        "street": t[0],
+        "type": t[1].upper() if t[1] != "-" else None,
+        "area_band_sqft": t[2],
+        "panel": "past" if _BAND.match(t[2]) else "live",
         "psf": float(t[3].lstrip("$").replace(",", "")),
         "monthly_rent": int(re.sub(r"[^\d]", "", t[4])),
     }
@@ -75,12 +83,13 @@ def _row_at(texts: list[str], i: int) -> dict | None:
 
 def parse_rent_texts(texts: list[str]) -> dict:
     """Pure parser: ordered visible texts of a Rent screen →
-    {"rows": [...], "meta": {...}}. Cuts at the Realtime Agency Data panel."""
-    if "Realtime Agency Data" in texts:
-        cut = texts.index("Realtime Agency Data")
-        texts, agency = texts[:cut], True
-    else:
-        agency = False
+    {"rows": [...], "meta": {...}}. Cuts at the trailing aggregate/agency
+    panels; live-listing rows inside the list are tagged panel='live'."""
+    agency = False
+    for marker in ("Realtime Agency Data", "Unit Mix Rentals"):
+        if marker in texts:
+            texts = texts[: texts.index(marker)]
+            agency = True
     rows: list[dict] = []
     meta: dict = {"agency_panel_present": agency}
     last_field_idx = -1
@@ -111,10 +120,12 @@ def parse_rent_texts(texts: list[str]) -> dict:
             last_field_idx = i
             continue
         i += 1
-    # frozen Contract-Date column: trailing month-year tokens pair with rows in
-    # row order. Pair ONLY on an exact count match — a partial column (row half
+    # frozen Contract-Date column: trailing month-year (contracts) or full-date
+    # (live rows) tokens pair with rows in row order; 'live data' badges are
+    # noise. Pair ONLY on an exact count match — a partial column (row half
     # scrolled off) would misalign every date below it.
-    dates = [t for t in texts[last_field_idx:] if t and _MONYEAR.match(t)]
+    dates = [t for t in texts[last_field_idx:]
+             if t and (_MONYEAR.match(t) or _FULLDATE.match(t))]
     if dates and len(dates) == len(rows):
         for r, dt in zip(rows, dates):
             r["contract_month"] = dt
@@ -136,6 +147,7 @@ def harvest(max_scrolls: int = 12, stale_stop: int = 3) -> dict:
             "select the window (5Y default), then re-run. "
             "If the app itself won't open, run `python doctor.py` and follow it.")
     seen: dict[tuple, dict] = {}
+    live: dict[tuple, dict] = {}
     meta: dict = {}
     stale = 0
     for i in range(max_scrolls):
@@ -146,26 +158,32 @@ def harvest(max_scrolls: int = 12, stale_stop: int = 3) -> dict:
         for r in parsed["rows"]:
             key = (r["street"], r["type"], r["area_band_sqft"], r["psf"],
                    r["monthly_rent"], r.get("contract_month"))
-            if key not in seen:
+            bucket = seen if r["panel"] == "past" else live
+            if key not in bucket:
                 gained += 1
-                seen[key] = r
-        print(f"scroll {i:2}: +{gained} (total {len(seen)})")
+                bucket[key] = r
+        print(f"scroll {i:2}: +{gained} (contracts {len(seen)}, live {len(live)})")
         stale = stale + 1 if gained == 0 else 0
         if stale >= stale_stop:
             break
         mbx.swipe_region(1280, 1250, 1280, 700, 500)
         time.sleep(1.2)
-    return {"meta": meta, "rows": list(seen.values())}
+    meta["dedup_note"] = ("rows have no unit identity — genuinely identical contracts "
+                          "collapse; on high-volume devs treat counts as DISTINCT combos, "
+                          "and read volume from the app band/advertised totals")
+    return {"meta": meta, "rows": list(seen.values()),
+            "live_rows_tier2": list(live.values())}
 
 
 def save(data: dict, slug: str) -> None:
-    if not data["rows"]:
+    if not data["rows"] and not data.get("live_rows_tier2"):
         print("no rows harvested — refusing to overwrite")
         return
     path = os.path.join(OUT, f"{slug}_rents.json")
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
-    print(f"saved {len(data['rows'])} contracts window={data['meta'].get('window')} "
+    print(f"saved {len(data['rows'])} contracts (+{len(data.get('live_rows_tier2', []))} "
+          f"Tier-2 live listings, kept separate) window={data['meta'].get('window')} "
           f"band={data['meta'].get('band', {}).get('avg')} -> {path}")
 
 

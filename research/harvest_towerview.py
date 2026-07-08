@@ -104,10 +104,11 @@ def _scroll_axis(seen: dict, block: str, swipe, max_pages: int = 40,
         gained = 0
         for u in _grab(block):
             key = (block, u["unit"])
-            if key not in seen or len(u) > len(seen[key]):
-                if key not in seen:
-                    gained += 1
+            if key not in seen:
+                gained += 1
                 seen[key] = u
+            else:
+                seen[key] = {**seen[key], **u}  # new fields win (Est. Val is live)
         stale = stale + 1 if gained == 0 else 0
         if stale >= stale_stop:
             return
@@ -117,6 +118,14 @@ def _scroll_axis(seen: dict, block: str, swipe, max_pages: int = 40,
 
 def harvest(slug: str) -> list[dict]:
     seen: dict[tuple, dict] = {}
+    # seed from a previous run so repeated harvests ACCUMULATE coverage on big
+    # grids (fields from the new run win — Est. Val is live, fresher is better)
+    prev_path = os.path.join(OUT, f"{slug}_towerview.json")
+    if os.path.exists(prev_path):
+        with open(prev_path, encoding="utf-8") as f:
+            for u in json.load(f):
+                seen[(u.get("block", "?"), u["unit"])] = u
+        print(f"seeded {len(seen)} units from previous run")
     nodes = mbx.parse(mbx.dump_xml())
     labels = [n["text"] for n in nodes if n["text"]]
     if "Tower View" not in labels:
@@ -128,6 +137,9 @@ def harvest(slug: str) -> list[dict]:
     blocks = sorted(tabs) or ["(single)"]
     print(f"blocks: {blocks}")
 
+    down = lambda: mbx.swipe_region(1280, 1250, 1280, 700, 500)    # noqa: E731
+    up = lambda: mbx.swipe_region(1280, 700, 1280, 1250, 500)      # noqa: E731
+    left = lambda: mbx.swipe_region(1800, 900, 600, 900, 500)      # noqa: E731
     for blk in blocks:
         if blk in tabs:
             before = _sig(_grab(blk))
@@ -135,12 +147,28 @@ def harvest(slug: str) -> list[dict]:
             time.sleep(2.5)
             if _sig(_grab(blk)) == before and len(blocks) > 1:
                 print(f"  [warn] block {blk}: grid signature unchanged after tap")
-        # vertical: more floors
-        _scroll_axis(seen, blk, lambda: mbx.swipe_region(1280, 1250, 1280, 700, 500))
-        # horizontal: more stacks (swipe the grid left), then re-walk vertically
-        _scroll_axis(seen, blk, lambda: mbx.swipe_region(1800, 900, 600, 900, 500),
-                     max_pages=6)
-        _scroll_axis(seen, blk, lambda: mbx.swipe_region(1280, 1250, 1280, 700, 500))
+        # normalize to the grid's top-left corner first — a mid-grid start
+        # makes the leftward serpentine skip every column to its left
+        for _ in range(3):
+            mbx.swipe_region(600, 900, 1800, 900, 300)   # content right = view left
+            time.sleep(0.6)
+        for _ in range(4):
+            mbx.swipe_region(1280, 700, 1280, 1300, 300)  # content down = view top
+            time.sleep(0.6)
+        # serpentine: walk the FULL vertical strip at each horizontal position
+        # (big grids: a single vertical+horizontal pass leaves whole columns
+        # unread — 774-unit One Pearl Bank proved it), alternating down/up so
+        # the next column starts where this one ended; stop after 2 columns
+        # with no new units.
+        h_stale = 0
+        for h in range(12):
+            before_n = len(seen)
+            _scroll_axis(seen, blk, down if h % 2 == 0 else up)
+            h_stale = h_stale + 1 if len(seen) == before_n else 0
+            if h_stale >= 2:
+                break
+            left()
+            time.sleep(1.4)
         print(f"  block {blk}: {sum(1 for k in seen if k[0] == blk)} units")
     return sorted(seen.values(), key=lambda u: (u["block"], u["stack"], -u["floor"]))
 

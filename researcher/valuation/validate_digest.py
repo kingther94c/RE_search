@@ -79,6 +79,15 @@ def check(d: dict, report_path: str | None = None) -> list[dict]:
     if "estimate_price" in v:
         est = int(v["estimate_price"])
         est_psf = int(v.get("estimate_psf") or 0)
+        # numbers that legitimately appear next to 点估 in prose: the current
+        # estimate, its band, the declared sensitivities and triangulation legs
+        ok_psf = {est_psf, int(v.get("low_psf") or 0), int(v.get("high_psf") or 0)}
+        ok_psf |= {int(x) for x in (v.get("sensitivity") or {}).values()
+                   if isinstance(x, (int, float))}
+        tri = v.get("triangulation") or {}
+        ok_psf |= {int(x) for x in (tri.get("avm_cohort_median_psf"),
+                                    tri.get("model_psf")) if x}
+        ok_psf |= {int(x) for x in (tri.get("negotiation_band_psf") or [])}
         stale = set()
         for txt in _strings(d):
             for m in re.finditer(r"点估[（(]?[^0-9$]{0,8}S\$([\d,]{7,})", txt):
@@ -88,7 +97,7 @@ def check(d: dict, report_path: str | None = None) -> list[dict]:
             if est_psf:
                 for m in re.finditer(r"点估[^0-9$]{0,6}~?S?\$?([\d,]{4,5}) psf", txt):
                     n = int(m.group(1).replace(",", ""))
-                    if 500 <= n <= 20_000 and n != est_psf:
+                    if 500 <= n <= 20_000 and n not in ok_psf:
                         stale.add(f"{n:,} psf")
         gate("single-estimate-base", not stale,
              f"strings mention 点估 bases {sorted(stale)} but valuation says "

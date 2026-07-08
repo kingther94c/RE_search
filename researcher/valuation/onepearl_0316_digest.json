@@ -1,0 +1,4286 @@
+{
+  "subject": {
+    "name": "#03-16 One Pearl Bank（700 sqft 2BR）",
+    "development": "One Pearl Bank",
+    "unit": "#03-16",
+    "block": "1",
+    "address": "1 Pearl Bank, D3（RCR，Subtown Pearl's Hill，Outram/珍珠山）",
+    "district": "D3（RCR）",
+    "tenure": "99 yrs from 01/03/2019（余约 92 年）",
+    "top_year": 2024,
+    "size_sqft": 700,
+    "floor": 3,
+    "bedrooms": 2
+  },
+  "asof": "2026-07-08",
+  "report_basename": "onepearl_0316_Condo_Valuation_Report.html",
+  "subtitle": "新 TOP（2024）99 年地契高层盘的低层小两房估值 · 三面重构 + 阶梯趋势 + 自动门禁 · capture 口径 2026-07-08 · 自身 2019 首购锚 + 2026-06-22 低一层同规格 subsale 直接可比",
+  "summary": "主体为 One Pearl Bank #03-16（700 sqft 2BR，99 年地契自 2019-03-01，D3 珍珠山，TOP 2024，自身 2019-07-24 以 $2,261 psf（约 $1.58m）首购）。管线以三面重构的 5Y 成交集为输入，点估、区间、敏感性与三角谈判带由 researcher/pipelines/condo_valuation.py 确定性生成并过 12 项门禁。读数要点：① 最硬的直接可比是 #02-15（同 700sf 2BR，低一层）2026-06-22 以 $2,323 psf subsale 成交——与主体几乎同位；② app AVM 对主体现值 $2,410（2026-07-08 capture），高于该最新成交 ~3.7%——本盘 AVM 与新近低层成交的方向差与 Spottiswoode 案例相反（AVM 偏高而非滞后偏低），谈判带取三腿包络，读数以带为准；③ 2024 年 TOP 后转售/subsale 活跃（Sale 表可见 15 笔近月成交），但低层小户型的实现回报分化：首购者在 $2,250-2,330 段进出基本打平（Profitability 面含 $0 与负收益对），意味着低层段的『新盘溢价消化』仍在进行——买方无须追价。",
+  "development_facts": [
+    "One Pearl Bank，1 Pearl Bank，D3 / RCR，Subtown Pearl's Hill（app Property Info 口径）",
+    "TOP 2024 · 99 yrs from 2019-03-01（余约 92 年）· 地块 82,376 sqft · GFA 674,886 sqft · plot ratio 7.2 · 共 774 户 · 单塔双筒 39 层",
+    "开发商 Areca Investment Pte Ltd（app 口径；市场资料称 CapitaLand 系——Tier-2 口径，未在 app 内证实）",
+    "原址为 Pearl Bank Apartments（整售重建）——珍珠山地标筒楼（Tier-2 常识口径，供背景）"
+  ],
+  "market_context": [
+    "数据缺口：本轮未采集 URA 2026Q2 flash——RCR 非有地指数以 URA pr 为准，后续复核并入；本报告市场面结论仅基于盘内 Tier-1 成交与租约。",
+    "盘内节奏：TOP（2024）后 5Y 窗内 Sale 表可见成交以 2025-2026 年 Resale/Sub Sale 为主，高层大户型 psf（$2,6xx-2,7xx）显著高于低层小户型（$2,3xx）——垂直溢价陡峭，楼层调整（±0.3%/层）对本盘尤其敏感，读区间勿读点。",
+    "实现回报（Profitability 面，5Y 窗）：14 对盈利 / 5 对非盈利（含 $0 打平与 -0.4%~-4% 年化）——盈亏分界大致在楼层与入手批次：低层 2019 首批购入者在当前低层价位下基本打平。"
+  ],
+  "catchment": [
+    "Outram Park MRT（EWL/NEL/TEL 三线换乘）步行圈、毗邻 Pearl's Hill City Park——Tier-2 常识口径，本轮未用 OneMap 实测步距（数据缺口，购房决策前以 OneMap API 复核）。",
+    "中央医院（SGH）/ 牛车水就业与生活配套近——租户画像以医护、CBD 通勤族为主（推断，与 1-2BR 租约活跃度一致；租约数据见收益率节）。"
+  ],
+  "risks": [
+    "楼层风险：本盘垂直溢价陡峭（低层 $2,3xx vs 高层 $2,7xx）。模型按盘内数据拟合楼层溢价 0.43%/层（同规格 ±90 天跨楼层对 n=125，中位），比通用缺省 0.30%/层更陡，但对最陡的顶部楼层仍可能修正不足——低层主体的读数以谈判带下锚（最新低层直接成交）为主，模型腿只作上参考。",
+    "地契剩余年限：99 年自 2019 年——余约 92 年，当前折价不明显，但相对同区永久地契，长持有的尾部残值曲线不同（bala curve），机构买家出价口径会更保守。",
+    "AVM 口径风险：app AVM（$2,410）高于最新低层同规格成交（$2,323）约 3.7%——若以 AVM 挂牌可能滞销；卖方定价应以直接成交锚为主。",
+    "个体差异未建模：朝向（内筒/外筒景观差异大）、装修未调整——成交前实地核验。"
+  ],
+  "catalysts": [
+    "TOP 后入伙潮 + 三线换乘枢纽：租赁需求厚（app 全窗租金带 $2,500-10,800/mo、advertised 344 条 live 挂牌为 Tier-2 供给信号），空置风险低。",
+    "新盘溢价消化后的价值回归：低层段与 launch 价打平意味着下行有限；高层段 $2,7xx 的成交为整盘树立天花板锚。"
+  ],
+  "yield_analysis": [
+    "2BR 近期合约中位 $5,400/mo（n=2，app 全窗带 $2,500–$10,800，均值 $4,842）→ 对点估（S$1,737,000）毛收益率 ~3.7%。",
+    "注意：2BR 合约样本 n 小（去重后合约为『不同组合』计数——高量盘同租金合约会合并），读收益率时以 app 全窗带（$2,500–$10,800，均值 $4,842）与带头 psf（$5.45–$9.78）为主参照。"
+  ],
+  "market_comps": [],
+  "verification": [
+    {
+      "claim": "#02-15（700sf 2BR）2026-06-22 @ $2,323 psf subsale（Sale 表）；同单元 Tower View PP 同价",
+      "status": "confirmed-tier1",
+      "note": "Sale caveat 表 + Tower View PP 双面互证（capture 留痕）"
+    },
+    {
+      "claim": "主体 #03-16 自身 PP：2019-07-24 @ $2,261 psf；AVM Est. Val $1,686,000（$2,410 psf）",
+      "status": "confirmed-tier1",
+      "note": "Tower View 网格 capture（2026-07-08）；AVM 为 LIVE 值，引用带日期"
+    },
+    {
+      "claim": "楼盘事实：TOP 2024 / 99y from 2019-03-01 / 774 户 / plot ratio 7.2",
+      "status": "confirmed-tier1",
+      "note": "app Property Info capture 口径"
+    },
+    {
+      "claim": "Outram Park 三线换乘步距、Areca=CapitaLand 系",
+      "status": "tier2-verify",
+      "note": "本轮未用 OneMap/ACRA 复核——决策前实测/查证"
+    }
+  ],
+  "sources": [
+    "PropNex Investment Suite（Tier-1）：Property Info / Sale / Rent / Tower View / Profitability captures（research/captures/onepearl_*，2026-07-08）",
+    "重构工具链：research/reconstruct_comps.py + researcher/pipelines/condo_valuation.py（本仓库，可复算）",
+    "URA 私宅指数（Tier-1，宏观背景）——Q2 flash 未并入，见数据缺口"
+  ],
+  "advisory": {
+    "stance": "买方：FAIR@谈判带内（勿按 AVM 追价）/ 持有人：HOLD（低层段先等溢价消化）",
+    "detail": "买方：出价锚定 #02-15 的 2026-06-22 成交（$2,323 psf，低一层同规格），上限为「估值」节谈判带上沿；AVM（$2,410）在本盘低层段偏高，不作为出价依据。持有人（尤其 2019 首批 $2,26x 购入者）：当前低层段卖出基本打平（含摩擦成本则小亏）——若非用钱，持有收租（毛收益率见收益率节）优于此时换手；SSD 窗（2025-07-04 新规 4 年）对 2025 年后新购者仍在计时。",
+    "cost_stack": [
+      "BSD（点估 S$1,737,000）≈ S$56,450；公民首套 ABSD 0%、二套 20%、PR 首套 5%",
+      "SSD（买方新购）：2025-07-04 起 4 年 16/12/8/4%——短炒通道已死",
+      "月供参考：75% LTV @1.4% 固定 ≈ S$4,434/mo（30 年）",
+      "年度房产税按 AV 累进（自住 0-32% 档）——以 IRAS 计算器为准"
+    ]
+  },
+  "data_gaps": [
+    "Tower View 只暴露每单元最后一笔——窗口内再交易单元的较早一笔仅当 Sale/Profitability 捕获时可见",
+    "户型未解析行（已排除出调整网格）：['B1 L19 #14 431sf @2021-12-02: beds unresolved']",
+    "Tower View 覆盖 450/774 户（大网格蛇形扫描两轮的累计）——PP 面对未覆盖单元缺失；对估值影响有限（主体 cohort 与低层段已覆盖），下轮补扫。",
+    "Rent 合约为『不同组合』去重计数（n=10）+ 9 条 Tier-2 live 挂牌（分开存放未混入）——高量盘的合约总量以 app 带头与 advertised 数为准。",
+    "Unprofitable 段 View All 计 9 对、5Y 窗内可见 5 对——差额疑为窗口口径差异，未强行对账。"
+  ],
+  "review": {},
+  "comps_table": [
+    {
+      "date": "2026-06-22",
+      "size_sqft": 700,
+      "level": "B1 L2 #15",
+      "psf": 2323,
+      "price": 1625000,
+      "beds": 2,
+      "note": "⭐同规格 cohort · 2BR · Sale caveat 表 · Sub Sale · 亦见于 towerview 面（2026-06-22，±31d 同价判同笔）"
+    },
+    {
+      "date": "2026-06-08",
+      "size_sqft": 1216,
+      "level": "B1 L21 #07",
+      "psf": 2738,
+      "price": 3330000,
+      "beds": 3,
+      "note": "3BR · Sale caveat 表 · Resale · 亦见于 profitability 面（2026-06-08，±31d 同价判同笔）"
+    },
+    {
+      "date": "2026-05-06",
+      "size_sqft": 1184,
+      "level": "B1 L17 #07",
+      "psf": 2651,
+      "price": 3138880,
+      "beds": 3,
+      "note": "3BR · Sale caveat 表 · Resale"
+    },
+    {
+      "date": "2026-04-27",
+      "size_sqft": 570,
+      "level": "B1 L32 #09",
+      "psf": 2428,
+      "price": 1385000,
+      "beds": 1,
+      "note": "1BR · Sale caveat 表 · Resale · 亦见于 profitability 面（2026-04-27，±31d 同价判同笔） · 亦见于 towerview 面（2026-04-27，±31d 同价判同笔）"
+    },
+    {
+      "date": "2026-03-09",
+      "size_sqft": 893,
+      "level": "B1 L17 #22",
+      "psf": 2665,
+      "price": 2380000,
+      "beds": 2,
+      "note": "2BR · Sale caveat 表 · Resale · 亦见于 profitability 面（2026-03-09，±31d 同价判同笔）"
+    },
+    {
+      "date": "2026-03-09",
+      "size_sqft": 893,
+      "level": "B1 L17 #22",
+      "psf": 2470,
+      "price": 1728000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2026-03-04",
+      "size_sqft": 700,
+      "level": "B1 L16 #05",
+      "psf": 2601,
+      "price": 1820000,
+      "beds": 2,
+      "note": "⭐同规格 cohort · 2BR · Sale caveat 表 · Sub Sale"
+    },
+    {
+      "date": "2026-02-23",
+      "size_sqft": 1152,
+      "level": "B1 L11 #12",
+      "psf": 2561,
+      "price": 2950000,
+      "beds": 3,
+      "note": "3BR · Sale caveat 表 · Sub Sale · 亦见于 towerview 面（2026-02-23，±31d 同价判同笔）"
+    },
+    {
+      "date": "2026-02-20",
+      "size_sqft": 743,
+      "level": "B1 L28 #06",
+      "psf": 2733,
+      "price": 2030000,
+      "beds": 2,
+      "note": "2BR · Sale caveat 表 · Resale"
+    },
+    {
+      "date": "2026-01-29",
+      "size_sqft": 807,
+      "level": "B1 L30 #19",
+      "psf": 2725,
+      "price": 2200000,
+      "beds": 2,
+      "note": "2BR · Sale caveat 表 · Sub Sale · 亦见于 towerview 面（2026-01-29，±31d 同价判同笔）"
+    },
+    {
+      "date": "2026-01-29",
+      "size_sqft": 840,
+      "level": "B1 L20 #11",
+      "psf": 2680,
+      "price": 2250000,
+      "beds": 2,
+      "note": "2BR · Sale caveat 表 · Resale · 亦见于 towerview 面（2026-01-29，±31d 同价判同笔）"
+    },
+    {
+      "date": "2026-01-16",
+      "size_sqft": 700,
+      "level": "B1 L4 #05",
+      "psf": 2315,
+      "price": 1620000,
+      "beds": 2,
+      "note": "⭐同规格 cohort · 2BR · Sale caveat 表 · Resale"
+    },
+    {
+      "date": "2026-01-07",
+      "size_sqft": 1184,
+      "level": "B1 L11 #07",
+      "psf": 2517,
+      "price": 2980000,
+      "beds": 3,
+      "note": "3BR · Sale caveat 表 · Resale"
+    },
+    {
+      "date": "2025-12-19",
+      "size_sqft": 431,
+      "level": "B1 L8 #14",
+      "psf": 2218,
+      "price": 955000,
+      "beds": 1,
+      "note": "1BR · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2025-12-19",
+      "size_sqft": 431,
+      "level": "B1 L8 #14",
+      "psf": 2369,
+      "price": 2830000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2025-12-12",
+      "size_sqft": 840,
+      "level": "B1 L27 #19",
+      "psf": 2620,
+      "price": 2200000,
+      "beds": 2,
+      "note": "2BR · Sale caveat 表 · Resale"
+    },
+    {
+      "date": "2025-11-26",
+      "size_sqft": 431,
+      "level": "B1 L4 #14",
+      "psf": 2213,
+      "price": 953000,
+      "beds": 1,
+      "note": "1BR · Sale caveat 表 · Resale · 亦见于 profitability 面（2025-11-26，±31d 同价判同笔） · 亦见于 towerview 面（2025-11-26，±31d 同价判同笔）"
+    },
+    {
+      "date": "2025-11-20",
+      "size_sqft": 431,
+      "level": "B1 L25 #13",
+      "psf": 2346,
+      "price": 1010000,
+      "beds": 1,
+      "note": "1BR · Sale caveat 表 · Resale · 亦见于 profitability 面（2025-11-20，±31d 同价判同笔） · 亦见于 towerview 面（2025-11-20，±31d 同价判同笔）"
+    },
+    {
+      "date": "2025-10-21",
+      "size_sqft": 743,
+      "level": "B1 L2 #06",
+      "psf": 2450,
+      "price": 1820000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2025-09-16",
+      "size_sqft": 1432,
+      "level": "B1 L6 #18",
+      "psf": 2654,
+      "price": 3800000,
+      "beds": 4,
+      "note": "4BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2025-09-16，±31d 同价判同笔）"
+    },
+    {
+      "date": "2025-09-04",
+      "size_sqft": 1152,
+      "level": "B1 L9 #01",
+      "psf": 2587,
+      "price": 2980000,
+      "beds": 3,
+      "note": "3BR · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2025-07-28",
+      "size_sqft": 1216,
+      "level": "B1 L14 #07",
+      "psf": 2631,
+      "price": 3200000,
+      "beds": 3,
+      "note": "3BR · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2025-07-21",
+      "size_sqft": 527,
+      "level": "B1 L13 #21",
+      "psf": 2349,
+      "price": 1238888,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2025-06-19",
+      "size_sqft": 527,
+      "level": "B1 L33 #21",
+      "psf": 2408,
+      "price": 1270000,
+      "beds": 1,
+      "note": "1BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2025-06-19，±31d 同价判同笔）"
+    },
+    {
+      "date": "2025-06-18",
+      "size_sqft": 570,
+      "level": "B1 L17 #09",
+      "psf": 2472,
+      "price": 1410000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2025-05-28",
+      "size_sqft": 840,
+      "level": "B1 L37 #19",
+      "psf": 2710,
+      "price": 2275000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2025-05-22",
+      "size_sqft": 560,
+      "level": "B1 L23 #17",
+      "psf": 2498,
+      "price": 1398000,
+      "beds": 1,
+      "note": "1BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2025-05-22，±31d 同价判同笔）"
+    },
+    {
+      "date": "2025-05-02",
+      "size_sqft": 527,
+      "level": "B1 L25 #10",
+      "psf": 2142,
+      "price": 1130000,
+      "beds": 1,
+      "note": "1BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2025-05-02，±31d 同价判同笔）"
+    },
+    {
+      "date": "2025-04-24",
+      "size_sqft": 1281,
+      "level": "B1 L4 #08",
+      "psf": 2444,
+      "price": 3130000,
+      "beds": 3,
+      "note": "3BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2025-04-24，±31d 同价判同笔）"
+    },
+    {
+      "date": "2025-04-16",
+      "size_sqft": 807,
+      "level": "B1 L7 #19",
+      "psf": 2477,
+      "price": 2000000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2025-04-14",
+      "size_sqft": 527,
+      "level": "B1 L2 #10",
+      "psf": 2275,
+      "price": 1199888,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2025-01-23",
+      "size_sqft": 700,
+      "level": "B1 L5 #15",
+      "psf": 2261,
+      "price": 1582000,
+      "beds": 2,
+      "note": "⭐同规格 cohort · 2BR · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2025-01-20",
+      "size_sqft": 893,
+      "level": "B1 L8 #22",
+      "psf": 2664,
+      "price": 2380000,
+      "beds": 2,
+      "note": "2BR · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2025-01-20",
+      "size_sqft": 893,
+      "level": "B1 L8 #22",
+      "psf": 2307,
+      "price": 1614000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2024-11-29",
+      "size_sqft": 893,
+      "level": "B1 L2 #11",
+      "psf": 2239,
+      "price": 2000000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2024-08-29",
+      "size_sqft": 527,
+      "level": "B1 L3 #21",
+      "psf": 2526,
+      "price": 1332500,
+      "beds": 1,
+      "note": "1BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2024-08-29，±31d 同价判同笔）"
+    },
+    {
+      "date": "2024-08-15",
+      "size_sqft": 840,
+      "level": "B1 L13 #11",
+      "psf": 2716,
+      "price": 2280000,
+      "beds": 2,
+      "note": "2BR · Profitability 卖出腿（app caveat 口径） · 亦见于 towerview 面（2024-08-15，±31d 同价判同笔）"
+    },
+    {
+      "date": "2024-08-02",
+      "size_sqft": 431,
+      "level": "B1 L37 #14",
+      "psf": 2439,
+      "price": 1050000,
+      "beds": 1,
+      "note": "1BR · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2024-08-02",
+      "size_sqft": 431,
+      "level": "B1 L37 #14",
+      "psf": 2787,
+      "price": 3330000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2024-07-19",
+      "size_sqft": 840,
+      "level": "B1 L3 #11",
+      "psf": 2442,
+      "price": 2050000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2024-06-12",
+      "size_sqft": 1281,
+      "level": "B1 L12 #08",
+      "psf": 2498,
+      "price": 3200000,
+      "beds": 3,
+      "note": "3BR · Profitability 卖出腿（app caveat 口径）"
+    },
+    {
+      "date": "2024-02-16",
+      "size_sqft": 1432,
+      "level": "B1 L29 #18",
+      "psf": 2571,
+      "price": 3680000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-10-24",
+      "size_sqft": 570,
+      "level": "B1 L12 #20",
+      "psf": 2594,
+      "price": 1480000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-10-18",
+      "size_sqft": 2788,
+      "level": "B1 L38 #13",
+      "psf": 2645,
+      "price": 3388000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-10-02",
+      "size_sqft": 1098,
+      "level": "B1 L35 #12",
+      "psf": 2824,
+      "price": 3100000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-08-31",
+      "size_sqft": 1098,
+      "level": "B1 L37 #12",
+      "psf": 2896,
+      "price": 3180000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-08-23",
+      "size_sqft": 1098,
+      "level": "B1 L33 #12",
+      "psf": 2869,
+      "price": 3150000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-08-23",
+      "size_sqft": 1098,
+      "level": "B1 L31 #12",
+      "psf": 2851,
+      "price": 3130000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-08-16",
+      "size_sqft": 893,
+      "level": "B1 L10 #11",
+      "psf": 2239,
+      "price": 2000000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-08-16",
+      "size_sqft": 1098,
+      "level": "B1 L29 #12",
+      "psf": 2824,
+      "price": 3100000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-08-09",
+      "size_sqft": 1152,
+      "level": "B1 L32 #12",
+      "psf": 2733,
+      "price": 3148000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-08-01",
+      "size_sqft": 1152,
+      "level": "B1 L36 #12",
+      "psf": 2759,
+      "price": 3178000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-07-14",
+      "size_sqft": 1098,
+      "level": "B1 L27 #12",
+      "psf": 2805,
+      "price": 3080000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-07-11",
+      "size_sqft": 2691,
+      "level": "B1 L38 #18",
+      "psf": 2976,
+      "price": 2082000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-07-04",
+      "size_sqft": 1399,
+      "level": "B1 L20 #18",
+      "psf": 2630,
+      "price": 3680000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-06-26",
+      "size_sqft": 1399,
+      "level": "B1 L30 #18",
+      "psf": 2773,
+      "price": 3880000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-06-20",
+      "size_sqft": 1399,
+      "level": "B1 L34 #18",
+      "psf": 2716,
+      "price": 3800000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-06-06",
+      "size_sqft": 1399,
+      "level": "B1 L24 #18",
+      "psf": 2630,
+      "price": 3680000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-06-02",
+      "size_sqft": 1399,
+      "level": "B1 L22 #18",
+      "psf": 2630,
+      "price": 3680000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-04-24",
+      "size_sqft": 1152,
+      "level": "B1 L30 #12",
+      "psf": 2755,
+      "price": 3173000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-03-02",
+      "size_sqft": 1152,
+      "level": "B1 L26 #12",
+      "psf": 2704,
+      "price": 3114000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-03-01",
+      "size_sqft": 1098,
+      "level": "B1 L23 #12",
+      "psf": 2780,
+      "price": 3052000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-02-26",
+      "size_sqft": 840,
+      "level": "B1 L36 #11",
+      "psf": 2822,
+      "price": 2369000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-02-25",
+      "size_sqft": 840,
+      "level": "B1 L32 #11",
+      "psf": 2779,
+      "price": 2333000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2023-01-24",
+      "size_sqft": 840,
+      "level": "B1 L30 #11",
+      "psf": 2758,
+      "price": 2316000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-11-06",
+      "size_sqft": 840,
+      "level": "B1 L32 #22",
+      "psf": 2744,
+      "price": 1920000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-11-03",
+      "size_sqft": 840,
+      "level": "B1 L36 #22",
+      "psf": 2927,
+      "price": 2048000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-10-29",
+      "size_sqft": 840,
+      "level": "B1 L30 #22",
+      "psf": 2549,
+      "price": 2140000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-10-20",
+      "size_sqft": 1399,
+      "level": "B1 L32 #18",
+      "psf": 2765,
+      "price": 3869000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-10-20",
+      "size_sqft": 840,
+      "level": "B1 L26 #22",
+      "psf": 2623,
+      "price": 1835000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-10-16",
+      "size_sqft": 1399,
+      "level": "B1 L7 #18",
+      "psf": 2456,
+      "price": 3437000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-10-03",
+      "size_sqft": 893,
+      "level": "B1 L37 #22",
+      "psf": 2927,
+      "price": 2048000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-10-01",
+      "size_sqft": 893,
+      "level": "B1 L37 #11",
+      "psf": 2569,
+      "price": 2295000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-09-12",
+      "size_sqft": 840,
+      "level": "B1 L28 #22",
+      "psf": 2640,
+      "price": 1847000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-09-11",
+      "size_sqft": 840,
+      "level": "B1 L28 #11",
+      "psf": 2639,
+      "price": 2216000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-09-03",
+      "size_sqft": 1098,
+      "level": "B1 L19 #12",
+      "psf": 2685,
+      "price": 2948000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-09-01",
+      "size_sqft": 1399,
+      "level": "B1 L26 #18",
+      "psf": 2692,
+      "price": 3767000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-08-22",
+      "size_sqft": 893,
+      "level": "B1 L35 #22",
+      "psf": 2644,
+      "price": 1850000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-08-21",
+      "size_sqft": 560,
+      "level": "B1 L37 #17",
+      "psf": 2973,
+      "price": 1664000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-08-20",
+      "size_sqft": 893,
+      "level": "B1 L33 #22",
+      "psf": 2931,
+      "price": 2051000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-08-18",
+      "size_sqft": 893,
+      "level": "B1 L33 #11",
+      "psf": 2530,
+      "price": 2260000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-08-14",
+      "size_sqft": 893,
+      "level": "B1 L35 #11",
+      "psf": 2550,
+      "price": 2278000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-08-13",
+      "size_sqft": 840,
+      "level": "B1 L22 #22",
+      "psf": 2604,
+      "price": 1822000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-08-07",
+      "size_sqft": 893,
+      "level": "B1 L29 #22",
+      "psf": 2831,
+      "price": 1981000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-08-05",
+      "size_sqft": 1399,
+      "level": "B1 L36 #18",
+      "psf": 2771,
+      "price": 3877000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-08-05",
+      "size_sqft": 1399,
+      "level": "B1 L28 #18",
+      "psf": 2691,
+      "price": 3765000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-07-30",
+      "size_sqft": 1432,
+      "level": "B1 L23 #18",
+      "psf": 2570,
+      "price": 3679000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-07-28",
+      "size_sqft": 1399,
+      "level": "B1 L11 #18",
+      "psf": 2467,
+      "price": 3452000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-07-13",
+      "size_sqft": 560,
+      "level": "B1 L36 #17",
+      "psf": 2959,
+      "price": 1656000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-07-06",
+      "size_sqft": 893,
+      "level": "B1 L31 #11",
+      "psf": 2504,
+      "price": 2237000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-07-01",
+      "size_sqft": 1399,
+      "level": "B1 L9 #18",
+      "psf": 2441,
+      "price": 3416000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-06-30",
+      "size_sqft": 1399,
+      "level": "B1 L5 #18",
+      "psf": 2376,
+      "price": 3325000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-06-30",
+      "size_sqft": 893,
+      "level": "B1 L31 #22",
+      "psf": 2850,
+      "price": 1994000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-06-20",
+      "size_sqft": 1098,
+      "level": "B1 L25 #12",
+      "psf": 2745,
+      "price": 3014000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-06-15",
+      "size_sqft": 1432,
+      "level": "B1 L12 #18",
+      "psf": 2417,
+      "price": 3460000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-06-12",
+      "size_sqft": 1098,
+      "level": "B1 L21 #12",
+      "psf": 2697,
+      "price": 2961000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-06-12",
+      "size_sqft": 1399,
+      "level": "B1 L16 #18",
+      "psf": 2548,
+      "price": 3565000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-06-11",
+      "size_sqft": 570,
+      "level": "B1 L37 #20",
+      "psf": 2778,
+      "price": 1585000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-06-09",
+      "size_sqft": 1184,
+      "level": "B1 L3 #07",
+      "psf": 2273,
+      "price": 2691000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-06-08",
+      "size_sqft": 1184,
+      "level": "B1 L5 #07",
+      "psf": 2291,
+      "price": 2713000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-06-04",
+      "size_sqft": 1152,
+      "level": "B1 L20 #12",
+      "psf": 2560,
+      "price": 2949000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-05-28",
+      "size_sqft": 840,
+      "level": "B1 L20 #22",
+      "psf": 2538,
+      "price": 1776000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-05-26",
+      "size_sqft": 1399,
+      "level": "B1 L3 #18",
+      "psf": 2357,
+      "price": 3298000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-05-23",
+      "size_sqft": 893,
+      "level": "B1 L27 #22",
+      "psf": 2338,
+      "price": 2089000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-05-22",
+      "size_sqft": 570,
+      "level": "B1 L36 #20",
+      "psf": 2771,
+      "price": 1581000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-05-21",
+      "size_sqft": 1216,
+      "level": "B1 L2 #07",
+      "psf": 2212,
+      "price": 2691000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-05-09",
+      "size_sqft": 1152,
+      "level": "B1 L22 #12",
+      "psf": 2584,
+      "price": 2976000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-05-07",
+      "size_sqft": 431,
+      "level": "B1 L27 #13",
+      "psf": 2845,
+      "price": 1225000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-05-06",
+      "size_sqft": 840,
+      "level": "B1 L18 #22",
+      "psf": 2483,
+      "price": 1737000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-05-02",
+      "size_sqft": 431,
+      "level": "B1 L29 #13",
+      "psf": 2857,
+      "price": 1230000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-30",
+      "size_sqft": 560,
+      "level": "B1 L35 #17",
+      "psf": 2891,
+      "price": 1618000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-29",
+      "size_sqft": 570,
+      "level": "B1 L35 #20",
+      "psf": 2710,
+      "price": 1546000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-29",
+      "size_sqft": 893,
+      "level": "B1 L25 #22",
+      "psf": 2501,
+      "price": 1750000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-29",
+      "size_sqft": 893,
+      "level": "B1 L23 #22",
+      "psf": 2570,
+      "price": 1798000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-27",
+      "size_sqft": 570,
+      "level": "B1 L33 #20",
+      "psf": 2692,
+      "price": 1536000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-25",
+      "size_sqft": 570,
+      "level": "B1 L32 #20",
+      "psf": 2684,
+      "price": 1531000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-24",
+      "size_sqft": 1184,
+      "level": "B1 L7 #07",
+      "psf": 2268,
+      "price": 2685000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-22",
+      "size_sqft": 1216,
+      "level": "B1 L4 #07",
+      "psf": 2189,
+      "price": 2663000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-22",
+      "size_sqft": 840,
+      "level": "B1 L13 #22",
+      "psf": 2374,
+      "price": 1661000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-21",
+      "size_sqft": 1432,
+      "level": "B1 L27 #18",
+      "psf": 2557,
+      "price": 3660000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-20",
+      "size_sqft": 807,
+      "level": "B1 L36 #19",
+      "psf": 2607,
+      "price": 2105000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-19",
+      "size_sqft": 431,
+      "level": "B1 L26 #13",
+      "psf": 2792,
+      "price": 1202000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-17",
+      "size_sqft": 807,
+      "level": "B1 L32 #19",
+      "psf": 2573,
+      "price": 2077000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-16",
+      "size_sqft": 1195,
+      "level": "B1 L7 #08",
+      "psf": 2369,
+      "price": 2830000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-13",
+      "size_sqft": 431,
+      "level": "B1 L30 #13",
+      "psf": 2810,
+      "price": 1210000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-12",
+      "size_sqft": 1432,
+      "level": "B1 L31 #18",
+      "psf": 2607,
+      "price": 3732000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-09",
+      "size_sqft": 1216,
+      "level": "B1 L6 #07",
+      "psf": 2207,
+      "price": 2685000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-09",
+      "size_sqft": 431,
+      "level": "B1 L31 #13",
+      "psf": 2815,
+      "price": 1212000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-09",
+      "size_sqft": 570,
+      "level": "B1 L31 #20",
+      "psf": 2675,
+      "price": 1526000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-09",
+      "size_sqft": 840,
+      "level": "B1 L16 #22",
+      "psf": 2458,
+      "price": 1720000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-07",
+      "size_sqft": 840,
+      "level": "B1 L26 #11",
+      "psf": 2549,
+      "price": 2140000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-04-02",
+      "size_sqft": 431,
+      "level": "B1 L29 #14",
+      "psf": 2737,
+      "price": 3270000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-28",
+      "size_sqft": 893,
+      "level": "B1 L29 #11",
+      "psf": 2439,
+      "price": 2179000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-23",
+      "size_sqft": 1432,
+      "level": "B1 L10 #18",
+      "psf": 2324,
+      "price": 3327000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-22",
+      "size_sqft": 431,
+      "level": "B1 L30 #14",
+      "psf": 2609,
+      "price": 3342000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-18",
+      "size_sqft": 1152,
+      "level": "B1 L28 #12",
+      "psf": 2545,
+      "price": 2931000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-14",
+      "size_sqft": 431,
+      "level": "B1 L23 #13",
+      "psf": 2722,
+      "price": 1172000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-13",
+      "size_sqft": 431,
+      "level": "B1 L28 #14",
+      "psf": 2582,
+      "price": 3307000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-12",
+      "size_sqft": 431,
+      "level": "B1 L26 #14",
+      "psf": 2708,
+      "price": 1166000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-11",
+      "size_sqft": 431,
+      "level": "B1 L28 #13",
+      "psf": 2745,
+      "price": 1182000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-10",
+      "size_sqft": 840,
+      "level": "B1 L17 #11",
+      "psf": 2406,
+      "price": 2020000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-08",
+      "size_sqft": 570,
+      "level": "B1 L35 #09",
+      "psf": 2673,
+      "price": 1525000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-06",
+      "size_sqft": 840,
+      "level": "B1 L35 #19",
+      "psf": 2450,
+      "price": 2057000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-03-05",
+      "size_sqft": 840,
+      "level": "B1 L31 #19",
+      "psf": 2417,
+      "price": 2029000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-28",
+      "size_sqft": 1195,
+      "level": "B1 L5 #08",
+      "psf": 2319,
+      "price": 2771000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-28",
+      "size_sqft": 431,
+      "level": "B1 L25 #14",
+      "psf": 2343,
+      "price": 2800000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-27",
+      "size_sqft": 570,
+      "level": "B1 L36 #09",
+      "psf": 2682,
+      "price": 1530000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-27",
+      "size_sqft": 431,
+      "level": "B1 L22 #13",
+      "psf": 2717,
+      "price": 1170000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-27",
+      "size_sqft": 840,
+      "level": "B1 L11 #22",
+      "psf": 2370,
+      "price": 1658000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-26",
+      "size_sqft": 1432,
+      "level": "B1 L19 #18",
+      "psf": 2376,
+      "price": 3402000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-25",
+      "size_sqft": 1195,
+      "level": "B1 L3 #08",
+      "psf": 2301,
+      "price": 2749000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-21",
+      "size_sqft": 1432,
+      "level": "B1 L2 #18",
+      "psf": 2217,
+      "price": 3174000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-14",
+      "size_sqft": 893,
+      "level": "B1 L15 #22",
+      "psf": 2198,
+      "price": 1964000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-13",
+      "size_sqft": 1432,
+      "level": "B1 L15 #18",
+      "psf": 2334,
+      "price": 3342000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-12",
+      "size_sqft": 431,
+      "level": "B1 L27 #14",
+      "psf": 2720,
+      "price": 3250000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-11",
+      "size_sqft": 807,
+      "level": "B1 L28 #19",
+      "psf": 2486,
+      "price": 2007000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-02-05",
+      "size_sqft": 807,
+      "level": "B1 L26 #19",
+      "psf": 2443,
+      "price": 1972000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-01-31",
+      "size_sqft": 431,
+      "level": "B1 L31 #14",
+      "psf": 2754,
+      "price": 3290000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-01-29",
+      "size_sqft": 1432,
+      "level": "B1 L21 #18",
+      "psf": 2395,
+      "price": 3429000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-01-29",
+      "size_sqft": 527,
+      "level": "B1 L37 #21",
+      "psf": 2645,
+      "price": 1395000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-01-28",
+      "size_sqft": 1432,
+      "level": "B1 L35 #18",
+      "psf": 2593,
+      "price": 3712000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-01-26",
+      "size_sqft": 893,
+      "level": "B1 L21 #22",
+      "psf": 2716,
+      "price": 1900000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-01-23",
+      "size_sqft": 1152,
+      "level": "B1 L24 #12",
+      "psf": 2388,
+      "price": 2750000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2022-01-07",
+      "size_sqft": 431,
+      "level": "B1 L21 #14",
+      "psf": 2699,
+      "price": 3225000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-31",
+      "size_sqft": 840,
+      "level": "B1 L9 #22",
+      "psf": 2330,
+      "price": 1630000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-30",
+      "size_sqft": 840,
+      "level": "B1 L22 #11",
+      "psf": 2457,
+      "price": 2063000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-30",
+      "size_sqft": 431,
+      "level": "B1 L22 #14",
+      "psf": 2348,
+      "price": 3008000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-30",
+      "size_sqft": 570,
+      "level": "B1 L34 #20",
+      "psf": 2614,
+      "price": 1491000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-30",
+      "size_sqft": 840,
+      "level": "B1 L3 #22",
+      "psf": 2250,
+      "price": 1574000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-25",
+      "size_sqft": 1152,
+      "level": "B1 L34 #12",
+      "psf": 2474,
+      "price": 2850000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-20",
+      "size_sqft": 570,
+      "level": "B1 L30 #20",
+      "psf": 2614,
+      "price": 1491000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-19",
+      "size_sqft": 431,
+      "level": "B1 L32 #14",
+      "psf": 2779,
+      "price": 3560000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-13",
+      "size_sqft": 840,
+      "level": "B1 L5 #22",
+      "psf": 2273,
+      "price": 1590000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-10",
+      "size_sqft": 1432,
+      "level": "B1 L4 #18",
+      "psf": 2236,
+      "price": 3201000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-07",
+      "size_sqft": 893,
+      "level": "B1 L4 #22",
+      "psf": 2115,
+      "price": 1890000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-06",
+      "size_sqft": 431,
+      "level": "B1 L33 #14",
+      "psf": 2741,
+      "price": 1180000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-05",
+      "size_sqft": 431,
+      "level": "B1 L20 #14",
+      "psf": 2331,
+      "price": 2986000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-02",
+      "size_sqft": 431,
+      "level": "B1 L19 #14",
+      "psf": 2676,
+      "price": 1152000,
+      "beds": null,
+      "note": "? · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-12-01",
+      "size_sqft": 431,
+      "level": "B1 L34 #14",
+      "psf": 2640,
+      "price": 3381000,
+      "beds": 3,
+      "note": "3BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-29",
+      "size_sqft": 1432,
+      "level": "B1 L25 #18",
+      "psf": 2487,
+      "price": 3561000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-28",
+      "size_sqft": 893,
+      "level": "B1 L23 #11",
+      "psf": 2319,
+      "price": 2072000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-28",
+      "size_sqft": 431,
+      "level": "B1 L34 #13",
+      "psf": 2722,
+      "price": 1172000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-24",
+      "size_sqft": 570,
+      "level": "B1 L37 #09",
+      "psf": 2691,
+      "price": 1535000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-22",
+      "size_sqft": 560,
+      "level": "B1 L33 #17",
+      "psf": 2816,
+      "price": 1576000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-21",
+      "size_sqft": 570,
+      "level": "B1 L34 #09",
+      "psf": 2629,
+      "price": 1500000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-20",
+      "size_sqft": 560,
+      "level": "B1 L30 #17",
+      "psf": 2789,
+      "price": 1561000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-20",
+      "size_sqft": 840,
+      "level": "B1 L7 #22",
+      "psf": 2556,
+      "price": 1788000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-19",
+      "size_sqft": 527,
+      "level": "B1 L36 #21",
+      "psf": 2635,
+      "price": 1390000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-19",
+      "size_sqft": 527,
+      "level": "B1 L35 #21",
+      "psf": 2626,
+      "price": 1385000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-07",
+      "size_sqft": 431,
+      "level": "B1 L24 #13",
+      "psf": 2680,
+      "price": 1154000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-07",
+      "size_sqft": 527,
+      "level": "B1 L34 #21",
+      "psf": 2579,
+      "price": 1360000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-11-03",
+      "size_sqft": 893,
+      "level": "B1 L10 #22",
+      "psf": 2340,
+      "price": 1637000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-10-22",
+      "size_sqft": 807,
+      "level": "B1 L22 #19",
+      "psf": 2389,
+      "price": 1929000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-10-20",
+      "size_sqft": 560,
+      "level": "B1 L34 #17",
+      "psf": 2789,
+      "price": 1561000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-09-21",
+      "size_sqft": 893,
+      "level": "B1 L25 #11",
+      "psf": 2338,
+      "price": 2089000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-08-26",
+      "size_sqft": 840,
+      "level": "B1 L34 #22",
+      "psf": 2913,
+      "price": 2038000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-08-20",
+      "size_sqft": 1432,
+      "level": "B1 L17 #18",
+      "psf": 2353,
+      "price": 3369000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-08-09",
+      "size_sqft": 1432,
+      "level": "B1 L33 #18",
+      "psf": 2574,
+      "price": 3685000,
+      "beds": 4,
+      "note": "4BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-08-09",
+      "size_sqft": 570,
+      "level": "B1 L29 #20",
+      "psf": 2605,
+      "price": 1486000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-07-30",
+      "size_sqft": 431,
+      "level": "B1 L21 #13",
+      "psf": 2608,
+      "price": 1123000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-07-27",
+      "size_sqft": 431,
+      "level": "B1 L19 #13",
+      "psf": 2587,
+      "price": 1114000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-07-27",
+      "size_sqft": 807,
+      "level": "B1 L20 #19",
+      "psf": 2375,
+      "price": 1917000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-07-21",
+      "size_sqft": 807,
+      "level": "B1 L34 #19",
+      "psf": 2415,
+      "price": 1950000,
+      "beds": 2,
+      "note": "2BR · Tower View PP 面（app caveat 口径）"
+    },
+    {
+      "date": "2021-07-17",
+      "size_sqft": 527,
+      "level": "B1 L32 #21",
+      "psf": 2510,
+      "price": 1324000,
+      "beds": 1,
+      "note": "1BR · Tower View PP 面（app caveat 口径）"
+    }
+  ],
+  "valuation": {
+    "estimate_psf": 2482,
+    "estimate_price": 1737000.0,
+    "low_psf": 2413,
+    "high_psf": 2608,
+    "low_price": 1689000.0,
+    "high_price": 1826000.0,
+    "sensitivity": {
+      "trend_0pc": 2384,
+      "trend_plus2pp": 2645,
+      "no_anchor": 2483
+    },
+    "triangulation": {
+      "avm_cohort_median_psf": 2410,
+      "model_psf": 2482,
+      "freshest_same_spec": {
+        "psf": 2323,
+        "date": "2026-06-22",
+        "level": "B1 L2 #15"
+      },
+      "negotiation_band_psf": [
+        2323,
+        2482
+      ],
+      "note": "谈判带 = AVM cohort 中位 ∪ 模型点估 ∪ 最新同规格成交 的包络（AVM 滞后新成交，最新直接成交为上锚；三值任何一个缺失时带宽相应收窄——按脚注读）"
+    },
+    "params_note": "模型输入：204 笔 5Y 三面重构集 = Sale 表 15 ∪ Profitability 卖出腿 14 ∪ Tower View PP 面 175（app/URA caveat 口径，逐笔可溯源；跨面同价 ±31 天判同笔）。Sale 表 UI 懒加载且可跳行——三面互补是采集方法论。自身上次成交锚：#03-16 own 2019-07-24（$2,261 psf，趋势前推后权重 2.0；分位集合计 1 次）。时间趋势 +1.26%/yr（cross-unit 2BR pairs (n=291, median)）；敏感性：趋势 0% → 2,384；+2pp → 2,645；去锚 → 2,483（psf）。楼层 拟合 0.43%/层（同规格 ±90 天跨楼层对 n=125，中位）；面积弹性 -0.08；紧凑 3BR（≤800sf）折价 3%；权重 = 1/(1+|ln(面积比)|×3+楼层差/25+年差/2+异卧室数 0.6)。区间 = 调整后值的四分位距（exclusive/type-6，含前推锚共 204 个值），点估恒在区间内。",
+    "grid": [
+      {
+        "label": "2026-06-22 B1 L2 #15 2BR 700sf",
+        "raw_psf": 2323.0,
+        "time_adj": 1.0005501332362288,
+        "floor_adj": 1.0042712108149825,
+        "size_adj": 1.0,
+        "type_adj": 1.0,
+        "adj_psf": 2334.2054406654347,
+        "weight": 0.9417057701232403
+      },
+      {
+        "label": "2026-06-08 B1 L21 #07 3BR 1216sf",
+        "raw_psf": 2738.0,
+        "time_adj": 1.00103174807701,
+        "floor_adj": 0.9261509251208941,
+        "size_adj": 1.0451697769470205,
+        "type_adj": 1.0,
+        "adj_psf": 2653.0772951534013,
+        "weight": 0.2488928657784278
+      },
+      {
+        "label": "2026-05-06 B1 L17 #07 3BR 1184sf",
+        "raw_psf": 2651.0,
+        "time_adj": 1.0021679005062245,
+        "floor_adj": 0.9420757334570591,
+        "size_adj": 1.0429423262118103,
+        "type_adj": 1.0,
+        "adj_psf": 2610.3354775996136,
+        "weight": 0.26157722890581736
+      },
+      {
+        "label": "2026-04-27 B1 L32 #09 1BR 570sf",
+        "raw_psf": 2428.0,
+        "time_adj": 1.0024779839976836,
+        "floor_adj": 0.8837320815444163,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2115.9543428513603,
+        "weight": 0.287778516823665
+      },
+      {
+        "label": "2026-03-09 B1 L17 #22 2BR 893sf",
+        "raw_psf": 2665.0,
+        "time_adj": 1.004167900273603,
+        "floor_adj": 0.9420757334570591,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2570.689587075261,
+        "weight": 0.40713981383997266
+      },
+      {
+        "label": "2026-03-09 B1 L17 #22 2BR 893sf",
+        "raw_psf": 2470.0,
+        "time_adj": 1.004167900273603,
+        "floor_adj": 0.9420757334570591,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2382.590348996583,
+        "weight": 0.40713981383997266
+      },
+      {
+        "label": "2026-03-04 B1 L16 #05 2BR 700sf",
+        "raw_psf": 2601.0,
+        "time_adj": 1.004340500805054,
+        "floor_adj": 0.9460995375183334,
+        "size_adj": 1.0,
+        "type_adj": 1.0,
+        "adj_psf": 2471.4860227220647,
+        "weight": 0.5908473260215471
+      },
+      {
+        "label": "2026-02-23 B1 L11 #12 3BR 1152sf",
+        "raw_psf": 2561.0,
+        "time_adj": 1.004651256526671,
+        "floor_adj": 0.9664778284117816,
+        "size_adj": 1.040658785802627,
+        "type_adj": 1.0,
+        "adj_psf": 2587.7669436419424,
+        "weight": 0.2778296048246854
+      },
+      {
+        "label": "2026-02-20 B1 L28 #06 2BR 743sf",
+        "raw_psf": 2733.0,
+        "time_adj": 1.0047548631328016,
+        "floor_adj": 0.8989275142081345,
+        "size_adj": 1.0047806477807155,
+        "type_adj": 1.0,
+        "adj_psf": 2480.2512885681867,
+        "weight": 0.4223403101368308
+      },
+      {
+        "label": "2026-01-29 B1 L30 #19 2BR 807sf",
+        "raw_psf": 2725.0,
+        "time_adj": 1.0055149714570413,
+        "floor_adj": 0.8912974157309683,
+        "size_adj": 1.0114444590812504,
+        "type_adj": 1.0,
+        "adj_psf": 2470.1295710274912,
+        "weight": 0.3668704180692104
+      },
+      {
+        "label": "2026-01-29 B1 L20 #11 2BR 840sf",
+        "raw_psf": 2680.0,
+        "time_adj": 1.0055149714570413,
+        "floor_adj": 0.9301067109685766,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2543.259134399838,
+        "weight": 0.4088319586417653
+      },
+      {
+        "label": "2026-01-16 B1 L4 #05 2BR 700sf",
+        "raw_psf": 2315.0,
+        "time_adj": 1.0059643966361187,
+        "floor_adj": 0.9957469548375121,
+        "size_adj": 1.0,
+        "type_adj": 1.0,
+        "adj_psf": 2318.9030544077323,
+        "weight": 0.7831932412728364
+      },
+      {
+        "label": "2026-01-07 B1 L11 #07 3BR 1184sf",
+        "raw_psf": 2517.0,
+        "time_adj": 1.0062756548117544,
+        "floor_adj": 0.9664778284117816,
+        "size_adj": 1.0429423262118103,
+        "type_adj": 1.0,
+        "adj_psf": 2553.009141131914,
+        "weight": 0.2669610454778457
+      },
+      {
+        "label": "2025-12-19 B1 L8 #14 1BR 431sf",
+        "raw_psf": 2218.0,
+        "time_adj": 1.0069330717092186,
+        "floor_adj": 0.9789148904461306,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2103.0878770937593,
+        "weight": 0.2832804422226153
+      },
+      {
+        "label": "2025-12-19 B1 L8 #14 3BR 431sf",
+        "raw_psf": 2369.0,
+        "time_adj": 1.0069330717092186,
+        "floor_adj": 0.9789148904461306,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2315.736839557843,
+        "weight": 0.2832804422226153
+      },
+      {
+        "label": "2025-12-12 B1 L27 #19 2BR 840sf",
+        "raw_psf": 2620.0,
+        "time_adj": 1.0071753861874226,
+        "floor_adj": 0.9027670231287056,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2417.222239229985,
+        "weight": 0.35820453030809957
+      },
+      {
+        "label": "2025-11-26 B1 L4 #14 1BR 431sf",
+        "raw_psf": 2213.0,
+        "time_adj": 1.007729466842076,
+        "floor_adj": 0.9957469548375121,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2136.1153318387414,
+        "weight": 0.293983104568887
+      },
+      {
+        "label": "2025-11-20 B1 L25 #13 1BR 431sf",
+        "raw_psf": 2346.0,
+        "time_adj": 1.0079373256645041,
+        "floor_adj": 0.9104953090710148,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2071.0452459515623,
+        "weight": 0.2353068754134023
+      },
+      {
+        "label": "2025-10-21 B1 L2 #06 2BR 743sf",
+        "raw_psf": 2450.0,
+        "time_adj": 1.008977263062005,
+        "floor_adj": 1.0042712108149825,
+        "size_adj": 1.0047806477807155,
+        "type_adj": 1.0,
+        "adj_psf": 2494.4209133385475,
+        "weight": 0.6350142818475082
+      },
+      {
+        "label": "2025-09-16 B1 L6 #18 4BR 1432sf",
+        "raw_psf": 2654.0,
+        "time_adj": 1.0101918795306963,
+        "floor_adj": 0.9872950527612459,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2802.97581585965,
+        "weight": 0.23413314621084808
+      },
+      {
+        "label": "2025-09-04 B1 L9 #01 3BR 1152sf",
+        "raw_psf": 2587.0,
+        "time_adj": 1.010608655970896,
+        "floor_adj": 0.9747515212068313,
+        "size_adj": 1.040658785802627,
+        "type_adj": 1.0,
+        "adj_psf": 2652.0500699353465,
+        "weight": 0.2663269319031756
+      },
+      {
+        "label": "2025-07-28 B1 L14 #07 3BR 1216sf",
+        "raw_psf": 2631.0,
+        "time_adj": 1.011929582762645,
+        "floor_adj": 0.9541987785943843,
+        "size_adj": 1.0451697769470205,
+        "type_adj": 1.0,
+        "adj_psf": 2655.1975548144983,
+        "weight": 0.2398654195785927
+      },
+      {
+        "label": "2025-07-21 B1 L13 #21 1BR 527sf",
+        "raw_psf": 2349.0,
+        "time_adj": 1.0121730996315568,
+        "floor_adj": 0.9582743627371597,
+        "size_adj": 0.9775455566694555,
+        "type_adj": 1.0,
+        "adj_psf": 2227.2280273870656,
+        "weight": 0.29998490193615274
+      },
+      {
+        "label": "2025-06-19 B1 L33 #21 1BR 527sf",
+        "raw_psf": 2408.0,
+        "time_adj": 1.0132870660881295,
+        "floor_adj": 0.8799735290900684,
+        "size_adj": 0.9775455566694555,
+        "type_adj": 1.0,
+        "adj_psf": 2098.91859897509,
+        "weight": 0.23938869450356226
+      },
+      {
+        "label": "2025-06-18 B1 L17 #09 1BR 570sf",
+        "raw_psf": 2472.0,
+        "time_adj": 1.0133218972877163,
+        "floor_adj": 0.9420757334570591,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2321.367267642797,
+        "weight": 0.30272132554041625
+      },
+      {
+        "label": "2025-05-28 B1 L37 #19 2BR 840sf",
+        "raw_psf": 2710.0,
+        "time_adj": 1.0140536291196103,
+        "floor_adj": 0.8650984937887831,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2412.2941857920855,
+        "weight": 0.28878794824560666
+      },
+      {
+        "label": "2025-05-22 B1 L23 #17 1BR 560sf",
+        "raw_psf": 2498.0,
+        "time_adj": 1.0142627923922576,
+        "floor_adj": 0.9182897542793096,
+        "size_adj": 0.9823069097152062,
+        "type_adj": 1.0,
+        "adj_psf": 2285.440218503028,
+        "weight": 0.27522219322727387
+      },
+      {
+        "label": "2025-05-02 B1 L25 #10 1BR 527sf",
+        "raw_psf": 2142.0,
+        "time_adj": 1.0149603149391135,
+        "floor_adj": 0.9104953090710148,
+        "size_adj": 0.9775455566694555,
+        "type_adj": 1.0,
+        "adj_psf": 1935.0101469864596,
+        "weight": 0.25490597588407893
+      },
+      {
+        "label": "2025-04-24 B1 L4 #08 3BR 1281sf",
+        "raw_psf": 2444.0,
+        "time_adj": 1.015239458254239,
+        "floor_adj": 0.9957469548375121,
+        "size_adj": 1.0495329727326173,
+        "type_adj": 1.0,
+        "adj_psf": 2593.073126607359,
+        "weight": 0.24659239677185316
+      },
+      {
+        "label": "2025-04-16 B1 L7 #19 2BR 807sf",
+        "raw_psf": 2477.0,
+        "time_adj": 1.0155186783418149,
+        "floor_adj": 0.9830960423131515,
+        "size_adj": 1.0114444590812504,
+        "type_adj": 1.0,
+        "adj_psf": 2501.220097800719,
+        "weight": 0.4545436826521091
+      },
+      {
+        "label": "2025-04-14 B1 L2 #10 1BR 527sf",
+        "raw_psf": 2275.0,
+        "time_adj": 1.0155884953618783,
+        "floor_adj": 1.0042712108149825,
+        "size_adj": 0.9775455566694555,
+        "type_adj": 1.0,
+        "adj_psf": 2268.230534782153,
+        "weight": 0.3217859597927288
+      },
+      {
+        "label": "2025-01-23 B1 L5 #15 2BR 700sf",
+        "raw_psf": 2261.0,
+        "time_adj": 1.0184201220675382,
+        "floor_adj": 0.9915119980681785,
+        "size_adj": 1.0,
+        "type_adj": 1.0,
+        "adj_psf": 2283.103016205196,
+        "weight": 0.5534342470112278
+      },
+      {
+        "label": "2025-01-20 B1 L8 #22 2BR 893sf",
+        "raw_psf": 2664.0,
+        "time_adj": 1.018525148614588,
+        "floor_adj": 0.9789148904461306,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2708.3898990076805,
+        "weight": 0.3757244581397153
+      },
+      {
+        "label": "2025-01-20 B1 L8 #22 2BR 893sf",
+        "raw_psf": 2307.0,
+        "time_adj": 1.018525148614588,
+        "floor_adj": 0.9789148904461306,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2345.441252631651,
+        "weight": 0.3757244581397153
+      },
+      {
+        "label": "2024-11-29 B1 L2 #11 2BR 893sf",
+        "raw_psf": 2239.0,
+        "time_adj": 1.0203473306661335,
+        "floor_adj": 1.0042712108149825,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2339.4480885614075,
+        "weight": 0.38869533746465174
+      },
+      {
+        "label": "2024-08-29 B1 L3 #21 1BR 527sf",
+        "raw_psf": 2526.0,
+        "time_adj": 1.0235791808102006,
+        "floor_adj": 1.0,
+        "size_adj": 0.9775455566694555,
+        "type_adj": 1.0,
+        "adj_psf": 2527.5036775335416,
+        "weight": 0.29587805391990424
+      },
+      {
+        "label": "2024-08-15 B1 L13 #11 2BR 840sf",
+        "raw_psf": 2716.0,
+        "time_adj": 1.0240718806838174,
+        "floor_adj": 0.9582743627371597,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2704.4849933048527,
+        "weight": 0.3455113361360461
+      },
+      {
+        "label": "2024-08-02 B1 L37 #14 1BR 431sf",
+        "raw_psf": 2439.0,
+        "time_adj": 1.024529600062871,
+        "floor_adj": 0.8650984937887831,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2079.4678242294735,
+        "weight": 0.18587329026452376
+      },
+      {
+        "label": "2024-08-02 B1 L37 #14 3BR 431sf",
+        "raw_psf": 2787.0,
+        "time_adj": 1.024529600062871,
+        "floor_adj": 0.8650984937887831,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2449.659031345255,
+        "weight": 0.18587329026452376
+      },
+      {
+        "label": "2024-07-19 B1 L3 #11 2BR 840sf",
+        "raw_psf": 2442.0,
+        "time_adj": 1.0250227574208275,
+        "floor_adj": 1.0,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2539.8827408311845,
+        "weight": 0.3950660940832386
+      },
+      {
+        "label": "2024-06-12 B1 L12 #08 3BR 1281sf",
+        "raw_psf": 2498.0,
+        "time_adj": 1.0263272448684322,
+        "floor_adj": 0.9623673545590031,
+        "size_adj": 1.0495329727326173,
+        "type_adj": 1.0,
+        "adj_psf": 2589.4961012904623,
+        "weight": 0.2079929399700209
+      },
+      {
+        "label": "2024-02-16 B1 L29 #18 4BR 1432sf",
+        "raw_psf": 2571.0,
+        "time_adj": 1.0304631806900966,
+        "floor_adj": 0.8951043348924044,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2511.1682628642516,
+        "weight": 0.16715942741720896
+      },
+      {
+        "label": "2023-10-24 B1 L12 #20 1BR 570sf",
+        "raw_psf": 2594.0,
+        "time_adj": 1.0345446586180727,
+        "floor_adj": 0.9623673545590031,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2540.5178005648095,
+        "weight": 0.2545286882278737
+      },
+      {
+        "label": "2023-10-18 B1 L38 #13 3BR 2788sf",
+        "raw_psf": 2645.0,
+        "time_adj": 1.034758048462833,
+        "floor_adj": 0.8614191908246992,
+        "size_adj": 1.1169033109235171,
+        "type_adj": 1.0,
+        "adj_psf": 2633.265265903312,
+        "weight": 0.11755425801104956
+      },
+      {
+        "label": "2023-10-02 B1 L35 #12 3BR 1098sf",
+        "raw_psf": 2824.0,
+        "time_adj": 1.0353273032567476,
+        "floor_adj": 0.8725043120752001,
+        "size_adj": 1.0366695542425062,
+        "type_adj": 1.0,
+        "adj_psf": 2644.5408845880347,
+        "weight": 0.1781543403557527
+      },
+      {
+        "label": "2023-08-31 B1 L37 #12 3BR 1098sf",
+        "raw_psf": 2896.0,
+        "time_adj": 1.0364667525148061,
+        "floor_adj": 0.8650984937887831,
+        "size_adj": 1.0366695542425062,
+        "type_adj": 1.0,
+        "adj_psf": 2691.9056430573237,
+        "weight": 0.17430967768713929
+      },
+      {
+        "label": "2023-08-23 B1 L33 #12 3BR 1098sf",
+        "raw_psf": 2869.0,
+        "time_adj": 1.0367518107196008,
+        "floor_adj": 0.8799735290900684,
+        "size_adj": 1.0366695542425062,
+        "type_adj": 1.0,
+        "adj_psf": 2713.409260925295,
+        "weight": 0.1789591459796164
+      },
+      {
+        "label": "2023-08-23 B1 L31 #12 3BR 1098sf",
+        "raw_psf": 2851.0,
+        "time_adj": 1.0367518107196008,
+        "floor_adj": 0.8875066875686558,
+        "size_adj": 1.0366695542425062,
+        "type_adj": 1.0,
+        "adj_psf": 2719.468283517716,
+        "weight": 0.18155846987677754
+      },
+      {
+        "label": "2023-08-16 B1 L10 #11 2BR 893sf",
+        "raw_psf": 2239.0,
+        "time_adj": 1.0370013009599153,
+        "floor_adj": 0.9706058589649349,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2297.9288459493105,
+        "weight": 0.2892285883770253
+      },
+      {
+        "label": "2023-08-16 B1 L29 #12 3BR 1098sf",
+        "raw_psf": 2824.0,
+        "time_adj": 1.0370013009599153,
+        "floor_adj": 0.8951043348924044,
+        "size_adj": 1.0366695542425062,
+        "type_adj": 1.0,
+        "adj_psf": 2717.4276996064086,
+        "weight": 0.18390973703076297
+      },
+      {
+        "label": "2023-08-09 B1 L32 #12 3BR 1152sf",
+        "raw_psf": 2733.0,
+        "time_adj": 1.037250851239074,
+        "floor_adj": 0.8837320815444163,
+        "size_adj": 1.040658785802627,
+        "type_adj": 1.0,
+        "adj_psf": 2607.06829369485,
+        "weight": 0.17509883908466992
+      },
+      {
+        "label": "2023-08-01 B1 L36 #12 3BR 1152sf",
+        "raw_psf": 2759.0,
+        "time_adj": 1.037536125093598,
+        "floor_adj": 0.8687935118314789,
+        "size_adj": 1.040658785802627,
+        "type_adj": 1.0,
+        "adj_psf": 2588.092841458683,
+        "weight": 0.17000986705105603
+      },
+      {
+        "label": "2023-07-14 B1 L27 #12 3BR 1098sf",
+        "raw_psf": 2805.0,
+        "time_adj": 1.0381782781631337,
+        "floor_adj": 0.9027670231287056,
+        "size_adj": 1.0366695542425062,
+        "type_adj": 1.0,
+        "adj_psf": 2725.3409007998207,
+        "weight": 0.18509522410526982
+      },
+      {
+        "label": "2023-07-11 B1 L38 #18 2BR 2691sf",
+        "raw_psf": 2976.0,
+        "time_adj": 1.0382853423082885,
+        "floor_adj": 0.8614191908246992,
+        "size_adj": 1.1137436799898717,
+        "type_adj": 1.0,
+        "adj_psf": 2964.4862842158427,
+        "weight": 0.1260080819467464
+      },
+      {
+        "label": "2023-07-04 B1 L20 #18 4BR 1399sf",
+        "raw_psf": 2630.0,
+        "time_adj": 1.0385352015869407,
+        "floor_adj": 0.9301067109685766,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2685.142398151094,
+        "weight": 0.17055777598098998
+      },
+      {
+        "label": "2023-06-26 B1 L30 #18 4BR 1399sf",
+        "raw_psf": 2773.0,
+        "time_adj": 1.0388208286747966,
+        "floor_adj": 0.8912974157309683,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2713.7556435698493,
+        "weight": 0.15938624170996005
+      },
+      {
+        "label": "2023-06-20 B1 L34 #18 4BR 1399sf",
+        "raw_psf": 2716.0,
+        "time_adj": 1.0390351005416687,
+        "floor_adj": 0.8762309619290546,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2613.582139988663,
+        "weight": 0.1552245283793041
+      },
+      {
+        "label": "2023-06-06 B1 L24 #18 4BR 1399sf",
+        "raw_psf": 2630.0,
+        "time_adj": 1.0395352401227758,
+        "floor_adj": 0.9143842264821098,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2642.294766557664,
+        "weight": 0.1649771422744898
+      },
+      {
+        "label": "2023-06-02 B1 L22 #18 4BR 1399sf",
+        "raw_psf": 2630.0,
+        "time_adj": 1.0396781813588385,
+        "floor_adj": 0.9222119634090751,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2665.2810054776673,
+        "weight": 0.16703075294191425
+      },
+      {
+        "label": "2023-04-24 B1 L30 #12 3BR 1152sf",
+        "raw_psf": 2755.0,
+        "time_adj": 1.0410728888751575,
+        "floor_adj": 0.8912974157309683,
+        "size_adj": 1.040658785802627,
+        "type_adj": 1.0,
+        "adj_psf": 2660.319161514538,
+        "weight": 0.17308419131306843
+      },
+      {
+        "label": "2023-03-02 B1 L26 #12 3BR 1152sf",
+        "raw_psf": 2704.0,
+        "time_adj": 1.0429712600774492,
+        "floor_adj": 0.9066229314013026,
+        "size_adj": 1.040658785802627,
+        "type_adj": 1.0,
+        "adj_psf": 2660.811342632209,
+        "weight": 0.17574420022810117
+      },
+      {
+        "label": "2023-03-01 B1 L23 #12 3BR 1098sf",
+        "raw_psf": 2780.0,
+        "time_adj": 1.0430071116552881,
+        "floor_adj": 0.9182897542793096,
+        "size_adj": 1.0366695542425062,
+        "type_adj": 1.0,
+        "adj_psf": 2760.2737053767623,
+        "weight": 0.1842492852020923
+      },
+      {
+        "label": "2023-02-26 B1 L36 #11 2BR 840sf",
+        "raw_psf": 2822.0,
+        "time_adj": 1.0431146737832468,
+        "floor_adj": 0.8687935118314789,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2595.01655520885,
+        "weight": 0.21987662462921845
+      },
+      {
+        "label": "2023-02-25 B1 L32 #11 2BR 840sf",
+        "raw_psf": 2779.0,
+        "time_adj": 1.043150530290855,
+        "floor_adj": 0.8837320815444163,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2599.5049623310056,
+        "weight": 0.22782292070971835
+      },
+      {
+        "label": "2023-01-24 B1 L30 #11 2BR 840sf",
+        "raw_psf": 2758.0,
+        "time_adj": 1.0442985895509984,
+        "floor_adj": 0.8912974157309683,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2604.8102985835,
+        "weight": 0.22971714787826653
+      },
+      {
+        "label": "2022-11-06 B1 L32 #22 2BR 840sf",
+        "raw_psf": 2744.0,
+        "time_adj": 1.0471382738207253,
+        "floor_adj": 0.8837320815444163,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2576.5778063701837,
+        "weight": 0.22020006640202722
+      },
+      {
+        "label": "2022-11-03 B1 L36 #22 2BR 840sf",
+        "raw_psf": 2927.0,
+        "time_adj": 1.0472462619827816,
+        "floor_adj": 0.8687935118314789,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2702.231858821768,
+        "weight": 0.21252036195576393
+      },
+      {
+        "label": "2022-10-29 B1 L30 #22 2BR 840sf",
+        "raw_psf": 2549.0,
+        "time_adj": 1.0474262670011942,
+        "floor_adj": 0.8912974157309683,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2414.6291723418412,
+        "weight": 0.22359979067409774
+      },
+      {
+        "label": "2022-10-20 B1 L32 #18 4BR 1399sf",
+        "raw_psf": 2765.0,
+        "time_adj": 1.0477503540067286,
+        "floor_adj": 0.8837320815444163,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2706.0209029421726,
+        "weight": 0.14936676680798067
+      },
+      {
+        "label": "2022-10-20 B1 L26 #22 2BR 840sf",
+        "raw_psf": 2623.0,
+        "time_adj": 1.0477503540067286,
+        "floor_adj": 0.9066229314013026,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2528.234224719021,
+        "weight": 0.23123544966875662
+      },
+      {
+        "label": "2022-10-16 B1 L7 #18 4BR 1399sf",
+        "raw_psf": 2456.0,
+        "time_adj": 1.0478944248615742,
+        "floor_adj": 0.9830960423131515,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2674.2340484138163,
+        "weight": 0.17542612032374877
+      },
+      {
+        "label": "2022-10-03 B1 L37 #22 2BR 893sf",
+        "raw_psf": 2927.0,
+        "time_adj": 1.0483627919698881,
+        "floor_adj": 0.8650984937887831,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2706.824823249501,
+        "weight": 0.2011496819392454
+      },
+      {
+        "label": "2022-10-01 B1 L37 #11 2BR 893sf",
+        "raw_psf": 2569.0,
+        "time_adj": 1.0484348670263512,
+        "floor_adj": 0.8650984937887831,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2375.9176794343366,
+        "weight": 0.20103896619904463
+      },
+      {
+        "label": "2022-09-12 B1 L28 #22 2BR 840sf",
+        "raw_psf": 2640.0,
+        "time_adj": 1.0491198272499023,
+        "floor_adj": 0.8989275142081345,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2526.319037593816,
+        "weight": 0.22438551829668668
+      },
+      {
+        "label": "2022-09-11 B1 L28 #11 2BR 840sf",
+        "raw_psf": 2639.0,
+        "time_adj": 1.0491558901814408,
+        "floor_adj": 0.8989275142081345,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2525.4489065324997,
+        "weight": 0.22431661562719998
+      },
+      {
+        "label": "2022-09-03 B1 L19 #12 3BR 1098sf",
+        "raw_psf": 2685.0,
+        "time_adj": 1.0494444382645118,
+        "floor_adj": 0.9340793928115533,
+        "size_adj": 1.0366695542425062,
+        "type_adj": 1.0,
+        "adj_psf": 2728.5246102304727,
+        "weight": 0.18140697792549385
+      },
+      {
+        "label": "2022-09-01 B1 L26 #18 4BR 1399sf",
+        "raw_psf": 2692.0,
+        "time_adj": 1.0495165876842758,
+        "floor_adj": 0.9066229314013026,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2707.376382663708,
+        "weight": 0.15332703515851157
+      },
+      {
+        "label": "2022-08-22 B1 L35 #22 2BR 893sf",
+        "raw_psf": 2644.0,
+        "time_adj": 1.049877409194124,
+        "floor_adj": 0.8725043120752001,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2469.6072827224452,
+        "weight": 0.20206440739389145
+      },
+      {
+        "label": "2022-08-21 B1 L37 #17 1BR 560sf",
+        "raw_psf": 2973.0,
+        "time_adj": 1.049913498167136,
+        "floor_adj": 0.8650984937887831,
+        "size_adj": 0.9823069097152062,
+        "type_adj": 1.0,
+        "adj_psf": 2652.5353676149916,
+        "weight": 0.17955906961458837
+      },
+      {
+        "label": "2022-08-20 B1 L33 #22 2BR 893sf",
+        "raw_psf": 2931.0,
+        "time_adj": 1.0499495883806869,
+        "floor_adj": 0.8799735290900684,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2761.3035274944295,
+        "weight": 0.2052690535704139
+      },
+      {
+        "label": "2022-08-18 B1 L33 #11 2BR 893sf",
+        "raw_psf": 2530.0,
+        "time_adj": 1.0500217725295766,
+        "floor_adj": 0.8799735290900684,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2383.6841417797095,
+        "weight": 0.20515375797086538
+      },
+      {
+        "label": "2022-08-14 B1 L35 #11 2BR 893sf",
+        "raw_psf": 2550.0,
+        "time_adj": 1.0501661557157016,
+        "floor_adj": 0.8725043120752001,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2382.4623919828614,
+        "weight": 0.2016182486321704
+      },
+      {
+        "label": "2022-08-13 B1 L22 #22 2BR 840sf",
+        "raw_psf": 2604.0,
+        "time_adj": 1.0502022546142202,
+        "floor_adj": 0.9222119634090751,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2559.0523939231234,
+        "weight": 0.234869509152352
+      },
+      {
+        "label": "2022-08-07 B1 L29 #22 2BR 893sf",
+        "raw_psf": 2831.0,
+        "time_adj": 1.0504188740653113,
+        "floor_adj": 0.8951043348924044,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2714.165462645175,
+        "weight": 0.2114410330373747
+      },
+      {
+        "label": "2022-08-05 B1 L36 #18 4BR 1399sf",
+        "raw_psf": 2771.0,
+        "time_adj": 1.050491090477643,
+        "floor_adj": 0.8687935118314789,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2673.0251320493435,
+        "weight": 0.14369946792002483
+      },
+      {
+        "label": "2022-08-05 B1 L28 #18 4BR 1399sf",
+        "raw_psf": 2691.0,
+        "time_adj": 1.050491090477643,
+        "floor_adj": 0.8989275142081345,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2685.890595382043,
+        "weight": 0.150625819979571
+      },
+      {
+        "label": "2022-07-30 B1 L23 #18 4BR 1432sf",
+        "raw_psf": 2570.0,
+        "time_adj": 1.0507077695053213,
+        "floor_adj": 0.9182897542793096,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2625.804595094431,
+        "weight": 0.15344190103606506
+      },
+      {
+        "label": "2022-07-28 B1 L11 #18 4BR 1399sf",
+        "raw_psf": 2467.0,
+        "time_adj": 1.050780005779246,
+        "floor_adj": 0.9664778284117816,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2648.0758424404976,
+        "weight": 0.16750644877354323
+      },
+      {
+        "label": "2022-07-13 B1 L36 #17 1BR 560sf",
+        "raw_psf": 2959.0,
+        "time_adj": 1.0513219361565382,
+        "floor_adj": 0.8687935118314789,
+        "size_adj": 0.9823069097152062,
+        "type_adj": 1.0,
+        "adj_psf": 2654.877331078284,
+        "weight": 0.17912845322365764
+      },
+      {
+        "label": "2022-07-06 B1 L31 #11 2BR 893sf",
+        "raw_psf": 2504.0,
+        "time_adj": 1.0515749326401593,
+        "floor_adj": 0.8875066875686558,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2382.9035110726077,
+        "weight": 0.20604721423828107
+      },
+      {
+        "label": "2022-07-01 B1 L9 #18 4BR 1399sf",
+        "raw_psf": 2441.0,
+        "time_adj": 1.051755681688386,
+        "floor_adj": 0.9747515212068313,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2645.0515578055897,
+        "weight": 0.16872282433269314
+      },
+      {
+        "label": "2022-06-30 B1 L5 #18 4BR 1399sf",
+        "raw_psf": 2376.0,
+        "time_adj": 1.0517918352260076,
+        "floor_adj": 0.9915119980681785,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2618.9775721594046,
+        "weight": 0.1733628253868049
+      },
+      {
+        "label": "2022-06-30 B1 L31 #22 2BR 893sf",
+        "raw_psf": 2850.0,
+        "time_adj": 1.0517918352260076,
+        "floor_adj": 0.8875066875686558,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2712.729954294404,
+        "weight": 0.2056990932925376
+      },
+      {
+        "label": "2022-06-20 B1 L25 #12 3BR 1098sf",
+        "raw_psf": 2745.0,
+        "time_adj": 1.05215343896099,
+        "floor_adj": 0.9104953090710148,
+        "size_adj": 1.0366695542425062,
+        "type_adj": 1.0,
+        "adj_psf": 2726.0855731837596,
+        "weight": 0.17079021076588727
+      },
+      {
+        "label": "2022-06-15 B1 L12 #18 4BR 1432sf",
+        "raw_psf": 2417.0,
+        "time_adj": 1.0523342874452752,
+        "floor_adj": 0.9623673545590031,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2592.0230067913676,
+        "weight": 0.16290024145567786
+      },
+      {
+        "label": "2022-06-12 B1 L21 #12 3BR 1098sf",
+        "raw_psf": 2697.0,
+        "time_adj": 1.0524428114562976,
+        "floor_adj": 0.9261509251208941,
+        "size_adj": 1.0366695542425062,
+        "type_adj": 1.0,
+        "adj_psf": 2725.219961800324,
+        "weight": 0.17525141809771794
+      },
+      {
+        "label": "2022-06-12 B1 L16 #18 4BR 1399sf",
+        "raw_psf": 2548.0,
+        "time_adj": 1.0524428114562976,
+        "floor_adj": 0.9460995375183334,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2681.589731267583,
+        "weight": 0.16043921894231228
+      },
+      {
+        "label": "2022-06-11 B1 L37 #20 1BR 570sf",
+        "raw_psf": 2778.0,
+        "time_adj": 1.0524789886136368,
+        "floor_adj": 0.8650984937887831,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2488.131772199055,
+        "weight": 0.17814855136573846
+      },
+      {
+        "label": "2022-06-09 B1 L3 #07 3BR 1184sf",
+        "raw_psf": 2273.0,
+        "time_adj": 1.0525513466590686,
+        "floor_adj": 1.0,
+        "size_adj": 1.0429423262118103,
+        "type_adj": 1.0,
+        "adj_psf": 2495.186545418126,
+        "weight": 0.1917023818026376
+      },
+      {
+        "label": "2022-06-08 B1 L5 #07 3BR 1184sf",
+        "raw_psf": 2291.0,
+        "time_adj": 1.0525875275472472,
+        "floor_adj": 0.9915119980681785,
+        "size_adj": 1.0429423262118103,
+        "type_adj": 1.0,
+        "adj_psf": 2493.684900906625,
+        "weight": 0.18875801781432086
+      },
+      {
+        "label": "2022-06-04 B1 L20 #12 3BR 1152sf",
+        "raw_psf": 2560.0,
+        "time_adj": 1.0527322635373748,
+        "floor_adj": 0.9301067109685766,
+        "size_adj": 1.040658785802627,
+        "type_adj": 1.0,
+        "adj_psf": 2608.549194795769,
+        "weight": 0.17178981157389725
+      },
+      {
+        "label": "2022-05-28 B1 L20 #22 2BR 840sf",
+        "raw_psf": 2538.0,
+        "time_adj": 1.0529855994107258,
+        "floor_adj": 0.9301067109685766,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2522.210487684445,
+        "weight": 0.233476265318974
+      },
+      {
+        "label": "2022-05-26 B1 L3 #18 4BR 1399sf",
+        "raw_psf": 2357.0,
+        "time_adj": 1.0530579922857055,
+        "floor_adj": 1.0,
+        "size_adj": 1.056957619675361,
+        "type_adj": 1.0,
+        "adj_psf": 2623.4297856124176,
+        "weight": 0.1743326026041118
+      },
+      {
+        "label": "2022-05-23 B1 L27 #22 2BR 893sf",
+        "raw_psf": 2338.0,
+        "time_adj": 1.0531665909301908,
+        "floor_adj": 0.9027670231287056,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2266.6138626055085,
+        "weight": 0.2103717786471549
+      },
+      {
+        "label": "2022-05-22 B1 L36 #20 1BR 570sf",
+        "raw_psf": 2771.0,
+        "time_adj": 1.0532027929670613,
+        "floor_adj": 0.8687935118314789,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2494.1768393813104,
+        "weight": 0.17855002118457441
+      },
+      {
+        "label": "2022-05-21 B1 L2 #07 3BR 1216sf",
+        "raw_psf": 2212.0,
+        "time_adj": 1.0532389962483573,
+        "floor_adj": 1.0042712108149825,
+        "size_adj": 1.0451697769470205,
+        "type_adj": 1.0,
+        "adj_psf": 2445.400006386639,
+        "weight": 0.18648249551290394
+      },
+      {
+        "label": "2022-05-09 B1 L22 #12 3BR 1152sf",
+        "raw_psf": 2584.0,
+        "time_adj": 1.0536735327046787,
+        "floor_adj": 0.9222119634090751,
+        "size_adj": 1.040658785802627,
+        "type_adj": 1.0,
+        "adj_psf": 2612.9896372325693,
+        "weight": 0.16844491032464398
+      },
+      {
+        "label": "2022-05-07 B1 L27 #13 1BR 431sf",
+        "raw_psf": 2845.0,
+        "time_adj": 1.0537459728751473,
+        "floor_adj": 0.9027670231287056,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2603.4199200383086,
+        "weight": 0.16394006713254966
+      },
+      {
+        "label": "2022-05-06 B1 L18 #22 2BR 840sf",
+        "raw_psf": 2483.0,
+        "time_adj": 1.0537821948279615,
+        "floor_adj": 0.9380690428161823,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2490.559259061934,
+        "weight": 0.23622752372967484
+      },
+      {
+        "label": "2022-05-02 B1 L29 #13 1BR 431sf",
+        "raw_psf": 2857.0,
+        "time_adj": 1.053927095090748,
+        "floor_adj": 0.8951043348924044,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2592.6554725124706,
+        "weight": 0.16163876528068372
+      },
+      {
+        "label": "2022-04-30 B1 L35 #17 1BR 560sf",
+        "raw_psf": 2891.0,
+        "time_adj": 1.0539995526936583,
+        "floor_adj": 0.8725043120752001,
+        "size_adj": 0.9823069097152062,
+        "type_adj": 1.0,
+        "adj_psf": 2611.5797905178265,
+        "weight": 0.1771828683867787
+      },
+      {
+        "label": "2022-04-29 B1 L35 #20 1BR 570sf",
+        "raw_psf": 2710.0,
+        "time_adj": 1.0540357833631429,
+        "floor_adj": 0.8725043120752001,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2451.626872665745,
+        "weight": 0.17882188458082723
+      },
+      {
+        "label": "2022-04-29 B1 L25 #22 2BR 893sf",
+        "raw_psf": 2501.0,
+        "time_adj": 1.0540357833631429,
+        "floor_adj": 0.9104953090710148,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2447.4117052850975,
+        "weight": 0.21247917768909572
+      },
+      {
+        "label": "2022-04-29 B1 L23 #22 2BR 893sf",
+        "raw_psf": 2570.0,
+        "time_adj": 1.0540357833631429,
+        "floor_adj": 0.9182897542793096,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2536.462760540651,
+        "weight": 0.2161534258636712
+      },
+      {
+        "label": "2022-04-27 B1 L33 #20 1BR 570sf",
+        "raw_psf": 2692.0,
+        "time_adj": 1.054108248438384,
+        "floor_adj": 0.8799735290900684,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2456.3600228556147,
+        "weight": 0.1813271297856611
+      },
+      {
+        "label": "2022-04-25 B1 L32 #20 1BR 570sf",
+        "raw_psf": 2684.0,
+        "time_adj": 1.054180718495607,
+        "floor_adj": 0.8837320815444163,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2459.6898353648216,
+        "weight": 0.18256062595167494
+      },
+      {
+        "label": "2022-04-24 B1 L7 #07 3BR 1184sf",
+        "raw_psf": 2268.0,
+        "time_adj": 1.0542169553925684,
+        "floor_adj": 0.9830960423131515,
+        "size_adj": 1.0429423262118103,
+        "type_adj": 1.0,
+        "adj_psf": 2451.485268533148,
+        "weight": 0.18384414950272773
+      },
+      {
+        "label": "2022-04-22 B1 L4 #07 3BR 1216sf",
+        "raw_psf": 2189.0,
+        "time_adj": 1.0542894329234065,
+        "floor_adj": 0.9957469548375121,
+        "size_adj": 1.0451697769470205,
+        "type_adj": 1.0,
+        "adj_psf": 2401.8254643167484,
+        "weight": 0.18511208518538297
+      },
+      {
+        "label": "2022-04-22 B1 L13 #22 2BR 840sf",
+        "raw_psf": 2374.0,
+        "time_adj": 1.0542894329234065,
+        "floor_adj": 0.9582743627371597,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2433.6882051789066,
+        "weight": 0.24676905731711818
+      },
+      {
+        "label": "2022-04-21 B1 L27 #18 4BR 1432sf",
+        "raw_psf": 2557.0,
+        "time_adj": 1.0543256735573683,
+        "floor_adj": 0.9027670231287056,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2577.2039884222527,
+        "weight": 0.1467563065939063
+      },
+      {
+        "label": "2022-04-20 B1 L36 #19 2BR 807sf",
+        "raw_psf": 2607.0,
+        "time_adj": 1.0543619154370825,
+        "floor_adj": 0.8687935118314789,
+        "size_adj": 1.0114444590812504,
+        "type_adj": 1.0,
+        "adj_psf": 2415.4016024117013,
+        "weight": 0.20597852225101027
+      },
+      {
+        "label": "2022-04-19 B1 L26 #13 1BR 431sf",
+        "raw_psf": 2792.0,
+        "time_adj": 1.054398158562592,
+        "floor_adj": 0.9066229314013026,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2567.4210091730797,
+        "weight": 0.16435391220786463
+      },
+      {
+        "label": "2022-04-17 B1 L32 #19 2BR 807sf",
+        "raw_psf": 2573.0,
+        "time_adj": 1.0544706485511675,
+        "floor_adj": 0.8837320815444163,
+        "size_adj": 1.0114444590812504,
+        "type_adj": 1.0,
+        "adj_psf": 2425.1407127438765,
+        "weight": 0.2128120569778789
+      },
+      {
+        "label": "2022-04-16 B1 L7 #08 3BR 1195sf",
+        "raw_psf": 2369.0,
+        "time_adj": 1.0545068954143195,
+        "floor_adj": 0.9830960423131515,
+        "size_adj": 1.0437141928529414,
+        "type_adj": 1.0,
+        "adj_psf": 2563.2562301599287,
+        "weight": 0.18254556963495547
+      },
+      {
+        "label": "2022-04-13 B1 L30 #13 1BR 431sf",
+        "raw_psf": 2810.0,
+        "time_adj": 1.0546156434797453,
+        "floor_adj": 0.8912974157309683,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2540.8177499978124,
+        "weight": 0.159932334071004
+      },
+      {
+        "label": "2022-04-12 B1 L31 #18 4BR 1432sf",
+        "raw_psf": 2607.0,
+        "time_adj": 1.05465189532702,
+        "floor_adj": 0.8875066875686558,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2583.981506639378,
+        "weight": 0.1431365137054373
+      },
+      {
+        "label": "2022-04-09 B1 L6 #07 3BR 1216sf",
+        "raw_psf": 2207.0,
+        "time_adj": 1.0547606583458429,
+        "floor_adj": 0.9872950527612459,
+        "size_adj": 1.0451697769470205,
+        "type_adj": 1.0,
+        "adj_psf": 2402.094337098646,
+        "weight": 0.18182054654748037
+      },
+      {
+        "label": "2022-04-09 B1 L31 #13 1BR 431sf",
+        "raw_psf": 2815.0,
+        "time_adj": 1.0547606583458429,
+        "floor_adj": 0.8875066875686558,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2534.8618453631043,
+        "weight": 0.15877753945405232
+      },
+      {
+        "label": "2022-04-09 B1 L31 #20 1BR 570sf",
+        "raw_psf": 2675.0,
+        "time_adj": 1.0547606583458429,
+        "floor_adj": 0.8875066875686558,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2463.2669986545548,
+        "weight": 0.1831657754533207
+      },
+      {
+        "label": "2022-04-09 B1 L16 #22 2BR 840sf",
+        "raw_psf": 2458.0,
+        "time_adj": 1.0547606583458429,
+        "floor_adj": 0.9460995375183334,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2488.8981852160014,
+        "weight": 0.23865391806434325
+      },
+      {
+        "label": "2022-04-07 B1 L26 #11 2BR 840sf",
+        "raw_psf": 2549.0,
+        "time_adj": 1.0548331732563183,
+        "floor_adj": 0.9066229314013026,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2473.5165134194626,
+        "weight": 0.21772708653532402
+      },
+      {
+        "label": "2022-04-02 B1 L29 #14 3BR 431sf",
+        "raw_psf": 2737.0,
+        "time_adj": 1.0550144823444163,
+        "floor_adj": 0.8951043348924044,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2563.217640074323,
+        "weight": 0.16057285978608776
+      },
+      {
+        "label": "2022-03-28 B1 L29 #11 2BR 893sf",
+        "raw_psf": 2439.0,
+        "time_adj": 1.0551958225966704,
+        "floor_adj": 0.8951043348924044,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2348.9771785432326,
+        "weight": 0.2036598021779477
+      },
+      {
+        "label": "2022-03-23 B1 L10 #18 4BR 1432sf",
+        "raw_psf": 2324.0,
+        "time_adj": 1.055377194018437,
+        "floor_adj": 0.9706058589649349,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2520.892554984997,
+        "weight": 0.16197699913071287
+      },
+      {
+        "label": "2022-03-22 B1 L30 #14 3BR 431sf",
+        "raw_psf": 2609.0,
+        "time_adj": 1.0554134720436033,
+        "floor_adj": 0.8912974157309683,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2433.8732867488975,
+        "weight": 0.15916569981874765
+      },
+      {
+        "label": "2022-03-18 B1 L28 #12 3BR 1152sf",
+        "raw_psf": 2545.0,
+        "time_adj": 1.0555585966150736,
+        "floor_adj": 0.8989275142081345,
+        "size_adj": 1.040658785802627,
+        "type_adj": 1.0,
+        "adj_psf": 2513.061762985524,
+        "weight": 0.16005523409540567
+      },
+      {
+        "label": "2022-03-14 B1 L23 #13 1BR 431sf",
+        "raw_psf": 2722.0,
+        "time_adj": 1.0557037411418901,
+        "floor_adj": 0.9182897542793096,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2538.4011661785803,
+        "weight": 0.16628664402593207
+      },
+      {
+        "label": "2022-03-13 B1 L28 #14 3BR 431sf",
+        "raw_psf": 2582.0,
+        "time_adj": 1.0557400303919386,
+        "floor_adj": 0.8989275142081345,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2430.0572453467566,
+        "weight": 0.16089894871139007
+      },
+      {
+        "label": "2022-03-12 B1 L26 #14 3BR 431sf",
+        "raw_psf": 2708.0,
+        "time_adj": 1.0557763208894106,
+        "floor_adj": 0.9066229314013026,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2570.548965883545,
+        "weight": 0.16296067126790814
+      },
+      {
+        "label": "2022-03-11 B1 L28 #13 1BR 431sf",
+        "raw_psf": 2745.0,
+        "time_adj": 1.0558126126343492,
+        "floor_adj": 0.8989275142081345,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2506.1335261325,
+        "weight": 0.16082810114835647
+      },
+      {
+        "label": "2022-03-10 B1 L17 #11 2BR 840sf",
+        "raw_psf": 2406.0,
+        "time_adj": 1.055848905626797,
+        "floor_adj": 0.9420757334570591,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2428.3859636209177,
+        "weight": 0.23412428302121574
+      },
+      {
+        "label": "2022-03-08 B1 L35 #09 1BR 570sf",
+        "raw_psf": 2673.0,
+        "time_adj": 1.0559214953543916,
+        "floor_adj": 0.8725043120752001,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2422.480650905325,
+        "weight": 0.17657422211851836
+      },
+      {
+        "label": "2022-03-06 B1 L35 #19 2BR 840sf",
+        "raw_psf": 2450.0,
+        "time_adj": 1.0559940900725382,
+        "floor_adj": 0.8725043120752001,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2290.49661187303,
+        "weight": 0.20013162980768992
+      },
+      {
+        "label": "2022-03-05 B1 L31 #19 2BR 840sf",
+        "raw_psf": 2417.0,
+        "time_adj": 1.0560303893031755,
+        "floor_adj": 0.8875066875686558,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2298.5777601394325,
+        "weight": 0.20669354966805603
+      },
+      {
+        "label": "2022-02-28 B1 L5 #08 3BR 1195sf",
+        "raw_psf": 2319.0,
+        "time_adj": 1.056211904173719,
+        "floor_adj": 0.9915119980681785,
+        "size_adj": 1.0437141928529414,
+        "type_adj": 1.0,
+        "adj_psf": 2534.7280430349133,
+        "weight": 0.1830689190203099
+      },
+      {
+        "label": "2022-02-28 B1 L25 #14 3BR 431sf",
+        "raw_psf": 2343.0,
+        "time_adj": 1.056211904173719,
+        "floor_adj": 0.9104953090710148,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2234.49642065608,
+        "weight": 0.16358909137442915
+      },
+      {
+        "label": "2022-02-27 B1 L36 #09 1BR 570sf",
+        "raw_psf": 2682.0,
+        "time_adj": 1.0562482108915991,
+        "floor_adj": 0.8687935118314789,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2421.0484132883475,
+        "weight": 0.17495788744224106
+      },
+      {
+        "label": "2022-02-27 B1 L22 #13 1BR 431sf",
+        "raw_psf": 2717.0,
+        "time_adj": 1.0562482108915991,
+        "floor_adj": 0.9222119634090751,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2545.872881295275,
+        "weight": 0.16682665450224968
+      },
+      {
+        "label": "2022-02-27 B1 L11 #22 2BR 840sf",
+        "raw_psf": 2370.0,
+        "time_adj": 1.0562482108915991,
+        "floor_adj": 0.9664778284117816,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2454.9391256507633,
+        "weight": 0.24713973464865974
+      },
+      {
+        "label": "2022-02-26 B1 L19 #18 4BR 1432sf",
+        "raw_psf": 2376.0,
+        "time_adj": 1.0562845188575034,
+        "floor_adj": 0.9340793928115533,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2482.439884349414,
+        "weight": 0.15225475924268586
+      },
+      {
+        "label": "2022-02-25 B1 L3 #08 3BR 1195sf",
+        "raw_psf": 2301.0,
+        "time_adj": 1.0563208280714746,
+        "floor_adj": 1.0,
+        "size_adj": 1.0437141928529414,
+        "type_adj": 1.0,
+        "adj_psf": 2536.845690108515,
+        "weight": 0.1856482584550427
+      },
+      {
+        "label": "2022-02-21 B1 L2 #18 4BR 1432sf",
+        "raw_psf": 2217.0,
+        "time_adj": 1.0564660774088857,
+        "floor_adj": 1.0042712108149825,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2490.805758229241,
+        "weight": 0.1673700724139142
+      },
+      {
+        "label": "2022-02-14 B1 L15 #22 2BR 893sf",
+        "raw_psf": 2198.0,
+        "time_adj": 1.0567203118098405,
+        "floor_adj": 0.9501405280950317,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2250.276372371249,
+        "weight": 0.22687857760791666
+      },
+      {
+        "label": "2022-02-13 B1 L15 #18 4BR 1432sf",
+        "raw_psf": 2334.0,
+        "time_adj": 1.0567566360039606,
+        "floor_adj": 0.9501405280950317,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2481.5971225503017,
+        "weight": 0.15562421510390595
+      },
+      {
+        "label": "2022-02-12 B1 L27 #14 3BR 431sf",
+        "raw_psf": 2720.0,
+        "time_adj": 1.0567929614467055,
+        "floor_adj": 0.9027670231287056,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2573.4344280711066,
+        "weight": 0.16090674575419792
+      },
+      {
+        "label": "2022-02-11 B1 L28 #19 2BR 807sf",
+        "raw_psf": 2486.0,
+        "time_adj": 1.056829288138118,
+        "floor_adj": 0.8989275142081345,
+        "size_adj": 1.0114444590812504,
+        "type_adj": 1.0,
+        "adj_psf": 2388.76087811024,
+        "weight": 0.21607783144506326
+      },
+      {
+        "label": "2022-02-05 B1 L26 #19 2BR 807sf",
+        "raw_psf": 2443.0,
+        "time_adj": 1.0570472745110167,
+        "floor_adj": 0.9066229314013026,
+        "size_adj": 1.0114444590812504,
+        "type_adj": 1.0,
+        "adj_psf": 2368.0268201843232,
+        "weight": 0.21948232269959664
+      },
+      {
+        "label": "2022-01-31 B1 L31 #14 3BR 431sf",
+        "raw_psf": 2754.0,
+        "time_adj": 1.0572289641679948,
+        "floor_adj": 0.8875066875686558,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2562.614192126591,
+        "weight": 0.15646496949516214
+      },
+      {
+        "label": "2022-01-29 B1 L21 #18 4BR 1432sf",
+        "raw_psf": 2395.0,
+        "time_adj": 1.057301648774765,
+        "floor_adj": 0.9261509251208941,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2483.440677209527,
+        "weight": 0.1495602383008871
+      },
+      {
+        "label": "2022-01-29 B1 L37 #21 1BR 527sf",
+        "raw_psf": 2645.0,
+        "time_adj": 1.057301648774765,
+        "floor_adj": 0.8650984937887831,
+        "size_adj": 0.9775455566694555,
+        "type_adj": 1.0,
+        "adj_psf": 2364.9782320268005,
+        "weight": 0.16581912580238367
+      },
+      {
+        "label": "2022-01-28 B1 L35 #18 4BR 1432sf",
+        "raw_psf": 2593.0,
+        "time_adj": 1.0573379929520317,
+        "floor_adj": 0.8725043120752001,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2533.0953334579526,
+        "weight": 0.13797598561639168
+      },
+      {
+        "label": "2022-01-26 B1 L21 #22 2BR 893sf",
+        "raw_psf": 2716.0,
+        "time_adj": 1.0574106850545428,
+        "floor_adj": 0.9261509251208941,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2712.161199437278,
+        "weight": 0.2139653664096915
+      },
+      {
+        "label": "2022-01-23 B1 L24 #12 3BR 1152sf",
+        "raw_psf": 2388.0,
+        "time_adj": 1.0575197325788979,
+        "floor_adj": 0.9143842264821098,
+        "size_adj": 1.040658785802627,
+        "type_adj": 1.0,
+        "adj_psf": 2403.033819836638,
+        "weight": 0.16229115817594045
+      },
+      {
+        "label": "2022-01-07 B1 L21 #14 3BR 431sf",
+        "raw_psf": 2699.0,
+        "time_adj": 1.0581015093317574,
+        "floor_adj": 0.9261509251208941,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2622.9534759922103,
+        "weight": 0.16600097077859627
+      },
+      {
+        "label": "2021-12-31 B1 L9 #22 2BR 840sf",
+        "raw_psf": 2330.0,
+        "time_adj": 1.0583561372929637,
+        "floor_adj": 0.9747515212068313,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2439.0245678582164,
+        "weight": 0.24717652909410417
+      },
+      {
+        "label": "2021-12-30 B1 L22 #11 2BR 840sf",
+        "raw_psf": 2457.0,
+        "time_adj": 1.0583925177177078,
+        "floor_adj": 0.9222119634090751,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2433.4205366867714,
+        "weight": 0.21895921918702216
+      },
+      {
+        "label": "2021-12-30 B1 L22 #14 3BR 431sf",
+        "raw_psf": 2348.0,
+        "time_adj": 1.0583925177177078,
+        "floor_adj": 0.9222119634090751,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2272.763308334925,
+        "weight": 0.16460871318205414
+      },
+      {
+        "label": "2021-12-30 B1 L34 #20 1BR 570sf",
+        "raw_psf": 2614.0,
+        "time_adj": 1.0583925177177078,
+        "floor_adj": 0.8762309619290546,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2384.6963364816943,
+        "weight": 0.17493442481643978
+      },
+      {
+        "label": "2021-12-30 B1 L3 #22 2BR 840sf",
+        "raw_psf": 2250.0,
+        "time_adj": 1.0583925177177078,
+        "floor_adj": 1.0,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2416.371911551009,
+        "weight": 0.2626698475822688
+      },
+      {
+        "label": "2021-12-25 B1 L34 #12 3BR 1152sf",
+        "raw_psf": 2474.0,
+        "time_adj": 1.0585744386006517,
+        "floor_adj": 0.8762309619290546,
+        "size_adj": 1.040658785802627,
+        "type_adj": 1.0,
+        "adj_psf": 2388.075474031688,
+        "weight": 0.15148155083273623
+      },
+      {
+        "label": "2021-12-20 B1 L30 #20 1BR 570sf",
+        "raw_psf": 2614.0,
+        "time_adj": 1.0587563907529094,
+        "floor_adj": 0.8912974157309683,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2426.5342216810477,
+        "weight": 0.17952944251552783
+      },
+      {
+        "label": "2021-12-19 B1 L32 #14 3BR 431sf",
+        "raw_psf": 2779.0,
+        "time_adj": 1.0587927849361516,
+        "floor_adj": 0.8837320815444163,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2578.6876794795958,
+        "weight": 0.15408152549128032
+      },
+      {
+        "label": "2021-12-13 B1 L5 #22 2BR 840sf",
+        "raw_psf": 2273.0,
+        "time_adj": 1.0590111763087509,
+        "floor_adj": 0.9915119980681785,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2421.767533842154,
+        "weight": 0.2557327464744725
+      },
+      {
+        "label": "2021-12-10 B1 L4 #18 4BR 1432sf",
+        "raw_psf": 2236.0,
+        "time_adj": 1.0591203888868654,
+        "floor_adj": 0.9957469548375121,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2497.087226065994,
+        "weight": 0.16461676623159383
+      },
+      {
+        "label": "2021-12-07 B1 L4 #22 2BR 893sf",
+        "raw_psf": 2115.0,
+        "time_adj": 1.059229612727739,
+        "floor_adj": 0.9957469548375121,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2274.62467444295,
+        "weight": 0.24617809453988584
+      },
+      {
+        "label": "2021-12-06 B1 L33 #14 3BR 431sf",
+        "raw_psf": 2741.0,
+        "time_adj": 1.0592660231777327,
+        "floor_adj": 0.8799735290900684,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2533.741413649796,
+        "weight": 0.15272149469013876
+      },
+      {
+        "label": "2021-12-05 B1 L20 #14 3BR 431sf",
+        "raw_psf": 2331.0,
+        "time_adj": 1.059302434879316,
+        "floor_adj": 0.9301067109685766,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2277.5799246676715,
+        "weight": 0.1658585019197195
+      },
+      {
+        "label": "2021-12-01 B1 L34 #14 3BR 431sf",
+        "raw_psf": 2640.0,
+        "time_adj": 1.0594480942024074,
+        "floor_adj": 0.8762309619290546,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0309278350515465,
+        "adj_psf": 2430.4170887992414,
+        "weight": 0.151636658520802
+      },
+      {
+        "label": "2021-11-29 B1 L25 #18 4BR 1432sf",
+        "raw_psf": 2487.0,
+        "time_adj": 1.05952093137461,
+        "floor_adj": 0.9104953090710148,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2540.566908336393,
+        "weight": 0.14430485972881318
+      },
+      {
+        "label": "2021-11-28 B1 L23 #11 2BR 893sf",
+        "raw_psf": 2319.0,
+        "time_adj": 1.059557351838526,
+        "floor_adj": 0.9182897542793096,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2300.7277468197653,
+        "weight": 0.2068500386453676
+      },
+      {
+        "label": "2021-11-28 B1 L34 #13 1BR 431sf",
+        "raw_psf": 2722.0,
+        "time_adj": 1.059557351838526,
+        "floor_adj": 0.8762309619290546,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2430.9807708085473,
+        "weight": 0.15154228740750805
+      },
+      {
+        "label": "2021-11-24 B1 L37 #09 1BR 570sf",
+        "raw_psf": 2691.0,
+        "time_adj": 1.0597030462139598,
+        "floor_adj": 0.8650984937887831,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2426.7530361368317,
+        "weight": 0.16990306342627712
+      },
+      {
+        "label": "2021-11-22 B1 L33 #17 1BR 560sf",
+        "raw_psf": 2816.0,
+        "time_adj": 1.059775900914141,
+        "floor_adj": 0.8799735290900684,
+        "size_adj": 0.9823069097152062,
+        "type_adj": 1.0,
+        "adj_psf": 2579.6661031890003,
+        "weight": 0.17296412787017934
+      },
+      {
+        "label": "2021-11-21 B1 L34 #09 1BR 570sf",
+        "raw_psf": 2629.0,
+        "time_adj": 1.0598123301424982,
+        "floor_adj": 0.8762309619290546,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2401.5978954810294,
+        "weight": 0.17331575705652189
+      },
+      {
+        "label": "2021-11-20 B1 L30 #17 1BR 560sf",
+        "raw_psf": 2789.0,
+        "time_adj": 1.0598487606230906,
+        "floor_adj": 0.8912974157309683,
+        "size_adj": 0.9823069097152062,
+        "type_adj": 1.0,
+        "adj_psf": 2587.9879914513976,
+        "weight": 0.17654483589628953
+      },
+      {
+        "label": "2021-11-20 B1 L7 #22 2BR 840sf",
+        "raw_psf": 2556.0,
+        "time_adj": 1.0598487606230906,
+        "floor_adj": 0.9830960423131515,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2702.3101546263106,
+        "weight": 0.24864380278052683
+      },
+      {
+        "label": "2021-11-19 B1 L36 #21 1BR 527sf",
+        "raw_psf": 2635.0,
+        "time_adj": 1.0598851923559613,
+        "floor_adj": 0.8687935118314789,
+        "size_adj": 0.9775455566694555,
+        "type_adj": 1.0,
+        "adj_psf": 2371.881671703149,
+        "weight": 0.16426130284485246
+      },
+      {
+        "label": "2021-11-19 B1 L35 #21 1BR 527sf",
+        "raw_psf": 2626.0,
+        "time_adj": 1.0598851923559613,
+        "floor_adj": 0.8725043120752001,
+        "size_adj": 0.9775455566694555,
+        "type_adj": 1.0,
+        "adj_psf": 2373.8765723530228,
+        "weight": 0.16534771206912807
+      },
+      {
+        "label": "2021-11-07 B1 L24 #13 1BR 431sf",
+        "raw_psf": 2680.0,
+        "time_adj": 1.0603224708437826,
+        "floor_adj": 0.9143842264821098,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2499.492416311401,
+        "weight": 0.16057638945207936
+      },
+      {
+        "label": "2021-11-07 B1 L34 #21 1BR 527sf",
+        "raw_psf": 2579.0,
+        "time_adj": 1.0603224708437826,
+        "floor_adj": 0.8762309619290546,
+        "size_adj": 0.9775455566694555,
+        "type_adj": 1.0,
+        "adj_psf": 2342.3128905839244,
+        "weight": 0.16599471369853702
+      },
+      {
+        "label": "2021-11-03 B1 L10 #22 2BR 893sf",
+        "raw_psf": 2340.0,
+        "time_adj": 1.0604682704268633,
+        "floor_adj": 0.9706058589649349,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2455.9341513148165,
+        "weight": 0.2299567770405766
+      },
+      {
+        "label": "2021-10-22 B1 L22 #19 2BR 807sf",
+        "raw_psf": 2389.0,
+        "time_adj": 1.0609057894761142,
+        "floor_adj": 0.9222119634090751,
+        "size_adj": 1.0114444590812504,
+        "type_adj": 1.0,
+        "adj_psf": 2364.099551206593,
+        "weight": 0.2202021524341498
+      },
+      {
+        "label": "2021-10-20 B1 L34 #17 1BR 560sf",
+        "raw_psf": 2789.0,
+        "time_adj": 1.060978726865026,
+        "floor_adj": 0.8762309619290546,
+        "size_adj": 0.9823069097152062,
+        "type_adj": 1.0,
+        "adj_psf": 2546.953314598269,
+        "weight": 0.17045299060376765
+      },
+      {
+        "label": "2021-09-21 B1 L25 #11 2BR 893sf",
+        "raw_psf": 2338.0,
+        "time_adj": 1.0620368826778241,
+        "floor_adj": 0.9104953090710148,
+        "size_adj": 1.0196714827329623,
+        "type_adj": 1.0,
+        "adj_psf": 2305.2715589923187,
+        "weight": 0.19970016611135752
+      },
+      {
+        "label": "2021-08-26 B1 L34 #22 2BR 840sf",
+        "raw_psf": 2913.0,
+        "time_adj": 1.0629864712929247,
+        "floor_adj": 0.8762309619290546,
+        "size_adj": 1.0146926152844253,
+        "type_adj": 1.0,
+        "adj_psf": 2753.095754036304,
+        "weight": 0.19158757743200205
+      },
+      {
+        "label": "2021-08-20 B1 L17 #18 4BR 1432sf",
+        "raw_psf": 2353.0,
+        "time_adj": 1.063205727674176,
+        "floor_adj": 0.9420757334570591,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2495.7015577833777,
+        "weight": 0.14819128796777684
+      },
+      {
+        "label": "2021-08-09 B1 L33 #18 4BR 1432sf",
+        "raw_psf": 2574.0,
+        "time_adj": 1.06360781517208,
+        "floor_adj": 0.8799735290900684,
+        "size_adj": 1.058930843605436,
+        "type_adj": 1.0,
+        "adj_psf": 2551.098742649821,
+        "weight": 0.13507867236893492
+      },
+      {
+        "label": "2021-08-09 B1 L29 #20 1BR 570sf",
+        "raw_psf": 2605.0,
+        "time_adj": 1.06360781517208,
+        "floor_adj": 0.8951043348924044,
+        "size_adj": 0.9836988082739843,
+        "type_adj": 1.0,
+        "adj_psf": 2439.636110820811,
+        "weight": 0.17506438627013704
+      },
+      {
+        "label": "2021-07-30 B1 L21 #13 1BR 431sf",
+        "raw_psf": 2608.0,
+        "time_adj": 1.063973481215152,
+        "floor_adj": 0.9261509251208941,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2472.1253837306776,
+        "weight": 0.16014199740145532
+      },
+      {
+        "label": "2021-07-27 B1 L19 #13 1BR 431sf",
+        "raw_psf": 2587.0,
+        "time_adj": 1.0640832055405687,
+        "floor_adj": 0.9340793928115533,
+        "size_adj": 0.9619452144299191,
+        "type_adj": 1.0,
+        "adj_psf": 2473.467149974907,
+        "weight": 0.1621122599515498
+      },
+      {
+        "label": "2021-07-27 B1 L20 #19 2BR 807sf",
+        "raw_psf": 2375.0,
+        "time_adj": 1.0640832055405687,
+        "floor_adj": 0.9301067109685766,
+        "size_adj": 1.0114444590812504,
+        "type_adj": 1.0,
+        "adj_psf": 2377.4643872780134,
+        "weight": 0.2183225837308595
+      },
+      {
+        "label": "2021-07-21 B1 L34 #19 2BR 807sf",
+        "raw_psf": 2415.0,
+        "time_adj": 1.0643026881391697,
+        "floor_adj": 0.8762309619290546,
+        "size_adj": 1.0114444590812504,
+        "type_adj": 1.0,
+        "adj_psf": 2277.943399025966,
+        "weight": 0.1942278686767111
+      },
+      {
+        "label": "2021-07-17 B1 L32 #21 1BR 527sf",
+        "raw_psf": 2510.0,
+        "time_adj": 1.0644490350218108,
+        "floor_adj": 0.8837320815444163,
+        "size_adj": 0.9775455566694555,
+        "type_adj": 1.0,
+        "adj_psf": 2308.108504882068,
+        "weight": 0.1639619288374765
+      }
+    ]
+  },
+  "avm_crosscheck": [
+    {
+      "blk": "1",
+      "unit": "#04-15",
+      "sqft": "700",
+      "est_val": "$1,686,000",
+      "est_psf": 2410
+    },
+    {
+      "blk": "1",
+      "unit": "#04-16",
+      "sqft": "700",
+      "est_val": "$1,686,000",
+      "est_psf": 2410
+    },
+    {
+      "blk": "1",
+      "unit": "#03-15",
+      "sqft": "700",
+      "est_val": "$1,686,000",
+      "est_psf": 2410
+    },
+    {
+      "blk": "1",
+      "unit": "#03-16",
+      "sqft": "700",
+      "est_val": "$1,686,000",
+      "est_psf": 2410
+    },
+    {
+      "blk": "1",
+      "unit": "#02-15",
+      "sqft": "700",
+      "est_val": "$1,664,000",
+      "est_psf": 2378
+    },
+    {
+      "blk": "1",
+      "unit": "#02-16",
+      "sqft": "700",
+      "est_val": "$1,664,000",
+      "est_psf": 2378
+    }
+  ],
+  "profitability": [
+    {
+      "unit": "#08-22 (893 sqft)",
+      "bought": "Oct 2021 @ $1,918,000 ($2,147)",
+      "sold": "20 Jan 2025 @ $2,380,000 ($2,664)",
+      "profit": "▲$462,000 (▲$517 psf)",
+      "holding": "3y 3m 16d",
+      "annualised": "6.77%"
+    },
+    {
+      "unit": "#14-07 (1,216 sqft)",
+      "bought": "Jul 2021 @ $2,650,000 ($2,179)",
+      "sold": "28 Jul 2025 @ $3,200,000 ($2,631)",
+      "profit": "▲$550,000 (▲$452 psf)",
+      "holding": "4y 26d",
+      "annualised": "4.74%"
+    },
+    {
+      "unit": "#13-11 (840 sqft)",
+      "bought": "May 2021 @ $1,987,000 ($2,367)",
+      "sold": "15 Aug 2024 @ $2,280,000 ($2,716)",
+      "profit": "▲$293,000 (▲$349 psf)",
+      "holding": "3y 3m 14d",
+      "annualised": "4.27%"
+    },
+    {
+      "unit": "#17-22 (893 sqft)",
+      "bought": "Sep 2021 @ $1,978,000 ($2,214)",
+      "sold": "09 Mar 2026 @ $2,380,000 ($2,664)",
+      "profit": "▲$402,000 (▲$450 psf)",
+      "holding": "4y 5m 14d",
+      "annualised": "4.24%"
+    },
+    {
+      "unit": "#03-21 (527 sqft)",
+      "bought": "Jul 2019 @ $1,104,000 ($2,093)",
+      "sold": "29 Aug 2024 @ $1,332,500 ($2,526)",
+      "profit": "▲$228,500 (▲$433 psf)",
+      "holding": "5y 1m 11d",
+      "annualised": "3.75%"
+    },
+    {
+      "unit": "#09-01 (1,152 sqft)",
+      "bought": "Feb 2022 @ $2,640,000 ($2,292)",
+      "sold": "04 Sep 2025 @ $2,980,000 ($2,587)",
+      "profit": "▲$340,000 (▲$295 psf)",
+      "holding": "3y 6m 7d",
+      "annualised": "3.5%"
+    },
+    {
+      "unit": "#04-08 (1,281 sqft)",
+      "bought": "Apr 2021 @ $2,729,000 ($2,131)",
+      "sold": "24 Apr 2025 @ $3,130,000 ($2,444)",
+      "profit": "▲$401,000 (▲$313 psf)",
+      "holding": "4y",
+      "annualised": "3.49%"
+    },
+    {
+      "unit": "#06-18 (1,432 sqft)",
+      "bought": "Oct 2020 @ $3,230,000 ($2,256)",
+      "sold": "16 Sep 2025 @ $3,800,000 ($2,654)",
+      "profit": "▲$570,000 (▲$398 psf)",
+      "holding": "4y 10m 16d",
+      "annualised": "3.39%"
+    },
+    {
+      "unit": "#21-07 (1,216 sqft)",
+      "bought": "Nov 2022 @ $2,956,000 ($2,430)",
+      "sold": "08 Jun 2026 @ $3,330,000 ($2,738)",
+      "profit": "▲$374,000 (▲$308 psf)",
+      "holding": "3y 7m 5d",
+      "annualised": "3.37%"
+    },
+    {
+      "unit": "#12-08 (1,281 sqft)",
+      "bought": "Nov 2020 @ $2,850,000 ($2,225)",
+      "sold": "12 Jun 2024 @ $3,200,000 ($2,498)",
+      "profit": "▲$350,000 (▲$273 psf)",
+      "holding": "3y 6m 19d",
+      "annualised": "3.31%"
+    },
+    {
+      "unit": "#05-15 (700 sqft)",
+      "bought": "Jul 2019 @ $1,582,000 ($2,261)",
+      "sold": "23 Jan 2025 @ $1,582,000 ($2,261)",
+      "profit": "$0 ($0 psf)",
+      "holding": "5y 6m 6d",
+      "annualised": "0.0%"
+    },
+    {
+      "unit": "#04-14 (431 sqft)",
+      "bought": "Jul 2019 @ $977,000 ($2,269)",
+      "sold": "26 Nov 2025 @ $953,000 ($2,213)",
+      "profit": "▼$24,000 (▼$56 psf)",
+      "holding": "6y 4m 3d",
+      "annualised": "-0.39%"
+    },
+    {
+      "unit": "#23-17 (560 sqft)",
+      "bought": "Sep 2019 @ $1,481,000 ($2,646)",
+      "sold": "22 May 2025 @ $1,398,000 ($2,498)",
+      "profit": "▼$83,000 (▼$148 psf)",
+      "holding": "5y 8m",
+      "annualised": "-1.01%"
+    },
+    {
+      "unit": "#33-21 (527 sqft)",
+      "bought": "Jun 2021 @ $1,329,000 ($2,520)",
+      "sold": "19 Jun 2025 @ $1,270,000 ($2,408)",
+      "profit": "▼$59,000 (▼$112 psf)",
+      "holding": "4y 16d",
+      "annualised": "-1.12%"
+    },
+    {
+      "unit": "#32-09 (570 sqft)",
+      "bought": "Jul 2021 @ $1,464,000 ($2,566)",
+      "sold": "27 Apr 2026 @ $1,385,000 ($2,428)",
+      "profit": "▼$79,000 (▼$138 psf)",
+      "holding": "4y 9m 16d",
+      "annualised": "-1.15%"
+    },
+    {
+      "unit": "#08-14 (431 sqft)",
+      "bought": "Aug 2019 @ $1,037,000 ($2,408)",
+      "sold": "19 Dec 2025 @ $955,000 ($2,218)",
+      "profit": "▼$82,000 (▼$190 psf)",
+      "holding": "6y 4m 10d",
+      "annualised": "-1.29%"
+    },
+    {
+      "unit": "#37-14 (431 sqft)",
+      "bought": "Oct 2020 @ $1,160,000 ($2,694)",
+      "sold": "02 Aug 2024 @ $1,050,000 ($2,439)",
+      "profit": "▼$110,000 (▼$255 psf)",
+      "holding": "3y 9m 4d",
+      "annualised": "-2.61%"
+    },
+    {
+      "unit": "#25-10 (527 sqft)",
+      "bought": "Jul 2019 @ $1,328,000 ($2,518)",
+      "sold": "02 May 2025 @ $1,130,000 ($2,142)",
+      "profit": "▼$198,000 (▼$376 psf)",
+      "holding": "5y 9m 14d",
+      "annualised": "-2.75%"
+    },
+    {
+      "unit": "#25-13 (431 sqft)",
+      "bought": "Mar 2022 @ $1,176,000 ($2,731)",
+      "sold": "20 Nov 2025 @ $1,010,000 ($2,346)",
+      "profit": "▼$166,000 (▼$385 psf)",
+      "holding": "3y 8m 9d",
+      "annualised": "-4.04%"
+    }
+  ],
+  "rentals": [
+    {
+      "unit_type": null,
+      "monthly_rent": "$3,350",
+      "note": "400 - 500 sqft · $7.44/sqft · May 2026 · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "3BR",
+      "monthly_rent": "$7,500",
+      "note": "1,200 - 1,300 sqft · $6.0/sqft · May 2026 · Investment Suite（租约）"
+    },
+    {
+      "unit_type": null,
+      "monthly_rent": "$3,400",
+      "note": "400 - 500 sqft · $7.56/sqft · May 2026 · Investment Suite（租约）"
+    },
+    {
+      "unit_type": null,
+      "monthly_rent": "$4,000",
+      "note": "400 - 500 sqft · $8.89/sqft · May 2026 · Investment Suite（租约）"
+    },
+    {
+      "unit_type": null,
+      "monthly_rent": "$3,300",
+      "note": "400 - 500 sqft · $7.33/sqft · May 2026 · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$5,100",
+      "note": "600 - 700 sqft · $7.85/sqft · May 2026 · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "1BR",
+      "monthly_rent": "$4,300",
+      "note": "500 - 600 sqft · $7.82/sqft · May 2026 · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "2BR",
+      "monthly_rent": "$5,700",
+      "note": "700 - 800 sqft · $7.6/sqft · May 2026 · Investment Suite（租约）"
+    },
+    {
+      "unit_type": "3BR",
+      "monthly_rent": "$8,000",
+      "note": "1,100 - 1,200 sqft · $6.96/sqft · May 2026 · Investment Suite（租约）"
+    },
+    {
+      "unit_type": null,
+      "monthly_rent": "$3,250",
+      "note": "400 - 500 sqft · $7.22/sqft · May 2026 · Investment Suite（租约）"
+    }
+  ],
+  "pipeline": {
+    "tool": "researcher.pipelines.condo_valuation",
+    "asof": "2026-07-08",
+    "harvest_slug": "onepearl",
+    "trend": {
+      "rate_pa": 0.012634202731462964,
+      "method": "cross-unit 2BR pairs (n=291, median)",
+      "raw_rate_pa": 0.012634202731462964,
+      "clamped": false,
+      "segment_fit": {
+        "rate_pa": 0.012634202731462964,
+        "n_pairs": 291
+      },
+      "repeat_sales": {
+        "rate_pa": 0.0331,
+        "n_pairs": 19
+      }
+    },
+    "floor_premium": {
+      "rate_per_floor": 0.004271210814982394,
+      "method": "拟合 0.43%/层（同规格 ±90 天跨楼层对 n=125，中位）"
+    },
+    "cross_surface_merges": [
+      "B1 L21 #07 3330000: sale + profitability",
+      "B1 L17 #22 2380000: sale + profitability",
+      "B1 L25 #13 1010000: sale + profitability",
+      "B1 L4 #14 953000: sale + profitability",
+      "B1 L32 #09 1385000: sale + profitability",
+      "B1 L4 #08 3130000: profitability + towerview",
+      "B1 L32 #09 1385000: sale + towerview",
+      "B1 L25 #10 1130000: profitability + towerview",
+      "B1 L20 #11 2250000: sale + towerview",
+      "B1 L13 #11 2280000: profitability + towerview",
+      "B1 L11 #12 2950000: sale + towerview",
+      "B1 L25 #13 1010000: sale + towerview",
+      "B1 L4 #14 953000: sale + towerview",
+      "B1 L2 #15 1625000: sale + towerview",
+      "B1 L23 #17 1398000: profitability + towerview",
+      "B1 L6 #18 3800000: profitability + towerview",
+      "B1 L30 #19 2200000: sale + towerview",
+      "B1 L33 #21 1270000: profitability + towerview",
+      "B1 L3 #21 1332500: profitability + towerview"
+    ]
+  }
+}

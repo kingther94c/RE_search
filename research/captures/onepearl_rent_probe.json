@@ -1,0 +1,964 @@
+[
+  {
+    "text": "Property Info",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,272][198,312]",
+    "center": [
+      115,
+      292
+    ]
+  },
+  {
+    "text": "Sale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[292,272][348,312]",
+    "center": [
+      320,
+      292
+    ]
+  },
+  {
+    "text": "Rent",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[471,272][529,312]",
+    "center": [
+      500,
+      292
+    ]
+  },
+  {
+    "text": "Tower View",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[622,272][770,312]",
+    "center": [
+      696,
+      292
+    ]
+  },
+  {
+    "text": "Maps",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[857,272][928,312]",
+    "center": [
+      892,
+      292
+    ]
+  },
+  {
+    "text": "Planning Decisions",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1014,272][1255,312]",
+    "center": [
+      1134,
+      292
+    ]
+  },
+  {
+    "text": "Nearby Properties",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1319,272][1547,312]",
+    "center": [
+      1433,
+      292
+    ]
+  },
+  {
+    "text": "Profitability",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1611,272][1757,312]",
+    "center": [
+      1684,
+      292
+    ]
+  },
+  {
+    "text": "6M",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[219,372][261,412]",
+    "center": [
+      240,
+      392
+    ]
+  },
+  {
+    "text": "1Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[637,372][672,412]",
+    "center": [
+      654,
+      392
+    ]
+  },
+  {
+    "text": "2Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1051,372][1086,412]",
+    "center": [
+      1068,
+      392
+    ]
+  },
+  {
+    "text": "10Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1871,372][1922,412]",
+    "center": [
+      1896,
+      392
+    ]
+  },
+  {
+    "text": "...",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2297,372][2323,412]",
+    "center": [
+      2310,
+      392
+    ]
+  },
+  {
+    "text": "5Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1465,372][1500,412]",
+    "center": [
+      1482,
+      392
+    ]
+  },
+  {
+    "text": "1, 2, 3, 4 Bedrooms",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[64,450][308,490]",
+    "center": [
+      186,
+      470
+    ]
+  },
+  {
+    "text": "",
+    "desc": "down",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[324,446][372,494]",
+    "center": [
+      348,
+      470
+    ]
+  },
+  {
+    "text": "Pearl Bank",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[436,516][573,538]",
+    "center": [
+      504,
+      527
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,516][915,538]",
+    "center": [
+      888,
+      527
+    ]
+  },
+  {
+    "text": "570",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1288,516][1339,538]",
+    "center": [
+      1313,
+      527
+    ]
+  },
+  {
+    "text": "$7.01",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,516][1788,538]",
+    "center": [
+      1751,
+      527
+    ]
+  },
+  {
+    "text": "$4,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2140,516][2230,538]",
+    "center": [
+      2185,
+      527
+    ]
+  },
+  {
+    "text": "Pearl Bank",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[436,594][573,634]",
+    "center": [
+      504,
+      614
+    ]
+  },
+  {
+    "text": "2BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,594][915,634]",
+    "center": [
+      888,
+      614
+    ]
+  },
+  {
+    "text": "893",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1288,594][1339,634]",
+    "center": [
+      1313,
+      614
+    ]
+  },
+  {
+    "text": "$6.38",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,594][1788,634]",
+    "center": [
+      1751,
+      614
+    ]
+  },
+  {
+    "text": "$5,700",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2140,594][2230,634]",
+    "center": [
+      2185,
+      614
+    ]
+  },
+  {
+    "text": "Pearl Bank",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[436,690][573,730]",
+    "center": [
+      504,
+      710
+    ]
+  },
+  {
+    "text": "2BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,690][915,730]",
+    "center": [
+      888,
+      710
+    ]
+  },
+  {
+    "text": "743",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1288,690][1339,730]",
+    "center": [
+      1313,
+      710
+    ]
+  },
+  {
+    "text": "$6.73",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,690][1788,730]",
+    "center": [
+      1751,
+      710
+    ]
+  },
+  {
+    "text": "$5,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2140,690][2230,730]",
+    "center": [
+      2185,
+      710
+    ]
+  },
+  {
+    "text": "Pearl Bank",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[436,786][573,826]",
+    "center": [
+      504,
+      806
+    ]
+  },
+  {
+    "text": "3BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,786][915,826]",
+    "center": [
+      888,
+      806
+    ]
+  },
+  {
+    "text": "1152",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1288,786][1355,826]",
+    "center": [
+      1321,
+      806
+    ]
+  },
+  {
+    "text": "$6.95",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,786][1788,826]",
+    "center": [
+      1751,
+      806
+    ]
+  },
+  {
+    "text": "$8,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2140,786][2230,826]",
+    "center": [
+      2185,
+      806
+    ]
+  },
+  {
+    "text": "Pearl Bank",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[436,882][573,922]",
+    "center": [
+      504,
+      902
+    ]
+  },
+  {
+    "text": "2BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,882][915,922]",
+    "center": [
+      888,
+      902
+    ]
+  },
+  {
+    "text": "700",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1288,882][1339,922]",
+    "center": [
+      1313,
+      902
+    ]
+  },
+  {
+    "text": "$7.72",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,882][1788,922]",
+    "center": [
+      1751,
+      902
+    ]
+  },
+  {
+    "text": "$5,400",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2140,882][2230,922]",
+    "center": [
+      2185,
+      902
+    ]
+  },
+  {
+    "text": "Pearl Bank",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[436,978][573,1018]",
+    "center": [
+      504,
+      998
+    ]
+  },
+  {
+    "text": "1BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,978][915,1018]",
+    "center": [
+      888,
+      998
+    ]
+  },
+  {
+    "text": "527",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1288,978][1339,1018]",
+    "center": [
+      1313,
+      998
+    ]
+  },
+  {
+    "text": "$8.15",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,978][1788,1018]",
+    "center": [
+      1751,
+      998
+    ]
+  },
+  {
+    "text": "$4,300",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2140,978][2230,1018]",
+    "center": [
+      2185,
+      998
+    ]
+  },
+  {
+    "text": "Pearl Bank",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[436,1074][573,1114]",
+    "center": [
+      504,
+      1094
+    ]
+  },
+  {
+    "text": "2BR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,1074][915,1114]",
+    "center": [
+      888,
+      1094
+    ]
+  },
+  {
+    "text": "700",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1288,1074][1339,1114]",
+    "center": [
+      1313,
+      1094
+    ]
+  },
+  {
+    "text": "$7.72",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,1074][1788,1114]",
+    "center": [
+      1751,
+      1094
+    ]
+  },
+  {
+    "text": "$5,400",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2140,1074][2230,1114]",
+    "center": [
+      2185,
+      1094
+    ]
+  },
+  {
+    "text": "",
+    "desc": "live data",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[22,516][42,528]",
+    "center": [
+      32,
+      522
+    ]
+  },
+  {
+    "text": "12 Jun 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[50,516][211,538]",
+    "center": [
+      130,
+      527
+    ]
+  },
+  {
+    "text": "",
+    "desc": "live data",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[22,604][42,624]",
+    "center": [
+      32,
+      614
+    ]
+  },
+  {
+    "text": "11 Jun 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[50,594][211,634]",
+    "center": [
+      130,
+      614
+    ]
+  },
+  {
+    "text": "",
+    "desc": "live data",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[22,700][42,720]",
+    "center": [
+      32,
+      710
+    ]
+  },
+  {
+    "text": "08 Jun 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[50,690][211,730]",
+    "center": [
+      130,
+      710
+    ]
+  },
+  {
+    "text": "",
+    "desc": "live data",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[22,796][42,816]",
+    "center": [
+      32,
+      806
+    ]
+  },
+  {
+    "text": "01 Jun 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[50,786][211,826]",
+    "center": [
+      130,
+      806
+    ]
+  },
+  {
+    "text": "",
+    "desc": "live data",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[22,892][42,912]",
+    "center": [
+      32,
+      902
+    ]
+  },
+  {
+    "text": "31 May 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[50,882][218,922]",
+    "center": [
+      134,
+      902
+    ]
+  },
+  {
+    "text": "",
+    "desc": "live data",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[22,988][42,1008]",
+    "center": [
+      32,
+      998
+    ]
+  },
+  {
+    "text": "28 May 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[50,978][218,1018]",
+    "center": [
+      134,
+      998
+    ]
+  },
+  {
+    "text": "",
+    "desc": "live data",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "[22,1084][42,1104]",
+    "center": [
+      32,
+      1094
+    ]
+  },
+  {
+    "text": "22 May 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[50,1074][218,1114]",
+    "center": [
+      134,
+      1094
+    ]
+  },
+  {
+    "text": "View All (344)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2338,1171][2536,1209]",
+    "center": [
+      2437,
+      1190
+    ]
+  },
+  {
+    "text": "Unit Mix Rentals",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,1318][294,1360]",
+    "center": [
+      163,
+      1339
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Back",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,168][80,216]",
+    "center": [
+      56,
+      192
+    ]
+  },
+  {
+    "text": "One Pearl Bank",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1087,156][1474,228]",
+    "center": [
+      1280,
+      192
+    ]
+  },
+  {
+    "text": "Market",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[212,1472][288,1504]",
+    "center": [
+      250,
+      1488
+    ]
+  },
+  {
+    "text": "Property Analysis",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[669,1472][861,1504]",
+    "center": [
+      765,
+      1488
+    ]
+  },
+  {
+    "text": "ProTrend",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1231,1472][1330,1504]",
+    "center": [
+      1280,
+      1488
+    ]
+  },
+  {
+    "text": "ProMap",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1753,1472][1837,1504]",
+    "center": [
+      1795,
+      1488
+    ]
+  },
+  {
+    "text": "More",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1472][2338,1504]",
+    "center": [
+      2310,
+      1488
+    ]
+  }
+]

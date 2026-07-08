@@ -44,7 +44,7 @@ import mbx
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 _MONEY = re.compile(r"^[▲▼\-−]?\$[\d,]+$")
-_SIGNED = re.compile(r"^[▲▼\-−]\$[\d,]+$")
+_SIGNED = re.compile(r"^(?:[▲▼\-−]\$[\d,]+|\$0)$")  # break-even rows print an unsigned $0
 _FULLDATE = re.compile(r"^\d{2} \w{3} \d{4}$")
 _MONYEAR = re.compile(r"^\w{3} \d{4}$")
 _SQFT = re.compile(r"^[\d,]+$")
@@ -109,7 +109,11 @@ def parse_profitability_texts(texts: list[str]) -> dict:
         elif t == "Unprofitable Transactions":
             section = "unprofitable"
         elif m := _VIEWALL.match(t):
-            meta.setdefault("view_all", {})[section] = int(m.group(1))
+            # a View All footer belongs to the section of the rows ABOVE it; on a
+            # scrolled screen the section header may be gone, so trust the last
+            # parsed row over the header-tracked state
+            sec = rows[-1]["section"] if rows else section
+            meta.setdefault("view_all", {})[sec] = int(m.group(1))
         r = _row_at(texts, i)
         if r:
             r["section"] = section

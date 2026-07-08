@@ -58,3 +58,26 @@ def test_partial_date_column_is_not_misaligned():
     assert len(out["rows"]) == 2
     assert all("contract_month" not in r for r in out["rows"])
     assert "skipped" in out["meta"]["date_pairing"]
+
+
+def test_onepearl_shapes_dash_type_no_cents_and_live_panel():
+    # One Pearl Bank realities: type '-', psf without cents ('$6'), live-data
+    # rows with EXACT sqft + full dates + 'live data' badges, and the trailing
+    # 'Unit Mix Rentals' aggregate panel
+    texts = ["Past Rentals",
+             "Pearl Bank", "-", "400 - 500", "$7.44", "$3,350",
+             "Pearl Bank", "3BR", "1,200 - 1,300", "$6", "$7,500",
+             "Pearl Bank", "2BR", "700", "$7.72", "$5,400",       # live (exact sqft)
+             "May 2026", "May 2026", "live data", "12 Jun 2026",
+             "View All (344)", "Unit Mix Rentals",
+             "should", "not", "parse", "$9.99", "$9,999"]
+    out = hr.parse_rent_texts(texts)
+    rows = out["rows"]
+    assert len(rows) == 3
+    past = [r for r in rows if r["panel"] == "past"]
+    live = [r for r in rows if r["panel"] == "live"]
+    assert len(past) == 2 and len(live) == 1
+    assert past[0]["type"] is None and past[1]["psf"] == 6.0
+    assert live[0]["area_band_sqft"] == "700"
+    assert [r["contract_month"] for r in rows] == ["May 2026", "May 2026", "12 Jun 2026"]
+    assert out["meta"]["agency_panel_present"] is True

@@ -24,6 +24,11 @@ for the user if it says so. Never silently fall back to web data.
 
 ## The checklist (each step = one command + one gate)
 
+Set `PYTHONIOENCODING=utf-8` for EVERY python invocation on Windows (not just these —
+any ad-hoc check printing Chinese dies on cp1252 without it). Narrative sections may
+quote the current estimate/band/sensitivity values freely; any OTHER number placed next
+to the word 点估 fails the stale-base gate by design.
+
 ```bash
 # 0. readiness gate — must print READY
 python research/doctor.py

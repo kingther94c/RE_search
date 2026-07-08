@@ -1,86 +1,99 @@
-[
- {
-  "type": "2BR",
-  "band_sqft": "1,100 - 1,200",
-  "psf": "$3.83",
-  "rent": "$4,400"
+{
+ "meta": {
+  "agency_panel_present": false,
+  "window": "5Y",
+  "bedrooms_filter": "2, 3, 4 Bedrooms",
+  "band": {
+   "low": "$3,500",
+   "avg": "$7,702",
+   "high": "$17,000",
+   "low_psf": "$2.65 PSF",
+   "avg_psf": "$4.18 PSF",
+   "high_psf": "$6.18 PSF"
+  },
+  "advertised_total": 215,
+  "note": "rebuilt offline from gallop_rent_00..03 captures (2026-07-02 harvest)"
  },
- {
-  "type": "2BR",
-  "band_sqft": "1,100 - 1,200",
-  "psf": "$4.17",
-  "rent": "$4,800"
- },
- {
-  "type": "2BR",
-  "band_sqft": "1,100 - 1,200",
-  "psf": "$4.35",
-  "rent": "$5,000"
- },
- {
-  "type": "2BR",
-  "band_sqft": "1,100 - 1,200",
-  "psf": "$4.43",
-  "rent": "$5,100"
- },
- {
-  "type": "2BR",
-  "band_sqft": "1,100 - 1,200",
-  "psf": "$5.04",
-  "rent": "$5,800"
- },
- {
-  "type": "2BR",
-  "band_sqft": "1,500 - 1,600",
-  "psf": "$4.52",
-  "rent": "$7,000"
- },
- {
-  "type": "2BR",
-  "band_sqft": "1130",
-  "psf": "$5.13",
-  "rent": "$5,800"
- },
- {
-  "type": "2BR",
-  "band_sqft": "1550",
-  "psf": "$4.52",
-  "rent": "$7,000"
- },
- {
-  "type": "3BR",
-  "band_sqft": "1,700 - 1,800",
-  "psf": "$4.29",
-  "rent": "$7,500"
- },
- {
-  "type": "3BR",
-  "band_sqft": "1,700 - 1,800",
-  "psf": "$4.40",
-  "rent": "$7,700"
- },
- {
-  "type": "3BR",
-  "band_sqft": "1,700 - 1,800",
-  "psf": "$4.69",
-  "rent": "$8,200"
- },
- {
-  "type": "3BR",
-  "band_sqft": "1744",
-  "psf": "$4.59",
-  "rent": "$8,000"
- },
- {
-  "type": "3BR",
-  "band_sqft": "1755",
-  "psf": "$4.45",
-  "rent": "$7,800"
- },
- {
-  "type": "4BR",
-  "band_sqft": "2,900 - 3,000",
-  "psf": "$4.58",
-  "rent": "$13,500"
- }
-]
+ "rows": [
+  {
+   "street": "Farrer Road",
+   "type": "2BR",
+   "area_band_sqft": "1,100 - 1,200",
+   "psf": 3.83,
+   "monthly_rent": 4400,
+   "contract_month": "May 2026"
+  },
+  {
+   "street": "Farrer Road",
+   "type": "3BR",
+   "area_band_sqft": "1,700 - 1,800",
+   "psf": 4.4,
+   "monthly_rent": 7700,
+   "contract_month": "Apr 2026"
+  },
+  {
+   "street": "Farrer Road",
+   "type": "2BR",
+   "area_band_sqft": "1,100 - 1,200",
+   "psf": 4.35,
+   "monthly_rent": 5000,
+   "contract_month": "Apr 2026"
+  },
+  {
+   "street": "Farrer Road",
+   "type": "2BR",
+   "area_band_sqft": "1,100 - 1,200",
+   "psf": 4.17,
+   "monthly_rent": 4800,
+   "contract_month": "Apr 2026"
+  },
+  {
+   "street": "Farrer Road",
+   "type": "3BR",
+   "area_band_sqft": "1,700 - 1,800",
+   "psf": 4.69,
+   "monthly_rent": 8200,
+   "contract_month": "Apr 2026"
+  },
+  {
+   "street": "Farrer Road",
+   "type": "3BR",
+   "area_band_sqft": "1,700 - 1,800",
+   "psf": 4.29,
+   "monthly_rent": 7500,
+   "contract_month": "Apr 2026"
+  },
+  {
+   "street": "Farrer Road",
+   "type": "2BR",
+   "area_band_sqft": "1,100 - 1,200",
+   "psf": 4.43,
+   "monthly_rent": 5100,
+   "contract_month": "Mar 2026"
+  },
+  {
+   "street": "Farrer Road",
+   "type": "2BR",
+   "area_band_sqft": "1,500 - 1,600",
+   "psf": 4.52,
+   "monthly_rent": 7000,
+   "contract_month": "Mar 2026"
+  },
+  {
+   "street": "Farrer Road",
+   "type": "2BR",
+   "area_band_sqft": "1,100 - 1,200",
+   "psf": 5.04,
+   "monthly_rent": 5800,
+   "contract_month": "Feb 2026"
+  },
+  {
+   "street": "Farrer Road",
+   "type": "4BR",
+   "area_band_sqft": "2,900 - 3,000",
+   "psf": 4.58,
+   "monthly_rent": 13500,
+   "contract_month": "Feb 2026"
+  }
+ ]
+}

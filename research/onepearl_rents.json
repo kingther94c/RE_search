@@ -1,0 +1,193 @@
+{
+ "meta": {
+  "agency_panel_present": false,
+  "window": "5Y",
+  "bedrooms_filter": "1, 2, 3, 4 Bedrooms",
+  "advertised_total": 499,
+  "dedup_note": "rows have no unit identity — genuinely identical contracts collapse; on high-volume devs treat counts as DISTINCT combos, and read volume from the app band/advertised totals",
+  "band": {
+   "low": "$2,500",
+   "avg": "$4,842",
+   "high": "$10,800",
+   "low_psf": "$5.45 PSF",
+   "avg_psf": "$7.49 PSF",
+   "high_psf": "$9.78 PSF"
+  },
+  "band_source": "onepearl rent tab band head, first capture 2026-07-08 (5Y window)"
+ },
+ "rows": [
+  {
+   "street": "Pearl Bank",
+   "type": null,
+   "area_band_sqft": "400 - 500",
+   "panel": "past",
+   "psf": 7.44,
+   "monthly_rent": 3350,
+   "contract_month": "May 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "3BR",
+   "area_band_sqft": "1,200 - 1,300",
+   "panel": "past",
+   "psf": 6.0,
+   "monthly_rent": 7500,
+   "contract_month": "May 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": null,
+   "area_band_sqft": "400 - 500",
+   "panel": "past",
+   "psf": 7.56,
+   "monthly_rent": 3400,
+   "contract_month": "May 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": null,
+   "area_band_sqft": "400 - 500",
+   "panel": "past",
+   "psf": 8.89,
+   "monthly_rent": 4000,
+   "contract_month": "May 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": null,
+   "area_band_sqft": "400 - 500",
+   "panel": "past",
+   "psf": 7.33,
+   "monthly_rent": 3300,
+   "contract_month": "May 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "2BR",
+   "area_band_sqft": "600 - 700",
+   "panel": "past",
+   "psf": 7.85,
+   "monthly_rent": 5100,
+   "contract_month": "May 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "1BR",
+   "area_band_sqft": "500 - 600",
+   "panel": "past",
+   "psf": 7.82,
+   "monthly_rent": 4300,
+   "contract_month": "May 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "2BR",
+   "area_band_sqft": "700 - 800",
+   "panel": "past",
+   "psf": 7.6,
+   "monthly_rent": 5700,
+   "contract_month": "May 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "3BR",
+   "area_band_sqft": "1,100 - 1,200",
+   "panel": "past",
+   "psf": 6.96,
+   "monthly_rent": 8000,
+   "contract_month": "May 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": null,
+   "area_band_sqft": "400 - 500",
+   "panel": "past",
+   "psf": 7.22,
+   "monthly_rent": 3250,
+   "contract_month": "May 2026"
+  }
+ ],
+ "live_rows_tier2": [
+  {
+   "street": "Pearl Bank",
+   "type": "1BR",
+   "area_band_sqft": "527",
+   "panel": "live",
+   "psf": 7.97,
+   "monthly_rent": 4200,
+   "contract_month": "27 Jun 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "2BR",
+   "area_band_sqft": "840",
+   "panel": "live",
+   "psf": 7.74,
+   "monthly_rent": 6500,
+   "contract_month": "19 Jun 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "1BR",
+   "area_band_sqft": "570",
+   "panel": "live",
+   "psf": 7.01,
+   "monthly_rent": 4000,
+   "contract_month": "12 Jun 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "2BR",
+   "area_band_sqft": "893",
+   "panel": "live",
+   "psf": 6.38,
+   "monthly_rent": 5700,
+   "contract_month": "11 Jun 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "2BR",
+   "area_band_sqft": "743",
+   "panel": "live",
+   "psf": 6.73,
+   "monthly_rent": 5000,
+   "contract_month": "08 Jun 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "3BR",
+   "area_band_sqft": "1152",
+   "panel": "live",
+   "psf": 6.95,
+   "monthly_rent": 8000,
+   "contract_month": "01 Jun 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "2BR",
+   "area_band_sqft": "700",
+   "panel": "live",
+   "psf": 7.72,
+   "monthly_rent": 5400,
+   "contract_month": "31 May 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "1BR",
+   "area_band_sqft": "527",
+   "panel": "live",
+   "psf": 8.15,
+   "monthly_rent": 4300,
+   "contract_month": "28 May 2026"
+  },
+  {
+   "street": "Pearl Bank",
+   "type": "2BR",
+   "area_band_sqft": "700",
+   "panel": "live",
+   "psf": 7.72,
+   "monthly_rent": 5400,
+   "contract_month": "22 May 2026"
+  }
+ ]
+}
