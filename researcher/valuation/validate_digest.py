@@ -143,6 +143,16 @@ def check(d: dict, report_path: str | None = None) -> list[dict]:
     gate("no-todo-placeholders", not todos, f"e.g. {todos[:2]}" if todos else "clean",
          "write the narrative sections (summary/risks/catalysts/advisory) before shipping")
 
+    # 6b. per-row arithmetic on the comps table (a hostile review found 41
+    #     cross-cell-misaligned rows where price != psf x sqft)
+    bad_rows = [c.get("level") or c.get("date") for c in d.get("comps_table", [])
+                if all(isinstance(c.get(k), (int, float)) for k in ("price", "psf", "size_sqft"))
+                and abs(c["price"] - c["psf"] * c["size_sqft"]) / c["price"] > 0.02]
+    gate("comps-rows-arithmetic", not bad_rows,
+         f"{len(bad_rows)} rows fail price=psf*sqft (2%): {bad_rows[:4]}" if bad_rows
+         else f"all {len(d.get('comps_table', []))} rows consistent",
+         "re-run the pipeline — reconstruct_comps quarantines misaligned rows now")
+
     # 7. Tier-1 provenance on load-bearing rows
     untier = [c.get("level") or c.get("date") for c in d.get("comps_table", [])
               if not any(k in (c.get("note") or "") for k in TIER1_MARKERS)]

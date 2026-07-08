@@ -116,6 +116,25 @@ def test_iso_date_helper():
     assert rc.iso("23 Jun 2026") == "2026-06-23"
 
 
+def test_arithmetic_gate_and_same_day_conflict_resolution():
+    sale = [{"date": "09 Mar 2026", "street": "1 Pearl Bank", "level": "17", "unit": "22",
+             "unit_type": "2BR", "area_sqft": "893", "psf": "$2,665", "price": "$2,380,000",
+             "sale_type": "Resale"}]
+    tower = [  # same unit, same date, IMPOSSIBLE different price (misaligned twin)
+        {"unit": "#17-22", "block": "1", "floor": 17, "stack": "22", "sqft": 893.0,
+         "pp_date": "09 Mar 2026", "pp_price": 1_728_000, "pp_psf": 1935, "type": "2BR"},
+        # and a row that flat-out fails price = psf x sqft
+        {"unit": "#08-14", "block": "1", "floor": 8, "stack": "14", "sqft": 431.0,
+         "pp_date": "19 Dec 2025", "pp_price": 2_830_000, "pp_psf": 2213, "type": "1BR"},
+    ]
+    res = rc.reconstruct(sale, {"meta": {}, "rows": []}, tower, asof="2026-07-08", years=5)
+    assert res["meta"]["total"] == 1                    # only the sale row survives
+    assert res["comps"][0]["surface"] == "sale" and res["comps"][0]["price"] == 2_380_000
+    assert len(res["meta"]["quarantined"]) == 1         # the arithmetic-gate victim
+    assert len(res["meta"]["price_conflicts"]) == 1     # sale wins the clash
+    assert any("算术门" in g for g in res["meta"]["data_gaps"])
+
+
 def test_fit_floor_premium_recovers_known_gradient():
     # synthetic tower: same-spec sales, same week, psf strictly +0.5%/floor
     comps = []

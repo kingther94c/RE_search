@@ -82,9 +82,32 @@ def parse_towerview_texts(texts: list[str], block: str = "?") -> list[dict]:
             elif re.match(r"^\d(BR|Br)$", t):
                 rec["type"] = t.upper()
             j += 1
+        _quarantine_misaligned(rec)
         units.append(rec)
         i = j
     return units
+
+
+def _quarantine_misaligned(rec: dict) -> None:
+    """Wide grids interleave neighbouring cells' texts during horizontal
+    panning, pairing one unit's sqft with another's PP/Est strings (One Pearl
+    Bank: 62/450 rows, caught by a hostile review as price != psf x sqft).
+    Each money string carries its own psf, so price/psf = implied sqft — if it
+    disagrees with the cell's sqft by >2%, the string belongs to another cell:
+    drop those fields and flag the record."""
+    sqft = rec.get("sqft")
+    if not sqft:
+        return
+    for prefix in ("pp", "est"):
+        price = rec.get(f"{prefix}_price") or rec.get(f"{prefix}_val")
+        psf = rec.get(f"{prefix}_psf")
+        if not (price and psf):
+            continue
+        if abs(price / psf - sqft) / sqft > 0.02:
+            for k in list(rec):
+                if k.startswith(prefix):
+                    del rec[k]
+            rec["misaligned"] = (rec.get("misaligned", "") + f" {prefix}").strip()
 
 
 def _sig(units: list[dict]) -> tuple:

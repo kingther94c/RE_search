@@ -232,13 +232,40 @@ def reconstruct(sale: list[dict], profit: dict, tower: list[dict],
     dropped: list[str] = []
     subject_rows: list[dict] = []
     merges: list[str] = []
+    quarantined: list[str] = []
+    conflicts: list[str] = []
+    _prio = {"sale": 0, "profitability": 1, "towerview": 2}
     for row in all_rows:
+        # hard arithmetic gate: price must equal psf x sqft (2%); a failing row
+        # is a cross-cell misalignment, not a transaction
+        if abs(row["price"] - row["psf"] * row["size_sqft"]) / row["price"] > 0.02:
+            quarantined.append(f"{row['level']} {row['date']} {row['surface']}: "
+                               f"${row['price']:,} != {row['psf']}psf x {row['size_sqft']}sf")
+            continue
         if (subj and (row["floor"], row["stack"]) == subj
                 and _blk_match(subj_blk, row["block"])):
             subject_rows.append(row)
             continue
         if not (start <= row["date"] <= asof):
             dropped.append(f"{row['date']} {row['level']} (outside {start}..{asof})")
+            continue
+        # same unit + same date but a DIFFERENT price = impossible pair; keep
+        # the higher-priority surface (sale is the caveat-table canonical)
+        clash = next((m2 for m2 in merged
+                      if (m2["floor"], m2["stack"], m2["date"]) ==
+                         (row["floor"], row["stack"], row["date"])
+                      and _blk_match(m2["block"], row["block"])
+                      and m2["price"] != row["price"]), None)
+        if clash:
+            keep, drop = ((clash, row) if _prio[clash["surface"]] <= _prio[row["surface"]]
+                          else (row, clash))
+            conflicts.append(f"{clash['level']} {clash['date']}: "
+                             f"${clash['price']:,}({clash['surface']}) vs "
+                             f"${row['price']:,}({row['surface']}) -> kept {keep['surface']}")
+            if drop is clash:
+                merged.remove(clash)
+                merged.append(keep)
+            keep["note"] += " · 同日冲突价已消解（保留高优先面，见 data_gaps）"
             continue
         dup = next((m2 for m2 in merged
                     if (m2["floor"], m2["stack"], m2["price"]) ==
@@ -262,6 +289,12 @@ def reconstruct(sale: list[dict], profit: dict, tower: list[dict],
               for s in ("sale", "profitability", "towerview")}
     adv = profit.get("meta", {}).get("advertised_total")
     gaps = []
+    if quarantined:
+        gaps.append(f"算术门隔离 {len(quarantined)} 行（price≠psf×sqft>2%——跨列错位伪影，"
+                    "非真实成交；明细见 meta.quarantined）")
+    if conflicts:
+        gaps.append(f"同单元同日冲突价 {len(conflicts)} 组——按面优先级（sale>profitability>"
+                    "towerview）消解，明细见 meta.price_conflicts")
     if adv and len(profit.get("rows", [])) < adv:
         gaps.append(f"Profitability 采集 {len(profit['rows'])}/{adv} 对（View All 尾部未展开）——"
                     "残余不完整性方向上偏漏旧印")
@@ -272,6 +305,7 @@ def reconstruct(sale: list[dict], profit: dict, tower: list[dict],
                      "cross_surface_merges": merges, "dropped_outside_window": len(dropped),
                      "subject_excluded": subject, "beds_warnings": beds_warnings,
                      "stale_panel_artifacts": artifact_warnings,
+                     "quarantined": quarantined, "price_conflicts": conflicts,
                      "data_gaps": gaps},
             "comps": merged, "subject_rows": subject_rows}
 

@@ -40,6 +40,23 @@ def test_noise_between_cells_ignored():
     assert len(units) == 1 and units[0]["est_val"] == 2_000_000
 
 
+def test_misaligned_cell_fields_are_quarantined():
+    # wide-grid horizontal panning interleaves neighbouring cells' texts: this
+    # cell claims 431 sqft but its PP string implies $3,560,000/$2,779 = 1,281 sqft
+    # (real One Pearl Bank example caught by a hostile review)
+    texts = ["#32-14", "431 sqft", "01 Mar 2021",
+             "PP: $3,560,000 ($2,779 psf)", "Est. Val: $3,700,000 ($2,888 psf)", "3BR",
+             "#02-15", "700 sqft", "22 Jun 2026",
+             "PP: $1,626,100 ($2,323 psf)", "Est. Val: $1,664,000 ($2,378 psf)", "2BR"]
+    units = htv.parse_towerview_texts(texts)
+    bad = next(u for u in units if u["unit"] == "#32-14")
+    good = next(u for u in units if u["unit"] == "#02-15")
+    assert "pp_price" not in bad and "est_val" not in bad
+    assert bad["misaligned"] == "pp est" and bad["sqft"] == 431
+    assert good["pp_price"] == 1_626_100 and good["est_psf"] == 2378
+    assert "misaligned" not in good
+
+
 def test_real_gallop_capture_regression():
     cap = os.path.join(ROOT, "research", "captures", "gallop_twr_70_p0.json")
     nodes = json.load(open(cap, encoding="utf-8"))

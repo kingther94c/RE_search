@@ -78,7 +78,7 @@
     "URA 私宅价格指数（Tier-1，宏观背景）——本轮未并入 Q2 flash，见数据缺口"
   ],
   "advisory": {
-    "stance": "持有人：HOLD（惜售）/ 买方：仅在谈判带下沿接近 0% 敏感性情形时进场",
+    "stance": "买方：议价目标 $2,354 psf（带下沿=最新直接成交）/ 上限 $2,400 psf（带上沿） / 持有人：HOLD（惜售）",
     "detail": "主体自身 2017 @$1,627 购入，AVM 现值 $2,383（2026-07-02 capture）——账面已 +46%。盘内 2024-2025 六连盈利卖出显示承接良好，但年均 ~2.2 笔成交意味着挂牌到成交周期长；若非用钱，持有优于换手（交易摩擦 BSD+中介 ~5%）。买方视角：出价上限即「估值」节谈判带上沿（勿超过；两笔 2025 年 1,733-1,744sf 直接成交 $2,354-2,356 是最硬的锚），议价目标为谈判带下沿；注意谈判带下沿≠趋势 0% 敏感性情形（后者更低，是模型保守下界而非报价）。低楼层不应支付高层溢价（本盘楼高仅 3-4 层，楼层梯度平缓）。",
     "cost_stack": [
       "BSD（点估 S$4,159,000）≈ S$189,140；公民首套 ABSD 0%、二套 20%、PR 首套 5%",
@@ -93,7 +93,22 @@
     "Rent 面为近期合约样本（10 笔）+ app 全窗带头——未逐笔展开 5Y 全量租约。",
     "URA 2026Q2 flash 未采集；OneMap 步距/学区未复核（见验收节）。"
   ],
-  "review": {},
+  "review": {
+    "verdict": "PASS",
+    "overall": 8.35,
+    "rounds": 2,
+    "date": "2026-07-08",
+    "reviewer": "独立敌对评审（property-report-review skill，fresh agent per round）",
+    "scores": {
+      "data_accuracy": 9,
+      "method_rigor": 8,
+      "completeness": 8,
+      "decision_usefulness": 8,
+      "honesty_uncertainty": 9,
+      "presentation_bilingual": 8
+    },
+    "note": "R1 REVISE 5.4：发现切座伪影（1 笔成交计 7 次）+ 三角段未渲染——已修（指纹门 + twr_-only 重建 + 渲染器改造）。R2 PASS：点估/区间/BSD/敏感性/AVM 中位/趋势全部被独立复算命中；11 笔 comps 零重复指纹。遗留 P3：床型调整仅有紧凑 3BR 项、跨盘参照空缺、1.4% 按揭假设未注明日期。"
+  },
   "comps_table": [
     {
       "date": "2025-12-10",
@@ -205,7 +220,8 @@
     "sensitivity": {
       "trend_0pc": 1990,
       "trend_plus2pp": 2615,
-      "no_anchor": 2354
+      "no_anchor": 2354,
+      "resale_surfaces_only": 2403
     },
     "triangulation": {
       "avm_cohort_median_psf": 2387,
@@ -219,9 +235,9 @@
         2354,
         2400
       ],
-      "note": "谈判带 = AVM cohort 中位 ∪ 模型点估 ∪ 最新同规格成交 的包络（AVM 滞后新成交，最新直接成交为上锚；三值任何一个缺失时带宽相应收窄——按脚注读）"
+      "note": "谈判带 = 三腿包络。本案上锚为「模型点估」（2,400）、下锚为「最新同规格成交」（2,354）——AVM 对新成交的偏差方向因盘而异，买方报价以最新同规格直接成交（含楼层校正）为锚，勿以带上沿为出价授权"
     },
-    "params_note": "模型输入：11 笔 5Y 三面重构集 = Sale 表 10 ∪ Profitability 卖出腿 0 ∪ Tower View PP 面 1（app/URA caveat 口径，逐笔可溯源；跨面同价 ±31 天判同笔）。Sale 表 UI 懒加载且可跳行——三面互补是采集方法论。自身上次成交锚：#03-04 own 2017-02-27（$1,627 psf，趋势前推后权重 2.0；分位集合计 1 次）。时间趋势 +4.67%/yr（repeat-sales median (n=6, holding>=2y)）；敏感性：趋势 0% → 1,990；+2pp → 2,615；去锚 → 2,354（psf）。楼层 缺省 0.30%/层（可拟合对不足）；面积弹性 -0.08；紧凑 3BR（≤800sf）折价 3%；权重 = 1/(1+|ln(面积比)|×3+楼层差/25+年差/2+异卧室数 0.6)。区间 = 调整后值的四分位距（exclusive/type-6，含前推锚共 12 个值），点估恒在区间内。",
+    "params_note": "模型输入：11 笔 5Y 三面重构集 = Sale 表 10 ∪ Profitability 卖出腿 0 ∪ Tower View PP 面 1（app/URA caveat 口径，逐笔可溯源；跨面同价 ±31 天判同笔；每行过 price=psf×sqft 算术门）。面构成披露：Tower View PP 面含开发商首售/早期印（占比 9%），纯转售面（Sale ∪ Profitability）为 10 笔，其单独口径见敏感性 resale_surfaces_only。Sale 表 UI 懒加载且可跳行——三面互补是采集方法论。自身上次成交锚：#03-04 own 2017-02-27（$1,627 psf，趋势前推后权重 2.0；分位集合计 1 次）。时间趋势 +4.67%/yr（repeat-sales median (n=6, holding>=2y)）；敏感性：趋势 0% → 1,990；+2pp → 2,615；去锚 → 2,354（psf）。楼层 缺省 0.30%/层（可拟合对不足）；面积弹性 -0.08；紧凑 3BR（≤800sf）折价 3%；权重 = 1/(1+|ln(面积比)|×3+楼层差/25+年差/2+异卧室数 0.6)。区间 = 调整后值的四分位距（exclusive/type-6，含前推锚共 12 个值），点估恒在区间内。",
     "grid": [
       {
         "label": "2025-12-10 B72 L3 #03 4BR 2842sf",

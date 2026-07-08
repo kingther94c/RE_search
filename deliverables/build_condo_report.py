@@ -96,9 +96,10 @@ def render(d: dict) -> str:
             + f" → <b>谈判带 {band[0]:,}–{band[1]:,} psf</b>"
             + f"<div class='note'>{esc(tri.get('note'))}</div></div>")
     sens = v.get("sensitivity") or {}
-    sens_html = ("<div class='note'>敏感性 sensitivity（psf）：趋势 0% → "
-                 f"{sens.get('trend_0pc', '—'):,} · 趋势 +2pp → {sens.get('trend_plus2pp', '—'):,} · "
-                 f"去锚 → {sens.get('no_anchor', '—'):,}</div>" if sens else "")
+    _sens_zh = {"trend_0pc": "趋势 0%", "trend_plus2pp": "趋势 +2pp", "no_anchor": "去锚",
+                "resale_surfaces_only": "仅转售面（剔除首售/PP 印）"}
+    sens_html = ("<div class='note'>敏感性 sensitivity（psf）：" + " · ".join(
+        f"{_sens_zh.get(k, k)} → {x:,}" for k, x in sens.items()) + "</div>" if sens else "")
     sources = "".join(
         (f"<li><a href='{esc(u)}'>{esc(u)}</a></li>" if str(u).startswith("http")
          else f"<li>{esc(u)}</li>")

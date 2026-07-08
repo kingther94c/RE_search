@@ -68,13 +68,20 @@ python -m researcher.pipelines.condo_valuation <slug> --digest-slug <slug>_<unit
   run. Segments differ (#18-03 study: 1-2BR flat, 3BR rising) — never pool them. A
   reviewer round may justify overriding: rerun with `--trend 0.025` and write the
   rationale into the summary; the override is recorded in `digest.pipeline.trend`.
-- **Adjustment grid** (`researcher/valuation/engine.py`): time/floor(±0.3%/层)/size
-  (elasticity −0.08)/compact-3BR(≤800sf, 3%) on each comp; similarity weights
+- **Adjustment grid** (`researcher/valuation/engine.py`): time/floor/size
+  (elasticity −0.08)/compact-3BR(≤800sf, 3%) on each comp. The floor premium is
+  FITTED per development from same-spec ±90d cross-floor pairs when ≥8 exist
+  (One Pearl Bank fitted 0.43%/floor vs the 0.30% default — high-rise new-TOP
+  towers are steeper; using the default overprices low floors), else 0.30%
+  default; clamped [0%, 2%]. Similarity weights
   `1/(1+|ln(size ratio)|×3+Δfloor/25+Δyrs/2+0.6·异卧室数)`; subject's own last sale =
   anchor at weight 2.0 (in the quantile multiset ONCE). Range = exclusive/type-6 IQR.
 - **Triangulation** (`valuation.triangulation`): negotiation band = envelope of AVM-cohort
-  median ∪ model point ∪ freshest same-spec print. The app's AVM **lags** fresh prints
-  (measured ~3.6% on #18-03's twin); the freshest direct print is the ceiling anchor.
+  median ∪ model point ∪ freshest same-spec print. The AVM's bias vs fresh prints is
+  NOT one-directional (measured: −3.4% Spottiswoode, +1.4% Gallop, +3.7% One Pearl Bank
+  low floors — see deliverables/build_yield_ladder_memo.py) — never treat the AVM as a
+  floor or ceiling a priori; **the freshest same-spec direct print is always the
+  negotiation anchor**, the AVM is just one leg.
 - **Cost stack / yield**: BSD, 75% LTV mortgage, gross yield off same-type recent
   contracts — recomputed from the current estimate every run (gates verify).
 

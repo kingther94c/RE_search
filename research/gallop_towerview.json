@@ -1165,17 +1165,11 @@
   "stack": "01",
   "block": "78",
   "sqft": 2852.0,
-  "pp_date": "29 Dec 2020",
-  "pp_raw": "PP: $5,200,000 ($1,757 psf)",
-  "pp_price": 5200000,
-  "pp_psf": 1757,
-  "est_raw": "Est. Val: $6,763,000 ($2,285 psf)",
-  "est_val": 6763000,
-  "est_psf": 2285,
   "pl_raw": "Est. P/L: ▲$1,563,000 ($528 psf)",
   "holding": "5yrs 6mos",
   "caveats": "2 Caveats",
-  "type": "4BR"
+  "type": "4BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#03-01",
@@ -1291,17 +1285,11 @@
   "stack": "02",
   "block": "78",
   "sqft": 1582.0,
-  "pp_date": "12 Dec 2006",
-  "pp_raw": "PP: $3,650,000 ($1,153 psf)",
-  "pp_price": 3650000,
-  "pp_psf": 1153,
-  "est_raw": "Est. Val: $7,358,000 ($2,325 psf)",
-  "est_val": 7358000,
-  "est_psf": 2325,
   "pl_raw": "Est. P/L: ▲$3,708,000 ($1,172 psf)",
   "holding": "19yrs 4mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#03-03",

@@ -2687,15 +2687,10 @@
   "stack": "12",
   "block": "1",
   "sqft": 1098.0,
-  "pp_raw": "PP: $3,030,000 ($2,536 psf)",
-  "est_raw": "Est. Val: $3,040,000 ($2,544 psf)",
   "pl_raw": "Est. P/L: ▲$10,000 ($8 psf)",
   "holding": "4yrs 1mo",
   "type": "3BR",
-  "pp_price": 3030000,
-  "pp_psf": 2536,
-  "est_val": 3040000,
-  "est_psf": 2544
+  "misaligned": "pp est"
  },
  {
   "unit": "#13-12",
@@ -2919,17 +2914,11 @@
   "stack": "13",
   "block": "1",
   "sqft": 2788.0,
-  "pp_date": "18 Oct 2023",
-  "pp_raw": "PP: $3,388,000 ($2,645 psf)",
-  "pp_price": 3388000,
-  "pp_psf": 2645,
-  "est_raw": "Est. Val: $3,569,000 ($2,786 psf)",
-  "est_val": 3569000,
-  "est_psf": 2786,
   "pl_raw": "Est. P/L: ▲$181,000 ($141 psf)",
   "holding": "3yrs 2d",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#37-13",
@@ -3567,17 +3556,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "02 Aug 2024",
-  "pp_raw": "PP: $3,330,000 ($2,787 psf)",
-  "pp_price": 3330000,
-  "pp_psf": 2787,
-  "est_raw": "Est. Val: $3,344,000 ($2,799 psf)",
-  "est_val": 3344000,
-  "est_psf": 2799,
   "pl_raw": "Est. P/L: ▲$14,000 ($12 psf)",
   "holding": "2yrs 11mos",
   "caveats": "2 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#36-14",
@@ -3585,17 +3568,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "15 Nov 2020",
-  "pp_raw": "PP: $3,384,000 ($2,642 psf)",
-  "pp_price": 3384000,
-  "pp_psf": 2642,
-  "est_raw": "Est. Val: $3,569,000 ($2,786 psf)",
-  "est_val": 3569000,
-  "est_psf": 2786,
   "pl_raw": "Est. P/L: ▼-$83,000 (-$193 psf)",
   "holding": "5yrs 7mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#35-14",
@@ -3603,17 +3580,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "17 Jan 2021",
-  "pp_raw": "PP: $2,900,000 ($2,427 psf)",
-  "pp_price": 2900000,
-  "pp_psf": 2427,
-  "est_raw": "Est. Val: $3,329,000 ($2,786 psf)",
-  "est_val": 3329000,
-  "est_psf": 2786,
   "pl_raw": "Est. P/L: ▲$429,000 ($359 psf)",
   "holding": "4yrs 9mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#34-14",
@@ -3621,17 +3592,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "01 Dec 2021",
-  "pp_raw": "PP: $3,381,000 ($2,640 psf)",
-  "pp_price": 3381000,
-  "pp_psf": 2640,
-  "est_raw": "Est. Val: $3,562,000 ($2,781 psf)",
-  "est_val": 3562000,
-  "est_psf": 2781,
   "pl_raw": "Est. P/L: ▲$181,000 ($141 psf)",
   "holding": "3yrs 3mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#33-14",
@@ -3657,17 +3622,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "19 Dec 2021",
-  "pp_raw": "PP: $3,560,000 ($2,779 psf)",
-  "pp_price": 3560000,
-  "pp_psf": 2779,
-  "est_raw": "Est. Val: $3,553,000 ($2,774 psf)",
-  "est_val": 3553000,
-  "est_psf": 2774,
   "pl_raw": "Est. P/L: ▼-$7,000 (-$5 psf)",
   "holding": "4yrs 6mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#31-14",
@@ -3675,17 +3634,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "31 Jan 2022",
-  "pp_raw": "PP: $3,290,000 ($2,754 psf)",
-  "pp_price": 3290000,
-  "pp_psf": 2754,
-  "est_raw": "Est. Val: $3,314,000 ($2,774 psf)",
-  "est_val": 3314000,
-  "est_psf": 2774,
   "pl_raw": "Est. P/L: ▲$24,000 ($20 psf)",
   "caveats": "1 Caveats",
   "holding": "2yrs 11mos",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#30-14",
@@ -3693,17 +3646,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "22 Mar 2022",
-  "pp_raw": "PP: $3,342,000 ($2,609 psf)",
-  "pp_price": 3342000,
-  "pp_psf": 2609,
-  "est_raw": "Est. Val: $3,510,000 ($2,740 psf)",
-  "est_val": 3510000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▲$168,000 ($131 psf)",
   "holding": "3yrs 5mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#29-14",
@@ -3711,17 +3658,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "02 Apr 2022",
-  "pp_raw": "PP: $3,270,000 ($2,737 psf)",
-  "pp_price": 3270000,
-  "pp_psf": 2737,
-  "est_raw": "Est. Val: $3,274,000 ($2,740 psf)",
-  "est_val": 3274000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▼-$109,000 (-$253 psf)",
   "holding": "4yrs 3mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#28-14",
@@ -3729,17 +3670,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "13 Mar 2022",
-  "pp_raw": "PP: $3,307,000 ($2,582 psf)",
-  "pp_price": 3307000,
-  "pp_psf": 2582,
-  "est_raw": "Est. Val: $3,510,000 ($2,740 psf)",
-  "est_val": 3510000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▲$203,000 ($158 psf)",
   "holding": "3yrs 4mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#27-14",
@@ -3747,17 +3682,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "12 Feb 2022",
-  "pp_raw": "PP: $3,250,000 ($2,720 psf)",
-  "pp_price": 3250000,
-  "pp_psf": 2720,
-  "est_raw": "Est. Val: $3,274,000 ($2,740 psf)",
-  "est_val": 3274000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▲$24,000 ($20 psf)",
   "holding": "2yrs 11mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#26-14",
@@ -3783,17 +3712,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "28 Feb 2022",
-  "pp_raw": "PP: $2,800,000 ($2,343 psf)",
-  "pp_price": 2800000,
-  "pp_psf": 2343,
-  "est_raw": "Est. Val: $3,274,000 ($2,740 psf)",
-  "est_val": 3274000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▲$474,000 ($397 psf)",
   "holding": "4yrs 11mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#24-14",
@@ -3801,17 +3724,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "18 Jun 2021",
-  "pp_raw": "PP: $2,961,000 ($2,312 psf)",
-  "pp_price": 2961000,
-  "pp_psf": 2312,
-  "est_raw": "Est. Val: $3,470,000 ($2,709 psf)",
-  "est_val": 3470000,
-  "est_psf": 2709,
   "pl_raw": "Est. P/L: ▲$509,000 ($397 psf)",
   "holding": "5yrs 5mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#23-14",
@@ -3819,17 +3736,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "14 Jun 2021",
-  "pp_raw": "PP: $3,180,000 ($2,662 psf)",
-  "pp_price": 3180000,
-  "pp_psf": 2662,
-  "est_raw": "Est. Val: $3,274,000 ($2,740 psf)",
-  "est_val": 3274000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▲$94,000 ($79 psf)",
   "holding": "3yrs 1w",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#22-14",
@@ -3837,17 +3748,14 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "30 Dec 2021",
-  "pp_raw": "PP: $3,008,000 ($2,348 psf)",
-  "pp_price": 3008000,
-  "pp_psf": 2348,
   "est_raw": "Est. Val: $1,086,000 ($2,522 psf)",
   "est_val": 1086000,
   "est_psf": 2522,
   "pl_raw": "Est. P/L: ▼-$72,000 (-$167 psf)",
   "holding": "4yrs 6mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp"
  },
  {
   "unit": "#21-14",
@@ -3855,17 +3763,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "07 Jan 2022",
-  "pp_raw": "PP: $3,225,000 ($2,699 psf)",
-  "pp_price": 3225000,
-  "pp_psf": 2699,
-  "est_raw": "Est. Val: $3,274,000 ($2,740 psf)",
-  "est_val": 3274000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▲$49,000 ($41 psf)",
   "holding": "3yrs 6mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#20-14",
@@ -3873,17 +3775,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "05 Dec 2021",
-  "pp_raw": "PP: $2,986,000 ($2,331 psf)",
-  "pp_price": 2986000,
-  "pp_psf": 2331,
-  "est_raw": "Est. Val: $3,480,000 ($2,717 psf)",
-  "est_val": 3480000,
-  "est_psf": 2717,
   "pl_raw": "Est. P/L: ▲$494,000 ($386 psf)",
   "holding": "4yrs 6mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#19-14",
@@ -3908,17 +3804,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "27 Sep 2020",
-  "pp_raw": "PP: $3,081,000 ($2,579 psf)",
-  "pp_price": 3081000,
-  "pp_psf": 2579,
-  "est_raw": "Est. Val: $3,099,000 ($2,594 psf)",
-  "est_val": 3099000,
-  "est_psf": 2594,
   "pl_raw": "Est. P/L: ▲$18,000 ($15 psf)",
   "holding": "3yrs 11mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#17-14",
@@ -3944,17 +3834,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "24 May 2020",
-  "pp_raw": "PP: $3,066,000 ($2,566 psf)",
-  "pp_price": 3066000,
-  "pp_psf": 2566,
-  "est_raw": "Est. Val: $3,069,000 ($2,569 psf)",
-  "est_val": 3069000,
-  "est_psf": 2569,
   "pl_raw": "Est. P/L: ▲$3,000 ($3 psf)",
   "holding": "3yrs 8mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#15-14",
@@ -3962,17 +3846,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "10 Oct 2019",
-  "pp_raw": "PP: $2,750,000 ($2,147 psf)",
-  "pp_price": 2750000,
-  "pp_psf": 2147,
-  "est_raw": "Est. Val: $3,263,000 ($2,547 psf)",
-  "est_val": 3263000,
-  "est_psf": 2547,
   "pl_raw": "Est. P/L: ▲$513,000 ($400 psf)",
   "holding": "5yrs 6d",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#13-14",
@@ -3980,17 +3858,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "06 Oct 2019",
-  "pp_raw": "PP: $3,200,000 ($2,498 psf)",
-  "pp_price": 3200000,
-  "pp_psf": 2498,
-  "est_raw": "Est. Val: $3,225,000 ($2,518 psf)",
-  "est_val": 3225000,
-  "est_psf": 2518,
   "pl_raw": "Est. P/L: ▲$3,000 ($7 psf)",
   "holding": "6yrs 9mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#12-14",
@@ -3998,17 +3870,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "18 Sep 2019",
-  "pp_raw": "PP: $2,837,000 ($2,374 psf)",
-  "pp_price": 2837000,
-  "pp_psf": 2374,
-  "est_raw": "Est. Val: $3,010,000 ($2,519 psf)",
-  "est_val": 3010000,
-  "est_psf": 2519,
   "pl_raw": "Est. P/L: ▲$173,000 ($145 psf)",
   "holding": "4yrs 5mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#11-14",
@@ -4016,17 +3882,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "21 Sep 2019",
-  "pp_raw": "PP: $2,828,000 ($2,208 psf)",
-  "pp_price": 2828000,
-  "pp_psf": 2208,
-  "est_raw": "Est. Val: $3,196,000 ($2,495 psf)",
-  "est_val": 3196000,
-  "est_psf": 2495,
   "pl_raw": "Est. P/L: ▲$368,000 ($287 psf)",
   "holding": "5yrs 8mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#10-14",
@@ -4034,17 +3894,14 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "10 Sep 2019",
-  "pp_raw": "PP: $2,862,000 ($2,395 psf)",
-  "pp_price": 2862000,
-  "pp_psf": 2395,
   "est_raw": "Est. Val: $1,063,000 ($2,469 psf)",
   "est_val": 1063000,
   "est_psf": 2469,
   "pl_raw": "Est. P/L: ▲$15,000 ($35 psf)",
   "holding": "6yrs 9mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp"
  },
  {
   "unit": "#09-14",
@@ -4052,17 +3909,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "25 Aug 2019",
-  "pp_raw": "PP: $2,978,000 ($2,325 psf)",
-  "pp_price": 2978000,
-  "pp_psf": 2325,
-  "est_raw": "Est. Val: $3,172,000 ($2,476 psf)",
-  "est_val": 3172000,
-  "est_psf": 2476,
   "pl_raw": "Est. P/L: ▲$194,000 ($151 psf)",
   "holding": "6yrs 11mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#08-14",
@@ -4070,17 +3921,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "19 Dec 2025",
-  "pp_raw": "PP: $2,830,000 ($2,369 psf)",
-  "pp_price": 2830000,
-  "pp_psf": 2369,
-  "est_raw": "Est. Val: $2,967,000 ($2,483 psf)",
-  "est_val": 2967000,
-  "est_psf": 2483,
   "pl_raw": "Est. P/L: ▲$137,000 ($115 psf)",
   "holding": "4yrs 2mos",
   "caveats": "2 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#07-14",
@@ -4088,17 +3933,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "03 Sep 2019",
-  "pp_raw": "PP: $2,785,000 ($2,174 psf)",
-  "pp_price": 2785000,
-  "pp_psf": 2174,
-  "est_raw": "Est. Val: $3,312,000 ($2,586 psf)",
-  "est_val": 3312000,
-  "est_psf": 2586,
   "pl_raw": "Est. P/L: ▲$527,000 ($411 psf)",
   "holding": "5yrs 7mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#06-14",
@@ -4106,17 +3945,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "20 Jul 2019",
-  "pp_raw": "PP: $2,771,000 ($2,319 psf)",
-  "pp_price": 2771000,
-  "pp_psf": 2319,
-  "est_raw": "Est. Val: $2,921,000 ($2,445 psf)",
-  "est_val": 2921000,
-  "est_psf": 2445,
   "pl_raw": "Est. P/L: ▲$150,000 ($126 psf)",
   "holding": "6yrs 11mos",
   "caveats": "1 Caveats",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#05-14",
@@ -4124,17 +3957,11 @@
   "stack": "14",
   "block": "1",
   "sqft": 431.0,
-  "pp_date": "20 Jul 2019",
-  "pp_raw": "PP: $3,130,000 ($2,444 psf)",
-  "pp_price": 3130000,
-  "pp_psf": 2444,
-  "est_raw": "Est. Val: $3,099,000 ($2,419 psf)",
-  "est_val": 3099000,
-  "est_psf": 2419,
   "pl_raw": "Est. P/L: ▼-$31,000 (-$24 psf)",
   "caveats": "1 Caveats",
   "holding": "1yr 2mos",
-  "type": "3BR"
+  "type": "3BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#04-14",
@@ -4880,17 +4707,11 @@
   "stack": "17",
   "block": "1",
   "sqft": 560.0,
-  "pp_date": "20 Jul 2019",
-  "pp_raw": "PP: $2,050,000 ($2,442 psf)",
-  "pp_price": 2050000,
-  "pp_psf": 2442,
-  "est_raw": "Est. Val: $2,023,000 ($2,410 psf)",
-  "est_val": 2023000,
-  "est_psf": 2410,
   "pl_raw": "Est. P/L: ▼-$27,000 (-$32 psf)",
   "holding": "1yr 11mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#03-17",
@@ -4898,17 +4719,11 @@
   "stack": "17",
   "block": "1",
   "sqft": 560.0,
-  "pp_date": "20 Jul 2019",
-  "pp_raw": "PP: $2,000,000 ($2,239 psf)",
-  "pp_price": 2000000,
-  "pp_psf": 2239,
-  "est_raw": "Est. Val: $2,153,000 ($2,410 psf)",
-  "est_val": 2153000,
-  "est_psf": 2410,
   "pl_raw": "Est. P/L: ▲$1,000 ($2 psf)",
   "holding": "6yrs 11mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#02-17",
@@ -4934,17 +4749,11 @@
   "stack": "18",
   "block": "1",
   "sqft": 2691.0,
-  "pp_date": "11 Jul 2023",
-  "pp_raw": "PP: $2,082,000 ($2,976 psf)",
-  "pp_price": 2082000,
-  "pp_psf": 2976,
-  "est_raw": "Est. Val: $1,923,000 ($2,748 psf)",
-  "est_val": 1923000,
-  "est_psf": 2748,
   "pl_raw": "Est. P/L: ▼-$159,000 (-$227 psf)",
   "holding": "2yrs 11mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#37-18",
@@ -7472,17 +7281,14 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "03 Oct 2022",
-  "pp_raw": "PP: $2,048,000 ($2,927 psf)",
-  "pp_price": 2048000,
-  "pp_psf": 2927,
   "est_raw": "Est. Val: $2,482,000 ($2,778 psf)",
   "est_val": 2482000,
   "est_psf": 2778,
   "pl_raw": "Est. P/L: ▲$291,000 ($326 psf)",
   "holding": "3yrs 9mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp"
  },
  {
   "unit": "#36-22",
@@ -7490,17 +7296,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "03 Nov 2022",
-  "pp_raw": "PP: $2,048,000 ($2,927 psf)",
-  "pp_price": 2048000,
-  "pp_psf": 2927,
-  "est_raw": "Est. Val: $1,917,000 ($2,740 psf)",
-  "est_val": 1917000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▼-$131,000 (-$187 psf)",
   "holding": "3yrs 8mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#35-22",
@@ -7508,17 +7308,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "22 Aug 2022",
-  "pp_raw": "PP: $1,850,000 ($2,644 psf)",
-  "pp_price": 1850000,
-  "pp_psf": 2644,
-  "est_raw": "Est. Val: $1,917,000 ($2,740 psf)",
-  "est_val": 1917000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▲$67,000 ($96 psf)",
   "holding": "3yrs 10mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#34-22",
@@ -7526,17 +7320,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "26 Aug 2021",
-  "pp_raw": "PP: $2,038,000 ($2,913 psf)",
-  "pp_price": 2038000,
-  "pp_psf": 2913,
-  "est_raw": "Est. Val: $1,917,000 ($2,740 psf)",
-  "est_val": 1917000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▼-$121,000 (-$173 psf)",
   "holding": "4yrs 10mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#33-22",
@@ -7544,17 +7332,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "20 Aug 2022",
-  "pp_raw": "PP: $2,051,000 ($2,931 psf)",
-  "pp_price": 2051000,
-  "pp_psf": 2931,
-  "est_raw": "Est. Val: $1,917,000 ($2,740 psf)",
-  "est_val": 1917000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▲$320,000 ($358 psf)",
   "holding": "3yrs 10mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#32-22",
@@ -7562,17 +7344,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "06 Nov 2022",
-  "pp_raw": "PP: $1,920,000 ($2,744 psf)",
-  "pp_price": 1920000,
-  "pp_psf": 2744,
-  "est_raw": "Est. Val: $1,917,000 ($2,740 psf)",
-  "est_val": 1917000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▼-$3,000 (-$4 psf)",
   "holding": "3yrs 8mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#31-22",
@@ -7580,17 +7356,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "30 Jun 2022",
-  "pp_raw": "PP: $1,994,000 ($2,850 psf)",
-  "pp_price": 1994000,
-  "pp_psf": 2850,
-  "est_raw": "Est. Val: $1,917,000 ($2,740 psf)",
-  "est_val": 1917000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▼-$77,000 (-$110 psf)",
   "holding": "4yrs 1w",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#30-22",
@@ -7616,17 +7386,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "07 Aug 2022",
-  "pp_raw": "PP: $1,981,000 ($2,831 psf)",
-  "pp_price": 1981000,
-  "pp_psf": 2831,
-  "est_raw": "Est. Val: $1,917,000 ($2,740 psf)",
-  "est_val": 1917000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▼-$64,000 (-$91 psf)",
   "holding": "3yrs 11mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#28-22",
@@ -7634,17 +7398,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "12 Sep 2022",
-  "pp_raw": "PP: $1,847,000 ($2,640 psf)",
-  "pp_price": 1847000,
-  "pp_psf": 2640,
-  "est_raw": "Est. Val: $1,917,000 ($2,740 psf)",
-  "est_val": 1917000,
-  "est_psf": 2740,
   "pl_raw": "Est. P/L: ▲$70,000 ($100 psf)",
   "holding": "3yrs 9mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#27-22",
@@ -7670,17 +7428,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "20 Oct 2022",
-  "pp_raw": "PP: $1,835,000 ($2,623 psf)",
-  "pp_price": 1835000,
-  "pp_psf": 2623,
-  "est_raw": "Est. Val: $1,911,000 ($2,731 psf)",
-  "est_val": 1911000,
-  "est_psf": 2731,
   "pl_raw": "Est. P/L: ▲$76,000 ($109 psf)",
   "holding": "3yrs 8mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#25-22",
@@ -7688,17 +7440,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "29 Apr 2022",
-  "pp_raw": "PP: $1,750,000 ($2,501 psf)",
-  "pp_price": 1750000,
-  "pp_psf": 2501,
-  "est_raw": "Est. Val: $1,901,000 ($2,717 psf)",
-  "est_val": 1901000,
-  "est_psf": 2717,
   "pl_raw": "Est. P/L: ▲$151,000 ($216 psf)",
   "holding": "4yrs 2mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#24-22",
@@ -7724,17 +7470,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "29 Apr 2022",
-  "pp_raw": "PP: $1,798,000 ($2,570 psf)",
-  "pp_price": 1798000,
-  "pp_psf": 2570,
-  "est_raw": "Est. Val: $1,880,000 ($2,687 psf)",
-  "est_val": 1880000,
-  "est_psf": 2687,
   "pl_raw": "Est. P/L: ▲$82,000 ($117 psf)",
   "holding": "4yrs 2mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#22-22",
@@ -7742,17 +7482,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "13 Aug 2022",
-  "pp_raw": "PP: $1,822,000 ($2,604 psf)",
-  "pp_price": 1822000,
-  "pp_psf": 2604,
-  "est_raw": "Est. Val: $1,869,000 ($2,671 psf)",
-  "est_val": 1869000,
-  "est_psf": 2671,
   "pl_raw": "Est. P/L: ▲$47,000 ($67 psf)",
   "holding": "3yrs 10mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#21-22",
@@ -7760,17 +7494,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "26 Jan 2022",
-  "pp_raw": "PP: $1,900,000 ($2,716 psf)",
-  "pp_price": 1900000,
-  "pp_psf": 2716,
-  "est_raw": "Est. Val: $1,862,000 ($2,661 psf)",
-  "est_val": 1862000,
-  "est_psf": 2661,
   "pl_raw": "Est. P/L: ▲$400,000 ($448 psf)",
   "holding": "4yrs 5mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#20-22",
@@ -7778,17 +7506,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "28 May 2022",
-  "pp_raw": "PP: $1,776,000 ($2,538 psf)",
-  "pp_price": 1776000,
-  "pp_psf": 2538,
-  "est_raw": "Est. Val: $1,853,000 ($2,648 psf)",
-  "est_val": 1853000,
-  "est_psf": 2648,
   "pl_raw": "Est. P/L: ▲$77,000 ($110 psf)",
   "holding": "4yrs 1mo",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#19-22",
@@ -7796,17 +7518,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "25 Aug 2019",
-  "pp_raw": "PP: $1,772,000 ($2,533 psf)",
-  "pp_price": 1772000,
-  "pp_psf": 2533,
-  "est_raw": "Est. Val: $1,851,000 ($2,646 psf)",
-  "est_val": 1851000,
-  "est_psf": 2646,
   "pl_raw": "Est. P/L: ▲$79,000 ($113 psf)",
   "holding": "6yrs 10mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#18-22",
@@ -7814,17 +7530,14 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "06 May 2022",
-  "pp_raw": "PP: $1,737,000 ($2,483 psf)",
-  "pp_price": 1737000,
-  "pp_psf": 2483,
   "est_raw": "Est. Val: $2,236,000 ($2,663 psf)",
   "est_val": 2236000,
   "est_psf": 2663,
   "pl_raw": "Est. P/L: ▲$204,000 ($243 psf)",
   "holding": "4yrs 2mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp"
  },
  {
   "unit": "#17-22",
@@ -7832,17 +7545,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "09 Mar 2026",
-  "pp_raw": "PP: $1,728,000 ($2,470 psf)",
-  "pp_price": 1728000,
-  "pp_psf": 2470,
-  "est_raw": "Est. Val: $1,810,000 ($2,587 psf)",
-  "est_val": 1810000,
-  "est_psf": 2587,
   "pl_raw": "Est. P/L: ▲$82,000 ($117 psf)",
   "holding": "3mos",
   "caveats": "2 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#16-22",
@@ -7850,17 +7557,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "09 Apr 2022",
-  "pp_raw": "PP: $1,720,000 ($2,458 psf)",
-  "pp_price": 1720000,
-  "pp_psf": 2458,
-  "est_raw": "Est. Val: $1,801,000 ($2,574 psf)",
-  "est_val": 1801000,
-  "est_psf": 2574,
   "pl_raw": "Est. P/L: ▲$81,000 ($116 psf)",
   "holding": "4yrs 2mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#15-22",
@@ -7886,17 +7587,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "22 Apr 2022",
-  "pp_raw": "PP: $1,661,000 ($2,374 psf)",
-  "pp_price": 1661000,
-  "pp_psf": 2374,
-  "est_raw": "Est. Val: $1,763,000 ($2,520 psf)",
-  "est_val": 1763000,
-  "est_psf": 2520,
   "pl_raw": "Est. P/L: ▲$102,000 ($146 psf)",
   "holding": "4yrs 2mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#12-22",
@@ -7904,17 +7599,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "11 Jun 2021",
-  "pp_raw": "PP: $1,750,000 ($2,501 psf)",
-  "pp_price": 1750000,
-  "pp_psf": 2501,
-  "est_raw": "Est. Val: $1,756,000 ($2,510 psf)",
-  "est_val": 1756000,
-  "est_psf": 2510,
   "pl_raw": "Est. P/L: ▲$6,000 ($9 psf)",
   "holding": "5yrs 3w",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#11-22",
@@ -7922,17 +7611,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "27 Feb 2022",
-  "pp_raw": "PP: $1,658,000 ($2,370 psf)",
-  "pp_price": 1658000,
-  "pp_psf": 2370,
-  "est_raw": "Est. Val: $1,740,000 ($2,487 psf)",
-  "est_val": 1740000,
-  "est_psf": 2487,
   "pl_raw": "Est. P/L: ▲$194,000 ($231 psf)",
   "holding": "4yrs 4mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#10-22",
@@ -7940,17 +7623,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "03 Nov 2021",
-  "pp_raw": "PP: $1,637,000 ($2,340 psf)",
-  "pp_price": 1637000,
-  "pp_psf": 2340,
-  "est_raw": "Est. Val: $1,738,000 ($2,484 psf)",
-  "est_val": 1738000,
-  "est_psf": 2484,
   "pl_raw": "Est. P/L: ▲$101,000 ($144 psf)",
   "holding": "4yrs 8mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#09-22",
@@ -7958,17 +7635,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "31 Dec 2021",
-  "pp_raw": "PP: $1,630,000 ($2,330 psf)",
-  "pp_price": 1630000,
-  "pp_psf": 2330,
-  "est_raw": "Est. Val: $1,728,000 ($2,470 psf)",
-  "est_val": 1728000,
-  "est_psf": 2470,
   "pl_raw": "Est. P/L: ▲$98,000 ($140 psf)",
   "holding": "4yrs 6mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#08-22",
@@ -7976,17 +7647,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "20 Jan 2025",
-  "pp_raw": "PP: $1,614,000 ($2,307 psf)",
-  "pp_price": 1614000,
-  "pp_psf": 2307,
-  "est_raw": "Est. Val: $1,724,000 ($2,464 psf)",
-  "est_val": 1724000,
-  "est_psf": 2464,
   "pl_raw": "Est. P/L: ▲$110,000 ($157 psf)",
   "holding": "1yr 5mos",
   "caveats": "2 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#07-22",
@@ -7994,17 +7659,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "20 Nov 2021",
-  "pp_raw": "PP: $1,788,000 ($2,556 psf)",
-  "pp_price": 1788000,
-  "pp_psf": 2556,
-  "est_raw": "Est. Val: $1,734,000 ($2,478 psf)",
-  "est_val": 1734000,
-  "est_psf": 2478,
   "pl_raw": "Est. P/L: ▲$175,000 ($208 psf)",
   "holding": "4yrs 7mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#06-22",
@@ -8012,17 +7671,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 893.0,
-  "pp_date": "04 Jul 2021",
-  "pp_raw": "PP: $1,598,000 ($2,284 psf)",
-  "pp_price": 1598000,
-  "pp_psf": 2284,
-  "est_raw": "Est. Val: $1,686,000 ($2,410 psf)",
-  "est_val": 1686000,
-  "est_psf": 2410,
   "pl_raw": "Est. P/L: ▲$88,000 ($126 psf)",
   "holding": "5yrs 4d",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#05-22",
@@ -8030,17 +7683,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "13 Dec 2021",
-  "pp_raw": "PP: $1,590,000 ($2,273 psf)",
-  "pp_price": 1590000,
-  "pp_psf": 2273,
-  "est_raw": "Est. Val: $1,686,000 ($2,410 psf)",
-  "est_val": 1686000,
-  "est_psf": 2410,
   "pl_raw": "Est. P/L: ▲$96,000 ($137 psf)",
   "holding": "4yrs 6mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#04-22",
@@ -8066,17 +7713,11 @@
   "stack": "22",
   "block": "1",
   "sqft": 840.0,
-  "pp_date": "30 Dec 2021",
-  "pp_raw": "PP: $1,574,000 ($2,250 psf)",
-  "pp_price": 1574000,
-  "pp_psf": 2250,
-  "est_raw": "Est. Val: $1,664,000 ($2,378 psf)",
-  "est_val": 1664000,
-  "est_psf": 2378,
   "pl_raw": "Est. P/L: ▲$90,000 ($129 psf)",
   "holding": "4yrs 6mos",
   "caveats": "1 Caveats",
-  "type": "2BR"
+  "type": "2BR",
+  "misaligned": "pp est"
  },
  {
   "unit": "#02-22",

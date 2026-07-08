@@ -258,6 +258,18 @@ def run(args: argparse.Namespace) -> int:
     sens = {"trend_0pc": round(_value(0.0).estimate_psf),
             "trend_plus2pp": round(_value(trend["rate_pa"] + 0.02).estimate_psf),
             "no_anchor": round(_value(trend["rate_pa"], use_anchor=False).estimate_psf)}
+    # resale-only leg: launch/PP prints can dominate a new-TOP comp set — show
+    # what the arm's-length resale surfaces alone say
+    resale_rows = [c for c in comps_rows if c["surface"] in ("sale", "profitability")]
+    if resale_rows and len(resale_rows) < len(comps_rows):
+        rc_comps, _ = to_engine_comps(resale_rows)
+        if rc_comps:
+            p_r = Params(asof=args.asof, time_trend_pa=trend["rate_pa"],
+                         floor_premium_pp=floor_pp, size_elasticity=-0.08,
+                         compact3br_discount=0.03)
+            sens["resale_surfaces_only"] = round(
+                value(subj, rc_comps, p_r, same_line_anchor=anchor,
+                      anchor_weight=2.0).estimate_psf)
     est_price = round(v.estimate_price, -3)
 
     # triangulation (the accepted #18-03 read): app AVM cohort as one leg, the
@@ -271,14 +283,23 @@ def run(args: argparse.Namespace) -> int:
                  None)  # comps_rows is date-desc
     tri_vals = [x for x in (avm_med, round(v.estimate_psf),
                             fresh["psf"] if fresh else None) if x]
+    legs = {"AVM cohort 中位": avm_med, "模型点估": round(v.estimate_psf),
+            "最新同规格成交": fresh["psf"] if fresh else None}
+    legs = {k: x for k, x in legs.items() if x}
+    hi = max(legs, key=legs.get) if legs else None
+    lo = min(legs, key=legs.get) if legs else None
+    # direction is CASE-SPECIFIC — measured AVM-vs-fresh-print bias has gone
+    # both ways (−3.4% Spottiswoode, +3.7% OPB low floors); never boilerplate it
     triangulation = {
         "avm_cohort_median_psf": avm_med,
         "model_psf": round(v.estimate_psf),
         "freshest_same_spec": ({"psf": fresh["psf"], "date": fresh["date"],
                                 "level": fresh["level"]} if fresh else None),
         "negotiation_band_psf": [min(tri_vals), max(tri_vals)] if tri_vals else None,
-        "note": "谈判带 = AVM cohort 中位 ∪ 模型点估 ∪ 最新同规格成交 的包络（AVM 滞后新成交，"
-                "最新直接成交为上锚；三值任何一个缺失时带宽相应收窄——按脚注读）",
+        "note": (f"谈判带 = 三腿包络。本案上锚为「{hi}」（{legs.get(hi, 0):,}）、"
+                 f"下锚为「{lo}」（{legs.get(lo, 0):,}）——AVM 对新成交的偏差方向因盘而异，"
+                 "买方报价以最新同规格直接成交（含楼层校正）为锚，勿以带上沿为出价授权"
+                 if legs else "三腿均缺失"),
     }
 
     # ── 4. deterministic digest sections ────────────────────────────────────
@@ -298,7 +319,12 @@ def run(args: argparse.Namespace) -> int:
             f"模型输入：{len(d['comps_table'])} 笔 {args.years}Y 三面重构集 = "
             f"Sale 表 {counts['sale']} ∪ Profitability 卖出腿 {counts['profitability']} ∪ "
             f"Tower View PP 面 {counts['towerview']}（app/URA caveat 口径，逐笔可溯源；"
-            f"跨面同价 ±31 天判同笔）。Sale 表 UI 懒加载且可跳行——三面互补是采集方法论。"
+            f"跨面同价 ±31 天判同笔；每行过 price=psf×sqft 算术门）。"
+            f"面构成披露：Tower View PP 面含开发商首售/早期印（占比 "
+            f"{counts['towerview'] / max(1, len(d['comps_table'])):.0%}），"
+            f"纯转售面（Sale ∪ Profitability）为 {counts['sale'] + counts['profitability']} 笔"
+            + (f"，其单独口径见敏感性 resale_surfaces_only" if "resale_surfaces_only" in sens else "")
+            + "。Sale 表 UI 懒加载且可跳行——三面互补是采集方法论。"
             f"{anchor_txt}。时间趋势 {trend['rate_pa'] * 100:+.2f}%/yr（{trend['method']}"
             f"{'，超界截断' if trend['clamped'] else ''}）；"
             f"敏感性：趋势 0% → {sens['trend_0pc']:,}；+2pp → {sens['trend_plus2pp']:,}；"
