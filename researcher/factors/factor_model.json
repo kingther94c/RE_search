@@ -1,0 +1,771 @@
+{
+ "asof": "2026-07-12",
+ "beta_layer_ref": "beta_layer.json",
+ "condo_cross_section": {
+  "n": 26,
+  "segment_median_psf": {
+   "CCR": 2273.0,
+   "RCR": 2232.5,
+   "OCR": 1803.25
+  },
+  "segment_median_yield": {
+   "CCR": 2.26,
+   "RCR": 2.8600000000000003,
+   "OCR": 2.96
+  },
+  "level_spearman_within_segment": {
+   "fh": 0.005390602105579977,
+   "age": -0.5057498131788792,
+   "ln_units": 0.1880663388744733,
+   "mrt_km": -0.2371171023086832,
+   "pri1k": 0.5132447448023476,
+   "mall_km": -0.24221691461954575,
+   "park_km": -0.06397537151674443,
+   "coast_km": 0.1450564573427788
+  },
+  "yield_spearman_within_segment": {
+   "n": 19,
+   "fh": -0.019920476822239894,
+   "age": -0.1937487693714711,
+   "ln_units": 0.06140350877192982,
+   "mrt_km": 0.10891533388133018,
+   "pri1k": -0.15811388300841894,
+   "mall_km": 0.13514700730605864,
+   "park_km": -0.10184376181522593,
+   "coast_km": 0.05270096800709525
+  },
+  "ols_ln_premium": {
+   "regressors": [
+    "fh",
+    "age",
+    "ln_units",
+    "mrt_km",
+    "pri1k"
+   ],
+   "r2": 0.6472213121531029,
+   "standardized_coefs": [
+    {
+     "coef": 0.07028768442918908,
+     "ci95": [
+      0.0033599935666476055,
+      0.1799927267189311
+     ],
+     "sig": true
+    },
+    {
+     "coef": -0.10747934202044188,
+     "ci95": [
+      -0.19475515604809868,
+      -0.020111119391237973
+     ],
+     "sig": true
+    },
+    {
+     "coef": 0.10004473922505168,
+     "ci95": [
+      -0.05861976198074835,
+      0.21324886957057512
+     ],
+     "sig": false
+    },
+    {
+     "coef": -0.07631076772689495,
+     "ci95": [
+      -0.17418903624453186,
+      -0.014086927410101601
+     ],
+     "sig": true
+    },
+    {
+     "coef": 0.13696648627755534,
+     "ci95": [
+      0.0760419423613488,
+      0.23625119699716235
+     ],
+     "sig": true
+    }
+   ]
+  },
+  "rows": [
+   {
+    "project": "8@BT",
+    "segment": "OCR",
+    "mid_psf": 2780.0,
+    "yield_avg": null,
+    "fh": 0.0,
+    "age": -0.5,
+    "ln_units": 5.075173815233827,
+    "mrt_km": 0.14,
+    "pri1k": 1.0,
+    "mall_km": 0.12,
+    "park_km": 1.46,
+    "coast_km": 5.21,
+    "ln_prem": 0.4328603353009007
+   },
+   {
+    "project": "Amber 45",
+    "segment": "RCR",
+    "mid_psf": 2580.0,
+    "yield_avg": 2.93,
+    "fh": 1.0,
+    "age": 5.5,
+    "ln_units": 4.9344739331306915,
+    "mrt_km": 0.41,
+    "pri1k": 0.0,
+    "mall_km": 0.47,
+    "park_km": 2.86,
+    "coast_km": 2.04,
+    "ln_prem": 0.14466736516500894,
+    "yield_excess": 0.06999999999999984
+   },
+   {
+    "project": "Amber Park",
+    "segment": "RCR",
+    "mid_psf": 2520.5,
+    "yield_avg": null,
+    "fh": 1.0,
+    "age": 3.5,
+    "ln_units": 6.3835066348840055,
+    "mrt_km": 0.24,
+    "pri1k": 0.0,
+    "mall_km": 0.68,
+    "park_km": 3.16,
+    "coast_km": 1.82,
+    "ln_prem": 0.1213352607720314
+   },
+   {
+    "project": "Dairy Farm Residences",
+    "segment": "OCR",
+    "mid_psf": 1679.0,
+    "yield_avg": 3.35,
+    "fh": 0.0,
+    "age": 2.5,
+    "ln_units": 6.131226489483141,
+    "mrt_km": 0.87,
+    "pri1k": 0.0,
+    "mall_km": 1.23,
+    "park_km": 0.44,
+    "coast_km": 7.9,
+    "ln_prem": -0.07139221430624124,
+    "yield_excess": 0.3900000000000001
+   },
+   {
+    "project": "Esparina Residences",
+    "segment": "OCR",
+    "mid_psf": 1360.5,
+    "yield_avg": 3.08,
+    "fh": 0.0,
+    "age": 13.5,
+    "ln_units": 6.35088571671474,
+    "mrt_km": 0.27,
+    "pri1k": 0.0,
+    "mall_km": 1.08,
+    "park_km": 2.11,
+    "coast_km": 8.0,
+    "ln_prem": -0.2817383131604811,
+    "yield_excess": 0.1200000000000001
+   },
+   {
+    "project": "Gallop Gables",
+    "segment": "CCR",
+    "mid_psf": 2172.0,
+    "yield_avg": 2.13,
+    "fh": 1.0,
+    "age": 29.5,
+    "ln_units": 4.941642422609304,
+    "mrt_km": 0.37,
+    "pri1k": 1.0,
+    "mall_km": 1.53,
+    "park_km": 0.52,
+    "coast_km": 5.34,
+    "ln_prem": -0.04545214279871709,
+    "yield_excess": -0.1299999999999999
+   },
+   {
+    "project": "Gallop Green",
+    "segment": "CCR",
+    "mid_psf": 2647.0,
+    "yield_avg": 2.25,
+    "fh": 1.0,
+    "age": 24.5,
+    "ln_units": 3.970291913552122,
+    "mrt_km": 0.25,
+    "pri1k": 1.0,
+    "mall_km": 1.52,
+    "park_km": 0.6,
+    "coast_km": 5.45,
+    "ln_prem": 0.15232637837455815,
+    "yield_excess": -0.009999999999999787
+   },
+   {
+    "project": "Leedon Green",
+    "segment": "CCR",
+    "mid_psf": 3038.5,
+    "yield_avg": null,
+    "fh": 1.0,
+    "age": 2.5,
+    "ln_units": 6.45833828334479,
+    "mrt_km": 0.65,
+    "pri1k": 1.0,
+    "mall_km": 0.96,
+    "park_km": 1.07,
+    "coast_km": 4.89,
+    "ln_prem": 0.2902634277228668
+   },
+   {
+    "project": "One Pearl Bank",
+    "segment": "RCR",
+    "mid_psf": 2549.0,
+    "yield_avg": 2.79,
+    "fh": 0.0,
+    "age": 2.5,
+    "ln_units": 6.651571873589727,
+    "mrt_km": 0.3,
+    "pri1k": 0.0,
+    "mall_km": 0.59,
+    "park_km": 0.0,
+    "coast_km": 3.42,
+    "ln_prem": 0.13257909162546141,
+    "yield_excess": -0.07000000000000028
+   },
+   {
+    "project": "Parc Esta",
+    "segment": "RCR",
+    "mid_psf": 2197.5,
+    "yield_avg": 3.34,
+    "fh": 0.0,
+    "age": 4.5,
+    "ln_units": 7.243512974665482,
+    "mrt_km": 0.23,
+    "pri1k": 0.0,
+    "mall_km": 1.09,
+    "park_km": 2.35,
+    "coast_km": 2.35,
+    "ln_prem": -0.01580168319132206,
+    "yield_excess": 0.47999999999999954
+   },
+   {
+    "project": "Royalgreen",
+    "segment": "CCR",
+    "mid_psf": 2786.5,
+    "yield_avg": null,
+    "fh": 1.0,
+    "age": 5.5,
+    "ln_units": 5.652489180268651,
+    "mrt_km": 0.31,
+    "pri1k": 0.0,
+    "mall_km": 2.29,
+    "park_km": 2.86,
+    "coast_km": 5.16,
+    "ln_prem": 0.20368578315704777
+   },
+   {
+    "project": "Sengkang Grand Residences",
+    "segment": "OCR",
+    "mid_psf": 1927.5,
+    "yield_avg": 2.69,
+    "fh": 0.0,
+    "age": 3.5,
+    "ln_units": 6.522092798170152,
+    "mrt_km": 0.14,
+    "pri1k": 0.0,
+    "mall_km": 1.09,
+    "park_km": 2.1,
+    "coast_km": 7.89,
+    "ln_prem": 0.06663323405370247,
+    "yield_excess": -0.27
+   },
+   {
+    "project": "Sixth Avenue Residences",
+    "segment": "CCR",
+    "mid_psf": 1985.5,
+    "yield_avg": null,
+    "fh": 1.0,
+    "age": 16.5,
+    "ln_units": 5.1647859739235145,
+    "mrt_km": 0.61,
+    "pri1k": 0.0,
+    "mall_km": 1.92,
+    "park_km": 2.75,
+    "coast_km": 4.77,
+    "ln_prem": -0.13522977328123706
+   },
+   {
+    "project": "Sky Everton",
+    "segment": "CCR",
+    "mid_psf": 2854.5,
+    "yield_avg": 2.15,
+    "fh": 1.0,
+    "age": 3.5,
+    "ln_units": 5.568344503761097,
+    "mrt_km": 0.36,
+    "pri1k": 0.0,
+    "mall_km": 0.61,
+    "park_km": 0.81,
+    "coast_km": 3.62,
+    "ln_prem": 0.22779615155177074,
+    "yield_excess": -0.10999999999999988
+   },
+   {
+    "project": "Sommerville Grandeur",
+    "segment": "CCR",
+    "mid_psf": 2187.5,
+    "yield_avg": 2.26,
+    "fh": 1.0,
+    "age": 30.5,
+    "ln_units": 4.564348191467836,
+    "mrt_km": 0.18,
+    "pri1k": 1.0,
+    "mall_km": 1.41,
+    "park_km": 0.77,
+    "coast_km": 5.34,
+    "ln_prem": -0.0383412056207737,
+    "yield_excess": 0.0
+   },
+   {
+    "project": "Spottiswoode 18",
+    "segment": "CCR",
+    "mid_psf": 1981.0,
+    "yield_avg": 3.47,
+    "fh": 1.0,
+    "age": 11.5,
+    "ln_units": 5.5254529391317835,
+    "mrt_km": 0.31,
+    "pri1k": 0.0,
+    "mall_km": 0.67,
+    "park_km": 0.86,
+    "coast_km": 3.69,
+    "ln_prem": -0.1374987771539923,
+    "yield_excess": 1.2100000000000004
+   },
+   {
+    "project": "Spottiswoode Residences",
+    "segment": "CCR",
+    "mid_psf": 2273.0,
+    "yield_avg": 3.06,
+    "fh": 1.0,
+    "age": 12.5,
+    "ln_units": 5.860786223465865,
+    "mrt_km": 0.27,
+    "pri1k": 0.0,
+    "mall_km": 0.74,
+    "park_km": 0.92,
+    "coast_km": 3.77,
+    "ln_prem": 0.0,
+    "yield_excess": 0.8000000000000003
+   },
+   {
+    "project": "Spottiswoode Suites",
+    "segment": "CCR",
+    "mid_psf": 2076.0,
+    "yield_avg": 3.25,
+    "fh": 1.0,
+    "age": 9.5,
+    "ln_units": 5.209486152841421,
+    "mrt_km": 0.36,
+    "pri1k": 0.0,
+    "mall_km": 0.68,
+    "park_km": 0.81,
+    "coast_km": 3.69,
+    "ln_prem": -0.09065757956676393,
+    "yield_excess": 0.9900000000000002
+   },
+   {
+    "project": "Suites@Changi",
+    "segment": "RCR",
+    "mid_psf": 1338.5,
+    "yield_avg": 4.19,
+    "fh": 1.0,
+    "age": 13.5,
+    "ln_units": 3.784189633918261,
+    "mrt_km": 0.35,
+    "pri1k": 0.0,
+    "mall_km": 1.14,
+    "park_km": 2.24,
+    "coast_km": 2.24,
+    "ln_prem": -0.5115724497902469,
+    "yield_excess": 1.33
+   },
+   {
+    "project": "The Elegance @ Changi",
+    "segment": "RCR",
+    "mid_psf": 1201.5,
+    "yield_avg": 1.95,
+    "fh": 1.0,
+    "age": 20.5,
+    "ln_units": 3.258096538021482,
+    "mrt_km": 0.4,
+    "pri1k": 0.0,
+    "mall_km": 1.0,
+    "park_km": 2.35,
+    "coast_km": 2.35,
+    "ln_prem": -0.6195512575741304,
+    "yield_excess": -0.9100000000000004
+   },
+   {
+    "project": "The Palladium",
+    "segment": "RCR",
+    "mid_psf": 2232.5,
+    "yield_avg": 2.46,
+    "fh": 1.0,
+    "age": 23.5,
+    "ln_units": 3.7612001156935624,
+    "mrt_km": 0.15,
+    "pri1k": 0.0,
+    "mall_km": 0.24,
+    "park_km": 2.55,
+    "coast_km": 2.34,
+    "ln_prem": 0.0,
+    "yield_excess": -0.40000000000000036
+   },
+   {
+    "project": "The Reserve Residences",
+    "segment": "OCR",
+    "mid_psf": 2705.0,
+    "yield_avg": null,
+    "fh": 0.0,
+    "age": -1.5,
+    "ln_units": 6.595780513961311,
+    "mrt_km": 0.25,
+    "pri1k": 1.0,
+    "mall_km": 0.32,
+    "park_km": 1.62,
+    "coast_km": 5.08,
+    "ln_prem": 0.40551131989679995
+   },
+   {
+    "project": "The Sea View",
+    "segment": "RCR",
+    "mid_psf": 2615.0,
+    "yield_avg": 2.6,
+    "fh": 1.0,
+    "age": 18.5,
+    "ln_units": 6.302618975744905,
+    "mrt_km": 0.31,
+    "pri1k": 0.0,
+    "mall_km": 0.32,
+    "park_km": 2.79,
+    "coast_km": 2.18,
+    "ln_prem": 0.15814206374836914,
+    "yield_excess": -0.26000000000000023
+   },
+   {
+    "project": "The Shore Residences",
+    "segment": "RCR",
+    "mid_psf": 2052.0,
+    "yield_avg": 3.15,
+    "fh": 0.0,
+    "age": 13.5,
+    "ln_units": 6.0112671744041615,
+    "mrt_km": 0.44,
+    "pri1k": 0.0,
+    "mall_km": 0.51,
+    "park_km": 2.87,
+    "coast_km": 2.01,
+    "ln_prem": -0.08430710645999397,
+    "yield_excess": 0.2899999999999996
+   },
+   {
+    "project": "Treasure At Tampines",
+    "segment": "OCR",
+    "mid_psf": 1640.0,
+    "yield_avg": 2.84,
+    "fh": 0.0,
+    "age": 2.5,
+    "ln_units": 7.697575346802343,
+    "mrt_km": 0.64,
+    "pri1k": 0.0,
+    "mall_km": 0.9,
+    "park_km": 2.08,
+    "coast_km": 2.96,
+    "ln_prem": -0.09489435056553787,
+    "yield_excess": -0.1200000000000001
+   },
+   {
+    "project": "Watten House",
+    "segment": "CCR",
+    "mid_psf": 3252.0,
+    "yield_avg": null,
+    "fh": 1.0,
+    "age": -0.5,
+    "ln_units": 5.19295685089021,
+    "mrt_km": 0.58,
+    "pri1k": 2.0,
+    "mall_km": 2.73,
+    "park_km": 1.77,
+    "coast_km": 6.47,
+    "ln_prem": 0.358169646815158
+   }
+  ]
+ },
+ "findings": {
+  "beta": {
+   "landed_on_nonlanded_beta": 0.8482163056144272,
+   "landed_alpha_pa": 0.010008415383927126,
+   "segment_5y_cagr": {
+    "all": {
+     "5y": 0.06120815120769496,
+     "10y": 0.04497726418354375,
+     "15y": 0.028939695896861295,
+     "20y": 0.04779982696749241,
+     "since_1998Q4": 0.04181092218874416,
+     "since_2009Q1": 0.0469943483994808
+    },
+    "landed": {
+     "5y": 0.06339012544565192,
+     "10y": 0.04717091712961974,
+     "15y": 0.030303449070862465,
+     "20y": 0.05475758220739291,
+     "since_1998Q4": 0.046636839871484925,
+     "since_2009Q1": 0.05589791448093506
+    },
+    "nonlanded": {
+     "5y": 0.060568891531214364,
+     "10y": 0.04434018799546835,
+     "15y": 0.02899517407777763,
+     "20y": 0.04603084062497165,
+     "since_1998Q4": 0.04063574166021011,
+     "since_2009Q1": 0.04484342023958687
+    }
+   },
+   "评注": "landed 是低 beta(0.85)+正 alpha(+1.0%/yr) 的防御性资产——除 1996-98 一役外每次危机跌幅都小于非有地；价格/租金比 130 vs 峰值 146 说明 2021 后租金追上了价格。",
+   "confidence": "high (51y official series)"
+  },
+  "level_factors_condo": {
+   "fh": {
+    "spearman_within_segment": 0.005390602105579977,
+    "strength": "weak"
+   },
+   "age": {
+    "spearman_within_segment": -0.5057498131788792,
+    "strength": "strong"
+   },
+   "ln_units": {
+    "spearman_within_segment": 0.1880663388744733,
+    "strength": "weak"
+   },
+   "mrt_km": {
+    "spearman_within_segment": -0.2371171023086832,
+    "strength": "weak"
+   },
+   "pri1k": {
+    "spearman_within_segment": 0.5132447448023476,
+    "strength": "strong"
+   },
+   "mall_km": {
+    "spearman_within_segment": -0.24221691461954575,
+    "strength": "weak"
+   },
+   "park_km": {
+    "spearman_within_segment": -0.06397537151674443,
+    "strength": "weak"
+   },
+   "coast_km": {
+    "spearman_within_segment": 0.1450564573427788,
+    "strength": "weak"
+   }
+  },
+  "yield_factors_condo": {
+   "fh": {
+    "spearman": -0.019920476822239894,
+    "strength": "weak"
+   },
+   "age": {
+    "spearman": -0.1937487693714711,
+    "strength": "weak"
+   },
+   "ln_units": {
+    "spearman": 0.06140350877192982,
+    "strength": "weak"
+   },
+   "mrt_km": {
+    "spearman": 0.10891533388133018,
+    "strength": "weak"
+   },
+   "pri1k": {
+    "spearman": -0.15811388300841894,
+    "strength": "weak"
+   },
+   "mall_km": {
+    "spearman": 0.13514700730605864,
+    "strength": "weak"
+   },
+   "park_km": {
+    "spearman": -0.10184376181522593,
+    "strength": "weak"
+   },
+   "coast_km": {
+    "spearman": 0.05270096800709525,
+    "strength": "weak"
+   }
+  },
+  "ols": {
+   "regressors": [
+    "fh",
+    "age",
+    "ln_units",
+    "mrt_km",
+    "pri1k"
+   ],
+   "r2": 0.6472213121531029,
+   "standardized_coefs": [
+    {
+     "coef": 0.07028768442918908,
+     "ci95": [
+      0.0033599935666476055,
+      0.1799927267189311
+     ],
+     "sig": true
+    },
+    {
+     "coef": -0.10747934202044188,
+     "ci95": [
+      -0.19475515604809868,
+      -0.020111119391237973
+     ],
+     "sig": true
+    },
+    {
+     "coef": 0.10004473922505168,
+     "ci95": [
+      -0.05861976198074835,
+      0.21324886957057512
+     ],
+     "sig": false
+    },
+    {
+     "coef": -0.07631076772689495,
+     "ci95": [
+      -0.17418903624453186,
+      -0.014086927410101601
+     ],
+     "sig": true
+    },
+    {
+     "coef": 0.13696648627755534,
+     "ci95": [
+      0.0760419423613488,
+      0.23625119699716235
+     ],
+     "sig": true
+    }
+   ]
+  },
+  "landed_streets": [
+   {
+    "street": "Alnwick (rosyth)",
+    "n_points": 2,
+    "n_pairs": 0,
+    "cagr_median": null,
+    "cagr_range": null,
+    "nearest_mrt": {
+     "name": "Lorong Chuan",
+     "km": 1.51
+    },
+    "pri1k": 0,
+    "coast_km": 7.15,
+    "street_band": {
+     "low": "$7,250,000",
+     "avg": "$8,590,000",
+     "high": "$9,930,000",
+     "low_psf": 1512,
+     "avg_psf": 1806,
+     "high_psf": 2099
+    }
+   },
+   {
+    "street": "Frankel Avenue",
+    "n_points": 10,
+    "n_pairs": 18,
+    "cagr_median": 0.06575714148042043,
+    "cagr_range": [
+     -0.03454394295851198,
+     0.10321802963087193
+    ],
+    "nearest_mrt": {
+     "name": "Kembangan",
+     "km": 0.92
+    },
+    "pri1k": 0,
+    "coast_km": 0.66,
+    "street_band": null
+   },
+   {
+    "street": "Kingsmead (nanyang)",
+    "n_points": 2,
+    "n_pairs": 0,
+    "cagr_median": null,
+    "cagr_range": null,
+    "nearest_mrt": {
+     "name": "Farrer Road",
+     "km": 0.39
+    },
+    "pri1k": 1,
+    "coast_km": 5.39,
+    "street_band": {
+     "low": "$21,998,000",
+     "avg": "$24,399,000",
+     "high": "$26,800,000",
+     "low_psf": 1808,
+     "avg_psf": 2040,
+     "high_psf": 2271
+    }
+   },
+   {
+    "street": "Nearby (nanyang)",
+    "n_points": 2,
+    "n_pairs": 0,
+    "cagr_median": null,
+    "cagr_range": null,
+    "nearest_mrt": {
+     "name": "Farrer Road",
+     "km": 0.39
+    },
+    "pri1k": 1,
+    "coast_km": 5.39,
+    "street_band": null
+   },
+   {
+    "street": "Nearby (rosyth)",
+    "n_points": 2,
+    "n_pairs": 0,
+    "cagr_median": null,
+    "cagr_range": null,
+    "nearest_mrt": {
+     "name": "Lorong Chuan",
+     "km": 1.51
+    },
+    "pri1k": 0,
+    "coast_km": 7.15,
+    "street_band": null
+   }
+  ],
+  "classification": {
+   "priced_in_level_factors": [
+    "MRT 距离（每近一站溢价，已在价内）",
+    "热门小学 1km（家庭需求溢价，已在价内）",
+    "商场/便利（价内）",
+    "海岸线视野带（价内溢价段）",
+    "永久地契（价内溢价 vs 99y）"
+   ],
+   "beta_modifiers": [
+    "地契剩余年限（99y 的 bala 曲线衰减 = 长期负漂移叠加）",
+    "楼龄（新盘溢价消化期 vs 老盘翻新周期）",
+    "盘的规模（超大盘流动性↑但同盘竞卖压制反弹弹性）",
+    "学区（需求黏性 → 下行期换手支撑）"
+   ],
+   "alpha_sources": [
+    "对因子的错定价（同段同因子组合的 psf 离群）",
+    "催化剂前置（新 MRT 线开通前、指标性整售/重建预期）",
+    "AVM/市场滞后窗口（新成交重定价未传导——见三盘 AVM 偏差研究）",
+    "微观个体（楼层/朝向/装修错价——盘内网格可量化）"
+   ]
+  },
+  "data_notes": [
+   "横截面 n=26（psf 为近期成交区间中点或 5Y band 口径，混合披露）",
+   "psf 溢价按段内中位数去均值——段效应（beta）已剥离",
+   "样本聚集于本项目研究过的锚点周边——非全岛随机抽样，泛化需谨慎",
+   "landed 街道 CAGR 为跨址同型对（≥5 年间隔）中位——含土地重建价值，非纯房价"
+  ]
+ }
+}
