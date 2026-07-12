@@ -1,0 +1,31 @@
+{
+ "meta": {
+  "radius": "200 Meters",
+  "advertised_projects": 2,
+  "dist_pairing": "skipped (2 dists for 1 rows)",
+  "view_all": 2
+ },
+ "rows": [
+  {
+   "project": "One Pearl Bank",
+   "tenure_raw": "99 yrs from 01/03/2019",
+   "tenure_type": "99y",
+   "lease_start": 2019,
+   "top_year": 2024,
+   "total_units": 774,
+   "unit_types": "1, 2, 3, 4",
+   "size_range_sqft": "430 - 2,787",
+   "psf_low": 2089,
+   "psf_high": 3009,
+   "sales_range_raw": "$953,000 - $7,880,000 PSF: $2,089 - $3,009",
+   "sales_volume": 383,
+   "rent_range_raw": "$3,000 - $10,800 PSF: $5.45 - $9.54",
+   "rent_psf_low": 5.45,
+   "rent_psf_high": 9.54,
+   "yield_low_pct": 0.46,
+   "yield_high_pct": 13.6,
+   "yield_avg_pct": 2.79,
+   "rental_volume": 349
+  }
+ ]
+}

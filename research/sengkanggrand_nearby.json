@@ -1,0 +1,53 @@
+{
+ "meta": {
+  "radius": "200 Meters",
+  "advertised_projects": 2,
+  "view_all": 2
+ },
+ "rows": [
+  {
+   "project": "Sengkang Grand Residences",
+   "tenure_raw": "99 yrs from 13/11/2018",
+   "tenure_type": "99y",
+   "lease_start": 2018,
+   "top_year": 2023,
+   "total_units": 680,
+   "unit_types": "1, 2, 3, 4",
+   "size_range_sqft": "400 - 1,400",
+   "psf_low": 1631,
+   "psf_high": 2224,
+   "sales_range_raw": "$888,000 - $2,800,000 PSF: $1,631 - $2,224",
+   "sales_volume": 367,
+   "rent_range_raw": "$2,800 - $7,100 PSF: $4.19 - $7.78",
+   "rent_psf_low": 4.19,
+   "rent_psf_high": 7.78,
+   "yield_low_pct": 1.2,
+   "yield_high_pct": 9.59,
+   "yield_avg_pct": 2.69,
+   "rental_volume": 294,
+   "dist_m": 0.0
+  },
+  {
+   "project": "Esparina Residences",
+   "tenure_raw": "99 yrs from 02/06/2010",
+   "tenure_type": "99y",
+   "lease_start": 2010,
+   "top_year": 2013,
+   "total_units": 573,
+   "unit_types": "2, 3, 4",
+   "size_range_sqft": "800 - 1,900",
+   "psf_low": 901,
+   "psf_high": 1820,
+   "sales_range_raw": "$938,000 - $2,650,000 PSF: $901 - $1,820",
+   "sales_volume": 180,
+   "rent_range_raw": "$1,600 - $6,300 PSF: $1.39 - $5.18",
+   "rent_psf_low": 1.39,
+   "rent_psf_high": 5.18,
+   "yield_low_pct": 0.72,
+   "yield_high_pct": 8.06,
+   "yield_avg_pct": 3.08,
+   "rental_volume": 236,
+   "dist_m": 188.0
+  }
+ ]
+}

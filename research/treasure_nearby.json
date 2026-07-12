@@ -1,0 +1,31 @@
+{
+ "meta": {
+  "radius": "200 Meters",
+  "advertised_projects": 1,
+  "view_all": 1
+ },
+ "rows": [
+  {
+   "project": "Treasure At Tampines",
+   "tenure_raw": "101 yrs from 01/12/1985, 99 yrs from 29/11/2018",
+   "tenure_type": "101y",
+   "lease_start": 1985,
+   "top_year": 2024,
+   "total_units": 2203,
+   "unit_types": "1, 2, 3, 4, 5+",
+   "size_range_sqft": "400 - 1,800",
+   "psf_low": 1256,
+   "psf_high": 2024,
+   "sales_range_raw": "$690,000 - $3,070,888 PSF: $1,256 - $2,024",
+   "sales_volume": 942,
+   "rent_range_raw": "$2,400 - $8,000 PSF: $2.86 - $7.67",
+   "rent_psf_low": 2.86,
+   "rent_psf_high": 7.67,
+   "yield_low_pct": 0.94,
+   "yield_high_pct": 13.91,
+   "yield_avg_pct": 2.84,
+   "rental_volume": 1046,
+   "dist_m": 0.0
+  }
+ ]
+}

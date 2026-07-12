@@ -1,0 +1,31 @@
+{
+ "meta": {
+  "radius": "200 Meters",
+  "advertised_projects": 3,
+  "dist_pairing": "skipped (3 dists for 1 rows)",
+  "view_all": 3
+ },
+ "rows": [
+  {
+   "project": "Dairy Farm Residences",
+   "tenure_raw": "99 yrs from 05/12/2018",
+   "tenure_type": "99y",
+   "lease_start": 2018,
+   "top_year": 2024,
+   "total_units": 460,
+   "unit_types": "2, 3, 4",
+   "size_range_sqft": "600 - 1,474",
+   "psf_low": 1359,
+   "psf_high": 1999,
+   "sales_range_raw": "$1,020,400 - $2,608,000 PSF: $1,359 - $1,999",
+   "sales_volume": 405,
+   "rent_range_raw": "$3,000 - $7,300 PSF: $3.16 - $6.60",
+   "rent_psf_low": 3.16,
+   "rent_psf_high": 6.6,
+   "yield_low_pct": 1.38,
+   "yield_high_pct": 8.58,
+   "yield_avg_pct": 3.35,
+   "rental_volume": 287
+  }
+ ]
+}

@@ -1,0 +1,1406 @@
+[
+  {
+    "text": "Property Info",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,272][198,312]",
+    "center": [
+      115,
+      292
+    ]
+  },
+  {
+    "text": "Sale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[292,272][348,312]",
+    "center": [
+      320,
+      292
+    ]
+  },
+  {
+    "text": "Rent",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[471,272][529,312]",
+    "center": [
+      500,
+      292
+    ]
+  },
+  {
+    "text": "Street View",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[622,272][767,312]",
+    "center": [
+      694,
+      292
+    ]
+  },
+  {
+    "text": "Maps",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[854,272][925,312]",
+    "center": [
+      889,
+      292
+    ]
+  },
+  {
+    "text": "Planning Decisions",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1011,272][1252,312]",
+    "center": [
+      1131,
+      292
+    ]
+  },
+  {
+    "text": "23 FRANKEL AVENUE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[8,336][258,432]",
+    "center": [
+      133,
+      384
+    ]
+  },
+  {
+    "text": "Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[16,444][264,476]",
+    "center": [
+      140,
+      460
+    ]
+  },
+  {
+    "text": "Freehold",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,484][103,516]",
+    "center": [
+      55,
+      500
+    ]
+  },
+  {
+    "text": "6,387.36 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,516][154,548]",
+    "center": [
+      81,
+      532
+    ]
+  },
+  {
+    "text": "18 May 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,548][150,580]",
+    "center": [
+      79,
+      564
+    ]
+  },
+  {
+    "text": "Est. SSD: 3yrs 10mos left (16%)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,580][272,644]",
+    "center": [
+      140,
+      612
+    ]
+  },
+  {
+    "text": "PP: $14,500,000 ($2,270 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,644][272,708]",
+    "center": [
+      140,
+      676
+    ]
+  },
+  {
+    "text": "Holding: 1mo",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[115,708][152,740]",
+    "center": [
+      133,
+      724
+    ]
+  },
+  {
+    "text": "2 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[8,708][115,796]",
+    "center": [
+      61,
+      752
+    ]
+  },
+  {
+    "text": "25 FRANKEL AVENUE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[288,336][538,432]",
+    "center": [
+      413,
+      384
+    ]
+  },
+  {
+    "text": "Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[296,444][544,476]",
+    "center": [
+      420,
+      460
+    ]
+  },
+  {
+    "text": "Freehold",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[288,484][383,516]",
+    "center": [
+      335,
+      500
+    ]
+  },
+  {
+    "text": "5,534.85 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[288,516][434,548]",
+    "center": [
+      361,
+      532
+    ]
+  },
+  {
+    "text": "02 Oct 2023",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[288,548][421,580]",
+    "center": [
+      354,
+      564
+    ]
+  },
+  {
+    "text": "Est. SSD: 2mos left (4%)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[288,580][548,612]",
+    "center": [
+      418,
+      596
+    ]
+  },
+  {
+    "text": "PP: $10,300,000 ($1,861 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[288,612][552,676]",
+    "center": [
+      420,
+      644
+    ]
+  },
+  {
+    "text": "Holding: 2yrs 9mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[395,676][497,708]",
+    "center": [
+      446,
+      692
+    ]
+  },
+  {
+    "text": "2 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[288,676][395,772]",
+    "center": [
+      341,
+      724
+    ]
+  },
+  {
+    "text": "32 FRANKEL AVENUE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[568,336][818,432]",
+    "center": [
+      693,
+      384
+    ]
+  },
+  {
+    "text": "Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[576,444][824,476]",
+    "center": [
+      700,
+      460
+    ]
+  },
+  {
+    "text": "Freehold",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[568,484][663,516]",
+    "center": [
+      615,
+      500
+    ]
+  },
+  {
+    "text": "9,224.75 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[568,516][714,548]",
+    "center": [
+      641,
+      532
+    ]
+  },
+  {
+    "text": "03 Jul 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[568,548][698,580]",
+    "center": [
+      633,
+      564
+    ]
+  },
+  {
+    "text": "Est. SSD: 3yrs 11mos left (16%)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[568,580][832,644]",
+    "center": [
+      700,
+      612
+    ]
+  },
+  {
+    "text": "PP: $14,000,000 ($1,518 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[568,644][832,708]",
+    "center": [
+      700,
+      676
+    ]
+  },
+  {
+    "text": "Holding: 1w",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[675,708][696,740]",
+    "center": [
+      685,
+      724
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[568,708][675,796]",
+    "center": [
+      621,
+      752
+    ]
+  },
+  {
+    "text": "33 FRANKEL AVENUE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[848,336][1098,432]",
+    "center": [
+      973,
+      384
+    ]
+  },
+  {
+    "text": "Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[856,444][1104,476]",
+    "center": [
+      980,
+      460
+    ]
+  },
+  {
+    "text": "Freehold",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[848,484][943,516]",
+    "center": [
+      895,
+      500
+    ]
+  },
+  {
+    "text": "6,003.08 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[848,516][994,548]",
+    "center": [
+      921,
+      532
+    ]
+  },
+  {
+    "text": "29 Aug 2006",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[848,548][987,580]",
+    "center": [
+      917,
+      564
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[848,580][1066,612]",
+    "center": [
+      957,
+      596
+    ]
+  },
+  {
+    "text": "PP: $2,228,000 ($371 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[848,612][1112,676]",
+    "center": [
+      980,
+      644
+    ]
+  },
+  {
+    "text": "Holding: 19yrs 10mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[955,676][1085,708]",
+    "center": [
+      1020,
+      692
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[848,676][955,772]",
+    "center": [
+      901,
+      724
+    ]
+  },
+  {
+    "text": "34 FRANKEL AVENUE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1128,336][1378,432]",
+    "center": [
+      1253,
+      384
+    ]
+  },
+  {
+    "text": "Semi-Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1136,444][1384,476]",
+    "center": [
+      1260,
+      460
+    ]
+  },
+  {
+    "text": "Freehold",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1128,484][1223,516]",
+    "center": [
+      1175,
+      500
+    ]
+  },
+  {
+    "text": "4,503.66 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1128,516][1274,548]",
+    "center": [
+      1201,
+      532
+    ]
+  },
+  {
+    "text": "11 Aug 2005",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1128,548][1267,580]",
+    "center": [
+      1197,
+      564
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1128,580][1346,612]",
+    "center": [
+      1237,
+      596
+    ]
+  },
+  {
+    "text": "PP: $1,500,000 ($333 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1128,612][1392,676]",
+    "center": [
+      1260,
+      644
+    ]
+  },
+  {
+    "text": "Holding: 20yrs 11mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1235,676][1365,708]",
+    "center": [
+      1300,
+      692
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1128,676][1235,772]",
+    "center": [
+      1181,
+      724
+    ]
+  },
+  {
+    "text": "34A FRANKEL AVENUE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1408,320][1672,416]",
+    "center": [
+      1540,
+      368
+    ]
+  },
+  {
+    "text": "Semi-Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1416,444][1664,476]",
+    "center": [
+      1540,
+      460
+    ]
+  },
+  {
+    "text": "Freehold",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,484][1503,516]",
+    "center": [
+      1455,
+      500
+    ]
+  },
+  {
+    "text": "4,380.95 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,516][1554,548]",
+    "center": [
+      1481,
+      532
+    ]
+  },
+  {
+    "text": "11 Mar 2005",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,548][1547,580]",
+    "center": [
+      1477,
+      564
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,580][1626,612]",
+    "center": [
+      1517,
+      596
+    ]
+  },
+  {
+    "text": "PP: $1,470,000 ($336 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,612][1672,676]",
+    "center": [
+      1540,
+      644
+    ]
+  },
+  {
+    "text": "Holding: 21yrs 4mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1515,676][1631,708]",
+    "center": [
+      1573,
+      692
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1408,676][1515,772]",
+    "center": [
+      1461,
+      724
+    ]
+  },
+  {
+    "text": "35 FRANKEL AVENUE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1688,336][1938,432]",
+    "center": [
+      1813,
+      384
+    ]
+  },
+  {
+    "text": "Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1696,444][1944,476]",
+    "center": [
+      1820,
+      460
+    ]
+  },
+  {
+    "text": "Freehold",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1688,484][1783,516]",
+    "center": [
+      1735,
+      500
+    ]
+  },
+  {
+    "text": "6,003.08 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1688,516][1834,548]",
+    "center": [
+      1761,
+      532
+    ]
+  },
+  {
+    "text": "01 Oct 2000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1688,548][1821,580]",
+    "center": [
+      1754,
+      564
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1688,580][1906,612]",
+    "center": [
+      1797,
+      596
+    ]
+  },
+  {
+    "text": "PP: $2,730,000 ($455 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1688,612][1952,676]",
+    "center": [
+      1820,
+      644
+    ]
+  },
+  {
+    "text": "Holding: 25yrs 9mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1795,676][1911,708]",
+    "center": [
+      1853,
+      692
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1688,676][1795,772]",
+    "center": [
+      1741,
+      724
+    ]
+  },
+  {
+    "text": "36 FRANKEL AVENUE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1968,336][2218,432]",
+    "center": [
+      2093,
+      384
+    ]
+  },
+  {
+    "text": "Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1976,444][2224,476]",
+    "center": [
+      2100,
+      460
+    ]
+  },
+  {
+    "text": "Freehold",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1968,484][2063,516]",
+    "center": [
+      2015,
+      500
+    ]
+  },
+  {
+    "text": "7,954.60 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1968,516][2114,548]",
+    "center": [
+      2041,
+      532
+    ]
+  },
+  {
+    "text": "11 Jun 2018",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1968,548][2104,580]",
+    "center": [
+      2036,
+      564
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1968,580][2186,612]",
+    "center": [
+      2077,
+      596
+    ]
+  },
+  {
+    "text": "PP: $8,604,000 ($1,082 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1968,612][2232,676]",
+    "center": [
+      2100,
+      644
+    ]
+  },
+  {
+    "text": "Holding: 8yrs 1mo",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2075,676][2165,708]",
+    "center": [
+      2120,
+      692
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[1968,676][2075,772]",
+    "center": [
+      2021,
+      724
+    ]
+  },
+  {
+    "text": "37 FRANKEL AVENUE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[2248,336][2498,432]",
+    "center": [
+      2373,
+      384
+    ]
+  },
+  {
+    "text": "Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2256,444][2504,476]",
+    "center": [
+      2380,
+      460
+    ]
+  },
+  {
+    "text": "Freehold",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2248,484][2343,516]",
+    "center": [
+      2295,
+      500
+    ]
+  },
+  {
+    "text": "6,003.08 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2248,516][2394,548]",
+    "center": [
+      2321,
+      532
+    ]
+  },
+  {
+    "text": "18 Apr 2022",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2248,548][2383,580]",
+    "center": [
+      2315,
+      564
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2248,580][2466,612]",
+    "center": [
+      2357,
+      596
+    ]
+  },
+  {
+    "text": "PP: $8,100,000 ($1,349 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2248,612][2512,676]",
+    "center": [
+      2380,
+      644
+    ]
+  },
+  {
+    "text": "Holding: 4yrs 2mos",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2355,676][2457,708]",
+    "center": [
+      2406,
+      692
+    ]
+  },
+  {
+    "text": "1 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[2248,676][2355,772]",
+    "center": [
+      2301,
+      724
+    ]
+  },
+  {
+    "text": "40 FRANKEL AVENUE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[2528,336][2560,432]",
+    "center": [
+      2544,
+      384
+    ]
+  },
+  {
+    "text": "Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2536,444][2560,476]",
+    "center": [
+      2548,
+      460
+    ]
+  },
+  {
+    "text": "Freehold",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2528,484][2560,516]",
+    "center": [
+      2544,
+      500
+    ]
+  },
+  {
+    "text": "7,925.53 sqft",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2528,516][2560,548]",
+    "center": [
+      2544,
+      532
+    ]
+  },
+  {
+    "text": "15 Nov 2019",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2528,548][2560,580]",
+    "center": [
+      2544,
+      564
+    ]
+  },
+  {
+    "text": "Est. SSD: Completed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2528,580][2560,612]",
+    "center": [
+      2544,
+      596
+    ]
+  },
+  {
+    "text": "PP: $11,500,000 ($1,451 psf)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2528,612][2560,676]",
+    "center": [
+      2544,
+      644
+    ]
+  },
+  {
+    "text": "2 Caveats",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": true,
+    "bounds": "[2528,676][2560,772]",
+    "center": [
+      2544,
+      724
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Google Map",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": true,
+    "bounds": "[0,796][2560,1376]",
+    "center": [
+      1280,
+      1086
+    ]
+  },
+  {
+    "text": "©2026 Google - Map data ©2026 Google",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2128,1343][2560,1376]",
+    "center": [
+      2344,
+      1359
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Filled.Home",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2464,1088][2512,1136]",
+    "center": [
+      2488,
+      1112
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Filled.Add",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2464,1184][2512,1232]",
+    "center": [
+      2488,
+      1208
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Filled.Remove",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2464,1280][2512,1328]",
+    "center": [
+      2488,
+      1304
+    ]
+  },
+  {
+    "text": "",
+    "desc": "StreetView action",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.ImageView",
+    "clickable": true,
+    "bounds": "[2456,804][2552,900]",
+    "center": [
+      2504,
+      852
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Back",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,168][80,216]",
+    "center": [
+      56,
+      192
+    ]
+  },
+  {
+    "text": "23 Frankel Avenue S(458151)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[908,156][1653,228]",
+    "center": [
+      1280,
+      192
+    ]
+  },
+  {
+    "text": "Market",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[212,1472][288,1504]",
+    "center": [
+      250,
+      1488
+    ]
+  },
+  {
+    "text": "Property Analysis",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[669,1472][861,1504]",
+    "center": [
+      765,
+      1488
+    ]
+  },
+  {
+    "text": "ProTrend",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1231,1472][1330,1504]",
+    "center": [
+      1280,
+      1488
+    ]
+  },
+  {
+    "text": "ProMap",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1753,1472][1837,1504]",
+    "center": [
+      1795,
+      1488
+    ]
+  },
+  {
+    "text": "More",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1472][2338,1504]",
+    "center": [
+      2310,
+      1488
+    ]
+  }
+]
