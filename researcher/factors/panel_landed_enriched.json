@@ -1,0 +1,455 @@
+{
+ "meta": {
+  "streets": 5
+ },
+ "streets": [
+  {
+   "street": "Alnwick (rosyth)",
+   "pp_panel": [],
+   "transactions": [
+    {
+     "address": "9 Alnwick Road",
+     "street": "Alnwick (rosyth)",
+     "type": "Detached House",
+     "tenure": "999 yrs from 01/01/1953",
+     "top": "2016",
+     "area_sqft": 4731.0,
+     "psf": 2099,
+     "price": 9930000,
+     "sale_type": "Resale",
+     "date": "29 Oct 2025"
+    },
+    {
+     "address": "15 Alnwick Road",
+     "street": "Alnwick (rosyth)",
+     "type": "Semi-Detached House",
+     "tenure": "999 yrs from 01/01/1953",
+     "top": "1997",
+     "area_sqft": 4794.0,
+     "psf": 1512,
+     "price": 7250000,
+     "sale_type": "Resale",
+     "date": "02 Oct 2025"
+    },
+    {
+     "address": "9 Alnwick Road",
+     "street": "Alnwick Road",
+     "type": "Detached House",
+     "tenure": "999 yrs from 01/01/1953",
+     "top": "2016",
+     "area_sqft": 4731.0,
+     "psf": 2099,
+     "price": 9930000,
+     "sale_type": "Resale"
+    },
+    {
+     "address": "15 Alnwick Road",
+     "street": "Alnwick Road",
+     "type": "Semi-Detached House",
+     "tenure": "999 yrs from 01/01/1953",
+     "top": "1997",
+     "area_sqft": 4794.0,
+     "psf": 1512,
+     "price": 7250000,
+     "sale_type": "Resale"
+    }
+   ],
+   "street_band": {
+    "low": "$7,250,000",
+    "avg": "$8,590,000",
+    "high": "$9,930,000",
+    "low_psf": 1512,
+    "avg_psf": 1806,
+    "high_psf": 2099
+   },
+   "n_pp": 0,
+   "n_txn": 4,
+   "onemap": {
+    "match": "ALNWICK ROAD",
+    "postal": "NIL"
+   },
+   "nearest_mrt": {
+    "name": "Lorong Chuan",
+    "km": 1.51
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 1,
+   "nearest_park": {
+    "name": "Bishan-Ang Mo Kio Park",
+    "km": 3.55
+   },
+   "nearest_mall": {
+    "name": "NEX",
+    "km": 1.61
+   },
+   "coast_km": 7.15
+  },
+  {
+   "street": "Frankel Avenue",
+   "pp_panel": [
+    {
+     "address": "23 Frankel Avenue",
+     "street": "Frankel Avenue",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "land_sqft": 6387.36,
+     "pp_date": "18 May 2026",
+     "pp_price": 14500000,
+     "pp_psf": 2270,
+     "holding": "1mo"
+    },
+    {
+     "address": "25 Frankel Avenue",
+     "street": "Frankel Avenue",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "land_sqft": 5534.85,
+     "pp_date": "02 Oct 2023",
+     "pp_price": 10300000,
+     "pp_psf": 1861,
+     "holding": "2yrs 9mos"
+    },
+    {
+     "address": "32 Frankel Avenue",
+     "street": "Frankel Avenue",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "land_sqft": 9224.75,
+     "pp_date": "03 Jul 2026",
+     "pp_price": 14000000,
+     "pp_psf": 1518,
+     "holding": "1w"
+    },
+    {
+     "address": "33 Frankel Avenue",
+     "street": "Frankel Avenue",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "land_sqft": 6003.08,
+     "pp_date": "29 Aug 2006",
+     "pp_price": 2228000,
+     "pp_psf": 371,
+     "holding": "19yrs 10mos"
+    },
+    {
+     "address": "34 Frankel Avenue",
+     "street": "Frankel Avenue",
+     "type": "Semi-Detached House",
+     "tenure": "Freehold",
+     "land_sqft": 4503.66,
+     "pp_date": "11 Aug 2005",
+     "pp_price": 1500000,
+     "pp_psf": 333,
+     "holding": "20yrs 11mos"
+    },
+    {
+     "address": "34A Frankel Avenue",
+     "street": "Frankel Avenue",
+     "type": "Semi-Detached House",
+     "tenure": "Freehold",
+     "land_sqft": 4380.95,
+     "pp_date": "11 Mar 2005",
+     "pp_price": 1470000,
+     "pp_psf": 336,
+     "holding": "21yrs 4mos"
+    },
+    {
+     "address": "35 Frankel Avenue",
+     "street": "Frankel Avenue",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "land_sqft": 6003.08,
+     "pp_date": "01 Oct 2000",
+     "pp_price": 2730000,
+     "pp_psf": 455,
+     "holding": "25yrs 9mos"
+    },
+    {
+     "address": "36 Frankel Avenue",
+     "street": "Frankel Avenue",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "land_sqft": 7954.6,
+     "pp_date": "11 Jun 2018",
+     "pp_price": 8604000,
+     "pp_psf": 1082,
+     "holding": "8yrs 1mo"
+    },
+    {
+     "address": "37 Frankel Avenue",
+     "street": "Frankel Avenue",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "land_sqft": 6003.08,
+     "pp_date": "18 Apr 2022",
+     "pp_price": 8100000,
+     "pp_psf": 1349,
+     "holding": "4yrs 2mos"
+    },
+    {
+     "address": "40 Frankel Avenue",
+     "street": "Frankel Avenue",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "land_sqft": 7925.53,
+     "pp_date": "15 Nov 2019",
+     "pp_price": 11500000,
+     "pp_psf": 1451
+    }
+   ],
+   "transactions": [],
+   "n_pp": 10,
+   "n_txn": 0,
+   "pp_psf_span": [
+    333,
+    2270
+   ],
+   "onemap": {
+    "match": "CALTEX FRANKEL AVENUE",
+    "postal": "458200"
+   },
+   "nearest_mrt": {
+    "name": "Kembangan",
+    "km": 0.92
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 1,
+   "nearest_park": {
+    "name": "East Coast Park",
+    "km": 0.66
+   },
+   "nearest_mall": {
+    "name": "Bedok Mall",
+    "km": 1.53
+   },
+   "coast_km": 0.66
+  },
+  {
+   "street": "Kingsmead (nanyang)",
+   "pp_panel": [],
+   "transactions": [
+    {
+     "address": "1 Kingsmead Road",
+     "street": "Kingsmead (nanyang)",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "top": "-",
+     "area_sqft": 12168.0,
+     "psf": 1808,
+     "price": 21998000,
+     "sale_type": "Resale",
+     "date": "30 Mar 2026"
+    },
+    {
+     "address": "2 Kingsmead Road",
+     "street": "Kingsmead (nanyang)",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "top": "1985",
+     "area_sqft": 11802.0,
+     "psf": 2271,
+     "price": 26800000,
+     "sale_type": "Resale",
+     "date": "18 Nov 2025"
+    },
+    {
+     "address": "1 Kingsmead Road",
+     "street": "Kingsmead (nanyang)",
+     "type": "Detached House",
+     "tenure": "-",
+     "top": "-",
+     "area_sqft": null,
+     "psf": null,
+     "price": 21988000,
+     "sale_type": "Resale",
+     "date": "03 Apr 2026"
+    },
+    {
+     "address": "1 Kingsmead Road",
+     "street": "Kingsmead Road",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "top": "-",
+     "area_sqft": 12168.0,
+     "psf": 1808,
+     "price": 21998000,
+     "sale_type": "Resale"
+    },
+    {
+     "address": "2 Kingsmead Road",
+     "street": "Kingsmead Road",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "top": "1985",
+     "area_sqft": 11802.0,
+     "psf": 2271,
+     "price": 26800000,
+     "sale_type": "Resale"
+    },
+    {
+     "address": "1 Kingsmead Road",
+     "street": "Kingsmead Road",
+     "type": "Detached House",
+     "tenure": "-",
+     "top": "-",
+     "area_sqft": 0.0,
+     "psf": null,
+     "price": 21988000,
+     "sale_type": "Resale"
+    }
+   ],
+   "street_band": {
+    "low": "$21,998,000",
+    "avg": "$24,399,000",
+    "high": "$26,800,000",
+    "low_psf": 1808,
+    "avg_psf": 2040,
+    "high_psf": 2271
+   },
+   "n_pp": 0,
+   "n_txn": 6,
+   "onemap": {
+    "match": "KINGSMEAD ROAD",
+    "postal": "NIL"
+   },
+   "nearest_mrt": {
+    "name": "Farrer Road",
+    "km": 0.39
+   },
+   "popular_pri_1km": [
+    "Nanyang Primary School"
+   ],
+   "n_popular_pri_1km": 1,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "Singapore Botanic Gardens",
+    "km": 1.16
+   },
+   "nearest_mall": {
+    "name": "Holland Village Shopping Centre",
+    "km": 1.55
+   },
+   "coast_km": 5.39
+  },
+  {
+   "street": "Nearby (nanyang)",
+   "pp_panel": [],
+   "transactions": [
+    {
+     "address": "1 Kingsmead Road",
+     "street": "Nearby (nanyang)",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "top": "-",
+     "area_sqft": 12168.0,
+     "psf": 1808,
+     "price": 21998000,
+     "sale_type": "Resale",
+     "date": "30 Mar 2026"
+    },
+    {
+     "address": "2 Kingsmead Road",
+     "street": "Nearby (nanyang)",
+     "type": "Detached House",
+     "tenure": "Freehold",
+     "top": "1985",
+     "area_sqft": 11802.0,
+     "psf": 2271,
+     "price": 26800000,
+     "sale_type": "Resale",
+     "date": "18 Nov 2025"
+    },
+    {
+     "address": "1 Kingsmead Road",
+     "street": "Nearby (nanyang)",
+     "type": "Detached House",
+     "tenure": "-",
+     "top": "-",
+     "area_sqft": null,
+     "psf": null,
+     "price": 21988000,
+     "sale_type": "Resale",
+     "date": "03 Apr 2026"
+    }
+   ],
+   "n_pp": 0,
+   "n_txn": 3,
+   "onemap": {
+    "match": "KINGSMEAD ROAD",
+    "postal": "NIL"
+   },
+   "nearest_mrt": {
+    "name": "Farrer Road",
+    "km": 0.39
+   },
+   "popular_pri_1km": [
+    "Nanyang Primary School"
+   ],
+   "n_popular_pri_1km": 1,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "Singapore Botanic Gardens",
+    "km": 1.16
+   },
+   "nearest_mall": {
+    "name": "Holland Village Shopping Centre",
+    "km": 1.55
+   },
+   "coast_km": 5.39
+  },
+  {
+   "street": "Nearby (rosyth)",
+   "pp_panel": [],
+   "transactions": [
+    {
+     "address": "9 Alnwick Road",
+     "street": "Nearby (rosyth)",
+     "type": "Detached House",
+     "tenure": "999 yrs from 01/01/1953",
+     "top": "2016",
+     "area_sqft": 4731.0,
+     "psf": 2099,
+     "price": 9930000,
+     "sale_type": "Resale",
+     "date": "29 Oct 2025"
+    },
+    {
+     "address": "15 Alnwick Road",
+     "street": "Nearby (rosyth)",
+     "type": "Semi-Detached House",
+     "tenure": "999 yrs from 01/01/1953",
+     "top": "1997",
+     "area_sqft": 4794.0,
+     "psf": 1512,
+     "price": 7250000,
+     "sale_type": "Resale",
+     "date": "02 Oct 2025"
+    }
+   ],
+   "n_pp": 0,
+   "n_txn": 2,
+   "onemap": {
+    "match": "ALNWICK ROAD",
+    "postal": "NIL"
+   },
+   "nearest_mrt": {
+    "name": "Lorong Chuan",
+    "km": 1.51
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 1,
+   "nearest_park": {
+    "name": "Bishan-Ang Mo Kio Park",
+    "km": 3.55
+   },
+   "nearest_mall": {
+    "name": "NEX",
+    "km": 1.61
+   },
+   "coast_km": 7.15
+  }
+ ]
+}

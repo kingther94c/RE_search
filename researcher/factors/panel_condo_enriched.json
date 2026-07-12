@@ -1,0 +1,1385 @@
+{
+ "meta": {
+  "n": 27,
+  "sources": [
+   "nearby tables",
+   "anchor info caps",
+   "tier1_comps",
+   "deep digests"
+  ]
+ },
+ "projects": [
+  {
+   "project": "8@BT",
+   "type": "Condominium",
+   "region": "RCR",
+   "district": "D21 - Upper Bukit Timah, Clementi Park, Ulu Pandan",
+   "subtown": "Anak Bukit",
+   "top": "2027",
+   "tenure": "99 yrs from 13/02/2023",
+   "land_size": "49,632 sqft / 4,611 sqm",
+   "gfa": "148,907 sqft / 13,834 sqm",
+   "plot_ratio": "3.0",
+   "total_units": "160",
+   "developer": "Bukit One Pte. Ltd.",
+   "sale_band": {
+    "window": "2Y",
+    "low": "$1,338,000",
+    "avg": "$2,299,580",
+    "high": "$4,180,000",
+    "low_psf": "$2,527 PSF",
+    "avg_psf": "$2,735 PSF",
+    "high_psf": "$3,033 PSF"
+   },
+   "tier1_comps_slug": "8atbt",
+   "psf_low": 2527,
+   "psf_high": 3033,
+   "psf_source": "sale band (2Y window)",
+   "onemap": {
+    "match": "8@BT (U/C)",
+    "postal": "589943"
+   },
+   "nearest_mrt": {
+    "name": "Beauty World",
+    "km": 0.14
+   },
+   "popular_pri_1km": [
+    "Pei Hwa Presbyterian Primary School"
+   ],
+   "n_popular_pri_1km": 1,
+   "n_popular_pri_2km": 1,
+   "nearest_park": {
+    "name": "Bukit Timah Nature Reserve",
+    "km": 1.46
+   },
+   "nearest_mall": {
+    "name": "Beauty World Centre",
+    "km": 0.12
+   },
+   "coast_km": 5.21,
+   "district_no": "D21 - Upper Bukit Timah, Clementi Park, Ulu Pandan",
+   "segment": "OCR"
+  },
+  {
+   "project": "Amber 45",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 2021,
+   "total_units": 139,
+   "unit_types": "2, 3, 4",
+   "size_range_sqft": "600 - 1,800",
+   "psf_low": 2329,
+   "psf_high": 2831,
+   "sales_range_raw": "$1,610,000 - $3,785,000 PSF: $2,329 - $2,831",
+   "sales_volume": 20,
+   "rent_range_raw": "$4,080 - $10,500 PSF: $5.41 - $8.46",
+   "rent_psf_low": 5.41,
+   "rent_psf_high": 8.46,
+   "yield_low_pct": 1.29,
+   "yield_high_pct": 7.83,
+   "yield_avg_pct": 2.93,
+   "rental_volume": 65,
+   "dist_m": 145.0,
+   "seen_from_anchor": "amberpark",
+   "onemap": {
+    "match": "AMBER 45",
+    "postal": "439886"
+   },
+   "nearest_mrt": {
+    "name": "Marine Parade",
+    "km": 0.41
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "East Coast Park",
+    "km": 2.86
+   },
+   "nearest_mall": {
+    "name": "Parkway Parade",
+    "km": 0.47
+   },
+   "coast_km": 2.04,
+   "district_no": 15,
+   "segment": "RCR"
+  },
+  {
+   "project": "Amber Park",
+   "type": "Condominium",
+   "region": "RCR",
+   "district": "D15 - Katong, Joo Chiat, Amber Road",
+   "subtown": "Marine Parade",
+   "top": "2023",
+   "tenure": "Freehold",
+   "land_size": "213,674 sqft / 19,851 sqm",
+   "gfa": "658,116 sqft / 61,141 sqm",
+   "plot_ratio": "2.8",
+   "total_units": "592",
+   "developer": "Aquarius Properties Pte. Ltd.",
+   "is_anchor": true,
+   "anchor_slug": "amberpark",
+   "sale_band_5y": {
+    "low": "$1,186,540",
+    "avg": "$3,146,284",
+    "high": "$13,000,000",
+    "low_psf": 1956,
+    "avg_psf": 2594,
+    "high_psf": 3085
+   },
+   "psf_low": 1956,
+   "psf_high": 3085,
+   "psf_source": "5Y sale band (anchor backfill)",
+   "onemap": {
+    "match": "AMBER PARK",
+    "postal": "439961"
+   },
+   "nearest_mrt": {
+    "name": "Tanjong Katong",
+    "km": 0.24
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 1,
+   "nearest_park": {
+    "name": "East Coast Park",
+    "km": 3.16
+   },
+   "nearest_mall": {
+    "name": "Parkway Parade",
+    "km": 0.68
+   },
+   "coast_km": 1.82,
+   "district_no": "D15 - Katong, Joo Chiat, Amber Road",
+   "segment": "RCR"
+  },
+  {
+   "project": "Dairy Farm Residences",
+   "tenure_raw": "99 yrs from 05/12/2018",
+   "tenure_type": "99y",
+   "lease_start": 2018,
+   "top_year": 2024,
+   "total_units": "460",
+   "unit_types": "2, 3, 4",
+   "size_range_sqft": "600 - 1,474",
+   "psf_low": 1359,
+   "psf_high": 1999,
+   "sales_range_raw": "$1,020,400 - $2,608,000 PSF: $1,359 - $1,999",
+   "sales_volume": 405,
+   "rent_range_raw": "$3,000 - $7,300 PSF: $3.16 - $6.60",
+   "rent_psf_low": 3.16,
+   "rent_psf_high": 6.6,
+   "yield_low_pct": 1.38,
+   "yield_high_pct": 8.58,
+   "yield_avg_pct": 3.35,
+   "rental_volume": 287,
+   "seen_from_anchor": "dairyfarm",
+   "type": "Apartment, Condominium",
+   "region": "OCR",
+   "district": "D23 - Hillview, Dairy Farm, Bukit Panjang, Choa Chu Kang",
+   "subtown": "Dairy Farm",
+   "top": "2024",
+   "tenure": "99 yrs from 05/12/2018",
+   "land_size": "211,489 sqft / 19,648 sqm",
+   "gfa": "487,142 sqft / 45,257 sqm",
+   "plot_ratio": "2.1",
+   "developer": "UE Dairy Farm Pte. Ltd.",
+   "is_anchor": true,
+   "anchor_slug": "dairyfarm",
+   "sale_band_5y": {
+    "low": "$1,020,400",
+    "avg": "$1,421,760",
+    "high": "$2,608,000",
+    "low_psf": 1359,
+    "avg_psf": 1671,
+    "high_psf": 1999
+   },
+   "onemap": {
+    "match": "DAIRY FARM RESIDENCES",
+    "postal": "677624"
+   },
+   "nearest_mrt": {
+    "name": "Hillview",
+    "km": 0.87
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 0,
+   "nearest_park": {
+    "name": "Zhenghua Nature Park",
+    "km": 0.44
+   },
+   "nearest_mall": {
+    "name": "The Rail Mall",
+    "km": 1.23
+   },
+   "coast_km": 7.9,
+   "district_no": "D23 - Hillview, Dairy Farm, Bukit Panjang, Choa Chu Kang",
+   "segment": "OCR"
+  },
+  {
+   "project": "Esparina Residences",
+   "tenure_raw": "99 yrs from 02/06/2010",
+   "tenure_type": "99y",
+   "lease_start": 2010,
+   "top_year": 2013,
+   "total_units": 573,
+   "unit_types": "2, 3, 4",
+   "size_range_sqft": "800 - 1,900",
+   "psf_low": 901,
+   "psf_high": 1820,
+   "sales_range_raw": "$938,000 - $2,650,000 PSF: $901 - $1,820",
+   "sales_volume": 180,
+   "rent_range_raw": "$1,600 - $6,300 PSF: $1.39 - $5.18",
+   "rent_psf_low": 1.39,
+   "rent_psf_high": 5.18,
+   "yield_low_pct": 0.72,
+   "yield_high_pct": 8.06,
+   "yield_avg_pct": 3.08,
+   "rental_volume": 236,
+   "dist_m": 188.0,
+   "seen_from_anchor": "sengkanggrand",
+   "onemap": {
+    "match": "ESPARINA RESIDENCES",
+    "postal": "544998"
+   },
+   "nearest_mrt": {
+    "name": "Buangkok",
+    "km": 0.27
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 1,
+   "nearest_park": {
+    "name": "Sengkang Riverside Park",
+    "km": 2.11
+   },
+   "nearest_mall": {
+    "name": "Hougang Mall",
+    "km": 1.08
+   },
+   "coast_km": 8.0,
+   "district_no": 19,
+   "segment": "OCR"
+  },
+  {
+   "project": "Gallop Gables",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 1997,
+   "total_units": 140,
+   "unit_types": "2, 3, 4",
+   "size_range_sqft": "1,100 - 3,500",
+   "psf_low": 1923,
+   "psf_high": 2421,
+   "sales_range_raw": "$2,980,000 - $6,880,000 PSF: $1,923 - $2,421",
+   "sales_volume": 6,
+   "rent_range_raw": "$4,300 - $17,000 PSF: $3.16 - $6.18",
+   "rent_psf_low": 3.16,
+   "rent_psf_high": 6.18,
+   "yield_low_pct": 0.75,
+   "yield_high_pct": 6.85,
+   "yield_avg_pct": 2.13,
+   "rental_volume": 76,
+   "dist_m": 0.0,
+   "seen_from_anchor": "gallop",
+   "deep_digest": "gallop_gables_digest.json",
+   "fitted_trend_pa": 0.04675,
+   "fitted_floor_premium": 0.003,
+   "review_overall": 8.55,
+   "onemap": {
+    "match": "GALLOP GABLES",
+    "postal": "268854"
+   },
+   "nearest_mrt": {
+    "name": "Farrer Road",
+    "km": 0.37
+   },
+   "popular_pri_1km": [
+    "Nanyang Primary School"
+   ],
+   "n_popular_pri_1km": 1,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "Singapore Botanic Gardens",
+    "km": 0.52
+   },
+   "nearest_mall": {
+    "name": "Holland Village Shopping Centre",
+    "km": 1.53
+   },
+   "coast_km": 5.34,
+   "district_no": 10,
+   "segment": "CCR"
+  },
+  {
+   "project": "Gallop Green",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 2002,
+   "total_units": 53,
+   "unit_types": "2, 3, 4, 5+",
+   "size_range_sqft": "2,900 - 4,400",
+   "psf_low": 2622,
+   "psf_high": 2672,
+   "sales_range_raw": "$8,580,000 - $8,630,000 PSF: $2,622 - $2,672",
+   "sales_volume": 2,
+   "rent_range_raw": "$11,850 - $21,000 PSF: $3.65 - $5.87",
+   "rent_psf_low": 3.65,
+   "rent_psf_high": 5.87,
+   "yield_low_pct": 1.65,
+   "yield_high_pct": 2.94,
+   "yield_avg_pct": 2.25,
+   "rental_volume": 19,
+   "dist_m": 121.0,
+   "seen_from_anchor": "gallop",
+   "onemap": {
+    "match": "GALLOP GREEN",
+    "postal": "257537"
+   },
+   "nearest_mrt": {
+    "name": "Farrer Road",
+    "km": 0.25
+   },
+   "popular_pri_1km": [
+    "Nanyang Primary School"
+   ],
+   "n_popular_pri_1km": 1,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "Singapore Botanic Gardens",
+    "km": 0.6
+   },
+   "nearest_mall": {
+    "name": "Holland Village Shopping Centre",
+    "km": 1.52
+   },
+   "coast_km": 5.45,
+   "district_no": 10,
+   "segment": "CCR"
+  },
+  {
+   "project": "Leedon Green",
+   "type": "Condominium",
+   "region": "CCR",
+   "district": "D10 - Ardmore, Bukit Timah, Holland Road, Tanglin",
+   "subtown": "Farrer Court",
+   "top": "2024",
+   "tenure": "Freehold",
+   "land_size": "316,706 sqft / 29,423 sqm",
+   "gfa": "575,104 sqft / 53,429 sqm",
+   "plot_ratio": "1.6",
+   "total_units": "638",
+   "developer": "Asia Radiant Pte. Ltd.",
+   "sale_band": {
+    "window": "2Y",
+    "low": "$1,290,000",
+    "avg": "$2,646,169",
+    "high": "$5,200,000",
+    "low_psf": "$2,581 PSF",
+    "avg_psf": "$2,959 PSF",
+    "high_psf": "$3,496 PSF"
+   },
+   "tier1_comps_slug": "leedongreen",
+   "psf_low": 2581,
+   "psf_high": 3496,
+   "psf_source": "sale band (2Y window)",
+   "onemap": {
+    "match": "LEEDON GREEN",
+    "postal": "266222"
+   },
+   "nearest_mrt": {
+    "name": "Farrer Road",
+    "km": 0.65
+   },
+   "popular_pri_1km": [
+    "Nanyang Primary School"
+   ],
+   "n_popular_pri_1km": 1,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "Singapore Botanic Gardens",
+    "km": 1.07
+   },
+   "nearest_mall": {
+    "name": "Holland Village Shopping Centre",
+    "km": 0.96
+   },
+   "coast_km": 4.89,
+   "district_no": "D10 - Ardmore, Bukit Timah, Holland Road, Tanglin",
+   "segment": "CCR"
+  },
+  {
+   "project": "One Pearl Bank",
+   "tenure_raw": "99 yrs from 01/03/2019",
+   "tenure_type": "99y",
+   "lease_start": 2019,
+   "top_year": 2024,
+   "total_units": "774",
+   "unit_types": "1, 2, 3, 4",
+   "size_range_sqft": "430 - 2,787",
+   "psf_low": 2089,
+   "psf_high": 3009,
+   "sales_range_raw": "$953,000 - $7,880,000 PSF: $2,089 - $3,009",
+   "sales_volume": 383,
+   "rent_range_raw": "$3,000 - $10,800 PSF: $5.45 - $9.54",
+   "rent_psf_low": 5.45,
+   "rent_psf_high": 9.54,
+   "yield_low_pct": 0.46,
+   "yield_high_pct": 13.6,
+   "yield_avg_pct": 2.79,
+   "rental_volume": 349,
+   "seen_from_anchor": "onepearl",
+   "type": "Apartment, Condominium",
+   "region": "RCR",
+   "district": "D3 - Queenstown, Tiong Bahru",
+   "subtown": "Pearl's Hill",
+   "top": "2024",
+   "tenure": "99 yrs from 01/03/2019",
+   "land_size": "82,376 sqft / 7,653 sqm",
+   "gfa": "674,886 sqft / 62,699 sqm",
+   "plot_ratio": "7.2",
+   "developer": "Areca Investment Pte Ltd",
+   "is_anchor": true,
+   "anchor_slug": "onepearl",
+   "sale_band_5y": {
+    "low": "$953,000",
+    "avg": "$2,321,885",
+    "high": "$7,880,000",
+    "low_psf": 2089,
+    "avg_psf": 2584,
+    "high_psf": 3009
+   },
+   "deep_digest": "onepearl_0316_digest.json",
+   "fitted_trend_pa": 0.02230092963797307,
+   "fitted_floor_premium": 0.004411093649051524,
+   "review_overall": 8.7,
+   "onemap": {
+    "match": "ONE PEARL BANK",
+    "postal": "169016"
+   },
+   "nearest_mrt": {
+    "name": "Outram Park",
+    "km": 0.3
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 1,
+   "nearest_park": {
+    "name": "Pearl's Hill City Park",
+    "km": 0.0
+   },
+   "nearest_mall": {
+    "name": "Chinatown Point",
+    "km": 0.59
+   },
+   "coast_km": 3.42,
+   "district_no": "D3 - Queenstown, Tiong Bahru",
+   "segment": "RCR"
+  },
+  {
+   "project": "Parc Esta",
+   "tenure_raw": "99 yrs from 12/07/2018",
+   "tenure_type": "99y",
+   "lease_start": 2018,
+   "top_year": 2022,
+   "total_units": "1399",
+   "unit_types": "1, 2, 3, 4, 5+",
+   "size_range_sqft": "400 - 1,474",
+   "psf_low": 1760,
+   "psf_high": 2635,
+   "sales_range_raw": "$830,000 - $3,600,000 PSF: $1,760 - $2,635",
+   "sales_volume": 480,
+   "rent_range_raw": "$2,666 - $10,000 PSF: $4.19 - $10",
+   "rent_psf_low": 4.19,
+   "rent_psf_high": 10.0,
+   "yield_low_pct": 0.89,
+   "yield_high_pct": 14.46,
+   "yield_avg_pct": 3.34,
+   "rental_volume": 1363,
+   "dist_m": 0.0,
+   "seen_from_anchor": "parcesta",
+   "type": "Apartment, Condominium",
+   "region": "RCR",
+   "district": "D14 - Geylang, Eunos",
+   "subtown": "Geylang East",
+   "top": "2022",
+   "tenure": "99 yrs from 12/07/2018",
+   "land_size": "376,715 sqft / 34,998 sqm",
+   "gfa": "1,159,962 sqft / 107,764 sqm",
+   "plot_ratio": "2.8",
+   "developer": "MCL Land (Everbright) Pte. Ltd.",
+   "is_anchor": true,
+   "anchor_slug": "parcesta",
+   "sale_band_5y": {
+    "low": "$830,000",
+    "avg": "$1,650,620",
+    "high": "$3,600,000",
+    "low_psf": 1760,
+    "avg_psf": 2199,
+    "high_psf": 2635
+   },
+   "onemap": {
+    "match": "PARC ESTA",
+    "postal": "408968"
+   },
+   "nearest_mrt": {
+    "name": "Eunos",
+    "km": 0.23
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "East Coast Park",
+    "km": 2.35
+   },
+   "nearest_mall": {
+    "name": "KINEX",
+    "km": 1.09
+   },
+   "coast_km": 2.35,
+   "district_no": "D14 - Geylang, Eunos",
+   "segment": "RCR"
+  },
+  {
+   "project": "Pollen & Bleu",
+   "tenure_raw": "99 yrs from 24/09/2012",
+   "tenure_type": "99y",
+   "lease_start": 2012,
+   "top_year": 2017,
+   "total_units": 106,
+   "unit_types": "1, 2, 3, 4",
+   "size_range_sqft": "500 - 2,200",
+   "psf_low": 1753,
+   "psf_high": 2179,
+   "sales_range_raw": "$1,700,000 - $3,025,000 PSF: $1,753 - $2,179",
+   "sales_volume": 9,
+   "rent_range_raw": "$3,500 - $11,000 PSF: $4.10 - $6.59",
+   "rent_psf_low": 4.1,
+   "rent_psf_high": 6.59,
+   "yield_low_pct": 1.39,
+   "yield_high_pct": 7.76,
+   "yield_avg_pct": 2.81,
+   "rental_volume": 62,
+   "dist_m": 162.0,
+   "seen_from_anchor": "gallop",
+   "onemap": {
+    "match": "FARRER DRIVE",
+    "postal": "NIL"
+   },
+   "nearest_mrt": {
+    "name": "Farrer Road",
+    "km": 0.34
+   },
+   "popular_pri_1km": [
+    "Nanyang Primary School"
+   ],
+   "n_popular_pri_1km": 1,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "Singapore Botanic Gardens",
+    "km": 0.75
+   },
+   "nearest_mall": {
+    "name": "Holland Village Shopping Centre",
+    "km": 1.32
+   },
+   "coast_km": 5.25,
+   "district_no": null,
+   "segment": null
+  },
+  {
+   "project": "Royalgreen",
+   "type": "Condominium",
+   "region": "CCR",
+   "district": "D10 - Ardmore, Bukit Timah, Holland Road, Tanglin",
+   "subtown": "Holland Road",
+   "top": "2021",
+   "tenure": "Freehold",
+   "land_size": "174,170 sqft / 16,181 sqm",
+   "gfa": "268,225 sqft / 24,919 sqm",
+   "plot_ratio": "1.4",
+   "total_units": "285",
+   "developer": "Sky Top Investments Pte. Ltd.",
+   "sale_band": {
+    "window": "2Y",
+    "low": "$1,730,000",
+    "avg": "$2,401,324",
+    "high": "$3,980,000",
+    "low_psf": "$2,592 PSF",
+    "avg_psf": "$2,806 PSF",
+    "high_psf": "$2,981 PSF"
+   },
+   "tier1_comps_slug": "royalgreen",
+   "psf_low": 2592,
+   "psf_high": 2981,
+   "psf_source": "sale band (2Y window)",
+   "onemap": {
+    "match": "ROYALGREEN",
+    "postal": "279996"
+   },
+   "nearest_mrt": {
+    "name": "Sixth Avenue",
+    "km": 0.31
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 3,
+   "nearest_park": {
+    "name": "Singapore Botanic Gardens",
+    "km": 2.86
+   },
+   "nearest_mall": {
+    "name": "Holland Village Shopping Centre",
+    "km": 2.29
+   },
+   "coast_km": 5.16,
+   "district_no": "D10 - Ardmore, Bukit Timah, Holland Road, Tanglin",
+   "segment": "CCR"
+  },
+  {
+   "project": "Sengkang Grand Residences",
+   "tenure_raw": "99 yrs from 13/11/2018",
+   "tenure_type": "99y",
+   "lease_start": 2018,
+   "top_year": 2023,
+   "total_units": "680",
+   "unit_types": "1, 2, 3, 4",
+   "size_range_sqft": "400 - 1,400",
+   "psf_low": 1631,
+   "psf_high": 2224,
+   "sales_range_raw": "$888,000 - $2,800,000 PSF: $1,631 - $2,224",
+   "sales_volume": 367,
+   "rent_range_raw": "$2,800 - $7,100 PSF: $4.19 - $7.78",
+   "rent_psf_low": 4.19,
+   "rent_psf_high": 7.78,
+   "yield_low_pct": 1.2,
+   "yield_high_pct": 9.59,
+   "yield_avg_pct": 2.69,
+   "rental_volume": 294,
+   "dist_m": 0.0,
+   "seen_from_anchor": "sengkanggrand",
+   "type": "Apartment, Condominium",
+   "region": "OCR",
+   "district": "D19 - Serangoon Garden, Hougang, Punggol",
+   "subtown": "Compassvale",
+   "top": "2023",
+   "tenure": "99 yrs from 13/11/2018",
+   "land_size": "401,009 sqft / 37,255 sqm",
+   "gfa": "905,417 sqft / 84,116 sqm",
+   "plot_ratio": "2.1",
+   "developer": "Siena Residential Development Pte. Ltd., Siena Trustee Pte. Ltd. (as Trustee-Manager of Siena Commercial Trust)",
+   "is_anchor": true,
+   "anchor_slug": "sengkanggrand",
+   "sale_band_5y": {
+    "low": "$888,000",
+    "avg": "$1,635,783",
+    "high": "$2,800,000",
+    "low_psf": 1631,
+    "avg_psf": 1851,
+    "high_psf": 2224
+   },
+   "onemap": {
+    "match": "SENGKANG GRAND RESIDENCES",
+    "postal": "544574"
+   },
+   "nearest_mrt": {
+    "name": "Buangkok",
+    "km": 0.14
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 1,
+   "nearest_park": {
+    "name": "Sengkang Riverside Park",
+    "km": 2.1
+   },
+   "nearest_mall": {
+    "name": "Compass One",
+    "km": 1.09
+   },
+   "coast_km": 7.89,
+   "district_no": "D19 - Serangoon Garden, Hougang, Punggol",
+   "segment": "OCR"
+  },
+  {
+   "project": "Sixth Avenue Residences",
+   "type": "Condominium",
+   "region": "CCR",
+   "district": "D10 - Ardmore, Bukit Timah, Holland Road, Tanglin",
+   "subtown": "Holland Road",
+   "top": "2010",
+   "tenure": "Freehold",
+   "land_size": "172,825 sqft / 16,056 sqm",
+   "gfa": "248,560 sqft / 23,092 sqm",
+   "plot_ratio": "1.4",
+   "total_units": "175",
+   "developer": "Avenue Park Development Pte Ltd",
+   "sale_band": {
+    "window": "2Y",
+    "low": "$2,250,000",
+    "avg": "$3,026,161",
+    "high": "$4,200,000",
+    "low_psf": "$1,612 PSF",
+    "avg_psf": "$2,154 PSF",
+    "high_psf": "$2,359 PSF"
+   },
+   "tier1_comps_slug": "sixthave",
+   "psf_low": 1612,
+   "psf_high": 2359,
+   "psf_source": "sale band (2Y window)",
+   "onemap": {
+    "match": "THE SIXTH AVENUE RESIDENCES",
+    "postal": "276545"
+   },
+   "nearest_mrt": {
+    "name": "Sixth Avenue",
+    "km": 0.61
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 3,
+   "nearest_park": {
+    "name": "Singapore Botanic Gardens",
+    "km": 2.75
+   },
+   "nearest_mall": {
+    "name": "Holland Village Shopping Centre",
+    "km": 1.92
+   },
+   "coast_km": 4.77,
+   "district_no": "D10 - Ardmore, Bukit Timah, Holland Road, Tanglin",
+   "segment": "CCR"
+  },
+  {
+   "project": "Sky Everton",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 2023,
+   "total_units": 262,
+   "unit_types": "1, 2, 3, 4, 5+",
+   "size_range_sqft": "400 - 2,300",
+   "psf_low": 2303,
+   "psf_high": 3406,
+   "sales_range_raw": "$1,200,000 - $7,588,000 PSF: $2,303 - $3,406",
+   "sales_volume": 69,
+   "rent_range_raw": "$3,500 - $11,900 PSF: $5.29 - $11.63",
+   "rent_psf_low": 5.29,
+   "rent_psf_high": 11.63,
+   "yield_low_pct": 0.55,
+   "yield_high_pct": 11.9,
+   "yield_avg_pct": 2.15,
+   "rental_volume": 244,
+   "seen_from_anchor": "spottiswoode",
+   "onemap": {
+    "match": "SKY EVERTON",
+    "postal": "089396"
+   },
+   "nearest_mrt": {
+    "name": "Cantonment",
+    "km": 0.36
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 0,
+   "nearest_park": {
+    "name": "Pearl's Hill City Park",
+    "km": 0.81
+   },
+   "nearest_mall": {
+    "name": "100 AM",
+    "km": 0.61
+   },
+   "coast_km": 3.62,
+   "district_no": 2,
+   "segment": "CCR"
+  },
+  {
+   "project": "Sommerville Grandeur",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 1996,
+   "total_units": 96,
+   "unit_types": "2, 3",
+   "size_range_sqft": "1,100 - 2,000",
+   "psf_low": 2115,
+   "psf_high": 2260,
+   "sales_range_raw": "$2,700,000 - $4,007,700 PSF: $2,115 - $2,260",
+   "sales_volume": 4,
+   "rent_range_raw": "$4,000 - $9,000 PSF: $2.81 - $4.86",
+   "rent_psf_low": 2.81,
+   "rent_psf_high": 4.86,
+   "yield_low_pct": 1.2,
+   "yield_high_pct": 4.0,
+   "yield_avg_pct": 2.26,
+   "rental_volume": 57,
+   "dist_m": 78.0,
+   "seen_from_anchor": "gallop",
+   "onemap": {
+    "match": "SOMMERVILLE GRANDEUR",
+    "postal": "259275"
+   },
+   "nearest_mrt": {
+    "name": "Farrer Road",
+    "km": 0.18
+   },
+   "popular_pri_1km": [
+    "Nanyang Primary School"
+   ],
+   "n_popular_pri_1km": 1,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "Singapore Botanic Gardens",
+    "km": 0.77
+   },
+   "nearest_mall": {
+    "name": "Holland Village Shopping Centre",
+    "km": 1.41
+   },
+   "coast_km": 5.34,
+   "district_no": 10,
+   "segment": "CCR"
+  },
+  {
+   "project": "Spottiswoode 18",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 2015,
+   "total_units": 251,
+   "unit_types": "1, 2",
+   "size_range_sqft": "300 - 1,400",
+   "psf_low": 1433,
+   "psf_high": 2529,
+   "sales_range_raw": "$850,000 - $2,048,000 PSF: $1,433 - $2,529",
+   "sales_volume": 53,
+   "rent_range_raw": "$2,000 - $6,000 PSF: $3.42 - $11.43",
+   "rent_psf_low": 3.42,
+   "rent_psf_high": 11.43,
+   "yield_low_pct": 1.17,
+   "yield_high_pct": 8.47,
+   "yield_avg_pct": 3.47,
+   "rental_volume": 768,
+   "dist_m": 49.0,
+   "seen_from_anchor": "spottiswoode",
+   "onemap": {
+    "match": "SPOTTISWOODE 18",
+    "postal": "088642"
+   },
+   "nearest_mrt": {
+    "name": "Cantonment",
+    "km": 0.31
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 0,
+   "nearest_park": {
+    "name": "Pearl's Hill City Park",
+    "km": 0.86
+   },
+   "nearest_mall": {
+    "name": "100 AM",
+    "km": 0.67
+   },
+   "coast_km": 3.69,
+   "district_no": 2,
+   "segment": "CCR"
+  },
+  {
+   "project": "Spottiswoode Residences",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 2014,
+   "total_units": 351,
+   "unit_types": "1, 2, 3",
+   "size_range_sqft": "500 - 2,700",
+   "psf_low": 1964,
+   "psf_high": 2582,
+   "sales_range_raw": "$1,197,000 - $3,250,000 PSF: $1,964 - $2,582",
+   "sales_volume": 64,
+   "rent_range_raw": "$2,700 - $12,500 PSF: $3.14 - $8.73",
+   "rent_psf_low": 3.14,
+   "rent_psf_high": 8.73,
+   "yield_low_pct": 1.0,
+   "yield_high_pct": 12.53,
+   "yield_avg_pct": 3.06,
+   "rental_volume": 917,
+   "seen_from_anchor": "spottiswoode",
+   "onemap": {
+    "match": "SPOTTISWOODE RESIDENCES",
+    "postal": "088660"
+   },
+   "nearest_mrt": {
+    "name": "Cantonment",
+    "km": 0.27
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 0,
+   "nearest_park": {
+    "name": "Pearl's Hill City Park",
+    "km": 0.92
+   },
+   "nearest_mall": {
+    "name": "100 AM",
+    "km": 0.74
+   },
+   "coast_km": 3.77,
+   "district_no": 2,
+   "segment": "CCR"
+  },
+  {
+   "project": "Spottiswoode Suites",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 2017,
+   "total_units": "183",
+   "unit_types": "1, 2, 3",
+   "size_range_sqft": "400 - 1,500",
+   "psf_low": 1571,
+   "psf_high": 2581,
+   "sales_range_raw": "$970,000 - $2,500,000 PSF: $1,571 - $2,581",
+   "sales_volume": 43,
+   "rent_range_raw": "$2,200 - $7,000 PSF: $3.37 - $9.11",
+   "rent_psf_low": 3.37,
+   "rent_psf_high": 9.11,
+   "yield_low_pct": 1.06,
+   "yield_high_pct": 8.66,
+   "yield_avg_pct": 3.25,
+   "rental_volume": 473,
+   "dist_m": 0.0,
+   "seen_from_anchor": "spottiswoode",
+   "type": "Apartment, Condominium",
+   "region": "RCR",
+   "district": "D2 - Anson, Tanjong Pagar",
+   "subtown": "Everton Park",
+   "top": "2017",
+   "tenure": "Freehold",
+   "land_size": "38,911 sqft / 3,615 sqm",
+   "gfa": "-",
+   "plot_ratio": "2.8",
+   "developer": "Spottiswoode Development Pte Ltd",
+   "is_anchor": true,
+   "anchor_slug": "spottiswoode",
+   "sale_band_5y": {
+    "low": "$970,000",
+    "avg": "$1,372,379",
+    "high": "$2,500,000",
+    "low_psf": 1571,
+    "avg_psf": 2284,
+    "high_psf": 2581
+   },
+   "deep_digest": "spottiswoode_1803_digest.json",
+   "review_overall": 8.8,
+   "onemap": {
+    "match": "SPOTTISWOODE SUITES",
+    "postal": "088661"
+   },
+   "nearest_mrt": {
+    "name": "Cantonment",
+    "km": 0.36
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 0,
+   "nearest_park": {
+    "name": "Pearl's Hill City Park",
+    "km": 0.81
+   },
+   "nearest_mall": {
+    "name": "100 AM",
+    "km": 0.68
+   },
+   "coast_km": 3.69,
+   "district_no": "D2 - Anson, Tanjong Pagar",
+   "segment": "CCR"
+  },
+  {
+   "project": "Suites@Changi",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 2013,
+   "total_units": 44,
+   "unit_types": "1, 2",
+   "size_range_sqft": "400 - 1,151",
+   "psf_low": 1002,
+   "psf_high": 1675,
+   "sales_range_raw": "$560,000 - $1,250,000 PSF: $1,002 - $1,675",
+   "sales_volume": 13,
+   "rent_range_raw": "$1,500 - $5,800 PSF: $2.67 - $8.22",
+   "rent_psf_low": 2.67,
+   "rent_psf_high": 8.22,
+   "yield_low_pct": 1.44,
+   "yield_high_pct": 12.43,
+   "yield_avg_pct": 4.19,
+   "rental_volume": 46,
+   "dist_m": 126.0,
+   "seen_from_anchor": "parcesta",
+   "onemap": {
+    "match": "SUITES@CHANGI",
+    "postal": "419740"
+   },
+   "nearest_mrt": {
+    "name": "Eunos",
+    "km": 0.35
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 3,
+   "nearest_park": {
+    "name": "East Coast Park",
+    "km": 2.24
+   },
+   "nearest_mall": {
+    "name": "KINEX",
+    "km": 1.14
+   },
+   "coast_km": 2.24,
+   "district_no": 14,
+   "segment": "RCR"
+  },
+  {
+   "project": "The Elegance @ Changi",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 2006,
+   "total_units": 26,
+   "unit_types": "1, 3",
+   "size_range_sqft": "600 - 2,012",
+   "psf_low": 888,
+   "psf_high": 1515,
+   "sales_range_raw": "$1,565,000 - $2,438,000 PSF: $888 - $1,515",
+   "sales_volume": 5,
+   "rent_range_raw": "$2,400 - $4,300 PSF: $2.29 - $4.23",
+   "rent_psf_low": 2.29,
+   "rent_psf_high": 4.23,
+   "yield_low_pct": 1.18,
+   "yield_high_pct": 3.3,
+   "yield_avg_pct": 1.95,
+   "rental_volume": 18,
+   "dist_m": 189.0,
+   "seen_from_anchor": "parcesta",
+   "onemap": {
+    "match": "THE ELEGANCE @CHANGI",
+    "postal": "426446"
+   },
+   "nearest_mrt": {
+    "name": "Eunos",
+    "km": 0.4
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 3,
+   "nearest_park": {
+    "name": "East Coast Park",
+    "km": 2.35
+   },
+   "nearest_mall": {
+    "name": "KINEX",
+    "km": 1.0
+   },
+   "coast_km": 2.35,
+   "district_no": 15,
+   "segment": "RCR"
+  },
+  {
+   "project": "The Palladium",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 2003,
+   "total_units": 43,
+   "unit_types": "1, 2, 3",
+   "size_range_sqft": "800 - 1,300",
+   "psf_low": 2226,
+   "psf_high": 2239,
+   "sales_range_raw": "$1,965,000 - $2,820,000 PSF: $2,226 - $2,239",
+   "sales_volume": 2,
+   "rent_range_raw": "$3,900 - $6,500 PSF: $3.68 - $6.12",
+   "rent_psf_low": 3.68,
+   "rent_psf_high": 6.12,
+   "yield_low_pct": 1.66,
+   "yield_high_pct": 3.97,
+   "yield_avg_pct": 2.46,
+   "rental_volume": 18,
+   "seen_from_anchor": "amberpark",
+   "onemap": {
+    "match": "THE PALLADIUM",
+    "postal": "429984"
+   },
+   "nearest_mrt": {
+    "name": "Marine Parade",
+    "km": 0.15
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "East Coast Park",
+    "km": 2.55
+   },
+   "nearest_mall": {
+    "name": "i12 Katong",
+    "km": 0.24
+   },
+   "coast_km": 2.34,
+   "district_no": 15,
+   "segment": "RCR"
+  },
+  {
+   "project": "The Reserve Residences",
+   "type": "Apartment",
+   "region": "RCR",
+   "district": "D21 - Upper Bukit Timah, Clementi Park, Ulu Pandan",
+   "subtown": "Anak Bukit",
+   "top": "2028",
+   "tenure": "99 years leasehold, 99 yrs from 29/11/2021",
+   "land_size": "346,436 sqft / 32,185 sqm",
+   "gfa": "1,112,191 sqft / 103,326 sqm",
+   "plot_ratio": "3.0",
+   "total_units": "732",
+   "developer": "FE Landmark Pte. Ltd.",
+   "sale_band": {
+    "window": "2Y",
+    "low": "$1,780,000",
+    "avg": "$4,395,376",
+    "high": "$7,823,020",
+    "low_psf": "$2,304 PSF",
+    "avg_psf": "$2,579 PSF",
+    "high_psf": "$3,106 PSF"
+   },
+   "tier1_comps_slug": "reserve",
+   "psf_low": 2304,
+   "psf_high": 3106,
+   "psf_source": "sale band (2Y window)",
+   "onemap": {
+    "match": "THE RESERVE RESIDENCES (U/C)",
+    "postal": "589773"
+   },
+   "nearest_mrt": {
+    "name": "Beauty World",
+    "km": 0.25
+   },
+   "popular_pri_1km": [
+    "Pei Hwa Presbyterian Primary School"
+   ],
+   "n_popular_pri_1km": 1,
+   "n_popular_pri_2km": 1,
+   "nearest_park": {
+    "name": "Bukit Timah Nature Reserve",
+    "km": 1.62
+   },
+   "nearest_mall": {
+    "name": "Beauty World Centre",
+    "km": 0.32
+   },
+   "coast_km": 5.08,
+   "district_no": "D21 - Upper Bukit Timah, Clementi Park, Ulu Pandan",
+   "segment": "OCR"
+  },
+  {
+   "project": "The Sea View",
+   "tenure_raw": "Freehold",
+   "tenure_type": "FH",
+   "top_year": 2008,
+   "total_units": 546,
+   "unit_types": "1, 3, 4, 5+",
+   "size_range_sqft": "500 - 2,900",
+   "psf_low": 2376,
+   "psf_high": 2854,
+   "sales_range_raw": "$1,330,000 - $4,700,000 PSF: $2,376 - $2,854",
+   "sales_volume": 19,
+   "rent_range_raw": "$3,000 - $13,200 PSF: $4.28 - $7.27",
+   "rent_psf_low": 4.28,
+   "rent_psf_high": 7.27,
+   "yield_low_pct": 0.77,
+   "yield_high_pct": 11.91,
+   "yield_avg_pct": 2.6,
+   "rental_volume": 281,
+   "dist_m": 0.0,
+   "seen_from_anchor": "amberpark",
+   "onemap": {
+    "match": "THE SEA VIEW",
+    "postal": "439943"
+   },
+   "nearest_mrt": {
+    "name": "Marine Parade",
+    "km": 0.31
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "East Coast Park",
+    "km": 2.79
+   },
+   "nearest_mall": {
+    "name": "Parkway Parade",
+    "km": 0.32
+   },
+   "coast_km": 2.18,
+   "district_no": 15,
+   "segment": "RCR"
+  },
+  {
+   "project": "The Shore Residences",
+   "tenure_raw": "103 yrs from 18/08/2009",
+   "tenure_type": "103y",
+   "lease_start": 2009,
+   "top_year": 2013,
+   "total_units": 408,
+   "unit_types": "1, 2, 3, 4",
+   "size_range_sqft": "500 - 3,000",
+   "psf_low": 1774,
+   "psf_high": 2330,
+   "sales_range_raw": "$1,050,000 - $3,200,000 PSF: $1,774 - $2,330",
+   "sales_volume": 30,
+   "rent_range_raw": "$3,400 - $15,000 PSF: $3.68 - $8.24",
+   "rent_psf_low": 3.68,
+   "rent_psf_high": 8.24,
+   "yield_low_pct": 1.28,
+   "yield_high_pct": 17.14,
+   "yield_avg_pct": 3.15,
+   "rental_volume": 240,
+   "seen_from_anchor": "amberpark",
+   "onemap": {
+    "match": "THE SHORE RESIDENCES",
+    "postal": "439893"
+   },
+   "nearest_mrt": {
+    "name": "Marine Parade",
+    "km": 0.44
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "East Coast Park",
+    "km": 2.87
+   },
+   "nearest_mall": {
+    "name": "Parkway Parade",
+    "km": 0.51
+   },
+   "coast_km": 2.01,
+   "district_no": 15,
+   "segment": "RCR"
+  },
+  {
+   "project": "Treasure At Tampines",
+   "tenure_raw": "101 yrs from 01/12/1985, 99 yrs from 29/11/2018",
+   "tenure_type": "101y",
+   "lease_start": 1985,
+   "top_year": 2024,
+   "total_units": "2203",
+   "unit_types": "1, 2, 3, 4, 5+",
+   "size_range_sqft": "400 - 1,800",
+   "psf_low": 1256,
+   "psf_high": 2024,
+   "sales_range_raw": "$690,000 - $3,070,888 PSF: $1,256 - $2,024",
+   "sales_volume": 942,
+   "rent_range_raw": "$2,400 - $8,000 PSF: $2.86 - $7.67",
+   "rent_psf_low": 2.86,
+   "rent_psf_high": 7.67,
+   "yield_low_pct": 0.94,
+   "yield_high_pct": 13.91,
+   "yield_avg_pct": 2.84,
+   "rental_volume": 1046,
+   "dist_m": 0.0,
+   "seen_from_anchor": "treasure",
+   "type": "Condominium",
+   "region": "OCR",
+   "district": "D18 - Tampines, Pasir Ris",
+   "subtown": "Tampines East",
+   "top": "2024",
+   "tenure": "101 yrs from 01/12/1985, 99 yrs from 29/11/2018",
+   "land_size": "648,891 sqft / 60,284 sqm",
+   "gfa": "2,162,641 sqft / 200,916 sqm",
+   "plot_ratio": "2.8",
+   "developer": "Sim Lian (Treasure) Pte. Ltd.",
+   "is_anchor": true,
+   "anchor_slug": "treasure",
+   "sale_band_5y": {
+    "low": "$690,000",
+    "avg": "$1,502,263",
+    "high": "$3,070,888",
+    "low_psf": 1256,
+    "avg_psf": 1642,
+    "high_psf": 2024
+   },
+   "onemap": {
+    "match": "TREASURE AT TAMPINES",
+    "postal": "528487"
+   },
+   "nearest_mrt": {
+    "name": "Simei",
+    "km": 0.64
+   },
+   "popular_pri_1km": [],
+   "n_popular_pri_1km": 0,
+   "n_popular_pri_2km": 4,
+   "nearest_park": {
+    "name": "Tampines Eco Green",
+    "km": 2.08
+   },
+   "nearest_mall": {
+    "name": "Tampines Mall",
+    "km": 0.9
+   },
+   "coast_km": 2.96,
+   "district_no": "D18 - Tampines, Pasir Ris",
+   "segment": "OCR"
+  },
+  {
+   "project": "Watten House",
+   "type": "Condominium",
+   "region": "CCR",
+   "district": "D11 - Watten Estate, Novena, Thomson",
+   "subtown": "Hillcrest",
+   "top": "2027",
+   "tenure": "Freehold",
+   "land_size": "220,240 sqft / 20,461 sqm",
+   "gfa": "331,776 sqft / 30,823 sqm",
+   "plot_ratio": "1.4",
+   "total_units": "180",
+   "developer": "United Venture Development (Watten) Pte. Ltd.",
+   "sale_band": {
+    "window": "2Y",
+    "low": "$4,799,000",
+    "avg": "$5,412,139",
+    "high": "$7,968,000",
+    "low_psf": "$3,118 PSF",
+    "avg_psf": "$3,274 PSF",
+    "high_psf": "$3,386 PSF"
+   },
+   "tier1_comps_slug": "wattenhouse",
+   "psf_low": 3118,
+   "psf_high": 3386,
+   "psf_source": "sale band (2Y window)",
+   "onemap": {
+    "match": "WATTEN HOUSE (U/C)",
+    "postal": "288429"
+   },
+   "nearest_mrt": {
+    "name": "Tan Kah Kee",
+    "km": 0.58
+   },
+   "popular_pri_1km": [
+    "Nanyang Primary School",
+    "Raffles Girls' Primary School"
+   ],
+   "n_popular_pri_1km": 2,
+   "n_popular_pri_2km": 2,
+   "nearest_park": {
+    "name": "Singapore Botanic Gardens",
+    "km": 1.77
+   },
+   "nearest_mall": {
+    "name": "Holland Village Shopping Centre",
+    "km": 2.73
+   },
+   "coast_km": 6.47,
+   "district_no": "D11 - Watten Estate, Novena, Thomson",
+   "segment": "CCR"
+  }
+ ]
+}
