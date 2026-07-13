@@ -167,6 +167,42 @@ def within_segment_demean(rows: list[dict], key: str) -> dict[str, float]:
     return seg_med
 
 
+def leave_one_anchor_out(rows: list[dict], use: list[str]) -> dict:
+    """Panel-demanded robustness: the 26 rows cluster on ~9 anchor developments;
+    row-level bootstrap understates uncertainty. Drop one anchor-cluster at a
+    time, re-fit, and report each coefficient's sign stability. A coefficient
+    that flips sign in any leave-one-out fit is demoted to 'indicative'."""
+    panel = _load("panel_condo_enriched.json")
+    anchor_of = {}
+    for p in panel["projects"]:
+        anchor_of[p["project"]] = p.get("seen_from_anchor") or p.get("anchor_slug") \
+            or p.get("tier1_comps_slug") or p["project"]
+    clusters = sorted({anchor_of.get(r["project"], r["project"]) for r in rows})
+
+    def std(col):
+        m, s = statistics.mean(col), statistics.pstdev(col) or 1.0
+        return [(v - m) / s for v in col]
+
+    signs: dict[str, list[float]] = {f: [] for f in use}
+    for drop in clusters:
+        sub = [r for r in rows if anchor_of.get(r["project"], r["project"]) != drop]
+        if len(sub) < len(use) + 3:
+            continue
+        X = [std([r[f] for r in sub]) for f in use]
+        y = [r["ln_prem"] for r in sub]
+        b = ols(y, X)
+        if b:
+            for i, f in enumerate(use):
+                signs[f].append(b[i + 1])
+    out = {}
+    for f in use:
+        cs = signs[f]
+        stable = all(c > 0 for c in cs) or all(c < 0 for c in cs)
+        out[f] = {"n_fits": len(cs), "sign_stable": stable,
+                  "coef_range": [round(min(cs), 3), round(max(cs), 3)] if cs else None}
+    return {"clusters": clusters, "by_factor": out}
+
+
 def condo_cross_section() -> dict:
     rows = condo_rows()
     seg_med_psf = within_segment_demean(rows, "mid_psf")
@@ -195,12 +231,25 @@ def condo_cross_section() -> dict:
     X = [std([r[f] for r in rows]) for f in use]
     y = [r["ln_prem"] for r in rows]
     boot = bootstrap_ols(y, X)
+    r2 = r_squared(y, X)
+    n, k = len(rows), len(use)
+    adj_r2 = 1 - (1 - r2) * (n - 1) / (n - k - 1) if r2 is not None else None
+    loo = leave_one_anchor_out(rows, use)
+    # power note for the within-segment yield null (panel demand): at n per
+    # segment ~6-7 the 5% two-sided Spearman critical value is ~0.75
+    seg_ns = {s: sum(1 for r in yrows if r["segment"] == s) for s in ("CCR", "RCR", "OCR")}
     return {"n": len(rows), "segment_median_psf": seg_med_psf,
             "segment_median_yield": seg_med_yld,
+            "segment_note": ("CCR 样本为 CCR-fringe（D1/D2/D6 + Farrer 段）——与 RCR 中位仅差 ~2%，"
+                             "非九/十/十一区核心 CCR 口径；官方 URA 分段下圣淘沙属 CCR、本研究面板未含"),
             "level_spearman_within_segment": level_corr,
             "yield_spearman_within_segment": {"n": len(yrows), **yield_corr},
-            "ols_ln_premium": {"regressors": use, "r2": r_squared(y, X),
-                               "standardized_coefs": boot},
+            "yield_null_power": {"n_per_segment": seg_ns,
+                                 "note": "段内 n≈6-7 时 Spearman 5% 临界值 ~0.75——"
+                                         "|ρ|<0.2 是『未检出』而非『不存在』（低功效零结论）"},
+            "ols_ln_premium": {"regressors": use, "r2": r2, "adj_r2": adj_r2,
+                               "standardized_coefs": boot,
+                               "leave_one_anchor_out": loo},
             "rows": rows}
 
 

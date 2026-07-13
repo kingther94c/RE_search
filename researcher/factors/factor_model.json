@@ -13,6 +13,7 @@
    "RCR": 2.8600000000000003,
    "OCR": 2.96
   },
+  "segment_note": "CCR 样本为 CCR-fringe（D1/D2/D6 + Farrer 段）——与 RCR 中位仅差 ~2%，非九/十/十一区核心 CCR 口径；官方 URA 分段下圣淘沙属 CCR、本研究面板未含",
   "level_spearman_within_segment": {
    "fh": 0.005390602105579977,
    "age": -0.5057498131788792,
@@ -34,6 +35,14 @@
    "park_km": -0.10184376181522593,
    "coast_km": 0.05270096800709525
   },
+  "yield_null_power": {
+   "n_per_segment": {
+    "CCR": 7,
+    "RCR": 8,
+    "OCR": 4
+   },
+   "note": "段内 n≈6-7 时 Spearman 5% 临界值 ~0.75——|ρ|<0.2 是『未检出』而非『不存在』（低功效零结论）"
+  },
   "ols_ln_premium": {
    "regressors": [
     "fh",
@@ -43,6 +52,7 @@
     "pri1k"
    ],
    "r2": 0.6472213121531029,
+   "adj_r2": 0.5590266401913786,
    "standardized_coefs": [
     {
      "coef": 0.07028768442918908,
@@ -84,7 +94,67 @@
      ],
      "sig": true
     }
-   ]
+   ],
+   "leave_one_anchor_out": {
+    "clusters": [
+     "8atbt",
+     "amberpark",
+     "dairyfarm",
+     "gallop",
+     "leedongreen",
+     "onepearl",
+     "parcesta",
+     "reserve",
+     "royalgreen",
+     "sengkanggrand",
+     "sixthave",
+     "spottiswoode",
+     "treasure",
+     "wattenhouse"
+    ],
+    "by_factor": {
+     "fh": {
+      "n_fits": 14,
+      "sign_stable": true,
+      "coef_range": [
+       0.043,
+       0.094
+      ]
+     },
+     "age": {
+      "n_fits": 14,
+      "sign_stable": true,
+      "coef_range": [
+       -0.137,
+       -0.086
+      ]
+     },
+     "ln_units": {
+      "n_fits": 14,
+      "sign_stable": false,
+      "coef_range": [
+       -0.015,
+       0.128
+      ]
+     },
+     "mrt_km": {
+      "n_fits": 14,
+      "sign_stable": true,
+      "coef_range": [
+       -0.095,
+       -0.061
+      ]
+     },
+     "pri1k": {
+      "n_fits": 14,
+      "sign_stable": true,
+      "coef_range": [
+       0.098,
+       0.168
+      ]
+     }
+    }
+   }
   },
   "rows": [
    {
@@ -608,6 +678,7 @@
     "pri1k"
    ],
    "r2": 0.6472213121531029,
+   "adj_r2": 0.5590266401913786,
    "standardized_coefs": [
     {
      "coef": 0.07028768442918908,
@@ -649,7 +720,67 @@
      ],
      "sig": true
     }
-   ]
+   ],
+   "leave_one_anchor_out": {
+    "clusters": [
+     "8atbt",
+     "amberpark",
+     "dairyfarm",
+     "gallop",
+     "leedongreen",
+     "onepearl",
+     "parcesta",
+     "reserve",
+     "royalgreen",
+     "sengkanggrand",
+     "sixthave",
+     "spottiswoode",
+     "treasure",
+     "wattenhouse"
+    ],
+    "by_factor": {
+     "fh": {
+      "n_fits": 14,
+      "sign_stable": true,
+      "coef_range": [
+       0.043,
+       0.094
+      ]
+     },
+     "age": {
+      "n_fits": 14,
+      "sign_stable": true,
+      "coef_range": [
+       -0.137,
+       -0.086
+      ]
+     },
+     "ln_units": {
+      "n_fits": 14,
+      "sign_stable": false,
+      "coef_range": [
+       -0.015,
+       0.128
+      ]
+     },
+     "mrt_km": {
+      "n_fits": 14,
+      "sign_stable": true,
+      "coef_range": [
+       -0.095,
+       -0.061
+      ]
+     },
+     "pri1k": {
+      "n_fits": 14,
+      "sign_stable": true,
+      "coef_range": [
+       0.098,
+       0.168
+      ]
+     }
+    }
+   }
   },
   "landed_streets": [
    {

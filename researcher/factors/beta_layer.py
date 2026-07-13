@@ -83,19 +83,45 @@ def max_drawdown(s: dict[str, float]) -> dict:
 
 def beta_corr(dep: dict[str, float], indep: dict[str, float],
               since: str = "1998Q4") -> dict:
-    """OLS beta + correlation of quarterly log returns, dep on indep."""
+    """OLS beta + correlation of quarterly log returns, dep on indep — with
+    the panel-demanded honesty extras: alpha t-stat (iid SE; appraisal
+    smoothing means the TRUE SE is wider, so an insignificant t here is
+    conclusive), up/down capture ratios, and start-date sensitivity."""
     d = dict(quarterly_log_returns(dep))
     i = dict(quarterly_log_returns(indep))
-    qs = [q for q in d if q in i and _qnum(q) >= _qnum(since)]
-    x = [i[q] for q in qs]
-    y = [d[q] for q in qs]
-    n = len(qs)
-    mx, my = sum(x) / n, sum(y) / n
-    cov = sum((a - mx) * (b - my) for a, b in zip(x, y)) / (n - 1)
-    vx = sum((a - mx) ** 2 for a in x) / (n - 1)
-    vy = sum((b - my) ** 2 for b in y) / (n - 1)
-    return {"beta": cov / vx, "corr": cov / math.sqrt(vx * vy),
-            "alpha_pa": (my - (cov / vx) * mx) * 4, "n_quarters": n, "since": since}
+
+    def fit(since_q):
+        qs = [q for q in d if q in i and _qnum(q) >= _qnum(since_q)]
+        x = [i[q] for q in qs]
+        y = [d[q] for q in qs]
+        n = len(qs)
+        if n < 12:
+            return None
+        mx, my = sum(x) / n, sum(y) / n
+        cov = sum((a - mx) * (b - my) for a, b in zip(x, y)) / (n - 1)
+        vx = sum((a - mx) ** 2 for a in x) / (n - 1)
+        vy = sum((b - my) ** 2 for b in y) / (n - 1)
+        beta = cov / vx
+        alpha_q = my - beta * mx
+        resid = [b - (alpha_q + beta * a) for a, b in zip(x, y)]
+        s2 = sum(r * r for r in resid) / (n - 2)
+        se_alpha_q = math.sqrt(s2 * (1 / n + mx * mx / ((n - 1) * vx)))
+        up = [q for q in qs if i[q] > 0]
+        dn = [q for q in qs if i[q] < 0]
+        cap_up = (sum(d[q] for q in up) / sum(i[q] for q in up)) if up else None
+        cap_dn = (sum(d[q] for q in dn) / sum(i[q] for q in dn)) if dn else None
+        return {"beta": beta, "corr": cov / math.sqrt(vx * vy),
+                "alpha_pa": alpha_q * 4, "alpha_t": alpha_q / se_alpha_q,
+                "capture_up": cap_up, "capture_down": cap_dn,
+                "n_quarters": n, "since": since_q}
+
+    main = fit(since)
+    main["start_date_sensitivity"] = {
+        s: {"beta": round(f["beta"], 2), "alpha_pa": round(f["alpha_pa"], 4),
+            "alpha_t": round(f["alpha_t"], 2)}
+        for s in ("1975Q2", "1990Q1", "1996Q2", "2004Q1", "2009Q2")
+        if (f := fit(s))}
+    return main
 
 
 def compute() -> dict:
