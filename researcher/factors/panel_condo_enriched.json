@@ -58,7 +58,8 @@
    },
    "coast_km": 5.21,
    "district_no": "D21 - Upper Bukit Timah, Clementi Park, Ulu Pandan",
-   "segment": "OCR"
+   "segment": "RCR",
+   "segment_note": "app Region=RCR（采用）；邮政区启发式=OCR"
   },
   {
    "project": "Amber 45",
@@ -992,7 +993,8 @@
    },
    "coast_km": 3.69,
    "district_no": "D2 - Anson, Tanjong Pagar",
-   "segment": "CCR"
+   "segment": "RCR",
+   "segment_note": "app Region=RCR（采用）；邮政区启发式=CCR"
   },
   {
    "project": "Suites@Changi",
@@ -1174,7 +1176,8 @@
    },
    "coast_km": 5.08,
    "district_no": "D21 - Upper Bukit Timah, Clementi Park, Ulu Pandan",
-   "segment": "OCR"
+   "segment": "RCR",
+   "segment_note": "app Region=RCR（采用）；邮政区启发式=OCR"
   },
   {
    "project": "The Sea View",

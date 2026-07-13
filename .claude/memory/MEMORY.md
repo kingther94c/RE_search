@@ -1,5 +1,6 @@
 # Memory index
 
+- [factor-study-capability](factor-study-capability.md) — condo+landed 因子研究:官方 beta 层、27 项目面板、辩证团口径(不对称捕获 0.95/0.74、school>age>MRT≈FH、摩擦门槛 α)、2 报告 + 2 分析 skill
 - [condo-valuation-pipeline](condo-valuation-pipeline.md) — one-command condo valuation (doctor → 4 harvesters → pipeline → 12 gates); sonnet-proven; AVM bias is NOT one-directional, freshest same-spec print is the anchor
 - [android-read-bridge](android-read-bridge.md) — mobile_bridge service, toolchain locations, worktree isolation, two-tier tests, the Appium page_source vs `<node>` parser gotcha
 - [investment-suite-valuation](investment-suite-valuation.md) — PropNex Investment Suite app + the Researcher work; now split into its own repo RE_search (mobile_bridge is back to a clean tool); extraction gotchas + #18-03 trial result

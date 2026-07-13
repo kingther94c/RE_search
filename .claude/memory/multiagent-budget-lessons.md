@@ -30,4 +30,12 @@ expires the main-loop cache too.
   regex inside bash double quotes.** Bash eats `\$` → `$` becomes a regex end-anchor and
   substitutions silently no-op (cost a full review round on 2026-07-03: three stale 点估
   bases survived because the sed-style patch never matched).
-See [[kelvin-user]], [[landed-research-capability]].
+- **2026-07-12 repeat burn + the fix that worked:** 3 parallel Fable panelists each
+  READING the big JSONs hit the session limit at ~100K tokens EACH with zero output.
+  The relaunch that worked: **pre-digest the data into a compact inline brief, forbid
+  file reads and code, judgment-only** → same three perspectives at ~34K each with
+  excellent output. Pattern for dialectic panels: author compresses evidence into the
+  prompt; panelists only judge. Also: multiline git commit messages via `git commit -F
+  <file>` — PowerShell here-strings can silently truncate at content resembling
+  terminators.
+See [[kelvin-user]], [[landed-research-capability]], [[factor-study-capability]].

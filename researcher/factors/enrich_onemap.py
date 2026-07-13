@@ -253,7 +253,12 @@ def main() -> None:
         d = r.get("district") or district_from_postal(g.get("postal"))
         r["district_no"] = (district_from_postal(g.get("postal"))
                             if not r.get("district") else None) or d
-        r["segment"] = segment_from_district(d) or r.get("region")
+        # the app's Region field is Tier-1 (URA planning-region based) and beats
+        # the postal-district heuristic — districts straddle regions (D21 Beauty
+        # World is RCR; D2 Spottiswoode side is Bukit Merah = RCR). Review-caught.
+        r["segment"] = r.get("region") or segment_from_district(d)
+        if r.get("region") and segment_from_district(d) and r["region"] != segment_from_district(d):
+            r["segment_note"] = (f"app Region={r['region']}（采用）；邮政区启发式={segment_from_district(d)}")
     _save_cache(cache)
     p1 = os.path.join(HERE, "panel_condo_enriched.json")
     json.dump(condo, open(p1, "w", encoding="utf-8", newline="\n"),

@@ -34,7 +34,7 @@
     "verdict": "qualify",
     "point": "因子集对、置信度过高——当 checklist 用：学校1km+MRT<400m+FH 叠加，转售时拒付新盘溢价"
    },
-   "resolution": "补算逐锚剔除（14 簇）：pri1k/age/mrt/fh 方向全部稳定，ln_units 翻符号剔除；adj R²=0.56。报告口径降级为『方向与相对强弱』（学校>楼龄>MRT≈FH），量级与星号不作卖点；标注 CCR 样本为 fringe（D1/D2/D6）、混合 psf 口径与幸存者偏差"
+   "resolution": "补算逐锚剔除（14 簇）+ 分段改以 app Region 字段（Tier-1）为准（启发式曾错标 3 行，修正后 CCR/RCR/OCR 中位 2,460/2,376/1,660——fringe 假象部分消除）：全部 5 因子方向稳定；bootstrap 星号仅学校与权属保留，楼龄/MRT 降为『方向稳定、星号不保』；adj R²=0.49。报告口径为『方向与相对强弱』：楼龄（新）≈ 学校 1km 最强，其余弱而方向稳；量级与星号不作卖点；标注混合 psf 口径与幸存者偏差"
   },
   {
    "id": "C3",
@@ -51,7 +51,7 @@
     "verdict": "uphold",
     "point": "与 20 年租金单据一致：段位定收益率，段内选盘别看广告收益率"
    },
-   "resolution": "保留段间阶梯（CCR 2.1-2.5% < RCR < OCR 3-4.2%，大而稳）；段内改述为『在本样本量下未检出段内收益率因子』并附功效声明；加利率情景注（1.4% 制度内样本，4% 压力下 CCR 负 carry）"
+   "resolution": "保留段间阶梯（本面板中位 CCR 2.2% < RCR ~2.9% ≈ OCR 3.0%——CCR-vs-其余稳固、RCR-vs-OCR 在本面板内薄；更宽的市场风格化带另行标注）；段内改述为『在本样本量下未检出段内收益率因子』并附功效声明；加利率情景注（1.4% 制度内样本，4% 压力下 CCR 负 carry）"
   },
   {
    "id": "C4",
@@ -85,7 +85,7 @@
     "verdict": "qualify",
     "point": "方向符合实地经验；重建套利：原状价 <（重建 comp − 建安 $450-550/GFA − 2 年 carry）才买"
    },
-   "resolution": "Frankel 改述为指示性：约 +6~7%/yr（一位有效数字），扣重建/翻新质量漂移后约 +4.5~5.5%/yr，与官方 landed 指数同窗（2005-2026 约 +5.6%/yr）方向一致；价格/租金改述为『部分正常化：130 vs 峰 146，仍高出 2009 基线 ~30%』"
+   "resolution": "Frankel 改述为指示性：约 +6~7%/yr（一位有效数字），扣重建/翻新质量漂移后约 +4.5~5.5%/yr，与官方 landed 指数同窗（2005Q1→2026Q1 约 +5.4%/yr；自 2009 起为 +5.6%）方向一致；价格/租金改述为『部分正常化：130 vs 峰 146，仍高出 2009 基线 ~30%』"
   },
   {
    "id": "C6",
@@ -110,5 +110,38 @@
   "牛方单一最佳补强：微观市场供给管线（URA 未售库存 + GLS + en-bloc 置换需求，按规划区 3 年前瞻）——把定价 checklist 变成买/等引擎",
   "熊方三大情景要求：再来一轮降温措施 AND 放松鞭挞式反转都要在 5 年持有期内假设会发生；4% 利率压力测试；租金正常化反转情景",
   "实操派总评：『would_act: partially——它告诉我买什么、出多少价（因子公允锚、AVM 窗、楼层错价是真实可用的谈判优势）；但 n=26 的 β 不能定仓位，刚开通的地铁不能追』"
- ]
+ ],
+ "acceptance_review": {
+  "date": "2026-07-13",
+  "reviewer": "独立敌对评审（property-report-review 规程；panel 后另行 2 轮验收）",
+  "condo_report": {
+   "verdict": "PASS",
+   "overall": 8.5,
+   "rounds": 2,
+   "scores": {
+    "data_accuracy": 8.5,
+    "method_rigor": 8.5,
+    "completeness": 8.5,
+    "decision_usefulness": 8.5,
+    "honesty_uncertainty": 8.5,
+    "presentation_bilingual": 8.0
+   },
+   "history": "R1 PASS 8.35（评审发现分段启发式与 app Region 冲突 3 行→改以 Tier-1 Region 为准并全量重算）；重算后 R2 发现诚实框残留旧口径（REVISE 7.9）→ 诚实框改为由 LOO/segment_note 数据直接渲染；终裁 PASS 8.5"
+  },
+  "landed_report": {
+   "verdict": "PASS",
+   "overall": 8.6,
+   "rounds": 2,
+   "scores": {
+    "data_accuracy": 9,
+    "method_rigor": 8.5,
+    "completeness": 8.5,
+    "decision_usefulness": 8.5,
+    "honesty_uncertainty": 9,
+    "presentation_bilingual": 8.0
+   },
+   "history": "R1 REVISE 8.0（同窗基准 5.4/5.6 矛盾；Frankel 近窗带漏 2018 $1,082 印）→ 带改为数据直出、基准在正文与综合文件双端修正、+39% 标注混合口径；终裁 PASS 8.6"
+  },
+  "recurring_defect_class": "手抄窗口带/散文与再生成数字漂移——修法：一切展示带与统计口径由数据文件渲染，散文不携带可再生成的数字"
+ }
 }

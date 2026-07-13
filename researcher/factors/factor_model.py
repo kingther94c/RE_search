@@ -240,8 +240,10 @@ def condo_cross_section() -> dict:
     seg_ns = {s: sum(1 for r in yrows if r["segment"] == s) for s in ("CCR", "RCR", "OCR")}
     return {"n": len(rows), "segment_median_psf": seg_med_psf,
             "segment_median_yield": seg_med_yld,
-            "segment_note": ("CCR 样本为 CCR-fringe（D1/D2/D6 + Farrer 段）——与 RCR 中位仅差 ~2%，"
-                             "非九/十/十一区核心 CCR 口径；官方 URA 分段下圣淘沙属 CCR、本研究面板未含"),
+            "segment_note": ("分段以 app 的 Region 字段（Tier-1，URA 规划区口径）为准，仅缺失时用邮政区"
+                             "启发式兜底——邮政区会跨规划区（D21 Beauty World 属 RCR、D2 Spottiswoode 侧"
+                             "属 Bukit Merah=RCR），启发式曾错标 3 行（评审发现后修正）。本面板 CCR 以 "
+                             "D10/D11 为主、圣淘沙未含；样本非全岛随机"),
             "level_spearman_within_segment": level_corr,
             "yield_spearman_within_segment": {"n": len(yrows), **yield_corr},
             "yield_null_power": {"n_per_segment": seg_ns,
@@ -285,7 +287,8 @@ def landed_street_cagr() -> list[dict]:
                "cagr_median": statistics.median(rates) if len(rates) >= 3 else None,
                "cagr_range": ([min(rates), max(rates)] if rates else None),
                "nearest_mrt": s.get("nearest_mrt"), "pri1k": s.get("n_popular_pri_1km"),
-               "coast_km": s.get("coast_km"), "street_band": s.get("street_band")}
+               "coast_km": s.get("coast_km"), "street_band": s.get("street_band"),
+               "pp_psf_span": s.get("pp_psf_span")}
         out.append(rec)
     return out
 

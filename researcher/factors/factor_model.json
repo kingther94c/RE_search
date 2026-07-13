@@ -4,41 +4,41 @@
  "condo_cross_section": {
   "n": 26,
   "segment_median_psf": {
-   "CCR": 2273.0,
-   "RCR": 2232.5,
-   "OCR": 1803.25
+   "CCR": 2460.0,
+   "RCR": 2376.5,
+   "OCR": 1659.5
   },
   "segment_median_yield": {
-   "CCR": 2.26,
-   "RCR": 2.8600000000000003,
+   "CCR": 2.255,
+   "RCR": 2.93,
    "OCR": 2.96
   },
-  "segment_note": "CCR 样本为 CCR-fringe（D1/D2/D6 + Farrer 段）——与 RCR 中位仅差 ~2%，非九/十/十一区核心 CCR 口径；官方 URA 分段下圣淘沙属 CCR、本研究面板未含",
+  "segment_note": "分段以 app 的 Region 字段（Tier-1，URA 规划区口径）为准，仅缺失时用邮政区启发式兜底——邮政区会跨规划区（D21 Beauty World 属 RCR、D2 Spottiswoode 侧属 Bukit Merah=RCR），启发式曾错标 3 行（评审发现后修正）。本面板 CCR 以 D10/D11 为主、圣淘沙未含；样本非全岛随机",
   "level_spearman_within_segment": {
-   "fh": 0.005390602105579977,
-   "age": -0.5057498131788792,
-   "ln_units": 0.1880663388744733,
-   "mrt_km": -0.2371171023086832,
-   "pri1k": 0.5132447448023476,
-   "mall_km": -0.24221691461954575,
-   "park_km": -0.06397537151674443,
-   "coast_km": 0.1450564573427788
+   "fh": -0.12396265279634798,
+   "age": -0.63568127055092,
+   "ln_units": 0.3203418803418803,
+   "mrt_km": -0.12256088177625478,
+   "pri1k": 0.4309458036856674,
+   "mall_km": -0.14537371504760016,
+   "park_km": -0.07730461082531208,
+   "coast_km": 0.24628017608064026
   },
   "yield_spearman_within_segment": {
    "n": 19,
-   "fh": -0.019920476822239894,
-   "age": -0.1937487693714711,
-   "ln_units": 0.06140350877192982,
-   "mrt_km": 0.10891533388133018,
-   "pri1k": -0.15811388300841894,
-   "mall_km": 0.13514700730605864,
-   "park_km": -0.10184376181522593,
-   "coast_km": 0.05270096800709525
+   "fh": -0.03984095364447979,
+   "age": -0.16732848263899777,
+   "ln_units": 0.06842105263157895,
+   "mrt_km": 0.09310504347920161,
+   "pri1k": -0.10540925533894598,
+   "mall_km": 0.240456363648442,
+   "park_km": -0.09569801756775541,
+   "coast_km": 0.1141854306820397
   },
   "yield_null_power": {
    "n_per_segment": {
-    "CCR": 7,
-    "RCR": 8,
+    "CCR": 6,
+    "RCR": 9,
     "OCR": 4
    },
    "note": "段内 n≈6-7 时 Spearman 5% 临界值 ~0.75——|ρ|<0.2 是『未检出』而非『不存在』（低功效零结论）"
@@ -51,46 +51,46 @@
     "mrt_km",
     "pri1k"
    ],
-   "r2": 0.6472213121531029,
-   "adj_r2": 0.5590266401913786,
+   "r2": 0.5891229588553336,
+   "adj_r2": 0.486403698569167,
    "standardized_coefs": [
     {
-     "coef": 0.07028768442918908,
+     "coef": 0.06068147497001749,
      "ci95": [
-      0.0033599935666476055,
-      0.1799927267189311
+      3.345192384233116e-05,
+      0.1571422673177738
      ],
      "sig": true
     },
     {
-     "coef": -0.10747934202044188,
+     "coef": -0.07513359672290214,
      "ci95": [
-      -0.19475515604809868,
-      -0.020111119391237973
-     ],
-     "sig": true
-    },
-    {
-     "coef": 0.10004473922505168,
-     "ci95": [
-      -0.05861976198074835,
-      0.21324886957057512
+      -0.15497046154323932,
+      0.0061911892324242115
      ],
      "sig": false
     },
     {
-     "coef": -0.07631076772689495,
+     "coef": 0.12188205135941756,
      "ci95": [
-      -0.17418903624453186,
-      -0.014086927410101601
+      -0.02641049363590706,
+      0.2266158757749586
      ],
-     "sig": true
+     "sig": false
     },
     {
-     "coef": 0.13696648627755534,
+     "coef": -0.041317640312331795,
      "ci95": [
-      0.0760419423613488,
-      0.23625119699716235
+      -0.13971939464957836,
+      0.014791733674890615
+     ],
+     "sig": false
+    },
+    {
+     "coef": 0.10227091823244898,
+     "ci95": [
+      0.04140106300584198,
+      0.18115459938154888
      ],
      "sig": true
     }
@@ -117,40 +117,40 @@
       "n_fits": 14,
       "sign_stable": true,
       "coef_range": [
-       0.043,
-       0.094
+       0.032,
+       0.089
       ]
      },
      "age": {
       "n_fits": 14,
       "sign_stable": true,
       "coef_range": [
-       -0.137,
-       -0.086
+       -0.103,
+       -0.066
       ]
      },
      "ln_units": {
       "n_fits": 14,
-      "sign_stable": false,
+      "sign_stable": true,
       "coef_range": [
-       -0.015,
-       0.128
+       0.006,
+       0.145
       ]
      },
      "mrt_km": {
       "n_fits": 14,
       "sign_stable": true,
       "coef_range": [
-       -0.095,
-       -0.061
+       -0.071,
+       -0.026
       ]
      },
      "pri1k": {
       "n_fits": 14,
       "sign_stable": true,
       "coef_range": [
-       0.098,
-       0.168
+       0.062,
+       0.131
       ]
      }
     }
@@ -159,7 +159,7 @@
   "rows": [
    {
     "project": "8@BT",
-    "segment": "OCR",
+    "segment": "RCR",
     "mid_psf": 2780.0,
     "yield_avg": null,
     "fh": 0.0,
@@ -170,7 +170,7 @@
     "mall_km": 0.12,
     "park_km": 1.46,
     "coast_km": 5.21,
-    "ln_prem": 0.4328603353009007
+    "ln_prem": 0.1568221106306187
    },
    {
     "project": "Amber 45",
@@ -185,8 +185,8 @@
     "mall_km": 0.47,
     "park_km": 2.86,
     "coast_km": 2.04,
-    "ln_prem": 0.14466736516500894,
-    "yield_excess": 0.06999999999999984
+    "ln_prem": 0.08216058186159902,
+    "yield_excess": 0.0
    },
    {
     "project": "Amber Park",
@@ -201,7 +201,7 @@
     "mall_km": 0.68,
     "park_km": 3.16,
     "coast_km": 1.82,
-    "ln_prem": 0.1213352607720314
+    "ln_prem": 0.058828477468621326
    },
    {
     "project": "Dairy Farm Residences",
@@ -216,7 +216,7 @@
     "mall_km": 1.23,
     "park_km": 0.44,
     "coast_km": 7.9,
-    "ln_prem": -0.07139221430624124,
+    "ln_prem": 0.011682025917511468,
     "yield_excess": 0.3900000000000001
    },
    {
@@ -232,7 +232,7 @@
     "mall_km": 1.08,
     "park_km": 2.11,
     "coast_km": 8.0,
-    "ln_prem": -0.2817383131604811,
+    "ln_prem": -0.19866407293672825,
     "yield_excess": 0.1200000000000001
    },
    {
@@ -248,8 +248,8 @@
     "mall_km": 1.53,
     "park_km": 0.52,
     "coast_km": 5.34,
-    "ln_prem": -0.04545214279871709,
-    "yield_excess": -0.1299999999999999
+    "ln_prem": -0.12451294787258242,
+    "yield_excess": -0.125
    },
    {
     "project": "Gallop Green",
@@ -264,8 +264,8 @@
     "mall_km": 1.52,
     "park_km": 0.6,
     "coast_km": 5.45,
-    "ln_prem": 0.15232637837455815,
-    "yield_excess": -0.009999999999999787
+    "ln_prem": 0.07326557330069271,
+    "yield_excess": -0.004999999999999893
    },
    {
     "project": "Leedon Green",
@@ -280,7 +280,7 @@
     "mall_km": 0.96,
     "park_km": 1.07,
     "coast_km": 4.89,
-    "ln_prem": 0.2902634277228668
+    "ln_prem": 0.2112026226490014
    },
    {
     "project": "One Pearl Bank",
@@ -295,8 +295,8 @@
     "mall_km": 0.59,
     "park_km": 0.0,
     "coast_km": 3.42,
-    "ln_prem": 0.13257909162546141,
-    "yield_excess": -0.07000000000000028
+    "ln_prem": 0.07007230832205132,
+    "yield_excess": -0.14000000000000012
    },
    {
     "project": "Parc Esta",
@@ -311,8 +311,8 @@
     "mall_km": 1.09,
     "park_km": 2.35,
     "coast_km": 2.35,
-    "ln_prem": -0.01580168319132206,
-    "yield_excess": 0.47999999999999954
+    "ln_prem": -0.07830846649473203,
+    "yield_excess": 0.4099999999999997
    },
    {
     "project": "Royalgreen",
@@ -327,7 +327,7 @@
     "mall_km": 2.29,
     "park_km": 2.86,
     "coast_km": 5.16,
-    "ln_prem": 0.20368578315704777
+    "ln_prem": 0.12462497808318262
    },
    {
     "project": "Sengkang Grand Residences",
@@ -342,7 +342,7 @@
     "mall_km": 1.09,
     "park_km": 2.1,
     "coast_km": 7.89,
-    "ln_prem": 0.06663323405370247,
+    "ln_prem": 0.14970747427745523,
     "yield_excess": -0.27
    },
    {
@@ -358,7 +358,7 @@
     "mall_km": 1.92,
     "park_km": 2.75,
     "coast_km": 4.77,
-    "ln_prem": -0.13522977328123706
+    "ln_prem": -0.21429057835510232
    },
    {
     "project": "Sky Everton",
@@ -373,8 +373,8 @@
     "mall_km": 0.61,
     "park_km": 0.81,
     "coast_km": 3.62,
-    "ln_prem": 0.22779615155177074,
-    "yield_excess": -0.10999999999999988
+    "ln_prem": 0.1487353464779054,
+    "yield_excess": -0.10499999999999998
    },
    {
     "project": "Sommerville Grandeur",
@@ -389,8 +389,8 @@
     "mall_km": 1.41,
     "park_km": 0.77,
     "coast_km": 5.34,
-    "ln_prem": -0.0383412056207737,
-    "yield_excess": 0.0
+    "ln_prem": -0.11740201069463894,
+    "yield_excess": 0.004999999999999893
    },
    {
     "project": "Spottiswoode 18",
@@ -405,8 +405,8 @@
     "mall_km": 0.67,
     "park_km": 0.86,
     "coast_km": 3.69,
-    "ln_prem": -0.1374987771539923,
-    "yield_excess": 1.2100000000000004
+    "ln_prem": -0.21655958222785754,
+    "yield_excess": 1.2150000000000003
    },
    {
     "project": "Spottiswoode Residences",
@@ -421,12 +421,12 @@
     "mall_km": 0.74,
     "park_km": 0.92,
     "coast_km": 3.77,
-    "ln_prem": 0.0,
-    "yield_excess": 0.8000000000000003
+    "ln_prem": -0.07906080507386531,
+    "yield_excess": 0.8050000000000002
    },
    {
     "project": "Spottiswoode Suites",
-    "segment": "CCR",
+    "segment": "RCR",
     "mid_psf": 2076.0,
     "yield_avg": 3.25,
     "fh": 1.0,
@@ -437,8 +437,8 @@
     "mall_km": 0.68,
     "park_km": 0.81,
     "coast_km": 3.69,
-    "ln_prem": -0.09065757956676393,
-    "yield_excess": 0.9900000000000002
+    "ln_prem": -0.13518585176828485,
+    "yield_excess": 0.31999999999999984
    },
    {
     "project": "Suites@Changi",
@@ -453,8 +453,8 @@
     "mall_km": 1.14,
     "park_km": 2.24,
     "coast_km": 2.24,
-    "ln_prem": -0.5115724497902469,
-    "yield_excess": 1.33
+    "ln_prem": -0.5740792330936568,
+    "yield_excess": 1.2600000000000002
    },
    {
     "project": "The Elegance @ Changi",
@@ -469,8 +469,8 @@
     "mall_km": 1.0,
     "park_km": 2.35,
     "coast_km": 2.35,
-    "ln_prem": -0.6195512575741304,
-    "yield_excess": -0.9100000000000004
+    "ln_prem": -0.6820580408775405,
+    "yield_excess": -0.9800000000000002
    },
    {
     "project": "The Palladium",
@@ -485,12 +485,12 @@
     "mall_km": 0.24,
     "park_km": 2.55,
     "coast_km": 2.34,
-    "ln_prem": 0.0,
-    "yield_excess": -0.40000000000000036
+    "ln_prem": -0.06250678330341003,
+    "yield_excess": -0.4700000000000002
    },
    {
     "project": "The Reserve Residences",
-    "segment": "OCR",
+    "segment": "RCR",
     "mid_psf": 2705.0,
     "yield_avg": null,
     "fh": 0.0,
@@ -501,7 +501,7 @@
     "mall_km": 0.32,
     "park_km": 1.62,
     "coast_km": 5.08,
-    "ln_prem": 0.40551131989679995
+    "ln_prem": 0.12947309522651781
    },
    {
     "project": "The Sea View",
@@ -516,8 +516,8 @@
     "mall_km": 0.32,
     "park_km": 2.79,
     "coast_km": 2.18,
-    "ln_prem": 0.15814206374836914,
-    "yield_excess": -0.26000000000000023
+    "ln_prem": 0.09563528044495914,
+    "yield_excess": -0.33000000000000007
    },
    {
     "project": "The Shore Residences",
@@ -532,8 +532,8 @@
     "mall_km": 0.51,
     "park_km": 2.87,
     "coast_km": 2.01,
-    "ln_prem": -0.08430710645999397,
-    "yield_excess": 0.2899999999999996
+    "ln_prem": -0.146813889763404,
+    "yield_excess": 0.21999999999999975
    },
    {
     "project": "Treasure At Tampines",
@@ -548,7 +548,7 @@
     "mall_km": 0.9,
     "park_km": 2.08,
     "coast_km": 2.96,
-    "ln_prem": -0.09489435056553787,
+    "ln_prem": -0.011820110341785147,
     "yield_excess": -0.1200000000000001
    },
    {
@@ -564,7 +564,7 @@
     "mall_km": 2.73,
     "park_km": 1.77,
     "coast_km": 6.47,
-    "ln_prem": 0.358169646815158
+    "ln_prem": 0.27910884174129275
    }
   ]
  },
@@ -603,69 +603,69 @@
   },
   "level_factors_condo": {
    "fh": {
-    "spearman_within_segment": 0.005390602105579977,
+    "spearman_within_segment": -0.12396265279634798,
     "strength": "weak"
    },
    "age": {
-    "spearman_within_segment": -0.5057498131788792,
+    "spearman_within_segment": -0.63568127055092,
     "strength": "strong"
    },
    "ln_units": {
-    "spearman_within_segment": 0.1880663388744733,
-    "strength": "weak"
+    "spearman_within_segment": 0.3203418803418803,
+    "strength": "moderate"
    },
    "mrt_km": {
-    "spearman_within_segment": -0.2371171023086832,
+    "spearman_within_segment": -0.12256088177625478,
     "strength": "weak"
    },
    "pri1k": {
-    "spearman_within_segment": 0.5132447448023476,
-    "strength": "strong"
+    "spearman_within_segment": 0.4309458036856674,
+    "strength": "moderate"
    },
    "mall_km": {
-    "spearman_within_segment": -0.24221691461954575,
+    "spearman_within_segment": -0.14537371504760016,
     "strength": "weak"
    },
    "park_km": {
-    "spearman_within_segment": -0.06397537151674443,
+    "spearman_within_segment": -0.07730461082531208,
     "strength": "weak"
    },
    "coast_km": {
-    "spearman_within_segment": 0.1450564573427788,
+    "spearman_within_segment": 0.24628017608064026,
     "strength": "weak"
    }
   },
   "yield_factors_condo": {
    "fh": {
-    "spearman": -0.019920476822239894,
+    "spearman": -0.03984095364447979,
     "strength": "weak"
    },
    "age": {
-    "spearman": -0.1937487693714711,
+    "spearman": -0.16732848263899777,
     "strength": "weak"
    },
    "ln_units": {
-    "spearman": 0.06140350877192982,
+    "spearman": 0.06842105263157895,
     "strength": "weak"
    },
    "mrt_km": {
-    "spearman": 0.10891533388133018,
+    "spearman": 0.09310504347920161,
     "strength": "weak"
    },
    "pri1k": {
-    "spearman": -0.15811388300841894,
+    "spearman": -0.10540925533894598,
     "strength": "weak"
    },
    "mall_km": {
-    "spearman": 0.13514700730605864,
+    "spearman": 0.240456363648442,
     "strength": "weak"
    },
    "park_km": {
-    "spearman": -0.10184376181522593,
+    "spearman": -0.09569801756775541,
     "strength": "weak"
    },
    "coast_km": {
-    "spearman": 0.05270096800709525,
+    "spearman": 0.1141854306820397,
     "strength": "weak"
    }
   },
@@ -677,46 +677,46 @@
     "mrt_km",
     "pri1k"
    ],
-   "r2": 0.6472213121531029,
-   "adj_r2": 0.5590266401913786,
+   "r2": 0.5891229588553336,
+   "adj_r2": 0.486403698569167,
    "standardized_coefs": [
     {
-     "coef": 0.07028768442918908,
+     "coef": 0.06068147497001749,
      "ci95": [
-      0.0033599935666476055,
-      0.1799927267189311
+      3.345192384233116e-05,
+      0.1571422673177738
      ],
      "sig": true
     },
     {
-     "coef": -0.10747934202044188,
+     "coef": -0.07513359672290214,
      "ci95": [
-      -0.19475515604809868,
-      -0.020111119391237973
-     ],
-     "sig": true
-    },
-    {
-     "coef": 0.10004473922505168,
-     "ci95": [
-      -0.05861976198074835,
-      0.21324886957057512
+      -0.15497046154323932,
+      0.0061911892324242115
      ],
      "sig": false
     },
     {
-     "coef": -0.07631076772689495,
+     "coef": 0.12188205135941756,
      "ci95": [
-      -0.17418903624453186,
-      -0.014086927410101601
+      -0.02641049363590706,
+      0.2266158757749586
      ],
-     "sig": true
+     "sig": false
     },
     {
-     "coef": 0.13696648627755534,
+     "coef": -0.041317640312331795,
      "ci95": [
-      0.0760419423613488,
-      0.23625119699716235
+      -0.13971939464957836,
+      0.014791733674890615
+     ],
+     "sig": false
+    },
+    {
+     "coef": 0.10227091823244898,
+     "ci95": [
+      0.04140106300584198,
+      0.18115459938154888
      ],
      "sig": true
     }
@@ -743,40 +743,40 @@
       "n_fits": 14,
       "sign_stable": true,
       "coef_range": [
-       0.043,
-       0.094
+       0.032,
+       0.089
       ]
      },
      "age": {
       "n_fits": 14,
       "sign_stable": true,
       "coef_range": [
-       -0.137,
-       -0.086
+       -0.103,
+       -0.066
       ]
      },
      "ln_units": {
       "n_fits": 14,
-      "sign_stable": false,
+      "sign_stable": true,
       "coef_range": [
-       -0.015,
-       0.128
+       0.006,
+       0.145
       ]
      },
      "mrt_km": {
       "n_fits": 14,
       "sign_stable": true,
       "coef_range": [
-       -0.095,
-       -0.061
+       -0.071,
+       -0.026
       ]
      },
      "pri1k": {
       "n_fits": 14,
       "sign_stable": true,
       "coef_range": [
-       0.098,
-       0.168
+       0.062,
+       0.131
       ]
      }
     }
@@ -802,7 +802,8 @@
      "low_psf": 1512,
      "avg_psf": 1806,
      "high_psf": 2099
-    }
+    },
+    "pp_psf_span": null
    },
    {
     "street": "Frankel Avenue",
@@ -819,7 +820,11 @@
     },
     "pri1k": 0,
     "coast_km": 0.66,
-    "street_band": null
+    "street_band": null,
+    "pp_psf_span": [
+     333,
+     2270
+    ]
    },
    {
     "street": "Kingsmead (nanyang)",
@@ -840,7 +845,8 @@
      "low_psf": 1808,
      "avg_psf": 2040,
      "high_psf": 2271
-    }
+    },
+    "pp_psf_span": null
    },
    {
     "street": "Nearby (nanyang)",
@@ -854,7 +860,8 @@
     },
     "pri1k": 1,
     "coast_km": 5.39,
-    "street_band": null
+    "street_band": null,
+    "pp_psf_span": null
    },
    {
     "street": "Nearby (rosyth)",
@@ -868,7 +875,8 @@
     },
     "pri1k": 0,
     "coast_km": 7.15,
-    "street_band": null
+    "street_band": null,
+    "pp_psf_span": null
    }
   ],
   "classification": {

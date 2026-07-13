@@ -48,9 +48,12 @@ number ("23 Frankel Avenue"), street names alone surface projects only.
   【实测+辩证修正】; official landed index same window ≈ +5%/yr — reconcile
   street reads against it.
 
-## Step 2 — rebuild economics (the largest single spread)【实测】
-Same street, same month: rebuilt vs original-condition spread **+39%** (9 vs 15
-Alnwick Road). The α program: buy original condition at land value when
+## Step 2 — rebuild economics (the largest single spread)【实测, mixed basis】
+Same street, same month: **+39%** spread (9 Alnwick, rebuilt DETACHED, vs 15
+Alnwick, original SEMI-D, similar land area) — this bundles rebuild status with
+the detached-vs-semi-D form premium; a clean same-form rebuild pair is a data
+gap, but the magnitude still shows rebuild state is the largest single landed
+spread lever. The α program: buy original condition at land value when
 `price < rebuilt_comp − build_cost(~$450-550/sqft GFA, post-COVID inflated)
 − 2-3y carry − taxes`. Check: plot regularity, GCBA boundary (URA), road
 reserve/setback, 999y-vs-99y. If the pro-forma only works at >5%/yr land
