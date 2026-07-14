@@ -1,0 +1,639 @@
+[
+  {
+    "text": "Property Info",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,272][198,312]",
+    "center": [
+      115,
+      292
+    ]
+  },
+  {
+    "text": "Sale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[292,272][348,312]",
+    "center": [
+      320,
+      292
+    ]
+  },
+  {
+    "text": "Rent",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[471,272][529,312]",
+    "center": [
+      500,
+      292
+    ]
+  },
+  {
+    "text": "Street View",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[622,272][767,312]",
+    "center": [
+      694,
+      292
+    ]
+  },
+  {
+    "text": "Maps",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[854,272][925,312]",
+    "center": [
+      889,
+      292
+    ]
+  },
+  {
+    "text": "Planning Decisions",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1011,272][1252,312]",
+    "center": [
+      1131,
+      292
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Image",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.ImageView",
+    "clickable": true,
+    "bounds": "[32,360][248,576]",
+    "center": [
+      140,
+      468
+    ]
+  },
+  {
+    "text": "19 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[264,360][739,436]",
+    "center": [
+      501,
+      398
+    ]
+  },
+  {
+    "text": "Type:",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[40,600][122,648]",
+    "center": [
+      81,
+      624
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[789,600][1011,648]",
+    "center": [
+      900,
+      624
+    ]
+  },
+  {
+    "text": "Region:",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[40,664][155,712]",
+    "center": [
+      97,
+      688
+    ]
+  },
+  {
+    "text": "OCR",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[789,664][856,712]",
+    "center": [
+      822,
+      688
+    ]
+  },
+  {
+    "text": "District:",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[40,728][160,776]",
+    "center": [
+      100,
+      752
+    ]
+  },
+  {
+    "text": "D19 - Serangoon Garden, Hougang, Punggol",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[789,728][1453,776]",
+    "center": [
+      1121,
+      752
+    ]
+  },
+  {
+    "text": "Subtown:",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[40,792][182,840]",
+    "center": [
+      111,
+      816
+    ]
+  },
+  {
+    "text": "SERANGOON GARDEN",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[789,792][1129,840]",
+    "center": [
+      959,
+      816
+    ]
+  },
+  {
+    "text": "TOP:",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[40,856][114,904]",
+    "center": [
+      77,
+      880
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[789,856][800,904]",
+    "center": [
+      794,
+      880
+    ]
+  },
+  {
+    "text": "Tenure:",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[40,920][155,968]",
+    "center": [
+      97,
+      944
+    ]
+  },
+  {
+    "text": "999 yrs from 01/01/1956",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[789,920][1172,968]",
+    "center": [
+      980,
+      944
+    ]
+  },
+  {
+    "text": "Land Size:",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[40,984][197,1032]",
+    "center": [
+      118,
+      1008
+    ]
+  },
+  {
+    "text": "1839.57 sqft (last transaction)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[789,984][1252,1032]",
+    "center": [
+      1020,
+      1008
+    ]
+  },
+  {
+    "text": "Unit Transaction History",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,1120][423,1162]",
+    "center": [
+      227,
+      1141
+    ]
+  },
+  {
+    "text": "From Year 1998",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,1162][258,1200]",
+    "center": [
+      145,
+      1181
+    ]
+  },
+  {
+    "text": "Address",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,1244][391,1308]",
+    "center": [
+      342,
+      1276
+    ]
+  },
+  {
+    "text": "Type",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,1244][636,1308]",
+    "center": [
+      607,
+      1276
+    ]
+  },
+  {
+    "text": "Tenure",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,1244][943,1308]",
+    "center": [
+      902,
+      1276
+    ]
+  },
+  {
+    "text": "TOP",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,1244][1197,1308]",
+    "center": [
+      1171,
+      1276
+    ]
+  },
+  {
+    "text": "Area\n(sqft)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,1228][1495,1324]",
+    "center": [
+      1462,
+      1276
+    ]
+  },
+  {
+    "text": "PSF",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,1244][1761,1308]",
+    "center": [
+      1737,
+      1276
+    ]
+  },
+  {
+    "text": "Price",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,1244][2059,1308]",
+    "center": [
+      2028,
+      1276
+    ]
+  },
+  {
+    "text": "Sale Type",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1244][2397,1308]",
+    "center": [
+      2339,
+      1276
+    ]
+  },
+  {
+    "text": "19 CARDIFF GROVE",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,1364][546,1376]",
+    "center": [
+      420,
+      1370
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,1364][765,1376]",
+    "center": [
+      671,
+      1370
+    ]
+  },
+  {
+    "text": "999",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,1364][913,1376]",
+    "center": [
+      887,
+      1370
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,1364][1156,1376]",
+    "center": [
+      1151,
+      1370
+    ]
+  },
+  {
+    "text": "1,839.57",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,1364][1544,1376]",
+    "center": [
+      1487,
+      1370
+    ]
+  },
+  {
+    "text": "$2,256",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,1364][1804,1376]",
+    "center": [
+      1759,
+      1370
+    ]
+  },
+  {
+    "text": "$4,150,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,1364][2144,1376]",
+    "center": [
+      2071,
+      1370
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1364][2369,1376]",
+    "center": [
+      2325,
+      1370
+    ]
+  },
+  {
+    "text": "▼\nContract Date",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,1244][172,1309]",
+    "center": [
+      91,
+      1276
+    ]
+  },
+  {
+    "text": "31 Mar 2023",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,1364][174,1376]",
+    "center": [
+      92,
+      1370
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Back",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,168][80,216]",
+    "center": [
+      56,
+      192
+    ]
+  },
+  {
+    "text": "19 Cardiff Grove S(558885)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[933,156][1627,228]",
+    "center": [
+      1280,
+      192
+    ]
+  },
+  {
+    "text": "Market",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[212,1472][288,1504]",
+    "center": [
+      250,
+      1488
+    ]
+  },
+  {
+    "text": "Property Analysis",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[669,1472][861,1504]",
+    "center": [
+      765,
+      1488
+    ]
+  },
+  {
+    "text": "ProTrend",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1231,1472][1330,1504]",
+    "center": [
+      1280,
+      1488
+    ]
+  },
+  {
+    "text": "ProMap",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1753,1472][1837,1504]",
+    "center": [
+      1795,
+      1488
+    ]
+  },
+  {
+    "text": "More",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1472][2338,1504]",
+    "center": [
+      2310,
+      1488
+    ]
+  }
+]

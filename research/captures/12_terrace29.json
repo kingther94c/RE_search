@@ -1,0 +1,1406 @@
+[
+  {
+    "text": "10Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[0,260][2560,300]",
+    "center": [
+      1280,
+      280
+    ]
+  },
+  {
+    "text": "Address",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[248,332][345,396]",
+    "center": [
+      296,
+      364
+    ]
+  },
+  {
+    "text": "Type",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[538,332][596,396]",
+    "center": [
+      567,
+      364
+    ]
+  },
+  {
+    "text": "Tenure",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[828,332][909,396]",
+    "center": [
+      868,
+      364
+    ]
+  },
+  {
+    "text": "TOP",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1118,332][1169,396]",
+    "center": [
+      1143,
+      364
+    ]
+  },
+  {
+    "text": "Area\n(sqft)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,316][1473,412]",
+    "center": [
+      1440,
+      364
+    ]
+  },
+  {
+    "text": "PSF",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1698,332][1745,396]",
+    "center": [
+      1721,
+      364
+    ]
+  },
+  {
+    "text": "Price",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1988,332][2049,396]",
+    "center": [
+      2018,
+      364
+    ]
+  },
+  {
+    "text": "Sale Type",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2278,332][2393,396]",
+    "center": [
+      2335,
+      364
+    ]
+  },
+  {
+    "text": "17 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[248,452][459,492]",
+    "center": [
+      353,
+      472
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[538,452][725,492]",
+    "center": [
+      631,
+      472
+    ]
+  },
+  {
+    "text": "999 yrs from 01/01/1956",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[828,432][1102,512]",
+    "center": [
+      965,
+      472
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1118,452][1128,492]",
+    "center": [
+      1123,
+      472
+    ]
+  },
+  {
+    "text": "2,640",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,452][1481,492]",
+    "center": [
+      1444,
+      472
+    ]
+  },
+  {
+    "text": "$1,779",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1698,452][1788,492]",
+    "center": [
+      1743,
+      472
+    ]
+  },
+  {
+    "text": "$4,698,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1988,452][2134,492]",
+    "center": [
+      2061,
+      472
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2278,452][2365,492]",
+    "center": [
+      2321,
+      472
+    ]
+  },
+  {
+    "text": "91 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[248,548][459,588]",
+    "center": [
+      353,
+      568
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[538,548][725,588]",
+    "center": [
+      631,
+      568
+    ]
+  },
+  {
+    "text": "999 yrs from 01/01/1956",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[828,528][1102,608]",
+    "center": [
+      965,
+      568
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1118,548][1128,588]",
+    "center": [
+      1123,
+      568
+    ]
+  },
+  {
+    "text": "3,264",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,548][1481,588]",
+    "center": [
+      1444,
+      568
+    ]
+  },
+  {
+    "text": "$1,134",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1698,548][1788,588]",
+    "center": [
+      1743,
+      568
+    ]
+  },
+  {
+    "text": "$3,700,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1988,548][2134,588]",
+    "center": [
+      2061,
+      568
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2278,548][2365,588]",
+    "center": [
+      2321,
+      568
+    ]
+  },
+  {
+    "text": "64 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[248,644][459,684]",
+    "center": [
+      353,
+      664
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[538,644][725,684]",
+    "center": [
+      631,
+      664
+    ]
+  },
+  {
+    "text": "999 yrs from 01/01/1956",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[828,624][1102,704]",
+    "center": [
+      965,
+      664
+    ]
+  },
+  {
+    "text": "2002",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1118,644][1185,684]",
+    "center": [
+      1151,
+      664
+    ]
+  },
+  {
+    "text": "2,638",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,644][1481,684]",
+    "center": [
+      1444,
+      664
+    ]
+  },
+  {
+    "text": "$1,895",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1698,644][1788,684]",
+    "center": [
+      1743,
+      664
+    ]
+  },
+  {
+    "text": "$5,000,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1988,644][2134,684]",
+    "center": [
+      2061,
+      664
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2278,644][2365,684]",
+    "center": [
+      2321,
+      664
+    ]
+  },
+  {
+    "text": "58 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[248,740][459,780]",
+    "center": [
+      353,
+      760
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[538,740][725,780]",
+    "center": [
+      631,
+      760
+    ]
+  },
+  {
+    "text": "999 yrs from 01/01/1956",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[828,720][1102,800]",
+    "center": [
+      965,
+      760
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1118,740][1128,780]",
+    "center": [
+      1123,
+      760
+    ]
+  },
+  {
+    "text": "1,840",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,740][1481,780]",
+    "center": [
+      1444,
+      760
+    ]
+  },
+  {
+    "text": "$1,767",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1698,740][1788,780]",
+    "center": [
+      1743,
+      760
+    ]
+  },
+  {
+    "text": "$3,250,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1988,740][2134,780]",
+    "center": [
+      2061,
+      760
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2278,740][2365,780]",
+    "center": [
+      2321,
+      760
+    ]
+  },
+  {
+    "text": "16 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[248,836][459,876]",
+    "center": [
+      353,
+      856
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[538,836][725,876]",
+    "center": [
+      631,
+      856
+    ]
+  },
+  {
+    "text": "999 yrs from 01/01/1956",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[828,816][1102,896]",
+    "center": [
+      965,
+      856
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1118,836][1128,876]",
+    "center": [
+      1123,
+      856
+    ]
+  },
+  {
+    "text": "2,641",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,836][1481,876]",
+    "center": [
+      1444,
+      856
+    ]
+  },
+  {
+    "text": "$1,741",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1698,836][1788,876]",
+    "center": [
+      1743,
+      856
+    ]
+  },
+  {
+    "text": "$4,600,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1988,836][2134,876]",
+    "center": [
+      2061,
+      856
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2278,836][2365,876]",
+    "center": [
+      2321,
+      856
+    ]
+  },
+  {
+    "text": "47 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[248,932][459,972]",
+    "center": [
+      353,
+      952
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[538,932][725,972]",
+    "center": [
+      631,
+      952
+    ]
+  },
+  {
+    "text": "999 yrs from 01/01/1956",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[828,912][1102,992]",
+    "center": [
+      965,
+      952
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1118,932][1128,972]",
+    "center": [
+      1123,
+      952
+    ]
+  },
+  {
+    "text": "1,840",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,932][1481,972]",
+    "center": [
+      1444,
+      952
+    ]
+  },
+  {
+    "text": "$1,946",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1698,932][1788,972]",
+    "center": [
+      1743,
+      952
+    ]
+  },
+  {
+    "text": "$3,580,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1988,932][2134,972]",
+    "center": [
+      2061,
+      952
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2278,932][2365,972]",
+    "center": [
+      2321,
+      952
+    ]
+  },
+  {
+    "text": "72 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[248,1028][459,1068]",
+    "center": [
+      353,
+      1048
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[538,1028][725,1068]",
+    "center": [
+      631,
+      1048
+    ]
+  },
+  {
+    "text": "999 yrs from 01/01/1956",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[828,1008][1102,1088]",
+    "center": [
+      965,
+      1048
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1118,1028][1128,1068]",
+    "center": [
+      1123,
+      1048
+    ]
+  },
+  {
+    "text": "1,840",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,1028][1481,1068]",
+    "center": [
+      1444,
+      1048
+    ]
+  },
+  {
+    "text": "$2,848",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1698,1028][1788,1068]",
+    "center": [
+      1743,
+      1048
+    ]
+  },
+  {
+    "text": "$5,238,888",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1988,1028][2134,1068]",
+    "center": [
+      2061,
+      1048
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2278,1028][2365,1068]",
+    "center": [
+      2321,
+      1048
+    ]
+  },
+  {
+    "text": "22 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[248,1124][459,1164]",
+    "center": [
+      353,
+      1144
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[538,1124][725,1164]",
+    "center": [
+      631,
+      1144
+    ]
+  },
+  {
+    "text": "999 yrs from 01/01/1956",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[828,1104][1102,1184]",
+    "center": [
+      965,
+      1144
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1118,1124][1128,1164]",
+    "center": [
+      1123,
+      1144
+    ]
+  },
+  {
+    "text": "1,841",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,1124][1481,1164]",
+    "center": [
+      1444,
+      1144
+    ]
+  },
+  {
+    "text": "$2,380",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1698,1124][1788,1164]",
+    "center": [
+      1743,
+      1144
+    ]
+  },
+  {
+    "text": "$4,380,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1988,1124][2134,1164]",
+    "center": [
+      2061,
+      1144
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2278,1124][2365,1164]",
+    "center": [
+      2321,
+      1144
+    ]
+  },
+  {
+    "text": "86 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[248,1220][459,1260]",
+    "center": [
+      353,
+      1240
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[538,1220][725,1260]",
+    "center": [
+      631,
+      1240
+    ]
+  },
+  {
+    "text": "999 yrs from 01/01/1956",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[828,1200][1102,1280]",
+    "center": [
+      965,
+      1240
+    ]
+  },
+  {
+    "text": "2012",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1118,1220][1185,1260]",
+    "center": [
+      1151,
+      1240
+    ]
+  },
+  {
+    "text": "1,840",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,1220][1481,1260]",
+    "center": [
+      1444,
+      1240
+    ]
+  },
+  {
+    "text": "$2,446",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1698,1220][1788,1260]",
+    "center": [
+      1743,
+      1240
+    ]
+  },
+  {
+    "text": "$4,500,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1988,1220][2134,1260]",
+    "center": [
+      2061,
+      1240
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2278,1220][2365,1260]",
+    "center": [
+      2321,
+      1240
+    ]
+  },
+  {
+    "text": "11 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[248,1316][459,1356]",
+    "center": [
+      353,
+      1336
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[538,1316][725,1356]",
+    "center": [
+      631,
+      1336
+    ]
+  },
+  {
+    "text": "999 yrs from 01/01/1956",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[828,1296][1102,1376]",
+    "center": [
+      965,
+      1336
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1118,1316][1128,1356]",
+    "center": [
+      1123,
+      1336
+    ]
+  },
+  {
+    "text": "1,840",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1408,1316][1481,1356]",
+    "center": [
+      1444,
+      1336
+    ]
+  },
+  {
+    "text": "$2,327",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1698,1316][1788,1356]",
+    "center": [
+      1743,
+      1336
+    ]
+  },
+  {
+    "text": "$4,280,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1988,1316][2134,1356]",
+    "center": [
+      2061,
+      1336
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2278,1316][2365,1356]",
+    "center": [
+      2321,
+      1336
+    ]
+  },
+  {
+    "text": "▼\nContract Date",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,332][170,397]",
+    "center": [
+      89,
+      364
+    ]
+  },
+  {
+    "text": "26 Jun 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,452][169,492]",
+    "center": [
+      88,
+      472
+    ]
+  },
+  {
+    "text": "11 Feb 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,548][170,588]",
+    "center": [
+      89,
+      568
+    ]
+  },
+  {
+    "text": "14 Jul 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,644][161,684]",
+    "center": [
+      84,
+      664
+    ]
+  },
+  {
+    "text": "15 May 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,740][176,780]",
+    "center": [
+      92,
+      760
+    ]
+  },
+  {
+    "text": "05 May 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,836][176,876]",
+    "center": [
+      92,
+      856
+    ]
+  },
+  {
+    "text": "20 Mar 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,932][172,972]",
+    "center": [
+      90,
+      952
+    ]
+  },
+  {
+    "text": "16 Jan 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,1028][169,1068]",
+    "center": [
+      88,
+      1048
+    ]
+  },
+  {
+    "text": "12 Dec 2024",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,1124][172,1164]",
+    "center": [
+      90,
+      1144
+    ]
+  },
+  {
+    "text": "06 Dec 2024",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,1220][172,1260]",
+    "center": [
+      90,
+      1240
+    ]
+  },
+  {
+    "text": "08 Jul 2024",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[8,1316][161,1356]",
+    "center": [
+      84,
+      1336
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Back",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,168][80,216]",
+    "center": [
+      56,
+      192
+    ]
+  },
+  {
+    "text": "Type Summary",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,171][352,213]",
+    "center": [
+      232,
+      192
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Export",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2480,168][2528,216]",
+    "center": [
+      2504,
+      192
+    ]
+  },
+  {
+    "text": "Market",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[212,1472][288,1504]",
+    "center": [
+      250,
+      1488
+    ]
+  },
+  {
+    "text": "Property Analysis",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[669,1472][861,1504]",
+    "center": [
+      765,
+      1488
+    ]
+  },
+  {
+    "text": "ProTrend",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1231,1472][1330,1504]",
+    "center": [
+      1280,
+      1488
+    ]
+  },
+  {
+    "text": "ProMap",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1753,1472][1837,1504]",
+    "center": [
+      1795,
+      1488
+    ]
+  },
+  {
+    "text": "More",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1472][2338,1504]",
+    "center": [
+      2310,
+      1488
+    ]
+  }
+]

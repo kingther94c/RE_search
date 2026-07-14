@@ -1,0 +1,483 @@
+[
+  {
+    "text": "",
+    "desc": "nearby search",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,368][80,416]",
+    "center": [
+      56,
+      392
+    ]
+  },
+  {
+    "text": "Search By Current Location",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,368][526,416]",
+    "center": [
+      319,
+      392
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Next",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2480,368][2528,416]",
+    "center": [
+      2504,
+      392
+    ]
+  },
+  {
+    "text": "PAST SEARCHES",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,528][2528,568]",
+    "center": [
+      1280,
+      548
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,616][80,664]",
+    "center": [
+      56,
+      640
+    ]
+  },
+  {
+    "text": "23 Frankel Avenue S(458151)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,592][559,640]",
+    "center": [
+      335,
+      616
+    ]
+  },
+  {
+    "text": "Landed / Shophouse",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,640][426,688]",
+    "center": [
+      269,
+      664
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Next",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2480,616][2528,664]",
+    "center": [
+      2504,
+      640
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,744][80,792]",
+    "center": [
+      56,
+      768
+    ]
+  },
+  {
+    "text": "Spottiswoode Suites",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,720][424,768]",
+    "center": [
+      268,
+      744
+    ]
+  },
+  {
+    "text": "Apartment, Condominium",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,768][501,816]",
+    "center": [
+      306,
+      792
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Next",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2480,744][2528,792]",
+    "center": [
+      2504,
+      768
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,872][80,920]",
+    "center": [
+      56,
+      896
+    ]
+  },
+  {
+    "text": "One Pearl Bank",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,848][344,896]",
+    "center": [
+      228,
+      872
+    ]
+  },
+  {
+    "text": "Apartment, Condominium",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,896][501,944]",
+    "center": [
+      306,
+      920
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Next",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2480,872][2528,920]",
+    "center": [
+      2504,
+      896
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,1000][80,1048]",
+    "center": [
+      56,
+      1024
+    ]
+  },
+  {
+    "text": "Parc Esta",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,976][257,1024]",
+    "center": [
+      184,
+      1000
+    ]
+  },
+  {
+    "text": "Apartment, Condominium",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,1024][501,1072]",
+    "center": [
+      306,
+      1048
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Next",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2480,1000][2528,1048]",
+    "center": [
+      2504,
+      1024
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,1128][80,1176]",
+    "center": [
+      56,
+      1152
+    ]
+  },
+  {
+    "text": "Sengkang Grand Residences",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,1104][547,1152]",
+    "center": [
+      329,
+      1128
+    ]
+  },
+  {
+    "text": "Apartment, Condominium",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,1152][501,1200]",
+    "center": [
+      306,
+      1176
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Next",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2480,1128][2528,1176]",
+    "center": [
+      2504,
+      1152
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Icon",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,1256][80,1304]",
+    "center": [
+      56,
+      1280
+    ]
+  },
+  {
+    "text": "Dairy Farm Residences",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,1232][462,1280]",
+    "center": [
+      287,
+      1256
+    ]
+  },
+  {
+    "text": "Apartment, Condominium",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,1280][501,1328]",
+    "center": [
+      306,
+      1304
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Next",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2480,1256][2528,1304]",
+    "center": [
+      2504,
+      1280
+    ]
+  },
+  {
+    "text": "Treasure At Tampines",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[112,1360][446,1376]",
+    "center": [
+      279,
+      1368
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Search",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,144][2528,256]",
+    "center": [
+      1280,
+      200
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Search",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[64,176][112,224]",
+    "center": [
+      88,
+      200
+    ]
+  },
+  {
+    "text": "Search",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[136,176][242,224]",
+    "center": [
+      189,
+      200
+    ]
+  },
+  {
+    "text": "Market",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[212,1472][288,1504]",
+    "center": [
+      250,
+      1488
+    ]
+  },
+  {
+    "text": "Property Analysis",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[669,1472][861,1504]",
+    "center": [
+      765,
+      1488
+    ]
+  },
+  {
+    "text": "ProTrend",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1231,1472][1330,1504]",
+    "center": [
+      1280,
+      1488
+    ]
+  },
+  {
+    "text": "ProMap",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1753,1472][1837,1504]",
+    "center": [
+      1795,
+      1488
+    ]
+  },
+  {
+    "text": "More",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1472][2338,1504]",
+    "center": [
+      2310,
+      1488
+    ]
+  }
+]

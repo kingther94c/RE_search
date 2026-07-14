@@ -1,0 +1,343 @@
+{
+  "slug": "cardiff",
+  "street": "Cardiff Grove",
+  "scope": "Street",
+  "type": "Terrace House",
+  "window": "10Y",
+  "n": 29,
+  "rows": [
+    {
+      "date": "26 Jun 2026",
+      "address": "17 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "2,640",
+      "psf": "$1,779",
+      "price": "$4,698,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "11 Feb 2026",
+      "address": "91 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "3,264",
+      "psf": "$1,134",
+      "price": "$3,700,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "14 Jul 2025",
+      "address": "64 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "2002",
+      "area_sqft": "2,638",
+      "psf": "$1,895",
+      "price": "$5,000,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "15 May 2025",
+      "address": "58 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,840",
+      "psf": "$1,767",
+      "price": "$3,250,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "05 May 2025",
+      "address": "16 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "2,641",
+      "psf": "$1,741",
+      "price": "$4,600,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "20 Mar 2025",
+      "address": "47 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,840",
+      "psf": "$1,946",
+      "price": "$3,580,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "16 Jan 2025",
+      "address": "72 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,840",
+      "psf": "$2,848",
+      "price": "$5,238,888",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "12 Dec 2024",
+      "address": "22 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,841",
+      "psf": "$2,380",
+      "price": "$4,380,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "06 Dec 2024",
+      "address": "86 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "2012",
+      "area_sqft": "1,840",
+      "psf": "$2,446",
+      "price": "$4,500,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "08 Jul 2024",
+      "address": "11 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,840",
+      "psf": "$2,327",
+      "price": "$4,280,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "02 Feb 2024",
+      "address": "20 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,841",
+      "psf": "$1,806",
+      "price": "$3,325,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "31 Mar 2023",
+      "address": "19 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,840",
+      "psf": "$2,256",
+      "price": "$4,150,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "01 Mar 2023",
+      "address": "35 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,840",
+      "psf": "$2,435",
+      "price": "$4,480,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "26 Apr 2022",
+      "address": "51 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "1997",
+      "area_sqft": "2,641",
+      "psf": "$1,562",
+      "price": "$4,126,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "15 Oct 2021",
+      "address": "72 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,840",
+      "psf": "$1,956",
+      "price": "$3,598,888",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "17 Sep 2021",
+      "address": "78 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "2,643",
+      "psf": "$1,712",
+      "price": "$4,525,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "09 Jul 2021",
+      "address": "42 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "2,641",
+      "psf": "$1,476",
+      "price": "$3,900,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "07 Jun 2021",
+      "address": "79 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "4,140",
+      "psf": "$845",
+      "price": "$3,500,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "11 Feb 2021",
+      "address": "91 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "3,264",
+      "psf": "$1,088",
+      "price": "$3,550,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "11 Jan 2021",
+      "address": "67 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "4,140",
+      "psf": "$870",
+      "price": "$3,600,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "22 Jun 2020",
+      "address": "74 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,840",
+      "psf": "$1,381",
+      "price": "$2,540,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "09 Dec 2019",
+      "address": "25 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,840",
+      "psf": "$978",
+      "price": "$1,800,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "06 Nov 2019",
+      "address": "45 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,840",
+      "psf": "$1,794",
+      "price": "$3,300,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "02 Jan 2019",
+      "address": "18 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "2,644",
+      "psf": "$1,343",
+      "price": "$3,550,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "31 Jan 2018",
+      "address": "42 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "2,641",
+      "psf": "$1,022",
+      "price": "$2,700,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "05 Sep 2017",
+      "address": "45 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,840",
+      "psf": "$1,022",
+      "price": "$1,880,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "26 Apr 2017",
+      "address": "8 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,841",
+      "psf": "$1,548",
+      "price": "$2,850,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "17 Oct 2016",
+      "address": "34 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "1,841",
+      "psf": "$1,510",
+      "price": "$2,780,000",
+      "sale_type": "Resale"
+    },
+    {
+      "date": "02 Sep 2016",
+      "address": "91 Cardiff Grove",
+      "type": "Terrace House",
+      "tenure": "999 yrs from 01/01/1956",
+      "top": "-",
+      "area_sqft": "3,264",
+      "psf": "$873",
+      "price": "$2,850,000",
+      "sale_type": "Resale"
+    }
+  ],
+  "band_10y_terrace": {
+    "area_range": "1,839 - 4,139",
+    "price_range": "$1,800,000 - $5,238,888",
+    "psf_range": "$845 - $2,848",
+    "avg_price": "$3,663,165",
+    "avg_psf": "$1,646",
+    "count": 29
+  },
+  "semi_d_10y": {
+    "area_sqft": "2,641",
+    "price": "$4,000,000",
+    "psf": "$1,514",
+    "count": 1
+  }
+}

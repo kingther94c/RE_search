@@ -1,0 +1,221 @@
+{
+  "subject": {
+    "address": "19 Cardiff Grove",
+    "postcode": "S(558885)",
+    "type": "Terrace House",
+    "land_sqft": 1839.57,
+    "tenure": "999 yrs from 01/01/1956",
+    "years_left": 929,
+    "district": "D19 (OCR)",
+    "subtown": "Serangoon Garden",
+    "condition": "original (TOP -)",
+    "last_sale": {
+      "date": "31 Mar 2023",
+      "price": 4150000,
+      "psf": 2256
+    }
+  },
+  "asof": "2026-07-14",
+  "method": {
+    "trend_pa": 0.0,
+    "trend_note": "2022+ regime empirically flat (-2.6%/yr, R2=0.02, insig); 10Y boom +7.6%/yr not extrapolated",
+    "quantum_elasticity": -0.877,
+    "halflife_yr": 1.5,
+    "n_comps": 8
+  },
+  "valuation": {
+    "point_psf": 2075,
+    "point_price": 3817000.0,
+    "basis": "recency-weighted same-spec (1,750-2,000sf) ORIGINAL comps grid",
+    "weighted_comp_psf_anchored": 2075,
+    "weighted_comp_psf_pure": 2064,
+    "iqr_psf": [
+      1912,
+      2341
+    ],
+    "iqr_price": [
+      3517000.0,
+      4306000.0
+    ],
+    "buyer_target_price": [
+      3500000,
+      3700000
+    ],
+    "buyer_target_psf": [
+      1903,
+      2011
+    ],
+    "seller_end_price": [
+      4000000,
+      4150000
+    ],
+    "seller_end_psf": [
+      2174,
+      2256
+    ],
+    "fair_range_price": [
+      3500000,
+      4000000
+    ]
+  },
+  "crosschecks": {
+    "recency_weighted_original_psf": 2064,
+    "same_spec_mean_psf": 2109,
+    "same_spec_2024_peak": "22 Cardiff Grove 12 Dec 2024 $2380 / 11 Cardiff Grove 08 Jul 2024 $2327",
+    "freshest_2025_original_psf": 1856,
+    "freshest_2025_original_price": 3414000.0,
+    "freshest_2025_prints": [
+      "58 Cardiff Grove 15 May 2025 $1767",
+      "47 Cardiff Grove 20 Mar 2025 $1946"
+    ],
+    "own_2023_timeadj_psf": 2066,
+    "own_2023_flat_psf": 2256,
+    "own_2023_price": 4150000,
+    "size_adj_2026_dispersion_psf": [
+      1875,
+      2442
+    ],
+    "size_adj_2026_legs": [
+      [
+        "17 Cardiff Grove",
+        "26 Jun 2026",
+        2640.0,
+        1779.0,
+        2442.116515655011
+      ],
+      [
+        "91 Cardiff Grove",
+        "11 Feb 2026",
+        3264.0,
+        1134.0,
+        1875.062399067227
+      ]
+    ],
+    "land_floor_psf": 1793,
+    "land_floor_price": 3300000,
+    "rebuilt_ceiling_psf": [
+      2446,
+      2848
+    ],
+    "rebuilt_ceiling_price": [
+      4500000.0,
+      5239000.0
+    ]
+  },
+  "vs_purchase": {
+    "purchase": 4150000,
+    "central_now": 3817000.0,
+    "central_delta_pct": -8.0,
+    "freshest_now": 3414000.0,
+    "freshest_delta_pct": -17.7,
+    "seller_aspiration": 4150000,
+    "seller_delta_pct": 0.0
+  },
+  "costs": {
+    "bsd_at_point": 168620,
+    "absd_2nd_20pct": 763400,
+    "absd_pr_1st_5pct": 190850,
+    "absd_foreigner_60pct": 2290200,
+    "absd_citizen_1st": 0,
+    "property_tax_note": "自住 owner-occupier 累进(AV~$78k → 约 S$6-7k/年)；出租 non-owner-occupier 12-36% 累进(约 S$12-22k/年）——进一步压低 ~2% 毛回报",
+    "ssd_note": "bought 2023-03; 3-yr SSD (pre-4Jul2025 rule) lapsed 2026-03 -> nil now; the new 4-yr rule applies only to purchases on/after 4 Jul 2025"
+  },
+  "yield": {
+    "rent_mo_est": 6500,
+    "gross_yield_pct": 2.04,
+    "street_rent_avg": 7186,
+    "street_rent_terrace_recent": 5500
+  },
+  "comp_counts": {
+    "street_terraces_10y": 29,
+    "same_spec_originals_in_grid": 8
+  },
+  "review": {
+    "rounds": 2,
+    "final_verdict": "PASS",
+    "overall": 8.5,
+    "scores": {
+      "data_accuracy": 9,
+      "method_rigor": 7,
+      "completeness": 9,
+      "decision_usefulness": 9,
+      "honesty_uncertainty": 8,
+      "presentation_bilingual": 9
+    },
+    "note": "R1 REVISE 7.65 caught seller-anchored point (flat-pushed own-print co-equal leg) + flattering -4.3% framing; R2 PASS 8.5 after separating LEVEL(-8%/-18% below 2023 peak buy) from SLOPE(statistically flat)."
+  },
+  "grid": [
+    {
+      "addr": "58 Cardiff Grove",
+      "date": "15 May 2025",
+      "area": 1840.0,
+      "psf": 1767.0,
+      "top": "-",
+      "adj_psf": 1767,
+      "w": 0.459
+    },
+    {
+      "addr": "47 Cardiff Grove",
+      "date": "20 Mar 2025",
+      "area": 1840.0,
+      "psf": 1946.0,
+      "top": "-",
+      "adj_psf": 1946,
+      "w": 0.411
+    },
+    {
+      "addr": "22 Cardiff Grove",
+      "date": "12 Dec 2024",
+      "area": 1841.0,
+      "psf": 2380.0,
+      "top": "-",
+      "adj_psf": 2382,
+      "w": 0.348
+    },
+    {
+      "addr": "11 Cardiff Grove",
+      "date": "08 Jul 2024",
+      "area": 1840.0,
+      "psf": 2327.0,
+      "top": "-",
+      "adj_psf": 2327,
+      "w": 0.264
+    },
+    {
+      "addr": "19 Cardiff Grove",
+      "date": "31 Mar 2023",
+      "area": 1840.0,
+      "psf": 2256.0,
+      "top": "-",
+      "adj_psf": 2256,
+      "w": 0.217
+    },
+    {
+      "addr": "20 Cardiff Grove",
+      "date": "02 Feb 2024",
+      "area": 1841.0,
+      "psf": 1806.0,
+      "top": "-",
+      "adj_psf": 1807,
+      "w": 0.2
+    },
+    {
+      "addr": "35 Cardiff Grove",
+      "date": "01 Mar 2023",
+      "area": 1840.0,
+      "psf": 2435.0,
+      "top": "-",
+      "adj_psf": 2435,
+      "w": 0.108
+    },
+    {
+      "addr": "72 Cardiff Grove",
+      "date": "15 Oct 2021",
+      "area": 1840.0,
+      "psf": 1956.0,
+      "top": "-",
+      "adj_psf": 1956,
+      "w": 0.042
+    }
+  ]
+}

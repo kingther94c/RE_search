@@ -1,0 +1,158 @@
+[
+  {
+    "text": "71 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.EditText",
+    "clickable": true,
+    "bounds": "[0,144][2560,256]",
+    "center": [
+      1280,
+      200
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Search",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[0,144][2560,256]",
+    "center": [
+      1280,
+      200
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Search",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,176][80,224]",
+    "center": [
+      56,
+      200
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Close",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2480,176][2528,224]",
+    "center": [
+      2504,
+      200
+    ]
+  },
+  {
+    "text": "Landed",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,354][2528,394]",
+    "center": [
+      1280,
+      374
+    ]
+  },
+  {
+    "text": "71 Cardiff Grove S(558937)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,434][448,482]",
+    "center": [
+      240,
+      458
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Next",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[2480,434][2528,482]",
+    "center": [
+      2504,
+      458
+    ]
+  },
+  {
+    "text": "Market",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[212,800][288,832]",
+    "center": [
+      250,
+      816
+    ]
+  },
+  {
+    "text": "Property Analysis",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[669,800][861,832]",
+    "center": [
+      765,
+      816
+    ]
+  },
+  {
+    "text": "ProTrend",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1231,800][1330,832]",
+    "center": [
+      1280,
+      816
+    ]
+  },
+  {
+    "text": "ProMap",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1753,800][1837,832]",
+    "center": [
+      1795,
+      816
+    ]
+  },
+  {
+    "text": "More",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,800][2338,832]",
+    "center": [
+      2310,
+      816
+    ]
+  }
+]
