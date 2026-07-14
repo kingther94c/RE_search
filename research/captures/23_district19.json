@@ -1,0 +1,1445 @@
+[
+  {
+    "text": "Property Info",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[32,272][198,312]",
+    "center": [
+      115,
+      292
+    ]
+  },
+  {
+    "text": "Sale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[292,272][348,312]",
+    "center": [
+      320,
+      292
+    ]
+  },
+  {
+    "text": "Rent",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[471,272][529,312]",
+    "center": [
+      500,
+      292
+    ]
+  },
+  {
+    "text": "Street View",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[622,272][767,312]",
+    "center": [
+      694,
+      292
+    ]
+  },
+  {
+    "text": "Maps",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[854,272][925,312]",
+    "center": [
+      889,
+      292
+    ]
+  },
+  {
+    "text": "Planning Decisions",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1011,272][1252,312]",
+    "center": [
+      1131,
+      292
+    ]
+  },
+  {
+    "text": "6M",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[219,372][261,412]",
+    "center": [
+      240,
+      392
+    ]
+  },
+  {
+    "text": "1Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[637,372][672,412]",
+    "center": [
+      654,
+      392
+    ]
+  },
+  {
+    "text": "2Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1051,372][1086,412]",
+    "center": [
+      1068,
+      392
+    ]
+  },
+  {
+    "text": "5Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1465,372][1500,412]",
+    "center": [
+      1482,
+      392
+    ]
+  },
+  {
+    "text": "...",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2297,372][2323,412]",
+    "center": [
+      2310,
+      392
+    ]
+  },
+  {
+    "text": "10Y",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1871,372][1922,412]",
+    "center": [
+      1896,
+      392
+    ]
+  },
+  {
+    "text": "Detached House, Semi-Detached House, Terrace House Bedrooms",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[64,450][909,490]",
+    "center": [
+      486,
+      470
+    ]
+  },
+  {
+    "text": "",
+    "desc": "down",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[925,446][973,494]",
+    "center": [
+      949,
+      470
+    ]
+  },
+  {
+    "text": "17 Cardiff Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,500][505,511]",
+    "center": [
+      399,
+      505
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,500][765,511]",
+    "center": [
+      671,
+      505
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,500][872,511]",
+    "center": [
+      867,
+      505
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,500][1156,511]",
+    "center": [
+      1151,
+      505
+    ]
+  },
+  {
+    "text": "0",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,500][1448,511]",
+    "center": [
+      1439,
+      505
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,500][1724,511]",
+    "center": [
+      1719,
+      505
+    ]
+  },
+  {
+    "text": "$4,698,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,500][2144,511]",
+    "center": [
+      2071,
+      505
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,500][2369,511]",
+    "center": [
+      2325,
+      505
+    ]
+  },
+  {
+    "text": "59 Conway Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,567][518,607]",
+    "center": [
+      406,
+      587
+    ]
+  },
+  {
+    "text": "Semi-Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,547][846,627]",
+    "center": [
+      712,
+      587
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,567][872,607]",
+    "center": [
+      867,
+      587
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,567][1156,607]",
+    "center": [
+      1151,
+      587
+    ]
+  },
+  {
+    "text": "0",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,567][1448,607]",
+    "center": [
+      1439,
+      587
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,567][1724,607]",
+    "center": [
+      1719,
+      587
+    ]
+  },
+  {
+    "text": "$7,000,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,567][2144,607]",
+    "center": [
+      2071,
+      587
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,567][2369,607]",
+    "center": [
+      2325,
+      587
+    ]
+  },
+  {
+    "text": "6 Grace Walk",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,663][463,703]",
+    "center": [
+      378,
+      683
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,663][765,703]",
+    "center": [
+      671,
+      683
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,663][872,703]",
+    "center": [
+      867,
+      683
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,663][1156,703]",
+    "center": [
+      1151,
+      683
+    ]
+  },
+  {
+    "text": "0",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,663][1448,703]",
+    "center": [
+      1439,
+      683
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,663][1724,703]",
+    "center": [
+      1719,
+      683
+    ]
+  },
+  {
+    "text": "$6,888,888",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,663][2144,703]",
+    "center": [
+      2071,
+      683
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,663][2369,703]",
+    "center": [
+      2325,
+      683
+    ]
+  },
+  {
+    "text": "8 Tai Yuan Heights",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,759][535,799]",
+    "center": [
+      414,
+      779
+    ]
+  },
+  {
+    "text": "Semi-Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,739][846,819]",
+    "center": [
+      712,
+      779
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,759][872,799]",
+    "center": [
+      867,
+      779
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,759][1156,799]",
+    "center": [
+      1151,
+      779
+    ]
+  },
+  {
+    "text": "86,111.20",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,759][1560,799]",
+    "center": [
+      1495,
+      779
+    ]
+  },
+  {
+    "text": "$107",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,759][1781,799]",
+    "center": [
+      1747,
+      779
+    ]
+  },
+  {
+    "text": "$9,180,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,759][2144,799]",
+    "center": [
+      2071,
+      779
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,759][2369,799]",
+    "center": [
+      2325,
+      779
+    ]
+  },
+  {
+    "text": "33 Chiselhurst Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,855][560,895]",
+    "center": [
+      427,
+      875
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,855][765,895]",
+    "center": [
+      671,
+      875
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,855][872,895]",
+    "center": [
+      867,
+      875
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,855][1156,895]",
+    "center": [
+      1151,
+      875
+    ]
+  },
+  {
+    "text": "5,244",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,855][1503,895]",
+    "center": [
+      1466,
+      875
+    ]
+  },
+  {
+    "text": "$1,219",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,855][1804,895]",
+    "center": [
+      1759,
+      875
+    ]
+  },
+  {
+    "text": "$6,390,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,855][2144,895]",
+    "center": [
+      2071,
+      875
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,855][2369,895]",
+    "center": [
+      2325,
+      875
+    ]
+  },
+  {
+    "text": "28 Chiselhurst Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,951][560,991]",
+    "center": [
+      427,
+      971
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,951][765,991]",
+    "center": [
+      671,
+      971
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,951][872,991]",
+    "center": [
+      867,
+      971
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,951][1156,991]",
+    "center": [
+      1151,
+      971
+    ]
+  },
+  {
+    "text": "0",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,951][1448,991]",
+    "center": [
+      1439,
+      971
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,951][1724,991]",
+    "center": [
+      1719,
+      971
+    ]
+  },
+  {
+    "text": "$6,305,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,951][2144,991]",
+    "center": [
+      2071,
+      971
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,951][2369,991]",
+    "center": [
+      2325,
+      971
+    ]
+  },
+  {
+    "text": "52 Carisbrooke Grove",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,1027][562,1107]",
+    "center": [
+      428,
+      1067
+    ]
+  },
+  {
+    "text": "Semi-Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,1027][846,1107]",
+    "center": [
+      712,
+      1067
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,1047][872,1087]",
+    "center": [
+      867,
+      1067
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,1047][1156,1087]",
+    "center": [
+      1151,
+      1067
+    ]
+  },
+  {
+    "text": "7,750",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,1047][1503,1087]",
+    "center": [
+      1466,
+      1067
+    ]
+  },
+  {
+    "text": "$1,161",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,1047][1804,1087]",
+    "center": [
+      1759,
+      1067
+    ]
+  },
+  {
+    "text": "$9,000,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,1047][2144,1087]",
+    "center": [
+      2071,
+      1067
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1047][2369,1087]",
+    "center": [
+      2325,
+      1067
+    ]
+  },
+  {
+    "text": "54 Chartwell Drive",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,1143][528,1183]",
+    "center": [
+      411,
+      1163
+    ]
+  },
+  {
+    "text": "Semi-Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,1123][846,1203]",
+    "center": [
+      712,
+      1163
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,1143][872,1183]",
+    "center": [
+      867,
+      1163
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,1143][1156,1183]",
+    "center": [
+      1151,
+      1163
+    ]
+  },
+  {
+    "text": "0",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,1143][1448,1183]",
+    "center": [
+      1439,
+      1163
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,1143][1724,1183]",
+    "center": [
+      1719,
+      1163
+    ]
+  },
+  {
+    "text": "$6,880,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,1143][2144,1183]",
+    "center": [
+      2071,
+      1163
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1143][2369,1183]",
+    "center": [
+      2325,
+      1163
+    ]
+  },
+  {
+    "text": "25 Borthwick Drive",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,1239][535,1279]",
+    "center": [
+      414,
+      1259
+    ]
+  },
+  {
+    "text": "Semi-Detached House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,1219][846,1299]",
+    "center": [
+      712,
+      1259
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,1239][872,1279]",
+    "center": [
+      867,
+      1259
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,1239][1156,1279]",
+    "center": [
+      1151,
+      1259
+    ]
+  },
+  {
+    "text": "43,055.60",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,1239][1560,1279]",
+    "center": [
+      1495,
+      1259
+    ]
+  },
+  {
+    "text": "$145",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,1239][1781,1279]",
+    "center": [
+      1747,
+      1259
+    ]
+  },
+  {
+    "text": "$6,230,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,1239][2144,1279]",
+    "center": [
+      2071,
+      1259
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1239][2369,1279]",
+    "center": [
+      2325,
+      1259
+    ]
+  },
+  {
+    "text": "12A Brighton Crescent",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[294,1315][562,1376]",
+    "center": [
+      428,
+      1345
+    ]
+  },
+  {
+    "text": "Terrace House",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[578,1335][765,1375]",
+    "center": [
+      671,
+      1355
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[862,1335][872,1375]",
+    "center": [
+      867,
+      1355
+    ]
+  },
+  {
+    "text": "-",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1146,1335][1156,1375]",
+    "center": [
+      1151,
+      1355
+    ]
+  },
+  {
+    "text": "6,500",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1430,1335][1503,1375]",
+    "center": [
+      1466,
+      1355
+    ]
+  },
+  {
+    "text": "$1,025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1714,1335][1804,1375]",
+    "center": [
+      1759,
+      1355
+    ]
+  },
+  {
+    "text": "$6,660,000",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1998,1335][2144,1375]",
+    "center": [
+      2071,
+      1355
+    ]
+  },
+  {
+    "text": "Resale",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1335][2369,1375]",
+    "center": [
+      2325,
+      1355
+    ]
+  },
+  {
+    "text": "26 Jun 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,500][171,511]",
+    "center": [
+      90,
+      505
+    ]
+  },
+  {
+    "text": "09 Jun 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,567][171,607]",
+    "center": [
+      90,
+      587
+    ]
+  },
+  {
+    "text": "05 Jun 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,663][171,703]",
+    "center": [
+      90,
+      683
+    ]
+  },
+  {
+    "text": "14 May 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,759][178,799]",
+    "center": [
+      94,
+      779
+    ]
+  },
+  {
+    "text": "06 May 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,855][178,895]",
+    "center": [
+      94,
+      875
+    ]
+  },
+  {
+    "text": "20 Apr 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,951][169,991]",
+    "center": [
+      89,
+      971
+    ]
+  },
+  {
+    "text": "09 Apr 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,1047][169,1087]",
+    "center": [
+      89,
+      1067
+    ]
+  },
+  {
+    "text": "20 Feb 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,1143][172,1183]",
+    "center": [
+      91,
+      1163
+    ]
+  },
+  {
+    "text": "28 Jan 2026",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,1239][171,1279]",
+    "center": [
+      90,
+      1259
+    ]
+  },
+  {
+    "text": "29 Dec 2025",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[10,1335][174,1375]",
+    "center": [
+      92,
+      1355
+    ]
+  },
+  {
+    "text": "",
+    "desc": "Back",
+    "id": "",
+    "full_id": "",
+    "cls": "android.view.View",
+    "clickable": false,
+    "bounds": "[32,168][80,216]",
+    "center": [
+      56,
+      192
+    ]
+  },
+  {
+    "text": "19 Cardiff Grove S(558885)",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[933,156][1627,228]",
+    "center": [
+      1280,
+      192
+    ]
+  },
+  {
+    "text": "Market",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[212,1472][288,1504]",
+    "center": [
+      250,
+      1488
+    ]
+  },
+  {
+    "text": "Property Analysis",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[669,1472][861,1504]",
+    "center": [
+      765,
+      1488
+    ]
+  },
+  {
+    "text": "ProTrend",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1231,1472][1330,1504]",
+    "center": [
+      1280,
+      1488
+    ]
+  },
+  {
+    "text": "ProMap",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[1753,1472][1837,1504]",
+    "center": [
+      1795,
+      1488
+    ]
+  },
+  {
+    "text": "More",
+    "desc": "",
+    "id": "",
+    "full_id": "",
+    "cls": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "[2282,1472][2338,1504]",
+    "center": [
+      2310,
+      1488
+    ]
+  }
+]

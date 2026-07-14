@@ -13,6 +13,11 @@ V = json.load(open(os.path.join(REPO, "research", "cardiff19_valuation.json"), e
 T = json.load(open(os.path.join(REPO, "research", "cardiff_transactions.json"), encoding="utf-8"))
 S = V["subject"]; VAL = V["valuation"]; CC = V["crosschecks"]; VP = V["vs_purchase"]
 cost = V["costs"]; yld = V["yield"]; CN = V["comp_counts"]; last = S["last_sale"]
+ML = V["market_layers"]; L3 = ML["L3_nearby_500m"]; L5 = ML["L5_sg_landed_daipan"]
+try:
+    NL = json.load(open(os.path.join(REPO, "research", "cardiff_nearby_listings.json"), encoding="utf-8"))["rows"]
+except Exception:
+    NL = []
 
 M = {m: i for i, m in enumerate("Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(), 1)}
 def yf(dt):
@@ -113,6 +118,21 @@ def grid_rows():
                    f'<td>{g["area"]:,.0f}</td><td>${g["psf"]:,.0f}</td><td>${g["adj_psf"]:,.0f}</td><td>{g["w"]:.3f}</td></tr>')
     return "\n".join(out)
 
+def nearby_listing_rows():
+    def sz(r):
+        try: return int(re.sub(r"[^0-9]", "", r.get("size", "0")))
+        except: return 0
+    out = []
+    for r in sorted(NL, key=sz):
+        cmp = "Chuan Terrace" in r.get("address", "")
+        tag = ' <span class="pill" style="background:#dbeafe;color:#1e40af">≈标的可比</span>' if cmp else ''
+        trcls = ' class="hl"' if cmp else ''
+        out.append(f'<tr{trcls}><td class="l">{html.escape(r.get("address",""))}{tag}</td>'
+                   f'<td class="l">{html.escape(r.get("unit_type",""))}</td><td>{r.get("size","")}</td>'
+                   f'<td>{r.get("psf","")}</td><td>{r.get("price","")}</td>'
+                   f'<td class="l">{html.escape(r.get("posted","").replace(", 00:00",""))}</td></tr>')
+    return "\n".join(out)
+
 HTML = f"""<!doctype html><html lang="zh"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>估值报告 Valuation Report — 19 Cardiff Grove</title>
@@ -166,7 +186,7 @@ ul{{margin:6px 0 6px 0;padding-left:20px}} li{{margin:4px 0}}
 <div class="meta">
 <span><b>估值日期 Valuation date</b> {V['asof']}</span>
 <span><b>数据来源 Source</b> PropNex Investment Suite（Tier-1，UI 自动化读取）</span>
-<span><b>可比 Comps</b> 同街 {CN['street_terraces_10y']} 笔排屋(10年，完整性已校验) · 其中同规格原始 {CN['same_spec_originals_in_grid']} 笔入网格</span>
+<span><b>可比 Comps</b> 同街 {CN['street_terraces_10y']} 笔排屋(10年，完整性已校验) + 附近 {L3['asks_n']} 挂牌 + 区域/D19/全国大盘</span>
 <span><b>编制 Prepared by</b> RE_search landed pipeline</span>
 </div>
 </header>
@@ -179,13 +199,14 @@ ul{{margin:6px 0 6px 0;padding-left:20px}} li{{margin:4px 0}}
 </div>
 
 <div class="cn">
-<b>摘要 / Summary</b> — 标的 <b>19 Cardiff Grove</b>（Serangoon Garden Estate，D19，<b>999年地契自1956起</b>，余约{S['years_left']}年≈准永久），地块 <b>{S['land_sqft']:,.2f} sqft</b> 的<b>原始状态排屋</b>（app 无重建 TOP 记录）；现业主 2023-03 以 {money(last['price'])}（${last['psf']:,} psf）购入，为该址自1998以来唯一成交。基于<b>同街 {CN['same_spec_originals_in_grid']} 笔同规格原始排屋成交</b>（Tier-1，全街 {CN['street_terraces_10y']} 笔完整性已校验）的地价 psf 可比模型，稳健点估 <b>{money(pt)}（${pt_psf:,} psf）</b>。<b>关键判断：区分"水平"与"斜率"。水平——</b>现可实现中枢（~{money(pt)}）低于业主2023的<b>周期高位买入</b>，可比读数 <b>{VP['central_delta_pct']:+.0f}%</b>；<b>斜率——</b>统计上走平（本街同规格2022以来 −2.6%/年、R²=0.02不显著），非明确下跌，区域整体持稳。<b>下行情景：</b>最新两笔同规格原始成交（58号 $1,767、47号 $1,946，2025年）折合仅 ~{money(CC['freshest_2025_original_price'])}、较2023低 <b>{VP['freshest_delta_pct']:+.0f}%</b>；但本街同规格<b>峰值在2024</b>（$2,327–2,380，高于业主2023的 ${CC['own_2023_flat_psf']:,}），2025回软——故中枢取加权网格、非最悲观印。买家合理目标 <b>{money(bt[0])}–{money(bt[1])}</b>（贴近最新同规格印）；卖方期望端 {money(se[0])}–{money(se[1])}（其2023原价与上档可比，属期望非市场中枢）。毛回报仅 ~{yld['gross_yield_pct']:.1f}%。<b>结论：自住/长持可（准永久地契、成熟社区）；纯投资吸引力有限；卖方难在2023价平进平出；买家勿越 {money(se[1])}。</b></div>
+<b>摘要 / Summary</b> — 标的 <b>19 Cardiff Grove</b>（Serangoon Garden Estate，D19，<b>999年地契自1956起</b>，余约{S['years_left']}年≈准永久），地块 <b>{S['land_sqft']:,.2f} sqft</b> 的<b>原始状态排屋</b>（app 无重建 TOP 记录）；现业主 2023-03 以 {money(last['price'])}（${last['psf']:,} psf）购入，为该址自1998以来唯一成交。基于<b>同街 {CN['same_spec_originals_in_grid']} 笔同规格原始排屋成交</b>（Tier-1，全街 {CN['street_terraces_10y']} 笔完整性已校验）的地价 psf 可比模型，稳健点估 <b>{money(pt)}（${pt_psf:,} psf）</b>。<b>点估叠加了四层证据（§4.6）：</b>标的自身2023印、同街同规格、<b>附近可比挂牌</b>、区域/大盘——其中附近一间 <b>1,798sf 排屋（≈标的）现仅叫 $1,947 psf</b>，独立佐证同街2025的软度并支撑买家端；<b>点估仍取同街同规格网格 ${pt_psf:,}</b>（未把该挂牌并入中枢，以免与已占网格约42%权重的2025软印重复计数）。全国 landed 大盘（${L5['avg_psf']:,}、创新高）与本 D19 中尺寸排屋（~$1,900）的差距是<b>截面结构差</b>（优质盘/GCB 拉高全国均值），非本细分的时序背离；大盘只作上行风险、不抬高标的。<b>关键判断：区分"水平"与"斜率"。水平——</b>现可实现中枢（~{money(pt)}）低于业主2023的<b>周期高位买入</b>，可比读数 <b>{VP['central_delta_pct']:+.0f}%</b>；<b>斜率——</b>统计上走平（本街同规格2022以来 −2.6%/年、R²=0.02不显著），非明确下跌，区域整体持稳。<b>下行情景：</b>最新两笔同规格原始成交（58号 $1,767、47号 $1,946，2025年）折合仅 ~{money(CC['freshest_2025_original_price'])}、较2023低 <b>{VP['freshest_delta_pct']:+.0f}%</b>；但本街同规格<b>峰值在2024</b>（$2,327–2,380，高于业主2023的 ${CC['own_2023_flat_psf']:,}），2025回软——故中枢取加权网格、非最悲观印。买家合理目标 <b>{money(bt[0])}–{money(bt[1])}</b>（贴近最新同规格印）；卖方期望端 {money(se[0])}–{money(se[1])}（其2023原价与上档可比，属期望非市场中枢）。毛回报仅 ~{yld['gross_yield_pct']:.1f}%。<b>结论：自住/长持可（准永久地契、成熟社区）；纯投资吸引力有限；卖方难在2023价平进平出；买家勿越 {money(se[1])}。</b></div>
 
 <h2>1 · 执行摘要 <span class="en">Executive summary</span></h2>
 <ul>
 <li><b>稳健点估 {money(pt)}（${pt_psf:,} psf 地价）</b>——同街 {CN['same_spec_originals_in_grid']} 笔<b>同规格原始</b>排屋、时间衰减加权。有地住宅按<b>地价 psf</b>计价，非建筑面积。</li>
 <li><b>水平低于2023峰值买入、斜率走平：</b> 现可实现中枢较2023 <b>{VP['central_delta_pct']:+.0f}%</b>（水平）；价格斜率则统计上走平（§4.2，非明确下跌）。<b>下行情景</b>——最新两笔同规格原始印（2025）$1,767 / $1,946（均 ${CC['freshest_2025_original_psf']:,}），折合 ~{money(CC['freshest_2025_original_price'])}、较2023 <b>{VP['freshest_delta_pct']:+.0f}%</b>。注意<b>本街同规格峰值在2024</b>（22号 $2,380、11号 $2,327，高于业主2023的 ${CC['own_2023_flat_psf']:,}）：业主2023买入接近周期高位但非绝对顶，2025才回软。业主印按 −2.6%/年平推至今≈${CC['own_2023_timeadj_psf']:,}，与中枢一致。</li>
-<li><b>决策带（买方→卖方）：</b> 买家目标 <b>{money(bt[0])}–{money(bt[1])}</b>（${btp[0]:,}–${btp[1]:,} psf，贴近最新同规格印）；点估 {money(pt)}；卖方期望端 {money(se[0])}–{money(se[1])}（${sep[0]:,}–${sep[1]:,} psf）。公允区间 {money(fr[0])}–{money(fr[1])}。</li>
+<li><b>五层证据叠加（§4.6，你要的口径）：</b> ①标的2023印 $2,256 → ②<b>同街同规格加权 ${VAL['same_street_grid_psf']:,}</b>（2025软至$1,767–1,946，=点估锚）→ ③<b>附近可比挂牌</b> Chuan Terrace 1,798sf 叫 $1,947→可成交~${VAL['nearby_ask_txn_psf']:,}（佐证买家端）→ ④区域 500m ${L3['txn_avg_psf_5y']:,}／D19 ${ML['L4_district19']['avg_psf_10y']:,}（全类型背景）→ ⑤全国大盘 ${L5['avg_psf']:,}（{L5['change_pct']:+.0f}%）创新高（截面 mix，作上行风险）。点估锚定②同街网格；③④⑤为佐证/背景，不并入中枢。</li>
+<li><b>决策带（买方→卖方）：</b> 买家目标 <b>{money(bt[0])}–{money(bt[1])}</b>（${btp[0]:,}–${btp[1]:,} psf，贴近最新同规格印与附近可比挂牌）；点估 {money(pt)}；卖方期望端 {money(se[0])}–{money(se[1])}（${sep[0]:,}–${sep[1]:,} psf）。公允区间 {money(fr[0])}–{money(fr[1])}。</li>
 <li><b>地块量级效应（弹性 {V['method']['quantum_elasticity']}）：</b> psf 随地块变大近乎等比下降，<b>总价</b>因此几乎与地块无关——本街排屋无论 1,840 或 4,140 sqft，总价都聚在 ~S$3.5–5.0m。</li>
 <li><b>地板/天花板：</b> 地皮/单层原始屋现挂牌 ~{money(CC['land_floor_price'])}（${CC['land_floor_psf']:,} psf）为下限；重建/翻新屋 ${CC['rebuilt_ceiling_psf'][0]:,}–{CC['rebuilt_ceiling_psf'][1]:,} psf（≈{money(CC['rebuilt_ceiling_price'][0])}–{money(CC['rebuilt_ceiling_price'][1])}）为上限——差价即<b>重建经济学</b>（§6）。</li>
 <li><b>摩擦/回报：</b> 毛回报仅 ~{yld['gross_yield_pct']:.1f}%；买入 BSD ~{k(cost['bsd_at_point'])}（第二套另加 ABSD 20%≈{k(cost['absd_2nd_20pct'])}）；现业主 SSD 已于 2026-03 届满、现售无卖方印花税。</li>
@@ -233,15 +254,15 @@ ul{{margin:6px 0 6px 0;padding-left:20px}} li{{margin:4px 0}}
 <h3>4.3 状态与重建 <span class="en">Condition</span></h3>
 <p>同尺寸内，<b>状态（原始 / 翻新 / 重建）是最大单一价差杠杆</b>：同规格档 psf 近期区间 $1,767–$2,848 主要由此驱动。标的为<b>原始状态</b>（TOP 空），故点估以<b>原始状态可比</b>为基，重建/翻新可比（86号 TOP2012 $2,446；72号翻新 $2,848）作<b>上限参照</b>剔除出基准集。</p>
 <h3>4.4 点估与交叉验证 <span class="en">Point &amp; cross-checks</span></h3>
-<p>点估 = <b>稳健的 recency 加权同规格原始可比网格</b>（业主自身2023印已在网格内、按半衰期加权，<b>不</b>再作为独立同权腿以免双重计数与卖方锚定）。以下为<b>交叉验证</b>（非同权平均）：</p>
+<p>点估 = <b>同街同规格 recency 加权网格 ${pt_psf:,}</b>（= S${pt:,.0f}）。业主2023印已在网格内(按半衰期加权，不再作独立同权腿以免双重计数与卖方锚定)。以下为<b>交叉验证</b>(非同权平均、不并入中枢)：</p>
 <table>
 <tr><th class="l">交叉验证 Cross-check</th><th>psf</th><th>指向</th></tr>
-<tr class="hl"><td class="l"><b>点估（加权原始网格）</b></td><td><b>${pt_psf:,}</b></td><td>中枢</td></tr>
-<tr><td class="l">最新2笔同规格原始(2025)</td><td>${CC['freshest_2025_original_psf']:,}</td><td>偏下</td></tr>
-<tr><td class="l">自身2023印，按−2.6%/年平推</td><td>${CC['own_2023_timeadj_psf']:,}</td><td>印证中枢</td></tr>
-<tr><td class="l">size-adj 2026新成交(离散大)</td><td>${CC['size_adj_2026_dispersion_psf'][0]:,}–{CC['size_adj_2026_dispersion_psf'][1]:,}</td><td>弱/仅参考</td></tr>
+<tr class="hl"><td class="l"><b>点估（同街网格）</b></td><td><b>${pt_psf:,}</b></td><td>中枢</td></tr>
+<tr><td class="l">最新2笔同规格原始(2025)</td><td>${CC['freshest_2025_original_psf']:,}</td><td>下行(−18%)</td></tr>
+<tr><td class="l">自身2023印(−2.6%/年平推)</td><td>${CC['own_2023_timeadj_psf']:,}</td><td>印证中枢</td></tr>
+<tr><td class="l">附近可比挂牌→可成交(§4.6)</td><td>~${VAL['nearby_ask_txn_psf']:,}</td><td>佐证买家端</td></tr>
 </table>
-<p class="sub">2026 新成交腿仅有 17号(2,640sf)与 91号(3,264sf)两笔<b>更大</b>的屋，size 归一后 $2,442 vs $1,875 相差约30%——弹性在此跨度不可靠，故仅作弱参考、不并入点估。</p>
+<p class="sub">附近 1,798sf 挂牌折算可成交 ~${VAL['nearby_ask_txn_psf']:,} ≈ 同街最新2025印 ${CC['freshest_2025_original_psf']:,}——两者是<b>同一个 2025 软信号</b>(该软印已占网格约42%权重)，故挂牌不再重复计入中枢，只作买家端与"软度延续到2026"的佐证(见 §4.6、§10)。</p>
 </div></div>
 
 <h3>4.5 调整网格 <span class="en">Adjustment grid（{CN['same_spec_originals_in_grid']} 笔同规格原始，time+size 归一）</span></h3>
@@ -249,7 +270,26 @@ ul{{margin:6px 0 6px 0;padding-left:20px}} li{{margin:4px 0}}
 <tr><th class="l">成交日</th><th class="l">地址</th><th>地块 sqft</th><th>原始 psf</th><th>调整后 psf</th><th>权重 w</th></tr>
 {grid_rows()}
 </table>
-<p class="sub">权重 = 时间衰减（半衰期 {V['method']['halflife_yr']}年）× 标的自身成交锚 ×2。最新两笔 2025 原始成交（58号 $1,767、47号 $1,946）权重最高，把中枢压到 ${pt_psf:,}——这正是同规格2025走软、中枢低于2023峰值买入的来源。全街 {CN['street_terraces_10y']} 笔中，仅这 {CN['same_spec_originals_in_grid']} 笔为标的同规格(1,750–2,000sf)原始屋、入网格；其余为异尺寸或重建/翻新，仅作量级/天花板参照。</p>
+<p class="sub">权重 = 时间衰减（半衰期 {V['method']['halflife_yr']}年）× 标的自身成交锚 ×2。最新两笔 2025 原始成交（58号 $1,767、47号 $1,946）权重最高，把网格中枢压到 ${VAL['same_street_grid_psf']:,}——这正是同规格2025走软、低于2023峰值买入的来源。全街 {CN['street_terraces_10y']} 笔中，入网格的是<b>近5年</b>标的同规格(1,750–2,000sf)原始屋共 {CN['same_spec_originals_in_grid']} 笔；更早(2016–20)的同规格原始印在5年窗口外、按半衰期近零权重不计，异尺寸与重建/翻新则仅作量级/天花板参照。<b>去掉标的自身印×2锚后中枢为 ${VAL['weighted_comp_psf_pure']:,}</b>（与 ${VAL['same_street_grid_psf']:,} 仅差$11——自锚不影响结论）。</p>
+
+<h3>4.6 区域、挂牌与大盘走势 <span class="en">Region, asking prices &amp; market trend</span></h3>
+<p>按你的要求叠加更宽的五层证据(不只同街)——它们<b>佐证</b>同街网格点估 ${pt_psf:,}(未改动中枢)，并界定买家/卖方带：</p>
+<table>
+<tr><th class="l">证据层 Layer</th><th class="l">口径 Basis</th><th>水平 psf</th><th class="l">对标的的含义</th></tr>
+<tr><td class="l">① 标的自身</td><td class="l">2023-03 成交</td><td>$2,256</td><td class="l">周期高位买入（上锚，已含牛市溢价）</td></tr>
+<tr class="hl"><td class="l">② 同街同规格 ★</td><td class="l">Cardiff 1,840sf 原始·加权</td><td>${VAL['same_street_grid_psf']:,}</td><td class="l">最可比；2025 回软至 $1,767–1,946</td></tr>
+<tr class="hl"><td class="l">③ 附近可比挂牌 ★</td><td class="l">Chuan Terrace 1,798sf（≈标的）</td><td>$1,947 挂</td><td class="l">可成交约 ${VAL['nearby_ask_txn_psf']:,}；独立印证偏软</td></tr>
+<tr><td class="l">④ 区域 500m</td><td class="l">全类型成交均（5Y）</td><td>${L3['txn_avg_psf_5y']:,}</td><td class="l">含大屋/半独立→偏低，仅背景</td></tr>
+<tr><td class="l">④ D19 全区</td><td class="l">全类型成交均（10Y）</td><td>${ML['L4_district19']['avg_psf_10y']:,}</td><td class="l">极异质（含Hougang/Punggol），松背景</td></tr>
+<tr><td class="l">⑤ 全国 landed 大盘</td><td class="l">SG avg psf（app Market）</td><td>${L5['avg_psf']:,}</td><td class="l">{L5['change_pct']:+.0f}% 创新高、仍升——但本细分跑输</td></tr>
+</table>
+<div class="note"><b>大盘 vs 本盘：截面差，非时序背离。</b> 全国 landed 大盘均价 ${L5['avg_psf']:,}、曲线2025–26冲上<b>新高</b>——但这是<b>全岛截面</b>(优质盘/GCB/核心区拉高均值)，与本 D19 OCR 中尺寸排屋(~$1,900)的差距是<b>结构性 mix 差</b>，<b>不能</b>当作本盘的时序信号；本盘真正的走平证据是 Cardiff 自身 −2.6%/年(§4.2)。<b>跨街取证的对称性：</b>§2 拒绝把区级高点 $3,472 psf 计入(因其为<b>重建屋</b>、状态不可比)，此处采 Chuan Terrace 则因其<b>尺寸/状态同规格(原始 inter-terrace)</b>——按"同规格优先"一致成立，非"只取低不取高"。<b>大盘仅作上行风险</b>(若本盘补涨可上修)，不抬高标的。★=最可比的承重层。</div>
+<h4>附近 500m 在售挂牌（Tier-2 asks · {L3['asks_n']} 个）<span class="en">Current nearby listings (asking)</span></h4>
+<table>
+<tr><th class="l">地址 Address</th><th class="l">类型 Type</th><th>面积 sqft</th><th>要价 psf</th><th>要价 Price</th><th class="l">挂牌日</th></tr>
+{nearby_listing_rows()}
+</table>
+<p class="sub">挂牌为<b>要价（Tier-2）</b>，通常高于成交 3–8%。最可比的 <b>Chuan Terrace（1,798sf inter-terrace）叫 $1,947 psf / $3.5m</b>，是买家目标带 {money(bt[0])}–{money(bt[1])} 的现实依据。惟 Chuan 属 <b>Lorong Chuan 一带、与 Serangoon Gardens 核心非同一 enclave</b>，且 n=1、系要价，故仅作<b>软佐证与买家参考、不入中枢</b>。大屋/半独立（7,375sf 叫 ~$1,290 psf）因量级效应 psf 低、不可比；Conway Circle（2,200sf 叫 $2,726）疑为翻新/新屋。</p>
 
 <h2>5 · 地板与天花板 <span class="en">Floor &amp; ceiling</span></h2>
 <div class="two"><div>
@@ -310,6 +350,7 @@ ul{{margin:6px 0 6px 0;padding-left:20px}} li{{margin:4px 0}}
 <li><b>薄量：</b> 同规格原始入网格仅 {CN['same_spec_originals_in_grid']} 笔、点估受最新两笔 2025 印高度影响；<b>区间比点更重要</b>，且下行判断建立在这两笔上，若它们为个别弱势屋则中枢应上修。</li>
 <li><b>趋势不确定：</b> 近期趋势统计不显著；若牛市重启(+5%/年)公允价上修约+15%(3年)，若继续走软(−3%/年)进一步下修。</li>
 <li><b>租金为估算：</b> ~1,840sf 排屋无逐户 Tier-1 租约；用街道档位插值。</li>
+<li><b>附近挂牌为单点(n=1)佐证：</b> 最可比的 Chuan Terrace 系<b>一个要价</b>(非成交)、且属 Lorong Chuan 一带；仅用于印证买家端与2025软度，<b>未</b>并入中枢。若成交实证多于此点，买家/卖方带应据以更新。</li>
 </ul>
 
 <h2>11 · 数据溯源与核验 <span class="en">Provenance &amp; verification</span></h2>

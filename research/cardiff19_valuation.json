@@ -26,7 +26,9 @@
   "valuation": {
     "point_psf": 2075,
     "point_price": 3817000.0,
-    "basis": "recency-weighted same-spec (1,750-2,000sf) ORIGINAL comps grid",
+    "basis": "same-street same-spec recency-weighted grid; nearby comparable ask corroborates the buyer range (NOT blended in, to avoid double-counting 2025 softness)",
+    "same_street_grid_psf": 2075,
+    "nearby_ask_txn_psf": 1850,
     "weighted_comp_psf_anchored": 2075,
     "weighted_comp_psf_pure": 2064,
     "iqr_psf": [
@@ -38,12 +40,12 @@
       4306000.0
     ],
     "buyer_target_price": [
-      3500000,
-      3700000
+      3400000,
+      3600000
     ],
     "buyer_target_psf": [
-      1903,
-      2011
+      1848,
+      1957
     ],
     "seller_end_price": [
       4000000,
@@ -102,6 +104,47 @@
       5239000.0
     ]
   },
+  "market_layers": {
+    "L1_subject_last_txn": {
+      "psf": 2256,
+      "price": 4150000,
+      "date": "31 Mar 2023"
+    },
+    "L2_street_same_spec_grid": {
+      "psf": 2075,
+      "freshest_2025_psf": 1856,
+      "note": "same street, same-spec original terraces"
+    },
+    "L3_nearby_500m": {
+      "radius_m": 500,
+      "txn_avg_psf_5y": 1810,
+      "txn_avg_psf_10y": 1506,
+      "alltypes": true,
+      "asks_n": 8,
+      "asks_band_price": [
+        3290000,
+        9580000
+      ],
+      "comparable_ask": {
+        "addr": "Chuan Terrace",
+        "size": 1798,
+        "ask_psf": 1947,
+        "ask_price": 3500000,
+        "posted": "08 Jul 2026"
+      },
+      "comparable_ask_txn_psf": 1850
+    },
+    "L4_district19": {
+      "avg_psf_10y": 1505,
+      "alltypes": true
+    },
+    "L5_sg_landed_daipan": {
+      "avg_psf": 2379,
+      "change_pct": 95.96,
+      "direction": "rising to new highs (Jul 2026)"
+    },
+    "reconciliation": "SG-wide landed avg $2,379 vs this D19 OCR 1,840sf terrace ~$1,900 is an EXPECTED cross-sectional mix gap (prime/GCB drives the islandwide psf), NOT a time-series divergence. The genuine flatness evidence is Cardiff's own -2.6%/yr (R2=0.02). 大盘 rising = upside risk only; it does not lift the point."
+  },
   "vs_purchase": {
     "purchase": 4150000,
     "central_now": 3817000.0,
@@ -131,18 +174,18 @@
     "same_spec_originals_in_grid": 8
   },
   "review": {
-    "rounds": 2,
+    "rounds": 4,
     "final_verdict": "PASS",
-    "overall": 8.5,
+    "overall": 8.8,
     "scores": {
       "data_accuracy": 9,
-      "method_rigor": 7,
+      "method_rigor": 8,
       "completeness": 9,
       "decision_usefulness": 9,
-      "honesty_uncertainty": 8,
+      "honesty_uncertainty": 9,
       "presentation_bilingual": 9
     },
-    "note": "R1 REVISE 7.65 caught seller-anchored point (flat-pushed own-print co-equal leg) + flattering -4.3% framing; R2 PASS 8.5 after separating LEVEL(-8%/-18% below 2023 peak buy) from SLOPE(statistically flat)."
+    "note": "R1 REVISE 7.65: seller-anchored point (flat-pushed own-print co-equal leg) + flattering -4.3%. R2 PASS 8.5: separated LEVEL(-8%) from SLOPE(flat). Client asked to add nearby-asks/region/大盘 layers; R3 PASS 8.30 flagged the 0.30-weight nearby-ask blend as OVER-correction+double-count -> reverted point to same-street grid ($2,075/-8%), nearby ask demoted to buyer-range corroboration, 大盘 reframed as cross-sectional mix gap. R4 PASS 8.8 (all dims >=8): every load-bearing number reproduced to the dollar, no double-count, symmetric comp discipline confirmed."
   },
   "grid": [
     {

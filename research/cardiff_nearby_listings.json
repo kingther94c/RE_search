@@ -1,0 +1,107 @@
+{
+  "scope": "nearby_500m_listings",
+  "n": 8,
+  "rows": [
+    {
+      "unit_type": "Terraced House",
+      "bedroom": "5 Bedrooms",
+      "size": "2,200",
+      "psf": "$2,726.36",
+      "price": "$5,998,000",
+      "agent": "Chris Chiang",
+      "mobile": "88822068",
+      "company": "LION KEY REALTY PTE. LTD.",
+      "posted": "13 Jul 2026, 00:00",
+      "address": "Conway Circle"
+    },
+    {
+      "unit_type": "Semi-Detached House",
+      "bedroom": "5 Bedrooms",
+      "size": "4,156",
+      "psf": "$1,876.80",
+      "price": "$7,800,000",
+      "agent": "Lincoln Choo",
+      "mobile": "91822667",
+      "company": "ERA REALTY NETWORK PTE LTD",
+      "posted": "13 Jul 2026, 00:00",
+      "address": "12A Grace Park"
+    },
+    {
+      "unit_type": "Semi-Detached House",
+      "bedroom": "4 Bedrooms",
+      "size": "7,377",
+      "psf": "$1,298.63",
+      "price": "$9,580,000",
+      "agent": "Lim Yuh Pey (Sharon)",
+      "mobile": "91551654",
+      "company": "HUTTONS ASIA PTE. LTD.",
+      "posted": "10 Jul 2026, 00:00",
+      "address": "Chuan Garden"
+    },
+    {
+      "unit_type": "Terraced House",
+      "bedroom": "5 Bedrooms",
+      "size": "1,798",
+      "psf": "$1,946.61",
+      "price": "$3,500,000",
+      "agent": "Wilfred Chua",
+      "mobile": "97770757",
+      "company": "PROPNEX REALTY PTE. LTD.",
+      "posted": "08 Jul 2026, 00:00",
+      "address": "Chuan Terrace"
+    },
+    {
+      "unit_type": "Corner Terrace",
+      "bedroom": "5 Bedrooms",
+      "size": "2,400",
+      "psf": "$1,370.83",
+      "price": "$3,290,000",
+      "agent": "Jane Ee",
+      "mobile": "96355293",
+      "company": "PROPNEX REALTY PTE. LTD.",
+      "posted": "02 Jul 2026, 00:00",
+      "address": "Chuan Drive"
+    },
+    {
+      "unit_type": "Semi-Detached House",
+      "bedroom": "10 Bedrooms",
+      "size": "7,375",
+      "psf": "$1,288.14",
+      "price": "$9,500,000",
+      "agent": "Charmaine Lim",
+      "mobile": "83380774",
+      "company": "PROPNEX REALTY PTE. LTD.",
+      "posted": "01 Jul 2026, 00:00",
+      "address": "Chuan Garden"
+    },
+    {
+      "unit_type": "Semi-Detached House",
+      "bedroom": "10 Bedrooms",
+      "size": "7,375",
+      "psf": "$1,298.98",
+      "price": "$9,580,000",
+      "agent": "Ong Beng Yew",
+      "mobile": "91800799",
+      "company": "PROPNEX REALTY PTE. LTD.",
+      "posted": "19 Jun 2026, 00:00",
+      "address": "40 Chuan Garden"
+    },
+    {
+      "unit_type": "Corner Terrace",
+      "bedroom": "5 Bedrooms",
+      "size": "4,201",
+      "psf": "$2,142.11",
+      "price": "$8,999,000",
+      "agent": "Jodia Tay",
+      "mobile": "86926727",
+      "company": "PROPNEX REALTY PTE. LTD.",
+      "posted": "14 Jun 2026, 00:00",
+      "address": "16 Chuan Walk"
+    }
+  ],
+  "band": {
+    "low": "$3,290,000/$822",
+    "avg": "$7,280,875/$1,946",
+    "high": "$9,580,000/$3,193"
+  }
+}
