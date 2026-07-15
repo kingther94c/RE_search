@@ -8,6 +8,7 @@ re-deriving what we already settled — especially from **re-inventing a rejecte
 | File | What it holds |
 |---|---|
 | [`00_master_methodology.md`](00_master_methodology.md) | current *validated* valuation architecture (per asset). Starts thin on purpose — only what survived validation goes here. |
+| [`01_roadmap.md`](01_roadmap.md) | **the program roadmap** (R0–R8): per-phase research direction, plan, guardrails, deliverables, gates. Start every session here. |
 | [`experiment_registry.md`](experiment_registry.md) | every experiment: hypothesis · data · method · benchmark · result · failure analysis · verdict. |
 | [`method_graveyard.md`](method_graveyard.md) | rejected approaches **and why**. Read before proposing anything. |
 | [`feature_evidence.md`](feature_evidence.md) | per valuation feature: mechanism · evidence · scope · functional form · confidence. |
