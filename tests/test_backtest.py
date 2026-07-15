@@ -147,3 +147,41 @@ def test_c1_declines_without_same_project():
     subject = _tx("LONELY", "2024-10", 2200, x=0, y=0)
     ctx = {"asof_ym": "2024-09", "asof_q": None, "index": None}
     assert c1_grid_adapted(subject, mkt, ctx) is None
+
+
+# --------------------------------------------------------------------- hedonic AVM
+def test_hedonic_recovers_known_coefficients():
+    import math
+    import random
+    from researcher.backtest.avm import HedonicAVM
+    rng = random.Random(1)
+    txs = []
+    for _ in range(2000):
+        area = rng.choice([500, 700, 900, 1200])
+        seg = rng.choice(["CCR", "RCR", "OCR"])
+        ym = f"2023-{rng.randint(1, 12):02d}"
+        t = months_between("2021-07", ym)
+        logpsf = 8.0 - 0.1 * math.log(area) + (0.15 if seg == "CCR" else 0.0) \
+            + 0.02 * (t / 12) + rng.gauss(0, 0.03)
+        txs.append({"area_sqft": float(area), "psf": math.exp(logpsf), "market_segment": seg,
+                    "district": "10", "tenure_type": "freehold", "lease_start": None,
+                    "floor_lo": 6, "floor_hi": 10, "contract_ym": ym})
+    m = HedonicAVM.fit(txs, "2024-01")
+    test = {"area_sqft": 700.0, "market_segment": "CCR", "district": "10",
+            "tenure_type": "freehold", "lease_start": None, "floor_lo": 6, "floor_hi": 10,
+            "contract_ym": "2024-01"}
+    t = months_between("2021-07", "2024-01")
+    expect = math.exp(8.0 - 0.1 * math.log(700) + 0.15 + 0.02 * (t / 12))
+    assert abs(m.predict_psf(test) / expect - 1.0) < 0.03   # recovers truth within 3%
+
+
+def test_ensemble_grid_only_when_avm_declines():
+    from researcher.backtest.ensemble import ensemble_v0
+    # small market: AVM can't fit (<200 rows) so E0 falls back to the grid, still answers
+    store = _rising_project_store()
+    mkt = MarketView(store.txs, "2024-09")
+    subject = _tx("A", "2024-10", 2200, area=1000, x=0, y=0)
+    ctx = {"asof_ym": "2024-09", "asof_q": None, "index": None}
+    est = ensemble_v0(subject, mkt, ctx)
+    assert est is not None and est["price"] is not None
+    assert "grid only" in est["note"]

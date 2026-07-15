@@ -15,8 +15,10 @@ import json
 import os
 import random
 
+from .avm import ANCHORS
 from .benchmarks import BENCHMARKS
 from .candidates import CANDIDATES
+from .ensemble import ENSEMBLES
 from .harness import walk_forward
 from .store import TransactionStore
 
@@ -48,7 +50,8 @@ def main() -> None:
         print("no subjects — is the store populated and the date window sane?")
         return
 
-    res = walk_forward(store, subjects, {**BENCHMARKS, **CANDIDATES},
+    methods = {**BENCHMARKS, **CANDIDATES, **ANCHORS, **ENSEMBLES}
+    res = walk_forward(store, subjects, methods,
                        lag_days=args.lag_days, max_subjects=args.max)
     print("\n=== benchmark leaderboard (sorted by median APE) ===")
     print(res.table())

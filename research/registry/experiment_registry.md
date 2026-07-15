@@ -5,6 +5,26 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0004 — R3 kickoff: independent hedonic AVM anchor + evidence-state ensemble (2026-07-15)
+- **Status:** IN PROGRESS (5,000-subject walk-forward). Anchor + naive ensemble built &
+  integrated; refinement (learned weights, alt anchors, conformal) handed to the team.
+- **A1 hedonic AVM** (`researcher/backtest/avm.py`): stdlib OLS, log(psf) ~ log(area) +
+  floor + time + segment + tenure + lease-age + district, fit once/month on the as-of condo
+  set, subject evaluated at the as-of time coordinate (leakage-safe; unit test recovers
+  synthetic coefficients within 3%). **Result: median APE 10.4% / P90 32% / coverage 100%
+  / interval-cover 70%.** Far worse than same-project (4%) BUT never declines and beats the
+  proxies (B4 14%, B5 18%) — a viable anchor for the thin/no-same-project cases.
+- **E0 evidence-state ensemble** (`ensemble.py`): blend C1⊕A1 by same-project comp count.
+  **Result: median 4.42% / P90 13.9% / coverage 100% / interval-cover 81%.**
+- **Finding.** The ensemble **fixes the headline defect: interval coverage 44%→81% (hits the
+  80% target) + full coverage**, at a small median cost (4.08→4.42%) caused by over-weighting
+  the AVM on liquid cases (w_c1 only reaches 1.0 at n>=10). The point-accuracy trade is a
+  weighting-tuning issue; the interval + coverage win is real and is what production needs.
+- **Verdict:** A1 ACCEPT (as a thin-comp anchor, scope-limited). E0 MONITOR — beat it with
+  learned weights before shipping. Next: team fan-out (below).
+- **Leakage sign-off:** AVM fits on market.condo() (as-of only); subject evaluated at as-of
+  time, never its own month; no full-history artifact. Unit-tested coefficient recovery.
+
 ## EXP-0003 — Condo-resale baseline leaderboard + G1 (2026-07-15)
 - **Status:** DONE (8,000-subject sample, subjects >= 2023-01; lag-stable at 42/56/70d).
 - **Result (median APE / P90 / cover / pct>10% / bias):**

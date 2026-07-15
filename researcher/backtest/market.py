@@ -23,6 +23,8 @@ class MarketView:
         self._condo: list[dict] | None = None
         self._grid: dict[tuple[int, int], list[dict]] | None = None
         self._seg_recent: dict[tuple[str, int], list[dict]] = {}
+        # generic per-month memo for fitted models (e.g. the hedonic AVM fit once/month)
+        self.cache: dict = {}
 
     def same_project(self, project: str) -> list[dict]:
         """Same-project caveats, newest-first. O(1) lookup after the first call."""
