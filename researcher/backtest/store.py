@@ -15,12 +15,22 @@ sub-list, so `store.as_of(t).is_condo().same_project(p)` chains without mutating
 from __future__ import annotations
 
 import datetime as _dt
+import glob
+import gzip
 import json
 import math
 import os
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-_DEFAULT = os.path.join(os.path.dirname(_HERE), "sources", "ura_transactions.json")
+_SOURCES = os.path.join(os.path.dirname(_HERE), "sources")
+_DEFAULT = os.path.join(_SOURCES, "ura_transactions.json")
+_SNAPSHOTS = os.path.join(_SOURCES, "snapshots")
+
+
+def _newest_snapshot() -> str | None:
+    """Newest committed frozen store, for a fresh clone with no local pull."""
+    snaps = sorted(glob.glob(os.path.join(_SNAPSHOTS, "ura_transactions_*.json.gz")))
+    return snaps[-1] if snaps else None
 
 # Private-condo universe. EC (Executive Condominium) is deliberately EXCLUDED — it is a
 # distinct HDB-hybrid sub-market that trades at a discount and would contaminate the
@@ -62,6 +72,16 @@ class TransactionStore:
 
     @classmethod
     def load(cls, path: str = _DEFAULT) -> "TransactionStore":
+        """Load the local pull if present, else the newest committed snapshot (so a fresh
+        clone runs backtests without a URA key). Repull with `python -m researcher.sources.ura`."""
+        if not os.path.exists(path):
+            snap = _newest_snapshot()
+            if not snap:
+                raise FileNotFoundError(
+                    f"no store at {path} and no snapshot in {_SNAPSHOTS}. "
+                    "Run: python -m researcher.sources.ura")
+            with gzip.open(snap, "rt", encoding="utf-8") as f:
+                return cls(json.load(f))
         with open(path, encoding="utf-8") as f:
             return cls(json.load(f))
 
@@ -112,6 +132,15 @@ class TransactionStore:
     def within_months(self, before_ym: str, months: int) -> "TransactionStore":
         """Caveats in the `months` months up to and including before_ym."""
         return self.where(lambda t: 0 <= months_between(t["contract_ym"], before_ym) < months)
+
+    # ------------------------------------------------------------- data hygiene (R0)
+    def exclude_bulk(self) -> "TransactionStore":
+        """Drop multi-unit / en-bloc caveats — non-market-rate as subject AND as comp."""
+        return self.where(lambda t: t["no_of_units"] <= 1)
+
+    def psf_band(self, lo: float = 500, hi: float = 6500) -> "TransactionStore":
+        """Keep psf within a sanity band (audit: 107 caveats <500, 2 >6500 — data errors)."""
+        return self.where(lambda t: lo <= t["psf"] <= hi)
 
     def sorted_by_ym(self, reverse: bool = True) -> list[dict]:
         return sorted(self.txs, key=lambda t: t["contract_ym"], reverse=reverse)

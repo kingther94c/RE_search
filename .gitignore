@@ -34,3 +34,6 @@ research/ura_cache/
 researcher/backtest/results_condo.json
 # secrets — never commit the URA access key (private repo is NOT safe for secrets)
 research/.secrets/
+# normalized URA store: 71MB, regenerable. A frozen gzipped snapshot is committed
+# separately (researcher/sources/snapshots/) for backtest reproducibility.
+researcher/sources/ura_transactions.json

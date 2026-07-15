@@ -1,19 +1,20 @@
 """The simple benchmarks every complex method must beat (mandate: Benchmark Discipline).
 
-Each benchmark has the signature (subject, store, ctx) -> estimate | None, where:
-  - `store` is ALREADY as-of filtered by the harness (leakage handled in one place),
-  - `ctx`   carries the valuation month/date, published index quarter and the PriceIndex,
+Signature: (subject, market, ctx) -> estimate | None.
+  - `market` is a MarketView over the as-of caveats (leakage handled by the harness),
+    with per-month indexes so these stay cheap at 61k subjects.
+  - `ctx` carries the valuation month/date, published index quarter and the PriceIndex.
   - returns {"method","psf","price","low","high","n_comps","note"} or None to decline.
 
-An estimate's psf is the driver; price = psf * subject area. Bands (when n>=4) are the
-inter-quartile psf spread — rough, but enough to score interval coverage even here.
+psf is the driver; price = psf * subject area. Bands (n>=4) are the inter-quartile psf
+spread — rough, but enough to score interval coverage even for a benchmark.
 """
 from __future__ import annotations
 
 import math
 from statistics import median
 
-from .store import TransactionStore
+from .store import months_between
 
 
 def _pct(vals: list[float], q: float) -> float:
@@ -26,8 +27,7 @@ def _pct(vals: list[float], q: float) -> float:
     return s[lo] + (s[hi] - s[lo]) * (pos - lo)
 
 
-def _est(method: str, psf: float, subject: dict, comps: list[dict],
-         note: str = "") -> dict:
+def _est(method: str, psf: float, subject: dict, comps: list[dict], note: str = "") -> dict:
     area = subject["area_sqft"]
     psfs = [c["psf"] for c in comps]
     lo = hi = None
@@ -39,51 +39,50 @@ def _est(method: str, psf: float, subject: dict, comps: list[dict],
 
 
 # ------------------------------------------------------------------- the benchmarks
-def latest_same_project(subject, store, ctx):
+def latest_same_project(subject, mkt, ctx):
     """B1: psf of the most recent same-project caveat(s)."""
-    sp = store.same_project(subject["project"])
-    if not len(sp):
+    rows = mkt.same_project(subject["project"])
+    if not rows:
         return None
-    rows = sp.sorted_by_ym(reverse=True)
     top_ym = rows[0]["contract_ym"]
     latest = [r for r in rows if r["contract_ym"] == top_ym]
     return _est("latest_same_project", median(c["psf"] for c in latest),
                 subject, latest, f"latest month {top_ym}")
 
 
-def median_last3_same_project(subject, store, ctx):
+def median_last3_same_project(subject, mkt, ctx):
     """B2: median psf of the 3 most recent same-project caveats."""
-    sp = store.same_project(subject["project"]).sorted_by_ym(reverse=True)
-    if not sp:
+    rows = mkt.same_project(subject["project"])
+    if not rows:
         return None
-    last3 = sp[:3]
+    last3 = rows[:3]
     return _est("median_last3_same_project", median(c["psf"] for c in last3),
                 subject, last3, "last 3 same-project")
 
 
-def same_project_filtered(subject, store, ctx):
+def same_project_filtered(subject, mkt, ctx):
     """B3: same project, +/-30% size, last 12 months -> median psf."""
     area = subject["area_sqft"]
-    sp = store.same_project(subject["project"]).within_months(ctx["asof_ym"], 12)
-    comps = [c for c in sp.txs if 0.7 * area <= c["area_sqft"] <= 1.3 * area]
+    comps = [c for c in mkt.same_project(subject["project"])
+             if 0 <= months_between(c["contract_ym"], ctx["asof_ym"]) < 12
+             and 0.7 * area <= c["area_sqft"] <= 1.3 * area]
     if not comps:
         return None
     return _est("same_project_filtered", median(c["psf"] for c in comps),
                 subject, comps, "same project, +/-30% size, 12mo")
 
 
-def nearest_project_psf(subject, store, ctx):
-    """B4: nearest OTHER project within 1km with a caveat in the last 12mo -> its median psf."""
+def nearest_project_psf(subject, mkt, ctx):
+    """B4: nearest OTHER project within 1km with a recent caveat -> its median psf."""
     if subject.get("x") is None or subject.get("y") is None:
         return None
-    near = store.is_condo().near(subject["x"], subject["y"], 1000).within_months(
-        ctx["asof_ym"], 12)
     key = subject["project"].strip().casefold()
-    others = [c for c in near.txs if c["project"].strip().casefold() != key
-              and c.get("x") is not None]
+    others = [c for c in mkt.condo_near(subject["x"], subject["y"], 1000)
+              if c["project"].strip().casefold() != key
+              and 0 <= months_between(c["contract_ym"], ctx["asof_ym"]) < 12]
     if not others:
         return None
-    # closest distinct project, then that project's recent median psf
+
     def dist(c):
         return math.hypot(c["x"] - subject["x"], c["y"] - subject["y"])
     nearest_proj = min(others, key=dist)["project"]
@@ -92,23 +91,19 @@ def nearest_project_psf(subject, store, ctx):
                 subject, comps, f"nearest project '{nearest_proj}'")
 
 
-def segment_time_adjusted(subject, store, ctx):
+def segment_time_adjusted(subject, mkt, ctx):
     """B5: segment (CCR/RCR/OCR) median psf, each comp time-adjusted to the as-of quarter."""
     seg = subject["market_segment"]
     if not seg:
         return None
-    idx = ctx["index"]
-    to_q = ctx["asof_q"]  # published quarter as of the valuation date, or None
-    pool = store.is_condo().segment(seg).within_months(ctx["asof_ym"], 12)
-    if not pool.txs:
+    pool = mkt.segment_recent(seg, 12)
+    if not pool:
         return None
-    adj = []
-    for c in pool.txs:
-        f = idx.factor(c["contract_ym"], to_q, "non-landed") if to_q else 1.0
-        adj.append(c["psf"] * f)
-    comps = pool.txs
-    note = f"segment {seg}, time-adj to {to_q or 'n/a'}"
-    return _est("segment_time_adjusted", median(adj), subject, comps, note)
+    idx, to_q = ctx["index"], ctx["asof_q"]
+    adj = [c["psf"] * (idx.factor(c["contract_ym"], to_q, "non-landed") if to_q else 1.0)
+           for c in pool]
+    return _est("segment_time_adjusted", median(adj), subject, pool,
+                f"segment {seg}, time-adj to {to_q or 'n/a'}")
 
 
 BENCHMARKS = {

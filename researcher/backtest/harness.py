@@ -14,7 +14,8 @@ from __future__ import annotations
 from collections import defaultdict
 
 from . import metrics
-from .index import PriceIndex, q_of_ym
+from .index import PriceIndex
+from .market import MarketView
 from .store import TransactionStore, month_end
 
 # rich per-row fields kept for error-slicing (mandate's 12 dimensions)
@@ -42,10 +43,14 @@ class WalkForwardResult:
 
     def slice(self, dim: str, method: str) -> dict[str, dict]:
         """Metrics for one method grouped by a categorical subject dimension."""
+        return self.slice_by(lambda r: str(r.get(dim, "?")), method)
+
+    def slice_by(self, keyfunc, method: str) -> dict[str, dict]:
+        """Metrics for one method grouped by an arbitrary bucketing function of the row."""
         buckets: dict[str, list[dict]] = defaultdict(list)
         for r in self.rows:
             if r["method"] == method:
-                buckets[str(r.get(dim, "?"))].append(r)
+                buckets[str(keyfunc(r))].append(r)
         return {k: metrics.summarise(v) for k, v in sorted(buckets.items())}
 
     def table(self) -> str:
@@ -77,16 +82,18 @@ def walk_forward(store: TransactionStore, subjects: list[dict], methods: dict,
     for asof_ym, group in by_month.items():
         t = month_end(asof_ym)
         view = store.as_of(t, lag_days)
+        # The subject caveats are in month M; `view` is as-of end of M-1, so the subject's
+        # own row is already excluded — no per-subject filtering needed (that O(n) copy was
+        # the 61k-subject bottleneck). test_as_of_excludes_future guards this.
+        market = MarketView(view.txs, asof_ym)
         asof_q = index.as_of_quarter(t, index_pub_lag_days)
         ctx = {"asof_ym": asof_ym, "asof_date": t, "index": index, "asof_q": asof_q}
         for subj in group:
-            # belt-and-suspenders: never let the subject row itself be a comp
-            sview = view.where(lambda x, _id=subj["id"]: x["id"] != _id)
             base = {k: subj.get(k) for k in _KEEP}
             base["actual"] = subj["price"]
             base["actual_psf"] = subj["psf"]
             for name, fn in methods.items():
-                est = fn(subj, sview, ctx)
+                est = fn(subj, market, ctx)
                 rows.append({**base, "method": name,
                              "pred": est["price"] if est else None,
                              "pred_psf": est["psf"] if est else None,

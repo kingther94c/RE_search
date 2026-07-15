@@ -4,7 +4,9 @@ import datetime as dt
 
 from researcher.backtest import metrics
 from researcher.backtest.benchmarks import BENCHMARKS
+from researcher.backtest.candidates import CANDIDATES, c1_grid_adapted
 from researcher.backtest.harness import walk_forward, _prev_ym
+from researcher.backtest.market import MarketView
 from researcher.backtest.store import (TransactionStore, month_end, visible_from,
                                        months_between)
 
@@ -107,3 +109,41 @@ def test_benchmarks_all_runnable():
     # B4 (nearest OTHER project) should find project B
     b4 = [r for r in res.rows if r["method"] == "B4_nearest_project_psf"][0]
     assert b4["pred"] is not None
+
+
+# ---------------------------------------------------------------------- MarketView
+def test_marketview_indexes():
+    txs = [_tx("A", "2024-01", 2000, x=0, y=0), _tx("A", "2024-03", 2100, x=0, y=0),
+           _tx("B", "2024-02", 1900, x=300, y=0), _tx("C", "2024-02", 1800, x=9000, y=0)]
+    mkt = MarketView(txs, "2024-06")
+    sp = mkt.same_project("A")
+    assert [r["contract_ym"] for r in sp] == ["2024-03", "2024-01"]  # newest first
+    assert len(mkt.condo()) == 4
+    near = mkt.condo_near(0, 0, 1000)                # A(0) and B(300) in, C(9000) out
+    assert {c["project"] for c in near} == {"A", "B"}
+    assert len(mkt.segment_recent("RCR", 12)) == 4   # all within 12mo of 2024-06
+
+
+def test_marketview_excludes_far_and_old():
+    txs = [_tx("A", "2020-01", 2000, x=0, y=0), _tx("A", "2024-05", 2100, x=0, y=0)]
+    mkt = MarketView(txs, "2024-06")
+    assert len(mkt.segment_recent("RCR", 12)) == 1   # 2020-01 is >12mo out
+
+
+# ------------------------------------------------------------------------- C1 grid
+def test_c1_runs_and_is_reasonable():
+    store = _rising_project_store()
+    subject = _tx("A", "2024-10", 2200, area=1000, x=0, y=0)
+    store_all = TransactionStore(store.txs + [subject])
+    res = walk_forward(store_all, [subject], CANDIDATES, lag_days=56)
+    c1 = res.by_method()["C1_grid_adapted"][0]
+    assert c1["pred"] is not None
+    # A's visible history tops out at 2100 psf; C1 shouldn't wildly exceed it
+    assert 1900 <= c1["pred_psf"] <= 2300
+
+
+def test_c1_declines_without_same_project():
+    mkt = MarketView([_tx("OTHER", "2024-05", 2000, x=999, y=999)], "2024-09")
+    subject = _tx("LONELY", "2024-10", 2200, x=0, y=0)
+    ctx = {"asof_ym": "2024-09", "asof_q": None, "index": None}
+    assert c1_grid_adapted(subject, mkt, ctx) is None

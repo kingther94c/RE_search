@@ -5,6 +5,23 @@ impact · assets affected.
 
 ---
 
+## 2026-07-15 — R0 complete + R1 baseline (condo) + G0/G1 gates
+- **What:** full URA pull (136,436 caveats, 61 months, EXP-0002, G0 PASS); harness
+  performance refactor (`market.py` MarketView per-month indexes — dropped the per-subject
+  O(n) copy, 61k subjects now tractable); data-hygiene filters (bulk/psf-band); C1 grid
+  candidate (`candidates.py`) porting value-a-property to URA; first walk-forward
+  leaderboard + slice panel (EXP-0003); GY-0001 (segment-avg) + GY-0002 (nearest-project)
+  buried with numbers.
+- **Why:** turn the harness into real numbers and let evidence set the bar and the next phase.
+- **Findings:** bar = **4.1% median APE** (C1 grid ties B3, marginally beats naive
+  same-project median); segment/nearest proxies 3-4x worse; medians flat across all slices
+  but TAIL and interval calibration are the real defects.
+- **G1 decision:** median rule opens no R2 module → pull R2d (AVM anchor) into R3 and make
+  R3 = independent AVM anchor + conformal intervals + evidence-state ensemble; defer
+  R2a/b/c bake-offs unless R3 leaves a gap. Rationale in EXP-0003.
+- **Backtest impact:** establishes the number every future method is measured against.
+- **Real-data robustness:** cp1252 decode fix, landed-spelling fix, EC exclusion.
+
 ## 2026-07-15 — Program roadmap v1 (R0–R8), planned on Fable 5
 - **What:** `01_roadmap.md` — nine gate-driven phases from data-foundation completion to
   the three production skills + operations, with per-phase research directions, plans,

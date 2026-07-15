@@ -77,11 +77,23 @@ def _access_key() -> str:
     return key
 
 
+def _decode(raw: bytes) -> str:
+    """URA occasionally emits a stray cp1252 byte in a project/street name (a full pull
+    hit 0xc3 mid-stream). Try strict utf-8, then cp1252, then utf-8 with replacement so
+    one bad byte in a name never sinks a whole batch. Numeric fields are ASCII either way."""
+    for enc in ("utf-8", "cp1252"):
+        try:
+            return raw.decode(enc)
+        except UnicodeDecodeError:
+            continue
+    return raw.decode("utf-8", "replace")
+
+
 def _get(url: str, headers: dict[str, str]) -> dict:
     req = urllib.request.Request(url, headers={"User-Agent": _UA, **headers})
     try:
         with urllib.request.urlopen(req, timeout=60) as r:
-            return json.loads(r.read())
+            return json.loads(_decode(r.read()))
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", "replace")[:400]
         raise RuntimeError(f"URA HTTP {e.code} for {url}\n{body}") from e

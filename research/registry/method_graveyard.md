@@ -16,10 +16,27 @@ Format per entry:
 
 ---
 
-_Empty. No method has earned a REJECT verdict yet — the harness (EXP-0001) has not been_
-_run on real data. The first honest backtest will start filling this._
+### GY-0001 — Segment (CCR/RCR/OCR) average PSF as a standalone valuation (condo, 2026-07-15)
+- **Claim it made:** a market-segment median psf, time-adjusted, approximates a unit's value.
+- **How tested:** EXP-0003, benchmark B5, 8,000-subject walk-forward.
+- **Why rejected:** median APE **17.8%** vs 4.1% for same-project (4.3x worse), P90 56%,
+  pct>10% 69%, and **systematically biased +20.4%** — it over-values because the segment
+  pool skews to pricier/newer stock than the median resale subject.
+- **Scope of the rejection:** as a *standalone valuation*. It is RETAINED as benchmark B5
+  (the bar a real method must clear) and may survive as a coarse prior when NO local comp
+  exists — but never as the estimate when same-project or substitute comps are available.
+- **Do not resurrect unless:** mix-controlled (hedonic) — at which point it is no longer a
+  "segment average" but the R2d/R3 AVM, tested separately.
 
-**Watch-list (hypotheses the user flagged as likely-to-fail — must be *tested*, not assumed):**
-- "District / segment average PSF" as a **standalone** valuation (vs. a coarse benchmark).
-  It is deliberately included as benchmark **B5** so it is measured, not hand-waved. If it
-  loses to same-project methods on liquid projects, that becomes GY-0001 with numbers.
+### GY-0002 — Nearest-project PSF as a substitute (condo, 2026-07-15)
+- **Claim it made:** the geographically nearest OTHER project is a good value proxy.
+- **How tested:** EXP-0003, benchmark B4.
+- **Why rejected:** median APE **13.9%**, P90 38%, pct>10% 63% — geographic proximity alone
+  is a weak substitutability signal (adjacent projects differ by age/tenure/positioning).
+- **Scope:** rejects "nearest = comparable". Motivates R2b: substitutability distance, not
+  raw distance. A *learned/multi-factor* substitute model is a different method, still open.
+- **Do not resurrect unless:** distance is combined with tenure/age/quantum/positioning
+  similarity (that is the R2b hypothesis, not this one).
+
+**Watch-list (tested, retained as benchmarks, not yet buried):** none outstanding — the two
+proxy methods the user flagged are now measured and filed above.
