@@ -33,6 +33,15 @@ def _money(x):
     return f"S${x:,.0f}" if x is not None else "—"
 
 
+def _directional_banner(v: dict) -> str:
+    d, ref = v.get("directional_flag"), v.get("recent_same_size_reference")
+    if not d:
+        return ""
+    r = (f" 最近同尺寸成交 latest same-size print: {ref['adj_psf']:.0f} psf "
+         f"({ref['contract_ym']}, {ref['area_sqft']:.0f} sqft)") if ref else ""
+    return (f"<div class=banner>⚠ {html.escape(d)}<span class=note>{html.escape(r)}</span></div>")
+
+
 def render(v: dict) -> str:
     if v.get("error"):
         return f"<p>Cannot value: {html.escape(v['message'])}</p>"
@@ -64,6 +73,7 @@ walk-forward validated, ~4% median APE)</p>
   <div><div class=lbl>置信度 Confidence</div><div class=big>{fv['confidence']}/100</div>
     <div class=sub>{html.escape(fv['confidence_label'])}{hard}</div></div>
 </div>
+{_directional_banner(v)}
 
 <div class=cols>
   <div class=card>
@@ -103,6 +113,8 @@ _CSS = """body{margin:0;background:#0f1115;color:#e6e6e6;font:15px/1.5 -apple-sy
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .card{background:#171a21;border:1px solid #262b36;border-radius:12px;padding:16px}
 h2{font-size:15px;margin:0 0 10px}.note{color:#9aa4b2;font-size:12px}.warn{color:#ffb454;font-weight:600}
+.banner{background:#2a2113;border:1px solid #5c4a1f;color:#ffcf87;border-radius:10px;padding:11px 14px;margin-bottom:14px;font-size:13px}
+.banner .note{display:block;margin-top:3px;color:#c9b48a}
 table{width:100%;border-collapse:collapse}td,th{padding:4px 6px;border-bottom:1px solid #21262f;text-align:left}
 th{color:#9aa4b2;font-weight:500;font-size:12px}.r{text-align:right;font-variant-numeric:tabular-nums}
 ul{margin:6px 0;padding-left:18px}li{margin:3px 0}

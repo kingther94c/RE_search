@@ -83,7 +83,7 @@ def _confidence(n_comps, used_fallback, band_rel, anchor_spread) -> tuple[int, s
         c = min(c, 65)
         label += "; wide dispersion in this cell"
     if anchor_spread and anchor_spread > 0.15:      # methods disagree -> hard case
-        c = min(c, 62)
+        c = min(c, 55)
         label += f"; anchors disagree {anchor_spread*100:.0f}% (hard case — corroborate)"
     return c, label
 
@@ -101,6 +101,23 @@ def _relevant_comps(subject, market, n=8):
     return [{"contract_ym": r["contract_ym"], "area_sqft": r["area_sqft"],
              "floor_range": r["floor_range"], "psf": r["psf"], "price": r["price"]}
             for r in ranked[:n]]
+
+
+def _recent_ref(subject, market, ctx):
+    """The freshest same-project print within ~+/-25% size, lightly (capped) time-adjusted
+    to as-of — the single most credible evidence point. On a hard case, the model point can
+    drift above it (stale-comp inflation); surfacing it keeps the report honest."""
+    area = subject["area_sqft"]
+    sim = [r for r in market.same_project(subject["project"])
+           if abs(_math.log(r["area_sqft"] / area)) <= 0.22]
+    if not sim:
+        return None
+    fresh = max(sim, key=lambda r: r["contract_ym"])
+    to_q = ctx.get("asof_q")
+    tf = ctx["index"].factor(fresh["contract_ym"], to_q, "non-landed") if to_q else 1.0
+    tf = min(max(tf, 0.80), 1.25)
+    return {"contract_ym": fresh["contract_ym"], "area_sqft": fresh["area_sqft"],
+            "raw_psf": fresh["psf"], "adj_psf": round(fresh["psf"] * tf, 1)}
 
 
 def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
@@ -133,9 +150,22 @@ def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
         anchors[tag] = a["psf"] if a else None
 
     price, lo, hi = est["price"], est["low"], est["high"]
-    band_rel = (hi - lo) / price if price else None
     reads = [v for v in anchors.values() if v]
     anchor_spread = (max(reads) - min(reads)) / est["psf"] if len(reads) >= 2 else None
+    hard = bool(anchor_spread and anchor_spread > 0.15)
+
+    # Recent same-size reference + directional honesty: on a hard case, if the model point
+    # sits well above the freshest same-size print, widen the band DOWN to include it and say so.
+    ref = _recent_ref(subject, market, ctx)
+    directional = None
+    if ref and est["psf"] > ref["adj_psf"] * 1.05:
+        gap = est["psf"] / ref["adj_psf"] - 1
+        directional = (f"point is {gap*100:.0f}% above the freshest same-size print "
+                       f"({ref['adj_psf']:.0f} psf adj, {ref['contract_ym']}) — possibly "
+                       f"optimistic on stale comps; corroborate before offering")
+        if hard:
+            lo = min(lo, round(ref["adj_psf"] * subject["area_sqft"], 0))
+    band_rel = (hi - lo) / price if price else None
     conf, conf_label = _confidence(est["n_comps"], used_fallback, band_rel, anchor_spread)
 
     return {
@@ -147,7 +177,9 @@ def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
                        "n_same_project_comps": est["n_comps"], "basis": est["note"]},
         "independent_reads_psf": anchors,   # transparency: each method's own opinion
         "anchor_disagreement": {"spread_rel": round(anchor_spread, 3) if anchor_spread else None,
-                                "hard_case": bool(anchor_spread and anchor_spread > 0.15)},
+                                "hard_case": hard},
+        "recent_same_size_reference": ref,   # the freshest same-size print (adj to as-of)
+        "directional_flag": directional,     # set when the point sits above that fresh print
         "comps": _relevant_comps(subject, market),
         # buyer/seller guidance — DERIVED FROM the fair-value band, kept separate from it
         "buyer_guidance": {"attractive_below": lo, "fair_range": [lo, hi],
@@ -163,7 +195,11 @@ def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
             "unit condition & renovation (no condition adjustment applied)",
             "en-bloc / redevelopment status and any outstanding levies or encumbrances",
         ] + (["thin/no same-project evidence — pull twin-unit + AVM comps from Investment "
-              "Suite before offering"] if est["n_comps"] < 3 else []),
+              "Suite before offering"] if est["n_comps"] < 3 else [])
+          + (["FALLBACK used (no same-project comp): remaining-lease decay is only partially "
+              "modelled — confirm the exact lease and haircut a short-lease unit manually"]
+             if used_fallback and subject.get("tenure_type") == "leasehold" else [])
+          + ([directional] if directional else []),
         "limitations": [
             "URA data: month-granular dates, floor BANDS (not exact), no unit id -> no stack/"
             "view/condition/renovation adjustment; note these qualitatively.",

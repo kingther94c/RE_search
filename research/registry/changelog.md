@@ -5,6 +5,19 @@ impact · assets affected.
 
 ---
 
+## 2026-07-16 — R5 hostile-review revision: engine v2.1 (size/time fixes), EXP-0007
+- **What:** re-fit size elasticity on URA (`research/fit_elasticity.py`, segment-specific);
+  C1 size-gating + heavier size penalty + recency + time-quality weighting + time-adj cap;
+  hard-case honesty in value_unit (recent-same-size reference, directional flag, band widen,
+  conf cap, lease-aware fallback); SKILL.md IS-overclaim downgraded; report warning banner.
+- **Why:** the R5 acceptance reviewer (REVISE 6.6) blocked on the ported −0.08 elasticity
+  letting a shoebox value a large unit (The Foliage). A real guardrail-#5 violation.
+- **Result:** the fixes IMPROVED the population — **C1 median 4.10%→3.68%, V2 3.71%**,
+  conformal recalibrated (85%/0.185 width), every slice better. The Foliage now conf 55 +
+  directional "12% above fresh print" + widened band — honest, not misleading. 116 tests.
+- **Backtest impact:** engine got materially better AND more honest from the hostile review.
+  Resubmitting to a fresh reviewer.
+
 ## 2026-07-16 — R3-finish: engine v2 FINAL (V2 = C1 + fallback + conformal), G3 MET
 - **What:** `engine_v2.py` (V2), `conformal_table.json` (split-conformal, 85% nominal),
   `research/analyze_r3.py` (thin-comp matrix + conformal calibration/validation), E3

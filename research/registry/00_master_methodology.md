@@ -18,10 +18,14 @@ not its own skill.
 | New launch | *often none* — developer price ≠ fair value; only later resale is truth | **mostly case-based + separation-of-quantities discipline** | not started (data present: 47,910 new-sale caveats) |
 
 ### Condo engine v2 — FINAL (EXP-0006, G3 MET)
-- **`engine_v2.py` (V2):** POINT = C1 same-project grid wherever it answers, else anchor
-  fallback (A2→A3→A1) for coverage; INTERVAL = split-conformal per (liquidity×segment) cell
-  (`conformal_table.json`, 85% nominal). **Backtest: median 4.09% / 100% coverage / interval
-  82.7% / P90 12.6% / pct>10% 16.0%.**
+- **`engine_v2.py` (V2, v2.1 after EXP-0007):** POINT = C1 same-project grid wherever it
+  answers, else lease-aware anchor fallback for coverage; INTERVAL = split-conformal per
+  (liquidity×segment) cell (`conformal_table.json`, 85% nominal). **Backtest: median 3.71% /
+  100% coverage / interval 85% / P90 11.5% / pct>10% 13.3%.** (EXP-0007 size/time fixes cut
+  median from 4.09%.) C1 uses segment-specific size elasticity (CCR −0.02 / RCR −0.08 / OCR
+  −0.09), size-gated comps, recency + time-quality weighting, time-adj cap [0.80,1.25].
+- **Hard-case honesty:** anchor-disagreement flag, freshest-same-size reference + directional
+  "possibly optimistic" flag, band widened to that reference, confidence capped, IS manual to-do.
 - **Key lesson (drove the design):** blending an independent anchor into C1 HURTS the point
   everywhere same-project data exists — even at 1-2 comps (C1 4.84% vs blends 5.1-5.8%). The
   anchors buy COVERAGE (no-comp fallback) and INTERVALS, not point accuracy. So v2 is

@@ -5,6 +5,31 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0007 — R5 hostile-review revision: size/time fixes → engine v2.1 (2026-07-16)
+- **Trigger:** the R5 acceptance reviewer (REVISE 6.6) blocked on a real defect — the ported
+  `SIZE_ELASTICITY=-0.08` was never re-fit on URA, and a 505sf shoebox was setting an 1100sf
+  unit's value (The Foliage: point 1716 vs freshest same-size print 1488). Guardrail-#5
+  violation (unvalidated constant). Fixed properly, not patched.
+- **Elasticity re-fit** (`research/fit_elasticity.py`, 12,638 same-project near-simultaneous
+  pairs): global median **−0.068** (≈ the old −0.08 — the reviewer over-generalized from one
+  project), but **segment-varying: CCR −0.02, RCR −0.08, OCR −0.09**. Now segment-specific.
+- **C1 fixes (all re-backtested):** (a) size-gating — prefer same-project comps within ±35%
+  size, so a shoebox can't set a large unit's median; (b) heavier size penalty (×5); (c)
+  stronger recency (dmonths/15) + a time-adjustment-QUALITY penalty (a stale comp needing a
+  big index adjustment is down-weighted); (d) time-adjustment cap [0.80, 1.25].
+- **Result: the fixes IMPROVED the whole population, not just the edge case** —
+  **C1 median 4.10% → 3.68%**, V2 3.71% / 100% cover / conformal recalibrated 85% / width
+  0.185. Every segment/tenure/regime slice improved. pct>10% 15.4%→12.8%.
+- **Hard-case honesty (value_unit):** surface the freshest same-size print as
+  `recent_same_size_reference`; a **directional flag** when the point sits >5% above it
+  ("possibly optimistic on stale comps — corroborate"); widen the band down to that reference
+  on hard cases; hard-case confidence cap 62→55; lease-aware fallback order (A1 first for
+  leasehold); SKILL.md IS-corroboration downgraded from "automated" to a manual to-do.
+- **The Foliage after fixes:** point 1710 (defensible from the comps), but now conf 55,
+  band widened to 1680 (= the fresh reference), directional flag "12% above the 1527 fresh
+  print", verify-before-offer says pull IS comps. Honest, not misleading.
+- **Verdict:** engine v2.1 ACCEPT pending fresh-reviewer re-check. 116 tests.
+
 ## EXP-0006 — R3-finish: thin-comp reversal, 3-anchor blend, conformal → engine v2 (2026-07-16)
 - **Status:** DONE. **G3 MET, cleanly.** Engine v2 = `engine_v2.py` (V2).
 - **① Thin-comp reversal (the important finding).** Sliced every method by same-project comp

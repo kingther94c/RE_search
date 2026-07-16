@@ -23,7 +23,9 @@ EXP-0003/0006). This is not a craft judgement call — every number is computed 
 1. **URA private-residential caveats** — the validated spine (bulk, official, as-of). Comes
    from the committed snapshot; refresh with `python -m researcher.sources.ura`.
 2. **Investment Suite** (Tier-1, per-unit) — enrichment for exact floor/stack/rent/twin
-   prints URA lacks. Used to CORROBORATE, especially on thin/hard cases (R4 wires this in).
+   prints URA lacks. **NOT yet wired into the engine (R4 builds the automated bridge).** On a
+   `hard_case` / fallback / `directional_flag`, the report tells YOU to pull IS twin-unit +
+   AVM comps MANUALLY before offering — treat that as a required to-do, not an automated step.
 3. **SG-official** (URA/OneMap/URA PPI) for time adjustment and policy facts.
 Portals are Tier-2 (reconcile); agent reports Tier-3 (claims, never facts).
 

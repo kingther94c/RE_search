@@ -53,7 +53,14 @@ def engine_v2(subject, market, ctx):
     if c1 is not None:
         psf, n, src = c1["psf"], c1["n_comps"], "C1"
     else:
-        for fn, tag in ((avm_pooled, "A2"), (avm_knn, "A3"), (avm_hedonic, "A1")):
+        # No same-project comp -> anchor fallback. For a LEASEHOLD subject, try the hedonic
+        # A1 FIRST — it carries an explicit lease-age term; A2 (segment/broad means) ignores
+        # remaining lease and would over-value a short-lease unit. Otherwise A2 (most accurate).
+        if subject.get("tenure_type") == "leasehold":
+            order = ((avm_hedonic, "A1"), (avm_pooled, "A2"), (avm_knn, "A3"))
+        else:
+            order = ((avm_pooled, "A2"), (avm_knn, "A3"), (avm_hedonic, "A1"))
+        for fn, tag in order:
             a = fn(subject, market, ctx)
             if a is not None:
                 psf, n, src = a["psf"], 0, tag + "-fallback"
