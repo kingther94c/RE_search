@@ -1,0 +1,173 @@
+"""Production condo valuation — value ONE unit with engine v2 (the R5 skill's engine room).
+
+    from researcher.backtest.value_unit import value, SubjectSpec
+    v = value(SubjectSpec(project="TREASURE AT TAMPINES", area_sqft=936, floor=12))
+
+Wraps the VALIDATED engine (EXP-0006: C1 point + anchor fallback + conformal band) with:
+  - inference of the project's static attributes (segment / district / coords / tenure) from
+    its URA caveats, so the caller only supplies unit-specific facts;
+  - a confidence score tied to the empirical error curve (same-project comp depth);
+  - the independent anchor reads (A1/A2/A3) surfaced for transparency;
+  - buyer and seller price guidance DERIVED FROM — and kept separate from — fair value.
+
+Fair value = engine v2 point. The range = the conformal band, which is the empirical
+spread within which ~82% of comparable transactions actually printed (EXP-0006) — so buyer
+"attractive"/"walk-away" and seller "ask"/"quick-sale" are read off that band, not invented.
+"""
+from __future__ import annotations
+
+import datetime as _dt
+from dataclasses import dataclass
+from statistics import median
+
+from .avm import avm_hedonic
+from .avm_knn import avm_knn
+from .avm_pooled import avm_pooled
+from .candidates import c1_grid_adapted
+from .engine_v2 import engine_v2
+from .index import PriceIndex
+from .market import MarketView
+from .store import TransactionStore, month_end, months_between
+
+
+@dataclass
+class SubjectSpec:
+    project: str
+    area_sqft: float
+    floor: int | None = None
+    asof: str | None = None          # 'YYYY-MM-DD'; defaults to today
+    lease_start: int | None = None   # optional override
+
+
+def _infer(spec, store) -> dict | None:
+    """Build a URA-transaction-shaped subject dict, inferring static attrs from the
+    project's caveats. Returns None if the project has no caveats to anchor on."""
+    rows = store.same_project(spec.project).txs
+    if not rows:
+        return None
+    def _mode(key):
+        vals = [r[key] for r in rows if r.get(key)]
+        return max(set(vals), key=vals.count) if vals else ""
+    xs = [r["x"] for r in rows if r.get("x") is not None]
+    ys = [r["y"] for r in rows if r.get("y") is not None]
+    ls = [r["lease_start"] for r in rows if r.get("lease_start")]
+    fl = spec.floor if spec.floor is not None else 8
+    asof = spec.asof or _dt.date.today().isoformat()
+    asof_ym = asof[:7]
+    return {
+        "id": "SUBJECT", "project": spec.project, "street": _mode("street"),
+        "market_segment": _mode("market_segment"), "district": _mode("district"),
+        "property_type": _mode("property_type") or "Condominium",
+        "type_of_area": "Strata", "type_of_sale": "Resale",
+        "tenure_type": _mode("tenure_type"),
+        "lease_start": spec.lease_start or (median(ls) if ls else None),
+        "contract_ym": asof_ym, "area_sqft": float(spec.area_sqft),
+        "psf": None, "price": None, "floor_lo": fl, "floor_hi": fl,
+        "x": (sum(xs) / len(xs)) if xs else None,
+        "y": (sum(ys) / len(ys)) if ys else None, "no_of_units": 1,
+    }
+
+
+def _confidence(n_comps, used_fallback, band_rel, anchor_spread) -> tuple[int, str]:
+    if used_fallback:
+        c, label = 40, "low — no same-project resale; statistical fallback (~5-10% typical error)"
+    elif n_comps <= 2:
+        c, label = 58, "moderate-low — thin same-project evidence"
+    elif n_comps <= 7:
+        c, label = 72, "moderate"
+    elif n_comps <= 19:
+        c, label = 82, "good — deep same-project evidence"
+    else:
+        c, label = 88, "high — very deep same-project evidence"
+    if band_rel and band_rel > 0.30:
+        c = min(c, 65)
+        label += "; wide dispersion in this cell"
+    if anchor_spread and anchor_spread > 0.15:      # methods disagree -> hard case
+        c = min(c, 62)
+        label += f"; anchors disagree {anchor_spread*100:.0f}% (hard case — corroborate)"
+    return c, label
+
+
+import math as _math
+
+
+def _relevant_comps(subject, market, n=8):
+    """Same-project prints most SIMILAR to the subject (size proximity, then recency) —
+    the evidence a reader should weigh, not just the most recent (which may be a tiny unit)."""
+    area = subject["area_sqft"]
+    rows = market.same_project(subject["project"])
+    ranked = sorted(rows, key=lambda r: (abs(_math.log(r["area_sqft"] / area)),
+                                         -months_between("2000-01", r["contract_ym"])))
+    return [{"contract_ym": r["contract_ym"], "area_sqft": r["area_sqft"],
+             "floor_range": r["floor_range"], "psf": r["psf"], "price": r["price"]}
+            for r in ranked[:n]]
+
+
+def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
+    store = store or TransactionStore.load().exclude_bulk().psf_band(500, 6500)
+    subject = _infer(spec, store)
+    if subject is None:
+        return {"error": "project_not_found",
+                "message": f"No URA caveats for project {spec.project!r}. Provide a known "
+                           "project name, or (v1 scope) this unit is out of scope — escalate "
+                           "to an Investment-Suite comp pull."}
+    asof = spec.asof or _dt.date.today().isoformat()
+    t = month_end(asof[:7])
+    view = store.as_of(t)
+    market = MarketView(view.txs, asof[:7])
+    idx = PriceIndex.load()
+    ctx = {"asof_ym": asof[:7], "asof_date": t, "index": idx,
+           "asof_q": idx.as_of_quarter(t)}
+
+    est = engine_v2(subject, market, ctx)
+    if est is None:
+        return {"error": "no_estimate",
+                "message": "Neither same-project comps nor a statistical anchor could value "
+                           "this unit as-of the date — escalate."}
+    c1 = c1_grid_adapted(subject, market, ctx)
+    used_fallback = c1 is None
+    anchors = {"C1_same_project": c1["psf"] if c1 else None}
+    for tag, fn in (("A1_hedonic", avm_hedonic), ("A2_pooled", avm_pooled),
+                    ("A3_knn", avm_knn)):
+        a = fn(subject, market, ctx)
+        anchors[tag] = a["psf"] if a else None
+
+    price, lo, hi = est["price"], est["low"], est["high"]
+    band_rel = (hi - lo) / price if price else None
+    reads = [v for v in anchors.values() if v]
+    anchor_spread = (max(reads) - min(reads)) / est["psf"] if len(reads) >= 2 else None
+    conf, conf_label = _confidence(est["n_comps"], used_fallback, band_rel, anchor_spread)
+
+    return {
+        "subject": {k: subject[k] for k in ("project", "area_sqft", "market_segment",
+                    "district", "tenure_type", "lease_start")} | {"floor": spec.floor,
+                    "asof": asof},
+        "fair_value": {"psf": est["psf"], "price": price, "low": lo, "high": hi,
+                       "confidence": conf, "confidence_label": conf_label,
+                       "n_same_project_comps": est["n_comps"], "basis": est["note"]},
+        "independent_reads_psf": anchors,   # transparency: each method's own opinion
+        "anchor_disagreement": {"spread_rel": round(anchor_spread, 3) if anchor_spread else None,
+                                "hard_case": bool(anchor_spread and anchor_spread > 0.15)},
+        "comps": _relevant_comps(subject, market),
+        # buyer/seller guidance — DERIVED FROM the fair-value band, kept separate from it
+        "buyer_guidance": {"attractive_below": lo, "fair_range": [lo, hi],
+                           "walk_away_above": hi,
+                           "note": "attractive = low end of where comparable units actually "
+                                   "print; walk-away = above the observed range"},
+        "seller_guidance": {"ask": hi, "expected_clear": price, "quick_sale": lo,
+                            "note": "ask at the top of the observed range; expected clear at "
+                                    "fair value; quick sale at the low end"},
+        "verify_before_offer": [
+            "exact remaining lease / tenure for THIS unit (URA tenure is project-level)",
+            "actual floor, stack and facing/view (not in the model — URA has no unit id)",
+            "unit condition & renovation (no condition adjustment applied)",
+            "en-bloc / redevelopment status and any outstanding levies or encumbrances",
+        ] + (["thin/no same-project evidence — pull twin-unit + AVM comps from Investment "
+              "Suite before offering"] if est["n_comps"] < 3 else []),
+        "limitations": [
+            "URA data: month-granular dates, floor BANDS (not exact), no unit id -> no stack/"
+            "view/condition/renovation adjustment; note these qualitatively.",
+            "Point is same-project-driven; the range is the conformal band (empirical ~82% "
+            "coverage), not a guarantee.",
+        ],
+    }

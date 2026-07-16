@@ -1,7 +1,14 @@
 ---
 name: value-a-property
-description: Use when you need a defensible market value (psf and price, with a range and a negotiation band) for a specific condo unit — a deterministic pipeline reconstructs the comps from Investment Suite, fits the trend, runs the adjustment grid, validates the digest and renders the report.
+description: SUPERSEDED by condo-resale-valuation (the walk-forward-validated engine v2). Kept as the Investment-Suite comp-reconstruction reference — use only when you specifically need the IS three-surface craft pipeline (exact floor/twin/AVM-cohort) to corroborate a hard case; otherwise use condo-resale-valuation.
 ---
+
+> **SUPERSEDED (2026-07-16).** The default condo valuation skill is now
+> **`condo-resale-valuation`** — engine v2, quant-validated on 136k URA caveats (~4.1%
+> median APE, 82% interval coverage; research/registry/ EXP-0003/0006). This IS-based
+> craft pipeline is retained as the Investment-Suite corroboration path (exact
+> floor/stack/twin/AVM-cohort that URA lacks) — the R4 enrichment layer — not the primary
+> engine. Use it to CORROBORATE hard cases, not as the fair-value source of record.
 
 # Value a condo unit — the deterministic pipeline
 
