@@ -8,8 +8,9 @@ description: Use to value a specific Singapore resale CONDO unit — a defensibl
 ## When to use
 Put a defensible market value on a specific Singapore resale condominium unit. The engine
 is **quant-validated**: time-consistent walk-forward backtest on 136k URA caveats gives
-**~3.7% median APE** with **~85% interval coverage** (research/registry/experiment_registry.md
-EXP-0006/0007). This is not a craft judgement call — every number is computed the same way.
+**~3.7% median APE** with **~82% held-out interval coverage (85% nominal)**
+(research/registry/experiment_registry.md EXP-0006/0007). Not a craft judgement call — every
+number is computed the same way.
 
 ## Inputs
 - **Required:** project name (as it appears in URA), unit size (sqft). The project must

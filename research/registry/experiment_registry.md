@@ -18,8 +18,9 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
   stronger recency (dmonths/15) + a time-adjustment-QUALITY penalty (a stale comp needing a
   big index adjustment is down-weighted); (d) time-adjustment cap [0.80, 1.25].
 - **Result: the fixes IMPROVED the whole population, not just the edge case** —
-  **C1 median 4.10% → 3.68%**, V2 3.71% / 100% cover / conformal recalibrated 85% / width
-  0.185. Every segment/tenure/regime slice improved. pct>10% 15.4%→12.8%.
+  **C1 median 4.10% → 3.68%**, V2 3.71% / 100% cover / conformal recalibrated to ~82-85%
+  held-out (85% nominal) / width 0.185. Every segment/tenure/regime slice improved.
+  pct>10% 15.4%→12.8%. (Headline the conservative ~82% from EXP-0006 held-out.)
 - **Hard-case honesty (value_unit):** surface the freshest same-size print as
   `recent_same_size_reference`; a **directional flag** when the point sits >5% above it
   ("possibly optimistic on stale comps — corroborate"); widen the band down to that reference
@@ -32,8 +33,8 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
   prior blockers confirmed closed). Two P1s fixed to cross the 8.0 PASS bar: (P1a) on a
   directional hard case the POINT is now pulled toward the fresh same-size print
   (median blend) + band rescaled — The Foliage 1710→1619 (was +12% over the 1528 fresh ref,
-  now +6%); (P1b) SKILL.md/docstring numbers reconciled to v2.1 (3.7% / 85% / segment
-  elasticity); (P3) the recent-ref is now size-adjusted so the directional check is
+  now +6%); (P1b) SKILL.md/docstring numbers reconciled to v2.1 (3.7% / ~82% held-out, 85%
+  nominal / segment elasticity); (P3) the recent-ref is now size-adjusted so the directional check is
   apples-to-apples (Stirling correctly 4.2% < trigger).
 - **Known refinements (backlog, non-blocking — R5-follow / R8):** re-fit FLOOR_PP=0.003
   (still a ported constant, guardrail-#5); within-project lease-decay term for short-lease

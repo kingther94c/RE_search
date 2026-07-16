@@ -21,7 +21,7 @@ not its own skill.
 - **`engine_v2.py` (V2, v2.1 after EXP-0007):** POINT = C1 same-project grid wherever it
   answers, else lease-aware anchor fallback for coverage; INTERVAL = split-conformal per
   (liquidity×segment) cell (`conformal_table.json`, 85% nominal). **Backtest: median 3.71% /
-  100% coverage / interval 85% / P90 11.5% / pct>10% 13.3%.** (EXP-0007 size/time fixes cut
+  100% coverage / interval ~82% held-out (85% nominal) / P90 11.5% / pct>10% 13.3%.** (EXP-0007 size/time fixes cut
   median from 4.09%.) C1 uses segment-specific size elasticity (CCR −0.02 / RCR −0.08 / OCR
   −0.09), size-gated comps, recency + time-quality weighting, time-adj cap [0.80,1.25].
 - **Hard-case honesty:** anchor-disagreement flag, freshest-same-size reference + directional

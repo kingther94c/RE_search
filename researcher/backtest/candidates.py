@@ -2,9 +2,9 @@
 
 C1 is the `value-a-property` adjustment grid ported to URA fields (the mandate's "treat
 existing skills as candidate baselines", made literal). It is same-project comps adjusted
-for time (PPI index), floor (band midpoint, 0.30%/floor) and size (elasticity -0.08), then
-similarity-weighted. If C1 does not beat the plain same-project median (B2/B3), the grid's
-adjustments add nothing on URA data — itself a finding.
+for time (PPI index, capped +/-25%), floor (band midpoint, 0.30%/floor) and size
+(segment-specific elasticity, EXP-0007; size-matched comps preferred), similarity-weighted.
+If C1 does not beat the plain same-project median (B2/B3), the grid adds nothing — a finding.
 """
 from __future__ import annotations
 

@@ -87,7 +87,9 @@ def conformal(rows, point_method, save=False):
             wsum += (hi - lo) / r["actual"]
         print(f"  nominal {int((phi-plo)*100)}% (p{plo}/p{phi}): coverage {cov/len(test):.3f}"
               f"  width {wsum/len(test):.3f}")
-    # 85% nominal chosen from the sweep above: lands ~82% actual under temporal drift.
+    # 85% nominal chosen from the sweep above. Held-out ACTUAL coverage under temporal drift:
+    # ~82% pre-EXP-0007 (EXP-0006), ~85% after the EXP-0007 size/time fixes. Docs headline the
+    # conservative ~82%; the current engine measures ~85% on the 8k sample.
     NOM_LO, NOM_HI = 0.075, 0.925
     g_lo, g_hi = _q(allr, NOM_LO), _q(allr, NOM_HI)
     table = {"_global": [g_lo, g_hi], "_meta": {"point_method": point_method,

@@ -206,8 +206,9 @@ def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
             "actual floor, stack and facing/view (not in the model — URA has no unit id)",
             "unit condition & renovation (no condition adjustment applied)",
             "en-bloc / redevelopment status and any outstanding levies or encumbrances",
-        ] + (["thin/no same-project evidence — pull twin-unit + AVM comps from Investment "
-              "Suite before offering"] if est["n_comps"] < 3 else [])
+        ] + (["thin evidence / hard case — pull twin-unit + AVM comps from Investment "
+              "Suite before offering (the engine does not call IS automatically)"]
+             if est["n_comps"] < 3 or hard or directional else [])
           + (["FALLBACK used (no same-project comp): remaining-lease decay is only partially "
               "modelled — confirm the exact lease and haircut a short-lease unit manually"]
              if used_fallback and subject.get("tenure_type") == "leasehold" else [])
@@ -215,7 +216,7 @@ def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
         "limitations": [
             "URA data: month-granular dates, floor BANDS (not exact), no unit id -> no stack/"
             "view/condition/renovation adjustment; note these qualitatively.",
-            "Point is same-project-driven; the range is the conformal band (empirical ~85% "
-            "coverage, EXP-0007), not a guarantee.",
+            "Point is same-project-driven; the range is the conformal band (empirical ~82% "
+            "held-out coverage, 85% nominal, EXP-0006/0007), not a guarantee.",
         ],
     }
