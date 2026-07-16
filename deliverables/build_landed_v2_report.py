@@ -44,12 +44,17 @@ def _money(x):
 
 
 def _banner(v):
+    """Always surface the freshest comparable print — it is the single most credible evidence
+    point, and rendering it ONLY when the directional flag fires meant that on the low side
+    (where the engine IS biased, in a rising market) the report computed it and threw it
+    away. Banner when flagged; a quiet line otherwise."""
     d, ref = v.get("directional_flag"), v.get("recent_street_reference")
-    if not d:
+    if not ref:
         return ""
-    r = (f" 最新可比街道成交 latest comparable street print: {ref['adj_psf']:.0f} land-psf "
-         f"({ref['contract_ym']}, {ref['land_area_sqft'] if 'land_area_sqft' in ref else ref['area_sqft']:.0f} sqft)"
-         if ref else "")
+    r = (f"最新可比街道成交 freshest comparable street print: {ref['adj_psf']:.0f} land-psf "
+         f"(adj, {ref['contract_ym']}, {ref['area_sqft']:.0f} sqft)")
+    if not d:
+        return f"<p class=note>{html.escape(r)}</p>"
     return f"<div class=banner>⚠ {html.escape(d)}<span class=note>{html.escape(r)}</span></div>"
 
 

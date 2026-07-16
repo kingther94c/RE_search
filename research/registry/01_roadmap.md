@@ -9,7 +9,7 @@ work its plan. Amend via changelog, not silently._
 
 | Track | Status |
 |---|---|
-| **Landed (L0–L4)** | **← ACTIVE — L0 DONE (GL0 PASS, EXP-0009) · L1 DONE (GL1 PASS, EXP-0010: bar = LC1 10.5% @ 87% cover; noise floor ~5.3-6.2%/print); next: L2 (L2a size curve mandatory + L2c lease-matched retrieval first). Goal: ship `landed-valuation` (hostile-review PASS ≥8)** |
+| **Landed (L0–L4)** | **COMPLETE — `landed-valuation` SHIPPED (GL0/GL1/GL2/GL3/GL4 all PASS).** Engine LV1: 9.34% median APE / 100% coverage / 78.9% held-out band (vs the L1 bar 10.5%). Hostile review **PASS 8.05** after 6 rounds (EXP-0009..0015). Open + disclosed: **L2b fitted local trend** (the regime bias) is the highest-value next module |
 | Condo resale | **SHIPPED & FROZEN** — `condo-resale-valuation` accepted (PASS 8.7/10; engine v2.1: 3.71% median APE / 100% coverage / ~82–85% held-out interval). Backlog below; nothing ships without its gate |
 | New launch (was R7) | PARKED (plan preserved below) |
 | IS calibration bridge (was R4) | PARKED — becomes relevant again for condo hard-cases and landed condition evidence |

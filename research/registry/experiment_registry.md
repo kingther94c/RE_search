@@ -5,6 +5,43 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0015 — L4 ACCEPTED: hostile review PASS 8.05, GL4 MET (2026-07-17)
+- **Status: DONE. `landed-valuation` SHIPPED. GL4 PASS.** Six hostile rounds, fresh reviewer
+  each: **6.9 → 7.05 → 7.8 → 7.55 → 6.65 → 8.05 PASS** (zero blockers, every dimension ≥7.0).
+- **The question the loop existed to answer** — is DISCLOSING the regime bias adequate, or
+  does a ~15pp directional bias make the point unusable? The reviewer measured the **money**,
+  not the sign test: hot-regime median signed error is **−3.9%** — **smaller than the 6.0-8.2%
+  per-print bundle noise floor we measured**. Verdict: *"A 4% shift is not reliably correctable
+  under 6-8% irreducible per-print noise; they tried (GY-0003), it broke four unbiased
+  regimes, and they reverted it and published the table instead. Disclosure is the
+  methodologically correct answer here, not an excuse."* The revert (EXP-0014) is vindicated.
+- **Independently verified:** all 8 trials reproduce byte-identically; the full regime table
+  and its APEs; the noise floor; condition-blindness (every numeric field identical across
+  condition inputs); the conformal fingerprint passes against shipped code. **The engine
+  UNDERSTATES itself** — claimed 78.9% held-out band coverage, the shipped band delivers
+  **79.62%**.
+- **Two P1s found and fixed in this round (both self-indicting by our own standard):**
+  1. **The shipped point was NOT the backtested point.** A `directional AND hard` blend lived
+     only in `value_landed` (the harness scores `landed_engine`). Measured on 2,600 firewalled
+     resales: it fires on 3.9%, where the RAW point was **already unbiased** (sign 48.5%,
+     median signed +0.83%) and the blend made them **worse** (sign 64.4%, median signed
+     −5.98%, +0.85pp APE) — **injecting the very bias the engine discloses as its weakness.
+     That is exactly why GY-0003 was buried** ("broke the regimes that were already
+     unbiased"), left running in production. **DELETED**; the validated LC2/LV1 point stands,
+     locked by `test_shipped_point_is_the_backtested_point`.
+  2. **The directional flag was one-sided** — fired 17/17 when the point sat ABOVE the freshest
+     print (the side the engine is NOT biased on) and 0/58 BELOW, where the gap genuinely
+     predicts error (point <−20% below fresh → median signed −7.6%, 70% of sales above).
+     Worse, `_banner` rendered the fresh reference ONLY when the flag fired, so low-side
+     reports computed the evidence and dropped it — the "computed it then discarded it"
+     pattern for the third time. Now **SYMMETRIC** (annotates both directions, never moves the
+     point) and the reference **always renders**. Live proof: AROOZOO (a 4,517.6sf size-twin
+     printed 14% above our point four months earlier) now raises a BELOW flag; it was silent.
+- **Open, disclosed, non-blocking:** L2b (fitted local trend) is the proper fix for the regime
+  bias and is the highest-value open landed module; the guidance pool has no time window while
+  LC2 uses 60mo (two comp counts in one report); the conformal sweep doesn't call
+  `landed_engine._band` (conservative today: 78.91% published vs 79.62% actual).
+
 ## EXP-0014 — L4 review round 5: the drift fix REVERTED; the bias is regime-dependent (2026-07-17)
 - **Status: DONE. Verdict: GY-0003 (drift) REJECTED and reverted; the residual bias is
   DISCLOSED; the lease guard's second half closed.**

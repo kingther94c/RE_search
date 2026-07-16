@@ -284,21 +284,35 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
     area = subject["area_sqft"]
     big = is_big_plot(area)
 
+    # THE SHIPPED POINT IS THE BACKTESTED POINT — no production-only blend.
+    # A `directional AND hard` blend (point <- mean(LC2, fresh_ref)) used to live here. It was
+    # never in the harness, and measuring it on 2,600 firewalled resales showed it FIRED on
+    # 3.9% where the raw point was ALREADY unbiased (sign 48.5%) and made them worse: sign
+    # 64.4%, median signed -5.98%, median APE +0.85pp. That is precisely why GY-0003 was
+    # buried — "it broke the regimes that were already unbiased" — so keeping it in production
+    # would apply, against our own standard, the failure we rejected. Deleted; the validated
+    # LC2/LV1 point stands.
+    #
+    # The freshest comparable print is still surfaced, and now SYMMETRICALLY: the old flag
+    # fired only when the point sat ABOVE it (17/17) — the side the engine is NOT biased on —
+    # and was silent on 58 BELOW-side cases where the gap genuinely predicts error (point
+    # <-20% below fresh -> median signed -7.6%, 70% of sales above the point). It annotates;
+    # it never moves the point.
     ref = _street_ref(subject, market, ctx)
     point_psf, directional = est["psf"], None
-    if ref and est["psf"] > ref["adj_psf"] * 1.06:
+    if ref:
         gap = est["psf"] / ref["adj_psf"] - 1
-        directional = (f"point was {gap*100:.0f}% above the freshest comparable street print "
-                       f"({ref['adj_psf']:.0f} land-psf adj, {ref['contract_ym']}) — "
-                       f"stale-comp risk; corroborate")
-        if hard:
-            point_psf = round((est["psf"] + ref["adj_psf"]) / 2, 1)
-            directional += f"; point pulled to {point_psf:.0f} (blended toward fresh print)"
+        if gap > 0.06:
+            directional = (f"point is {gap*100:.0f}% ABOVE the freshest comparable street "
+                           f"print ({ref['adj_psf']:.0f} land-psf adj, {ref['contract_ym']}) "
+                           f"— stale-comp risk; corroborate before offering")
+        elif gap < -0.06:
+            directional = (f"the freshest comparable street print is {-gap*100:.0f}% ABOVE "
+                           f"this point ({ref['adj_psf']:.0f} land-psf adj, "
+                           f"{ref['contract_ym']}) — in an accelerating market read the point "
+                           f"as a FLOOR (see the regime bias); corroborate before offering")
     price = round(point_psf * area, 0)
-    scale = price / est["price"] if est["price"] else 1.0
-    lo, hi = round(est["low"] * scale, 0), round(est["high"] * scale, 0)
-    if directional and hard:
-        lo = min(lo, round(ref["adj_psf"] * area, 0))
+    lo, hi = est["low"], est["high"]
     conf, conf_label = _confidence(est["n_comps"], fallback, spread, big,
                                    subject["property_type"])
     rem = remaining_lease(subject, ctx["asof_ym"])
@@ -340,8 +354,8 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
         measured = ("Measured (EXP-0013): ~68-81% of real sales land above the p25 marker "
                     "and ~33-40% above p75, drifting with the regime — evidence markers, "
                     "NOT calibrated probabilities.")
-        drift = (" NOTE: expected-clear sits above the freshest comparable print "
-                 "(stale-comp risk) — see the directional flag." if directional else "")
+        drift = (f" NOTE: {directional.split(' — ')[0]} — see the directional flag."
+                 if directional else "")
         buyer = {"attractive_below": p25, "walk_away_above": p75,
                  "fair_value_band": [lo, hi],
                  "note": f"attractive below / walk away above = {src}. {measured} The "
@@ -376,7 +390,7 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
         "fair_value": {"land_psf": point_psf, "price": price, "low": lo, "high": hi,
                        "confidence": conf, "confidence_label": conf_label,
                        "n_street_comps": est["n_comps"], "basis": est["note"]
-                       + ("; blended toward fresh print" if point_psf != est["psf"] else "")},
+                       },
         "independent_reads_land_psf": reads,
         "method_disagreement": {"spread_rel": round(spread, 3) if spread else None,
                                 "hard_case": hard},

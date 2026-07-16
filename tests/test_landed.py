@@ -230,6 +230,43 @@ def test_mixed_tenure_street_refuses_when_tenure_not_supplied(store):
     assert "error" not in plain
 
 
+def test_shipped_point_is_the_backtested_point(store):
+    """No production-only blend. A `directional AND hard` blend once pulled the point toward
+    the freshest print — it was never in the harness, fired on 3.9%, and made THOSE cases
+    worse (raw sign 48.5% -> blended 64.4%, +0.85pp APE): the exact GY-0003 failure mode
+    (breaking cases that were already unbiased), applied in production. The shipped point
+    must equal the engine's."""
+    import datetime as dt
+    from researcher.backtest.index import PriceIndex
+    from researcher.backtest.landed_engine import landed_engine
+    from researcher.backtest.market import MarketView
+    from researcher.backtest.value_landed import _infer, _landed_store
+    ls = _landed_store(store)
+    for street, area, ptype in (("ALNWICK ROAD", 2800, "Terrace"),
+                                ("LOYANG RISE", 1635, "Terrace")):
+        spec = LandedSpec(street, area, ptype, asof="2026-07-01")
+        v = value_landed(spec, store)
+        subj = _infer(spec, ls)
+        t = dt.date.fromisoformat("2026-07-01")
+        idx = PriceIndex.load()
+        ctx = {"asof_ym": "2026-07", "asof_date": t, "index": idx,
+               "asof_q": idx.as_of_quarter(t)}
+        est = landed_engine(subj, MarketView(ls.as_of(t, lag_days=56).txs, "2026-07"), ctx)
+        assert v["fair_value"]["land_psf"] == est["psf"], f"{street}: shipped point != engine"
+        assert v["fair_value"]["price"] == est["price"]
+
+
+def test_directional_flag_is_symmetric(store):
+    """The flag fired only when the point sat ABOVE the freshest print (17/17) — the side the
+    engine is NOT biased on — and was silent on 58 BELOW-side cases where the gap genuinely
+    predicts error. It must annotate BOTH directions, and never move the point."""
+    import inspect
+    from researcher.backtest import value_landed as m
+    src = inspect.getsource(m.value_landed)
+    assert "gap < -0.06" in src and "gap > 0.06" in src, "directional flag is not symmetric"
+    assert "point_psf = round((est" not in src, "the rejected blend is back (see GY-0003)"
+
+
 def test_no_momentum_extrapolation_in_time_adjustment():
     """GY-0003: a trailing-trend drift was tried to close the index publication lag and is
     REJECTED — sliced by regime it broke the already-unbiased periods (2023H2 sign 47.6%
