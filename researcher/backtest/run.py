@@ -16,9 +16,12 @@ import os
 import random
 
 from .avm import ANCHORS
+from .avm_knn import KNN_ANCHORS
+from .avm_pooled import ANCHORS_POOLED
 from .benchmarks import BENCHMARKS
 from .candidates import CANDIDATES
 from .ensemble import ENSEMBLES
+from .ensemble_learned import ENSEMBLES_LEARNED
 from .harness import walk_forward
 from .store import TransactionStore
 
@@ -50,7 +53,8 @@ def main() -> None:
         print("no subjects — is the store populated and the date window sane?")
         return
 
-    methods = {**BENCHMARKS, **CANDIDATES, **ANCHORS, **ENSEMBLES}
+    methods = {**BENCHMARKS, **CANDIDATES, **ANCHORS, **ANCHORS_POOLED,
+               **KNN_ANCHORS, **ENSEMBLES, **ENSEMBLES_LEARNED}
     res = walk_forward(store, subjects, methods,
                        lag_days=args.lag_days, max_subjects=args.max)
     print("\n=== benchmark leaderboard (sorted by median APE) ===")

@@ -5,6 +5,22 @@ impact · assets affected.
 
 ---
 
+## 2026-07-16 — R3 engine v2: team fan-out integrated + verified (G3 MET)
+- **What:** integrated 3 team-built methods (`avm_pooled.py` A2, `avm_knn.py` A3,
+  `ensemble_learned.py` E1) + a follow-up E2 (C1⊕A2) + `tune_e1.py` provenance. All
+  independently re-verified in the main repo (numbers reproduce; leakage read clean). 108
+  tests (+7). EXP-0005.
+- **Why:** the R3 team (Workflow wf_234bc499-6eb) built alt anchors + a learned ensemble;
+  the workflow died at the session boundary before its verify/synthesis tail, so the
+  orchestrator re-verified from the journal + reproduction rather than trusting completion.
+- **Result — engine v2 = E2_ensemble_pooled:** median 4.16% / 100% coverage / interval 87%.
+  Ties the C1 bar (4.08%) while fixing interval calibration (43%→87%) and always answering —
+  **G3 MET** (tie + better calibration). A2 pooled (5.46%) is the best independent anchor;
+  E0 superseded by E1/E2.
+- **Backtest impact:** first production-grade condo estimate — honest bands + full coverage.
+- **Open (R3-finish):** per-cell conformal to sharpen intervals to exactly 80%; 3-anchor
+  blend; E1-vs-E2 re-check on a thin-comp slice (the case the backtest under-weights).
+
 ## 2026-07-15 — R0 complete + R1 baseline (condo) + G0/G1 gates
 - **What:** full URA pull (136,436 caveats, 61 months, EXP-0002, G0 PASS); harness
   performance refactor (`market.py` MarketView per-month indexes — dropped the per-subject

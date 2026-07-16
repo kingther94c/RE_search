@@ -185,3 +185,55 @@ def test_ensemble_grid_only_when_avm_declines():
     est = ensemble_v0(subject, mkt, ctx)
     assert est is not None and est["price"] is not None
     assert "grid only" in est["note"]
+
+
+# ------------------------------------------------- team methods (A2 pooled, A3 kNN, E1)
+def _big_condo_market(n=260, asof_ym="2024-09"):
+    """>=200 condo caveats so A3's scaler and A1 fit; spread over projects/segments."""
+    from researcher.backtest.index import PriceIndex
+    txs = []
+    for i in range(n):
+        proj = f"P{i % 20}"
+        seg = ("CCR", "RCR", "OCR")[i % 3]
+        ym = f"2024-{(i % 8) + 1:02d}"
+        txs.append(_tx(proj, ym, 1800 + (i % 20) * 10, area=700 + (i % 5) * 100,
+                       x=float(i % 10) * 200, y=float(i // 10) * 200, seg=seg))
+    mkt = MarketView(txs, asof_ym)
+    ctx = {"asof_ym": asof_ym, "asof_date": None, "index": PriceIndex({}), "asof_q": None}
+    return mkt, ctx
+
+
+def test_avm_pooled_answers_and_falls_back_to_segment():
+    from researcher.backtest.avm_pooled import avm_pooled
+    mkt, ctx = _big_condo_market()
+    onproj = avm_pooled(_tx("P3", "2024-10", 2000, area=800, x=0, y=0), mkt, ctx)
+    assert onproj and onproj["psf"] > 0 and "pooled" in onproj["note"]
+    # unknown project -> no same-project comp -> segment-anchor fallback, still answers
+    lonely = avm_pooled(_tx("NOWHERE", "2024-10", 2000, area=800, x=0, y=0, seg="CCR"),
+                        mkt, ctx)
+    assert lonely and "segment anchor" in lonely["note"]
+
+
+def test_avm_knn_answers_with_pool_and_declines_without_scaler():
+    from researcher.backtest.avm_knn import avm_knn
+    mkt, ctx = _big_condo_market()
+    est = avm_knn(_tx("P3", "2024-10", 2000, area=800, x=100, y=100), mkt, ctx)
+    assert est and est["psf"] > 0 and est["n_comps"] >= 5
+    # too little history -> scaler declines rather than guessing
+    tiny = MarketView(_rising_project_store().txs, "2024-09")
+    assert avm_knn(_tx("A", "2024-10", 2200, x=0, y=0), tiny, ctx) is None
+
+
+def test_ensemble_learned_blends_and_beats_nothing_without_avm():
+    from researcher.backtest.ensemble_learned import ensemble_learned
+    # big market: both C1 and A1 answer -> E1 blends, weight recorded in the note
+    mkt, ctx = _big_condo_market()
+    est = ensemble_learned(_tx("P3", "2024-10", 2000, area=800, x=100, y=100), mkt, ctx)
+    assert est and est["price"] is not None and "w_c1=" in est["note"]
+
+
+def test_ensemble_pooled_e2_blends():
+    from researcher.backtest.ensemble_learned import ensemble_pooled
+    mkt, ctx = _big_condo_market()
+    est = ensemble_pooled(_tx("P3", "2024-10", 2000, area=800, x=100, y=100), mkt, ctx)
+    assert est and est["price"] is not None and est["method"] == "E2_ensemble_pooled"

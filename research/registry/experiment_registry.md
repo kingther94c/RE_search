@@ -5,6 +5,38 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0005 — R3 team fan-out: alt anchors + learned ensemble (2026-07-15/16)
+- **Status:** DONE for 3 of 4 threads; **independently re-verified in the main repo** (numbers
+  reproduce exactly; I read every method for leakage — all clean). Conformal thread did not
+  finish (workflow died at the session boundary) — carried to R3-finish.
+- **Method:** background Workflow (wf_234bc499-6eb) — 4 worktree-isolated agents each built +
+  backtested a method; adversarial verify stage started but did not complete, so I did the
+  verification myself (code read + full-backtest reproduction at n=4000/5000).
+- **Results (verified, sorted best-first):**
+  - **E2_ensemble_pooled (C1+A2)**: median **4.16%** / P90 12.7% / cover 100% / **interval 87%** / pct>10% 16.0%
+  - **E1_ensemble_learned (C1+A1)**: median **4.18%** / P90 12.7% / cover 100% / **interval 81%** / pct>10% 16.3%
+  - E0_ensemble (hand-set): 4.42% / interval 81%  (SUPERSEDED by E1/E2)
+  - **A2_avm_pooled** (empirical-Bayes shrinkage, project→segment→broad): median **5.46%** / cover 100% — best independent anchor
+  - **A3_avm_knn** (feature-space kNN, k=40): median **7.2%** / cover 100%
+  - A1_avm_hedonic: 10.3% (weakest anchor)
+- **Findings.** (1) A learned/tuned ensemble recovers the median to ~C1 (4.08%) while keeping
+  100% coverage and fixing interval calibration to the 80% target — **E1/E2 meet G3** on the
+  "tie within noise + materially better calibration (43%→81-87%)" branch. (2) The pooled
+  anchor A2 (5.46%) >> hedonic A1 (10.3%): shrinking same-project psf toward a market prior
+  beats regressing on hedonic attributes for this data. (3) Swapping A2 for A1 in the ensemble
+  (E2) marginally wins in-sample (4.16 vs 4.18, better tail + calibration).
+- **Honest nuance (the synthesis judgement).** E1 vs E2 are within noise. E2 is marginally
+  better *in-sample* but A2 is same-project-CORRELATED (it uses same-project comps), so E2 is
+  less genuine anchor-diversity and more "C1 + graceful fallback + honest band". E1 pairs C1
+  with A1 which is attribute-based and genuinely independent — likely more robust on the
+  thin/no-same-project production cases the backtest under-weights. **Recommendation: E2 as the
+  default point estimate; keep A1/A2/A3 as validated components; R3-finish = (a) proper
+  per-cell conformal to tighten intervals to exactly 80%, (b) test a 3-anchor blend, (c)
+  re-check E1 vs E2 on a thin-comp-enriched slice before locking the skill.**
+- **Team process lesson.** Worktree agents produced integrable, tested, leakage-clean code
+  (verified). But the verify+synthesis tail was lost when the session ended — record: for
+  long fan-outs, the orchestrator must re-verify from the journal, not trust the run to finish.
+
 ## EXP-0004 — R3 kickoff: independent hedonic AVM anchor + evidence-state ensemble (2026-07-15)
 - **Status:** IN PROGRESS (5,000-subject walk-forward). Anchor + naive ensemble built &
   integrated; refinement (learned weights, alt anchors, conformal) handed to the team.

@@ -13,16 +13,22 @@ not its own skill.
 ## Validation status by asset
 | Asset | Ground truth for OOS | Validation protocol | Status |
 |---|---|---|---|
-| Condo resale | URA resale caveats (bulk, as-of) | **quant walk-forward** vs benchmarks | **baseline set (EXP-0003): bar = 4.1% median APE (C1 grid ≈ B3), same-project methods dominate**; R3 next |
+| Condo resale | URA resale caveats (bulk, as-of) | **quant walk-forward** vs benchmarks | **engine v2 (EXP-0005): E2 ensemble 4.16% median / 100% cover / 87% interval — G3 MET**; R3-finish (conformal) then R5 skill |
 | Landed | URA landed caveats (few, heterogeneous) | walk-forward **+ heavy case regression** (noisy MAE, wide CIs expected) | not started (data present: 12,990 caveats) |
 | New launch | *often none* — developer price ≠ fair value; only later resale is truth | **mostly case-based + separation-of-quantities discipline** | not started (data present: 47,910 new-sale caveats) |
 
-### Current condo bar (EXP-0003, 8k walk-forward, lag-stable)
-- **Point estimate:** C1_grid_adapted / B3 at **~4.1% median APE** is the number to beat.
-  Same-project comps carry it; segment/nearest proxies are 3-4x worse (GY-0001, GY-0002).
-- **Open defects R3 must fix:** tail (pct>10% = 15%, worse for >4M & thin-liquidity);
-  interval coverage 44% vs 80% target; no good fallback when same-project comps are absent
-  (production faces this more than the backtest does).
+### Current condo engine (EXP-0003 bar → EXP-0005 v2)
+- **Bar (C1 grid):** ~4.08% median APE, but interval coverage 43% and declines ~0.7%.
+- **Engine v2 (E2_ensemble_pooled = C1 ⊕ A2 pooled-shrinkage anchor):** median **4.16%**,
+  **100% coverage**, **interval 87%**. Ties the bar on median while fixing calibration
+  (43%→87%) and always answering — **G3 MET** (tie + materially better calibration/coverage).
+  E1 (C1⊕A1) is the near-tied, more-independent alternative (4.18%/81%).
+- **Validated components:** C1 (same-project grid), A1 hedonic / A2 pooled / A3 kNN anchors,
+  E1/E2 ensembles. A2 (5.46%) is the strongest independent anchor; segment-avg & nearest-
+  project are dead (GY-0001/0002).
+- **R3-finish (before the skill):** per-cell conformal to tighten intervals to exactly 80%;
+  test a 3-anchor blend; re-check E1-vs-E2 on a thin-comp-enriched slice (backtest
+  under-samples the no-same-project case that matters most in production).
 
 The protocol is **not uniform across assets** — this was an explicit correction to the
 mandate. Do not pretend a clean walk-forward fair-value backtest exists for new launch.
