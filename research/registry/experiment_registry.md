@@ -5,6 +5,46 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0014 — L4 review round 5: the drift fix REVERTED; the bias is regime-dependent (2026-07-17)
+- **Status: DONE. Verdict: GY-0003 (drift) REJECTED and reverted; the residual bias is
+  DISCLOSED; the lease guard's second half closed.**
+- **The finding (hostile round 5, REVISE 6.65, 2 blockers).** Both real, both ours.
+- **BLOCKER 1 — the lease guard was half-closed.** EXP-0012 fixed "DECLARED leasehold with no
+  lease_start → REFUSE" but left "tenure NOT declared → infer the street MODE". On a mixed
+  street the mode silently upgrades a real leasehold plot to freehold and prices it off
+  freehold comps — the 232% class, at high confidence with live guidance. Measured on JALAN
+  RINDU (14 FH / 11 LH): omitting the *optional* tenure input yields **+69.8%** (S$5.34M vs
+  S$3.14M declared-leasehold), conf 70, live ask. Worse, the engine COMPUTED the evidence
+  (LC2 builds an "N lease-mismatched dropped" note) and `landed_engine` then discarded it.
+  **Fix:** `tenure_required` refusal when tenure is inferred AND the street is MATERIALLY
+  mixed. Material, not binary — measured: ALNWICK 1.5% minority (3 stray LH in 205) is a
+  data quirk where the mode is safe; JALAN RINDU 44% is a coin flip. Threshold 10% + n≥4 →
+  **26 of 781 street×type groups (3.3%) refuse without a tenure input.**
+- **BLOCKER 2 — "sign test 51.7% = unbiased" was REGIME CANCELLATION.** The reviewer sliced
+  the sign test BY REGIME — the slice we still had not computed. Drift OFF → ON:
+  | regime | 2023H1 | 2023H2 | 2024H1 | 2024H2 | 2025H1 | 2025H2 |
+  |---|---|---|---|---|---|---|
+  | OFF | 51.6 | 47.6 | 49.6 | 50.1 | 66.3 | 66.5 |
+  | ON  | **41.6** | **37.6** | **43.9** | **44.7** | 63.4 | **67.1** |
+  **The fix BROKE the four regimes that were already unbiased and made the one it targeted
+  worse**, while costing median APE (9.34→9.49%). The pooled 51.7% was a HIGH bias cancelling
+  a LOW one; **no regime measured 50%**. It also projected momentum against the latest
+  observation (2026Q1 landed PPI FELL 0.40% while drift applied +3.31%). **REVERTED → GY-0003.**
+  The round-4 diagnosis it rested on (~1.2pp = publication lag) was itself WRONG: the 2025
+  bias survives the fix, so it is not staleness — it is a comp-based estimate structurally
+  lagging an ACCELERATING market.
+- **What ships instead — disclosure, not correction.** LV1 back to **9.34% median / 78.9%
+  held-out band / 100% coverage**, with the regime table published in the SKILL and in EVERY
+  report's limitations: *unbiased in stable markets (sign 47.6-51.6% across 2023-24), ~15pp
+  low when the market accelerates (66% in 2025) — in a hot market read the point as a FLOOR.*
+- **The institutional lesson, now twice over: a metric not computed is a bias not seen.**
+  L1 closed module L2b because "regime slices are flat" — they were flat on **APE** (8.4-10.0%
+  across every half-year) while the **sign test** swung 47.6%→66.5% in those same slices.
+  Flat APE is not flat bias. **The sign test + median_signed now ship in EVERY slice of the
+  landed leaderboard, and the regime slice is by HALF-YEAR** (an annual bucket averages away
+  the 2025H1-vs-H2 signal). **L2b (a fitted LOCAL trend) is re-opened in the backlog as the
+  proper fix** — it was closed on the wrong metric.
+
 ## EXP-0013 — L4 review round 4: the systematic LOW bias, and why the metric set hid it (2026-07-17)
 - **Status: DONE. Verdict: bias FIXED (sign test 63%→51.7%); guidance markers RE-LABELLED
   after a calibration attempt honestly FAILED out-of-sample.**

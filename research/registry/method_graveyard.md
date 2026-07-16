@@ -38,5 +38,31 @@ Format per entry:
 - **Do not resurrect unless:** distance is combined with tenure/age/quantum/positioning
   similarity (that is the R2b hypothesis, not this one).
 
+### GY-0003 — Index momentum extrapolation ("drift_factor") for the landed time adjustment (2026-07-17)
+- **Claim it made:** comps are adjusted only to the last PUBLISHED index quarter (35d pub lag),
+  leaving the point structurally 1-2 quarters stale in a rising market; projecting that gap
+  forward at the trailing-4Q published trend should remove the resulting low bias.
+- **How tested:** EXP-0013 → EXP-0014. Built it (leakage-safe: reads no unpublished quarter,
+  capped ±6%), shipped it, then a hostile reviewer sliced the sign test **BY REGIME** — the
+  slice we had never computed.
+- **Why rejected:** the pooled "51.7% ≈ unbiased" was **regime CANCELLATION, not a fix**.
+  Drift OFF → ON, sign test by half-year:
+  2023H1 **51.6→41.6** · 2023H2 **47.6→37.6** · 2024H1 **49.6→43.9** · 2024H2 **50.1→44.7**
+  (all four were ALREADY unbiased and were BROKEN), while the regime it targeted barely moved
+  and got worse: 2025H1 66.3→63.4, **2025H2 66.5→67.1**. Median APE degraded 9.34%→9.49%.
+  No regime measured 50%. It also projected momentum against the latest observation — the
+  newest published landed quarter FELL (2026Q1, −0.40%) while drift applied +3.31%.
+- **Scope of the rejection:** the whole idea of closing publication staleness with an index
+  momentum term. The DIAGNOSIS it rested on (~1.2pp from the pub lag) was itself wrong: the
+  2025 bias survives the fix, so it is not publication staleness — it is a comp-based estimate
+  structurally lagging an ACCELERATING market.
+- **Do not resurrect unless:** you have a fitted LOCAL trend (L2b) validated by the regime
+  sign test, not an index-momentum hack. The residual is now DISCLOSED instead (unbiased in
+  stable regimes; ~15pp low when the market accelerates).
+- **Lesson:** this is the second miss from the same cause — **a metric not computed**. L1
+  closed L2b because "regime slices are flat" (they were flat on **APE**: 8.4-10.0% across
+  every half-year) while the **sign test** swung 47.6%→66.5% in the same slices. Flat APE is
+  not flat bias. The sign test now ships in every slice of the landed leaderboard.
+
 **Watch-list (tested, retained as benchmarks, not yet buried):** none outstanding — the two
 proxy methods the user flagged are now measured and filed above.

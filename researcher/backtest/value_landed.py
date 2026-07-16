@@ -36,6 +36,9 @@ from .store import LANDED_PSF_BAND, TransactionStore, months_between
 # Measured in EXP-0010: same-plot repeat dispersion = the irreducible per-print bundle noise.
 NOISE_FLOOR = {"Terrace": 0.060, "Semi-detached": 0.078, "Detached": 0.082}
 DEFAULT_NOISE = 0.06
+# Share of the minority tenure class above which a street's tenure cannot be inferred from
+# its mode (measured: ALNWICK 1.5% = quirk, safe; JALAN RINDU 44% = a coin flip worth ~70%).
+MIXED_TENURE_SHARE = 0.10
 
 
 @dataclass
@@ -71,6 +74,20 @@ def _infer(spec, store) -> dict | None:
     ys = [r["y"] for r in rows if r.get("y") is not None]
     ls = [r["lease_start"] for r in same_type if r.get("lease_start")]
     asof = spec.asof or _dt.date.today().isoformat()
+    # MIXED-TENURE DETECTION. Inferring tenure from the street MODE is safe only on a
+    # single-tenure street. On a mixed street the mode silently upgrades a real leasehold
+    # plot to freehold and prices it off freehold comps — the 232% failure class, at high
+    # confidence with live guidance. Measured: JALAN RINDU (14 FH / 11 LH) swings +69.8%
+    # (S$5.34M vs S$3.14M) on whether tenure is supplied. Surface it; the caller decides.
+    # "Mixed" must be MATERIAL, not binary: 3 stray leasehold prints among 205 quasi-FH on
+    # ALNWICK ROAD (1.5%) is a data quirk and the mode is safe; JALAN RINDU at 44% (14 FH /
+    # 11 LH) is genuinely ambiguous and the mode is a coin flip worth ~70% of the value.
+    n_quasi = sum(1 for r in same_type
+                  if r.get("tenure_type") in ("freehold", "freehold_equiv"))
+    n_lease = sum(1 for r in same_type if r.get("tenure_type") == "leasehold")
+    tot = n_quasi + n_lease
+    minority = (min(n_quasi, n_lease) / tot) if tot else 0.0
+    mixed = tot >= 4 and minority >= MIXED_TENURE_SHARE
     return {
         "id": "SUBJECT", "project": "", "street": spec.street,
         "market_segment": _mode(rows, "market_segment"), "district": _mode(rows, "district"),
@@ -83,6 +100,8 @@ def _infer(spec, store) -> dict | None:
         "psf": None, "price": None, "floor_lo": None, "floor_hi": None,
         "x": (sum(xs) / len(xs)) if xs else None,
         "y": (sum(ys) / len(ys)) if ys else None, "no_of_units": 1,
+        "_tenure_inferred": spec.tenure_type is None,
+        "_street_mixed_tenure": mixed,
     }
 
 
@@ -232,6 +251,15 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
     # catastrophic for the SUBJECT: it upgrades a real leasehold to quasi-freehold and prices
     # it off freehold comps. Measured swing on a real street: 2,080 -> 1,197 land-psf (-42%)
     # once the lease start is supplied. Never guess a lease: refuse and ask.
+    # The same door, its other half: refusing only when tenure is DECLARED leasehold left the
+    # UNDECLARED case wide open — the street mode silently made a leasehold plot freehold.
+    if subject.get("_tenure_inferred") and subject.get("_street_mixed_tenure"):
+        return {"error": "tenure_required",
+                "message": f"{spec.street} is a MIXED-TENURE street (both quasi-freehold and "
+                           "leasehold plots trade here), so tenure cannot be inferred from the "
+                           "street: guessing wrong swings the value by ~70% and would price a "
+                           "leasehold plot off freehold comps (the 232% failure). Supply "
+                           "tenure_type (and lease_start if leasehold) from the title/INLIS."}
     if subject["tenure_type"] == "leasehold" and not subject.get("lease_start"):
         return {"error": "lease_start_required",
                 "message": f"{spec.street} is leasehold but no lease commencement year could "
@@ -377,8 +405,12 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
             f"URA prices a LAND+BUILDING BUNDLE and carries no condition/GFA/geometry -> an "
             f"irreducible per-print noise floor of ~{NOISE_FLOOR.get(spec.property_type, DEFAULT_NOISE)*100:.0f}% "
             f"(EXP-0010, same-plot repeats). No model on this data can beat it.",
-            "Engine LV1 measured 9.5% median APE / 77.5% held-out band coverage / sign test 51.7% "
+            "Engine LV1 measured 9.3% median APE / 78.9% held-out band coverage "
             "walk-forward landed resales (EXP-0012) — honest high-single-digit, not condo-grade.",
+            "REGIME BIAS (EXP-0014): the engine is unbiased in stable markets but runs LOW "
+            "when the market accelerates (actual exceeded the point ~50% of the time in "
+            "2023-24 but ~66% in 2025) — median APE is FLAT across regimes, so the error "
+            "is directional, not larger. In a hot market read the point as a FLOOR.",
             "The engine is CONDITION-BLIND and GEOMETRY-BLIND: it does not shift the point for "
             "condition (no validated effect — L2e backlog) and cannot see frontage/shape/"
             "corner/reserve at all. The band embeds AVERAGE condition ignorance because it is "

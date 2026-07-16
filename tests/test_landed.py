@@ -213,6 +213,34 @@ def test_leasehold_without_lease_start_refuses_rather_than_freehold_pricing(stor
     assert "error" not in ok or ok.get("error") != "lease_start_required"
 
 
+def test_mixed_tenure_street_refuses_when_tenure_not_supplied(store):
+    """The lease guard's other half. Refusing only on DECLARED-leasehold-without-lease_start
+    left the undeclared case open: on a mixed street the tenure MODE silently makes a
+    leasehold plot freehold. Measured swing on JALAN RINDU (14 FH / 11 LH): +69.8%
+    (S$5.34M inferred-FH vs S$3.14M declared-LH) — at confidence 70 with a live ask."""
+    v = value_landed(LandedSpec("JALAN RINDU", 2656, "Terrace", asof="2026-07-01"), store)
+    assert v.get("error") == "tenure_required"
+    assert "MIXED-TENURE" in v["message"]
+    # supplying tenure resolves it
+    ok = value_landed(LandedSpec("JALAN RINDU", 2656, "Terrace", tenure_type="leasehold",
+                                 lease_start=1993, asof="2026-07-01"), store)
+    assert ok.get("error") != "tenure_required"
+    # a single-tenure street still values without a tenure input
+    plain = value_landed(LandedSpec("LOYANG RISE", 1635, "Terrace", asof="2026-07-01"), store)
+    assert "error" not in plain
+
+
+def test_no_momentum_extrapolation_in_time_adjustment():
+    """GY-0003: a trailing-trend drift was tried to close the index publication lag and is
+    REJECTED — sliced by regime it broke the already-unbiased periods (2023H2 sign 47.6%
+    -> 37.6%) while worsening the one it targeted. _tadj_psf must not extrapolate."""
+    import inspect
+    from researcher.backtest import landed_benchmarks as lb
+    src = inspect.getsource(lb._tadj_psf)
+    assert "drift_factor" not in src.split('"""')[-1], \
+        "momentum extrapolation reintroduced into the landed time adjustment (see GY-0003)"
+
+
 def test_hard_case_suppresses_guidance(store):
     """Review blocker: the gate keyed on band_rel, which is a per-CELL constant from the
     conformal table and therefore BLIND to a subject-level hard case — ALNWICK (hard_case,

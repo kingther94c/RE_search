@@ -8,14 +8,14 @@ description: Use to value a specific Singapore LANDED house (terrace / semi-deta
 ## When to use
 Put a defensible market value on a specific SG landed property. The engine is
 **quant-validated**: time-consistent walk-forward on 7,027 landed resales gives
-**~9.5% median APE / 77.5% held-out band coverage / 100% answer rate / sign test 51.7%**
+**~9.3% median APE / 78.9% held-out band coverage / 100% answer rate**
 (research/registry/ EXP-0010/0011/0012).
 
 **Read this number honestly.** Landed accuracy is structurally worse than condo's 3.7%,
 and that is not a defect: URA prices a **LAND+BUILDING BUNDLE** and carries no condition,
 GFA, age or plot geometry. Same-plot repeat sales put an **irreducible noise floor of
 ~6% (terrace) / ~7.8% (semi-D) / ~8.2% (detached, thin: n=17 pairs) per print**
-(EXP-0010). At 9.5% the engine is within ~3pp of the floor — most of the remaining error is *unobservable from
+(EXP-0010). At 9.3% the engine is within ~3pp of the floor — most of the remaining error is *unobservable from
 bulk data*, not modelling slack. **Never promise condo-grade precision on landed.**
 
 ## Inputs
@@ -52,11 +52,26 @@ explicit past `--asof` reconstructs what was knowable then (56d caveat lag).
   (FH/999yr) and real leasehold are NEVER comparable; leaseholds must be within ±25y of
   remaining lease.
 - **Range = split-conformal** per (street-liquidity × type) cell, calibrated on an earlier
-  slice, validated **77.5%** held-out. It is the ENGINE'S predictive error — not a
+  slice, validated **78.9%** held-out. It is the ENGINE'S predictive error — not a
   negotiation target.
 - **Confidence** is MOTIVATED BY the measured error curve (street depth, method spread,
   big-plot) — an ordering, not a fitted probability — and the label carries the bundle noise
   floor that caps achievable precision.
+
+## The regime-dependent bias — READ THIS BEFORE QUOTING THE POINT
+The engine is **unbiased in stable markets and runs LOW when the market accelerates**
+(EXP-0014, sign test = % of actual sales above the point; 50% = unbiased):
+
+| regime | 2023H1 | 2023H2 | 2024H1 | 2024H2 | 2025H1 | 2025H2 | 2026H1 |
+|---|---|---|---|---|---|---|---|
+| sign test | 51.6% | 47.6% | 49.6% | 50.1% | **66.3%** | **66.5%** | **60.4%** |
+| median APE | 9.3% | 9.0% | 10.0% | 8.4% | 9.4% | 9.7% | 9.2% |
+
+**Median APE is flat across every regime while the bias swings ~19pp** — a comp-based
+estimate structurally lags an accelerating market. In a hot market treat the point as a
+**floor**, not a centre. An index-momentum correction was tried and REJECTED (GY-0003): it
+broke the regimes that were already unbiased. The proper fix is a fitted local trend (L2b,
+backlog) — until then this is disclosed, not corrected.
 
 ## Scope limits (declare them, don't paper over)
 - **≥8k sqft plots**: EXP-0011 found the size curve is *worst identified* exactly where the
@@ -74,7 +89,7 @@ explicit past `--asof` reconstructs what was knowable then (56d caveat lag).
 
 ## Fair value vs guidance (kept separate — and built from DIFFERENT things)
 - **Fair value** = engine point + **conformal band**. The band is the engine's **predictive
-  error** (p10/p90 of actual/pred, 77.5% held-out) — *not* an achievable price range and
+  error** (p10/p90 of actual/pred, 78.9% held-out) — *not* an achievable price range and
   never a negotiation target.
 - **Guidance** is read off the **observed evidence**: the lease-matched street prints,
   time+size-adjusted to this plot. **Buyer:** attractive `< p25`, walk-away `> p75`.

@@ -85,10 +85,16 @@ def main() -> None:
             if p < 5e6 else "5-8M" if p < 8e6 else ">8M"
 
     def _show(title, d):
+        # The SIGN TEST belongs in every slice. A regime slice that reports only APE hid a
+        # +-15pp swing in directional bias for two whole review rounds: median APE was flat
+        # (10.1-10.8%) across regimes while the engine ran ~50% in stable periods and ~66%
+        # low in the accelerating one. Flat APE is not flat bias.
         print(f"\n=== {args.method} by {title} ===")
         for b, m in d.items():
             print(f"  {b:<10} n={m.get('n', 0):<6} medAPE={m.get('median_ape', ''):<8}"
                   f"p90={m.get('p90_ape', ''):<8} >10%={m.get('pct_over_10', ''):<8}"
+                  f"sign={m.get('pct_actual_above', ''):<8}"
+                  f"medSigned={m.get('median_signed', ''):<9}"
                   f"cover={m.get('coverage_rate', '')}")
 
     if args.slices:
@@ -97,7 +103,11 @@ def main() -> None:
         _show("segment", res.slice("market_segment", args.method))
         _show("land size", res.slice_by(_size, args.method))
         _show("street-liquidity(#comps)", res.slice_by(_liq, args.method))
-        _show("regime(year)", res.slice_by(lambda r: r["contract_ym"][:4], args.method))
+        # half-years: the directional bias moves within a year (2025H1 vs H2), so an
+        # annual bucket averages the very signal the sign test is there to expose
+        _show("regime(half-year)", res.slice_by(
+            lambda r: f"{r['contract_ym'][:4]}H{1 if int(r['contract_ym'][5:7]) <= 6 else 2}",
+            args.method))
         _show("quantum", res.slice_by(_quantum, args.method))
         _show("GCB flag (crude)", res.slice_by(_is_gcb, args.method))
 

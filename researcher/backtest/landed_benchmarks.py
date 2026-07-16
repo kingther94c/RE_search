@@ -46,17 +46,24 @@ def _pct(vals: list[float], q: float) -> float:
 
 
 def _tadj_psf(c: dict, ctx) -> float:
-    """Time-adjust a comp's land-psf to the AS-OF MONTH — not merely to the last published
-    index quarter. The published quarter is structurally 1-2 quarters stale (35d pub lag), so
-    stopping there left the point ~1.2pp low in a rising market (measured: actual exceeded
-    the point 63% of the time). `drift_factor` projects that gap at the recent PUBLISHED
-    trend, so no unpublished data is used."""
+    """Time-adjust a comp's land-psf to the last PUBLISHED index quarter (35d pub lag), capped.
+
+    NO momentum extrapolation. A trailing-trend `drift_factor` was tried to close the ~1-2
+    quarters of publication staleness and is REJECTED (GY-0003): sliced BY REGIME it broke
+    the periods that were already unbiased (2023H1 sign test 51.6%->41.6%, 2023H2 47.6%->37.6%,
+    2024H2 50.1%->44.7%) while barely moving the accelerating regime it targeted (2025H2
+    66.5%->67.1%, worse) and costing median APE (9.34%->9.49%). Its pooled "51.7% = unbiased"
+    was a HIGH bias cancelling a LOW one — no regime measured 50%. It also projected momentum
+    against the latest observation (2026Q1 landed PPI FELL 0.40%).
+
+    The residual is REGIME-dependent and is DISCLOSED, not papered over: a comp-based estimate
+    structurally lags an accelerating market. The proper fix is a fitted LOCAL trend (L2b),
+    not an index momentum hack — see the roadmap backlog."""
     idx, to_q = ctx["index"], ctx["asof_q"]
     if not to_q:
         return c["psf"]
     f = idx.factor(c["contract_ym"], to_q, "landed")
-    f = min(max(f, TIME_ADJ_CAP[0]), TIME_ADJ_CAP[1])
-    return c["psf"] * f * idx.drift_factor(to_q, ctx["asof_ym"], "landed")
+    return c["psf"] * min(max(f, TIME_ADJ_CAP[0]), TIME_ADJ_CAP[1])
 
 
 def _recent(rows, ctx, window=WINDOW_MO):
