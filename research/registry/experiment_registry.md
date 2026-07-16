@@ -50,7 +50,33 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
     99yr-from-1999 lease into quasi-freehold → would silently re-arm the 232% failure on a
     data refresh; inert today only because landed lease_start jumps 1997→2000) — anchored
     regex + a regression test; report money → 3 sig figs (was 8 sig figs on a ±44% band).
+- **Hostile review round 2 (REVISE 7.05)** — quant core again reproduced BYTE-IDENTICALLY
+  (all four trial dicts, band multipliers to 6dp incl. the non-obvious `_type|Detached`
+  fallback, size-curve integration to 0.1 psf). Two blockers, both real, both fixed:
+  1. **The lease guard disabled itself for the SUBJECT.** `remaining_lease` returns quasi-FH
+     when `lease_start` is unknown — correct for a COMP (dropped, conservative), catastrophic
+     for the SUBJECT: it upgraded a real leasehold to quasi-freehold and priced it off
+     freehold comps, silently. Reviewer's probe: FABER AVENUE Semi-D leasehold → 2,080
+     land-psf off all-FH comps; supply `lease_start=1995` → 1,196 psf (**−42% on an input the
+     SKILL called "optional"**). Now **REFUSES** (`lease_start_required`) rather than guessing,
+     and the CLI gained `--tenure` / `--lease-start` so the documented run honours SKILL's Inputs.
+  2. **The guidance gate was blind to hard cases.** It keyed on `band_rel`, which comes from a
+     conformal table keyed on (liquidity × type) — a per-CELL CONSTANT that can never respond
+     to a subject. 26/120 sampled subjects were hard_case and still emitted an ask; trial 1
+     (ALNWICK, hard_case, 18% spread) asked 2,185 land-psf — above EVERY comp on its own page
+     (the round-1 blocker, still live for the general class because I had gated only the
+     big-plot branch). Now gated on **hard_case + confidence<55** as well.
+  - **P1 fixed: LIVE mode did not honour its own claim.** `as_of(lag_days=0)` still applied the
+    month-END convention, hiding the current partial month (0 of 30 July-2026 landed caveats
+    visible) — **the exact EXP-0008 defect, fixed for condo and reintroduced here**, and
+    untested because every test used a past asof. Month-gate branch ported from `value_unit`
+    + a live-path test. Report now renders the buyer/seller notes in the LIVE branch too
+    (the "NOT a negotiation target" caveat was being dropped exactly where unhedged numbers
+    were shown).
 - **Verdict:** LV1 ACCEPT. Skill ships scope-limited (see GL4 line in the roadmap).
+- **Lesson (recorded):** both rounds passed the MODEL and failed the CLIENT-FACING LAYER —
+  dead inputs, exhibits contradicting their captions, and uncertainty mechanically converted
+  into negotiation aggression. The quant work was the easy half.
 
 ## EXP-0011 — L2a: the landed land-size curve, re-fitted (2026-07-16)
 - **Status: DONE. Verdict: ACCEPT (<8k sqft) / ACCEPT-WITH-SCOPE-LIMIT (≥8k).**

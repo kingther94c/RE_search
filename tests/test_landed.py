@@ -196,6 +196,50 @@ def test_displayed_comps_are_lease_matched(store):
     assert all(c["tenure"] == "leasehold" for c in v["comps"])
 
 
+def test_leasehold_without_lease_start_refuses_rather_than_freehold_pricing(store):
+    """Review blocker: `remaining_lease` returns quasi-FH when lease_start is unknown —
+    correct for a COMP (dropped), catastrophic for the SUBJECT (a real leasehold gets priced
+    off freehold comps; a measured 42% swing). It must REFUSE, not guess."""
+    v = value_landed(LandedSpec("FABER AVENUE", 3000, "Semi-detached",
+                                tenure_type="leasehold", asof="2026-07-01"), store)
+    assert v.get("error") == "lease_start_required"
+    assert "232%" in v["message"]
+    # supplying the lease start makes it valuable again
+    ok = value_landed(LandedSpec("FABER AVENUE", 3000, "Semi-detached",
+                                 tenure_type="leasehold", lease_start=1995,
+                                 asof="2026-07-01"), store)
+    assert "error" not in ok or ok.get("error") != "lease_start_required"
+
+
+def test_hard_case_suppresses_guidance(store):
+    """Review blocker: the gate keyed on band_rel, which is a per-CELL constant from the
+    conformal table and therefore BLIND to a subject-level hard case — ALNWICK (hard_case,
+    18% spread) still emitted an ask above every comp on its own page."""
+    v = _v(store, "ALNWICK ROAD", 2800, "Terrace")
+    assert v["method_disagreement"]["hard_case"] is True
+    assert v["seller_guidance"]["ask"] is None
+    assert "hard case" in v["seller_guidance"]["note"]
+
+
+def test_live_mode_sees_the_current_partial_month(store):
+    """The DEFAULT path (no asof) was untested — every other test uses a past asof. LIVE
+    claims lag 0, but as_of's month-END convention silently dropped the current month's
+    prints (the EXP-0008 defect, fixed for condo, reintroduced here)."""
+    import datetime as dt
+    from researcher.backtest.market import MarketView
+    from researcher.backtest.value_landed import _landed_store
+    ls = _landed_store(store)
+    ym = dt.date.today().strftime("%Y-%m")
+    n_this_month = sum(1 for t in ls.txs if t["contract_ym"] == ym)
+    if not n_this_month:
+        pytest.skip("no caveats dated this month in the snapshot")
+    live = ls.where(lambda x: x["contract_ym"] <= ym)
+    assert sum(1 for t in live.txs if t["contract_ym"] == ym) == n_this_month
+    # the backtest convention would hide them all — that's why LIVE must not use it
+    assert sum(1 for t in ls.as_of(dt.date.today(), lag_days=0).txs
+               if t["contract_ym"] == ym) < n_this_month
+
+
 def test_unknown_street_escalates_not_fabricates(store):
     """Cardiff Grove is a real street with a PASS-8.5 craft valuation, but URA's rolling
     5y window carries no caveats there — the engine must route to Investment Suite."""

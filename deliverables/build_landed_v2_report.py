@@ -90,12 +90,14 @@ def render(v: dict) -> str:
     <table><tr><td>Attractive 积极买入</td><td class=r>&lt; {_money(bg['attractive_below'])}</td></tr>
     <tr><td>Fair range 公允带</td><td class=r>{_money(fv['low'])} – {_money(fv['high'])}</td></tr>
     <tr><td>Walk away 放弃</td><td class=r>&gt; {_money(bg['walk_away_above'])}</td></tr></table>
+    <p class=note>{html.escape(bg['note'])}</p>
   </div>
   <div class=card>
     <h2>卖家指导 Seller guidance</h2>
     <table><tr><td>Ask 挂牌</td><td class=r>{_money(sg['ask'])}</td></tr>
     <tr><td>Expected clear 预期成交</td><td class=r>{_money(sg['expected_clear'])}</td></tr>
     <tr><td>Quick sale 急售</td><td class=r>{_money(sg['quick_sale'])}</td></tr></table>
+    <p class=note>{html.escape(sg['note'])}</p>
   </div>
 </div>"""
     return f"""<div class=wrap>
@@ -159,9 +161,17 @@ def main():
                     choices=["Terrace", "Semi-detached", "Detached"])
     ap.add_argument("--condition", default=None,
                     choices=["original", "renovated", "rebuilt"])
+    # SKILL.md lists tenure / lease-start as supply-able inputs; the CLI must honour that.
+    # A leasehold plot with an unestablished lease start is REFUSED, not freehold-priced.
+    ap.add_argument("--tenure", default=None,
+                    choices=["freehold", "freehold_equiv", "leasehold"],
+                    help="override the street-inferred tenure")
+    ap.add_argument("--lease-start", type=int, default=None,
+                    help="lease commencement year (required for a leasehold subject)")
     ap.add_argument("--asof", default=None)
     a = ap.parse_args()
-    v = value_landed(LandedSpec(a.street, a.area, a.type, condition=a.condition,
+    v = value_landed(LandedSpec(a.street, a.area, a.type, tenure_type=a.tenure,
+                                lease_start=a.lease_start, condition=a.condition,
                                 asof=a.asof))
     doc = (f"<!doctype html><html><head><meta charset=utf-8>"
            f"<meta name=viewport content='width=device-width,initial-scale=1'>"

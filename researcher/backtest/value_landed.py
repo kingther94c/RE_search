@@ -156,9 +156,18 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
     today = _dt.date.today()
     asof = spec.asof or today.isoformat()
     t = _dt.date.fromisoformat(asof)
+    live = t >= today
     if lag_days is None:
-        lag_days = 0 if t >= today else 56          # LIVE vs reconstruction (EXP-0008 lesson)
-    market = MarketView(store.as_of(t, lag_days=lag_days).txs, asof[:7])
+        lag_days = 0 if live else 56                # LIVE vs reconstruction (EXP-0008 lesson)
+    if live and lag_days == 0:
+        # The pulled store IS the info set. as_of's month-END convention (a backtest leakage
+        # guard) would hide the CURRENT partial month — the freshest evidence. Gate at month
+        # granularity only. (Ported from value_unit: the same defect was found and fixed for
+        # condo in EXP-0008 and had been reintroduced here.)
+        view = store.where(lambda x: x["contract_ym"] <= asof[:7])
+    else:
+        view = store.as_of(t, lag_days=lag_days)
+    market = MarketView(view.txs, asof[:7])
     idx = PriceIndex.load()
     ctx = {"asof_ym": asof[:7], "asof_date": t, "index": idx, "asof_q": idx.as_of_quarter(t)}
 
@@ -180,6 +189,19 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
                 "condition ignorance (it is calibrated on condition-blind residuals); it is "
                 "not widened further. Establish condition on site — it is the dominant "
                 "unobserved driver of the bundle price.")
+
+    # SUBJECT-SIDE LEASE HOLE (review blocker). `remaining_lease` returns quasi-freehold when
+    # a leasehold has no lease_start — right for a COMP (it gets dropped, conservative) but
+    # catastrophic for the SUBJECT: it upgrades a real leasehold to quasi-freehold and prices
+    # it off freehold comps. Measured swing on a real street: 2,080 -> 1,197 land-psf (-42%)
+    # once the lease start is supplied. Never guess a lease: refuse and ask.
+    if subject["tenure_type"] == "leasehold" and not subject.get("lease_start"):
+        return {"error": "lease_start_required",
+                "message": f"{spec.street} is leasehold but no lease commencement year could "
+                           "be established (none supplied, none on the street's caveats). A "
+                           "leasehold plot CANNOT be priced off freehold comps — that is the "
+                           "232% failure this engine exists to prevent. Supply lease_start "
+                           "(from the title / INLIS), or escalate to an Investment Suite pull."}
 
     est = landed_engine(subject, market, ctx)
     if est is None:
@@ -222,8 +244,13 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
     # negotiation AGGRESSION — e.g. "ask 21.8M" on a plot that prints 14M, at an implied psf
     # above every comp on the page. If the engine has already said "indicative only", it has
     # no business emitting an ask.
+    # The gate must respond to THIS SUBJECT. band_rel alone cannot: the conformal table is
+    # keyed on (street-liquidity x type), so band_rel is a per-CELL constant and is blind to
+    # a hard case — trial 1 (ALNWICK) was hard_case=True and still emitted an ask above every
+    # comp on its own page. Gate on the signals that actually vary per subject: the engine's
+    # own hard_case / directional flags and its confidence.
     band_rel = (hi - lo) / price if price else 0.0
-    guidance_ok = not (big or fallback) and band_rel <= 0.45
+    guidance_ok = (not (big or fallback or hard) and conf >= 55 and band_rel <= 0.45)
     if guidance_ok:
         buyer = {"attractive_below": lo, "fair_range": [lo, hi], "walk_away_above": hi,
                  "note": "read off the conformal band — where comparable plots actually "
@@ -234,6 +261,8 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
     else:
         why = ("plot >=8k sqft (size curve poorly identified)" if big else
                "no lease-compatible street comp (pooled fallback)" if fallback else
+               f"methods disagree {spread*100:.0f}% (hard case)" if hard else
+               f"confidence {conf}/100 is too low" if conf < 55 else
                f"uncertainty band is +/-{band_rel/2*100:.0f}%")
         msg = (f"SUPPRESSED — {why}. The band here is the engine's own error, not an "
                f"achievable price range; deriving an ask/walk-away from it would be "
