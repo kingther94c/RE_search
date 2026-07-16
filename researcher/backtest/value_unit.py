@@ -69,22 +69,26 @@ def _infer(spec, store) -> dict | None:
 
 
 def _confidence(n_comps, used_fallback, band_rel, anchor_spread) -> tuple[int, str]:
+    # base tier from same-project comp depth (the empirical accuracy driver)
     if used_fallback:
-        c, label = 40, "low — no same-project resale; statistical fallback (~5-10% typical error)"
+        c, label = 45, "low — no same-project resale; statistical fallback (~5-10% typical error)"
     elif n_comps <= 2:
-        c, label = 58, "moderate-low — thin same-project evidence"
+        c, label = 62, "moderate-low — thin same-project evidence"
     elif n_comps <= 7:
-        c, label = 72, "moderate"
+        c, label = 74, "moderate"
     elif n_comps <= 19:
-        c, label = 82, "good — deep same-project evidence"
+        c, label = 83, "good — deep same-project evidence"
     else:
-        c, label = 88, "high — very deep same-project evidence"
+        c, label = 90, "high — very deep same-project evidence"
+    # SMOOTH anchor-disagreement penalty (no cliff): 0 below 5% spread, growing to -35.
+    if anchor_spread:
+        c -= min(35.0, max(0.0, (anchor_spread - 0.05) * 160))
+        if anchor_spread > 0.15:
+            label += f"; hard case: anchors disagree {anchor_spread*100:.0f}% — corroborate"
     if band_rel and band_rel > 0.30:
         c = min(c, 65)
         label += "; wide dispersion in this cell"
-    if anchor_spread and anchor_spread > 0.15:      # methods disagree -> hard case
-        c = min(c, 55)
-        label += f"; anchors disagree {anchor_spread*100:.0f}% (hard case — corroborate)"
+    c = max(20, round(c))
     return c, label
 
 
