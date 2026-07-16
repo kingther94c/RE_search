@@ -61,8 +61,13 @@ def main():
         by_type[r.get("property_type")].append(ratio)
         allr.append(ratio)
 
-    print(f"\n=== nominal sweep (test>={CUTOFF}) ===")
-    best = None
+    # NOMINAL IS FIXED A PRIORI at p10/p90 = the 80% target. It is NOT selected by the sweep
+    # below: choosing the nominal by minimising |coverage-0.80| ON THE TEST SET and then
+    # publishing that same test coverage as "held-out" is selection bias (a reviewer caught
+    # exactly this). The sweep is printed as a DIAGNOSTIC only.
+    NOM_LO, NOM_HI = 0.10, 0.90
+    print(f"\n=== nominal sweep — DIAGNOSTIC ONLY (shipped nominal is fixed a priori "
+          f"at p{NOM_LO}/p{NOM_HI}) ===")
     for plo, phi in ((0.10, 0.90), (0.075, 0.925), (0.05, 0.95), (0.035, 0.965),
                      (0.025, 0.975)):
         gl, gh = _q(allr, plo), _q(allr, phi)
@@ -75,10 +80,10 @@ def main():
             wsum += (hi - lo) / r["actual"]
         c, w = cov / len(test), wsum / len(test)
         print(f"  nominal {int((phi-plo)*100)}% (p{plo}/p{phi}): coverage {c:.3f}  width {w:.3f}")
-        if best is None or abs(c - 0.80) < abs(best[1] - 0.80):
-            best = ((plo, phi), c, w)
-    (NOM_LO, NOM_HI), cov, wid = best
-    print(f"\n-> chosen nominal p{NOM_LO}/p{NOM_HI}: held-out coverage {cov:.3f}, width {wid:.3f}")
+        if (plo, phi) == (NOM_LO, NOM_HI):
+            cov, wid = c, w
+    print(f"\n-> SHIPPED nominal p{NOM_LO}/p{NOM_HI} (fixed a priori): held-out coverage "
+          f"{cov:.3f}, width {wid:.3f}")
 
     table = {"_global": [_q(allr, NOM_LO), _q(allr, NOM_HI)],
              "_meta": {"point_method": POINT_METHOD, "cutoff": CUTOFF, "n_cal": len(cal),

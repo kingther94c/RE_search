@@ -129,9 +129,10 @@ def test_landed_valuation_invariants(store, street, area, ptype):
     if sg["ask"] is None:
         assert "SUPPRESSED" in sg["note"] and bg["walk_away_above"] is None
     else:
-        assert bg["attractive_below"] == fv["low"]
+        assert bg["attractive_below"] < bg["walk_away_above"]
         assert sg["expected_clear"] == fv["price"]
-    assert bg["fair_range"] == [fv["low"], fv["high"]]     # the band is always disclosed
+    # the fair-value band is ALWAYS disclosed, and always as the engine's uncertainty
+    assert bg["fair_value_band"] == [fv["low"], fv["high"]]
     # every landed report must carry the bundle/geometry honesty
     assert any("geometry" in s.lower() for s in v["verify_before_offer"])
     assert any("bundle" in s.lower() for s in v["limitations"])
@@ -166,9 +167,10 @@ def test_wide_band_suppresses_guidance_instead_of_quoting_an_ask(store):
     assert v["seller_guidance"]["ask"] is None
     assert v["buyer_guidance"]["walk_away_above"] is None
     assert "SUPPRESSED" in v["seller_guidance"]["note"]
-    # a confident subject still gets real guidance
+    # a confident, well-evidenced subject still gets real (evidence-derived) guidance
     ok = _v(store, "LOYANG RISE", 1635, "Terrace")
-    assert ok["seller_guidance"]["ask"] == ok["fair_value"]["high"]
+    assert ok["seller_guidance"]["ask"] is not None
+    assert ok["seller_guidance"]["ask"] != ok["fair_value"]["high"]   # NOT the band top
 
 
 def test_condition_is_honest_not_a_dead_input(store):
@@ -219,6 +221,35 @@ def test_hard_case_suppresses_guidance(store):
     assert v["method_disagreement"]["hard_case"] is True
     assert v["seller_guidance"]["ask"] is None
     assert "hard case" in v["seller_guidance"]["note"]
+
+
+def test_guidance_comes_from_observed_prints_not_the_error_bar(store):
+    """The blocker that survived TWO patch rounds: thresholds were read off the conformal
+    band — the engine's PREDICTIVE error — so 72% of asks landed above every comp on their
+    own page. Guidance must come from the lease-matched adjusted comp distribution, and an
+    ask must therefore never exceed the dearest comparable print."""
+    from researcher.backtest.value_landed import _adjusted_comp_psfs, _infer, _landed_store
+    from researcher.backtest.index import PriceIndex
+    from researcher.backtest.market import MarketView
+    import datetime as dt
+    v = _v(store, "LOYANG RISE", 1635, "Terrace")
+    sg = v["seller_guidance"]
+    assert sg["ask"] is not None, "this subject should get live guidance"
+    ls = _landed_store(store)
+    subj = _infer(LandedSpec("LOYANG RISE", 1635, "Terrace", asof="2026-07-01"), ls)
+    t = dt.date.fromisoformat("2026-07-01")
+    idx = PriceIndex.load()
+    ctx = {"asof_ym": "2026-07", "asof_date": t, "index": idx, "asof_q": idx.as_of_quarter(t)}
+    mkt = MarketView(ls.as_of(t, lag_days=56).txs, "2026-07")
+    adj = _adjusted_comp_psfs(subj, mkt, ctx)
+    ask_psf = sg["ask"] / 1635
+    assert ask_psf <= max(adj) + 1e-6, "ask must not exceed the dearest comparable print"
+    assert min(adj) - 1e-6 <= sg["quick_sale"] / 1635, "quick sale must sit inside the evidence"
+    assert "ACTUALLY printed" in sg["note"]
+    # the EXHIBIT must carry the adjusted column the numbers live on, or a correct ask looks
+    # like it sits above every comp (raw psf) on its own page
+    assert all("adj_land_psf" in c for c in v["comps"])
+    assert ask_psf <= max(c["adj_land_psf"] for c in v["comps"]) + 1e-6
 
 
 def test_live_mode_sees_the_current_partial_month(store):

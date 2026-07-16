@@ -68,10 +68,19 @@ explicit past `--asof` reconstructs what was knowable then (56d caveat lag).
 - **Condition** is an INPUT. Unknown condition widens the band; it is never inferred.
 - **Redevelopment potential** is never priced — verification-gated language only.
 
-## Fair value vs guidance (kept separate)
-Fair value = engine point + conformal range (objective). **Buyer:** attractive `< low`,
-fair `[low, high]`, walk-away `> high`. **Seller:** ask `= high`, expected clear `= point`,
-quick sale `= low`.
+## Fair value vs guidance (kept separate — and built from DIFFERENT things)
+- **Fair value** = engine point + **conformal band**. The band is the engine's **predictive
+  error** (p10/p90 of actual/pred, 78.9% held-out) — *not* an achievable price range and
+  never a negotiation target.
+- **Guidance** is read off the **observed evidence**: the lease-matched street prints,
+  time+size-adjusted to this plot. **Buyer:** attractive `< p25`, walk-away `> p75`.
+  **Seller:** ask `= p75`, expected clear `= point`, quick sale `= p25`.
+  *Deriving thresholds from the band instead made 72% of asks land above every comp on the
+  subject's own page — a guardrail built from engine ignorance cannot bind.*
+- **Guidance is SUPPRESSED** (with the reason) when the evidence can't carry quartiles:
+  ≥8k plot, pooled fallback, hard case, confidence <55, or <4 lease-matched prints.
+  `directional_flag` does not suppress — it annotates *expected clear*, since the quartiles
+  already contain the fresh print the point drifted from.
 
 ## Verification layer
 Every report's `verify_before_offer` carries the engine's flags **plus** the heads of

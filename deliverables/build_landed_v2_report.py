@@ -66,7 +66,8 @@ def render(v: dict) -> str:
         for k, x in v["independent_reads_land_psf"].items())
     comps = "".join(
         f"<tr><td>{c['contract_ym']}</td><td class=r>{c['land_area_sqft']:,.0f}</td>"
-        f"<td class=r>{c['land_psf']:,.0f}</td><td class=r>{_money(c['price'])}</td>"
+        f"<td class=r>{c['land_psf']:,.0f}</td><td class=r><b>{c['adj_land_psf']:,.0f}</b></td>"
+        f"<td class=r>{_money(c['price'])}</td>"
         f"<td>{html.escape(c['tenure'])}</td></tr>" for c in v["comps"])
     verify = "".join(f"<li>{html.escape(x)}</li>" for x in v["verify_before_offer"])
     limits = "".join(f"<li>{html.escape(x)}</li>" for x in v["limitations"])
@@ -81,15 +82,15 @@ def render(v: dict) -> str:
     if sg.get("ask") is None:
         guidance = (f"<div class=card><h2>买卖指导 Buyer / seller guidance</h2>"
                     f"<div class=banner>⛔ {html.escape(sg['note'])}</div>"
-                    f"<p class=note>Fair range (engine uncertainty): "
-                    f"{_money(bg['fair_range'][0])} – {_money(bg['fair_range'][1])}</p></div>")
+                    f"<p class=note>公允价区间 fair-value band (engine uncertainty): "
+                    f"{_money(bg['fair_value_band'][0])} – "
+                    f"{_money(bg['fair_value_band'][1])}</p></div>")
     else:
         guidance = f"""<div class=cols>
   <div class=card>
-    <h2>买家指导 Buyer guidance <span class=note>(separate from fair value)</span></h2>
-    <table><tr><td>Attractive 积极买入</td><td class=r>&lt; {_money(bg['attractive_below'])}</td></tr>
-    <tr><td>Fair range 公允带</td><td class=r>{_money(fv['low'])} – {_money(fv['high'])}</td></tr>
-    <tr><td>Walk away 放弃</td><td class=r>&gt; {_money(bg['walk_away_above'])}</td></tr></table>
+    <h2>买家指导 Buyer guidance <span class=note>(from observed prints, not the band)</span></h2>
+    <table><tr><td>Attractive 积极买入 <span class=note>(cheap quartile)</span></td><td class=r>&lt; {_money(bg['attractive_below'])}</td></tr>
+    <tr><td>Walk away 放弃 <span class=note>(dear quartile)</span></td><td class=r>&gt; {_money(bg['walk_away_above'])}</td></tr></table>
     <p class=note>{html.escape(bg['note'])}</p>
   </div>
   <div class=card>
@@ -110,7 +111,8 @@ engine LV1 (URA walk-forward: 9.3% median APE, 78.9% held-out band coverage)</p>
   <div><div class=lbl>公允价 Fair value <span class=note>(land+building bundle)</span></div>
     <div class=big>{_money(fv['price'])}</div>
     <div class=sub>{fv['land_psf']:,.0f} per sqft of LAND</div></div>
-  <div><div class=lbl>区间 Range (~79% of comparable prints)</div>
+  <div><div class=lbl>公允价区间 Fair-value band <span class=note>(engine uncertainty,
+    79% held-out coverage — NOT a negotiation range)</span></div>
     <div class=big>{_money(fv['low'])} – {_money(fv['high'])}</div></div>
   <div><div class=lbl>置信度 Confidence</div><div class=big>{fv['confidence']}/100</div>
     <div class=sub>{html.escape(fv['confidence_label'])}{hard}</div></div>
@@ -126,9 +128,12 @@ engine LV1 (URA walk-forward: 9.3% median APE, 78.9% held-out band coverage)</p>
   <div class=card><h2>独立方法读数 Independent reads (land-psf)</h2>
     <table><tr><th>method</th><th class=r>land-psf</th></tr>{reads}</table>
     <p class=note>Convergence = signal; a wide spread raises the hard-case flag above.</p></div>
-  <div class=card><h2>最相近同街可比 Most-similar street comps</h2>
-    <table><tr><th>month</th><th class=r>land sqft</th><th class=r>land-psf</th><th class=r>price</th><th>tenure</th></tr>{comps}</table>
-    <p class=note>n = {fv['n_street_comps']} lease-matched street comps drove the estimate.</p></div>
+  <div class=card><h2>最相近同街可比 Most-similar street comps <span class=note>(lease-matched)</span></h2>
+    <table><tr><th>month</th><th class=r>land sqft</th><th class=r>raw psf</th>
+    <th class=r>adj psf</th><th class=r>price</th><th>tenure</th></tr>{comps}</table>
+    <p class=note>n = {fv['n_street_comps']} lease-matched street comps drove the estimate.
+    <b>adj psf</b> = that print moved to THIS plot for time (capped) and size (fitted curve)
+    — the point and the guidance quartiles live on this adjusted column, not the raw one.</p></div>
 </div>
 
 <div class=card><h2>下单前必查 Verify before offer</h2><ul>{verify}</ul></div>
