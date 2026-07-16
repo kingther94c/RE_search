@@ -13,8 +13,8 @@
   "verdict": {
     "call": "PROCEED to DD-2 + site visit — no desk-level killer found. PRICE CALL BLOCKED.",
     "call_zh": "建议进入 DD-2 与实地看房 —— 桌面层面未发现致命项。定价结论因 Tier-1 不可用而阻断。",
-    "detail": "Nothing found at DD-1 kills this address. Two surroundings items are material and priced, not fatal: a 5.8 ha BUSINESS 2 (heavy-industrial) parcel 151 m due south, and an undecided RESERVE SITE 209 m ESE. Both sit behind a zoned park. The school position is strong and robust (Rosyth 0.80 km). The binding constraints are (a) Tier-1 transaction data is unavailable, so no land-psf or fair value can be stated, and (b) the approved plans are seller-gated.",
-    "detail_zh": "DD-1 层面没有任何一项足以否决此地址。两项周边因素属重大但可定价、非致命：正南 151m 的 5.8 公顷 BUSINESS 2（重工业）地块，以及东南偏东 209m 用途未定的 RESERVE SITE，两者之间均隔着法定公园。学区位置强且稳健（Rosyth 0.80km）。真正的约束是：(a) Tier-1 成交数据不可用，无法给出 land-psf 或公允价值；(b) 批准图纸受卖方授权闸门限制。"
+    "detail": "Nothing found at DD-1 kills this address. Two surroundings items are material and priced, not fatal: a 5.8 ha BUSINESS 2 (heavy-industrial) parcel 151 m due south, and an undecided RESERVE SITE 209 m ESE — both sitting behind a ~100 m zoned park, which is a high-inertia buffer but not a permanent one. The school position looks strong (Rosyth ~0.80 km on a conservative proxy, 200 m of headroom) but is NOT settled: the official OneMap SchoolQuery category was not retrieved, and by SLA's own disclaimer that category is recomputed annually and must be re-verified in the child's registration year. The binding constraints are (a) Tier-1 transaction data is unavailable, so no land-psf or fair value can be stated, and (b) the approved plans are seller-gated.",
+    "detail_zh": "DD-1 层面没有任何一项足以否决此地址。两项周边因素属重大但可定价、非致命：正南 151m 的 5.8 公顷 BUSINESS 2（重工业）地块，以及东南偏东 209m 用途未定的 RESERVE SITE —— 两者与房屋之间隔着约 100m 的法定公园，属高惯性缓冲但非永久。学区位置看起来很强（Rosyth 约 0.80km，系保守代理值，尚有 200m 余量），但**并未落定**：官方 OneMap SchoolQuery 分类未取得，且按 SLA 自身声明，该分类每年重算、须在孩子报名当年重新核实。真正的约束是：(a) Tier-1 成交数据不可用，无法给出 land-psf 或公允价值；(b) 批准图纸受卖方授权闸门限制。"
   },
 
   "dd1": [
@@ -38,15 +38,16 @@
      "value_zh": "MIXED LANDED（混合有地），包络控制 = 3-STOREY ENVELOPE（三层包络）。Mixed 意味着区内排屋/半独立/独立皆可；三层包络同样适用于邻居。",
      "source": "URA MP2025 SDCP Landed Housing Area layer, data.gov.sg d_70a5a4b67d9171dc0db6f6fd259a3215", "date": "2026-07-16"},
 
-    {"item": "Rosyth School", "item_zh": "Rosyth School（乐赛学校）",
-     "value": "0.80 km — WITHIN 1 km. 21 Serangoon North Ave 4. 200 m of headroom, and our method over-estimates (see note), so the conclusion is robust.",
-     "value_zh": "0.80 km —— 在 1km 内。地址 21 Serangoon North Ave 4。距 1km 线尚有 200m 余量，且本方法系高估（见注），故结论稳健。",
-     "source": "OneMap haversine to school point. NOTE: MOE measures from the School Land Boundary via OneMap SchoolQuery — nearer than the point, so 0.80 km is a conservative upper bound.", "date": "2026-07-16"},
+    {"item": "Rosyth School — PROXY, not the official measure", "item_zh": "Rosyth School（乐赛学校）—— 代理值，非官方口径",
+     "value": "0.80 km by our haversine to the school's POINT. The official measure is different: OneMap SchoolQuery computes the shortest distance from ANY POINT ON THE SCHOOL'S BOUNDARY to the residential address, off building plans — always NEARER than to the point. So 0.80 km is a conservative UPPER BOUND and, with 200 m of headroom, 'within 1 km' is robust. But the SchoolQuery category for 805248 was NOT retrieved (its UI would not drive; the API is token-gated) — see the alert.",
+     "value_zh": "本方法（到学校「点」的 haversine）得 0.80 km。官方口径不同：OneMap SchoolQuery 取「学校地界上任意一点」到住址的最短距离，依据建筑图则 —— 必然比到「点」更近。故 0.80 km 是保守上界，加上 200m 余量，「1km 内」的结论稳健。但 805248 的 SchoolQuery 官方分类本次未取得（UI 无法驱动，API 需 token）—— 见预警。",
+     "source": "OneMap search API + our haversine. Method per OneMap SchoolQuery's own disclaimer (data vintage June 2026).", "date": "2026-07-16",
+     "severity": "amber"},
 
     {"item": "Hougang Primary", "item_zh": "Hougang Primary",
-     "value": "0.80 km — WITHIN 1 km. 1 Hougang Street 93. Two primaries inside the ring.",
-     "value_zh": "0.80 km —— 在 1km 内。地址 1 Hougang Street 93。环内共两所小学。",
-     "source": "OneMap", "date": "2026-07-16"},
+     "value": "0.80 km by the same proxy — same caveat as Rosyth. Two primaries inside the ring on this measure.",
+     "value_zh": "同一代理方法得 0.80 km —— 警告同 Rosyth。按此口径，环内共两所小学。",
+     "source": "OneMap search API + our haversine. 1 Hougang Street 93.", "date": "2026-07-16"},
 
     {"item": "Schools 1-2 km", "item_zh": "1–2km 学校",
      "value": "Fernvale Pri 1.15 km · Yio Chu Kang Pri 1.30 km · Xinmin Pri 1.38 km.",
@@ -54,8 +55,8 @@
      "source": "OneMap", "date": "2026-07-16"},
 
     {"item": "Luxus Hills Park", "item_zh": "Luxus Hills 公园",
-     "value": "21,694 sqm (2.2 ha) zoned PARK, nearest edge 11 m. Extends ~100 m deep directly south of the house — a zoned, durable buffer that cannot be built out as housing or industry.",
-     "value_zh": "21,694 ㎡（2.2 公顷），法定 PARK 分区，最近边界 11m。自房屋正南延伸约 100m —— 受分区保护的永久缓冲，不会变成住宅或工业。",
+     "value": "21,694 sqm (2.2 ha) zoned PARK, nearest edge 11 m. Extends ~100 m deep directly south of the house — the buffer between it and the Business 2 land. Durable, NOT permanent: converting it to housing or industry would need a Master Plan amendment, and URA does gazette amendments (there is a standing amendments register for MP2025). Treat it as a high-inertia buffer, not a guarantee.",
+     "value_zh": "21,694 ㎡（2.2 公顷），法定 PARK 分区，最近边界 11m。自房屋正南延伸约 100m —— 即房屋与 Business 2 用地之间的缓冲。稳固但非永久：改为住宅或工业需经 Master Plan 修订，而 URA 确实会宪报修订（MP2025 设有常设修订登记册）。应视为高惯性缓冲，而非保证。",
      "source": "MP2025 Land Use layer + OneMap (named 'LUXUS HILLS PARK', 116 m)", "date": "2026-07-16"},
 
     {"item": "BUSINESS 2 parcel", "item_zh": "BUSINESS 2 地块",
@@ -198,6 +199,18 @@
      "cost": "Free (time)",
      "when": "PRE-OFFER if possible, else IN-OPTION",
      "when_zh": "尽量出价前；否则期权期内",
+     "seller_gated": false,
+     "severity": "medium"},
+
+    {"item": "Rosyth 1 km status — get the official SchoolQuery category, and know it is not permanent",
+     "item_zh": "Rosyth 1km 资格 —— 取官方 SchoolQuery 分类，并须知它不是永久的",
+     "why": "Our 0.80 km is a PROXY (haversine to the school's point). The operative artifact is OneMap SchoolQuery's category for postal 805248 — free, but its UI would not drive here and the API is token-gated, so it is unretrieved. Two things its own disclaimer says change the risk: (1) HSD is recomputed ANNUALLY (current vintage June 2026) off building plans, and 'distances can change yearly when building plans or school boundaries are updated'; (2) SLA provides it 'as is', calls it a guide, and tells parents to verify the category IN THEIR CHILD'S REGISTRATION YEAR. So a 2026 'within 1km' does not bind a 2029 registration. For a school-driven purchase this is a live risk, not a settled fact. Mitigant: 200 m of headroom, and the proxy over-estimates — this is about as safe as an unretrieved category gets.",
+     "why_zh": "我们的 0.80km 是代理值（到学校「点」的 haversine）。真正起作用的是 OneMap SchoolQuery 对邮编 805248 给出的分类 —— 免费，但本次 UI 无法驱动、API 需 token，故未取得。其官方免责声明中的两点会改变风险判断：(1) HSD 每年依建筑图则重算（当前版本 June 2026），且「distances can change yearly when building plans or school boundaries are updated」；(2) SLA 以「as is」提供、称其为 guide，并要求家长在「孩子报名当年」自行核实分类。因此 2026 年的「1km 内」并不约束 2029 年的报名。对学区驱动的购买，这是活的风险而非既定事实。缓和因素：尚有 200m 余量，且代理方法系高估 —— 在未取得官方分类的前提下，这已算相当安全。",
+     "who": "You — onemap.gov.sg/school, enter 805248, read the Primary School category. 2 minutes, free.",
+     "who_zh": "本人 —— onemap.gov.sg/school 输入 805248，读取小学分类。2 分钟，免费。",
+     "cost": "Free",
+     "when": "PRE-OFFER (and re-verify in the registration year)",
+     "when_zh": "出价前（并在报名当年重新核实）",
      "seller_gated": false,
      "severity": "medium"},
 

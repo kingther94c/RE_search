@@ -88,12 +88,18 @@ a finding. Everything here is scriptable and needs no account:
 - **Trees.** Only **two** Tree Conservation Areas exist (gazetted 2 Aug 1991, South Central +
   Eastern). Inside one, felling a tree >1m girth (at 0.5m up) on private land needs approval.
   Outside them, do not raise a TCA alert — check the site instead.
-- **Schools.** Distance is a *number with a method*. Since the 2022 P1 exercise MOE measures
-  from the **School Land Boundary** to the home, via OneMap **SchoolQuery** — the authoritative
-  artifact, refreshed annually by June from development data submitted to BCA. Our haversine to
-  the school's point is a conservative **over**-estimate: safe when it says inside, undecided
-  near the line. MOE has stated it found no computation error in SchoolQuery — do not repeat
-  that rumour.
+- **Schools — and the 1km ring is not a permanent attribute.** Distance is a *number with a
+  method*. The operative artifact is OneMap **SchoolQuery** (`onemap.gov.sg/school`, free, enter
+  the postal code), which measures the shortest distance from **any point on the school's
+  boundary** to the residential address, off building plans. Our haversine to the school's
+  *point* is a conservative **over**-estimate — safe when it says inside, undecided near the
+  line, and **never a substitute for the category itself**. Read SchoolQuery's own disclaimer
+  before calling the ring a fact: it is recomputed **annually** (June vintage), "distances can
+  change yearly when building plans or school boundaries are updated", SLA supplies it "as is"
+  as a *guide*, and tells parents to verify the category **in their child's registration year**.
+  So a ring status verified today does not bind a registration years out — on a school-driven
+  purchase that belongs in the alerts, not the verified list. MOE has stated it found no
+  computation error in SchoolQuery — do not repeat that rumour.
 
 ## DD-2 — cheap, self-serve, and it belongs BEFORE the offer
 
