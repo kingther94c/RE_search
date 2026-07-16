@@ -57,7 +57,7 @@ class WalkForwardResult:
     def table(self) -> str:
         s = self.summary()
         cols = ("n", "coverage_rate", "median_ape", "p90_ape", "pct_over_10",
-                "signed_bias", "interval_coverage")
+                "signed_bias", "median_signed", "pct_actual_above", "interval_coverage")
         head = f"{'method':<32}" + "".join(f"{c:>16}" for c in cols)
         lines = [head, "-" * len(head)]
         for m, mv in sorted(s.items(), key=lambda kv: kv[1].get("median_ape", 9)):

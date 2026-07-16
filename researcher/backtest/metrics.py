@@ -55,6 +55,12 @@ def summarise(rows: list[dict]) -> dict:
         "p90_ape": round(_pct(apes, 0.90), 4),
         "pct_over_10": round(sum(1 for a in apes if a > 0.10) / n, 4),
         "signed_bias": round(sum(signed) / n, 4),
+        # MEAN signed bias hides a skewed one-directional error: a landed engine measured
+        # -0.96% mean (looks unbiased) while the actual sale exceeded the point 63% of the
+        # time and the MEDIAN error was +3.5%. A few large over-predictions drag the mean to
+        # ~0. The sign test + median are what actually catch a systematic skew — report both.
+        "median_signed": round(median(signed), 4),
+        "pct_actual_above": round(sum(1 for r in scored if r["actual"] > r["pred"]) / n, 4),
     }
     withint = [r for r in scored if r.get("lo") is not None and r.get("hi") is not None]
     if withint:

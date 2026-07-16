@@ -81,14 +81,14 @@ def main():
         c, w = cov / len(test), wsum / len(test)
         print(f"  nominal {int((phi-plo)*100)}% (p{plo}/p{phi}): coverage {c:.3f}  width {w:.3f}")
         if (plo, phi) == (NOM_LO, NOM_HI):
-            cov, wid = c, w
+            ship_cov, ship_wid = c, w     # distinct names: `cov` is the loop's accumulator
     print(f"\n-> SHIPPED nominal p{NOM_LO}/p{NOM_HI} (fixed a priori): held-out coverage "
-          f"{cov:.3f}, width {wid:.3f}")
+          f"{ship_cov:.3f}, width {ship_wid:.3f}")
 
     table = {"_global": [_q(allr, NOM_LO), _q(allr, NOM_HI)],
              "_meta": {"point_method": POINT_METHOD, "cutoff": CUTOFF, "n_cal": len(cal),
-                       "nominal": [NOM_LO, NOM_HI], "heldout_coverage": round(cov, 4),
-                       "heldout_width": round(wid, 4)}}
+                       "nominal": [NOM_LO, NOM_HI], "heldout_coverage": round(ship_cov, 4),
+                       "heldout_width": round(ship_wid, 4)}}
     for c, v in by_cell.items():
         if len(v) >= MIN_CELL_N:
             table[c] = [_q(v, NOM_LO), _q(v, NOM_HI)]

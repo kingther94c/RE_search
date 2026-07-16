@@ -89,8 +89,8 @@ def render(v: dict) -> str:
         guidance = f"""<div class=cols>
   <div class=card>
     <h2>买家指导 Buyer guidance <span class=note>(from observed prints, not the band)</span></h2>
-    <table><tr><td>Attractive 积极买入 <span class=note>(cheap quartile)</span></td><td class=r>&lt; {_money(bg['attractive_below'])}</td></tr>
-    <tr><td>Walk away 放弃 <span class=note>(dear quartile)</span></td><td class=r>&gt; {_money(bg['walk_away_above'])}</td></tr></table>
+    <table><tr><td>Attractive 积极买入 <span class=note>(cheap end, p25)</span></td><td class=r>&lt; {_money(bg['attractive_below'])}</td></tr>
+    <tr><td>Walk away 放弃 <span class=note>(dear end, p75)</span></td><td class=r>&gt; {_money(bg['walk_away_above'])}</td></tr></table>
     <p class=note>{html.escape(bg['note'])}</p>
   </div>
   <div class=card>
@@ -105,14 +105,14 @@ def render(v: dict) -> str:
 <h1>{html.escape(s['street'])} · {s['land_area_sqft']:,.0f} sqft land · {html.escape(s['property_type'])}</h1>
 <p class=meta>{html.escape(s['market_segment'])} · District {html.escape(s['district'])} ·
 {html.escape(s['tenure_type'])} ({lease}) · valued as of {html.escape(s['asof'])} ·
-engine LV1 (URA walk-forward: 9.3% median APE, 78.9% held-out band coverage)</p>
+engine LV1 (URA walk-forward: 9.5% median APE, 77.5% held-out band coverage)</p>
 
 <div class=hero>
   <div><div class=lbl>公允价 Fair value <span class=note>(land+building bundle)</span></div>
     <div class=big>{_money(fv['price'])}</div>
     <div class=sub>{fv['land_psf']:,.0f} per sqft of LAND</div></div>
   <div><div class=lbl>公允价区间 Fair-value band <span class=note>(engine uncertainty,
-    79% held-out coverage — NOT a negotiation range)</span></div>
+    77.5% held-out coverage — NOT a negotiation range)</span></div>
     <div class=big>{_money(fv['low'])} – {_money(fv['high'])}</div></div>
   <div><div class=lbl>置信度 Confidence</div><div class=big>{fv['confidence']}/100</div>
     <div class=sub>{html.escape(fv['confidence_label'])}{hard}</div></div>
@@ -133,7 +133,7 @@ engine LV1 (URA walk-forward: 9.3% median APE, 78.9% held-out band coverage)</p>
     <th class=r>adj psf</th><th class=r>price</th><th>tenure</th></tr>{comps}</table>
     <p class=note>n = {fv['n_street_comps']} lease-matched street comps drove the estimate.
     <b>adj psf</b> = that print moved to THIS plot for time (capped) and size (fitted curve)
-    — the point and the guidance quartiles live on this adjusted column, not the raw one.</p></div>
+    — the point and the guidance markers live on this adjusted column, not the raw one.</p></div>
 </div>
 
 <div class=card><h2>下单前必查 Verify before offer</h2><ul>{verify}</ul></div>

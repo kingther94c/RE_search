@@ -8,14 +8,14 @@ description: Use to value a specific Singapore LANDED house (terrace / semi-deta
 ## When to use
 Put a defensible market value on a specific SG landed property. The engine is
 **quant-validated**: time-consistent walk-forward on 7,027 landed resales gives
-**~9.3% median APE / 78.9% held-out band coverage / 100% answer rate**
+**~9.5% median APE / 77.5% held-out band coverage / 100% answer rate / sign test 51.7%**
 (research/registry/ EXP-0010/0011/0012).
 
 **Read this number honestly.** Landed accuracy is structurally worse than condo's 3.7%,
 and that is not a defect: URA prices a **LAND+BUILDING BUNDLE** and carries no condition,
 GFA, age or plot geometry. Same-plot repeat sales put an **irreducible noise floor of
-~6% (terrace) / ~7.8% (semi-D) / ~8.2% (detached) per print** (EXP-0010). At 9.3% the
-engine is within ~3pp of the floor — most of the remaining error is *unobservable from
+~6% (terrace) / ~7.8% (semi-D) / ~8.2% (detached, thin: n=17 pairs) per print**
+(EXP-0010). At 9.5% the engine is within ~3pp of the floor — most of the remaining error is *unobservable from
 bulk data*, not modelling slack. **Never promise condo-grade precision on landed.**
 
 ## Inputs
@@ -52,10 +52,11 @@ explicit past `--asof` reconstructs what was knowable then (56d caveat lag).
   (FH/999yr) and real leasehold are NEVER comparable; leaseholds must be within ±25y of
   remaining lease.
 - **Range = split-conformal** per (street-liquidity × type) cell, calibrated on an earlier
-  slice, validated **78.9%** held-out. It is where comparable plots actually print — not a
+  slice, validated **77.5%** held-out. It is the ENGINE'S predictive error — not a
   negotiation target.
-- **Confidence** is anchored on the measured error curve (street depth, method spread,
-  big-plot) and is **capped by the bundle noise floor** — the label says so.
+- **Confidence** is MOTIVATED BY the measured error curve (street depth, method spread,
+  big-plot) — an ordering, not a fitted probability — and the label carries the bundle noise
+  floor that caps achievable precision.
 
 ## Scope limits (declare them, don't paper over)
 - **≥8k sqft plots**: EXP-0011 found the size curve is *worst identified* exactly where the
@@ -65,18 +66,27 @@ explicit past `--asof` reconstructs what was knowable then (56d caveat lag).
 - **Plot geometry** (frontage / depth / shape / corner / reserve take): URA carries NONE.
   The model is geometry-blind by construction; the report says so and pushes it to
   verification. Never invent a corner premium.
-- **Condition** is an INPUT. Unknown condition widens the band; it is never inferred.
+- **Condition** is an INPUT and the engine is condition-BLIND: it does NOT shift the point
+  (no validated effect — L2e backlog) and does NOT widen per-subject (the band already embeds
+  AVERAGE condition ignorance, being calibrated on condition-blind residuals). It returns a
+  DIRECTION (floor/ceiling) only. Never inferred.
 - **Redevelopment potential** is never priced — verification-gated language only.
 
 ## Fair value vs guidance (kept separate — and built from DIFFERENT things)
 - **Fair value** = engine point + **conformal band**. The band is the engine's **predictive
-  error** (p10/p90 of actual/pred, 78.9% held-out) — *not* an achievable price range and
+  error** (p10/p90 of actual/pred, 77.5% held-out) — *not* an achievable price range and
   never a negotiation target.
 - **Guidance** is read off the **observed evidence**: the lease-matched street prints,
   time+size-adjusted to this plot. **Buyer:** attractive `< p25`, walk-away `> p75`.
   **Seller:** ask `= p75`, expected clear `= point`, quick sale `= p25`.
   *Deriving thresholds from the band instead made 72% of asks land above every comp on the
   subject's own page — a guardrail built from engine ignorance cannot bind.*
+- **These are evidence MARKERS, not calibrated probabilities** (EXP-0013, 627 as-of-firewalled
+  resales): ~68-81% of real sales land above the p25 marker and ~33-40% above p75, and the
+  rate **drifts with the regime** (p50 → 50.8% on 2024-2025H1 vs 62.6% on 2025H2+ — the
+  index-based time adjustment lags an accelerating market). We tried to re-cut the upper
+  marker to deliver a true 25%; **it did not transfer out-of-sample**, so the markers ship
+  with their measured rates rather than a fabricated "quartile" claim.
 - **Guidance is SUPPRESSED** (with the reason) when the evidence can't carry quartiles:
   ≥8k plot, pooled fallback, hard case, confidence <55, or <4 lease-matched prints.
   `directional_flag` does not suppress — it annotates *expected clear*, since the quartiles

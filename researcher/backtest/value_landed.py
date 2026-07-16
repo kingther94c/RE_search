@@ -25,7 +25,7 @@ from dataclasses import dataclass
 from statistics import median
 
 from .index import PriceIndex
-from .landed_benchmarks import lb4_spatial_knn
+from .landed_benchmarks import _tadj_psf, lb4_spatial_knn
 from .landed_candidates import (la1_pooled_anchor, lc2_fitted_curve, lease_compatible,
                                 remaining_lease)
 from .landed_engine import landed_engine
@@ -118,16 +118,15 @@ def _adjusted_comp_psfs(subject, market, ctx) -> list[float]:
     from. (The conformal band is the engine's PREDICTIVE ERROR; deriving an ask from it made
     72% of asks land above every comp on their own page — three hostile rounds' blocker.)"""
     area, asof_ym = subject["area_sqft"], ctx["asof_ym"]
-    idx, to_q = ctx["index"], ctx.get("asof_q")
     out = []
     for r in market.landed_on_street(subject["street"]):
         if r["property_type"] != subject["property_type"]:
             continue
         if not lease_compatible(r, subject, asof_ym):
             continue
-        tf = idx.factor(r["contract_ym"], to_q, "landed") if to_q else 1.0
-        tf = min(max(tf, 0.80), 1.25)
-        out.append(r["psf"] * tf * size_factor(r["area_sqft"], area))
+        # use the SAME adjustment the point is built from (incl. the publication-lag drift),
+        # or the guidance and the exhibit silently drift apart from the estimate
+        out.append(_tadj_psf(r, ctx) * size_factor(r["area_sqft"], area))
     return sorted(out)
 
 
@@ -150,12 +149,11 @@ def _street_ref(subject, market, ctx):
     if not sim:
         return None
     fresh = max(sim, key=lambda r: r["contract_ym"])
-    to_q = ctx.get("asof_q")
-    tf = ctx["index"].factor(fresh["contract_ym"], to_q, "landed") if to_q else 1.0
-    tf = min(max(tf, 0.80), 1.25)
+    # same single adjustment path as the point/guidance (incl. the publication-lag drift)
     return {"contract_ym": fresh["contract_ym"], "area_sqft": fresh["area_sqft"],
             "raw_psf": fresh["psf"],
-            "adj_psf": round(fresh["psf"] * tf * size_factor(fresh["area_sqft"], area), 1)}
+            "adj_psf": round(_tadj_psf(fresh, ctx)
+                             * size_factor(fresh["area_sqft"], area), 1)}
 
 
 def _comps(subject, market, ctx, n=8):
@@ -166,7 +164,6 @@ def _comps(subject, market, ctx, n=8):
     time+size-ADJUSTED distribution, so a table of RAW psf makes a correct ask look like it
     sits above every comp — the exhibit must carry the column the numbers come from."""
     area, asof_ym = subject["area_sqft"], ctx["asof_ym"]
-    idx, to_q = ctx["index"], ctx.get("asof_q")
     rows = [r for r in market.landed_on_street(subject["street"])
             if r["property_type"] == subject["property_type"]
             and lease_compatible(r, subject, asof_ym)]
@@ -174,11 +171,10 @@ def _comps(subject, market, ctx, n=8):
                                          -months_between("2000-01", r["contract_ym"])))
     out = []
     for r in ranked[:n]:
-        tf = idx.factor(r["contract_ym"], to_q, "landed") if to_q else 1.0
-        tf = min(max(tf, 0.80), 1.25)
         out.append({"contract_ym": r["contract_ym"], "land_area_sqft": r["area_sqft"],
                     "land_psf": r["psf"],
-                    "adj_land_psf": round(r["psf"] * tf * size_factor(r["area_sqft"], area), 1),
+                    "adj_land_psf": round(_tadj_psf(r, ctx)
+                                          * size_factor(r["area_sqft"], area), 1),
                     "price": r["price"], "tenure": r["tenure_type"]})
     return out
 
@@ -303,18 +299,29 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
     guidance_ok = not (big or fallback or hard) and conf >= 55 and len(adj) >= 4
     if guidance_ok:
         p25, p75 = round(_pctl(adj, 0.25) * area, 0), round(_pctl(adj, 0.75) * area, 0)
-        src = (f"from {len(adj)} lease-matched street prints, time+size-adjusted to this "
-               f"plot (p25/p75) — where comparable plots ACTUALLY printed")
+        # HONEST LABELS. These are the cheap/dear END of the observed evidence — NOT
+        # "quartiles of outcomes". EXP-0013 measured where real sales actually fall against
+        # them (627 as-of-firewalled resales): ~68-81% of sales land above p25 and ~33-40%
+        # above p75, and the rate DRIFTS WITH THE REGIME (a time split gives p50 -> 50.8%
+        # on 2024-2025H1 but 62.6% on 2025H2+ — the index-based adjustment lags an
+        # accelerating market). A fixed "dear quartile" claim was tried and did not transfer
+        # out-of-sample, so we ship the markers with their measured rates instead of
+        # pretending to a calibrated probability.
+        src = (f"p25/p75 of {len(adj)} lease-matched street prints, time+size-adjusted to "
+               f"this plot — the cheap/dear END of what comparable plots ACTUALLY printed")
+        measured = ("Measured (EXP-0013): ~68-81% of real sales land above the p25 marker "
+                    "and ~33-40% above p75, drifting with the regime — evidence markers, "
+                    "NOT calibrated probabilities.")
         drift = (" NOTE: expected-clear sits above the freshest comparable print "
                  "(stale-comp risk) — see the directional flag." if directional else "")
         buyer = {"attractive_below": p25, "walk_away_above": p75,
                  "fair_value_band": [lo, hi],
-                 "note": f"attractive = cheap quartile, walk-away = dear quartile, {src}. "
-                         f"The fair-value band is the engine's uncertainty, not a target."}
+                 "note": f"attractive below / walk away above = {src}. {measured} The "
+                         f"fair-value band is the engine's uncertainty, not a target."}
         seller = {"ask": p75, "expected_clear": price, "quick_sale": p25,
                   "fair_value_band": [lo, hi],
-                  "note": f"ask at the dear quartile, quick sale at the cheap quartile, "
-                          f"{src}; expected clear at fair value.{drift}"}
+                  "note": f"ask / quick sale = {src}; expected clear at fair value. "
+                          f"{measured}{drift}"}
     else:
         why = ("plot >=8k sqft (size curve poorly identified)" if big else
                "no lease-compatible street comp (pooled fallback)" if fallback else
@@ -370,7 +377,7 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
             f"URA prices a LAND+BUILDING BUNDLE and carries no condition/GFA/geometry -> an "
             f"irreducible per-print noise floor of ~{NOISE_FLOOR.get(spec.property_type, DEFAULT_NOISE)*100:.0f}% "
             f"(EXP-0010, same-plot repeats). No model on this data can beat it.",
-            "Engine LV1 measured 9.3% median APE / 78.9% held-out band coverage on 7,027 "
+            "Engine LV1 measured 9.5% median APE / 77.5% held-out band coverage / sign test 51.7% "
             "walk-forward landed resales (EXP-0012) — honest high-single-digit, not condo-grade.",
             "The engine is CONDITION-BLIND and GEOMETRY-BLIND: it does not shift the point for "
             "condition (no validated effect — L2e backlog) and cannot see frontage/shape/"

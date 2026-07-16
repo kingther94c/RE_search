@@ -5,6 +5,46 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0013 — L4 review round 4: the systematic LOW bias, and why the metric set hid it (2026-07-17)
+- **Status: DONE. Verdict: bias FIXED (sign test 63%→51.7%); guidance markers RE-LABELLED
+  after a calibration attempt honestly FAILED out-of-sample.**
+- **The finding (hostile round 4, REVISE 7.55, 1 blocker).** LV1's point was systematically
+  ~3.5% LOW: on 400 as-of-firewalled production valuations the **actual sale exceeded the
+  point 63.2% of the time** (unbiased = 50%), and the guidance inherited it — real sales
+  printed above the p75 "ask" **44.8%** of the time against a label promising 25%.
+- **Why we could not see it — the institutional root cause.** The landed leaderboard reported
+  `signed_bias` as a **MEAN** (−0.96%, looks negligible). The error distribution is skewed, so
+  a few large over-predictions dragged the mean to ~0 while the typical case ran low. **The
+  SIGN TEST and the MEDIAN were the metrics that expose it, and neither was in the metric
+  set.** Added `median_signed` + `pct_actual_above` to `metrics.summarise` and the leaderboard
+  — a mean-only bias column cannot see a one-directional error.
+- **Diagnosis (the reviewer falsified their own first hypothesis, which is why this is
+  trustworthy):** NOT staleness (24/60mo windows and an 18mo half-life all leave it at
+  ~39-43% >p75) and NOT the caveat lag (lag 0 reproduces +3.6%). **~1.2pp is the INDEX
+  PUBLICATION LAG:** comps were adjusted only to the last *published* quarter (35d lag), so at
+  as-of 2026-07 the newest level available is 2026Q1 — in a market running ~7.6%/yr the point
+  is structurally 1-2 quarters stale.
+- **Fix:** `PriceIndex.drift_factor` projects the published→as-of gap at the recent PUBLISHED
+  trend (leakage-safe: no unpublished data; capped ±6% because an extrapolation is a forecast).
+  Routed every landed adjustment (point, guidance pool, street ref, comps exhibit) through the
+  ONE corrected `_tadj_psf`. **Result: pct_actual_above 63.2% → 51.7%, median_signed +3.5% →
+  −0.46%**, for +0.15pp median APE (9.34→9.49%) — the right trade: an unbiased estimator with
+  a hair more variance beats a biased one.
+- **The calibration that FAILED (and ships as a finding, not a fix).** `research/
+  calibrate_landed_guidance.py` walks real resales through the production path and measures
+  where the actual sale falls vs the guidance markers. Post-fix, **p25 is well calibrated
+  (73.8% above vs a 75% target)** but **p75 delivers 35.1%, not 25%** — the adjusted-comp
+  distribution is NARROWER than the outcome distribution (adjustment shrinks spread; the
+  subject carries condition/idiosyncratic variance the comps do not). We tried to re-cut the
+  upper marker on a TIME SPLIT: p0.80 chosen on <2025-07 (26.2% above) delivered **34.3%**
+  held-out. **It did not transfer** — the residual is REGIME-dependent (p50 → 50.8% on
+  2024-2025H1 vs 62.6% on 2025H2+; the trailing-trend drift lags an accelerating market).
+  **Verdict: REJECT the fixed-quantile calibration** (would be false precision) and ship the
+  natural p25/p75 markers with their MEASURED rates + the regime caveat, killing the
+  "cheap/dear quartile" label that asserted a property that does not hold stably.
+- **Lesson:** a metric you don't compute is a bias you can't see — and the condo leaderboard
+  had already carried the column the landed one dropped.
+
 ## EXP-0012 — L3/L4: landed engine LV1 + conformal + the `landed-valuation` skill (2026-07-16)
 - **Status: DONE. GL2 PASS · GL3 PASS · GL4 REVISE→fixed (hostile round 1: 6.9, 3 blockers).**
 - **LV1** (`landed_engine.py`) = LC2 street point where the street answers, else LA1 pooled
