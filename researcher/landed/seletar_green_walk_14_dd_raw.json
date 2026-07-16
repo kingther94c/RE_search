@@ -1,0 +1,1821 @@
+{
+ "address": "14 SELETAR GREEN WALK",
+ "as_of": "2026-07-16",
+ "geocode": {
+  "match": "LUXUS HILLS",
+  "blk_no": "14",
+  "road_name": "SELETAR GREEN WALK",
+  "postal": "805248",
+  "lat": 1.37998528792391,
+  "lon": 103.874095187846
+ },
+ "street": "SELETAR GREEN WALK",
+ "plot": {
+  "area_sqm": 150.0,
+  "area_sqft": 1614,
+  "is_landed_zone": true,
+  "objectid": 647474,
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "caveat": "indicative zoning parcel, not a cadastral lot — confirm with INLIS PTI"
+ },
+ "zoning": {
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "gpr_num": null,
+  "area_sqm": 150.0,
+  "area_sqft": 1614,
+  "objectid": 647474,
+  "updated": "20251229172138"
+ },
+ "landed_housing_area": {
+  "classification": "LANDED HOUSING AREA",
+  "type": "MIXED LANDED",
+  "envelope": "3-STOREY ENVELOPE",
+  "name": null,
+  "updated": "20251230175452"
+ },
+ "neighbours": [
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "LND",
+   "metres": 3,
+   "bearing_deg": 87.4,
+   "area_sqm": 150.00385995,
+   "objectid": 679943
+  },
+  {
+   "zone": "PARK",
+   "gpr": "EVA",
+   "metres": 11,
+   "bearing_deg": 177.4,
+   "area_sqm": 21694.00261534,
+   "objectid": 656953
+  },
+  {
+   "zone": "ROAD",
+   "gpr": "",
+   "metres": 14,
+   "bearing_deg": 357.4,
+   "area_sqm": 3453.522043625,
+   "objectid": 644427
+  },
+  {
+   "zone": "UTILITY",
+   "gpr": "EVA",
+   "metres": 66,
+   "bearing_deg": 293.4,
+   "area_sqm": 14.5193285,
+   "objectid": 678928
+  },
+  {
+   "zone": "BUSINESS 2",
+   "gpr": "2.5",
+   "metres": 151,
+   "bearing_deg": 184.7,
+   "area_sqm": 58417.732306045,
+   "objectid": 670224
+  },
+  {
+   "zone": "WATERBODY",
+   "gpr": "",
+   "metres": 175,
+   "bearing_deg": 125.8,
+   "area_sqm": 20310.203249825,
+   "objectid": 680013
+  },
+  {
+   "zone": "BUSINESS 1",
+   "gpr": "2.5",
+   "metres": 207,
+   "bearing_deg": 134.0,
+   "area_sqm": 29241.53637309,
+   "objectid": 694957
+  },
+  {
+   "zone": "RESERVE SITE",
+   "gpr": "EVA",
+   "metres": 209,
+   "bearing_deg": 118.4,
+   "area_sqm": 3235.12271116,
+   "objectid": 680778
+  },
+  {
+   "zone": "TRANSPORT FACILITIES",
+   "gpr": "EVA",
+   "metres": 307,
+   "bearing_deg": 55.9,
+   "area_sqm": 1122.89309935,
+   "objectid": 665208
+  },
+  {
+   "zone": "PLACE OF WORSHIP",
+   "gpr": "EVA",
+   "metres": 317,
+   "bearing_deg": 46.7,
+   "area_sqm": 3664.078812565,
+   "objectid": 638003
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "3.0",
+   "metres": 326,
+   "bearing_deg": 91.3,
+   "area_sqm": 97285.907471795,
+   "objectid": 643757
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.8",
+   "metres": 369,
+   "bearing_deg": 114.3,
+   "area_sqm": 129615.869298105,
+   "objectid": 626630
+  },
+  {
+   "zone": "BUSINESS 2",
+   "gpr": "2.9",
+   "metres": 396,
+   "bearing_deg": 224.9,
+   "area_sqm": 18988.02381255,
+   "objectid": 626872
+  },
+  {
+   "zone": "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY",
+   "gpr": "EVA",
+   "metres": 398,
+   "bearing_deg": 23.1,
+   "area_sqm": 1047.3923741,
+   "objectid": 660815
+  },
+  {
+   "zone": "EDUCATIONAL INSTITUTION",
+   "gpr": "EVA",
+   "metres": 442,
+   "bearing_deg": 58.0,
+   "area_sqm": 29788.247951375,
+   "objectid": 593354
+  },
+  {
+   "zone": "BUSINESS 1",
+   "gpr": "3.0",
+   "metres": 459,
+   "bearing_deg": 175.5,
+   "area_sqm": 7156.201498135,
+   "objectid": 601527
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "EVA",
+   "metres": 480,
+   "bearing_deg": 44.0,
+   "area_sqm": 165.97544774,
+   "objectid": 665387
+  },
+  {
+   "zone": "COMMERCIAL",
+   "gpr": "EVA",
+   "metres": 501,
+   "bearing_deg": 202.4,
+   "area_sqm": 3857.8176785,
+   "objectid": 664079
+  },
+  {
+   "zone": "CIVIC & COMMUNITY INSTITUTION",
+   "gpr": "EVA",
+   "metres": 524,
+   "bearing_deg": 70.6,
+   "area_sqm": 3972.795056895,
+   "objectid": 653509
+  },
+  {
+   "zone": "COMMERCIAL & RESIDENTIAL",
+   "gpr": "EVA",
+   "metres": 677,
+   "bearing_deg": 127.4,
+   "area_sqm": 15461.4397155,
+   "objectid": 661114
+  },
+  {
+   "zone": "OPEN SPACE",
+   "gpr": "EVA",
+   "metres": 742,
+   "bearing_deg": 98.8,
+   "area_sqm": 2102.38362093,
+   "objectid": 691326
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.4",
+   "metres": 743,
+   "bearing_deg": 325.1,
+   "area_sqm": 17431.596953335,
+   "objectid": 602599
+  },
+  {
+   "zone": "COMMERCIAL & RESIDENTIAL",
+   "gpr": "1.4",
+   "metres": 834,
+   "bearing_deg": 330.5,
+   "area_sqm": 21022.78635873,
+   "objectid": 680944
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "3.5",
+   "metres": 838,
+   "bearing_deg": 356.2,
+   "area_sqm": 52725.57163093,
+   "objectid": 665787
+  },
+  {
+   "zone": "HEALTH & MEDICAL CARE",
+   "gpr": "EVA",
+   "metres": 844,
+   "bearing_deg": 89.4,
+   "area_sqm": 66274.444236955,
+   "objectid": 592466
+  },
+  {
+   "zone": "COMMERCIAL & RESIDENTIAL",
+   "gpr": "2.8",
+   "metres": 877,
+   "bearing_deg": 60.1,
+   "area_sqm": 748.112912315,
+   "objectid": 634333
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "3.1",
+   "metres": 909,
+   "bearing_deg": 51.0,
+   "area_sqm": 21520.182288075,
+   "objectid": 682591
+  }
+ ],
+ "transects": [
+  {
+   "toward": "UTILITY",
+   "bearing_deg": 293.4,
+   "edge_m": 66,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 40,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 80,
+     "zone": "UTILITY",
+     "gpr": "EVA"
+    },
+    {
+     "m": 100,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 180,
+     "zone": "ROAD",
+     "gpr": null
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  },
+  {
+   "toward": "BUSINESS 2",
+   "bearing_deg": 184.7,
+   "edge_m": 151,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 20,
+     "zone": "PARK",
+     "gpr": "EVA"
+    },
+    {
+     "m": 120,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 160,
+     "zone": "BUSINESS 2",
+     "gpr": "2.5"
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  },
+  {
+   "toward": "BUSINESS 1",
+   "bearing_deg": 134.0,
+   "edge_m": 207,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 20,
+     "zone": "PARK",
+     "gpr": "EVA"
+    },
+    {
+     "m": 160,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 220,
+     "zone": "BUSINESS 1",
+     "gpr": "2.5"
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  },
+  {
+   "toward": "RESERVE SITE",
+   "bearing_deg": 118.4,
+   "edge_m": 209,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 40,
+     "zone": "PARK",
+     "gpr": "EVA"
+    },
+    {
+     "m": 180,
+     "zone": "WATERBODY",
+     "gpr": null
+    },
+    {
+     "m": 220,
+     "zone": "ROAD",
+     "gpr": null
+    }
+   ],
+   "reaches_target": false,
+   "note": "ray never lands in RESERVE SITE within 329m — it is aimed at the nearest edge point, which lies on a shared boundary. The steps still show what separates you from it; they do not confirm arrival."
+  },
+  {
+   "toward": "TRANSPORT FACILITIES",
+   "bearing_deg": 55.9,
+   "edge_m": 307,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 40,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 60,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 320,
+     "zone": "TRANSPORT FACILITIES",
+     "gpr": "EVA"
+    },
+    {
+     "m": 360,
+     "zone": "ROAD",
+     "gpr": null
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  },
+  {
+   "toward": "PLACE OF WORSHIP",
+   "bearing_deg": 46.7,
+   "edge_m": 317,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 320,
+     "zone": "PLACE OF WORSHIP",
+     "gpr": "EVA"
+    },
+    {
+     "m": 400,
+     "zone": "ROAD",
+     "gpr": null
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  },
+  {
+   "toward": "BUSINESS 2",
+   "bearing_deg": 224.9,
+   "edge_m": 396,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 20,
+     "zone": "PARK",
+     "gpr": "EVA"
+    },
+    {
+     "m": 60,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 100,
+     "zone": "PARK",
+     "gpr": "EVA"
+    },
+    {
+     "m": 180,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 240,
+     "zone": "BUSINESS 2",
+     "gpr": "2.5"
+    },
+    {
+     "m": 380,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 400,
+     "zone": "BUSINESS 2",
+     "gpr": "2.9"
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  }
+ ],
+ "schools_primary": [
+  {
+   "name": "ROSYTH SCHOOL",
+   "km": 0.8,
+   "matched": "21 SERANGOON NORTH AVENUE 4",
+   "postal": "555855"
+  },
+  {
+   "name": "HOUGANG PRIMARY SCHOOL",
+   "km": 0.8,
+   "matched": "1 HOUGANG STREET 93",
+   "postal": "534238"
+  },
+  {
+   "name": "FERNVALE PRIMARY SCHOOL",
+   "km": 1.15,
+   "matched": "1 FERNVALE LANE",
+   "postal": "797701"
+  },
+  {
+   "name": "YIO CHU KANG PRIMARY SCHOOL",
+   "km": 1.3,
+   "matched": "1 HOUGANG STREET 51",
+   "postal": "538720"
+  },
+  {
+   "name": "XINMIN PRIMARY SCHOOL",
+   "km": 1.38,
+   "matched": "9 HOUGANG AVENUE 8",
+   "postal": "538784"
+  },
+  {
+   "name": "SENGKANG GREEN PRIMARY SCHOOL",
+   "km": 1.44,
+   "matched": "15 FERNVALE ROAD",
+   "postal": "797636"
+  },
+  {
+   "name": "PALM VIEW PRIMARY SCHOOL",
+   "km": 1.96,
+   "matched": "150 COMPASSVALE BOW",
+   "postal": "544822"
+  }
+ ],
+ "mrt": [
+  {
+   "name": "BUANGKOK MRT STATION",
+   "km": 2.15,
+   "matched": "10 SENGKANG CENTRAL",
+   "postal": "545061"
+  },
+  {
+   "name": "HOUGANG MRT STATION",
+   "km": 2.29,
+   "matched": "80 HOUGANG CENTRAL",
+   "postal": "538758"
+  },
+  {
+   "name": "KOVAN MRT STATION",
+   "km": 2.51,
+   "matched": "900 UPPER SERANGOON ROAD",
+   "postal": "534799"
+  },
+  {
+   "name": "SENGKANG MRT STATION",
+   "km": 2.71,
+   "matched": "5 SENGKANG SQUARE",
+   "postal": "545062"
+  },
+  {
+   "name": "ANG MO KIO MRT STATION",
+   "km": 2.95,
+   "matched": "2450 ANG MO KIO AVENUE 8",
+   "postal": "569811"
+  },
+  {
+   "name": "SERANGOON MRT STATION",
+   "km": 3.24,
+   "matched": "21 SERANGOON CENTRAL",
+   "postal": "556082"
+  },
+  {
+   "name": "YIO CHU KANG MRT STATION",
+   "km": 3.25,
+   "matched": "3000 ANG MO KIO AVENUE 8",
+   "postal": "569813"
+  }
+ ],
+ "amenities": [
+  {
+   "name": "GREENWICH V",
+   "km": 0.99,
+   "matched": "1 SELETAR ROAD",
+   "postal": "807011"
+  },
+  {
+   "name": "THE SELETAR MALL",
+   "km": 1.3,
+   "matched": "33 SENGKANG WEST AVENUE",
+   "postal": "797653"
+  },
+  {
+   "name": "MYVILLAGE AT SERANGOON GARDEN",
+   "km": 1.93,
+   "matched": "1 MAJU AVENUE",
+   "postal": "556679"
+  },
+  {
+   "name": "HOUGANG MALL",
+   "km": 2.34,
+   "matched": "90 HOUGANG AVENUE 10",
+   "postal": "538766"
+  }
+ ],
+ "expressways": [
+  {
+   "name": "TAMPINES EXPRESSWAY",
+   "km": 4.79,
+   "matched": "TAMPINES EXPRESSWAY",
+   "postal": "NIL"
+  },
+  {
+   "name": "KALLANG PAYA LEBAR EXPRESSWAY",
+   "km": 5.24,
+   "matched": "KALLANG PAYA LEBAR EXPRESSWAY",
+   "postal": "NIL"
+  }
+ ],
+ "comps": {
+  "street": "SELETAR GREEN WALK",
+  "n": 63,
+  "first_ym": "2021-07",
+  "last_ym": "2026-06",
+  "tenure": {
+   "distinct": {
+    "999 yrs lease commencing from 1879": 63
+   },
+   "n": 63,
+   "unanimous": true
+  },
+  "cohorts": [
+   {
+    "band": "<1,800",
+    "lo_sqft": 0.0,
+    "hi_sqft": 1800,
+    "n": 42,
+    "psf_min": 2075,
+    "psf_med": 2663,
+    "psf_max": 3232,
+    "price_med": 4300000,
+    "area_med": 1615
+   },
+   {
+    "band": "1,800-2,500",
+    "lo_sqft": 1800,
+    "hi_sqft": 2500,
+    "n": 20,
+    "psf_min": 1830,
+    "psf_med": 2186,
+    "psf_max": 2405,
+    "price_med": 4725000,
+    "area_med": 2180
+   },
+   {
+    "band": "2,500-3,500",
+    "lo_sqft": 2500,
+    "hi_sqft": 3500,
+    "n": 1,
+    "psf_min": 2042,
+    "psf_med": 2042,
+    "psf_max": 2042,
+    "price_med": 6100000,
+    "area_med": 2988
+   }
+  ],
+  "trend": [
+   {
+    "period": "2021",
+    "n": 7,
+    "psf_med": 2075,
+    "price_med": 3450000,
+    "area_med": 1615
+   },
+   {
+    "period": "2022",
+    "n": 7,
+    "psf_med": 2384,
+    "price_med": 3900000,
+    "area_med": 1615
+   },
+   {
+    "period": "2023",
+    "n": 11,
+    "psf_med": 2533,
+    "price_med": 4200000,
+    "area_med": 1615
+   },
+   {
+    "period": "2024",
+    "n": 14,
+    "psf_med": 2561,
+    "price_med": 4380000,
+    "area_med": 1615
+   },
+   {
+    "period": "2025",
+    "n": 15,
+    "psf_med": 2725,
+    "price_med": 4800000,
+    "area_med": 1615
+   },
+   {
+    "period": "2026",
+    "n": 9,
+    "psf_med": 2960,
+    "price_med": 4810000,
+    "area_med": 1615
+   }
+  ],
+  "types": {
+   "Terrace": 55,
+   "Semi-detached": 8
+  },
+  "subject": {
+   "n": 42,
+   "area_sqft": 1614,
+   "tol": 0.06,
+   "psf_min": 2075,
+   "psf_med": 2663,
+   "psf_max": 3232,
+   "first_ym": "2021-08",
+   "last_ym": "2026-06",
+   "recent": [
+    {
+     "ym": "2026-02",
+     "price": 4780000.0,
+     "psf": 2960,
+     "area_sqft": 1615,
+     "type": "Terrace"
+    },
+    {
+     "ym": "2026-03",
+     "price": 4510000.0,
+     "psf": 2793,
+     "area_sqft": 1615,
+     "type": "Terrace"
+    },
+    {
+     "ym": "2026-05",
+     "price": 4810000.0,
+     "psf": 2979,
+     "area_sqft": 1615,
+     "type": "Terrace"
+    },
+    {
+     "ym": "2026-05",
+     "price": 4730000.0,
+     "psf": 2930,
+     "area_sqft": 1615,
+     "type": "Terrace"
+    },
+    {
+     "ym": "2026-05",
+     "price": 4800000.0,
+     "psf": 2973,
+     "area_sqft": 1615,
+     "type": "Terrace"
+    },
+    {
+     "ym": "2026-06",
+     "price": 5218888.0,
+     "psf": 3232,
+     "area_sqft": 1615,
+     "type": "Terrace"
+    }
+   ],
+   "rows": [
+    {
+     "id": "LUXUS HILLS|2021-08|3350000|150.0|-|10",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2021-08",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 3350000.0,
+     "psf": 2074.8,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2021-10|3450000|150.0|-|8",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2021-10",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 3450000.0,
+     "psf": 2136.8,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2021-11|3380000|150.0|-|13",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2021-11",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 3380000.0,
+     "psf": 2093.4,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2021-12|3410000|150.0|-|11",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2021-12",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 3410000.0,
+     "psf": 2112.0,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2022-02|3880000|150.0|-|14",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2022-02",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 3880000.0,
+     "psf": 2403.1,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2022-03|3850000|150.0|-|15",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2022-03",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 3850000.0,
+     "psf": 2384.5,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2022-04|3850000|150.0|-|16",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2022-04",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 3850000.0,
+     "psf": 2384.5,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2022-08|3900000|150.0|-|17",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2022-08",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 3900000.0,
+     "psf": 2415.5,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2022-09|3920000|150.0|-|24",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2022-09",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 3920000.0,
+     "psf": 2427.9,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2023-01|4100000|150.0|-|20",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2023-01",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4100000.0,
+     "psf": 2539.4,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2023-01|4090000|150.0|-|23",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2023-01",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4090000.0,
+     "psf": 2533.2,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2023-04|4078888|150.0|-|21",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2023-04",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4078888.0,
+     "psf": 2526.3,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2023-07|4080000|150.0|-|26",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2023-07",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4080000.0,
+     "psf": 2527.0,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2023-10|4300000|150.0|-|42",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2023-10",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4300000.0,
+     "psf": 2663.2,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2023-11|4200000|150.0|-|35",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2023-11",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4200000.0,
+     "psf": 2601.3,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2023-11|4200000|150.0|-|38",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2023-11",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4200000.0,
+     "psf": 2601.3,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2023-12|4300000|150.0|-|32",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2023-12",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4300000.0,
+     "psf": 2663.2,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2024-01|4150000|150.0|-|45",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2024-01",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4150000.0,
+     "psf": 2570.3,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2024-04|4338888|150.0|-|28",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2024-04",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4338888.0,
+     "psf": 2687.3,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2024-04|4100000|150.0|-|30",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2024-04",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4100000.0,
+     "psf": 2539.4,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2024-05|4215000|150.0|-|43",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2024-05",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4215000.0,
+     "psf": 2610.6,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2024-06|4488000|150.0|-|37",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2024-06",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4488000.0,
+     "psf": 2779.7,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2024-06|4380000|150.0|-|40",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2024-06",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4380000.0,
+     "psf": 2712.8,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2024-07|4120000|150.0|-|29",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2024-07",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4120000.0,
+     "psf": 2551.7,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2024-09|4668000|152.7|-|31",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2024-09",
+     "area_sqm": 152.7,
+     "area_sqft": 1643.6,
+     "price": 4668000.0,
+     "psf": 2840.0,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2024-09|4268000|150.0|-|33",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2024-09",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4268000.0,
+     "psf": 2643.4,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2025-01|4650000|150.0|-|58",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2025-01",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4650000.0,
+     "psf": 2880.0,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2025-02|4558000|150.0|-|52",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2025-02",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4558000.0,
+     "psf": 2823.0,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2025-02|4400000|150.0|-|53",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2025-02",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4400000.0,
+     "psf": 2725.2,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2025-02|4350000|150.0|-|55",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2025-02",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4350000.0,
+     "psf": 2694.2,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2025-06|4800000|150.0|-|54",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2025-06",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4800000.0,
+     "psf": 2972.9,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2025-07|4408000|150.0|-|46",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2025-07",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4408000.0,
+     "psf": 2730.1,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2025-08|4580000|150.0|-|51",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2025-08",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4580000.0,
+     "psf": 2836.6,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2025-09|4800000|150.0|-|48",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2025-09",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4800000.0,
+     "psf": 2972.9,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2025-12|4600000|152.7|-|59",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2025-12",
+     "area_sqm": 152.7,
+     "area_sqft": 1643.6,
+     "price": 4600000.0,
+     "psf": 2798.7,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2026-01|4910000|150.0|-|50",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2026-01",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4910000.0,
+     "psf": 3041.0,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2026-02|4780000|150.0|-|5",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2026-02",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4780000.0,
+     "psf": 2960.5,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2026-03|4510000|150.0|-|2",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2026-03",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4510000.0,
+     "psf": 2793.3,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2026-05|4810000|150.0|-|0",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2026-05",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4810000.0,
+     "psf": 2979.1,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2026-05|4730000|150.0|-|3",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2026-05",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4730000.0,
+     "psf": 2929.5,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2026-05|4800000|150.0|-|6",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2026-05",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 4800000.0,
+     "psf": 2972.9,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    },
+    {
+     "id": "LUXUS HILLS|2026-06|5218888|150.0|-|4",
+     "project": "LUXUS HILLS",
+     "street": "SELETAR GREEN WALK",
+     "market_segment": "OCR",
+     "district": "28",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "999 yrs lease commencing from 1879",
+     "tenure_type": "freehold_equiv",
+     "lease_start": 1879,
+     "contract_ym": "2026-06",
+     "area_sqm": 150.0,
+     "area_sqft": 1614.6,
+     "price": 5218888.0,
+     "psf": 3232.3,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 32704.69155,
+     "y": 40269.94898,
+     "no_of_units": 1
+    }
+   ]
+  }
+ },
+ "flood": {
+  "terms": [
+   "SELETAR GREEN WALK"
+  ],
+  "on_list": false,
+  "matches": [],
+  "list_vintage": "Nov 2025",
+  "list_size": 36,
+  "national_hectares": {
+   "year": 2025,
+   "hectares": 23.3
+  },
+  "national_series": [
+   {
+    "year": 2022,
+    "hectares": 27.0
+   },
+   {
+    "year": 2023,
+    "hectares": 24.1
+   },
+   {
+    "year": 2024,
+    "hectares": 23.6
+   },
+   {
+    "year": 2025,
+    "hectares": 23.3
+   }
+  ],
+  "national_pct_of_land": 0.032,
+  "method": "NAME match against a PDF list — not geospatial. A flooding road next to yours will not match.",
+  "evidential_weight": "NOT on the list — near-zero evidence for this plot. The designation covers 23.3 ha of ~73,000 ha of Singapore (0.032% of the country) across 36 named locations. Almost every address is 'not on it', including ones that pond. Whether THIS plot ponds is a site question (DD-3): visit in rain, check plot-vs-road level, ask neighbours."
+ },
+ "provenance": {
+  "geocode": "OneMap search API — free, no key. Road asserted.",
+  "plot/zoning/neighbours": "URA Master Plan 2025 (gazetted 1 Dec 2025) Land Use + SDCP Landed Housing Area layers via data.gov.sg — free, no key. Indicative, not a legal boundary.",
+  "comps": "URA Data Service caveats (free registered key). Landed `area` is LAND area. Month granularity; ~5y rolling; caveats lag; landed project names anonymised so STREET is the only join key.",
+  "flood": "PUB flood-prone list (Nov 2025) by name + data.gov.sg national hectares.",
+  "schools/mrt/amenities": "OneMap haversine to the target's POINT. For P1 the official measure is OneMap SchoolQuery (school LAND BOUNDARY to home) — ours over-estimates, so 'inside' is safe and near the line is undecided."
+ },
+ "not_covered": [
+  "Valuation — caveat prices bundle land+building; no fair value is derivable here.",
+  "Legal: owner, encumbrances, legal land area, Certified Plan — INLIS (DD-2, S$16).",
+  "Approved plans / unauthorised works — BCA, and SELLER-GATED (owner's signed authorisation required; a buyer cannot buy them).",
+  "Anything site-observable: noise, ponding, light, traffic, condition — DD-3."
+ ]
+}

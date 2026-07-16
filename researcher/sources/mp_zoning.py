@@ -4,11 +4,20 @@ This is the DD-1 planning check done as data instead of as a screenshot of URA S
 Both layers are published by URA on data.gov.sg under the Open Data Licence and need no
 account, no key and no login — so a zoning claim in a report can be reproduced by anyone.
 
-    from researcher.sources.mp_zoning import zoning_at, landed_area_at
-    zoning_at(1.379985, 103.874095)        # -> {'zone': 'RESIDENTIAL', 'gpr': '1.4', ...}
+    from researcher.sources.mp_zoning import zoning_at, landed_area_at, nearby_zones, transect
+    zoning_at(1.379985, 103.874095)        # -> {'zone': 'RESIDENTIAL', 'gpr': 'LND', ...}
     landed_area_at(1.379985, 103.874095)   # -> {'type': 'MIXED LANDED', 'envelope': '3-STOREY ...'}
+    nearby_zones(1.379985, 103.874095)     # -> nearest EDGE distance + area + bearing per zone
+    transect(1.379985, 103.874095, 185)    # -> what actually lies between you and it
 
 CLI:  python -m researcher.sources.mp_zoning 1.379985 103.874095
+
+nearby_zones + transect are the highest-yield checks: the landed value-killer is usually an
+adjacent parcel's zoning, not the house. But a zone LABEL plus a distance invents risks --
+always read `area_sqm` and run a transect before rating one. Worked example: at 14 Seletar
+Green Walk a `UTILITY` parcel 66m away looks alarming until its area (14.5 sqm) says feeder
+pillar; a `BUSINESS 2` parcel at 151m looks fatal until the transect shows ~100m of zoned
+park and a road in between.
 
 Datasets (gazetted Master Plan 2025, in force 1 Dec 2025):
   Land Use            d_a8c3546b26712e35021f3a681d0353ae   (~190MB — cached on first use)
@@ -26,6 +35,7 @@ WHAT THIS DOES NOT SETTLE (keep these visible — they are the DD-2/DD-3 line):
 from __future__ import annotations
 
 import json
+import math
 import os
 import re
 import sys
@@ -41,6 +51,7 @@ DATASETS = {
     "landed_housing_area": "d_70a5a4b67d9171dc0db6f6fd259a3215",
 }
 _UA = "RE_search/0.1"
+SQM_TO_SQFT = 10.7639
 _cache: dict[str, dict] = {}
 
 
@@ -114,18 +125,66 @@ def _clean(props: dict) -> dict:
 # ----------------------------------------------------------------------------- lookup
 def zoning_at(lat: float, lon: float) -> dict | None:
     """MP2025 land-use zone containing the point, or None if the point is in no parcel
-    (roads and waterbodies are genuinely unzoned — None is a real answer, not a failure)."""
+    (roads and waterbodies are genuinely unzoned — None is a real answer, not a failure).
+
+    `area_sqm`/`area_sqft` are the CONTAINING PARCEL's area. In landed areas the layer is cut
+    per plot, so for a landed address this is effectively a free, official read of the plot
+    size — see plot_area_at().
+    """
     for f in _layer("land_use")["features"]:
         if _hit(f, lat, lon):
             p = _clean(f.get("properties") or {})
+            area = p.get("SHAPE.AREA") or p.get("SHAPE_Area")
+            try:
+                area = float(area)
+            except (TypeError, ValueError):
+                area = None
             return {
                 "zone": p.get("LU_DESC") or p.get("lu_desc") or p.get("LU_TEXT"),
                 "gpr": p.get("GPR") or p.get("gpr"),
                 "gpr_num": p.get("GPR_NUM"),
+                "area_sqm": round(area, 1) if area else None,
+                "area_sqft": round(area * SQM_TO_SQFT) if area else None,
+                "objectid": p.get("OBJECTID"),
                 "updated": p.get("FMEL_UPD_D"),
                 "raw": p,
             }
     return None
+
+
+def plot_area_at(lat: float, lon: float) -> dict | None:
+    """Plot area for a LANDED address, free and official, from the containing MP2025 parcel.
+
+    In landed housing areas the Land Use layer is cut per plot, so the containing parcel is
+    the house's own plot. Verified on Seletar Green Walk: the parcels come out at 150.0 sqm
+    (1,615 sqft) for the intermediate terraces and ~200-203 sqm (2,158/2,180 sqft) for the
+    wider ones, and those figures match the LAND areas on URA's caveats for the same street
+    exactly. Two independent official sources agreeing is why this is usable.
+
+    IT IS STILL NOT THE LEGAL AREA. URA labels the layer indicative; this is a ZONING parcel,
+    not a cadastral lot. Use it to pick the comp cohort and sanity-check a listing; confirm
+    with INLIS Property Title Information (S$16, DD-2) before offering, and with an SLA
+    Certified Plan + surveyor if the boundary is ever contested (DD-3).
+
+    Returns None if the point is not in a zoned parcel, and `is_landed_zone` False if the
+    containing parcel is not landed residential — in which case the area is a zoning block,
+    NOT a plot, and must not be read as one.
+    """
+    z = zoning_at(lat, lon)
+    if not z or z["area_sqm"] is None:
+        return None
+    is_landed = (z["zone"] or "").upper() == "RESIDENTIAL" and (z["gpr"] or "").upper() == "LND"
+    return {
+        "area_sqm": z["area_sqm"],
+        "area_sqft": z["area_sqft"],
+        "is_landed_zone": is_landed,
+        "objectid": z["objectid"],
+        "zone": z["zone"],
+        "gpr": z["gpr"],
+        "caveat": ("indicative zoning parcel, not a cadastral lot — confirm with INLIS PTI"
+                   if is_landed else
+                   "NOT a landed plot: the containing parcel is a zoning block, not a house's plot"),
+    }
 
 
 def landed_area_at(lat: float, lon: float) -> dict | None:
@@ -144,6 +203,88 @@ def landed_area_at(lat: float, lon: float) -> dict | None:
                 "raw": p,
             }
     return None
+
+
+# ------------------------------------------------------- neighbours (the value-killer)
+M_LAT = 110574.0
+
+
+def _m_lon(lat: float) -> float:
+    return 111320.0 * math.cos(math.radians(lat))
+
+
+def _near_seg(a: tuple, b: tuple) -> tuple[float, tuple]:
+    """Distance from the ORIGIN to segment a-b, and the closest point. Inputs are local
+    metres with the subject at (0,0), so the origin is the subject."""
+    ax, ay = a
+    bx, by = b
+    dx, dy = bx - ax, by - ay
+    if dx == 0 and dy == 0:
+        return math.hypot(ax, ay), (ax, ay)
+    t = max(0.0, min(1.0, (-ax * dx - ay * dy) / (dx * dx + dy * dy)))
+    px, py = ax + t * dx, ay + t * dy
+    return math.hypot(px, py), (px, py)
+
+
+def nearby_zones(lat: float, lon: float, radius_m: float = 1000.0) -> list[dict]:
+    """Nearest parcel EDGE per (zone, gpr) within radius_m, sorted nearest-first.
+
+    Each row: zone, gpr, metres, bearing_deg (0=N, 90=E), area_sqm of that parcel, objectid.
+
+    `metres` is distance to the parcel BOUNDARY. For the zone you are standing in that is the
+    distance to your own parcel's edge, not a separation — only rows for zones you are OUTSIDE
+    are true separations. `area_sqm` is not decoration: it is what stops you rating a 14 sqm
+    cable box as a substation.
+    """
+    mlon = _m_lon(lat)
+    best: dict[tuple, dict] = {}
+    for f in _layer("land_use")["features"]:
+        rings = _rings(f.get("geometry") or {})
+        if not rings:
+            continue
+        # bbox reject on any vertex — cheap, and a polygon with no vertex near us cannot
+        # have an edge near us at these scales.
+        if not any(abs(c[1] - lat) * M_LAT < radius_m * 1.5
+                   and abs(c[0] - lon) * mlon < radius_m * 1.5
+                   for r in rings for c in r):
+            continue
+        dmin, pmin = 1e9, None
+        for r in rings:
+            pts = [((c[0] - lon) * mlon, (c[1] - lat) * M_LAT) for c in r]
+            for i in range(len(pts)):
+                d, p = _near_seg(pts[i], pts[(i + 1) % len(pts)])
+                if d < dmin:
+                    dmin, pmin = d, p
+        if dmin > radius_m:
+            continue
+        pr = _clean(f.get("properties") or {})
+        key = (pr.get("LU_DESC") or pr.get("LU_TEXT") or "?", pr.get("GPR") or "")
+        if key not in best or dmin < best[key]["metres"]:
+            best[key] = {
+                "zone": key[0], "gpr": key[1], "metres": round(dmin),
+                "bearing_deg": round((math.degrees(math.atan2(pmin[0], pmin[1])) + 360) % 360, 1),
+                "area_sqm": pr.get("SHAPE.AREA"), "objectid": pr.get("OBJECTID"),
+            }
+    return sorted(best.values(), key=lambda r: r["metres"])
+
+
+def transect(lat: float, lon: float, bearing_deg: float,
+             out_m: float = 400.0, step_m: float = 20.0) -> list[dict]:
+    """Walk a straight line on `bearing_deg` and report the zone at each step.
+
+    This is what turns "BUSINESS 2 at 151m" from a verdict into a fact: it tells you whether
+    the gap is a zoned park or a fence. Returns [{m, zone, gpr}] with `zone: None` for
+    unzoned gaps (roads and water are genuinely unzoned in the layer).
+    """
+    brg = math.radians(bearing_deg)
+    mlon = _m_lon(lat)
+    out = []
+    for d in range(0, int(out_m) + 1, int(step_m)):
+        la = lat + (d * math.cos(brg)) / M_LAT
+        lo = lon + (d * math.sin(brg)) / mlon
+        z = zoning_at(la, lo)
+        out.append({"m": d, "zone": (z or {}).get("zone"), "gpr": (z or {}).get("gpr")})
+    return out
 
 
 def describe(lat: float, lon: float) -> dict:
@@ -166,5 +307,14 @@ if __name__ == "__main__":
         print(f"landed housing   : {lh['type']}   envelope: {lh['envelope']}")
     else:
         print("landed housing   : NOT in a designated Landed Housing Area")
-    print("\nindicative layer — not a legal boundary; lot geometry = SLA Certified Plan,")
+
+    print("\nnearest parcel edge per zone within 1km  (bearing 0=N, 90=E)")
+    print("  read the parcel area before rating anything: a 14 sqm UTILITY is a cable box.")
+    for r in nearby_zones(la, lo):
+        a = r["area_sqm"]
+        a = f"{float(a):,.0f} sqm" if a not in (None, "") else "?"
+        print(f"  {r['metres']:>5} m  brg {r['bearing_deg']:>5}  {str(r['zone']):<40} "
+              f"GPR {str(r['gpr']):<5} parcel {a}")
+
+    print("\nindicative layer - not a legal boundary; lot geometry = SLA Certified Plan,")
     print("buildability = a QP on a surveyed plan.")

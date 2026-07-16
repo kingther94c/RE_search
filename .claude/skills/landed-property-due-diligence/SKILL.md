@@ -5,9 +5,51 @@ description: Use when evaluating a SPECIFIC Singapore landed house (terrace/semi
 
 # DD a specific Singapore landed house
 
-Run AFTER `landed-area-research` has shortlisted the area. Output is a **DD report** for one
-address. The land matters more than the house — score it that way. Quantify with
-`researcher/landed/scorecard.py`.
+Address in, bilingual HTML DD report out. Run AFTER `landed-area-research` has shortlisted the
+area. The land matters more than the house — score it that way.
+
+## Run the chain
+
+```powershell
+# 1. FACTS — the whole free/official chain. Never hand-edit the output.
+python -m researcher.landed.dd "14 SELETAR GREEN WALK" --road "SELETAR GREEN WALK" `
+    --slug seletar_green_walk_14          # -> researcher/landed/<slug>_dd_raw.json
+
+# 2. JUDGEMENT — you write this: archetype, verdict, highlights, deep-DD alerts, tax clock.
+#    researcher/landed/<slug>_dd.json     (copy seletar_green_walk_14_dd.json as the shape)
+
+# 3. RENDER — summary + KPIs + charts + per-dimension detail + the alert section.
+python deliverables/build_landed_dd_report.py <slug>
+```
+
+One-time: the chain needs a **free** URA Data Service key (register at
+https://www.ura.gov.sg/maps/api/), saved to `research/.secrets/ura_access_key` (gitignored —
+never commit it), then `python -m researcher.sources.ura` to pull the caveats.
+
+**The facts/judgement split is load-bearing.** `_dd_raw.json` is reproducible by re-running the
+chain; `_dd.json` is your argument. Hand-editing the raw file destroys the only property that
+makes it worth trusting. If a raw number is wrong, **fix the tool, re-run, and say so.**
+
+## Verify the tools — every run, before the report
+
+The chain encodes checks that were learned from getting them wrong by hand. It does not encode
+judgement, and it can be wrong. Before anything goes in a report, spot-check against source:
+
+- **Re-run one zoning point** and one `nearby_zones` row against `mp_zoning` directly.
+- **Re-read one caveat** — does the cohort median match the rows you can see?
+- **Confirm the geocode is the house**: `blk_no` + `postal`, not the estate name.
+- **Read every `reaches_target: false`** — that transect never landed in the parcel it names.
+- **Sanity-check the plot area** against the caveats' land areas on the same street. Two
+  independent sources agreeing is the whole reason plot area is usable without a title.
+
+A tool that is wrong in a way nobody checks is worse than no tool. Report what you verified.
+
+## It is all DD — the tiers are about who settles it and when
+
+There is no "screening" phase that is somehow not due diligence. Every question is a DD
+question; they differ only in **who can answer it, what it costs, and how late in the deal it
+can wait**. Never file an item by "free vs paid" — an S$16 title search is not deep DD, and a
+free site visit at 7am is not a desk check.
 
 ## It is all DD — the tiers are about who settles it and when
 
@@ -49,45 +91,64 @@ the two that matter. Decide the archetype before running anything:
 A rebuild-cost model on a turnkey house, or a defects inspection on a teardown, is wasted work
 that makes the report look thorough while missing the point.
 
-## Data source — scope the Tier-1 gate to the figures that need it
+## Data source — Tier-1 is URA, and it is free
 
-**Pricing, comps, land-psf, rents and per-unit AVM must come from Tier-1**: PropNex Investment
-Suite (via `read-investment-suite` / `research/mbx.py`) or URA (REALIS / URA Data Service,
-`researcher/sources/ura.py`). EdgeProp / PropertyGuru / 99.co / SRX are **Tier-2** — usable,
-reconcile against Tier-1, and label them as claims. Agent and marketing sites are **Tier-3**.
+**Pricing, comps and land-psf must come from Tier-1**: **URA Data Service**
+(`researcher/sources/ura.py`, free key) or Investment Suite. For landed, URA is enough and
+often better: `typeOfArea='Land'` rows carry the **LAND area**, so `psf` IS land psf — the
+denominator landed pricing actually runs on. EdgeProp / PropertyGuru / 99.co / SRX are
+**Tier-2** — usable, reconcile against Tier-1, label them as claims. Agent sites are Tier-3.
 
-**If Investment Suite won't open, STOP — on the priced sections only.** Report the exact error
-(emulator down, `adb devices` empty, logged out) and wait, or proceed only if the user says to
-use lower-tier data. Do **not** let the gate block DD-1: zoning, geography, schools, hazards and
-title facts need no transaction data, and a DD report that stops before doing the free official
-checks has failed for a reason that had nothing to do with them.
+URA's limits shape every figure: month granularity (no day), ~5y rolling, caveats lag so recent
+months under-report, and **landed project names are anonymised** to "LANDED HOUSING DEVELOPMENT"
+— the STREET is the only join key, so you cannot pin a caveat to a house number from URA alone.
 
-## DD-1 — free, official, reproducible. RUN it, don't list it.
+**Investment Suite is optional here, not a gate.** If it is wanted and won't open (emulator
+down, `adb devices` empty), say so and carry on with URA — do not stall the whole report on it.
+Nothing in DD-1 needs transaction data at all.
+
+**Read the caveats before you trust a portal.** On Seletar Green Walk all 63 URA prints say
+"999 yrs lease commencing from 1879"; portals round that to "freehold". Free, and it catches a
+tenure misstatement before you offer.
+
+## DD-1 — free, official, reproducible. The chain RUNS it; you interpret it.
 
 A DD-1 item is only done when it has **a value, a source and a date**. "Check URA SPACE" is not
-a finding. Everything here is scriptable and needs no account:
+a finding. `researcher/landed/dd.py` chains all of it; what each piece means:
 
-- **Pin the exact address.** `researcher/sources/onemap.py` → blk_no + postal. Assert the road
-  (`geocode(q, expect_road=...)`): OneMap is fuzzy and silently substitutes (`SELETAR ROAD` →
-  `SELETAR AEROSPACE ROAD 1`, 3.7km off; `YIO CHU KANG ROAD` → `OLD YIO CHU KANG ROAD`). Judge
-  precision on **blk_no + postal**, never on `match` — it returns the estate name and makes a
-  house-level hit look like a fuzzy one.
-- **Zoning + landed control.** `researcher/sources/mp_zoning.py` → MP2025 zone, GPR, landed
-  TYPE and storey **envelope**, from URA's gazetted layers on data.gov.sg (MP2025 in force
-  **1 Dec 2025** — MP2019 is superseded; say which plan you read).
-- **The neighbour-parcel scan — the highest-yield check in this skill.** The value-killer is
-  usually an adjacent parcel's zoning, not the house. Scan nearest-edge distance per zone out
-  to ~1km, then **identify what you find before you rate it**: parcel AREA disambiguates a
-  14 sqm feeder-pillar `UTILITY` from a substation, and a **transect** tells you whether a
-  `BUSINESS 2` parcel 150m away sits behind a zoned park (durable buffer) or a fence. Rating a
-  zone label by distance alone invents risks and misses real ones.
-- **Flood.** PUB publishes a flood-prone list (Nov 2025 vintage) + a data.gov.sg dataset —
-  but it is **~36 locations for all of Singapore**. Absence is near-zero evidence about one
-  plot. Report it as "not on the national list", never as "not flood-prone", and send the
-  actual question (does *this* plot pond?) to DD-3.
+- **Address** (`onemap.py`) → blk_no + postal. Always pass `expect_road=`: OneMap is fuzzy,
+  never says "no match", and substitutes (`SELETAR ROAD` → `SELETAR AEROSPACE ROAD 1`, 3.7km
+  off; `YIO CHU KANG ROAD` → `OLD YIO CHU KANG ROAD` — which is why the assert is equality, not
+  substring). Judge precision on **blk_no + postal**, never on `match`: it returns the estate
+  name, so a house-level hit looks fuzzy.
+- **Zoning + landed control** (`mp_zoning.py`) → MP2025 zone, GPR, landed TYPE and storey
+  **envelope**, off URA's gazetted layers on data.gov.sg. MP2025 is in force **1 Dec 2025** —
+  MP2019 is superseded; say which vintage you read.
+- **Plot area, free** (`mp_zoning.plot_area_at`) → in landed areas the Land Use layer is cut
+  **per plot**, so the containing parcel is the house's own plot. Cross-check it against the
+  land areas on the street's caveats: on Seletar Green Walk the parcels read 150.0 sqm and 42
+  of 63 caveats report exactly 1,615 sqft. Two independent official sources agreeing is what
+  makes this usable — but it is an indicative **zoning** parcel, not a cadastral lot. The legal
+  area is still INLIS (DD-2).
+- **The neighbour scan — the highest-yield check here** (`nearby_zones` + `transect`). The
+  value-killer is usually an adjacent parcel's zoning, not the house. But a zone label plus a
+  distance **invents risks**: read the parcel **AREA** (a 14.5 sqm `UTILITY` is a cable box,
+  not a substation) and walk the **transect** (a `BUSINESS 2` parcel 151m south sits behind
+  ~100m of zoned park and a road — durable, though a Master Plan amendment could still change
+  it). Honour `reaches_target: false`: that ray never landed in the parcel it names.
+- **Flood** (`pub_flood.py`) → the list is ~36 named locations covering **23.3 ha of
+  Singapore's ~73,000 ha (0.032%)**. There is no free geospatial flood layer — the data.gov.sg
+  "Flood Prone Areas" dataset is a national hectares series, not polygons, and matching is by
+  NAME so a flooding road next to yours won't hit. Report "not on the national list", never
+  "not flood-prone"; send the real question to DD-3.
 - **Trees.** Only **two** Tree Conservation Areas exist (gazetted 2 Aug 1991, South Central +
   Eastern). Inside one, felling a tree >1m girth (at 0.5m up) on private land needs approval.
   Outside them, do not raise a TCA alert — check the site instead.
+- **Comps** (`researcher/landed/comps.py`) → **never quote a street average psf.** Landed land
+  psf is strongly size-dependent: on one street, one period, one tenure, Seletar Green Walk's
+  <1,800 sqft plots run a median $2,663/psf against $2,186 for 1,800–2,500 sqft. An average
+  mixes cohorts and describes no real house — and is why portal psf figures look
+  self-contradictory. Price the subject against `subject_cohort()`, its OWN size band.
 - **Schools — and the 1km ring is not a permanent attribute.** Distance is a *number with a
   method*. The operative artifact is OneMap **SchoolQuery** (`onemap.gov.sg/school`, free, enter
   the postal code), which measures the shortest distance from **any point on the school's
@@ -168,16 +229,28 @@ to your plans is a lawyer's and a QP's call — that part is DD-3.
 
 ## Output — the DD report
 
-1. **Verdict** — go / no-go / go-at-a-price, with the price.
-2. **DD-1 verified** — every item with **value + source + date**. Bilingual per repo
-   convention. Say which Master Plan vintage you read.
-3. **DD-2 obtained / outstanding** — title facts, or an explicit "not yet pulled (S$16)".
-4. **⚠ Deep-DD alerts — a standalone section, always present.** One row per item:
-   *what is unresolved · why the desk can't settle it · who settles it · cost · **when**
-   (pre-offer / in-option / OTP condition / priced-and-accepted) · **is it seller-gated?***
-   Never merge these into the body. If the list is empty, the report is wrong.
-5. **Scorecard** — `python researcher/landed/scorecard.py` (0–100 + red/amber flags), mirroring
-   Location → Street → Land → Zoning → Neighbours → Future → House.
+`build_landed_dd_report.py` renders: **摘要 Summary** (KPI strip + verdict + highlights +
+archetype) → per-dimension detail (plot & planning · neighbours + transect charts · transactions
+with the land-size scatter and trend · schools · transport · flood · tax clock) → **the alert
+section** → provenance & not-covered. Bilingual, self-contained, no JS.
+
+You write `<slug>_dd.json`:
+1. **archetype** — first, before anything else. It decides what the DD is even about.
+2. **verdict** — go / no-go / go-at-a-price. If you can't price it, say why in the verdict.
+3. **highlights** — what a reader must know before the detail. Lead with what CHANGED a view.
+4. **⚠ dd3_alerts — structural, never optional.** One row per item: *what is unresolved · why
+   the desk can't settle it · who settles it · cost · **when** (pre-offer / in-option / OTP
+   condition / priced-and-accepted) · **seller_gated?*** An empty list renders as a contract
+   breach, because a landed DD that escalates nothing did not look.
+5. **tax_clock** — carry SSD explicitly; on a short hold it dominates everything else here.
+
+**Do not state a fair value.** A caveat price bundles land AND building and is not decomposable
+into land value by dividing by land area — a cohort median is a market observation, not this
+house's worth. The landed AVM is a separate in-flight track (`research/registry/01_roadmap.md`,
+L0–L4). Give observed prints and their spread; let the reader see the cohort.
+
+`researcher/landed/scorecard.py` (0–100 + red/amber flags) still applies for a screening score,
+mirroring Location → Street → Land → Zoning → Neighbours → Future → House.
 
 ## Gotchas
 
