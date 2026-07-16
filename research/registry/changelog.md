@@ -5,6 +5,20 @@ impact · assets affected.
 
 ---
 
+## 2026-07-16 — Fable review round 2: LIVE valuations now see the current partial month
+- **What:** `value_unit.value` LIVE mode gates at month granularity (`contract_ym <=
+  asof month`) instead of running the backtest's month-END visibility convention with
+  lag 0 — which was still hiding every current-month print from a live valuation (205
+  July-2026 caveats invisible on 2026-07-16). Reconstruction mode unchanged (month-end +
+  56d, day-granular). Also re-synced `.agents/` screen-landed-listings SKILL.md (stale
+  "Codex-in-Chrome" wording). EXP-0008 addendum; 119 tests (+2 as-of regression tests).
+- **Why:** EXP-0008 fix #1's stated semantics ("the pulled store IS the information
+  set") were only partially implemented — month-end gating is a leakage guard for
+  backtests, not a fact about what a live valuer knows.
+- **Backtest impact:** none (backtest path untouched; C1 residuals unchanged, conformal
+  fingerprint intact). Live production estimates now use the freshest prints.
+- **Assets affected:** condo (live skill path only). Landed L0 starts next.
+
 ## 2026-07-16 — Roadmap v2: LANDED-FIRST re-plan (L0–L4)
 - **What:** `01_roadmap.md` rewritten as v2. The one-section R6 became a full delivery
   track: **L0 data foundation (hygiene, land-psf band from data, same-plot matcher) → L1

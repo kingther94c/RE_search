@@ -32,7 +32,7 @@ PropertyGuru blocks server-side fetches — **`WebFetch` → HTTP 403**. Working
 1. **`WebSearch` (primary, no setup)** — it surfaces *and summarises* live PropertyGuru
    listings (price, land sqft, built-up, psf, tenure, beds, 1km claim). Restrict with
    `allowed_domains: ["propertyguru.com.sg"]`.
-2. **Codex-in-Chrome** browser extension — for full structured pulls / pagination (real
+2. **Claude-in-Chrome** browser extension — for full structured pulls / pagination (real
    browser session bypasses the bot wall). Use when WebSearch coverage is thin.
 3. **PropertyGuru Android app via `mobile_bridge`** — UI-automation route (a profile +
    `research/mbx.py`) when you want the app's filters/sort.

@@ -6,6 +6,14 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 ---
 
 ## EXP-0008 — Fable review round: production-semantics fixes + deferred re-fits (2026-07-16)
+- **ADDENDUM (review round 2, 2026-07-16):** the applied fix #1 was itself incomplete —
+  "live = lag 0" still ran `as_of`'s month-END visibility convention, so a LIVE valuation
+  hid the current partial month's prints (measured: 205 July-2026 caveats in the 07-15
+  snapshot invisible on 07-16; TREASURE had 2). Fixed: LIVE mode now gates at month
+  granularity only (`contract_ym <= asof month` — drops future-dated data errors, keeps
+  the partial month); reconstruction unchanged. Verified: TREASURE live n_comps 140→141
+  (the 1,033 sqft July print enters; the 592 sqft one is correctly size-gated out).
+  +2 regression tests (live sees current month; reconstruction still excludes). 119 tests.
 - **Trigger:** post-ship Fable review of R0–R5. Found 2 real defects beyond the 4 hostile
   rounds, plus closed 3 recurring reviewer P2/P3s. **Mid-round the user pivoted priority to
   LANDED** — so fixes that change C1's residual distribution were fitted, recorded, and

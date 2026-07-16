@@ -132,8 +132,10 @@ def value(spec: SubjectSpec, store: TransactionStore | None = None,
     """Value one unit. As-of semantics (deliberate, two modes):
 
     - LIVE (no `asof`, or asof >= today): the freshly pulled store IS the information set —
-      lag_days defaults to 0. Applying the backtest's 56-day caveat-lag here would discard
-      the freshest ~2 months of prints, exactly the evidence that matters most.
+      anything lodged is knowable, INCLUDING the current partial month's prints. Only
+      future-dated months (data errors) are gated. Applying the backtest's month-end +
+      56-day visibility here would discard the freshest ~2 months of prints, exactly the
+      evidence that matters most.
     - RECONSTRUCTION (explicit past `asof`): rebuild what was knowable THEN — lag_days
       defaults to 56 (the backtest's caveat-visibility buffer), day-granular.
     Override with lag_days if you know better (e.g. you know when the store was pulled).
@@ -151,7 +153,13 @@ def value(spec: SubjectSpec, store: TransactionStore | None = None,
     live = t >= today
     if lag_days is None:
         lag_days = 0 if live else 56
-    view = store.as_of(t, lag_days=lag_days)
+    if live and lag_days == 0:
+        # The pulled store IS the info set. as_of's month-END convention (a backtest
+        # leakage guard) would hide the current partial month's prints — the freshest
+        # evidence. Gate at month granularity only (drops future-dated data errors).
+        view = store.where(lambda x: x["contract_ym"] <= asof[:7])
+    else:
+        view = store.as_of(t, lag_days=lag_days)
     market = MarketView(view.txs, asof[:7])
     idx = PriceIndex.load()
     ctx = {"asof_ym": asof[:7], "asof_date": t, "index": idx,
