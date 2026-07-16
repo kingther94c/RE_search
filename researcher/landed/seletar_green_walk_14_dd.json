@@ -1,0 +1,248 @@
+{
+  "address": "14 Seletar Green Walk",
+  "address_zh": "14 Seletar Green Walk（Luxus Hills）",
+  "postal": "805248",
+  "lat": 1.379985,
+  "lon": 103.874095,
+  "as_of": "2026-07-16",
+  "archetype": "recently-built turnkey",
+  "archetype_zh": "近年新建、交钥匙型（开发商楼盘，<10 年）",
+  "archetype_note": "Developer-built terrace, completed ~2019-2020 (Tier-2 claim). Buildability and rebuild economics are MOOT for this archetype and are deliberately not modelled. The DD weight sits on defects/build quality, the estate's surroundings, and the legal land area.",
+  "archetype_note_zh": "开发商建造、约 2019–2020 年完工（Tier-2 说法）。此类资产的可建性与重建经济学不适用，本报告刻意不做该模型。DD 重心在缺陷与施工质量、周边环境、以及法定土地面积。",
+
+  "verdict": {
+    "call": "PROCEED to DD-2 + site visit — no desk-level killer found. PRICE CALL BLOCKED.",
+    "call_zh": "建议进入 DD-2 与实地看房 —— 桌面层面未发现致命项。定价结论因 Tier-1 不可用而阻断。",
+    "detail": "Nothing found at DD-1 kills this address. Two surroundings items are material and priced, not fatal: a 5.8 ha BUSINESS 2 (heavy-industrial) parcel 151 m due south, and an undecided RESERVE SITE 209 m ESE. Both sit behind a zoned park. The school position is strong and robust (Rosyth 0.80 km). The binding constraints are (a) Tier-1 transaction data is unavailable, so no land-psf or fair value can be stated, and (b) the approved plans are seller-gated.",
+    "detail_zh": "DD-1 层面没有任何一项足以否决此地址。两项周边因素属重大但可定价、非致命：正南 151m 的 5.8 公顷 BUSINESS 2（重工业）地块，以及东南偏东 209m 用途未定的 RESERVE SITE，两者之间均隔着法定公园。学区位置强且稳健（Rosyth 0.80km）。真正的约束是：(a) Tier-1 成交数据不可用，无法给出 land-psf 或公允价值；(b) 批准图纸受卖方授权闸门限制。"
+  },
+
+  "dd1": [
+    {"item": "Address / geocode", "item_zh": "地址与坐标",
+     "value": "blk_no=14, road=SELETAR GREEN WALK, postal 805248, (1.379985, 103.874095). House-level, road asserted.",
+     "value_zh": "门牌 14，SELETAR GREEN WALK，邮编 805248，(1.379985, 103.874095)。房级精度，路名已断言校验。",
+     "source": "OneMap search API (researcher/sources/onemap.py)", "date": "2026-07-16"},
+
+    {"item": "Street structure", "item_zh": "街道结构",
+     "value": "78 houses: odd 1-77 (39) north side, even 2-78 (39) south side. Street runs E-W ~314 m; sides ~54 m apart. #14 is on the SOUTH side, 7th from the west end.",
+     "value_zh": "共 78 户：北侧单号 1–77（39 户），南侧双号 2–78（39 户）。街道东西走向约 314m，两侧相距约 54m。#14 位于南侧，自西端起第 7 户。",
+     "source": "OneMap postal probe 805200-805280, every house resolved individually", "date": "2026-07-16"},
+
+    {"item": "MP2025 zoning", "item_zh": "MP2025 分区",
+     "value": "RESIDENTIAL, GPR = LND (landed — no numeric plot ratio).",
+     "value_zh": "RESIDENTIAL（住宅），GPR = LND（有地住宅，无数值容积率）。",
+     "source": "URA Master Plan 2025 Land Use layer, data.gov.sg d_a8c3546b26712e35021f3a681d0353ae. MP2025 gazetted 1 Dec 2025; layer updated 2025-12-30.", "date": "2026-07-16"},
+
+    {"item": "Landed housing control", "item_zh": "有地住宅管制",
+     "value": "MIXED LANDED, envelope = 3-STOREY ENVELOPE. Mixed = terrace/semi-D/detached all permissible in the area; the 3-storey envelope applies to neighbours too.",
+     "value_zh": "MIXED LANDED（混合有地），包络控制 = 3-STOREY ENVELOPE（三层包络）。Mixed 意味着区内排屋/半独立/独立皆可；三层包络同样适用于邻居。",
+     "source": "URA MP2025 SDCP Landed Housing Area layer, data.gov.sg d_70a5a4b67d9171dc0db6f6fd259a3215", "date": "2026-07-16"},
+
+    {"item": "Rosyth School", "item_zh": "Rosyth School（乐赛学校）",
+     "value": "0.80 km — WITHIN 1 km. 21 Serangoon North Ave 4. 200 m of headroom, and our method over-estimates (see note), so the conclusion is robust.",
+     "value_zh": "0.80 km —— 在 1km 内。地址 21 Serangoon North Ave 4。距 1km 线尚有 200m 余量，且本方法系高估（见注），故结论稳健。",
+     "source": "OneMap haversine to school point. NOTE: MOE measures from the School Land Boundary via OneMap SchoolQuery — nearer than the point, so 0.80 km is a conservative upper bound.", "date": "2026-07-16"},
+
+    {"item": "Hougang Primary", "item_zh": "Hougang Primary",
+     "value": "0.80 km — WITHIN 1 km. 1 Hougang Street 93. Two primaries inside the ring.",
+     "value_zh": "0.80 km —— 在 1km 内。地址 1 Hougang Street 93。环内共两所小学。",
+     "source": "OneMap", "date": "2026-07-16"},
+
+    {"item": "Schools 1-2 km", "item_zh": "1–2km 学校",
+     "value": "Fernvale Pri 1.15 km · Yio Chu Kang Pri 1.30 km · Xinmin Pri 1.38 km.",
+     "value_zh": "Fernvale 小学 1.15 km · Yio Chu Kang 小学 1.30 km · Xinmin 小学 1.38 km。",
+     "source": "OneMap", "date": "2026-07-16"},
+
+    {"item": "Luxus Hills Park", "item_zh": "Luxus Hills 公园",
+     "value": "21,694 sqm (2.2 ha) zoned PARK, nearest edge 11 m. Extends ~100 m deep directly south of the house — a zoned, durable buffer that cannot be built out as housing or industry.",
+     "value_zh": "21,694 ㎡（2.2 公顷），法定 PARK 分区，最近边界 11m。自房屋正南延伸约 100m —— 受分区保护的永久缓冲，不会变成住宅或工业。",
+     "source": "MP2025 Land Use layer + OneMap (named 'LUXUS HILLS PARK', 116 m)", "date": "2026-07-16"},
+
+    {"item": "BUSINESS 2 parcel", "item_zh": "BUSINESS 2 地块",
+     "value": "58,418 sqm (5.8 ha), GPR 2.5, nearest edge 151 m DUE SOUTH (bearing 185 deg). Transect south: house -> park (20-100 m) -> road (120-140 m) -> Business 2 (160-280 m). Separated by the park + a road, NOT adjacent.",
+     "value_zh": "58,418 ㎡（5.8 公顷），GPR 2.5，最近边界正南 151m（方位 185°）。正南剖面：房屋 → 公园(20–100m) → 道路(120–140m) → Business 2(160–280m)。中间隔着公园与道路，并非紧邻。",
+     "source": "MP2025 Land Use layer, nearest-polygon-edge computation + zoning transect", "date": "2026-07-16",
+     "severity": "amber"},
+
+    {"item": "RESERVE SITE", "item_zh": "RESERVE SITE（保留地）",
+     "value": "3,235 sqm, nearest edge 209 m ESE (bearing 118 deg). Reserve = URA has not committed a use. A material unknown that no desk check can close.",
+     "value_zh": "3,235 ㎡，最近边界东南偏东 209m（方位 118°）。Reserve 意味着 URA 尚未确定用途 —— 桌面检查无法关闭的重大未知数。",
+     "source": "MP2025 Land Use layer", "date": "2026-07-16",
+     "severity": "amber"},
+
+    {"item": "Other nearby zoning", "item_zh": "其他邻近分区",
+     "value": "BUSINESS 1 207 m SE (GPR 2.5, 2.9 ha) · WATERBODY 175 m ESE (2.0 ha) · TRANSPORT FACILITIES 307 m · PLACE OF WORSHIP 317 m · RESIDENTIAL GPR 3.0 at 326 m (high-rise) · EDUCATIONAL 442 m.",
+     "value_zh": "BUSINESS 1 东南 207m（GPR 2.5，2.9 公顷）· WATERBODY 东南偏东 175m（2.0 公顷）· 交通设施 307m · 宗教场所 317m · RESIDENTIAL GPR 3.0 于 326m（高层）· 教育用地 442m。",
+     "source": "MP2025 Land Use layer, nearest-edge per zone within 1 km", "date": "2026-07-16"},
+
+    {"item": "UTILITY parcel — de-escalated", "item_zh": "UTILITY 地块 —— 已降级",
+     "value": "14.5 sqm at 66 m WNW. The AREA settles it: that is a feeder pillar / cable box, not a substation. Distance alone would have flagged this as a risk; it is not one.",
+     "value_zh": "14.5 ㎡，位于西北偏西 66m。面积即可定性：这是配电箱/电缆箱，不是变电站。仅凭距离会误报为风险 —— 它不是。",
+     "source": "MP2025 Land Use layer (SHAPE.AREA)", "date": "2026-07-16"},
+
+    {"item": "Flood", "item_zh": "洪水",
+     "value": "NOT on PUB's national flood-prone list (Nov 2025). CAVEAT: that list is ~36 locations for all of Singapore; nearest entry is 'Lorong Buangkok Area' ~2 km away. Absence carries near-zero evidence about this plot. This is NOT a finding of 'not flood-prone'.",
+     "value_zh": "不在 PUB 全国易涝清单（2025 年 11 月版）内。警告：该清单全国仅约 36 条，最近一条 'Lorong Buangkok Area' 在约 2km 外。不在清单上对单一地块几乎没有证据力 —— 这不等于「不易涝」。",
+     "source": "PUB List of Flood Prone Areas as at Nov 2025 (full list extracted and checked)", "date": "2025-11"},
+
+    {"item": "Tree Conservation Area", "item_zh": "树木保育区",
+     "value": "NOT in a TCA. Only two TCAs exist (gazetted 2 Aug 1991, South Central + Eastern Singapore); Seletar is north-east. No TCA alert applies — do not copy one in from a generic checklist.",
+     "value_zh": "不在 TCA 内。全国仅有两个 TCA（1991-08-02 宪报，位于中南部与东部）；Seletar 在东北部。TCA 预警不适用 —— 不要从通用清单照抄。",
+     "source": "NParks Parks & Trees Act / Tree Conservation Area dataset (data.gov.sg)", "date": "2026-07-16"},
+
+    {"item": "MRT — car-dependent", "item_zh": "地铁 —— 依赖开车",
+     "value": "Buangkok 2.15 km · Hougang 2.29 km · Sengkang 2.71 km · Ang Mo Kio 2.95 km. No station within walking distance. This is a structural characteristic of the address, not a soft one.",
+     "value_zh": "Buangkok 2.15km · Hougang 2.29km · Sengkang 2.71km · Ang Mo Kio 2.95km。无步行可达地铁站。这是该地址的结构性特征，非软性因素。",
+     "source": "OneMap", "date": "2026-07-16",
+     "severity": "amber"},
+
+    {"item": "Expressway noise", "item_zh": "快速路噪音",
+     "value": "None. Nearest expressway is the TPE at 4.79 km. Seletar Airport is 4.44 km — proximity does not support an aircraft-noise thesis; flight path would need separate evidence.",
+     "value_zh": "无。最近快速路 TPE 在 4.79km。Seletar 机场 4.44km —— 距离上不支持「航空噪音」的论断；航道影响需另行取证。",
+     "source": "OneMap", "date": "2026-07-16"},
+
+    {"item": "Amenities", "item_zh": "生活配套",
+     "value": "Greenwich V 0.99 km · The Seletar Mall 1.30 km · myVillage Serangoon Garden 1.93 km.",
+     "value_zh": "Greenwich V 0.99km · The Seletar Mall 1.30km · myVillage @ Serangoon Garden 1.93km。",
+     "source": "OneMap", "date": "2026-07-16"}
+  ],
+
+  "dd2": [
+    {"item": "Property Title Information (INLIS)", "item_zh": "产权资料 PTI（INLIS）",
+     "cost": "S$16.00", "status": "OUTSTANDING",
+     "gets": "Lot number and LEGAL lot area, Certified Plan number, tenure + lease commencement/expiry, mortgages/charges, caveats, court orders, and the Known Encroachment flag.",
+     "gets_zh": "地段号与法定土地面积、Certified Plan 编号、地契类型与起止日期、按揭/押记、caveat、法院命令，以及 Known Encroachment（已知越界）标记。",
+     "why": "The listing land area is unverified and estate-wide figures span 1,615-2,207 sqft. Tenure is claimed as '999 years from 1879' by a Tier-2 portal and has NOT been read off a title. S$16 settles both before any offer.",
+     "why_zh": "挂牌土地面积未经核实，且全区口径跨度 1,615–2,207 sqft。地契「999 年自 1879 年起」仅为 Tier-2 门户说法，未从产权文件读出。S$16 即可在出价前坐实这两项。"},
+
+    {"item": "Property Ownership Information (INLIS)", "item_zh": "业权资料 POI（INLIS）",
+     "cost": "S$5.25", "status": "OUTSTANDING",
+     "gets": "Registered owner.",
+     "gets_zh": "登记业主。",
+     "why": "Confirms who can actually sell, and whether the seller is the registered proprietor — also the person whose authorisation you need for the BCA plans.",
+     "why_zh": "确认谁真正有权出售、卖方是否为登记业主 —— 此人也正是 BCA 图纸授权的必需签署人。"}
+  ],
+
+  "dd2_note": "SLA disclaims the address-to-lot correlation and the accuracy of data extracted from instruments. Search by LOT and verify the address maps to it. Title shows an easement or covenant EXISTS; what it does to your plans is a lawyer's/QP's call (DD-3).",
+  "dd2_note_zh": "SLA 明确声明不对「地址↔地段」对应关系及从文书提取的数据准确性负责。应按地段号检索并核对地址映射。产权文件只显示地役权/限制性契约是否「存在」；其对方案的实际影响属律师与 QP 判断（DD-3）。",
+
+  "dd3_alerts": [
+    {"item": "BCA approved architectural & structural plans",
+     "item_zh": "BCA 批准的建筑与结构图纸",
+     "why": "You CANNOT buy these. BCA's Plan Purchase admits only the registered proprietor, their corporation's staff, an MCST chairman, or an authorised person holding the owner's SIGNED AUTHORISATION plus the owner's property tax statement. Without the plans there is no way to compare as-built against as-approved — the only method for detecting unauthorised works, which become YOUR liability after completion.",
+     "why_zh": "买家自己买不到。BCA 图纸购买仅限：登记业主、业主公司职员、MCST 主席，或持有业主签署授权书及业主房产税单的受权代理人。没有图纸就无法比对「实建 vs 批准」—— 而这是发现违建的唯一方法，且违建责任在成交后由买家承担。",
+     "who": "Seller must furnish or authorise; then architect/PE to compare against site",
+     "who_zh": "须由卖方提供或授权；再由建筑师/结构工程师现场比对",
+     "cost": "Plans fee + ~S$1-3k professional comparison",
+     "when": "OTP CONDITION — or obtain before offering",
+     "when_zh": "写入 OTP 条件 —— 或在出价前取得",
+     "seller_gated": true,
+     "severity": "high",
+     "note": "A seller who will not authorise is itself the finding. Mitigating factor for THIS house: developer-built ~2019-2020, so the original plans should be clean; the real question is any A&A done by the current owner since handover.",
+     "note_zh": "卖方拒绝授权本身就是结论。本案的缓和因素：2019–2020 年开发商建造，原始图纸理应干净；真正要查的是现业主自交房以来是否有加建改建。"},
+
+    {"item": "Business 2 land 151 m south — current use and operating reality",
+     "item_zh": "正南 151m 的 Business 2 地块 —— 当前用途与实际运作",
+     "why": "Zoning says what MAY be built (GPR 2.5, heavy-industrial category); it does not say what is there today, its operating hours, lorry routes, or noise. The named industrial buildings OneMap knows (RFC, TEPL on Serangoon North Ave 5) are 850 m+ away, which suggests the 151 m parcel may be low-intensity or vacant TODAY — that makes it a FUTURE risk at GPR 2.5, not necessarily a present nuisance. Neither reading can be settled from a map.",
+     "why_zh": "分区只说明「可以建什么」（GPR 2.5，重工业类别），不说明今天那里有什么、作业时间、货车路线与噪音。OneMap 已知的工业楼（Serangoon North Ave 5 的 RFC、TEPL）都在 850m 以外，暗示这块 151m 的地目前可能强度较低或空置 —— 那它就是 GPR 2.5 之下的「未来风险」，未必是当下滋扰。两种可能都无法靠地图定论。",
+     "who": "You, on site — weekday working hours + after 9pm",
+     "who_zh": "本人实地 —— 工作日上班时段 + 晚 9 点后",
+     "cost": "Free (time)",
+     "when": "PRE-OFFER site visit",
+     "when_zh": "出价前实地看房",
+     "seller_gated": false,
+     "severity": "high"},
+
+    {"item": "Reserve Site 209 m ESE — future use undecided",
+     "item_zh": "东南偏东 209m 的 Reserve Site —— 用途未定",
+     "why": "'Reserve Site' means URA has not committed a use. There is no source that can tell you what it becomes. It is 3,235 sqm — small, which bounds the downside — but it cannot be closed by any amount of desk or professional work.",
+     "why_zh": "「Reserve Site」意味着 URA 尚未确定用途。没有任何来源能告诉你它将变成什么。面积 3,235 ㎡ 较小，下行有界 —— 但无论桌面还是专业工作都无法关闭这一项。",
+     "who": "Nobody — monitor URA amendments",
+     "who_zh": "无人可定 —— 持续关注 URA 修订公告",
+     "cost": "Free",
+     "when": "PRICED AND ACCEPTED",
+     "when_zh": "计入价格并接受",
+     "seller_gated": false,
+     "severity": "medium"},
+
+    {"item": "Legal land area and exact tenure",
+     "item_zh": "法定土地面积与准确地契",
+     "why": "Every area and tenure figure currently held for this house is a Tier-2 portal claim. Portal land areas across the estate span 1,615-2,207 sqft, and '999 years from 1879' has not been read off a title. Land area is the denominator of land-psf — the whole valuation rests on it.",
+     "why_zh": "目前掌握的所有面积与地契数字均为 Tier-2 门户说法。全区门户土地面积跨度 1,615–2,207 sqft，「999 年自 1879 年起」也未从产权文件读出。土地面积是 land-psf 的分母 —— 整个估值都压在它上面。",
+     "who": "You — INLIS PTI (this is DD-2, S$16). Boundary itself = SLA Certified Plan + registered surveyor if it ever matters.",
+     "who_zh": "本人 —— INLIS PTI（属 DD-2，S$16）。若需确认实际界址：SLA Certified Plan + 注册测量师。",
+     "cost": "S$16 (title) / S$2-4k (survey, only if boundary disputed)",
+     "when": "PRE-OFFER",
+     "when_zh": "出价前",
+     "seller_gated": false,
+     "severity": "high"},
+
+    {"item": "Defects and build quality (the turnkey archetype's main risk)",
+     "item_zh": "缺陷与施工质量（交钥匙型资产的主要风险）",
+     "why": "~6-7 years old, so the developer's Defects Liability Period is long expired and this is a resale under caveat emptor. Waterproofing, roof, sanitary line, and any owner A&A are the live questions. Rebuild economics are NOT the question for this archetype and are not modelled here.",
+     "why_zh": "房龄约 6–7 年，开发商缺陷责任期早已届满，且属二手买卖，适用 caveat emptor（买者自负）。真正的问题是防水、屋面、排污管线，以及业主自行加建改建。重建经济学对此类资产不适用，本报告不做该模型。",
+     "who": "Building inspector; CCTV the sanitary line",
+     "who_zh": "验房师；排污管线 CCTV 内窥",
+     "cost": "~S$1-2k",
+     "when": "IN-OPTION (fits a 14-day window)",
+     "when_zh": "期权期内（可在 14 天内完成）",
+     "seller_gated": false,
+     "severity": "medium"},
+
+    {"item": "Does this plot pond?",
+     "item_zh": "这块地是否积水？",
+     "why": "The PUB list cannot answer this — 36 national entries do not clear one plot. There is a 2.0 ha waterbody 175 m ESE. Plot-vs-road level and where water actually goes are visible only on site, ideally in rain.",
+     "why_zh": "PUB 清单回答不了 —— 全国 36 条无法为单一地块背书。东南偏东 175m 有 2.0 公顷水体。地块与路面高差、雨水实际流向，只有实地（最好在雨中）才看得到。",
+     "who": "You, on site during/after heavy rain; neighbours",
+     "who_zh": "本人在大雨中/雨后实地；询问邻居",
+     "cost": "Free (time)",
+     "when": "PRE-OFFER if possible, else IN-OPTION",
+     "when_zh": "尽量出价前；否则期权期内",
+     "seller_gated": false,
+     "severity": "medium"},
+
+    {"item": "Land psf, comps and fair value",
+     "item_zh": "土地单价、可比成交与公允价值",
+     "why": "BLOCKED. Investment Suite is not running (adb reports no devices) and no URA_ACCESS_KEY is configured, so neither Tier-1 source is reachable. Per the skill's source rule this report states NO land-psf and NO fair value rather than silently substituting portal figures.",
+     "why_zh": "已阻断。Investment Suite 未运行（adb 无设备），且未配置 URA_ACCESS_KEY，两个 Tier-1 来源均不可达。依据 skill 的来源规则，本报告不给出 land-psf 与公允价值，而非悄悄用门户数字顶替。",
+     "who": "User — start the emulator / sign in, or register a free URA Data Service key",
+     "who_zh": "用户 —— 启动模拟器并登录，或注册免费的 URA Data Service key",
+     "cost": "Free",
+     "when": "BEFORE any price conversation",
+     "when_zh": "任何价格讨论之前",
+     "seller_gated": false,
+     "severity": "high"}
+  ],
+
+  "blocked": [
+    "PropNex Investment Suite unavailable — `adb devices` returns no devices attached. No Tier-1 land-psf, comps, rents or per-unit AVM.",
+    "URA Data Service unavailable — URA_ACCESS_KEY not set, no cache at research/ura_cache/, no researcher/sources/ura_transactions.json. Official caveat data also unreachable.",
+    "Consequence: this report deliberately contains NO valuation. Every DD-1 fact below stands on its own official source and is unaffected."
+  ],
+  "blocked_zh": [
+    "PropNex Investment Suite 不可用 —— `adb devices` 显示无设备连接。无 Tier-1 土地单价、可比成交、租金或单户 AVM。",
+    "URA Data Service 不可用 —— 未设置 URA_ACCESS_KEY，research/ura_cache/ 无缓存，researcher/sources/ura_transactions.json 不存在。官方 caveat 数据同样不可达。",
+    "后果：本报告刻意不含任何估值。以下每一条 DD-1 事实均有独立官方来源，不受影响。"
+  ],
+
+  "claims": [
+    {"claim": "Estate: Luxus Hills, Phase 10 'Contemporary Collection'; developer Singapore United Estates (Pte) Ltd, a Bukit Sembawang Estates subsidiary.",
+     "claim_zh": "楼盘：Luxus Hills 第 10 期「Contemporary Collection」；开发商 Singapore United Estates (Pte) Ltd，Bukit Sembawang Estates 子公司。",
+     "tier": "Tier-2/3 portals", "status": "unreconciled"},
+    {"claim": "Tenure 999 years from 1879 (implying expiry ~2878). Completion 2019 or 2020 — sources conflict.",
+     "claim_zh": "地契 999 年自 1879 年起（推算到期约 2878 年）。完工 2019 或 2020 年 —— 来源互相矛盾。",
+     "tier": "Tier-2 portals", "status": "unreconciled — settle with INLIS PTI (S$16)"},
+    {"claim": "Unit counts quoted as 38 / 39 / 78 across sources.",
+     "claim_zh": "各来源引用的户数为 38 / 39 / 78 不等。",
+     "tier": "Tier-2 portals", "status": "RESOLVED at DD-1 — OneMap confirms 78 addresses on Seletar Green Walk (odd 1-77 + even 2-78). The 38/39 figures are sub-phase counts, not the street."},
+    {"claim": "Estate transactions: Dec 2025 S$4.60m (1,644 sqft) and S$5.18m (2,207 sqft); Sep 2025 S$4.80m-5.05m; median ~S$4.80m. Quoted psf S$2,202-3,041 (avg S$2,671) alongside a median psf of ~S$2,031.",
+     "claim_zh": "全区成交：2025 年 12 月 S$4.60m（1,644 sqft）与 S$5.18m（2,207 sqft）；2025 年 9 月 S$4.80m–5.05m；中位约 S$4.80m。引用单价 S$2,202–3,041（均值 S$2,671），另有中位单价约 S$2,031。",
+     "tier": "Tier-2 portals", "status": "DO NOT USE — the psf figures are internally inconsistent, which is the classic land-psf vs built-up-psf conflation. Needs Tier-1 to disambiguate. Listed here as claims only."}
+  ],
+
+  "tax_clock": {
+    "note": "SSD changed on 4 Jul 2025: residential bought on/after that date has a 4-YEAR holding period (was 3) with rates 4pp higher at each tier (4%-16%). No transition period. The clock runs off the OTP-exercise date. On any hold under 4 years this dominates the cost stack.",
+    "note_zh": "SSD 于 2025-07-04 变更：该日及之后购入的住宅，持有期为 4 年（原 3 年），各档税率各上调 4 个百分点（4%–16%），无过渡期。起算以行使 OTP 之日为准。任何短于 4 年的持有期，此项将主导成本结构。",
+    "source": "MAS/IRAS, effective 4 Jul 2025"
+  }
+}
