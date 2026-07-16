@@ -5,6 +5,22 @@ impact · assets affected.
 
 ---
 
+## 2026-07-16 — L0 landed data foundation DONE — GL0 PASS (EXP-0009)
+- **What:** the L-track's data spine. `store.is_pure_landed()` (Land + exact landed type;
+  strata-landed routed out; Apartment+Land walk-ups excluded), `LANDED_PSF_BAND [100,
+  6500]` (cuts 0 — both extremes verified real: 107 psf short-lease / 5,756 psf Emerald
+  Hill), `subjects(kind='pure-landed')` with land-area defaults, MarketView landed
+  support (street index + spatial grid), **same-plot matcher** `landed_pairs.py` (5
+  anti-collision rules) → **685 plots / 850 repeat pairs / 395 with gap ≤18mo**, and
+  `research/audit_landed.py` with the GL0 gate (re-runnable, --json). 123 tests (+4).
+- **Why:** roadmap L0 — no landed research is trustworthy before hygiene + measurement.
+- **Evidence:** GL0 PASS — 10,789 pure-landed resale subjects (≥10k), 61 months (≥48),
+  band from data, matcher hand-spot-check 24/25 plausible (the 1 miss motivated matcher
+  rule 5, which removes its class: ≥2-New-Sale mirror-unit keys). Open finding carried
+  to L1: 21.4% exact-copy row involvement (real-vs-double-entry unresolvable from URA;
+  liquidity counts carry the bound).
+- **Assets affected:** landed (L1 unblocked: honest leaderboard + noise-floor study).
+
 ## 2026-07-16 — Fable review round 2: LIVE valuations now see the current partial month
 - **What:** `value_unit.value` LIVE mode gates at month granularity (`contract_ym <=
   asof month`) instead of running the backtest's month-END visibility convention with

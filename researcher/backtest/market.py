@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import math
 
-from .store import CONDO_TYPES, months_between
+from .store import CONDO_TYPES, PURE_LANDED_TYPES, months_between
 
 _CELL = 1000.0  # spatial grid cell = the nearest-project search radius (metres, SVY21)
 
@@ -23,6 +23,9 @@ class MarketView:
         self._condo: list[dict] | None = None
         self._grid: dict[tuple[int, int], list[dict]] | None = None
         self._seg_recent: dict[tuple[str, int], list[dict]] = {}
+        self._landed: list[dict] | None = None
+        self._landed_street: dict[str, list[dict]] | None = None
+        self._landed_grid: dict[tuple[int, int], list[dict]] | None = None
         # generic per-month memo for fitted models (e.g. the hedonic AVM fit once/month)
         self.cache: dict = {}
 
@@ -70,3 +73,42 @@ class MarketView:
                 if t["market_segment"] == seg
                 and 0 <= months_between(t["contract_ym"], self.asof_ym) < months]
         return self._seg_recent[key]
+
+    # ------------------------------------------------------------ landed (L0 mirrors)
+    def landed(self) -> list[dict]:
+        """Pure-landed pool (Land-titled Terrace/Semi-D/Detached; land psf/area)."""
+        if self._landed is None:
+            self._landed = [t for t in self.txs
+                            if t["type_of_area"].lower() == "land"
+                            and t["property_type"] in PURE_LANDED_TYPES]
+        return self._landed
+
+    def landed_on_street(self, street: str) -> list[dict]:
+        """Pure-landed caveats on a street, newest-first — the landed analogue of
+        same_project (streets are the finest grouping URA gives landed)."""
+        if self._landed_street is None:
+            d: dict[str, list[dict]] = {}
+            for t in self.landed():
+                d.setdefault(t["street"].strip().casefold(), []).append(t)
+            for v in d.values():
+                v.sort(key=lambda t: t["contract_ym"], reverse=True)
+            self._landed_street = d
+        return self._landed_street.get((street or "").strip().casefold(), [])
+
+    def landed_near(self, x: float, y: float, radius_m: float = _CELL) -> list[dict]:
+        """Pure-landed caveats within radius_m of (x, y) — own grid, mirrors condo_near."""
+        if self._landed_grid is None:
+            g: dict[tuple[int, int], list[dict]] = {}
+            for t in self.landed():
+                if t.get("x") is None or t.get("y") is None:
+                    continue
+                g.setdefault((int(t["x"] // _CELL), int(t["y"] // _CELL)), []).append(t)
+            self._landed_grid = g
+        cx, cy = int(x // _CELL), int(y // _CELL)
+        out = []
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                for t in self._landed_grid.get((cx + dx, cy + dy), ()):
+                    if math.hypot(t["x"] - x, t["y"] - y) <= radius_m:
+                        out.append(t)
+        return out

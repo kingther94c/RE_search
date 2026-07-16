@@ -18,9 +18,10 @@ from .index import PriceIndex
 from .market import MarketView
 from .store import TransactionStore, month_end
 
-# rich per-row fields kept for error-slicing (mandate's 12 dimensions)
-_KEEP = ("id", "project", "market_segment", "district", "property_type",
-         "tenure_type", "area_sqft", "floor_lo", "contract_ym")
+# rich per-row fields kept for error-slicing (mandate's 12 dimensions).
+# street/type_of_area joined for the L-track: landed slices key on street liquidity.
+_KEEP = ("id", "project", "street", "market_segment", "district", "property_type",
+         "type_of_area", "tenure_type", "area_sqft", "floor_lo", "contract_ym")
 
 
 def _prev_ym(ym: str) -> str:

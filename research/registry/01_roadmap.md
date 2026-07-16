@@ -9,7 +9,7 @@ work its plan. Amend via changelog, not silently._
 
 | Track | Status |
 |---|---|
-| **Landed (L0–L4)** | **← ACTIVE. Goal: ship `landed-valuation` (hostile-review PASS ≥8) in ~4–6 sessions** |
+| **Landed (L0–L4)** | **← ACTIVE — L0 DONE (GL0 PASS, EXP-0009, 2026-07-16); next: L1 baseline + noise floor. Goal: ship `landed-valuation` (hostile-review PASS ≥8) in ~4–6 sessions** |
 | Condo resale | **SHIPPED & FROZEN** — `condo-resale-valuation` accepted (PASS 8.7/10; engine v2.1: 3.71% median APE / 100% coverage / ~82–85% held-out interval). Backlog below; nothing ships without its gate |
 | New launch (was R7) | PARKED (plan preserved below) |
 | IS calibration bridge (was R4) | PARKED — becomes relevant again for condo hard-cases and landed condition evidence |
@@ -78,6 +78,12 @@ landed MarketView support.
 **Gate GL0.** ≥10k pure-landed resale subjects; ≥48 usable months; hygiene rules documented;
 matcher spot-check ≥80% plausible; land-psf band set from data. Fail → data strategy
 escalation before any research.
+
+**→ OUTCOME (2026-07-16): PASS — EXP-0009.** 10,789 subjects / 61 months / band [100,
+6500] wraps verified-real extremes (cuts 0) / matcher 685 plots → 850 pairs (395 ≤18mo),
+spot-check 24/25 / rules R1–R5 in `research/audit_landed.py`. Open finding carried to L1:
+21.4% exact-copy row involvement (twin-sale vs double-entry unresolvable from URA alone —
+street-liquidity counts carry the bound). Strata-landed (1,629) routed out on record.
 
 ---
 

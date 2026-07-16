@@ -239,6 +239,96 @@ def test_ensemble_pooled_e2_blends():
     assert est and est["price"] is not None and est["method"] == "E2_ensemble_pooled"
 
 
+# ----------------------------------------------------- landed L0 (EXP-0009 foundation)
+def _ltx(street, ym, price, area_sqm, ptype="Terrace", type_of_area="Land",
+         sale="Resale", units=1, x=0.0, y=0.0):
+    area_sqft = area_sqm * 10.7639
+    return {"id": f"L|{street}|{ym}|{int(price)}|{area_sqm}", "project": "LANDED HOUSING",
+            "street": street, "market_segment": "OCR", "district": "19",
+            "property_type": ptype, "type_of_area": type_of_area, "type_of_sale": sale,
+            "tenure_raw": "Freehold", "tenure_type": "freehold", "lease_start": None,
+            "contract_ym": ym, "area_sqm": area_sqm, "area_sqft": round(area_sqft, 1),
+            "price": float(price), "psf": round(price / area_sqft, 1),
+            "floor_range": "", "floor_lo": None, "floor_hi": None,
+            "x": x, "y": y, "no_of_units": units}
+
+
+def test_pure_landed_classification():
+    txs = [_ltx("AIDA ST", "2024-01", 3_000_000, 150.0),                    # pure
+           _ltx("AIDA ST", "2024-02", 2_000_000, 120.0, ptype="Strata Terrace",
+                type_of_area="Strata"),                                     # strata-landed
+           _ltx("JOO AVE", "2024-03", 1_800_000, 140.0, ptype="Apartment"), # walk-up stray
+           _tx("CONDO", "2024-04", 2000)]                                   # condo
+    store = TransactionStore(txs)
+    assert [t["street"] for t in store.is_pure_landed().txs] == ["AIDA ST"]
+    assert [t["property_type"] for t in store.is_strata_landed().txs] == ["Strata Terrace"]
+    # the broad landed universe keeps all three landed-ish rows (audit view)
+    assert len(store.is_landed()) == 3
+    # and the condo universe is untouched by any of them
+    assert [t["project"] for t in store.is_condo().txs] == ["CONDO"]
+
+
+def test_landed_subjects_use_land_area_defaults():
+    # 743 sqm ~= 8,000 sqft: a normal landed plot that condo defaults (<=6,000) would cut
+    store = TransactionStore([_ltx("BIG PLOT WAY", "2024-05", 9_000_000, 743.0)])
+    assert len(store.subjects(kind="pure-landed")) == 1
+    assert store.subjects(kind="condo") == []
+
+
+def test_marketview_landed_indexes():
+    from researcher.backtest.market import MarketView
+    txs = [_ltx("AIDA ST", "2024-01", 3_000_000, 150.0, x=0, y=0),
+           _ltx("AIDA ST", "2024-03", 3_200_000, 160.0, x=100, y=0),
+           _ltx("FAR RD", "2024-02", 2_500_000, 140.0, x=9000, y=0),
+           _ltx("AIDA ST", "2024-02", 2_000_000, 120.0, ptype="Strata Terrace",
+                type_of_area="Strata"),                       # not in the pure pool
+           _tx("CONDO", "2024-02", 2000, x=0, y=0)]           # nor condos
+    mkt = MarketView(txs, "2024-06")
+    assert len(mkt.landed()) == 3
+    street = mkt.landed_on_street("aida st")                  # casefolded lookup
+    assert [r["contract_ym"] for r in street] == ["2024-03", "2024-01"]  # newest first
+    near = mkt.landed_near(0, 0, 1000)
+    assert {r["street"] for r in near} == {"AIDA ST"}         # FAR RD is 9km out
+
+
+def test_same_plot_matcher_rules():
+    from researcher.backtest.landed_pairs import repeat_pairs, same_plot_groups
+    txs = [
+        # plot A: 3 clean trades -> 2 consecutive pairs
+        _ltx("AIDA ST", "2022-01", 3_000_000, 150.0),
+        _ltx("AIDA ST", "2023-01", 3_300_000, 150.0),
+        _ltx("AIDA ST", "2024-01", 3_600_000, 150.0),
+        # plot B: exact copy (same month+price) collapses to ONE trade -> no pair
+        _ltx("BEDOK WALK", "2023-05", 2_800_000, 200.0),
+        _ltx("BEDOK WALK", "2023-05", 2_800_000, 200.0),
+        # plot C: same month, DIFFERENT price = twin plots -> key dropped
+        _ltx("CHUAN DR", "2023-06", 2_000_000, 180.0),
+        _ltx("CHUAN DR", "2023-06", 2_100_000, 180.0),
+        # plot D: 5 distinct trades = cookie-cutter development -> key dropped
+        *[_ltx("DEV ROW", f"2023-{m:02d}", 1_500_000 + m, 170.0) for m in range(1, 6)],
+        # plot E: two New Sales months apart = mirror units -> key dropped
+        _ltx("MIRROR LANE", "2022-10", 6_400_000, 278.4, sale="New Sale"),
+        _ltx("MIRROR LANE", "2022-12", 6_000_000, 278.4, sale="New Sale"),
+        # plot F: Resale -> New Sale = redevelopment pair, KEPT
+        _ltx("REBUILD AVE", "2022-03", 3_000_000, 210.0),
+        _ltx("REBUILD AVE", "2024-03", 6_000_000, 210.0, sale="New Sale"),
+    ]
+    groups = same_plot_groups(txs)
+    assert set(groups) == {("AIDA ST", 150.0, "Terrace"),
+                           ("REBUILD AVE", 210.0, "Terrace")}
+    pairs = repeat_pairs(txs)
+    assert len(pairs) == 3
+    aida = [p for p in pairs if p["street"] == "AIDA ST"]
+    assert aida[0]["gap_months"] == 12 and abs(aida[0]["ratio"] - 1.1) < 1e-9
+    assert abs(aida[0]["annualized"] - 0.1) < 1e-9
+    rebuild = [p for p in pairs if p["street"] == "REBUILD AVE"][0]
+    assert (rebuild["a_sale"], rebuild["b_sale"]) == ("Resale", "New Sale")
+    # sub-3-month gaps are not annualized (too short to be honest)
+    short = repeat_pairs([_ltx("E ST", "2024-01", 1_000_000, 90.0),
+                          _ltx("E ST", "2024-02", 1_050_000, 90.0)])
+    assert short[0]["annualized"] is None
+
+
 def test_conformal_table_matches_current_c1():
     """The conformal table is calibrated on C1 residuals. If candidates.py changes without
     a recalibration (run.py --dump -> analyze_r3.py), the band multipliers silently drift

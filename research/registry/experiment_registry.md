@@ -5,6 +5,54 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0009 — L0 landed data foundation: hygiene, land-psf band, same-plot matcher (2026-07-16)
+- **Status: DONE. GL0 GATE: PASS** (`research/audit_landed.py` — re-runnable, `--json`
+  machine-readable, `--pairs` prints the spot-check artifact).
+- **Slice (2026-07-15 snapshot):** landed universe 12,990 = **pure-landed 11,344**
+  (post-hygiene: Terrace 6,033 / Semi-D 3,693 / Detached 1,585; OCR 7,584 / RCR 2,303 /
+  CCR 1,424; FH 7,961 / 999yr 1,723 / LH 1,627) + **strata-landed 1,629 ROUTED OUT**
+  (orphaned sub-market — neither engine values it; condo backlog #4) + **17 stray
+  Apartment+Land rows EXCLUDED** (walk-up / whole-building deals under placeholder
+  projects like 'RESIDENTIAL APARTMENTS'; 15 after bulk — the roadmap's "15 stray rows"
+  reconciled). **Rule R1: pure-landed requires BOTH type_of_area='Land' AND exact type in
+  {Terrace, Semi-detached, Detached}.**
+- **Land-psf band (R3):** `LANDED_PSF_BAND = [100, 6500]`, cuts **0 rows** — deliberate:
+  BOTH extremes verified REAL (p0 = 107 psf = 70-yr-lease-from-1964 terrace with ~8 years
+  left, Jalan Chempaka Kuning; p100 = 5,756 psf = Emerald Hill conservation terrace), and
+  psf<700 is 81% leasehold — a genuine decaying-lease sub-market the band must NOT trim.
+  The band wraps the verified range as a future-junk guard (percentile method, condo
+  analogue [500, 6500] which does cut errors).
+- **Exact-copy finding (OPEN, measured not resolved):** 21.4% of pure-landed rows sit in
+  same-(street, exact-area, month, price) copies; 95% Resale; **zero normalized-id
+  collisions → NOT pull/batch overlap — URA itself lists them as separate entries.**
+  Twin-pair sales vs registry double-entry is unresolvable from URA alone. Decision:
+  keep in store (condo cross-check: its 4.4% same-key rate is launch-batch pricing =
+  real units, so global dedup is wrong), collapse inside the matcher (dt=0 carries no
+  signal either way), and carry the documented ≤~21% overstatement bound on
+  street-liquidity counts into L1.
+- **Same-plot matcher** (`researcher/backtest/landed_pairs.py`): key = (street, exact
+  area_sqm, property_type) + 5 rules — dedup dt=0 copies; >4 trades/key = development
+  collision; same-month different-price = twin plots; **≥2 New Sales = mirror units (18
+  keys / 21 New→New pairs killed — 20 of them would have contaminated the ≤18mo
+  noise-floor fuel)**; Resale→New Sale KEPT deliberately (real redevelopment pairs, n=5,
+  the L2e signal). Consecutive-trade pairs only (one holding period each).
+- **Result:** **685 plots → 850 pairs; 395 with gap ≤18mo** (L1 noise-floor fuel);
+  annualized p50 **+7.6%** (plausible for the 2021-26 landed run); wild movers (>|30/60%|
+  ann.) 7.8% = rebuild signatures, surfaced not filtered.
+- **Spot-check (by hand, seed 7, 25 pairs):** **24/25 structurally plausible** (gate bar
+  ≥80%); the 1 miss — JALAN GRISEK New→New mirror pair — motivated rule 5, which removes
+  its whole class. 3 pairs carry clear rebuild signatures (Alnwick 350sqm ×1.93/27mo,
+  Jalan Chegar ×2.08/16mo, Joo Chiat ×1.82/21mo): same-plot-plausible AND exactly what
+  L2e wants to detect.
+- **Infra landed (all tested):** `store.is_pure_landed()/is_strata_landed()` +
+  `PURE_LANDED_TYPES`/`LANDED_PSF_BAND`; `subjects(kind='pure-landed')` with LAND-area
+  defaults 400..150,000 sqft (measured p0.1=883 / p99.9=27,909 — guards, not filters);
+  `MarketView.landed()/landed_on_street()/landed_near()` (street index newest-first +
+  own spatial grid); harness rows keep street/type_of_area for L1 slicing. 123 tests (+4).
+- **GL0:** subjects 10,789 ≥10k ✓ | months 61 ≥48 ✓ | band set from data ✓ | pairs 850
+  ≥500 ✓ | noise-floor fuel 395 ≥300 ✓ | rules documented (R1–R5) ✓ → **PASS. L1 (honest
+  leaderboard + noise floor) unblocked.**
+
 ## EXP-0008 — Fable review round: production-semantics fixes + deferred re-fits (2026-07-16)
 - **ADDENDUM (review round 2, 2026-07-16):** the applied fix #1 was itself incomplete —
   "live = lag 0" still ran `as_of`'s month-END visibility convention, so a LIVE valuation

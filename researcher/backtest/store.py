@@ -39,6 +39,18 @@ CONDO_TYPES = {"Condominium", "Apartment"}
 # URA's real landed spellings vary: 'Terrace', 'Semi-detached', 'Detached', and strata
 # variants 'Strata Terrace' / 'Strata Semi-detached' / 'Strata Detached'. Match on substring.
 _LANDED_KEYS = ("terrace", "detached", "semi-detached")
+# The L-track subject universe (L0 / EXP-0009): rows that are BOTH type_of_area='Land'
+# AND one of these exact types. psf on these rows = LAND psf, area = LAND area.
+# Strata-landed (cluster housing, trades on strata area) is a separate orphaned
+# sub-market — in scope for NEITHER the condo nor the landed engine (routing note in the
+# roadmap). 'Apartment' rows with Land area (walk-up / whole-building deals) are excluded
+# by the type test.
+PURE_LANDED_TYPES = {"Terrace", "Semi-detached", "Detached"}
+# Land-psf sanity band (L0 / EXP-0009, percentile-verified): today's extremes are REAL —
+# p0=107 psf is a ~8-years-left 70yr-lease terrace (Jalan Chempaka Kuning), p100=5,756 is
+# an Emerald Hill conservation terrace. The band wraps the verified range to catch future
+# data errors, NOT to trim the short-lease or conservation tails (cuts 0 rows today).
+LANDED_PSF_BAND = (100.0, 6500.0)
 
 
 def _as_date(t) -> _dt.date:
@@ -117,6 +129,20 @@ class TransactionStore:
             return x["type_of_area"].lower() == "land" or any(k in pt for k in _LANDED_KEYS)
         return self.where(ok)
 
+    def is_pure_landed(self) -> "TransactionStore":
+        """Land-titled landed homes only: type_of_area='Land' AND an exact landed type.
+        Excludes strata-landed (different sub-market) and Apartment+Land whole-building
+        rows. psf/area on every row returned = LAND psf / LAND area."""
+        return self.where(lambda x: x["type_of_area"].lower() == "land"
+                          and x["property_type"] in PURE_LANDED_TYPES)
+
+    def is_strata_landed(self) -> "TransactionStore":
+        """Cluster housing (Strata Terrace/Semi-detached/Detached) — trades on STRATA
+        area. Orphaned sub-market: v1 scope of both engines DECLINES these with a routing
+        note (condo backlog #4)."""
+        return self.where(lambda x: x["type_of_area"].lower() != "land"
+                          and any(k in x["property_type"].lower() for k in _LANDED_KEYS))
+
     def property_type(self, pt: str) -> "TransactionStore":
         return self.where(lambda x: x["property_type"] == pt)
 
@@ -148,10 +174,23 @@ class TransactionStore:
     # ------------------------------------------------------------- subject sampling
     def subjects(self, *, kind: str = "condo", sale_types=("Resale",),
                  min_ym: str | None = None, max_ym: str | None = None,
-                 min_area_sqft: float = 300, max_area_sqft: float = 6000) -> list[dict]:
-        """Candidate subjects to re-price out-of-sample. Defaults to resale condos with
-        a sane area; narrow by date window for a quick run."""
-        base = self.is_condo() if kind == "condo" else self.is_landed()
+                 min_area_sqft: float | None = None,
+                 max_area_sqft: float | None = None) -> list[dict]:
+        """Candidate subjects to re-price out-of-sample.
+
+        kind: 'condo' (strata Apt+Condo, EC excl) · 'pure-landed' (the L-track universe)
+        · 'landed' (broad union incl. strata-landed — audits only, not a subject base).
+        Area bounds default PER KIND — condo 300..6,000 sqft STRATA area; landed
+        400..150,000 sqft LAND area (EXP-0009: p0.1=883 / p99.9=27,909 — the landed
+        bounds are sanity guards against unit errors, not filters)."""
+        if kind == "condo":
+            base, lo, hi = self.is_condo(), 300.0, 6000.0
+        elif kind == "pure-landed":
+            base, lo, hi = self.is_pure_landed(), 400.0, 150000.0
+        else:
+            base, lo, hi = self.is_landed(), 400.0, 150000.0
+        min_area_sqft = lo if min_area_sqft is None else min_area_sqft
+        max_area_sqft = hi if max_area_sqft is None else max_area_sqft
         st = {s.lower() for s in sale_types}
 
         def ok(t):
