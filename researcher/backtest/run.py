@@ -22,6 +22,7 @@ from .benchmarks import BENCHMARKS
 from .candidates import CANDIDATES
 from .ensemble import ENSEMBLES
 from .ensemble_learned import ENSEMBLES_LEARNED
+from .engine_v2 import ENGINE_V2
 from .harness import walk_forward
 from .store import TransactionStore
 
@@ -38,6 +39,7 @@ def main() -> None:
     ap.add_argument("--lag-days", type=int, default=56, help="caveat visibility buffer")
     ap.add_argument("--slice", default=None, help="single dimension to break down by")
     ap.add_argument("--slices", action="store_true", help="standard G1 slice panel")
+    ap.add_argument("--dump", default=None, help="save all per-subject rows to JSON path")
     ap.add_argument("--method", default="C1_grid_adapted")
     args = ap.parse_args()
 
@@ -54,7 +56,7 @@ def main() -> None:
         return
 
     methods = {**BENCHMARKS, **CANDIDATES, **ANCHORS, **ANCHORS_POOLED,
-               **KNN_ANCHORS, **ENSEMBLES, **ENSEMBLES_LEARNED}
+               **KNN_ANCHORS, **ENSEMBLES, **ENSEMBLES_LEARNED, **ENGINE_V2}
     res = walk_forward(store, subjects, methods,
                        lag_days=args.lag_days, max_subjects=args.max)
     print("\n=== benchmark leaderboard (sorted by median APE) ===")
@@ -90,6 +92,13 @@ def main() -> None:
         json.dump({"summary": res.summary(), "n_subjects": len(subjects)}, f,
                   ensure_ascii=False, indent=1)
     print(f"\n-> {_OUT}")
+
+    if args.dump:
+        keep = ("method", "market_segment", "tenure_type", "contract_ym", "n_comps",
+                "actual", "pred", "lo", "hi")
+        with open(args.dump, "w", encoding="utf-8", newline="\n") as f:
+            json.dump([{k: r.get(k) for k in keep} for r in res.rows], f, ensure_ascii=False)
+        print(f"-> dumped {len(res.rows)} rows to {args.dump}")
 
 
 if __name__ == "__main__":

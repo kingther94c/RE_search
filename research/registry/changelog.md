@@ -5,6 +5,22 @@ impact · assets affected.
 
 ---
 
+## 2026-07-16 — R3-finish: engine v2 FINAL (V2 = C1 + fallback + conformal), G3 MET
+- **What:** `engine_v2.py` (V2), `conformal_table.json` (split-conformal, 85% nominal),
+  `research/analyze_r3.py` (thin-comp matrix + conformal calibration/validation), E3
+  3-anchor blend, run.py `--dump`. EXP-0006. 109 tests (+1).
+- **Why:** close the 3 R3-finish items (conformal, 3-anchor, E1-vs-E2 on thin comps).
+- **Reversal finding:** blending anchors into C1 HURTS the point everywhere same-project
+  data exists — even 1-2 comps (C1 4.84% vs blends 5.1-5.8%). Anchors buy coverage +
+  intervals, not point accuracy. So v2 dropped the blend for "C1 point + anchor fallback +
+  conformal band".
+- **Result — engine v2 = V2:** median **4.09%** / coverage **100%** / interval **82.7%**
+  (conformal held-out 82.0%, width 0.197 — ~30-57% sharper than the E-series union band).
+  Ties C1 on median (no anchor drag), beats E2/E3 (4.16%). **G3 MET.**
+- **Superseded:** E0/E1/E2/E3 (kept as record). **Backtest impact:** first shippable condo
+  engine — best point + honest calibrated bands + full coverage. Next: R4 (IS calibration)
+  or R5 (condo skill).
+
 ## 2026-07-16 — R3 engine v2: team fan-out integrated + verified (G3 MET)
 - **What:** integrated 3 team-built methods (`avm_pooled.py` A2, `avm_knn.py` A3,
   `ensemble_learned.py` E1) + a follow-up E2 (C1⊕A2) + `tune_e1.py` provenance. All

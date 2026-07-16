@@ -237,3 +237,15 @@ def test_ensemble_pooled_e2_blends():
     mkt, ctx = _big_condo_market()
     est = ensemble_pooled(_tx("P3", "2024-10", 2000, area=800, x=100, y=100), mkt, ctx)
     assert est and est["price"] is not None and est["method"] == "E2_ensemble_pooled"
+
+
+def test_engine_v2_point_band_and_fallback():
+    from researcher.backtest.engine_v2 import engine_v2
+    mkt, ctx = _big_condo_market()
+    # C1 available -> V2 point comes from C1, with a conformal band around it
+    est = engine_v2(_tx("P3", "2024-10", 2000, area=800, x=100, y=100), mkt, ctx)
+    assert est and est["method"] == "V2_engine" and est["note"].startswith("C1")
+    assert est["low"] < est["price"] < est["high"]        # conformal band brackets the point
+    # unknown project -> C1 declines -> anchor fallback keeps V2 answering (100% coverage)
+    fb = engine_v2(_tx("NOWHERE", "2024-10", 2000, area=800, x=0, y=0, seg="CCR"), mkt, ctx)
+    assert fb is not None and "fallback" in fb["note"]

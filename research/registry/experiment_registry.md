@@ -5,6 +5,32 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0006 — R3-finish: thin-comp reversal, 3-anchor blend, conformal → engine v2 (2026-07-16)
+- **Status:** DONE. **G3 MET, cleanly.** Engine v2 = `engine_v2.py` (V2).
+- **① Thin-comp reversal (the important finding).** Sliced every method by same-project comp
+  count. Even at **1-2 comps**, plain **C1 is BEST (4.84%)**; blending in an anchor makes it
+  WORSE (E2 5.08%, E3 5.57%, E1 5.81%). The anchors (5-15% APE cross-project) never beat even
+  a 1-2-comp same-project read. **This REVERSES the R3-kickoff hypothesis** that anchors help
+  thin-comp point estimates: they help COVERAGE (the ~0.6% no-same-project cases) and
+  INTERVALS, not the point. Blending down-weights C1 exactly where it shouldn't.
+- **② 3-anchor blend E3** (C1 ⊕ median(A1,A2,A3)): median 4.16%, tail marginally best of the
+  blends, but union band over-covers (94%). Same lesson — no point-accuracy gain over C1.
+- **③ Conformal intervals** (`research/analyze_r3.py`, split by time: cal<2025-01,
+  test>=2025-01, per liquidity×segment cell, 85% nominal chosen by sweep): **coverage 82.0%,
+  width 0.197 held-out** vs C1's own IQR band (43%, far too narrow) and the E-series union
+  band (86-94%, too wide). ~30-57% sharper than union at target coverage.
+- **Engine v2 = V2** (`engine_v2.py`): **C1 point wherever it answers, else anchor fallback
+  (A2→A3→A1), + conformal band.** Backtest: **median 4.09% / coverage 100% / interval 82.7%
+  / P90 12.6% / pct>10% 16.0%.** Ties C1 on median (no anchor drag), beats every blend
+  (E2/E3 4.16%), fixes C1's coverage (99.3→100%) and calibration (43→83%).
+- **Verdict:** V2 ACCEPT (engine v2). **E0/E1/E2/E3 SUPERSEDED** — necessary experiments that
+  proved the blend doesn't help the point; kept as code + registry record, not shipped. A1/A2/A3
+  retained as fallback + (future) interval inputs. Conformal table `conformal_table.json` shipped.
+- **Simplicity win (mandate):** the evidence killed the more complex ensembles in favour of
+  "best method where it applies + fallback + calibrated band." Complexity was not free — it hurt.
+- **Leakage sign-off:** conformal calibration STRICTLY precedes its evaluation slice (time
+  split); table is a fixed lookup at inference; V2 reads only as-of C1/anchors. Clean.
+
 ## EXP-0005 — R3 team fan-out: alt anchors + learned ensemble (2026-07-15/16)
 - **Status:** DONE for 3 of 4 threads; **independently re-verified in the main repo** (numbers
   reproduce exactly; I read every method for leakage — all clean). Conformal thread did not

@@ -13,22 +13,26 @@ not its own skill.
 ## Validation status by asset
 | Asset | Ground truth for OOS | Validation protocol | Status |
 |---|---|---|---|
-| Condo resale | URA resale caveats (bulk, as-of) | **quant walk-forward** vs benchmarks | **engine v2 (EXP-0005): E2 ensemble 4.16% median / 100% cover / 87% interval — G3 MET**; R3-finish (conformal) then R5 skill |
+| Condo resale | URA resale caveats (bulk, as-of) | **quant walk-forward** vs benchmarks | **engine v2 FINAL (EXP-0006): V2 = C1 + anchor-fallback + conformal — 4.09% median / 100% cover / 82.7% interval — G3 MET**; ready for R5 skill |
 | Landed | URA landed caveats (few, heterogeneous) | walk-forward **+ heavy case regression** (noisy MAE, wide CIs expected) | not started (data present: 12,990 caveats) |
 | New launch | *often none* — developer price ≠ fair value; only later resale is truth | **mostly case-based + separation-of-quantities discipline** | not started (data present: 47,910 new-sale caveats) |
 
-### Current condo engine (EXP-0003 bar → EXP-0005 v2)
-- **Bar (C1 grid):** ~4.08% median APE, but interval coverage 43% and declines ~0.7%.
-- **Engine v2 (E2_ensemble_pooled = C1 ⊕ A2 pooled-shrinkage anchor):** median **4.16%**,
-  **100% coverage**, **interval 87%**. Ties the bar on median while fixing calibration
-  (43%→87%) and always answering — **G3 MET** (tie + materially better calibration/coverage).
-  E1 (C1⊕A1) is the near-tied, more-independent alternative (4.18%/81%).
-- **Validated components:** C1 (same-project grid), A1 hedonic / A2 pooled / A3 kNN anchors,
-  E1/E2 ensembles. A2 (5.46%) is the strongest independent anchor; segment-avg & nearest-
-  project are dead (GY-0001/0002).
-- **R3-finish (before the skill):** per-cell conformal to tighten intervals to exactly 80%;
-  test a 3-anchor blend; re-check E1-vs-E2 on a thin-comp-enriched slice (backtest
-  under-samples the no-same-project case that matters most in production).
+### Condo engine v2 — FINAL (EXP-0006, G3 MET)
+- **`engine_v2.py` (V2):** POINT = C1 same-project grid wherever it answers, else anchor
+  fallback (A2→A3→A1) for coverage; INTERVAL = split-conformal per (liquidity×segment) cell
+  (`conformal_table.json`, 85% nominal). **Backtest: median 4.09% / 100% coverage / interval
+  82.7% / P90 12.6% / pct>10% 16.0%.**
+- **Key lesson (drove the design):** blending an independent anchor into C1 HURTS the point
+  everywhere same-project data exists — even at 1-2 comps (C1 4.84% vs blends 5.1-5.8%). The
+  anchors buy COVERAGE (no-comp fallback) and INTERVALS, not point accuracy. So v2 is
+  "best-method-where-it-applies + fallback + calibrated band", NOT an ensemble blend.
+- **Superseded:** E0/E1/E2/E3 ensembles (the experiments that proved the above). Dead:
+  segment-avg (GY-0001), nearest-project (GY-0002).
+- **Retained components:** C1 (point), A2 5.46% / A3 7.2% / A1 10.3% (fallback + interval
+  inputs), conformal table.
+- **Known scope for R5 skill:** point accuracy is same-project-driven; the ~0.6% no-comp
+  cases lean on A2 (5.5%) — flag lower confidence there. Conformal calibrated on 2023-24,
+  validated 2025-26; recalibrate on each data refresh.
 
 The protocol is **not uniform across assets** — this was an explicit correction to the
 mandate. Do not pretend a clean walk-forward fair-value backtest exists for new launch.

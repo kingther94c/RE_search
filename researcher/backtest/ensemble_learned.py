@@ -134,5 +134,40 @@ def ensemble_pooled(subject, market, ctx):
             "low": lo, "high": hi, "n_comps": n_comps, "note": f"C1+A2 blend w_c1={w_c1:.2f}"}
 
 
+def ensemble_multi(subject, market, ctx):
+    """E3: blend C1 with the MEDIAN of all three anchors (A1 hedonic, A2 pooled, A3 kNN).
+    The anchor median is robust to any single anchor being off, and — unlike E2's lone A2 —
+    it carries genuine cross-method diversity (A1/A3 do not use same-project comps). Tests
+    whether a robust anchor consensus beats a single anchor in the ensemble."""
+    from statistics import median
+    from .avm import avm_hedonic
+    from .avm_knn import avm_knn
+    from .avm_pooled import avm_pooled
+    c1 = c1_grid_adapted(subject, market, ctx)
+    anchors = [f(subject, market, ctx) for f in (avm_hedonic, avm_pooled, avm_knn)]
+    anchors = [a for a in anchors if a]
+    apsf = [a["psf"] for a in anchors]
+    if c1 is None and not apsf:
+        return None
+    area = subject["area_sqft"]
+    if c1 is None:
+        psf = median(apsf)
+        lo, hi = _blend_band(anchors[0], anchors[-1]) if len(anchors) > 1 else (None, None)
+        return {"method": "E3_ensemble_multi", "psf": round(psf, 1), "price": round(psf * area, 0),
+                "low": lo, "high": hi, "n_comps": 0, "note": "anchor-median only (no C1)"}
+    if not apsf:
+        return {**c1, "method": "E3_ensemble_multi", "note": "grid only (anchors declined)"}
+    n_comps = c1["n_comps"]
+    w_c1 = _weight(n_comps, _recency_months(subject, market, ctx))
+    consensus = median(apsf)
+    psf = w_c1 * c1["psf"] + (1 - w_c1) * consensus
+    los = [x for x in [c1.get("low")] + [a.get("low") for a in anchors] if x is not None]
+    his = [x for x in [c1.get("high")] + [a.get("high") for a in anchors] if x is not None]
+    return {"method": "E3_ensemble_multi", "psf": round(psf, 1), "price": round(psf * area, 0),
+            "low": min(los) if los else None, "high": max(his) if his else None,
+            "n_comps": n_comps, "note": f"C1+median(A1,A2,A3) w_c1={w_c1:.2f}"}
+
+
 ENSEMBLES_LEARNED = {"E1_ensemble_learned": ensemble_learned,
-                     "E2_ensemble_pooled": ensemble_pooled}
+                     "E2_ensemble_pooled": ensemble_pooled,
+                     "E3_ensemble_multi": ensemble_multi}
