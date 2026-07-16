@@ -5,6 +5,62 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0010 — L1 landed baseline: the honest leaderboard + noise floor, GL1 (2026-07-16)
+- **Status: DONE (7,027 resale pure-landed subjects ≥2023-01, walk-forward, lag 56d).
+  GL1: PASS** — leaderboard lag-stable, bar/tail/coverage/noise floor recorded, L2
+  selection justified by error mass (memo below).
+- **Leaderboard (median APE / P90 / coverage / pct>10% / interval-cover):**
+  - **LC1_craft_landed 0.1051 / 0.341 / 87.3% / 0.514 / 0.397 ← THE LANDED BAR**
+    (Cardiff craft skeleton: street same-spec grid, recency HL 18mo, ported size prior)
+  - LB4_spatial_knn **0.1114 / 0.310** / 79.1% — best TAIL; geography earns keep via retrieval
+  - LB1_same_street 0.1297 / 0.382 / 79.4% — street median alone
+  - LB2_street→district 0.1423 / 0.383 / **99.8%** — pooling buys coverage, costs 4pp median
+  - LB5_district_price 0.1494 / 0.418 / 99.8% · LB3_type×tenure×seg 0.1512 / 0.381 / 100%
+  - Lag-stability: 42d ≡ 56d EXACTLY (month-end arithmetic: any lag in (31,58] lands in
+    the same visibility bucket for 30/31-day months); 70d moves the bar +0.03pp. Stable.
+  - Interval baseline: comp-IQR bands cover 38-50% (target 80) — broken as expected
+    (condo's were 43%); the calibrated fix is L3 conformal, not a benchmark's job.
+- **Noise floor (`research/landed_noise_floor.py`, 395 same-plot pairs gap≤18mo,
+  landed-index adjusted): per-print floor ~5.3-6.2%** (trimmed of 39 |ann|>60% rebuild
+  suspects vs all-pairs; pair medians 7.6%/8.8% ÷ √2). By type: Terrace ~6.0%, Semi-D
+  ~7.8%, Detached ~8.2%. Gap gradient sane (7.2% @1-6mo → 12.1% @13-18mo). **Reading:
+  bar 10.5% vs floor ~5.5-6% → only ~4-5pp of the bar is closable error; landed honest
+  accuracy will sit HIGH-SINGLE-DIGIT at best — the skill must publish this.**
+- **Error-mass map (LC1, the bar):** size is the dominant axis — **1.5-3k sqft 8.8% →
+  3-5k 12.2% → 5-8k 14.5% → 8-15k 24.0% → 15k+ 41.2%** (monotone). Detached 17.2% (p90
+  0.53) vs Terrace 9.5%. GCB-flag (crude) 30.0% (n=29). Quantum >8M 16.4%. Street depth
+  helps monotonically (1-2 comps 13.5% → 16+ 8.8%) — even 1-2 street comps beat every
+  cross-street pool (the condo thin-comp reversal, transposed). Regime flat (10.1-10.8%
+  across 2023-26). Leasehold is LC1's BEST slice (6.7%) — same-street comps inherit the
+  street's lease profile.
+- **The decisive cross-street failure:** LB4 on sub-2M subjects = **median APE 232%**
+  (n=36, 33 leasehold): spatial kNN prices ~20-years-left 99yr terraces (Jalan Bangket,
+  99yr from 1947) off freehold neighbours at **6-10× actual**. LC1 same subjects: 21%.
+  **Remaining-lease control is MANDATORY for any cross-street landed method.**
+- **L2 decision memo (what the error mass opens):**
+  - **L2a land-size curve — OPEN, mandatory confirmed** (the monotone size explosion;
+    the ported −0.877 prior already buys LC1 ~2.5pp over size-blind LB1, so a properly
+    fitted type×tenure×segment curve is the highest-leverage module).
+  - **L2c retrieval/pooling — OPEN, with tenure/remaining-lease matching REQUIRED**
+    (the 232% lesson) and spatial-kNN retrieval as the tail-control candidate.
+  - **L2d pooled/hedonic anchors — OPEN as pre-scoped** (coverage + hard-case detection,
+    NOT points: LB2/LB3 cost 4-5pp median vs the bar but answer ~100%; L3 needs them
+    for the 12.7% of subjects where LC1 declines).
+  - **L2b time adjustment — OPEN, cheap** (850 repeat pairs now exist to test island vs
+    segment index vs repeat-sales drift; regime slices are flat so expectation modest).
+  - **L2e improvement bounds — OPEN** (inputs ready: noise floor + 7.7% wild-mover
+    rebuild signals from EXP-0009's matcher).
+  - **Detached ≥8k sqft / GCB — case-tier + wide-band scope** from day one (41%/30%
+    median APE is not engine territory on URA data alone).
+- **Files:** `landed_benchmarks.py` (LB1-LB5+LC1, leakage notes inline) ·
+  `run_landed.py` (leaderboard/slices/dump; GCB flag) · `landed_noise_floor.py` ·
+  tests (125 total, +2 behaviour suites). Artifacts regenerable; dumps gitignored.
+- **Leakage sign-off:** comps via MarketView (as-of'd by the harness); landed-PPI
+  adjustment to the last PUBLISHED quarter (35d pub lag), capped ±20/25%; subject's own
+  month excluded by valuing at end of M-1 (`test_as_of_excludes_future`); noise-floor
+  study uses full index history DELIBERATELY (offline data property, documented in the
+  script header — not a walk-forward number).
+
 ## EXP-0009 — L0 landed data foundation: hygiene, land-psf band, same-plot matcher (2026-07-16)
 - **Status: DONE. GL0 GATE: PASS** (`research/audit_landed.py` — re-runnable, `--json`
   machine-readable, `--pairs` prints the spot-check artifact).

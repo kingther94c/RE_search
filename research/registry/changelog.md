@@ -5,6 +5,24 @@ impact · assets affected.
 
 ---
 
+## 2026-07-16 — L1 landed baseline DONE — GL1 PASS: bar 10.5%, floor ~5.5-6% (EXP-0010)
+- **What:** the honest landed leaderboard (LB1-LB5 + LC1 craft port, walk-forward over
+  7,027 resale pure-landed subjects, lag-stable) + the same-plot NOISE-FLOOR study.
+  **THE LANDED BAR = LC1_craft_landed 10.51% median APE @ 87.3% coverage** (the Cardiff
+  same-street grid skeleton with the ported area^-0.877 size prior); best tail = LB4
+  spatial kNN (p90 0.310). **Noise floor: ~5.3-6.2% per print** — only ~4-5pp of the bar
+  is closable; landed honest accuracy is structurally high-single-digit (vs condo 3.7%).
+- **Why:** roadmap L1 — evidence sets the bar and selects L2 modules; nothing fitted.
+- **Key findings:** error explodes monotonically in plot size (8.8% at 1.5-3k sqft →
+  41% at 15k+); cross-street kNN prices short-lease terraces off freehold neighbours at
+  6-10× (sub-2M slice median APE 232%) → **remaining-lease control mandatory for every
+  cross-street method**; even 1-2 same-street comps beat all cross-street pools (the
+  condo thin-comp reversal transposed); comp-IQR intervals broken (38-50% coverage) as
+  expected. L2 opens: L2a size curve (mandatory), L2c retrieval+lease-matching, L2d
+  anchors (coverage only), L2b time-adj (cheap), L2e bounds; Detached ≥8k sqft / GCB →
+  case-tier scope. Detail + memo in EXP-0010.
+- **Assets affected:** landed (L2 unblocked). 125 tests.
+
 ## 2026-07-16 — L0 landed data foundation DONE — GL0 PASS (EXP-0009)
 - **What:** the L-track's data spine. `store.is_pure_landed()` (Land + exact landed type;
   strata-landed routed out; Apartment+Land walk-ups excluded), `LANDED_PSF_BAND [100,

@@ -329,6 +329,56 @@ def test_same_plot_matcher_rules():
     assert short[0]["annualized"] is None
 
 
+def test_landed_benchmarks_behaviour():
+    from researcher.backtest.index import PriceIndex
+    from researcher.backtest.landed_benchmarks import (lb1_same_street,
+        lb2_street_district_pooled, lb3_type_tenure_segment, lb4_spatial_knn,
+        lb5_district_median_price, lc1_craft_landed)
+    from researcher.backtest.market import MarketView
+    ctx = {"asof_ym": "2024-09", "asof_date": None, "index": PriceIndex({}), "asof_q": None}
+    txs = [_ltx("AIDA ST", f"2024-0{m}", 3_000_000 + m * 10_000, 150.0, x=0, y=0)
+           for m in range(1, 6)] + [
+        _ltx("AIDA ST", "2024-06", 5_000_000, 300.0, x=0, y=0),      # bigger plot, street
+        _ltx("ELSEWHERE RD", "2024-05", 2_600_000, 150.0, x=400, y=0),
+        _ltx("FAR AWAY", "2024-05", 9_900_000, 150.0, x=50_000, y=0)]
+    mkt = MarketView(txs, "2024-09")
+    subj = _ltx("AIDA ST", "2024-10", 3_100_000, 150.0, x=0, y=0)
+
+    est = lb1_same_street(subj, mkt, ctx)
+    assert est and est["n_comps"] == 6          # type-matched street comps, ALL sizes
+    # LB1 declines with no street history at all
+    assert lb1_same_street(_ltx("NO ST", "2024-10", 1, 150.0), mkt, ctx) is None
+    # LB2 pools to district when the street is thin
+    thin = _ltx("ELSEWHERE RD", "2024-10", 2_600_000, 150.0)
+    pooled = lb2_street_district_pooled(thin, mkt, ctx)
+    assert pooled and "district pool" in pooled["note"]
+    assert lb3_type_tenure_segment(subj, mkt, ctx) is not None
+    knn = lb4_spatial_knn(subj, mkt, ctx)
+    assert knn and knn["n_comps"] >= 3          # size gate keeps the 300sqm plot out
+    q = lb5_district_median_price(subj, mkt, ctx)
+    assert q and q["price"] == 3_035_000        # naive district median PRICE
+    craft = lc1_craft_landed(subj, mkt, ctx)
+    assert craft and "same-spec grid" in craft["note"]
+
+
+def test_lc1_size_prior_only_when_needed():
+    """LC1 falls back to the ported area^-0.877 prior ONLY when <3 same-spec comps —
+    and the adjustment moves psf the right way (bigger subject -> lower psf)."""
+    from researcher.backtest.index import PriceIndex
+    from researcher.backtest.landed_benchmarks import lc1_craft_landed
+    from researcher.backtest.market import MarketView
+    ctx = {"asof_ym": "2024-09", "asof_date": None, "index": PriceIndex({}), "asof_q": None}
+    # street has only SMALL plots (150 sqm, psf ~1860); subject is 300 sqm
+    txs = [_ltx("AIDA ST", f"2024-0{m}", 3_000_000, 150.0) for m in range(1, 4)]
+    mkt = MarketView(txs, "2024-09")
+    big = _ltx("AIDA ST", "2024-10", 6_000_000, 300.0)
+    est = lc1_craft_landed(big, mkt, ctx)
+    assert est and "size-adjusted" in est["note"]
+    small_psf = txs[0]["psf"]
+    assert est["psf"] < small_psf               # negative elasticity: bigger -> lower psf
+    assert abs(est["psf"] - small_psf * 0.5 ** 0.877) < 1.0   # 2x size at e=-0.877
+
+
 def test_conformal_table_matches_current_c1():
     """The conformal table is calibrated on C1 residuals. If candidates.py changes without
     a recalibration (run.py --dump -> analyze_r3.py), the band multipliers silently drift

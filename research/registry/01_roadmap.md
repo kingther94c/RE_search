@@ -9,7 +9,7 @@ work its plan. Amend via changelog, not silently._
 
 | Track | Status |
 |---|---|
-| **Landed (L0–L4)** | **← ACTIVE — L0 DONE (GL0 PASS, EXP-0009, 2026-07-16); next: L1 baseline + noise floor. Goal: ship `landed-valuation` (hostile-review PASS ≥8) in ~4–6 sessions** |
+| **Landed (L0–L4)** | **← ACTIVE — L0 DONE (GL0 PASS, EXP-0009) · L1 DONE (GL1 PASS, EXP-0010: bar = LC1 10.5% @ 87% cover; noise floor ~5.3-6.2%/print); next: L2 (L2a size curve mandatory + L2c lease-matched retrieval first). Goal: ship `landed-valuation` (hostile-review PASS ≥8)** |
 | Condo resale | **SHIPPED & FROZEN** — `condo-resale-valuation` accepted (PASS 8.7/10; engine v2.1: 3.71% median APE / 100% coverage / ~82–85% held-out interval). Backlog below; nothing ships without its gate |
 | New launch (was R7) | PARKED (plan preserved below) |
 | IS calibration bridge (was R4) | PARKED — becomes relevant again for condo hard-cases and landed condition evidence |
@@ -120,6 +120,15 @@ which L2 modules open, with the error evidence that opens them.
 
 **Gate GL1.** Leaderboard reproducible & lag-stable; bar/tail/coverage/noise-floor recorded;
 L2 selection justified by error mass against documented thresholds.
+
+**→ OUTCOME (2026-07-16): PASS — EXP-0010.** Bar = **LC1 craft 10.51% @ 87.3% cover**
+(tail: LB4 kNN p90 0.310); noise floor **~5.3-6.2%/print** (only ~4-5pp closable — honest
+accuracy is structurally high-single-digit); lag 42≡56 (month-end arithmetic), 70d +0.03pp;
+IQR intervals 38-50% (broken, as condo's were). Error mass: plot size monotone 8.8%→41%
+(15k+), Detached 17.2%, GCB 30%, cross-street kNN 6-10× on short-lease (sub-2M 232% —
+lease control MANDATORY cross-street). L2 opens: **L2a (mandatory) + L2c (lease-matched
+retrieval) first**, L2d anchors for coverage, L2b cheap, L2e bounds; Detached ≥8k /GCB →
+case-tier. Full memo in EXP-0010.
 
 ---
 
