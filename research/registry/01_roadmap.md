@@ -142,9 +142,16 @@ to a verdict (ACCEPT / ACCEPT-WITH-SCOPE / MONITOR / REJECT → graveyard).
   same-street near-simultaneous different-size pairs + a pooled hedonic cross-check. A
   1,600 sqft terrace plot must never price a 7,000 sqft detached (the condo shoebox lesson,
   transposed). Kills or scopes "flat average land psf" with numbers (mandate 6c).
-- **L2b Time adjustment:** island landed PPI vs segment sub-indices vs local fitted trend vs
-  same-plot repeat-sales signal. Hypothesis from the factor study (asymmetric capture
-  0.95/0.74): landed lags downside — test, don't assume.
+- **L2b Time adjustment — RE-OPENED (EXP-0014), and now the HIGHEST-VALUE open landed
+  module.** It was closed in L1 on the WRONG METRIC: "regime slices are flat" was true of
+  **APE** (8.4-10.0% across every half-year) while the **SIGN TEST** in those same slices
+  swings **47.6% → 66.5%** — the engine is unbiased in stable markets and ~15pp low when the
+  market accelerates. An index-momentum hack was tried and REJECTED (GY-0003: it broke the
+  regimes that were already unbiased). The proper fix is a **fitted LOCAL trend**, validated
+  by the regime sign test — never by APE alone. Candidates: island landed PPI vs segment
+  sub-indices vs local fitted trend vs the same-plot repeat-sales signal. Hypothesis from the
+  factor study (asymmetric capture 0.95/0.74): landed lags downside — test, don't assume.
+  Until it lands, the regime bias ships as a DISCLOSURE (SKILL + every report).
 - **L2c Retrieval/pooling:** spatial-kNN vs street-cluster (enclave) pooling weights;
   validated ONLY through backtest accuracy (geography earns its keep via retrieval, never
   via clustering scores).
