@@ -85,6 +85,8 @@ def _confidence(n_comps, used_fallback, band_rel, anchor_spread) -> tuple[int, s
         c -= min(35.0, max(0.0, (anchor_spread - 0.05) * 160))
         if anchor_spread > 0.15:
             label += f"; hard case: anchors disagree {anchor_spread*100:.0f}% — corroborate"
+        elif anchor_spread > 0.07:                      # label must agree with the docked score
+            label += f"; some method divergence ({anchor_spread*100:.0f}%)"
     if band_rel and band_rel > 0.30:
         c = min(c, 65)
         label += "; wide dispersion in this cell"

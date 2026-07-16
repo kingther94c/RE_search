@@ -13,7 +13,7 @@ not its own skill.
 ## Validation status by asset
 | Asset | Ground truth for OOS | Validation protocol | Status |
 |---|---|---|---|
-| Condo resale | URA resale caveats (bulk, as-of) | **quant walk-forward** vs benchmarks | **engine v2 FINAL (EXP-0006): V2 = C1 + anchor-fallback + conformal — 4.09% median / 100% cover / 82.7% interval — G3 MET**; ready for R5 skill |
+| Condo resale | URA resale caveats (bulk, as-of) | **quant walk-forward** vs benchmarks | **SHIPPED (R5): `condo-resale-valuation` skill, engine v2.1 = C1 + anchor-fallback + conformal — 3.71% median / 100% cover / ~82% interval. G3 + G5 MET (hostile review PASS 8.7/10).** Next: R4 IS enrichment / R6 landed |
 | Landed | URA landed caveats (few, heterogeneous) | walk-forward **+ heavy case regression** (noisy MAE, wide CIs expected) | not started (data present: 12,990 caveats) |
 | New launch | *often none* — developer price ≠ fair value; only later resale is truth | **mostly case-based + separation-of-quantities discipline** | not started (data present: 47,910 new-sale caveats) |
 

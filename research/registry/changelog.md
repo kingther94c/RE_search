@@ -5,6 +5,18 @@ impact · assets affected.
 
 ---
 
+## 2026-07-16 — R5 SHIPPED: condo-resale-valuation skill, hostile review PASS 8.7/10 (G5 MET)
+- **What:** the skill is production-accepted. 4 hostile-review rounds (6.6 → 7.6 → 7.6 →
+  **8.7 PASS**), each fix re-verified by reproduction. Final polish: smooth confidence in
+  anchor disagreement (no cliff) + mild-divergence label.
+- **Why:** G5 ship bar = beat benchmarks + regression suite + field-trial hostile PASS ≥8 +
+  interval calibration holds. All met (8.7, every dimension ≥8.0, zero blockers).
+- **What ships:** `condo-resale-valuation` SKILL.md, `value_unit.py` (valuation + confidence
+  + guidance + hard-case honesty), engine v2.1, `build_condo_v2_report.py`,
+  `tests/test_value_unit.py` regression suite; value-a-property superseded.
+- **Backlog (non-blocking):** re-fit FLOOR_PP; smooth comp-depth confidence tiers; as-of day
+  granularity; the R4 Investment-Suite enrichment bridge. 116 tests.
+
 ## 2026-07-16 — R5 hostile-review revision: engine v2.1 (size/time fixes), EXP-0007
 - **What:** re-fit size elasticity on URA (`research/fit_elasticity.py`, segment-specific);
   C1 size-gating + heavier size penalty + recency + time-quality weighting + time-adj cap;

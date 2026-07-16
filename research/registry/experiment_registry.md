@@ -39,7 +39,12 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 - **Known refinements (backlog, non-blocking — R5-follow / R8):** re-fit FLOOR_PP=0.003
   (still a ported constant, guardrail-#5); within-project lease-decay term for short-lease
   projects; conformal table point-method fingerprint + a 3rd split for nominal selection.
-- **Verdict:** engine v2.1 ACCEPT (2 rounds, blockers closed). 116 tests.
+- **Verdict:** engine v2.1 ACCEPT. **R5 SHIPPED — hostile acceptance review PASS 8.7/10**
+  (round 4; every dimension ≥8.0, zero blockers). Rounds: 6.6 (2 blockers: unvalidated
+  elasticity) → 7.6 (0 blockers, point-vs-fresh-print) → 7.6 (doc coverage inconsistency) →
+  **8.7 PASS**. Reviewer independently reproduced all field trials byte-for-byte, the
+  elasticity fit, ~84% held-out conformal, and the leakage firewall. G5 MET. Remaining P2/P3
+  are polish (FLOOR_PP re-fit, base-tier smoothing, as-of day granularity) — backlog. 116 tests.
 
 ## EXP-0006 — R3-finish: thin-comp reversal, 3-anchor blend, conformal → engine v2 (2026-07-16)
 - **Status:** DONE. **G3 MET, cleanly.** Engine v2 = `engine_v2.py` (V2).
