@@ -28,7 +28,17 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 - **The Foliage after fixes:** point 1710 (defensible from the comps), but now conf 55,
   band widened to 1680 (= the fresh reference), directional flag "12% above the 1527 fresh
   print", verify-before-offer says pull IS comps. Honest, not misleading.
-- **Verdict:** engine v2.1 ACCEPT pending fresh-reviewer re-check. 116 tests.
+- **Round-2 fresh review: REVISE 7.6, ZERO blocking issues** (up from 6.6 + 2 blockers —
+  prior blockers confirmed closed). Two P1s fixed to cross the 8.0 PASS bar: (P1a) on a
+  directional hard case the POINT is now pulled toward the fresh same-size print
+  (median blend) + band rescaled — The Foliage 1710→1619 (was +12% over the 1528 fresh ref,
+  now +6%); (P1b) SKILL.md/docstring numbers reconciled to v2.1 (3.7% / 85% / segment
+  elasticity); (P3) the recent-ref is now size-adjusted so the directional check is
+  apples-to-apples (Stirling correctly 4.2% < trigger).
+- **Known refinements (backlog, non-blocking — R5-follow / R8):** re-fit FLOOR_PP=0.003
+  (still a ported constant, guardrail-#5); within-project lease-decay term for short-lease
+  projects; conformal table point-method fingerprint + a 3rd split for nominal selection.
+- **Verdict:** engine v2.1 ACCEPT (2 rounds, blockers closed). 116 tests.
 
 ## EXP-0006 — R3-finish: thin-comp reversal, 3-anchor blend, conformal → engine v2 (2026-07-16)
 - **Status:** DONE. **G3 MET, cleanly.** Engine v2 = `engine_v2.py` (V2).

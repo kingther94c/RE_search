@@ -104,9 +104,11 @@ def _relevant_comps(subject, market, n=8):
 
 
 def _recent_ref(subject, market, ctx):
-    """The freshest same-project print within ~+/-25% size, lightly (capped) time-adjusted
-    to as-of — the single most credible evidence point. On a hard case, the model point can
-    drift above it (stale-comp inflation); surfacing it keeps the report honest."""
+    """The freshest same-project print within ~+/-25% size, adjusted to the subject for BOTH
+    time (capped) AND size — so the directional check compares apples to apples — the single
+    most credible evidence point. On a hard case the model point can drift above it
+    (stale-comp inflation); surfacing it keeps the report honest."""
+    from .candidates import SEG_ELASTICITY, DEFAULT_ELASTICITY
     area = subject["area_sqft"]
     sim = [r for r in market.same_project(subject["project"])
            if abs(_math.log(r["area_sqft"] / area)) <= 0.22]
@@ -116,8 +118,10 @@ def _recent_ref(subject, market, ctx):
     to_q = ctx.get("asof_q")
     tf = ctx["index"].factor(fresh["contract_ym"], to_q, "non-landed") if to_q else 1.0
     tf = min(max(tf, 0.80), 1.25)
+    elas = SEG_ELASTICITY.get(subject.get("market_segment"), DEFAULT_ELASTICITY)
+    size_adj = (area / fresh["area_sqft"]) ** elas
     return {"contract_ym": fresh["contract_ym"], "area_sqft": fresh["area_sqft"],
-            "raw_psf": fresh["psf"], "adj_psf": round(fresh["psf"] * tf, 1)}
+            "raw_psf": fresh["psf"], "adj_psf": round(fresh["psf"] * tf * size_adj, 1)}
 
 
 def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
@@ -149,22 +153,28 @@ def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
         a = fn(subject, market, ctx)
         anchors[tag] = a["psf"] if a else None
 
-    price, lo, hi = est["price"], est["low"], est["high"]
+    area = subject["area_sqft"]
     reads = [v for v in anchors.values() if v]
     anchor_spread = (max(reads) - min(reads)) / est["psf"] if len(reads) >= 2 else None
     hard = bool(anchor_spread and anchor_spread > 0.15)
 
-    # Recent same-size reference + directional honesty: on a hard case, if the model point
-    # sits well above the freshest same-size print, widen the band DOWN to include it and say so.
+    # Recent same-size (time+size-adjusted) reference + directional honesty.
     ref = _recent_ref(subject, market, ctx)
-    directional = None
+    point_psf, directional = est["psf"], None
     if ref and est["psf"] > ref["adj_psf"] * 1.05:
         gap = est["psf"] / ref["adj_psf"] - 1
-        directional = (f"point is {gap*100:.0f}% above the freshest same-size print "
-                       f"({ref['adj_psf']:.0f} psf adj, {ref['contract_ym']}) — possibly "
-                       f"optimistic on stale comps; corroborate before offering")
+        directional = (f"point was {gap*100:.0f}% above the freshest same-size print "
+                       f"({ref['adj_psf']:.0f} psf adj, {ref['contract_ym']}) — stale-comp "
+                       f"risk; corroborate before offering")
         if hard:
-            lo = min(lo, round(ref["adj_psf"] * subject["area_sqft"], 0))
+            # pull the point toward the fresh same-size evidence (conservative on hard cases)
+            point_psf = round((est["psf"] + ref["adj_psf"]) / 2, 1)
+            directional += f"; point pulled to {point_psf:.0f} psf (blended toward fresh print)"
+    price = round(point_psf * area, 0)
+    scale = price / est["price"] if est["price"] else 1.0
+    lo, hi = round(est["low"] * scale, 0), round(est["high"] * scale, 0)
+    if directional and hard:
+        lo = min(lo, round(ref["adj_psf"] * area, 0))   # band must include the fresh evidence
     band_rel = (hi - lo) / price if price else None
     conf, conf_label = _confidence(est["n_comps"], used_fallback, band_rel, anchor_spread)
 
@@ -172,9 +182,11 @@ def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
         "subject": {k: subject[k] for k in ("project", "area_sqft", "market_segment",
                     "district", "tenure_type", "lease_start")} | {"floor": spec.floor,
                     "asof": asof},
-        "fair_value": {"psf": est["psf"], "price": price, "low": lo, "high": hi,
+        "fair_value": {"psf": point_psf, "price": price, "low": lo, "high": hi,
                        "confidence": conf, "confidence_label": conf_label,
-                       "n_same_project_comps": est["n_comps"], "basis": est["note"]},
+                       "n_same_project_comps": est["n_comps"],
+                       "basis": est["note"] + ("; blended toward fresh print (hard case)"
+                                               if point_psf != est["psf"] else "")},
         "independent_reads_psf": anchors,   # transparency: each method's own opinion
         "anchor_disagreement": {"spread_rel": round(anchor_spread, 3) if anchor_spread else None,
                                 "hard_case": hard},
@@ -203,7 +215,7 @@ def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
         "limitations": [
             "URA data: month-granular dates, floor BANDS (not exact), no unit id -> no stack/"
             "view/condition/renovation adjustment; note these qualitatively.",
-            "Point is same-project-driven; the range is the conformal band (empirical ~82% "
-            "coverage), not a guarantee.",
+            "Point is same-project-driven; the range is the conformal band (empirical ~85% "
+            "coverage, EXP-0007), not a guarantee.",
         ],
     }

@@ -8,8 +8,8 @@ description: Use to value a specific Singapore resale CONDO unit — a defensibl
 ## When to use
 Put a defensible market value on a specific Singapore resale condominium unit. The engine
 is **quant-validated**: time-consistent walk-forward backtest on 136k URA caveats gives
-**~4.1% median APE** with **82% interval coverage** (research/registry/experiment_registry.md
-EXP-0003/0006). This is not a craft judgement call — every number is computed the same way.
+**~3.7% median APE** with **~85% interval coverage** (research/registry/experiment_registry.md
+EXP-0006/0007). This is not a craft judgement call — every number is computed the same way.
 
 ## Inputs
 - **Required:** project name (as it appears in URA), unit size (sqft). The project must
@@ -38,8 +38,9 @@ Programmatic: `from researcher.backtest.value_unit import value, SubjectSpec`.
 
 ## What the engine does (so you can explain it, not redo it)
 - **Point = C1 same-project adjustment grid** wherever the project has resale caveats:
-  same-project prints, each time-adjusted (URA PPI), floor-band and size adjusted
-  (elasticity −0.08), similarity-weighted. This is best on EVERY liquidity slice — even
+  same-project prints, each time-adjusted (URA PPI, capped ±25%), floor-band and size
+  adjusted (segment-specific elasticity CCR −0.02 / RCR −0.08 / OCR −0.09, re-fit on URA in
+  EXP-0007; size-matched comps preferred), similarity-weighted. Best on EVERY liquidity slice — even
   1-2 comps beat any cross-project anchor (EXP-0006). No same-project comp → **fallback**
   to the pooled anchor A2 (→A3→A1) purely to keep coverage; flagged as lower confidence.
 - **Independent reads (transparency):** three anchors that need no same-project comp —
