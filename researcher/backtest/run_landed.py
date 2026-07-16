@@ -18,6 +18,8 @@ import os
 
 from .harness import walk_forward
 from .landed_benchmarks import LANDED_BENCHMARKS
+from .landed_candidates import LANDED_CANDIDATES
+from .landed_engine import LANDED_ENGINE
 from .store import LANDED_PSF_BAND, TransactionStore
 
 _OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results_landed.json")
@@ -61,7 +63,8 @@ def main() -> None:
         print("no subjects — is the store populated and the date window sane?")
         return
 
-    res = walk_forward(store, subjects, LANDED_BENCHMARKS,
+    res = walk_forward(store, subjects,
+                       {**LANDED_BENCHMARKS, **LANDED_CANDIDATES, **LANDED_ENGINE},
                        lag_days=args.lag_days, max_subjects=args.max)
     print("\n=== landed benchmark leaderboard (sorted by median APE) ===")
     print(res.table())
