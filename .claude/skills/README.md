@@ -47,6 +47,7 @@ new-launch-research  ->  scorecard (BUY/SELECTIVE/WAIT/AVOID)  +  pricing (break
 
 `research/` (harness), `researcher/valuation/` (condo engine), `researcher/landed/`
 (landed scorecard + listings), `researcher/sources/` (PropertyGuru), `researcher/newlaunch/`
-(new-launch scorecard + pricing), `deliverables/` (report generators → output to
-`G:\My Drive\004 RES\REsearch_Reports`). The optional Investment Suite bridge profile lives
+(new-launch scorecard + pricing), `deliverables/` (report generators → every report goes to
+BOTH the gitignored `reports/` and `G:\My Drive\004 RES\REsearch_Reports`, via
+`deliverables/report_out.py`). The optional Investment Suite bridge profile lives
 in the separate `mobile_bridge` repo at `mobile_bridge/apps/investment_suite.py`.

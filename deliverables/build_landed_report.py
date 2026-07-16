@@ -4,8 +4,8 @@
 
 Reads  researcher/landed/<slug>_digest.json  (shape = the research workflow's synth
 schema) and writes a self-contained HTML report to
-  G:\\My Drive\\004 RES\\REsearch_Reports   (override with RESEARCH_REPORTS_DIR;
-falls back to deliverables/ if the Drive isn't mounted). No external assets, no JS.
+  repo reports/ (gitignored) + the Drive library — see deliverables/report_out.py.
+No external assets, no JS.
 """
 from __future__ import annotations
 
@@ -19,6 +19,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)  # so `python deliverables/build_landed_report.py` finds researcher/
 
+from deliverables.report_out import write_report  # noqa: E402
 from researcher.sources.propertyguru import rank_listings, screen_verdict  # noqa: E402
 
 
@@ -165,7 +166,7 @@ a{{color:#1d4ed8;word-break:break-all}}
 <div class="sub">{esc(d.get('subtitle', '实战 Checklist 驱动 · 数据通过公开来源(OneMap / URA / EdgeProp / PUB / SLA)交叉验证'))}</div>
 <div class="meta"><span><b>日期 Date</b> {asof}</span>
 <span><b>方法 Method</b> landed-area-research skill + landed scorecard</span>
-<span><b>输出 Output</b> G:\\My Drive\\004 RES\\REsearch_Reports</span></div>
+<span><b>输出 Output</b> repo reports/ + G:\\My Drive\\004 RES\\REsearch_Reports</span></div>
 </header>
 
 <div class="cn"><b>摘要 / Summary</b><br>{esc(d.get('summary'))}</div>
@@ -220,17 +221,9 @@ def main():
             "mojibake gate: double-encoded UTF-8 detected in the rendered report — "
             "fix the digest strings before shipping")
 
-    reports = os.environ.get("RESEARCH_REPORTS_DIR", r"G:\My Drive\004 RES\REsearch_Reports")
     # generic name; a digest can pin its own (e.g. keep nanyang's historical `_1km_` name)
     name = d.get("report_basename") or f"{slug}_Landed_Area_Report.html"
-    try:
-        os.makedirs(reports, exist_ok=True)
-        out = os.path.join(reports, name)
-        open(out, "w", encoding="utf-8").write(htmls)
-    except OSError:
-        out = os.path.join(HERE, name)
-        open(out, "w", encoding="utf-8").write(htmls)
-    print(f"wrote {out}  ({len(htmls)/1024:.0f} KB)")
+    print(write_report(name, htmls).summary())
 
 
 if __name__ == "__main__":

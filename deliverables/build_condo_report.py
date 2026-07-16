@@ -4,8 +4,8 @@
 
 Reads  researcher/valuation/<slug>_digest.json  (subject + engine output + advisory,
 shape documented in the value-a-property skill) and writes a self-contained bilingual
-HTML report to  G:\\My Drive\\004 RES\\REsearch_Reports  (override RESEARCH_REPORTS_DIR;
-falls back to deliverables/). Unlike build_report.py (the Spottiswoode one-off with
+HTML report to the repo's gitignored reports/ AND the Drive library — see
+deliverables/report_out.py. Unlike build_report.py (the Spottiswoode one-off with
 embedded app screenshots), this builder is generic: web-sourced studies welcome.
 """
 from __future__ import annotations
@@ -18,6 +18,9 @@ from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+sys.path.insert(0, ROOT)
+
+from deliverables.report_out import write_report  # noqa: E402
 
 
 def esc(x) -> str:
@@ -228,16 +231,8 @@ def main():
     htmls = render(d)
     if "â€" in htmls or "Ã©" in htmls:
         raise SystemExit("mojibake gate: double-encoded UTF-8 detected — fix the digest first")
-    reports = os.environ.get("RESEARCH_REPORTS_DIR", r"G:\My Drive\004 RES\REsearch_Reports")
     name = d.get("report_basename") or f"{slug}_Condo_Valuation_Report.html"
-    try:
-        os.makedirs(reports, exist_ok=True)
-        out = os.path.join(reports, name)
-        open(out, "w", encoding="utf-8").write(htmls)
-    except OSError:
-        out = os.path.join(HERE, name)
-        open(out, "w", encoding="utf-8").write(htmls)
-    print(f"wrote {out}  ({len(htmls)/1024:.0f} KB)")
+    print(write_report(name, htmls).summary())
 
 
 if __name__ == "__main__":

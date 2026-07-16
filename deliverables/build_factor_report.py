@@ -9,7 +9,8 @@ Every number is pulled programmatically from the committed data layer:
 
     python deliverables/build_factor_report.py condo
     python deliverables/build_factor_report.py landed
-Output: RESEARCH_REPORTS_DIR/Factor_Study_{Condo|Landed}_Report.html
+Output: Factor_Study_{Condo|Landed}_Report.html -> repo reports/ (gitignored) + the
+Drive library (deliverables/report_out.py).
 """
 from __future__ import annotations
 
@@ -22,6 +23,9 @@ from datetime import date
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 F = os.path.join(ROOT, "researcher", "factors")
+sys.path.insert(0, ROOT)
+
+from deliverables.report_out import write_report  # noqa: E402
 
 
 def esc(x) -> str:
@@ -429,16 +433,8 @@ def main() -> None:
     htmls = build_condo() if kind == "condo" else build_landed()
     if "�" in htmls or "â€" in htmls:
         raise SystemExit("mojibake gate")
-    reports = os.environ.get("RESEARCH_REPORTS_DIR", r"G:\My Drive\004 RES\REsearch_Reports")
     name = f"Factor_Study_{kind.capitalize()}_Report.html"
-    try:
-        os.makedirs(reports, exist_ok=True)
-        out = os.path.join(reports, name)
-        open(out, "w", encoding="utf-8").write(htmls)
-    except OSError:
-        out = os.path.join(HERE, name)
-        open(out, "w", encoding="utf-8").write(htmls)
-    print(f"wrote {out}  ({len(htmls) / 1024:.0f} KB)")
+    print(write_report(name, htmls).summary())
 
 
 if __name__ == "__main__":

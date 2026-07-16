@@ -66,7 +66,8 @@ facts temper the verdict — don't state guesses as certainties.
 ## Step 4 — Deliver
 
 `deliverables/build_newlaunch_report.py <slug>` reads `researcher/newlaunch/<slug>_digest.json`
-→ bilingual HTML to `G:\My Drive\004 RES\REsearch_Reports`, incl. the verification table.
+→ bilingual HTML to BOTH the gitignored `reports/` and `G:\My Drive\004 RES\REsearch_Reports`,
+incl. the verification table.
 
 ## Data sources
 

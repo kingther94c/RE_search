@@ -17,8 +17,11 @@ from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "researcher", "valuation"))
 import dataset as D  # noqa: E402
+
+from deliverables.report_out import write_report  # noqa: E402
 
 CAPS = os.path.join(ROOT, "research", "captures")
 RESULTS = json.load(open(os.path.join(ROOT, "researcher", "valuation", "results.json"), encoding="utf-8"))
@@ -366,13 +369,4 @@ ul{{margin:6px 0 6px 0;padding-left:20px}} li{{margin:4px 0}}
 
 </div></body></html>"""
 
-REPORTS_DIR = os.environ.get("RESEARCH_REPORTS_DIR", r"G:\My Drive\004 RES\REsearch_Reports")
-NAME = "Spottiswoode_18-03_Valuation_Report.html"
-try:
-    os.makedirs(REPORTS_DIR, exist_ok=True)
-    out = os.path.join(REPORTS_DIR, NAME)
-    open(out, "w", encoding="utf-8").write(HTML)
-except OSError:  # Google Drive not mounted -> fall back to the local repo copy
-    out = os.path.join(HERE, NAME)
-    open(out, "w", encoding="utf-8").write(HTML)
-print(f"wrote {out}  ({len(HTML)/1024:.0f} KB)")
+print(write_report("Spottiswoode_18-03_Valuation_Report.html", HTML).summary())

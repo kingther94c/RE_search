@@ -8,7 +8,8 @@ reviewed studies.
 
     python deliverables/build_yield_ladder_memo.py <digest_slug> [<digest_slug> ...]
 
-Output: RESEARCH_REPORTS_DIR/Yield_Ladder_Memo.html
+Output: Yield_Ladder_Memo.html -> repo reports/ (gitignored) + the Drive library
+(deliverables/report_out.py).
 """
 from __future__ import annotations
 
@@ -22,6 +23,9 @@ from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+sys.path.insert(0, ROOT)
+
+from deliverables.report_out import write_report  # noqa: E402
 
 
 def esc(x) -> str:
@@ -129,18 +133,14 @@ def main() -> None:
     htmls = render(rows)
     if "�" in htmls or "â€" in htmls:
         raise SystemExit("mojibake gate")
-    reports = os.environ.get("RESEARCH_REPORTS_DIR", r"G:\My Drive\004 RES\REsearch_Reports")
-    try:
-        os.makedirs(reports, exist_ok=True)
-        out = os.path.join(reports, "Yield_Ladder_Memo.html")
-        open(out, "w", encoding="utf-8").write(htmls)
-    except OSError:
-        out = os.path.join(HERE, "Yield_Ladder_Memo.html")
-        open(out, "w", encoding="utf-8").write(htmls)
+    res = write_report("Yield_Ladder_Memo.html", htmls)
+    # Windows consoles default to cp1252, which cannot encode the CJK project names
+    # below — the memo was already written, but the echo crashed the script (exit 1).
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     for r in rows:
         print(f"{r['name']}: model {r['est_psf']} band {r['band']} avm {r['avm']} "
               f"fresh {r['fresh']} bias {r['avm_bias_pct']} yield {r['yield_pct']}")
-    print(f"wrote {out} ({len(htmls) / 1024:.0f} KB)")
+    print(res.summary())
 
 
 if __name__ == "__main__":

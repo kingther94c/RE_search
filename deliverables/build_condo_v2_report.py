@@ -3,9 +3,9 @@
     python deliverables/build_condo_v2_report.py --project "TREASURE AT TAMPINES" \
            --area 936 --floor 12 [--asof 2026-07-01]
 
-Values the unit with researcher.backtest.value_unit, then writes an HTML report to
-RESEARCH_REPORTS_DIR (default G:\\My Drive\\004 RES\\REsearch_Reports; falls back to
-deliverables/ when G: is not mounted). Self-contained (inline CSS), no external assets.
+Values the unit with researcher.backtest.value_unit, then writes an HTML report to the
+repo's gitignored reports/ AND syncs it to the Drive library (deliverables/report_out.py).
+Self-contained (inline CSS), no external assets.
 """
 from __future__ import annotations
 
@@ -15,18 +15,8 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from deliverables.report_out import write_report  # noqa: E402
 from researcher.backtest.value_unit import SubjectSpec, value
-
-
-def _reports_dir() -> str:
-    d = os.environ.get("RESEARCH_REPORTS_DIR", r"G:\My Drive\004 RES\REsearch_Reports")
-    if os.path.isdir(os.path.dirname(d)) or os.path.isdir(d):
-        try:
-            os.makedirs(d, exist_ok=True)
-            return d
-        except OSError:
-            pass
-    return os.path.dirname(os.path.abspath(__file__))
 
 
 def _money(x):
@@ -134,10 +124,7 @@ def main():
            f"<title>{html.escape(a.project)} valuation</title><style>{_CSS}</style></head>"
            f"<body>{render(v)}</body></html>")
     slug = a.project.lower().replace(" ", "_").replace("'", "")
-    out = os.path.join(_reports_dir(), f"condo_v2_{slug}.html")
-    with open(out, "w", encoding="utf-8", newline="\n") as f:
-        f.write(doc)
-    print(f"-> {out}")
+    print(write_report(f"condo_v2_{slug}.html", doc).summary())
     if not v.get("error"):
         fv = v["fair_value"]
         print(f"   {a.project}: {_money(fv['price'])} ({fv['psf']:.0f} psf), "

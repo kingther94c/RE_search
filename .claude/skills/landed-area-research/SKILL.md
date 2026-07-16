@@ -82,7 +82,7 @@ URA REALIS / **EdgeProp** / squarefoot / PropertyGuru transactions. For the micr
 1. **Area report** — estates table (type, GCBA, indicative land psf, note), price-by-segment,
    zoning/future-planning notes, hazards-by-location, regulatory context, and a clear
    "best-for / watch-outs". Generate HTML with `deliverables/build_landed_report.py` (writes to
-   `G:\My Drive\004 RES\REsearch_Reports`).
+   BOTH the gitignored `reports/` and `G:\My Drive\004 RES\REsearch_Reports`).
 2. **Screening shortlist** — the filter to apply to listings, e.g.: estate ⊂ 1km ring; regular
    rectangular plot; frontage ≥ target; land psf ≤ ceiling; not low-lying/near canal; freehold;
    rebuilt or rebuild-friendly. Feed candidates to `landed-property-due-diligence` +

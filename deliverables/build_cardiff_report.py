@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 """Render the 19 Cardiff Grove landed valuation report (bilingual HTML).
 Numbers are read from research/cardiff19_valuation.json + cardiff_transactions.json
-so the prose can never drift from the computed figures. Output -> Google Drive
-reports dir (env RESEARCH_REPORTS_DIR) with a deliverables/ fallback.
+so the prose can never drift from the computed figures. Output -> repo reports/ (gitignored)
++ synced to the Drive library (deliverables/report_out.py).
 R2 revision: leads with the honest comp-based decline (not the flattering flat framing),
 buyer target anchored to freshest same-spec prints, ABSD/property-tax quantified,
 comp counts disambiguated (29 street terraces vs 8 same-spec originals in the grid)."""
-import json, os, re, html
+import json, os, re, html, sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, REPO)
+
+from deliverables.report_out import write_report  # noqa: E402
 V = json.load(open(os.path.join(REPO, "research", "cardiff19_valuation.json"), encoding="utf-8"))
 T = json.load(open(os.path.join(REPO, "research", "cardiff_transactions.json"), encoding="utf-8"))
 S = V["subject"]; VAL = V["valuation"]; CC = V["crosschecks"]; VP = V["vs_purchase"]
@@ -367,14 +370,4 @@ ul{{margin:6px 0 6px 0;padding-left:20px}} li{{margin:4px 0}}
 </div>
 </div></body></html>"""
 
-dest_dir = os.environ.get("RESEARCH_REPORTS_DIR") or r"G:\My Drive\004 RES\REsearch_Reports"
-if not os.path.isdir(dest_dir):
-    dest_dir = os.path.join(REPO, "deliverables")
-out = os.path.join(dest_dir, "cardiff_grove_19_Landed_Valuation_Report.html")
-with open(out, "w", encoding="utf-8") as f:
-    f.write(HTML)
-repo_copy = os.path.join(REPO, "deliverables", "cardiff_grove_19_Landed_Valuation_Report.html")
-if os.path.abspath(repo_copy) != os.path.abspath(out):
-    with open(repo_copy, "w", encoding="utf-8") as f:
-        f.write(HTML)
-print("wrote:", out); print("bytes:", len(HTML))
+print(write_report("cardiff_grove_19_Landed_Valuation_Report.html", HTML).summary())

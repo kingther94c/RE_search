@@ -4,8 +4,8 @@
 
 Reads  researcher/newlaunch/<slug>_digest.json  (the research+verify workflow's synth
 schema) and writes a self-contained bilingual HTML report to
-  G:\\My Drive\\004 RES\\REsearch_Reports   (override RESEARCH_REPORTS_DIR; falls back
-to deliverables/ if the Drive isn't mounted). Includes the verification (验收) table.
+  repo reports/ (gitignored) + the Drive library — see deliverables/report_out.py.
+Includes the verification (验收) table.
 """
 from __future__ import annotations
 
@@ -17,6 +17,9 @@ from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+sys.path.insert(0, ROOT)
+
+from deliverables.report_out import write_report  # noqa: E402
 
 
 def esc(x) -> str:
@@ -161,16 +164,7 @@ def main():
         raise SystemExit(
             "mojibake gate: double-encoded UTF-8 detected in the rendered report — "
             "fix the digest strings before shipping")
-    reports = os.environ.get("RESEARCH_REPORTS_DIR", r"G:\My Drive\004 RES\REsearch_Reports")
-    fname = f"{slug}_NewLaunch_Report.html"
-    try:
-        os.makedirs(reports, exist_ok=True)
-        out = os.path.join(reports, fname)
-        open(out, "w", encoding="utf-8").write(htmls)
-    except OSError:
-        out = os.path.join(HERE, fname)
-        open(out, "w", encoding="utf-8").write(htmls)
-    print(f"wrote {out}  ({len(htmls)/1024:.0f} KB)")
+    print(write_report(f"{slug}_NewLaunch_Report.html", htmls).summary())
 
 
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ Portals are Tier-2 (reconcile); agent reports Tier-3 (claims, never facts).
 
 ## Run it
 ```bash
-# one unit -> full valuation + bilingual HTML report (RESEARCH_REPORTS_DIR or deliverables/)
+# one unit -> full valuation + bilingual HTML report (repo reports/ + the Drive library)
 python deliverables/build_condo_v2_report.py --project "TREASURE AT TAMPINES" --area 936 --floor 12
 ```
 Programmatic: `from researcher.backtest.value_unit import value, SubjectSpec`.

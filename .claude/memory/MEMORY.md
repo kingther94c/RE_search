@@ -4,7 +4,7 @@
 - [condo-valuation-pipeline](condo-valuation-pipeline.md) — one-command condo valuation (doctor → 4 harvesters → pipeline → 12 gates); sonnet-proven; AVM bias is NOT one-directional, freshest same-spec print is the anchor
 - [android-read-bridge](android-read-bridge.md) — mobile_bridge service, toolchain locations, worktree isolation, two-tier tests, the Appium page_source vs `<node>` parser gotcha
 - [investment-suite-valuation](investment-suite-valuation.md) — PropNex Investment Suite app + the Researcher work; now split into its own repo RE_search (mobile_bridge is back to a clean tool); extraction gotchas + #18-03 trial result
-- [re-search-reports-dir](re-search-reports-dir.md) — RE_search reports output to G:\My Drive\004 RES\REsearch_Reports
+- [re-search-reports-dir](re-search-reports-dir.md) — HTML reports go to BOTH the gitignored reports/ AND G:\My Drive\004 RES\REsearch_Reports (never a tracked folder)
 - [landed-research-capability](landed-research-capability.md) — RE_search 4-study suite (Nanyang PASS 8.3, Rosyth, Dunearn House 新盘, Gallop Gables condo) + OneMap tool + hostile-analyst critique loop + geography gotchas
 - [multiagent-budget-lessons](multiagent-budget-lessons.md) — fleet sizing after the session-limit burn: sonnet gatherers ×3-4, Fable only for synthesis/critique, sequence heavy workflows
 - [data-source-trust-hierarchy](data-source-trust-hierarchy.md) — Investment Suite + SG-official data = ground truth; property research/agent reports are low-trust (conflicted) — anchor every load-bearing number to Tier 1
