@@ -5,6 +5,20 @@ impact · assets affected.
 
 ---
 
+## 2026-07-16 — Fable review round + PRIORITY PIVOT: landed first (R6 active)
+- **What:** post-ship review of R0–R5 (EXP-0008). Applied the safe fixes: live-vs-
+  reconstruction as-of semantics (live valuations no longer discard the freshest ~2 months),
+  day-granular reconstruction, fallback band widened to the anchor's own coverage-swept band
+  (the conformal table is C1-calibrated and under-covers on fallback), conformal↔code sha1
+  fingerprint + red-test guard, smooth confidence depth curve. 117 tests.
+- **Deferred to the condo backlog** (require recalibration; condo frozen): FLOOR_PP 0.004
+  (re-fit, 4,415 pairs) and CCR elasticity −0.016. Fit scripts + numbers in EXP-0008.
+- **PIVOT (user decision):** LANDED valuation is now the priority; condo + new-launch pause
+  to the backlog. Roadmap updated: status table for R0–R8, condo backlog, and an R6 kickoff
+  grounded in measured data reality (12,115 resale landed subjects; street median = 5
+  caveats/5y → partial pooling mandatory; Land vs strata-landed split; land-psf semantics).
+- **Assets affected:** condo (frozen, safer), landed (active next).
+
 ## 2026-07-16 — R5 SHIPPED: condo-resale-valuation skill, hostile review PASS 8.7/10 (G5 MET)
 - **What:** the skill is production-accepted. 4 hostile-review rounds (6.6 → 7.6 → 7.6 →
   **8.7 PASS**), each fix re-verified by reproduction. Final polish: smooth confidence in

@@ -50,6 +50,7 @@ def _conformal_band(price: float, n_comps: int, seg: str) -> tuple[float, float]
 def engine_v2(subject, market, ctx):
     """V2: C1 point wherever available, else best-anchor fallback; conformal interval."""
     c1 = c1_grid_adapted(subject, market, ctx)
+    anchor_band = None
     if c1 is not None:
         psf, n, src = c1["psf"], c1["n_comps"], "C1"
     else:
@@ -64,14 +65,25 @@ def engine_v2(subject, market, ctx):
             a = fn(subject, market, ctx)
             if a is not None:
                 psf, n, src = a["psf"], 0, tag + "-fallback"
+                anchor_band = (a.get("low"), a.get("high"))
                 break
         else:
             return None
     area = subject["area_sqft"]
     price = round(psf * area, 0)
     lo, hi = _conformal_band(price, n, subject.get("market_segment") or "")
+    if anchor_band is not None:
+        # The conformal table is calibrated on C1 residuals (median ~3.7%); a fallback
+        # anchor's error is 5.5-10%, so that band UNDER-covers here. Use the WIDEST of the
+        # anchor's own coverage-swept band (A2's measured ~85%) and the conformal cell.
+        alo, ahi = anchor_band
+        if alo is not None:
+            lo = min(lo, alo)
+        if ahi is not None:
+            hi = max(hi, ahi)
     return {"method": "V2_engine", "psf": round(psf, 1), "price": price,
-            "low": lo, "high": hi, "n_comps": n, "note": f"{src}, conformal band"}
+            "low": lo, "high": hi, "n_comps": n, "note": f"{src}, conformal band"
+            + (" (widened to anchor band)" if anchor_band else "")}
 
 
 ENGINE_V2 = {"V2_engine": engine_v2}

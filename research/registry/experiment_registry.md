@@ -5,6 +5,34 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0008 — Fable review round: production-semantics fixes + deferred re-fits (2026-07-16)
+- **Trigger:** post-ship Fable review of R0–R5. Found 2 real defects beyond the 4 hostile
+  rounds, plus closed 3 recurring reviewer P2/P3s. **Mid-round the user pivoted priority to
+  LANDED** — so fixes that change C1's residual distribution were fitted, recorded, and
+  **deferred** (they require a recalibration run; condo is frozen).
+- **APPLIED (safe — do not touch C1 residuals; 117 tests green):**
+  1. **Live-vs-reconstruction as-of semantics** (`value_unit.value`): a LIVE valuation (no
+     asof) now uses lag_days=0 — the freshly pulled store IS the information set; the old
+     blanket 56d lag silently discarded the freshest ~2 months of prints (the most valuable
+     evidence). An explicit past asof = reconstruction mode (56d, now DAY-granular, closing
+     the month-end coarsening P3). Verified: Treasure live n=140 vs 7/1-reconstruction n=133.
+  2. **Fallback band under-coverage fix** (`engine_v2`): the conformal table is calibrated on
+     C1 residuals (~3.7% median) but was wrapped around fallback-anchor points (5.5–10%
+     error) — and the "0|seg" cell doesn't even exist (C1 rows always have n>=1). Fallback now
+     uses the WIDEST of the anchor's own coverage-swept band and the conformal cell.
+  3. **Conformal↔code fingerprint**: `analyze_r3.py` stamps sha1(candidates.py) into the
+     table; `test_conformal_table_matches_current_c1` turns silent drift into a red test.
+  4. **Smooth confidence depth curve** (90 − 45·e^(−n/6)) — no more 7-vs-8-comp 9-point jump.
+- **FITTED BUT DEFERRED (condo backlog — apply when condo resumes):**
+  - **FLOOR_PP 0.003 → 0.004** (`research/fit_floor_premium.py`: 4,415 same-project
+    near-simultaneous size-similar cross-band pairs; global +0.40%/floor, CCR +0.41 /
+    RCR +0.37 / OCR +0.46). The last ported constant, now measured.
+  - **CCR elasticity −0.02 → −0.016** (align to the EXP-0007 fit).
+  - Apply = edit candidates.py, then `run --sample 8000 --dump` → `analyze_r3.py` (recalibrate
+    + re-fingerprint) → verify leaderboard didn't regress → update SKILL numbers.
+- **Also verified in review:** `_infer` uses the full store deliberately (static attrs only,
+  never price — no leakage); `_wquantile`/comp-ranking correct; report renderer consistent.
+
 ## EXP-0007 — R5 hostile-review revision: size/time fixes → engine v2.1 (2026-07-16)
 - **Trigger:** the R5 acceptance reviewer (REVISE 6.6) blocked on a real defect — the ported
   `SIZE_ELASTICITY=-0.08` was never re-fit on URA, and a 505sf shoebox was setting an 1100sf

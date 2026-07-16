@@ -17,6 +17,7 @@ spread within which ~82% of comparable transactions actually printed (EXP-0006) 
 from __future__ import annotations
 
 import datetime as _dt
+import math as _math
 from dataclasses import dataclass
 from statistics import median
 
@@ -27,7 +28,7 @@ from .candidates import c1_grid_adapted
 from .engine_v2 import engine_v2
 from .index import PriceIndex
 from .market import MarketView
-from .store import TransactionStore, month_end, months_between
+from .store import TransactionStore, months_between
 
 
 @dataclass
@@ -69,17 +70,16 @@ def _infer(spec, store) -> dict | None:
 
 
 def _confidence(n_comps, used_fallback, band_rel, anchor_spread) -> tuple[int, str]:
-    # base tier from same-project comp depth (the empirical accuracy driver)
+    # SMOOTH base from same-project comp depth (no 7-vs-8-comp jump): 90 - 45*exp(-n/6)
+    # tracks the empirical error curve (n=1 ~52, n=6 ~73, n=12 ~84, n>=30 ~90).
     if used_fallback:
         c, label = 45, "low — no same-project resale; statistical fallback (~5-10% typical error)"
-    elif n_comps <= 2:
-        c, label = 62, "moderate-low — thin same-project evidence"
-    elif n_comps <= 7:
-        c, label = 74, "moderate"
-    elif n_comps <= 19:
-        c, label = 83, "good — deep same-project evidence"
     else:
-        c, label = 90, "high — very deep same-project evidence"
+        c = 90 - 45 * _math.exp(-n_comps / 6)
+        label = ("moderate-low — thin same-project evidence" if n_comps <= 2 else
+                 "moderate" if n_comps <= 7 else
+                 "good — deep same-project evidence" if n_comps <= 19 else
+                 "high — very deep same-project evidence")
     # SMOOTH anchor-disagreement penalty (no cliff): 0 below 5% spread, growing to -35.
     if anchor_spread:
         c -= min(35.0, max(0.0, (anchor_spread - 0.05) * 160))
@@ -92,9 +92,6 @@ def _confidence(n_comps, used_fallback, band_rel, anchor_spread) -> tuple[int, s
         label += "; wide dispersion in this cell"
     c = max(20, round(c))
     return c, label
-
-
-import math as _math
 
 
 def _relevant_comps(subject, market, n=8):
@@ -130,17 +127,31 @@ def _recent_ref(subject, market, ctx):
             "raw_psf": fresh["psf"], "adj_psf": round(fresh["psf"] * tf * size_adj, 1)}
 
 
-def value(spec: SubjectSpec, store: TransactionStore | None = None) -> dict:
+def value(spec: SubjectSpec, store: TransactionStore | None = None,
+          lag_days: int | None = None) -> dict:
+    """Value one unit. As-of semantics (deliberate, two modes):
+
+    - LIVE (no `asof`, or asof >= today): the freshly pulled store IS the information set —
+      lag_days defaults to 0. Applying the backtest's 56-day caveat-lag here would discard
+      the freshest ~2 months of prints, exactly the evidence that matters most.
+    - RECONSTRUCTION (explicit past `asof`): rebuild what was knowable THEN — lag_days
+      defaults to 56 (the backtest's caveat-visibility buffer), day-granular.
+    Override with lag_days if you know better (e.g. you know when the store was pulled).
+    """
     store = store or TransactionStore.load().exclude_bulk().psf_band(500, 6500)
-    subject = _infer(spec, store)
+    subject = _infer(spec, store)   # static attrs only (never price) — full store is fine
     if subject is None:
         return {"error": "project_not_found",
                 "message": f"No URA caveats for project {spec.project!r}. Provide a known "
                            "project name, or (v1 scope) this unit is out of scope — escalate "
                            "to an Investment-Suite comp pull."}
-    asof = spec.asof or _dt.date.today().isoformat()
-    t = month_end(asof[:7])
-    view = store.as_of(t)
+    today = _dt.date.today()
+    asof = spec.asof or today.isoformat()
+    t = _dt.date.fromisoformat(asof)
+    live = t >= today
+    if lag_days is None:
+        lag_days = 0 if live else 56
+    view = store.as_of(t, lag_days=lag_days)
     market = MarketView(view.txs, asof[:7])
     idx = PriceIndex.load()
     ctx = {"asof_ym": asof[:7], "asof_date": t, "index": idx,

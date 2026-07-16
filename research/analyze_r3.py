@@ -124,10 +124,17 @@ def conformal(rows, point_method, save=False):
         print(f"  union-band: coverage {u_in/u_n:.3f}  mean_rel_width {u_w/u_n:.3f}  "
               f"(the current E-series band)")
     if save:
+        # Fingerprint the point-method source so a C1 change without recalibration is
+        # caught by tests/test_backtest.py::test_conformal_table_matches_current_c1.
+        # Convention: the dump this table is calibrated from was produced by the CURRENT code.
+        import hashlib
+        cand = os.path.join(os.path.dirname(HERE), "researcher", "backtest", "candidates.py")
+        with open(cand, "rb") as f:
+            table["_meta"]["candidates_sha1"] = hashlib.sha1(f.read()).hexdigest()
         with open(TABLE_OUT, "w", encoding="utf-8", newline="\n") as f:
             json.dump(table, f, ensure_ascii=False, indent=1)
         print(f"  -> SAVED table {TABLE_OUT} "
-              f"({len([k for k in table if not k.startswith('_')])} cells)")
+              f"({len([k for k in table if not k.startswith('_')])} cells, fingerprinted)")
 
 
 def main():

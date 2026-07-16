@@ -22,6 +22,35 @@ changelog, not silently._
 4. **Nothing is deleted until beaten.** Deprecating an incumbent requires its successor
    to beat it on the harness AND pass the regression suite (guardrail 9).
 
+## Status & priority (updated 2026-07-16)
+
+> **PRIORITY PIVOT (user decision 2026-07-16): LANDED FIRST.** Condo and new-launch pause —
+> development AND iteration — and move to the backlog below. **R6 is the active phase.**
+
+| Phase | Status | Gate outcome |
+|---|---|---|
+| R0 data foundation | **DONE** | G0 PASS (136,436 caveats / 61 months / 61k condo subjects; EXP-0002) |
+| R1 condo baseline | **DONE** | Bar = 4.1% median APE (C1≈B3). **G1 amended, on the record:** the median rule opened nothing; tail + interval calibration + same-project dependency became the R3 targets (EXP-0003) |
+| R2 bake-offs | **FOLDED into R3/EXP-0007** | full bake-offs skipped by evidence (same-project dominates); elasticity & floor-premium re-fits delivered the 2c substance; 2a/2b remain unopened — reopen only on demonstrated error mass |
+| R3 engine v2 | **DONE** | G3 MET (V2 = C1 + lease-aware fallback + conformal; 3.71% median / 100% cover / ~82-85% held-out interval; EXP-0004/5/6) |
+| R4 IS calibration bridge | **PARKED** (was next; superseded by the pivot) | — |
+| R5 condo skill | **SHIPPED** | G5 PASS 8.7/10 (4 hostile rounds; EXP-0007/0008). **Sequence deviation, on the record:** shipped BEFORE R4 with IS corroboration as a mandatory MANUAL step |
+| **R6 landed** | **← ACTIVE** | see kickoff below |
+| R7 new-launch | **PARKED** | — |
+| R8 operations | **NOT STARTED** | snapshot archive exists; monthly refresh runbook pending |
+
+Reality check vs estimates: R0–R5 (condo line) took ~2.5 sessions vs the 6–10 estimated —
+gates and evidence-driven skips (G1, R2) did the shortening, as designed.
+
+### Condo & new-launch backlog (frozen 2026-07-16 — nothing here ships without its gate)
+1. Apply the **fitted-but-deferred constants** (EXP-0008): FLOOR_PP 0.004, CCR elasticity
+   −0.016 → recalibrate conformal (fingerprint enforces this) → re-verify leaderboard.
+2. **R4 IS bridge**: guided-harvest skill v2 + URA↔IS reconciliation + unit/stack premiums —
+   automates the manual IS-corroboration step the condo skill mandates on hard cases.
+3. Hard-case blend rule (50/50 toward fresh print) — validate or bound it on a backtest slice.
+4. Listing evidence (MONITOR tier), strategy-layer re-basing (R8 items).
+5. R7 new-launch programme (premium persistence + developer ladder are URA-backtestable).
+
 ## North star (mandate, condensed)
 
 > For a specific Singapore property, using only information available at the valuation
@@ -274,7 +303,24 @@ PASS; interval calibration from G3 holds on trial cases.
 
 ---
 
-## R6 — Landed programme
+## R6 — Landed programme ← ACTIVE (kickoff grounded 2026-07-16)
+
+**Data reality (measured on the pulled store — shapes every design choice below):**
+- **12,849 landed caveats / 12,115 resale subjects** (~199/mo island-wide) — island-level
+  walk-forward is viable; per-street it is NOT: **1,072 streets, median 5 caveats/street
+  over 5 years** (p90 = 30). Partial pooling toward enclave/planning-area is MANDATORY,
+  not optional; a "street median" benchmark will mostly decline.
+- **11,236 `type_of_area='Land'` rows (87%): psf = LAND psf, area = land area** (p50 2,640
+  sqft, p95 7,622). The remaining 1,613 strata-landed (cluster housing) trade on strata
+  area — a SEPARATE bucket, do not mix (R6a decision, audit item: 15 stray 'Apartment'
+  rows inside the landed slice need a rule).
+- Tenure: 68% freehold + 14% 999yr — tenure splits are viable. Segment: OCR 8,593 /
+  RCR 2,484 / CCR 1,772. Type: Terrace 6,003 / Semi-D 3,648 / Detached 1,570.
+- **First moves:** 6a landed store slice + hygiene (strata-landed split, Apartment rows,
+  psf-band for land-psf ≠ condo band) → landed benchmarks (enclave/planning-area median
+  land-psf time-adjusted, nearest-street transfer, type×tenure pools) → walk-forward
+  leaderboard = the landed bar → 6c land-value curve (price = f(land area), bulk-testable).
+  Reuse the harness as-is; only benchmarks and hygiene are landed-specific.
 
 **Research direction.** Plot-first valuation where the quant loop is thinner. What can
 bulk URA landed caveats actually validate (land-value curves, time adjustment, enclave

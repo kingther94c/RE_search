@@ -36,6 +36,9 @@ Portals are Tier-2 (reconcile); agent reports Tier-3 (claims, never facts).
 python deliverables/build_condo_v2_report.py --project "TREASURE AT TAMPINES" --area 936 --floor 12
 ```
 Programmatic: `from researcher.backtest.value_unit import value, SubjectSpec`.
+As-of semantics: **omit `--asof` for a LIVE valuation** (the pulled store is the info set —
+freshest prints included); an explicit past `--asof` reconstructs what was knowable then
+(56-day caveat-lag, day-granular). Don't backdate asof for a live question.
 
 ## What the engine does (so you can explain it, not redo it)
 - **Point = C1 same-project adjustment grid** wherever the project has resale caveats:
