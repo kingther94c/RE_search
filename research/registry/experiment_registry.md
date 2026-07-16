@@ -5,6 +5,94 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0012 — L3/L4: landed engine LV1 + conformal + the `landed-valuation` skill (2026-07-16)
+- **Status: DONE. GL2 PASS · GL3 PASS · GL4 REVISE→fixed (hostile round 1: 6.9, 3 blockers).**
+- **LV1** (`landed_engine.py`) = LC2 street point where the street answers, else LA1 pooled
+  fallback (coverage only, NEVER blended — L1 showed even 1-2 street comps beat every pool),
+  + split-conformal band per (street-liquidity × type), + a ×1.6 widening and confidence cap
+  ≥8k sqft. Same architecture the condo line validated ("best method where it applies +
+  fallback + calibrated band", not an ensemble blend).
+- **Result (7,027 walk-forward landed resales, ≥2023-01, lag 56d):**
+  **LV1 median APE 0.0934 / P90 0.287 / coverage 100% / held-out band coverage 78.9%**
+  (`research/analyze_landed.py`, calibrate <2025-01 → validate ≥2025-01, nominal 80%,
+  width 0.399). vs the L1 bar LC1 0.1051/87.3%: **−1.2pp median, −5.4pp P90, +12.7pp
+  coverage, interval 39.7%→78.9%.**
+  - **GL3 PASS:** beats the bar; band inside 80%±5pp; respects the ~6% bundle noise floor
+    (9.3% is ~3pp above it — the rest is unobservable, not slack).
+  - LA1 alone 0.0976 (coverage 99.97%) — pooled anchors buy COVERAGE, not points (the condo
+    reversal, transposed, confirmed again).
+  - Conformal table fingerprinted (sha1 of landed_candidates.py + landed_size_curve.py);
+    `test_conformal_table_matches_landed_code` turns drift RED.
+- **L4 skill** (`landed-valuation`): `value_landed.py` + bilingual report + `tests/test_landed.py`
+  (15). Field trials (asof 2026-07-01 = reconstruction, so the checks below were INVISIBLE
+  to the engine): Loyang Rise 1,635sf 99yr → 1,459 land-psf vs an unseen 2026-05 print at
+  ~1,514 psf (−3.6%); Bowmont Gardens 9,225sf detached → S$14.41M vs an unseen 2026-07 print
+  at S$14.00M (+2.9%) — in the regime the engine honestly calls its weakest; Cardiff Grove →
+  DECLINES (no URA caveat in the 5y window despite a PASS-8.5 craft valuation) and routes to
+  Investment Suite. **Finding: the IS app carries deeper street history than the URA API
+  window** — the escalation path is real, not a cop-out.
+- **Hostile review round 1 (REVISE 6.9)** — quant core reproduced EXACTLY (leaderboard
+  bit-for-bit, all trial arithmetic, conformal multipliers); **all 3 blockers were in the
+  CLIENT-FACING layer and are fixed:**
+  1. `condition` was a DEAD INPUT while the report claimed "band widened, NOT guessed"
+     (identical output for None/original/rebuilt). Fixed by telling the truth: the engine is
+     condition-blind, the band already embeds AVERAGE condition ignorance (calibrated on
+     condition-blind residuals), and condition now yields a DIRECTIONAL note (floor/ceiling)
+     with magnitude explicitly NOT quantified → L2e.
+  2. The comps exhibit filtered on type only while captioned "lease-matched" — it displayed
+     FH prints against leasehold subjects, the very pairing the 232% guard forbids (32 mixed
+     street groups). `_comps` is now lease-matched.
+  3. **Guidance converted ignorance into aggression:** ask = band top → "ask S$21.8M" on a
+     plot that printed S$14.0M, implied psf above every comp shown. The conformal band is the
+     ENGINE'S predictive error, not achievable dispersion. Guidance is now SUPPRESSED with a
+     reason when big-plot / fallback / band >±22.5%.
+  - Also fixed: **latent `999`-in-`1999` tenure-parser collision** (substring scan turned a
+    99yr-from-1999 lease into quasi-freehold → would silently re-arm the 232% failure on a
+    data refresh; inert today only because landed lease_start jumps 1997→2000) — anchored
+    regex + a regression test; report money → 3 sig figs (was 8 sig figs on a ±44% band).
+- **Verdict:** LV1 ACCEPT. Skill ships scope-limited (see GL4 line in the roadmap).
+
+## EXP-0011 — L2a: the landed land-size curve, re-fitted (2026-07-16)
+- **Status: DONE. Verdict: ACCEPT (<8k sqft) / ACCEPT-WITH-SCOPE-LIMIT (≥8k).**
+- **Trigger:** L1/EXP-0010's error map — LC1 median APE climbs monotonically with plot size
+  (1.5-3k 8.8% → 3-5k 12.2% → 5-8k 14.5% → 8-15k **24.0%** → 15k+ **41.2%**) — and LC1's
+  size prior was `CRAFT_SIZE_ELASTICITY = -0.877`, ported from ONE street's two cross-size
+  legs in the Cardiff craft study (guardrail-#5: unvalidated globally).
+- **Method** (`research/fit_land_size_curve.py`), three estimators so the answer doesn't rest
+  on one design: (A) **within-street FIXED EFFECTS** slope of ln(psf) on ln(area) — demean
+  inside each (street,type) group so street prestige/location cannot contaminate the size
+  read; n=10,399 rows in 1,027 groups. (B) near-simultaneous (≤6mo) same-street cross-size
+  **pairs**, no index at all. (C) FE **by size bucket** = the functional-form test.
+- **Findings.** Global elasticity **−0.500** (FE) / **−0.575** (pairs) — **the ported −0.877
+  over-corrects ~1.7×**. A single log-log constant is **inadequate**: the slope collapses with
+  size — <3k −0.53 | 3-5k −0.60 | 5-8k −0.59 | **8-15k −0.01** | **15k+ +0.05**. Economically:
+  small terraces trade on QUANTUM (extra land ≈ free); big plots trade on LAND (each sqft
+  carries ~full marginal value). **TYPE is not an independent axis** — within the 3-5k band
+  Detached is as steep as Terrace (Terr −0.73 / Semi −0.56 / Deta −0.63), so the global
+  "Detached −0.24" was a size-composition artifact. (Honest caveat: at 5-8k the bands diverge,
+  Semi −0.16 (n=106) vs Deta −0.69 (n=433) — the no-type claim is firm at 3-5k, not everywhere.)
+- **Leakage:** pre-2023 vs full-history agree where identified (global −0.482/−0.500; <3k
+  −0.509/−0.526; 5-8k −0.547/−0.585) ⇒ the curve is **structural, not a price signal**.
+  Shipped: <3k −0.51 (pre-2023 value); 3-5k −0.64 and 5-8k −0.56 are **pre/full midpoints**
+  (documented deviation from a pure pre-2023 rule; effect ~0.8% psf on a 20% size move).
+- **SCOPE LIMIT ≥8k:** the two periods DISAGREE (8-15k pre −0.349 vs full −0.006) on n=14-51
+  street groups. **The regime with the largest error is the one URA identifies worst.** Ship a
+  conservative flat −0.20 there and force wide band + case-tier in the engine — never a point.
+- **Shipped** as `landed_size_curve.py`: a piecewise elasticity **integrated in ln(area)**, so
+  the price surface is continuous across the 3k/5k/8k breaks (tested).
+- **Impact (L2c lease matching applied in the same candidate, LC2):** bar 10.51% → **9.12%**,
+  P90 0.341 → 0.283, and **the size explosion is gone: 8-15k 24.0%→11.4%, 15k+ 41.2%→17.5%,
+  GCB-flag 30.0%→18.9%.** (Those are LC2's, which declines ~29% of 15k+ subjects; the SHIPPED
+  LV1 answers 100% and measures 11%/20% there — quote LV1 to clients.)
+- **L2c (same commit):** lease matching — quasi-FH (FH/999yr) may NEVER price a real
+  leasehold; leaseholds must be within ±25y of remaining lease. This is the fix for L1's
+  decisive failure (spatial kNN priced ~20-yr-left 99yr terraces off freehold neighbours:
+  median APE **232%** on sub-2M subjects). Applied even to same-street grids — streets mix tenures.
+- **L2b/L2d/L2e:** L2d delivered as LA1 (coverage anchor, EXP-0012). **L2b time adjustment and
+  L2e improvement bounds NOT opened** — L1's regime slices are flat (10.1-10.8% across 2023-26)
+  and the noise floor already bounds L2e's answer; both stay MONITOR in the backlog rather than
+  spending a module on unjustified error mass.
+
 ## EXP-0010 — L1 landed baseline: the honest leaderboard + noise floor, GL1 (2026-07-16)
 - **Status: DONE (7,027 resale pure-landed subjects ≥2023-01, walk-forward, lag 56d).
   GL1: PASS** — leaderboard lag-stable, bar/tail/coverage/noise floor recorded, L2

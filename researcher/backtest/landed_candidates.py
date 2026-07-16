@@ -13,7 +13,7 @@ LC2 = LC1's craft skeleton with the two L2 fixes the L1 error map demanded:
 """
 from __future__ import annotations
 
-import math
+import re
 from statistics import median
 
 from .landed_benchmarks import (TIME_ADJ_CAP, WINDOW_MO, _est, _recent, _tadj_psf, _wq)
@@ -32,12 +32,12 @@ def remaining_lease(t, asof_ym: str) -> float:
     start = t.get("lease_start")
     if not start:
         return QUASI_FH_YEARS       # unknown leasehold start: don't fabricate a short lease
-    total = 99.0
-    raw = (t.get("tenure_raw") or "").lower()
-    for n in (999, 103, 99, 60, 30):
-        if str(n) in raw:
-            total = float(n)
-            break
+    # ANCHORED parse. A substring scan ("999" in raw) collides with the YEAR: "99 yrs lease
+    # commencing from 1999" would read as a 999-yr lease -> quasi-freehold -> a ~72y-left
+    # plot priced off freehold comps = the 232% failure this guard exists to prevent.
+    # Inert today only because landed lease_start jumps 1997->2000; a refresh would arm it.
+    m = re.match(r"\s*(\d+)\s*yr", (t.get("tenure_raw") or "").lower())
+    total = float(m.group(1)) if m else 99.0
     if total >= QUASI_FH_YEARS:
         return QUASI_FH_YEARS
     return max(0.0, start + total - int(asof_ym[:4]))

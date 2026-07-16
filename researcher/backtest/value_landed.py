@@ -126,10 +126,15 @@ def _street_ref(subject, market, ctx):
             "adj_psf": round(fresh["psf"] * tf * size_factor(fresh["area_sqft"], area), 1)}
 
 
-def _comps(subject, market, n=8):
+def _comps(subject, market, ctx, n=8):
+    """The comps the reader is shown MUST be the comps the point was built from — i.e.
+    LEASE-MATCHED. Showing a freehold print next to a leasehold subject under a
+    'lease-matched' caption misrepresents the basis and displays exactly the pairing the
+    232% guard forbids (a real defect this exhibit had)."""
     area = subject["area_sqft"]
     rows = [r for r in market.landed_on_street(subject["street"])
-            if r["property_type"] == subject["property_type"]]
+            if r["property_type"] == subject["property_type"]
+            and lease_compatible(r, subject, ctx["asof_ym"])]
     ranked = sorted(rows, key=lambda r: (abs(_math.log(r["area_sqft"] / area)),
                                          -months_between("2000-01", r["contract_ym"])))
     return [{"contract_ym": r["contract_ym"], "land_area_sqft": r["area_sqft"],
@@ -156,6 +161,25 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
     market = MarketView(store.as_of(t, lag_days=lag_days).txs, asof[:7])
     idx = PriceIndex.load()
     ctx = {"asof_ym": asof[:7], "asof_date": t, "index": idx, "asof_q": idx.as_of_quarter(t)}
+
+    # CONDITION: the engine is condition-BLIND (URA carries none). There is no validated
+    # condition effect yet (L2e backlog), so we must NOT shift the point or fake a band
+    # widening — the conformal band is already calibrated on condition-blind residuals, i.e.
+    # it embeds AVERAGE condition ignorance. What we can honestly give is DIRECTION.
+    cond = (spec.condition or "").strip().lower() or None
+    condition_note = {
+        "rebuilt": "you report REBUILT: the comp set is a condition-blind mix, so a rebuilt "
+                   "house typically prints ABOVE this estimate — treat the point as a FLOOR. "
+                   "Magnitude is NOT quantified (no validated condition effect; L2e backlog).",
+        "renovated": "you report RENOVATED: likely to print somewhat above a condition-blind "
+                     "estimate; magnitude NOT quantified (L2e backlog).",
+        "original": "you report ORIGINAL: rebuilt/renovated comps in the mix pull the "
+                    "condition-blind estimate UP, so the point may be a CEILING for an "
+                    "original house. Magnitude NOT quantified (L2e backlog).",
+    }.get(cond, "condition NOT supplied and NOT inferred. The band already reflects AVERAGE "
+                "condition ignorance (it is calibrated on condition-blind residuals); it is "
+                "not widened further. Establish condition on site — it is the dominant "
+                "unobserved driver of the bundle price.")
 
     est = landed_engine(subject, market, ctx)
     if est is None:
@@ -192,6 +216,34 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
                                    subject["property_type"])
     rem = remaining_lease(subject, ctx["asof_ym"])
 
+    # GUIDANCE GATE. The conformal band is PREDICTIVE uncertainty (how wrong the engine
+    # tends to be), NOT the price dispersion a seller can achieve. When the band is wide the
+    # two diverge, and mechanically quoting its endpoints converts engine IGNORANCE into
+    # negotiation AGGRESSION — e.g. "ask 21.8M" on a plot that prints 14M, at an implied psf
+    # above every comp on the page. If the engine has already said "indicative only", it has
+    # no business emitting an ask.
+    band_rel = (hi - lo) / price if price else 0.0
+    guidance_ok = not (big or fallback) and band_rel <= 0.45
+    if guidance_ok:
+        buyer = {"attractive_below": lo, "fair_range": [lo, hi], "walk_away_above": hi,
+                 "note": "read off the conformal band — where comparable plots actually "
+                         "print; NOT a negotiation target"}
+        seller = {"ask": hi, "expected_clear": price, "quick_sale": lo,
+                  "note": "ask at the top of the observed range; expected clear at fair "
+                          "value; quick sale at the low end"}
+    else:
+        why = ("plot >=8k sqft (size curve poorly identified)" if big else
+               "no lease-compatible street comp (pooled fallback)" if fallback else
+               f"uncertainty band is +/-{band_rel/2*100:.0f}%")
+        msg = (f"SUPPRESSED — {why}. The band here is the engine's own error, not an "
+               f"achievable price range; deriving an ask/walk-away from it would be "
+               f"aggression dressed as analysis. Use the point as INDICATIVE, establish "
+               f"condition + geometry on site, corroborate via Investment Suite, then "
+               f"re-value.")
+        buyer = {"attractive_below": None, "fair_range": [lo, hi],
+                 "walk_away_above": None, "note": msg}
+        seller = {"ask": None, "expected_clear": None, "quick_sale": None, "note": msg}
+
     return {
         "subject": {"street": spec.street, "land_area_sqft": area,
                     "property_type": spec.property_type,
@@ -209,14 +261,10 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
                                 "hard_case": hard},
         "recent_street_reference": ref,
         "directional_flag": directional,
-        "comps": _comps(subject, market),
-        "buyer_guidance": {"attractive_below": lo, "fair_range": [lo, hi],
-                           "walk_away_above": hi,
-                           "note": "read off the conformal band — where comparable plots "
-                                   "actually print; NOT a negotiation target"},
-        "seller_guidance": {"ask": hi, "expected_clear": price, "quick_sale": lo,
-                            "note": "ask at the top of the observed range; expected clear at "
-                                    "fair value; quick sale at the low end"},
+        "condition_note": condition_note,
+        "comps": _comps(subject, market, ctx),
+        "buyer_guidance": buyer,
+        "seller_guidance": seller,
         "verify_before_offer": [
             "TITLE & PLANNING (INLIS/URA): exact land area, tenure, road reserve/drainage "
             "reserve take, setbacks, conservation or landed-housing-area controls",
@@ -238,6 +286,11 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
             f"(EXP-0010, same-plot repeats). No model on this data can beat it.",
             "Engine LV1 measured 9.3% median APE / 78.9% held-out band coverage on 7,027 "
             "walk-forward landed resales (EXP-0012) — honest high-single-digit, not condo-grade.",
-            "Condition is an INPUT, never inferred; unknown condition = wider band, not a guess.",
+            "The engine is CONDITION-BLIND and GEOMETRY-BLIND: it does not shift the point for "
+            "condition (no validated effect — L2e backlog) and cannot see frontage/shape/"
+            "corner/reserve at all. The band embeds AVERAGE condition ignorance because it is "
+            "calibrated on condition-blind residuals — it is not widened per-subject.",
+            "The band is the ENGINE'S predictive error, not an achievable negotiation range; "
+            "where it is wide the buyer/seller guidance is suppressed by design.",
         ],
     }

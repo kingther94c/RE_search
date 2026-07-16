@@ -13,14 +13,19 @@ ln(psf) on ln(area), so street prestige/location cannot contaminate it; n=10,399
     Economically: small terrace plots trade on QUANTUM (an extra sqft is worth ~nothing, so
     psf falls steeply with size); big detached plots trade on LAND (each sqft carries ~full
     marginal value, so psf is ~flat in size).
-  - TYPE is NOT an independent axis: within a size band, Detached is as steep as Terrace
-    (3-5k: Terr -0.73 / Semi -0.56 / Deta -0.63). The global "Detached -0.24" was a size
-    composition artifact. So the curve is keyed on SIZE ALONE.
+  - TYPE is NOT an independent axis: within the 3-5k band Detached is as steep as Terrace
+    (Terr -0.73 / Semi -0.56 / Deta -0.63), so the global "Detached -0.24" was a size
+    composition artifact and the curve is keyed on SIZE ALONE. Honest caveat: at 5-8k the
+    types DO diverge (Semi -0.16 n=106 vs Deta -0.69 n=433) — the claim is firm at 3-5k,
+    not everywhere; a type axis stays on the backlog if that divergence survives more data.
 
-LEAKAGE: the backtest subject window starts 2023-01, so shipped values are anchored on the
-PRE-2023 fit and cross-checked against full history (they agree where identified):
+LEAKAGE: the backtest subject window starts 2023-01, so values are anchored on the PRE-2023
+fit and cross-checked against full history (they agree where identified):
   <3k pre -0.509 / full -0.526 · 3-5k pre -0.685 / full -0.596 · 5-8k pre -0.547 / full -0.585.
-The constants are structural (stable across periods), not a price signal.
+The constants are structural (stable across periods), not a price signal. NOTE precisely what
+ships: <3k -0.51 IS the pre-2023 value; **3-5k -0.64 and 5-8k -0.56 are pre/full MIDPOINTS**,
+so those two bands do embed some evaluation-period information — a documented, second-order
+deviation (~0.8% psf on a 20% size move), not a pure pre-2023 rule.
 
 HONEST SCOPE LIMIT (>=8k sqft): the two periods DISAGREE (8-15k: pre -0.349 vs full -0.006)
 on n=14-51 street groups. The big-plot regime — exactly where L1 measured 24-41% median APE

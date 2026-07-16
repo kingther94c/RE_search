@@ -31,7 +31,16 @@ def _reports_dir() -> str:
 
 
 def _money(x):
-    return f"S${x:,.0f}" if x is not None else "—"
+    """3 significant figures. The engine brackets these at +/-20-44% and declares a ~6-8%
+    noise floor — rendering 'S$21,829,823' claims 8 sig figs of precision the method does
+    not have. Match the render to the stated uncertainty."""
+    if x is None:
+        return "—"
+    if x >= 1e6:
+        return f"S${x/1e6:.2f}M"
+    if x >= 1e3:
+        return f"S${x/1e3:.0f}k"
+    return f"S${x:,.0f}"
 
 
 def _banner(v):
@@ -63,8 +72,32 @@ def render(v: dict) -> str:
     limits = "".join(f"<li>{html.escape(x)}</li>" for x in v["limitations"])
     hard = (f" · <span class=warn>HARD CASE — methods disagree {md['spread_rel']*100:.0f}%</span>"
             if md["hard_case"] else "")
-    cond = html.escape(s["condition"]) if s.get("condition") else \
-        "<span class=warn>not supplied — band widened, NOT guessed</span>"
+    cond_val = (f"<b>{html.escape(s['condition'])}</b>" if s.get("condition")
+                else "<span class=warn>not supplied</span>")
+    cond_note = html.escape(v.get("condition_note") or "")
+    # guidance is SUPPRESSED when the engine has declared itself unreliable — render that
+    # honestly instead of printing an ask derived from the engine's own error bar
+    bg, sg = v["buyer_guidance"], v["seller_guidance"]
+    if sg.get("ask") is None:
+        guidance = (f"<div class=card><h2>买卖指导 Buyer / seller guidance</h2>"
+                    f"<div class=banner>⛔ {html.escape(sg['note'])}</div>"
+                    f"<p class=note>Fair range (engine uncertainty): "
+                    f"{_money(bg['fair_range'][0])} – {_money(bg['fair_range'][1])}</p></div>")
+    else:
+        guidance = f"""<div class=cols>
+  <div class=card>
+    <h2>买家指导 Buyer guidance <span class=note>(separate from fair value)</span></h2>
+    <table><tr><td>Attractive 积极买入</td><td class=r>&lt; {_money(bg['attractive_below'])}</td></tr>
+    <tr><td>Fair range 公允带</td><td class=r>{_money(fv['low'])} – {_money(fv['high'])}</td></tr>
+    <tr><td>Walk away 放弃</td><td class=r>&gt; {_money(bg['walk_away_above'])}</td></tr></table>
+  </div>
+  <div class=card>
+    <h2>卖家指导 Seller guidance</h2>
+    <table><tr><td>Ask 挂牌</td><td class=r>{_money(sg['ask'])}</td></tr>
+    <tr><td>Expected clear 预期成交</td><td class=r>{_money(sg['expected_clear'])}</td></tr>
+    <tr><td>Quick sale 急售</td><td class=r>{_money(sg['quick_sale'])}</td></tr></table>
+  </div>
+</div>"""
     return f"""<div class=wrap>
 <h1>{html.escape(s['street'])} · {s['land_area_sqft']:,.0f} sqft land · {html.escape(s['property_type'])}</h1>
 <p class=meta>{html.escape(s['market_segment'])} · District {html.escape(s['district'])} ·
@@ -81,26 +114,11 @@ engine LV1 (URA walk-forward: 9.3% median APE, 78.9% held-out band coverage)</p>
     <div class=sub>{html.escape(fv['confidence_label'])}{hard}</div></div>
 </div>
 {_banner(v)}
-<div class=card><h2>建筑状况 Building condition <span class=note>(an INPUT — never inferred)</span></h2>
-  <p>{cond}</p>
-  <p class=note>URA prices a LAND+BUILDING bundle and carries no condition, GFA or age.
-  A rebuilt house and an original one on the same street print very differently — supply
-  the condition, or read the band as covering that ignorance.</p></div>
+<div class=card><h2>建筑状况 Building condition <span class=note>(engine is condition-BLIND)</span></h2>
+  <p>{cond_val}</p>
+  <p class=note>{cond_note}</p></div>
 
-<div class=cols>
-  <div class=card>
-    <h2>买家指导 Buyer guidance <span class=note>(separate from fair value)</span></h2>
-    <table><tr><td>Attractive 积极买入</td><td class=r>&lt; {_money(v['buyer_guidance']['attractive_below'])}</td></tr>
-    <tr><td>Fair range 公允带</td><td class=r>{_money(fv['low'])} – {_money(fv['high'])}</td></tr>
-    <tr><td>Walk away 放弃</td><td class=r>&gt; {_money(v['buyer_guidance']['walk_away_above'])}</td></tr></table>
-  </div>
-  <div class=card>
-    <h2>卖家指导 Seller guidance</h2>
-    <table><tr><td>Ask 挂牌</td><td class=r>{_money(v['seller_guidance']['ask'])}</td></tr>
-    <tr><td>Expected clear 预期成交</td><td class=r>{_money(v['seller_guidance']['expected_clear'])}</td></tr>
-    <tr><td>Quick sale 急售</td><td class=r>{_money(v['seller_guidance']['quick_sale'])}</td></tr></table>
-  </div>
-</div>
+{guidance}
 
 <div class=cols>
   <div class=card><h2>独立方法读数 Independent reads (land-psf)</h2>

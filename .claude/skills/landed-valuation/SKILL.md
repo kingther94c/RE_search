@@ -43,8 +43,10 @@ explicit past `--asof` reconstructs what was knowable then (56d caveat lag).
 - **The size curve (EXP-0011)** replaced a ported −0.877 constant. Fitted within-street
   (street FE, n=10,399): elasticity is **−0.51 to −0.64 below 5k sqft** but **collapses to
   ~−0.2 above 8k**. Economically: small terraces trade on QUANTUM (extra land ≈ free);
-  big plots trade on LAND (每 sqft 计价). Applying one constant to both is what made the
-  old method explode (24% @8-15k, 41% @15k+ → now 11%/17%).
+  big plots trade on LAND (每 sqft 计价). Applying one constant to both is what made the old
+  method explode: **LV1 (what you actually get) measures 11% @8-15k and 20% @15k+, vs LC1's
+  24% / 41%.** (The prettier 11%/17% belongs to LC2, which declines ~29% of 15k+ subjects;
+  LV1 answers 100% by picking those up on the pooled anchor, at somewhat worse error.)
 - **Lease matching is mandatory, not a nicety.** L1's decisive failure: spatial kNN priced
   ~20-year-left 99yr terraces off freehold neighbours — **median APE 232%**. Quasi-freehold
   (FH/999yr) and real leasehold are NEVER comparable; leaseholds must be within ±25y of

@@ -70,6 +70,17 @@ def test_remaining_lease_reads_the_tenure_string():
     assert remaining_lease(_tx("leasehold", None), "2026-01") >= 800
 
 
+def test_lease_parse_does_not_collide_with_the_year():
+    """A substring scan for '999' matches the YEAR in '...from 1999', turning a 99yr lease
+    into quasi-freehold and re-arming the 232% failure. Anchored parse only."""
+    t = _tx("leasehold", 1999, "99 yrs lease commencing from 1999")
+    assert remaining_lease(t, "2026-01") == pytest.approx(72.0)     # NOT ~800
+    assert remaining_lease(_tx("freehold_equiv", 1885,
+                               "999 yrs lease commencing from 1885"), "2026-01") >= 800
+    # and such a plot must never be priced off a freehold comp
+    assert not lease_compatible(_tx("freehold"), t, "2026-01")
+
+
 def test_conformal_table_matches_landed_code():
     """The band multipliers are calibrated on LC2/curve residuals. If that code changes
     without recalibration the bands silently skew — make it a red test."""
@@ -112,9 +123,15 @@ def test_landed_valuation_invariants(store, street, area, ptype):
     fv = v["fair_value"]
     assert fv["low"] < fv["price"] < fv["high"]
     assert 0 < fv["confidence"] <= 100
-    # guidance is derived from the band and separate from fair value
-    assert v["buyer_guidance"]["attractive_below"] == fv["low"]
-    assert v["seller_guidance"]["expected_clear"] == fv["price"]
+    # Guidance is EITHER derived from the band and separate from fair value, OR suppressed
+    # with a reason when the engine has declared itself unreliable — never invented.
+    bg, sg = v["buyer_guidance"], v["seller_guidance"]
+    if sg["ask"] is None:
+        assert "SUPPRESSED" in sg["note"] and bg["walk_away_above"] is None
+    else:
+        assert bg["attractive_below"] == fv["low"]
+        assert sg["expected_clear"] == fv["price"]
+    assert bg["fair_range"] == [fv["low"], fv["high"]]     # the band is always disclosed
     # every landed report must carry the bundle/geometry honesty
     assert any("geometry" in s.lower() for s in v["verify_before_offer"])
     assert any("bundle" in s.lower() for s in v["limitations"])
@@ -138,6 +155,45 @@ def test_big_plot_is_scope_limited(store):
     assert any("8k sqft" in s or ">=8k" in s for s in v["verify_before_offer"])
     assert (fv["high"] - fv["low"]) / fv["price"] > 0.4        # genuinely wide
     assert "indicative" in fv["confidence_label"]
+
+
+def test_wide_band_suppresses_guidance_instead_of_quoting_an_ask(store):
+    """The conformal band is the ENGINE'S predictive error, not achievable price dispersion.
+    Quoting its top as a seller 'ask' turned ignorance into aggression (review blocker:
+    ask S$21.8M on a plot that printed S$14.0M). When the engine says 'indicative only',
+    it must emit NO ask."""
+    v = _v(store, "BOWMONT GARDENS", 9225, "Detached")       # >=8k -> scope-limited
+    assert v["seller_guidance"]["ask"] is None
+    assert v["buyer_guidance"]["walk_away_above"] is None
+    assert "SUPPRESSED" in v["seller_guidance"]["note"]
+    # a confident subject still gets real guidance
+    ok = _v(store, "LOYANG RISE", 1635, "Terrace")
+    assert ok["seller_guidance"]["ask"] == ok["fair_value"]["high"]
+
+
+def test_condition_is_honest_not_a_dead_input(store):
+    """Review blocker: `condition` was echoed while the report claimed it widened the band —
+    it did nothing. The engine is condition-BLIND; it must say so and give DIRECTION only,
+    never a fabricated magnitude or a fake widening."""
+    base = value_landed(LandedSpec("ALNWICK ROAD", 2800, "Terrace", asof="2026-07-01"), store)
+    rebuilt = value_landed(LandedSpec("ALNWICK ROAD", 2800, "Terrace", condition="rebuilt",
+                                      asof="2026-07-01"), store)
+    # the point is identical BECAUSE the engine is condition-blind — and it now admits it
+    assert rebuilt["fair_value"]["price"] == base["fair_value"]["price"]
+    assert "FLOOR" in rebuilt["condition_note"]
+    assert "NOT quantified" in rebuilt["condition_note"]
+    assert "NOT supplied and NOT inferred" in base["condition_note"]
+    assert any("CONDITION-BLIND" in s for s in base["limitations"])
+
+
+def test_displayed_comps_are_lease_matched(store):
+    """Review blocker: the comps exhibit filtered on type only while captioned
+    'lease-matched', displaying FH prints against a leasehold subject — the exact pairing
+    the 232% guard forbids."""
+    v = _v(store, "LOYANG RISE", 1635, "Terrace")           # leasehold street
+    assert v["subject"]["tenure_type"] == "leasehold"
+    assert v["comps"], "expected street comps"
+    assert all(c["tenure"] == "leasehold" for c in v["comps"])
 
 
 def test_unknown_street_escalates_not_fabricates(store):
