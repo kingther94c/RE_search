@@ -53,21 +53,24 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
   ≥8k sqft. Same architecture the condo line validated ("best method where it applies +
   fallback + calibrated band", not an ensemble blend).
 - **Result (7,027 walk-forward landed resales, ≥2023-01, lag 56d):**
-  **LV1 median APE 0.0934 / P90 0.287 / coverage 100% / held-out band coverage 78.9%**
-  (`research/analyze_landed.py`, calibrate <2025-01 → validate ≥2025-01, nominal 80%,
-  width 0.399). vs the L1 bar LC1 0.1051/87.3%: **−1.2pp median, −5.4pp P90, +12.7pp
-  coverage, interval 39.7%→78.9%.**
+  **LV1 median APE 0.0949 / P90 0.290 / coverage 100% / held-out band coverage 77.5%
+  / sign test 51.7% (median_signed −0.46%)** — post-EXP-0013 bias fix; the pre-fix figures
+  were 0.0934 / 78.9% but carried a systematic ~3.5% LOW skew (actual exceeded the point
+  63.2% of the time). vs the L1 bar LC1 0.1037/87.3%: **−0.9pp median, −5.3pp P90, +12.7pp
+  coverage, interval 39.0%→77.5%.**
   - **GL3 PASS:** beats the bar; band inside 80%±5pp; respects the ~6% bundle noise floor
-    (9.3% is ~3pp above it — the rest is unobservable, not slack).
+    (9.5% is ~3pp above it — the rest is unobservable, not slack).
   - LA1 alone 0.0976 (coverage 99.97%) — pooled anchors buy COVERAGE, not points (the condo
     reversal, transposed, confirmed again).
   - Conformal table fingerprinted (sha1 of landed_candidates.py + landed_size_curve.py);
     `test_conformal_table_matches_landed_code` turns drift RED.
 - **L4 skill** (`landed-valuation`): `value_landed.py` + bilingual report + `tests/test_landed.py`
-  (15). Field trials (asof 2026-07-01 = reconstruction, so the checks below were INVISIBLE
-  to the engine): Loyang Rise 1,635sf 99yr → 1,459 land-psf vs an unseen 2026-05 print at
-  ~1,514 psf (−3.6%); Bowmont Gardens 9,225sf detached → S$14.41M vs an unseen 2026-07 print
-  at S$14.00M (+2.9%) — in the regime the engine honestly calls its weakest; Cardiff Grove →
+  (22). Field trials (asof 2026-07-01 = reconstruction, so the checks below were INVISIBLE
+  to the engine): Loyang Rise 1,635sf 99yr → 1,507 land-psf vs an unseen 2026-05 print at
+  ~1,514 psf (**−0.5%**, post-bias-fix; it was −3.6% pre-fix — a clean draw of the
+  systematic skew EXP-0013 removed); Bowmont Gardens 9,225sf detached → S$14.88M vs an
+  unseen 2026-07 print at S$14.00M (+6.3%; was +2.9% pre-fix — individual cases move
+  both ways when a systematic bias is removed; the aggregate sign test is the evidence) — in the regime the engine honestly calls its weakest; Cardiff Grove →
   DECLINES (no URA caveat in the 5y window despite a PASS-8.5 craft valuation) and routes to
   Investment Suite. **Finding: the IS app carries deeper street history than the URA API
   window** — the escalation path is real, not a cop-out.
