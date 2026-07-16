@@ -1,494 +1,289 @@
-# Program roadmap v1 — research-to-skill (R0–R8)
+# Program roadmap v2 — LANDED FIRST (L0–L4), condo shipped & frozen
 
-_2026-07-15 · planned on Fable 5 · status: ACTIVE v1. This is the operating document for
-every future session: pick the current phase, check its gate, work its plan. Amend via
-changelog, not silently._
+_v2 2026-07-16 (Fable re-plan on user decision: landed must land first) · supersedes v1
+(R0–R8, condo-first — executed through R5; v1 text in git history, results in the registry).
+This is the operating document for every session: pick the current phase, check its gate,
+work its plan. Amend via changelog, not silently._
 
-## The architectural pivot (what "大刀阔斧" means, precisely)
+## Where the program stands
 
-1. **The core of valuation moves to data.** Methods are developed and judged on the URA
-   caveat spine via the walk-forward harness (`researcher/backtest`) — not authored as
-   craft and defended by narrative.
-2. **Investment Suite is repositioned, not abandoned.** It stops being the center of the
-   condo skill and becomes (a) the **calibration layer** — exact floor, stack, rents,
-   realised repeat pairs that URA structurally lacks (URA has no unit ids, floor bands
-   only, month-granular dates) — and (b) **live enrichment** at production time. Because
-   IS's depth is gated on extraction quality, a guided-harvest skill rewrite is a
-   first-class work-line (R4), per the user's own diagnosis: "the bottleneck is that no
-   good skill guides the search."
-3. **Existing skills are candidates and adapters, not the spec.** The `value-a-property`
-   grid enters the leaderboard as candidate C1. Landed/new-launch skills keep their
-   verification checklists; their valuation cores get replaced by whatever survives.
-4. **Nothing is deleted until beaten.** Deprecating an incumbent requires its successor
-   to beat it on the harness AND pass the regression suite (guardrail 9).
+| Track | Status |
+|---|---|
+| **Landed (L0–L4)** | **← ACTIVE. Goal: ship `landed-valuation` (hostile-review PASS ≥8) in ~4–6 sessions** |
+| Condo resale | **SHIPPED & FROZEN** — `condo-resale-valuation` accepted (PASS 8.7/10; engine v2.1: 3.71% median APE / 100% coverage / ~82–85% held-out interval). Backlog below; nothing ships without its gate |
+| New launch (was R7) | PARKED (plan preserved below) |
+| IS calibration bridge (was R4) | PARKED — becomes relevant again for condo hard-cases and landed condition evidence |
+| Operations (was R8) | NOT STARTED — after L4, build ONE refresh runbook covering both shipped skills |
 
-## Status & priority (updated 2026-07-16)
+Infrastructure is DONE and asset-agnostic: as-of store + leakage firewall, walk-forward
+harness, metrics, PPI (has a **Landed** series — wiring verified), conformal calibration
+pattern + code fingerprint, registry discipline, and the R5 ship playbook (benchmarks → bar
+→ error-driven methods → engine + calibrated uncertainty → skill + regression suite →
+fresh-reviewer hostile loop). **The L-track reuses all of it; only data hygiene, benchmarks
+and domain logic are landed-specific.**
 
-> **PRIORITY PIVOT (user decision 2026-07-16): LANDED FIRST.** Condo and new-launch pause —
-> development AND iteration — and move to the backlog below. **R6 is the active phase.**
+## North star (mandate, unchanged)
 
-| Phase | Status | Gate outcome |
-|---|---|---|
-| R0 data foundation | **DONE** | G0 PASS (136,436 caveats / 61 months / 61k condo subjects; EXP-0002) |
-| R1 condo baseline | **DONE** | Bar = 4.1% median APE (C1≈B3). **G1 amended, on the record:** the median rule opened nothing; tail + interval calibration + same-project dependency became the R3 targets (EXP-0003) |
-| R2 bake-offs | **FOLDED into R3/EXP-0007** | full bake-offs skipped by evidence (same-project dominates); elasticity & floor-premium re-fits delivered the 2c substance; 2a/2b remain unopened — reopen only on demonstrated error mass |
-| R3 engine v2 | **DONE** | G3 MET (V2 = C1 + lease-aware fallback + conformal; 3.71% median / 100% cover / ~82-85% held-out interval; EXP-0004/5/6) |
-| R4 IS calibration bridge | **PARKED** (was next; superseded by the pivot) | — |
-| R5 condo skill | **SHIPPED** | G5 PASS 8.7/10 (4 hostile rounds; EXP-0007/0008). **Sequence deviation, on the record:** shipped BEFORE R4 with IS corroboration as a mandatory MANUAL step |
-| **R6 landed** | **← ACTIVE** | see kickoff below |
-| R7 new-launch | **PARKED** | — |
-| R8 operations | **NOT STARTED** | snapshot archive exists; monthly refresh runbook pending |
+> For a specific SG property, using only information available at the valuation date: the
+> most reliable estimate of worth, the explanation, quantified uncertainty, and actionable
+> buyer/seller price guidance. Defensible + transparent + empirically validated + actionable.
 
-Reality check vs estimates: R0–R5 (condo line) took ~2.5 sessions vs the 6–10 estimated —
-gates and evidence-driven skips (G1, R2) did the shortening, as designed.
+## Landed data reality (measured 2026-07-16 — every design choice below answers to this)
 
-### Condo & new-launch backlog (frozen 2026-07-16 — nothing here ships without its gate)
-1. Apply the **fitted-but-deferred constants** (EXP-0008): FLOOR_PP 0.004, CCR elasticity
-   −0.016 → recalibrate conformal (fingerprint enforces this) → re-verify leaderboard.
-2. **R4 IS bridge**: guided-harvest skill v2 + URA↔IS reconciliation + unit/stack premiums —
-   automates the manual IS-corroboration step the condo skill mandates on hard cases.
-3. Hard-case blend rule (50/50 toward fresh print) — validate or bound it on a backtest slice.
-4. Listing evidence (MONITOR tier), strategy-layer re-basing (R8 items).
-5. R7 new-launch programme (premium persistence + developer ladder are URA-backtestable).
-
-## North star (mandate, condensed)
-
-> For a specific Singapore property, using only information available at the valuation
-> date: the most reliable estimate of worth, the explanation, quantified uncertainty,
-> and actionable buyer/seller price guidance. **Defensible + transparent + empirically
-> validated + actionable** — not "the most sophisticated AVM we can build."
-
-The mandate's 10-point acceptance standard maps to phases as follows: (1) documented
-methodology → registry, all phases; (2) known assumptions → feature evidence; (3)
-benchmark comparison → R1; (4) time-consistent OOS validation → R1–R3; (5) error slices
-→ R1/R2; (6) honest uncertainty → R3; (7) explainable from observable evidence → R3
-anchor traces + R5 hostile review; (8) fact/assumption/judgement separation → guardrail
-6; (9) buyer/seller guidance separated from fair value → R5/R7 skill specs; (10)
-converged refinement → the gates + R8 re-validation cadence.
-
-## Phase overview
-
-| Phase | Focus | Est. sessions | Hard dependency | Parallel notes |
-|---|---|---|---|---|
-| R0 | Data foundation completion (real pull + audit) | 1 | — | — |
-| R1 | Condo baseline: first honest leaderboard | 1–2 | G0 | — |
-| R2 | Error-driven method bake-offs | 2–4 | G1 | interleaves with R4 |
-| R3 | Multi-anchor + ensemble + uncertainty (engine v2) | 1–2 | G2 | interleaves with R4 |
-| R4 | IS calibration bridge + guided-harvest skill v2 | 2–3 | G0 | emulator-bound; runs alongside R2/R3 |
-| R5 | `condo-resale-valuation` skill v1 ship | 1–2 | G3 + G4 | — |
-| R6 | Landed programme | 2–3 | G0 (6c can start after G1) | bulk parts pre-startable |
-| R7 | New-launch programme | 2 | R3 engine for 7a | — |
-| R8 | Operationalization (living system) | 0.5 + ongoing | G5 | — |
-
-Total ≈ **12–18 sessions**; gates can shorten it (a gate that says "simple already wins"
-skips work — that is a success, not a failure).
+- **12,849 landed caveats / 12,115 resale subjects** (~199/mo island-wide): island-level
+  walk-forward is viable. Per-street it is NOT: **1,072 streets, median 5 caveats/street
+  per 5 years** (p90 = 30) → **partial pooling is mandatory**; a street-only benchmark will
+  mostly decline, and that decline rate is itself a finding.
+- **87% of rows are `type_of_area='Land'`: psf = LAND psf, area = LAND area** (p50 2,640
+  sqft, p95 7,622). **1,613 strata-landed** (cluster housing) trade on strata area — a
+  different sub-market, currently covered by NEITHER shipped skill (orphaned — see L0).
+- Tenure: 68% freehold + 14% 999-yr + 18% leasehold. Segment: OCR 8,593 / RCR 2,484 /
+  CCR 1,772. Type: Terrace 6,003 / Semi-D 3,648 / Detached 1,570 (GCB subset is thin).
+- **URA gives NO plot geometry (frontage/depth/shape/corner), NO building age/condition/GFA,
+  NO address-level id.** Consequences: geometry is case-tier by construction; the caveat
+  price is a LAND+BUILDING BUNDLE we cannot decompose in bulk — L1 must MEASURE the
+  resulting noise floor and the skill must publish it (no false precision).
+- A same-plot matcher looks feasible: (street, exact land area, type) — land areas are
+  near-unique per lot → candidate repeat-sales pairs for time adjustment, dedup, and
+  rebuild-detection. Precision must be spot-checked before trust (L0).
 
 ---
 
-## R0 — Data foundation completion
+## L0 — Landed data foundation (est. 0.5–1 session)
 
-**Research direction.** None — engineering + audit. Make the spine trustworthy before a
-single conclusion is drawn.
+**Research direction.** None — hygiene and measurement. No conclusions in L0.
 
 **Plan.**
-1. Full 4-batch pull (batch 1 alone = 20,548 caveats / 292 projects, 2021-07..2026-07;
-   expect ~60–90k total — verify, don't assume).
-2. Coverage & anomaly audit: months × segment × property-type counts; project-count
-   sanity vs the known universe (~2–3k active projects); psf outlier scan (flag <$500,
-   >$6,500); duplicate detection.
-3. Exclusion rules, documented: `no_of_units > 1` (bulk/en-bloc deals) out of subjects
-   AND comps; `typeOfArea='Land'` rows inside condo developments (townhouses) bucketed
-   as landed; EC already excluded from the private-condo universe.
-4. Caveat-lag sensitivity: leaderboard at 42/56/70 days — ranking must be stable.
-5. Perf pass: month/project indexes if the full run exceeds ~15 min (stdlib-first;
-   heavy deps only behind pyproject extras).
-6. Snapshot versioning decision: gzip the normalized store (~5–10 MB) vs pinned
-   regeneration recipe + cache. Either way, backtests must be reproducible.
-7. `data_sources.md` in the registry: every source's fields, publication lag, terms
-   (URA requires attribution), refresh cadence, rolling-window implications.
+1. Store slice: pure-landed = `type_of_area='Land'` + landed types. **Strata-landed OUT of
+   scope for v1** (recorded as an orphaned sub-market with a routing note — backlog: a thin
+   condo-engine variant on the strata-landed pool). Resolve the 15 stray 'Apartment' rows
+   inside the landed slice (inspect, write the rule).
+2. **Land-psf sanity band from the data** (percentile method, like condo's [500, 6500] —
+   the roadmap prescribes the METHOD; the number comes from measurement, per guardrail 5).
+3. **Same-plot matcher**: (street, exact area, type) → repeat pairs. Measure pair count,
+   spot-check ≥20 by hand for plausibility, dedup true duplicates (same plot+month+price).
+   This asset feeds L1's noise floor, L2b's repeat-sales time signal, and L2e's rebuild
+   detection — it is the landed analogue of what IS realised-pairs were for condo.
+4. MarketView landed support: landed pool + spatial grid (small, mirrors `condo_near`).
+5. Subjects definition: resale, pure-landed, sane band, ≥18-months-in start.
+6. Landed audit script (extend `audit_ura.py` or `audit_landed.py`) with a **GL0 gate
+   check**, machine-readable, re-runnable.
 
-**Guardrails.** Verify-before-trust on every field (the smoke test already caught
-landed spellings and the EC contamination). No analytical conclusions in R0.
+**Guardrails.** Verify-before-trust on every landed field semantic (area=LAND area, psf=
+land-psf confirmed per row type); the same-plot matcher is UNTRUSTED until spot-checked.
 
-**Deliverables.** Populated store · audit report (EXP-0002) · data dictionary ·
-exclusion rules.
+**Deliverables.** EXP-0009 audit + hygiene rules · same-plot pair set + precision note ·
+landed MarketView support.
 
-**Gate G0.** ≥48 usable months; ≥20k resale-condo subjects; ≥800 projects; test suite
-green; exclusions documented. Fail → escalate data strategy (e.g. REALIS export) before
-any research proceeds.
+**Gate GL0.** ≥10k pure-landed resale subjects; ≥48 usable months; hygiene rules documented;
+matcher spot-check ≥80% plausible; land-psf band set from data. Fail → data strategy
+escalation before any research.
 
 ---
 
-## R1 — Condo baseline: the first honest leaderboard
+## L1 — Landed baseline: the honest leaderboard (est. 1 session)
 
-**Research direction.** What accuracy do *simple, practically-knowable* methods already
-achieve; where exactly do they fail; and does the existing craft engine actually beat
-them?
+**Research direction.** What do simple, practically-knowable methods achieve on landed
+BUNDLES; where is the error mass; and what is the irreducible noise floor?
 
 **Plan.**
-1. Port the `value-a-property` adjustment grid to URA data as **C1_grid_adapted**
-   (PPI time adjustment, floor-band midpoint, size elasticity −0.08) — the mandate's
-   "treat existing skills as candidate baselines," made literal.
-2. Walk-forward B1–B5 + C1 over all eligible resale-condo subjects. Subject window
-   starts ≥18 months into the data so early subjects aren't history-starved.
-3. Slice per the mandate: segment, district, quantum band, size band, floor band,
-   tenure, project liquidity (same-project comp count), lease age, market regime
-   (2022 run-up / 2023–24 cooling measures / 2024–26), plus decline analysis (when do
-   B1/B2 refuse to answer?).
-4. **Set THE BAR:** best-benchmark median APE, overall and per major slice, written
-   into the registry. Every later method is measured against this number.
-5. Bilingual HTML leaderboard report for Kelvin (deliverables builder).
+1. Benchmarks (simple → THE LANDED BAR):
+   - **LB1** same-street recent land-psf (will often decline — the decline rate is data);
+   - **LB2** pooled street→district (street if n≥k else district), type-matched, time-adj;
+   - **LB3** type × tenure × segment pool median land-psf, time-adjusted (LANDED index);
+   - **LB4** spatial kNN (nearest landed sales, same type, size-similar, time-adjusted);
+   - **LB5** district median total price by type (naive quantum);
+   - **LC1** craft port: the Cardiff land-psf quantum method skeleton (land-psf × area with
+     a log-log size prior) — the incumbent, competing like C1 did for condo.
+2. Walk-forward over all eligible landed resale subjects; lag-stability 42/56/70d.
+3. Slices: type / tenure / segment / land-size bucket / street-liquidity / regime / quantum
+   / GCB-flag (crude: detached ∧ area ≥15,070 sqft ∧ prime districts).
+4. **Noise-floor study (landed-specific, load-bearing):** same-plot repeats with gap ≤18mo →
+   market-adjusted price dispersion = the lower bound on achievable accuracy (bundle noise:
+   condition changes + negotiation variance). This number goes into the skill's honest
+   accuracy statement and caps what any model may claim.
+5. Interval baseline: comp-IQR bands (expect them broken, as condo's were at 43% — the
+   calibrated fix is L3's conformal).
 
-**Guardrails.** Fit nothing in R1 (no tuning on the full set); leakage checklist
-(EXP-0001 notes 1–4) executed and signed in the registry entry; lag-stability from R0
-carries over.
+**Guardrails.** Fit nothing in L1; leakage checklist signed; **per the condo G1 lesson, the
+gate criteria are median + TAIL + coverage + calibration together — the median rule alone
+mis-measured last time.**
 
-**Deliverables.** EXP-0003 leaderboard + slices + the bar · decision memo naming which
-R2 bake-offs open, with the error evidence that opens them.
+**Deliverables.** EXP-0010 leaderboard + slices + THE BAR + noise floor · decision memo:
+which L2 modules open, with the error evidence that opens them.
 
-**Gate G1.** Leaderboard reproducible and lag-stable. Slices with median APE >1.5× the
-liquid-slice bar open the corresponding R2 modules. If nothing exceeds 1.5×, skip
-straight to R3 with benchmarks as the engine core — a legitimate outcome.
-
----
-
-## R2 — Error-driven method bake-offs (only what G1 opened)
-
-**Research direction.** Four pre-scoped modules, each run as the mandate's 10-step loop,
-each ending in a verdict (ACCEPT / ACCEPT-WITH-SCOPE / MONITOR / REJECT → graveyard).
-
-- **2a Time adjustment** (shared M2): PPI-ratio vs stratified hedonic time effects vs
-  fitted local trend (port of the trend ladder) vs hierarchical shrinkage (parent index
-  + local relative value). Note: clean repeat-sales is IMPOSSIBLE on URA (no unit ids)
-  — approximate via project+area+floor-band fuzzy pairs and measure the precision of
-  that matching; true repeat pairs come from IS in R4.
-- **2b Comparable retrieval + geography** (shared M1 + condo A): rule hierarchy vs
-  weighted similarity vs geography-graph neighbours. Geography candidates (official
-  hierarchy prior / price-co-movement clustering / substitutability KNN) are validated
-  **through retrieval improvement**, never on clustering scores — exactly as the
-  mandate demands. Every geography artifact must be as-of rebuildable (rolling
-  re-cluster); full-history clusters are banned from the harness.
-- **2c Comparable adjustment** (condo B): floor-band curve (linear vs spline vs
-  per-band); size elasticity fitted per segment vs the global −0.08; lease-decay curve
-  (empirical, not assumed 15%); TOP-cohort effect. Explicit transparent forms
-  preferred; an ML residual adjuster runs as challenger only.
-- **2d Hedonic/ML AVM anchor** (condo D): transparent hedonic (log-psf, splines) vs
-  mixed-effects with project random effects (partial pooling) vs gradient boosting
-  (extras-gated dependency). Features include an **as-of amenity table** — MRT station
-  openings are dated (TEL stages 2019–2024), so MRT distance can be time-correct;
-  school distances stay time-invariant with a labelled caveat.
-
-**Plan.** Open only G1-flagged modules, sequenced by error mass (expected: 2a + 2b
-first). Each module: hypothesis → ≥3 materially different methods → benchmark →
-walk-forward → slices → counterexample search → diagnosis → refine → revalidate →
-verdict.
-
-**Guardrails.** Forward-chained time folds ONLY — random CV is banned program-wide.
-Sonnet fleet for grunt runs, Fable for design/diagnosis/verdicts (budget lesson).
-A win must be robust: stable across lag settings and regimes, and not bought with >10%
-degradation on any major slice. Every rejection → graveyard with numbers.
-
-**Deliverables.** One EXP entry per module with verdicts · geography registry updated ·
-feature-evidence entries (floor/size/lease/age curves with scopes).
-
-**Gate G2.** Every opened module has a verdict. If nothing earns ACCEPT, R3 proceeds on
-benchmarks + C1 and the program's honest finding is "simple wins so far."
+**Gate GL1.** Leaderboard reproducible & lag-stable; bar/tail/coverage/noise-floor recorded;
+L2 selection justified by error mass against documented thresholds.
 
 ---
 
-## R3 — Multi-anchor consolidation, ensemble, uncertainty → condo engine v2
+## L2 — Error-driven method work (est. 1–2 sessions; worktree fan-out per the R3 pattern)
 
-**Research direction.** Combine evidence families without pretending independence;
-produce calibrated intervals and an explainable confidence score.
+Pre-scoped modules — open only what GL1's error mass justifies; each runs the 10-step loop
+to a verdict (ACCEPT / ACCEPT-WITH-SCOPE / MONITOR / REJECT → graveyard).
+
+- **L2a Land-size curve (expected mandatory — the landed elasticity lesson):** marginal land
+  value; price = f(land area) as log-log elasticity by type × tenure × segment, fitted from
+  same-street near-simultaneous different-size pairs + a pooled hedonic cross-check. A
+  1,600 sqft terrace plot must never price a 7,000 sqft detached (the condo shoebox lesson,
+  transposed). Kills or scopes "flat average land psf" with numbers (mandate 6c).
+- **L2b Time adjustment:** island landed PPI vs segment sub-indices vs local fitted trend vs
+  same-plot repeat-sales signal. Hypothesis from the factor study (asymmetric capture
+  0.95/0.74): landed lags downside — test, don't assume.
+- **L2c Retrieval/pooling:** spatial-kNN vs street-cluster (enclave) pooling weights;
+  validated ONLY through backtest accuracy (geography earns its keep via retrieval, never
+  via clustering scores).
+- **L2d Pooled/hedonic anchors:** A2-style shrinkage (street→district→segment) + a hedonic
+  log(price) anchor. **Expectation set by the condo reversal: anchors buy COVERAGE and
+  hard-case detection, not point accuracy where local comps exist.** Stated up front so
+  nobody re-learns it expensively.
+- **L2e Improvement-contribution bounds (the identification problem):** residuals vs the
+  land model; same-plot long-gap jumps as rebuild signals. MEASURE what URA can and cannot
+  resolve → the ±X% condition band the skill will carry. A verdict of "bulk-unresolvable
+  beyond ±X% — case-tier input required" is a legitimate, publishable outcome.
+
+**Guardrails.** Forward-chained folds only; graveyard-first; fan-out agents build+backtest
+in worktrees with adversarial verify; the orchestrator re-verifies from the journal (the
+workflow-death lesson); every rejected method → graveyard with numbers.
+
+**Deliverables.** EXP-001x per module · verdicts · fitted curves in feature evidence ·
+graveyard entries.
+
+**Gate GL2.** Every opened module has a verdict; the land-size curve is ACCEPTed or its
+absence is justified with numbers.
+
+---
+
+## L3 — Landed engine + calibrated uncertainty (est. 1 session)
 
 **Plan.**
-1. Onboard **official rental evidence**: extend `ura.py` to URA's rental service
-   (median rents by project, declared publication lag) → rental-implied anchor. Test
-   its incremental value AFTER comps + AVM are in (mandate E: downweight if it adds
-   little — don't keep it for theoretical completeness).
-2. Listing evidence: MONITOR tier only (portal Tier-2, fragile scraping); full
-   treatment belongs to the strategy layer post-R5, where asking/DOM data plausibly
-   matters more than for fair value.
-3. Family consolidation: best-within-family first (from R2), then family-level
-   estimates: direct comps · substitute-project transfer · AVM · rental.
-4. Ensemble bake-off in mandated order: best single anchor and simple average/median
-   (as benchmarks) vs error-weighted vs evidence-state rules (comp count, recency,
-   similarity, liquidity) vs stacking (time folds) vs mixture-of-experts. Expected
-   winner at current data scale: evidence-state rules. Complexity must earn its keep.
-5. Uncertainty: conformal-style intervals from rolling OOS residuals, calibrated per
-   liquidity × segment cell; 80% nominal coverage target; confidence score =
-   f(data quality, comp similarity, model agreement, liquidity, uniqueness) that maps
-   to interval width honestly.
-6. Anchor-disagreement analytics: divergence >X% flags "hard case" → production
-   escalation path.
+1. **Engine LV1** = best local-comp method (size curve + time adjustment + pooling) where
+   street/local comps exist → pooled fallback for coverage (100% answer rate), mirroring
+   the condo "best-method-where-it-applies + fallback + calibrated band" architecture that
+   beat the blends.
+2. **Split-conformal intervals** per cell — candidate cells (street-liquidity × type) or
+   (segment × type); use whichever has n≥50 per cell; **fingerprint discipline from day
+   one** (table stamped with the point-method sha1; red test on drift).
+3. Hard-case honesty ported: anchor-disagreement flag, freshest same-street same-size
+   reference, directional stale-comp flag, smooth confidence.
+4. **Condition input hook:** user-supplied building state (original / renovated / rebuilt
+   + year) shifts the POINT only per L2e-validated effects; otherwise the band widens by
+   the measured ±X%. Unknown building state is never silently ignored.
 
-**Guardrails.** Anchors share data — measure their correlation; never average
-correlated anchors and call it diversification. Ensemble ships only on G3 criteria.
-
-**Deliverables.** Condo engine v2 + EXP entry + calibration tables in the registry.
-
-**Gate G3.** v2 beats the best single anchor on median APE, OR ties within noise while
-materially improving P90 / interval calibration. Interval coverage 80% ± 5pp across
-major slices. Every estimate decomposable into its anchor trace.
+**Gate GL3.** LV1 ≥ bar on median OR tie with materially better tail/calibration; interval
+coverage 80%±5pp; every estimate decomposes (land baseline → adjustments → condition band);
+claimed accuracy respects the L1 noise floor.
 
 ---
 
-## R4 — IS calibration bridge + guided-harvest skill v2 (parallel with R2/R3)
-
-**Research direction.** (a) Systematize extraction of IS's depth — the user-named
-bottleneck; (b) quantify what IS adds over URA; (c) estimate the unit/stack premiums
-URA structurally cannot see.
+## L4 — `landed-valuation` skill ship (est. 1–1.5 sessions incl. review loop)
 
 **Plan.**
-1. **4a Harvest skill rewrite** — `read-investment-suite` v2: goal-conditioned recipes
-   ("for a calibration panel: these tabs, these windows, this order"), coverage
-   checklist, throughput + failure-mode playbook (emulator windowed-visible), resumable
-   harvest state. The bar: a sonnet agent executes the SKILL.md end-to-end unaided.
-2. **4b URA↔IS reconciliation:** stratified calibration panel (30–60 projects across
-   segment × liquidity × age — NOT the full-history-biased 27-project panel; selection
-   pre-registered). Match IS records to URA caveats (project+month+price+area);
-   quantify match rate, floor-band→exact-floor distributions, IS-only field value;
-   extend the AVM-vs-caveat bias study (known non-directional: −3.4%/+1.4%/+3.7%) to
-   panel scale.
-3. **4c Unit/stack premiums** (condo C): with exact floors/stacks and realised repeat
-   pairs — within-project residuals vs a project-time baseline; partial pooling across
-   projects (regional priors); persistence tests (split-half by time; a "stack premium"
-   that doesn't persist is transaction noise, per the mandate); floor-curve functional
-   forms (linear / spline / view-clearance discontinuity).
+1. Production entry `value_landed`: input = street + land area (+ type, tenure; optional
+   exact address→OneMap geocode, GFA, condition/rebuilt-year, asof). **Live-vs-
+   reconstruction as-of semantics from day one** (the condo EXP-0008 lesson — no blanket
+   caveat-lag on live valuations).
+2. Output: land-value baseline · explicit improvement/condition treatment · conformal fair
+   range · smooth confidence · comps + anchor reads · buyer/seller guidance separated from
+   fair value · **mandatory verification list = engine flags ∪ `landed-property-due-diligence`
+   checklist heads** (INLIS title, road reserve/drainage, GCBA / landed-housing-area rules,
+   setbacks, conservation) — the existing skill becomes the verification layer, referenced
+   not duplicated.
+3. **Scope declaration (honest):** pure landed only; strata-landed declines with a routing
+   note; GCB/luxury detached = wide-band + case protocol (possibly ACCEPT-WITH-SCOPE-LIMIT:
+   "indicative only"); redevelopment optionality is verification-gated language, never
+   priced as fact.
+4. **Regression suite** (structural asserts on real archetypes): liquid OCR terrace street ·
+   thin GCB detached · short-lease landed · strata-landed (must decline + route) · unknown
+   street (escalates) · condition input shifts point only where validated · irregular/corner
+   (case-tier escalation note).
+5. **Field trials ≥3, including the Cardiff Grove #19 cross-check** against the PASS-8.5
+   craft valuation (agreement/divergence analyzed, not assumed), plus a Nanyang/Rosyth-area
+   terrace and one thin case.
+6. Hostile review loop — fresh reviewer each round — to **PASS ≥8.0**.
+7. Disposition executed: `landed-investment-analysis` keeps its beta/strategy framing, its
+   land-psf pricing core re-based on LV1; `landed-area-research` / `screen-landed-listings`
+   unchanged (area/listing layers).
 
-**Guardrails.** Panel selection pre-registered (no cherry-picking). IS numbers
-timestamped — Est. Val is LIVE, so snapshot discipline. Emulator sessions budgeted and
-sequenced (heavy-flow lesson). Calibration factors enter production only via
-feature-evidence entries with confidence labels.
-
-**Deliverables.** Skill v2 · calibration panel dataset · reconciliation report (EXP) ·
-stack/floor premium models with scope limits.
-
-**Gate G4.** ≥80% IS↔URA match rate on the overlap window; premium estimates pass
-persistence tests; harvest skill executed end-to-end by a non-Fable agent on ≥3
-projects it hasn't seen.
-
----
-
-## R5 — `condo-resale-valuation` skill v1 (production ship)
-
-**Research direction.** None new — conversion and reliability engineering.
-
-**Plan.**
-1. Author the skill to the mandate's spec: required/optional inputs; source priority
-   (URA spine + IS enrichment + official policy facts); market hierarchy; retrieval;
-   adjustments; independent anchors; ensemble logic; uncertainty; buyer guidance and
-   seller guidance **separated from fair value**; mandatory verification items; output
-   format; failure/escalation conditions.
-2. **Regression suite:** the mandate's case list (liquid standard · boutique illiquid ·
-   unusually large units · penthouse · low-floor road-facing · sea view · old freehold ·
-   short remaining lease · …) as executable case files with expected analytical paths,
-   anchors to downweight, expected confidence behaviour, known failure modes. Wired to
-   rerun on ANY skill update; an update that breaks a previously-green case does not
-   ship.
-3. Field trial: ≥2 real properties end-to-end; hostile review (property-report-review)
-   to PASS ≥8/10.
-4. Execute disposition: `value-a-property` marked superseded (kept as engine-room
-   reference until G5 sign-off).
-
-**Guardrails.** Ship scope-limited first — default recommendation: liquid private
-condos with ≥N same-project comps; boutique/penthouse cases run in "wide-band +
-escalation" mode. No capability claims beyond validated scope.
-
-**Deliverables.** The skill · regression suite · bilingual launch report · changelog.
-
-**Gate G5 (ship bar).** Beats the best benchmark overall AND on ≥70% of major slices;
-no major slice >1.3× worse than its benchmark; regression suite green; field-trial
-PASS; interval calibration from G3 holds on trial cases.
+**Gate GL4 (ship bar).** Beats the landed bar on ≥70% of major slices, no major slice >1.3×
+worse; regression suite green; field trials + Cardiff cross-check documented; hostile PASS
+≥8; **published achievable-accuracy statement** (median APE + noise floor + band coverage).
 
 ---
 
-## R6 — Landed programme ← ACTIVE (kickoff grounded 2026-07-16)
+## After L4 → operations (one runbook, both skills)
 
-**Data reality (measured on the pulled store — shapes every design choice below):**
-- **12,849 landed caveats / 12,115 resale subjects** (~199/mo island-wide) — island-level
-  walk-forward is viable; per-street it is NOT: **1,072 streets, median 5 caveats/street
-  over 5 years** (p90 = 30). Partial pooling toward enclave/planning-area is MANDATORY,
-  not optional; a "street median" benchmark will mostly decline.
-- **11,236 `type_of_area='Land'` rows (87%): psf = LAND psf, area = land area** (p50 2,640
-  sqft, p95 7,622). The remaining 1,613 strata-landed (cluster housing) trade on strata
-  area — a SEPARATE bucket, do not mix (R6a decision, audit item: 15 stray 'Apartment'
-  rows inside the landed slice need a rule).
-- Tenure: 68% freehold + 14% 999yr — tenure splits are viable. Segment: OCR 8,593 /
-  RCR 2,484 / CCR 1,772. Type: Terrace 6,003 / Semi-D 3,648 / Detached 1,570.
-- **First moves:** 6a landed store slice + hygiene (strata-landed split, Apartment rows,
-  psf-band for land-psf ≠ condo band) → landed benchmarks (enclave/planning-area median
-  land-psf time-adjusted, nearest-street transfer, type×tenure pools) → walk-forward
-  leaderboard = the landed bar → 6c land-value curve (price = f(land area), bulk-testable).
-  Reuse the harness as-is; only benchmarks and hygiene are landed-specific.
+Monthly refresh: pull → audit-lite → rolling re-validation (condo AND landed) → conformal
+recalibration when fingerprints demand → drift report vs frozen baselines → registry sync.
+Quarterly: MONITOR verdicts re-tested; snapshot archive (rolling window drops old months).
 
-**Research direction.** Plot-first valuation where the quant loop is thinner. What can
-bulk URA landed caveats actually validate (land-value curves, time adjustment, enclave
-effects) — and what must remain case-based discipline (geometry, improvement,
-redevelopment)?
+## Condo & new-launch backlog (FROZEN 2026-07-16 — nothing ships without its gate)
 
-**Plan.**
-1. **6a Spine:** landed store slice (`typeOfArea='Land'` + landed types; area = LAND
-   area, so psf = land-psf — consistent with the existing land-psf craft). Enclave /
-   street keying from street names + SVY21 coords.
-2. **6b Benchmarks + walk-forward:** street/enclave median land-psf (time-adjusted) ·
-   planning-area fallback · nearest-street transfer. Publish an honest achievable-
-   accuracy statement (median APE likely 8–12%; wide intervals are the CORRECT output
-   here, not a failure).
-3. **6c Nonlinear land value** (bulk-testable; can pre-start after G1): price = f(land
-   area) by type × tenure × region — linear-psf vs log-log vs spline vs piecewise;
-   marginal-sqft value curves; a verdict on the scope where "average land psf" is
-   admissible (the mandate's explicit question, answered with data).
-4. **6d Improvement & optionality (case tier):** residual = price − land-model →
-   improvement-contribution classes; rebuild-probability framing (move-in / reno / A&A
-   / rebuild as probability-weighted buyer use cases); redevelopment optionality stays
-   a verification-gated checklist (URA Master Plan GPR/height from official sources) —
-   never priced as fact before planning constraints are verified.
-5. **6e Skill + refactor:** `landed-valuation` skill (plot-first per mandate spec);
-   existing landed trio refactored — checklists survive, valuation cores swapped;
-   regression cases (small terrace / GCB / corner / irregular plot / rebuild candidate
-   / recently rebuilt).
+1. Apply fitted-but-deferred constants (EXP-0008: FLOOR_PP 0.004, CCR elasticity −0.016) →
+   recalibrate conformal (fingerprint test enforces) → re-verify leaderboard → update SKILL.
+2. R4 IS bridge: guided-harvest skill v2 + URA↔IS reconciliation + unit/stack premiums —
+   automates the condo skill's manual hard-case corroboration; later also serves landed
+   condition evidence (IS has per-property detail URA lacks).
+3. Hard-case blend rule (50/50 toward fresh print): validate or bound on a backtest slice.
+4. Strata-landed sub-market: give it a home (thin condo-engine variant) — currently orphaned.
+5. R7 new-launch programme (premium persistence + developer ladder are URA-backtestable;
+   plan in v1/git history — five-quantity separation discipline unchanged).
+6. Listing evidence (MONITOR tier); strategy-layer re-basing on shipped engines.
 
-**Guardrails.** n is small: mandatory partial pooling toward parent geographies;
-per-street conclusions require a minimum-n; case regression carries equal weight to the
-backtest in this programme; geometry/condition factors only from feature-evidence
-entries — otherwise "unresolved → widen band or ask."
+## Cross-cutting guardrails (unchanged, binding on the L-track)
 
-**Deliverables.** Landed leaderboard · land-curve study (EXP) · skill · regression suite.
+1. As-of firewall everywhere; new sources declare publication lag before entering the store.
+2. Time-forward validation only; full-history artifacts banned unless as-of rebuilt.
+3. Benchmark discipline + graveyard-first; every verdict logged.
+4. Simplicity preference — complexity must beat the simple method robustly, or the simple
+   one ships (the condo blends died this way; expect the same for landed).
+5. No fabricated adjustments — an uncalibrated factor is "unresolved → widen band or ask";
+   for landed this SPECIFICALLY covers plot geometry, condition, and redevelopment premium.
+6. Label epistemic status: verified fact · empirical finding · convention · hypothesis ·
+   open question · judgement.
+7. Fleet budget: sonnet gatherers/devs, Fable for design/diagnosis/verdicts; heavy flows
+   sequenced; orchestrator re-verifies fan-out results from the journal.
+8. stdlib-first; heavy deps behind extras; full backtest ≤15 min or add indexes; every
+   experiment = script + registry entry + reproducible data.
+9. Nothing deprecated until its successor is proven (harness + regression suite); every
+   material change → changelog; conformal tables carry code fingerprints.
+10. Secrets never in git.
 
-**Gate G6.** Beats the naive enclave-median benchmark; achievable-accuracy statement
-published; the skill REFUSES (escalates to case protocol) on out-of-scope plots rather
-than guessing.
-
----
-
-## R7 — New-launch programme
-
-**Research direction.** Separation of quantities — now with real empirics. **Upgrade to
-the earlier position** ("mostly case-based"): the 5-year window contains 2021–22
-launches that TOP'd and resold by 2024–26, and URA new-sale caveats ARE in the data →
-newness-premium persistence and developer price ladders are directly measurable. The
-final fair-value synthesis remains judgement-labelled; its components get backtests.
-
-**Plan.**
-1. **7a Resale-equivalent value:** condo engine v2 on the substitute resale set (nearby
-   recent-TOP + same buyer-market projects); new-vs-resale matched pairs.
-2. **7b Premium persistence (the natural experiment):** launch prices (new-sale
-   caveats) vs same-project post-TOP resales, controlled for market movement (index)
-   and floor-band/size mix → classify durable project-quality premium vs evaporating
-   launch premium.
-3. **7c Developer price ladder:** per-project new-sale caveat timelines, mix-controlled;
-   onboard URA's monthly developer-sales survey (declared publication lag) for
-   sell-through; test whether sell-through has incremental predictive power AFTER mix +
-   market controls (the mandate's causality warning, implemented).
-4. **7d Unit relative value:** the developer's own sold-price grid + IS stack data →
-   a two-unit comparison framework ("which of these two available units is better value
-   at list") — often the commercially decisive output.
-5. Skill v1: must output the five separated quantities — resale-equivalent FV ·
-   sustainable project premium · unit adjustment · expected developer execution price ·
-   quoted-price gap — and must be able to say "the developer can sell at X, and X is
-   above underlying fair value."
-
-**Guardrails.** Never conflate pricing power with fair value. Premium components carry
-durability evidence labels. Ladder models tested against mix-shift confounds. Case
-regression on live launches: first weekend / high sell-through / heavy unsold inventory.
-
-**Deliverables.** Premium-persistence study (EXP) · ladder study · skill · regression cases.
-
-**Gate G7.** The five quantities separately reported and reconciled on ≥3 live
-launches; every premium claim carries cohort evidence; hostile review PASS.
-
----
-
-## R8 — Operationalization: the living system
-
-**Plan.** Monthly refresh runbook: pull → audit-lite → rolling re-validation → drift
-report vs frozen baseline; alarm when the engine degrades vs benchmarks on fresh
-months. Quarterly registry review (MONITOR verdicts re-tested). Strategy-layer refresh:
-`property-buy-sell-advisory` and `condo-investment-analysis` re-based on v2 valuations,
-with the factor/beta work rebuilt as-of before it re-enters. Memory/registry sync.
-
-**Guardrails.** The rolling URA window silently DROPS old months — archive snapshots so
-past backtests stay reproducible. Changelog for every material change. No skill edit
-ships without its regression rerun.
-
-**Deliverables.** Refresh runbook (scheduled) · drift dashboard (simple) · quarterly
-review template.
-
----
-
-## Cross-cutting guardrails (all phases)
-
-1. **As-of firewall everywhere.** All research reads through `store.as_of`. Any new
-   source declares its publication lag BEFORE entering the store.
-2. **Time-forward validation only.** Forward-chained folds; random K-fold is banned.
-   Full-history artifacts (enriched panels, clusters, embeddings) are banned from the
-   harness unless as-of rebuilt.
-3. **Benchmark discipline + graveyard-first.** Read the graveyard before proposing.
-   No method advances on in-sample results or intuition. Every verdict logged.
-4. **Simplicity preference.** The complex method must beat the simple one robustly
-   (stability across regimes and slices, better tails, or better calibration) — or the
-   simple one ships.
-5. **No fabricated adjustments.** An uncalibrated factor is "unresolved" → wider
-   interval or an information request. Never a made-up percentage.
-6. **Label epistemic status** in every report: verified fact · empirical finding ·
-   professional convention · hypothesis · open question · judgement.
-7. **Fleet budget.** Sonnet gatherers ×3–4 for harvest/grunt runs; Fable for synthesis,
-   diagnosis, verdicts, hostile critique. Heavy workflows sequenced, not exploded.
-8. **Engineering discipline.** stdlib-first; heavy deps behind pyproject extras; full
-   backtest run ≤15 min or add indexes; every experiment = script + registry entry +
-   reproducible data (snapshot or pinned recipe).
-9. **Nothing deprecated until its successor is proven** (harness + regression suite).
-   Every material change → changelog entry.
-10. **Secrets never in git.** Access keys live in env or `research/.secrets/`
-    (gitignored). A private repo is NOT a secret store.
-
-## Existing skills — disposition
+## Skills disposition (updated)
 
 | Skill | Disposition | Phase |
 |---|---|---|
-| `value-a-property` | candidate C1 in the leaderboard; superseded by `condo-resale-valuation` at G5 | R1 → R5 |
-| `read-investment-suite` | rewritten as guided-harvest v2 (goal-conditioned recipes) | R4a |
-| `harvest-scrolling-android-table` | kept as low-level primitive under v2 | R4a |
-| `condo-investment-analysis` | strategy layer; re-based on engine v2 + as-of factor rebuild | R8 |
-| `property-buy-sell-advisory` | strategy layer; re-based on v2 valuations | R8 |
-| `landed-area-research` | checklists kept; valuation core replaced | R6e |
-| `landed-property-due-diligence` | verification checklist survives; pricing sections re-based | R6e |
-| `landed-investment-analysis` | beta/asymmetric-capture read kept as prior; land-psf method superseded by 6c curves | R6e |
-| `screen-landed-listings` | becomes the listing-evidence adapter (Tier-2) | R3 / R6 |
-| `new-launch-research` | replaced by `new-launch-valuation` (research steps absorbed) | R7 |
-| `property-report-review` | kept; extended with registry-consistency checks (report claims must match feature evidence) | R5+ |
+| `condo-resale-valuation` | SHIPPED; frozen (backlog gated) | done |
+| `value-a-property` | superseded; IS corroboration reference | done |
+| `landed-investment-analysis` | beta/strategy framing kept; land-psf pricing core re-based on LV1 | L4 |
+| `landed-property-due-diligence` | checklist survives AS the L4 verification layer (referenced) | L4 |
+| `landed-area-research` / `screen-landed-listings` | unchanged (area / listing layers) | — |
+| `read-investment-suite` / `harvest-scrolling-android-table` | rewrite parked with R4 | parked |
+| `new-launch-research` | replaced when R7 unparks | parked |
+| `condo-investment-analysis` / `property-buy-sell-advisory` | strategy layer; re-base post-ops | parked |
+| `property-report-review` | unchanged — the acceptance gate for L4 | active |
 
-## Mandate coverage map
+## Mandate coverage — landed programme
 
-| Mandate element | Where |
+| Mandate (Landed A–F) | Where |
 |---|---|
-| Shared M1 value geography | R2b (validated via retrieval) + geography registry; landed variant R6a/6b |
-| Shared M2 time adjustment | R2a; landed R6b |
-| Shared M3 evidence families | R3 |
-| Condo A retrieval / B adjustment / C unit-stack / D AVM / E rental / F listing | R2b / R2c / R4c / R2d / R3 / R3-MONITOR + strategy layer |
-| New launch A–D | R7a–d |
-| Landed A–F | R6a (A) · R6b (B) · R6c (C) · R6d (D, E, F — case tier) |
-| Ensemble research | R3 |
-| Validation protocol | R0/R1 + every gate |
-| Benchmark discipline | guardrail 3 + R1's bar |
-| Iterative research loop | R2 / R4 / R6 / R7 method work |
-| Skill production spec | R5 / R6e / R7.5 |
-| Reliability regression suite | R5.2, R6e, R7.5 + guardrail 9 rerun rule |
-| Research artifacts | the registry (live since Module 0) |
+| A value geography | L1 pooling benchmarks + L2c (validated via retrieval only) |
+| B comparable selection | L1 LB1–LB4 + L2c |
+| C nonlinear land value | L2a (the expected-mandatory module) |
+| D plot geometry | L4 case-tier + verification list — bulk-unobservable, DECLARED, never invented |
+| E improvement contribution | L2e bounds + L3 condition hook |
+| F redevelopment optionality | L4 verification-gated language, never priced as fact |
 
-## Program-level risks & honest limits
+## Honest limits (landed-specific)
 
-- **URA granularity bounds precision:** month-only dates, floor bands, no unit ids —
-  time precision and unit precision have hard floors without IS (hence R4).
-- **Rolling 5-year window:** no 2018-cooling or COVID-crash regime in transaction data;
-  regime conclusions are scoped to observed regimes (2021–2026). SingStat indices give
-  longer context, but not at transaction level. Archive snapshots from day one (R8).
-- **New-launch fair value has no direct OOS truth.** We backtest its components
-  (premium persistence, ladder) and label the synthesis as judgement. No pretending.
-- **Landed accuracy floor is structurally higher.** The skill's value is discipline +
-  verification + honest bands, not false precision.
-- **Key-person risk:** IS account + emulator are single-path; harvest skill v2 reduces
-  the bus factor.
-- **Session budget:** 12–18 sessions estimated. Gates exist to shorten, not lengthen:
-  every "simple wins" verdict skips a bake-off.
+- **Bundle identification:** URA price = land + building, not decomposable in bulk → an
+  irreducible error band the skill must publish (L1 noise floor). Landed's bar will sit
+  structurally above condo's 3.7% — that is honesty, not failure.
+- **Geometry blindness:** frontage/shape/corner absent from every bulk source → the bulk
+  model carries declared geometry noise; case tier (site/INLIS/photos) resolves it per deal.
+- **GCB/luxury detached:** thin and idiosyncratic → wide bands + case protocol, possibly
+  scope-limited "indicative".
+- **FH-dominated slow market in a 5y window:** regime conclusions scoped to 2021–2026.
+- **Same-plot matcher** may err on subdivisions/re-surveys — spot-check discipline.
+- Session estimate: **~4.5–6 sessions to a shipped landed skill** (infrastructure reuse is
+  why this is less than condo's path).

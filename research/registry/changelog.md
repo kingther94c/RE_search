@@ -5,6 +5,23 @@ impact · assets affected.
 
 ---
 
+## 2026-07-16 — Roadmap v2: LANDED-FIRST re-plan (L0–L4)
+- **What:** `01_roadmap.md` rewritten as v2. The one-section R6 became a full delivery
+  track: **L0 data foundation (hygiene, land-psf band from data, same-plot matcher) → L1
+  baseline leaderboard + NOISE-FLOOR study (the bundle-identification bound) → L2
+  error-driven modules (land-size curve expected mandatory; time-adj; retrieval/pooling;
+  anchors with the condo-reversal expectation preset; improvement-contribution bounds) →
+  L3 engine LV1 + conformal (fingerprinted from day one) + condition-input hook → L4 skill
+  ship (regression suite, ≥3 field trials incl. Cardiff Grove #19 cross-check, fresh-
+  reviewer hostile loop to PASS ≥8)**. Est. 4.5–6 sessions. Condo R0–R5 sections condensed
+  (results live in the registry); R4/R7 preserved as parked plans; guardrails unchanged +
+  landed-specific honest limits (bundle noise, geometry blindness, GCB scope).
+- **Why:** user decision — landed must land first; v1's condo-first structure no longer
+  described the program. Condo lessons are baked into the L-track as presets (G1 criteria
+  = median+tail+coverage+calibration; anchors buy coverage not points; live-lag semantics;
+  fingerprint discipline) so they are not re-learned at landed prices.
+- **Assets affected:** landed (active), condo/new-launch (frozen, unchanged).
+
 ## 2026-07-16 — Fable review round + PRIORITY PIVOT: landed first (R6 active)
 - **What:** post-ship review of R0–R5 (EXP-0008). Applied the safe fixes: live-vs-
   reconstruction as-of semantics (live valuations no longer discard the freshest ~2 months),
