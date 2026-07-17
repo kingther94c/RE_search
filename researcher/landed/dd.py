@@ -6,7 +6,10 @@
 Writes researcher/landed/<slug>_dd.json, which deliverables/build_landed_dd_report.py renders.
 
 WHAT IT CHAINS (every source free, official, no account except URA's free key):
-  onemap      exact address (blk+postal), schools, MRT, amenities, expressways
+  onemap      exact address (blk+postal), + the curated mall/expressway distances
+  amenities   ISLAND-WIDE primary schools (MOE directory) + MRT/LRT (OneMap), pre-geocoded
+              and cached — see researcher/sources/amenities.py for why this is not a list
+              in this file any more
   mp_zoning   MP2025 zone + landed storey envelope; PLOT AREA off the containing parcel;
               neighbour scan by nearest parcel edge; transect toward anything material
   comps       URA caveats for the street: tenure, land-psf size cohorts, trend, subject cohort
@@ -42,18 +45,19 @@ REPO = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, REPO)
 
 from researcher.landed import comps as comps_mod          # noqa: E402
-from researcher.sources import mp_zoning, onemap, pub_flood  # noqa: E402
+from researcher.sources import amenities, mp_zoning, onemap, pub_flood  # noqa: E402
 
-PRIMARIES = [
-    "ROSYTH SCHOOL", "HOUGANG PRIMARY SCHOOL", "YIO CHU KANG PRIMARY SCHOOL",
-    "FERNVALE PRIMARY SCHOOL", "XINMIN PRIMARY SCHOOL", "ANDERSON PRIMARY SCHOOL",
-    "JING SHAN PRIMARY SCHOOL", "ZHONGHUA PRIMARY SCHOOL", "CHIJ OUR LADY OF GOOD COUNSEL",
-    "PEI CHUN PUBLIC SCHOOL", "MARIS STELLA HIGH SCHOOL", "NAN CHIAU PRIMARY SCHOOL",
-    "PALM VIEW PRIMARY SCHOOL", "SENGKANG GREEN PRIMARY SCHOOL", "CHIJ OUR LADY OF THE NATIVITY",
-]
-MRT = ["BUANGKOK MRT STATION", "HOUGANG MRT STATION", "SENGKANG MRT STATION",
-       "ANG MO KIO MRT STATION", "YIO CHU KANG MRT STATION", "SERANGOON MRT STATION",
-       "KOVAN MRT STATION", "LENTOR MRT STATION"]
+# Schools and MRT come from ISLAND-WIDE official lists (researcher/sources/amenities.py:
+# MOE's School Directory + OneMap). They used to be 15 primaries and 8 stations hardcoded
+# here — the Seletar/Serangoon set this chain was first written against. Anywhere else the
+# chain did not fail, it silently reported "no primary within 2.2km" / "no MRT within 4km".
+# 385 Loyang Rise's report said exactly that, and it is false. A false negative is worse
+# than a gap: the gap is visible, the false negative is not — and the school ring is the
+# single biggest landed value driver we have measured (factor study: school > age > MRT).
+#
+# Malls and expressways remain a CURATED north-east list: there is no official "mall"
+# register, and naming them wrongly invents amenity. They are reported as "nearest of a
+# named list", never as "nearest in Singapore" — see `_dists`'s `scope`.
 AMENITIES = ["GREENWICH V", "THE SELETAR MALL", "MYVILLAGE AT SERANGOON GARDEN",
              "NEX SERANGOON", "HOUGANG MALL", "AMK HUB"]
 EXPRESSWAYS = ["TAMPINES EXPRESSWAY", "CENTRAL EXPRESSWAY", "KALLANG PAYA LEBAR EXPRESSWAY",
@@ -67,6 +71,7 @@ TRANSECT_WITHIN_M = 400
 
 
 def _dists(lat: float, lon: float, names: list[str], cap_km: float) -> list[dict]:
+    """Nearest of a CURATED name list (malls, expressways). Geocodes each name."""
     out = []
     for n in names:
         g = onemap.geocode(n)
@@ -79,6 +84,19 @@ def _dists(lat: float, lon: float, names: list[str], cap_km: float) -> list[dict
                                    or g["match"],
                         "postal": g["postal"]})
     return sorted(out, key=lambda r: r["km"])
+
+
+def _near(lat: float, lon: float, points: list[dict], cap_km: float,
+          limit: int = 6) -> list[dict]:
+    """Nearest of an ISLAND-WIDE pre-geocoded list — so "none within cap_km" is a real
+    statement about Singapore, not about whichever list this file happened to carry."""
+    out = []
+    for p in points:
+        km = onemap.haversine_km(lat, lon, p["lat"], p["lon"])
+        if km <= cap_km:
+            out.append({"name": p["name"], "km": round(km, 2),
+                        "postal": p.get("postal", "")})
+    return sorted(out, key=lambda r: r["km"])[:limit]
 
 
 def run(address: str, expect_road: str | None = None) -> dict:
@@ -139,10 +157,18 @@ def run(address: str, expect_road: str | None = None) -> dict:
         "landed_housing_area": {k: v for k, v in (landed or {}).items() if k != "raw"},
         "neighbours": neighbours,
         "transects": transects,
-        "schools_primary": _dists(lat, lon, PRIMARIES, 2.2),
-        "mrt": _dists(lat, lon, MRT, 4.0),
+        "schools_primary": _near(lat, lon, amenities.primary_schools(), 2.2),
+        "mrt": _near(lat, lon, amenities.mrt_stations(), 4.0, limit=4),
         "amenities": _dists(lat, lon, AMENITIES, 3.0),
         "expressways": _dists(lat, lon, EXPRESSWAYS, 6.0),
+        "amenity_scope": {
+            "schools_primary": f"island-wide — all {len(amenities.primary_schools())} "
+                               f"P1-bearing MOE schools (built {amenities.built_on()})",
+            "mrt": f"island-wide — {len(amenities.mrt_stations())} MRT/LRT stations "
+                   f"(built {amenities.built_on()})",
+            "amenities/expressways": "CURATED north-east list — 'nearest of these', "
+                                     "NOT 'nearest in Singapore'",
+        },
         "comps": cmp_,
         "flood": pub_flood.check(street),
         "provenance": {
@@ -154,10 +180,13 @@ def run(address: str, expect_road: str | None = None) -> dict:
                      "area. Month granularity; ~5y rolling; caveats lag; landed project names "
                      "anonymised so STREET is the only join key.",
             "flood": "PUB flood-prone list (Nov 2025) by name + data.gov.sg national hectares.",
-            "schools/mrt/amenities": "OneMap haversine to the target's POINT. For P1 the "
-                                     "official measure is OneMap SchoolQuery (school LAND "
-                                     "BOUNDARY to home) — ours over-estimates, so 'inside' is "
-                                     "safe and near the line is undecided.",
+            "schools/mrt": "ISLAND-WIDE: every P1-bearing MOE school (School Directory on "
+                           "data.gov.sg) + every MRT/LRT station (OneMap), pre-geocoded. "
+                           "Haversine to the target's POINT. For P1 the official measure is "
+                           "OneMap SchoolQuery (school LAND BOUNDARY to home) — ours "
+                           "over-estimates, so 'inside' is safe and near the line undecided.",
+            "amenities/expressways": "CURATED north-east list — there is no official mall "
+                                     "register. 'Nearest of these', never 'nearest in SG'.",
         },
         "not_covered": [
             "Valuation — caveat prices bundle land+building; no fair value is derivable here.",

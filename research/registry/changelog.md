@@ -5,6 +5,24 @@ impact · assets affected.
 
 ---
 
+## 2026-07-17 — DD 链的学校/MRT 清单从「一个片区」换成「全岛」——它此前在静默地撒谎
+- **What:** `researcher/sources/amenities.py` —— 全岛 **182 所招 P1 的 MOE 学校**(School
+  Directory,data.gov.sg,官方,带 postal → OneMap 逐个地理编码)+ 全岛 MRT/LRT 站
+  (OneMap 枚举),一次构建、落盘缓存(`amenities_cache.json`,带 `built` 日期,入库以便离线
+  复现)。`dd.py` 改用它;商场/高速仍是人工清单,但报告now明确写「这几个里最近的,不是全岛最近的」。
+- **Why —— 这是一个假阴性,不是一个缺失。** `dd.py` 原本硬编码 **15 所小学、8 个 MRT 站**:
+  那是这条链第一次开发时那个片区(Seletar/Serangoon)的清单。换个地址它**不报错**,它
+  静默地说「2.2km 内无小学」「4km 内无 MRT」。**385 LOYANG RISE 的全面报告就是这么印出来的,
+  而 Loyang 附近既有小学也有 Pasir Ris MRT。** 缺失看得见,假阴性看不见 —— 而学区是我们量到的
+  landed 最大价值驱动(因子研究:school > age > MRT ≈ FH)。
+- **测试当场抓到了我自己的两个 bug:**(1)第一版只查 "MRT STATION",而 **LRT 站叫
+  "XXX LRT STATION"**,搜不到 —— 整整一类车站静默缺席;(2)「连续 8 页无新站」早停 + 0.2s/页
+  触发 OneMap 限流,只收到 69/约170 站。测试断言「≥100 站且东西两端都有」直接判红。
+  已修:两种查询、退避重试、0.6s 礼貌限速(与 `onemap.geocode` 一致)、去掉早停。
+- **Evidence:** 7 条覆盖测试(全岛规模、东部覆盖=那次假阴性的锚、原片区不退化、东西两端、
+  构建日期)。
+- **Assets affected:** landed DD + 全面报告(任何非东北片区的地址此前都在拿假阴性)。
+
 ## 2026-07-17 — 全面报告补齐「其他因素」:成本栈 + 深度尽调提示;并更正了一个错的 ABSD 税率
 - **What:** `researcher/landed/costs.py`(BSD / ABSD / SSD 时钟 / 盈亏平衡涨幅,每张表带
   `source`+`effective`+`verify_at`)接进 full report 的第 3 层;第 4 层「深度尽调 DD-3」由

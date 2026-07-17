@@ -149,6 +149,15 @@ a finding. `researcher/landed/dd.py` chains all of it; what each piece means:
   <1,800 sqft plots run a median $2,663/psf against $2,186 for 1,800–2,500 sqft. An average
   mixes cohorts and describes no real house — and is why portal psf figures look
   self-contradictory. Price the subject against `subject_cohort()`, its OWN size band.
+- **"Nearest X" is only a claim about Singapore if the list is island-wide.** Schools and
+  MRT/LRT now come from `researcher/sources/amenities.py` — every P1-bearing MOE school
+  (School Directory, data.gov.sg) and every station (OneMap), pre-geocoded and cached with a
+  build date. They used to be **15 primaries and 8 stations hardcoded** for the Seletar/
+  Serangoon area this chain was first written against; anywhere else the report silently
+  said *"no primary within 2.2km"* — 385 Loyang Rise's did, and it is false. **A false
+  negative is worse than a gap: the gap is visible.** Malls/expressways are still a curated
+  north-east list and are reported as *"nearest of these"*, never *"nearest in Singapore"*.
+  Refresh: `python -m researcher.sources.amenities --rebuild`.
 - **"Street" is URA's PARENT label, not the road** (measured, EXP-0018) — two claims you must
   therefore never make. **(1) "No transactions on this street."** An empty comp set means
   nothing is filed under that NAME: URA files small roads under the estate's main road, so

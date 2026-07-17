@@ -367,8 +367,13 @@ def _l1_dd(g: dict) -> str:
                   (d.get("plot") or {}), (d.get("flood") or {})
     sch = d.get("schools_primary") or []
     mrt = d.get("mrt") or []
-    near = [f"{n['name']} · {n['km']}km" for n in sch[:3]]
-    mrts = [f"{n['name']} · {n['km']}km" for n in mrt[:2]]
+    scope = d.get("amenity_scope") or {}
+    # 「2.2km 内无小学」只有在清单是**全岛**时才是关于新加坡的陈述;此前它是关于
+    # dd.py 里那 15 所硬编码学校的陈述,而报告把它当成前者印了出来。
+    near = [f"{n['name']} · {n['km']}km" for n in sch[:3]] or [
+        "2.2km 内无" if scope.get("schools_primary") else "清单未覆盖本区域"]
+    mrts = [f"{n['name']} · {n['km']}km" for n in mrt[:2]] or [
+        "4km 内无" if scope.get("mrt") else "清单未覆盖本区域"]
     return f"""<div class=card><h2>2 · 尽调 Due Diligence <span class=note>(免费官方源:OneMap ·
 MP2025 · PUB)</span></h2>
 <table class=kv>
@@ -378,10 +383,13 @@ MP2025 · PUB)</span></h2>
 <tr><td>landed housing area</td><td class=r>{_esc(lh.get('type'))}
     {('· ' + str(lh.get('storeys')) + ' 层') if lh.get('storeys') else ''}</td></tr>
 <tr><td>PUB 水浸名单</td><td class=r>{'<b>在名单上</b>' if f.get('on_list') else '不在名单上'}</td></tr>
-<tr><td>最近小学 <span class=note>(1km 用 OneMap SchoolQuery 为准)</span></td>
-    <td class=r>{_esc(' / '.join(near) or '2.2km 内无')}</td></tr>
-<tr><td>最近 MRT</td><td class=r>{_esc(' / '.join(mrts) or '4km 内无')}</td></tr>
+<tr><td>最近小学 <span class=note>(1km 官方口径以 OneMap SchoolQuery 为准)</span></td>
+    <td class=r>{_esc(' / '.join(near))}</td></tr>
+<tr><td>最近 MRT/LRT</td><td class=r>{_esc(' / '.join(mrts))}</td></tr>
 </table>
+<p class=note>清单口径:小学 {_esc(scope.get('schools_primary', '未声明'))};
+MRT {_esc(scope.get('mrt', '未声明'))}。<b>商场/高速是人工清单</b> —— 报的是「这几个里最近的」,
+不是「全新加坡最近的」。</p>
 <p class=note>水浸:{_esc((f.get('evidential_weight') or '')[:220])}</p>
 </div>"""
 
