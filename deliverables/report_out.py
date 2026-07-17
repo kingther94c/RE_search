@@ -2,11 +2,14 @@ r"""Where every RE_search HTML report goes. ONE place — builders must not re-d
 
 The rule (user instruction 2026-07-16, supersedes "Drive with a deliverables/ fallback"):
 
-  1. **The repo copy is canonical and always written**: `reports/` at the repo root,
-     which is GITIGNORED. Reports are regenerable artifacts, not source — the old
-     fallback wrote them into the TRACKED `deliverables/` folder, so a run with the
-     Google Drive unmounted silently committed a 60 KB HTML blob (that is how
-     seletar_green_walk_14_DD_Report.html ended up in git).
+  1. **The repo copy is canonical and always written**: `reports/` at the root of the
+     MAIN RE_search checkout, which is GITIGNORED. Reports are regenerable artifacts,
+     not source — the old fallback wrote them into the TRACKED `deliverables/` folder,
+     so a run with the Google Drive unmounted silently committed a 60 KB HTML blob (that
+     is how seletar_green_walk_14_DD_Report.html ended up in git).
+     **Main checkout, never the worktree** — see `_main_repo_root`: a run from a linked
+     worktree must still land in the one place the user looks, and `.claude/worktrees/`
+     is disposable (git-excluded), so a report written there dies with the worktree.
   2. **Then sync to the Drive**: `G:\My Drive\004 RES\REsearch_Reports` — the
      user-facing library. Override with env `RESEARCH_REPORTS_DIR`.
 
@@ -26,8 +29,42 @@ import shutil
 from dataclasses import dataclass
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.dirname(_HERE)
-#: repo-local, gitignored — always written
+_CHECKOUT = os.path.dirname(_HERE)      # the checkout THIS file lives in (maybe a worktree)
+
+
+def _main_repo_root(checkout: str = _CHECKOUT) -> str:
+    """Root of the MAIN checkout, even when called from a linked git worktree.
+
+    A linked worktree's `.git` is a FILE holding `gitdir: <main>/.git/worktrees/<name>`
+    (the main checkout's `.git` is a real directory). Walk that pointer back to the
+    component named `.git` — its parent is the main root. Falls back to `checkout` when
+    this isn't a worktree, or the pointer is unreadable//unexpected (a plain clone, or
+    the file copied somewhere odd).
+    """
+    dotgit = os.path.join(checkout, ".git")
+    if not os.path.isfile(dotgit):
+        return checkout                 # real .git dir (main checkout) or not a repo
+    try:
+        with open(dotgit, encoding="utf-8") as f:
+            line = f.read().strip()
+    except OSError:
+        return checkout
+    if not line.startswith("gitdir:"):
+        return checkout
+    gitdir = line.split(":", 1)[1].strip()
+    if not os.path.isabs(gitdir):       # git may store it relative to the worktree
+        gitdir = os.path.join(checkout, gitdir)
+    parts = os.path.normpath(gitdir).split(os.sep)
+    if ".git" not in parts:
+        return checkout
+    root = os.sep.join(parts[:parts.index(".git")])
+    if root.endswith(":"):              # Windows drive root: "D:" -> "D:\"
+        root += os.sep
+    return root if os.path.isdir(root) else checkout
+
+
+REPO = _main_repo_root()
+#: repo-local, gitignored — always written, always in the MAIN checkout
 REPORTS_DIR = os.path.join(REPO, "reports")
 #: user-facing library on the Google Drive
 DRIVE_DIR_DEFAULT = r"G:\My Drive\004 RES\REsearch_Reports"

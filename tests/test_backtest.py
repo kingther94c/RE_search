@@ -383,18 +383,18 @@ def test_conformal_table_matches_current_c1():
     """The conformal table is calibrated on C1 residuals. If candidates.py changes without
     a recalibration (run.py --dump -> analyze_r3.py), the band multipliers silently drift
     from the code that produced them — this guard makes that a red test, not a silent skew."""
-    import hashlib
     import json
     import os
+
+    from researcher.backtest.fingerprint import CONDO_CODE_FILES, code_sha1
     base = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                         "researcher", "backtest")
     with open(os.path.join(base, "conformal_table.json"), encoding="utf-8") as f:
         meta = json.load(f).get("_meta", {})
     stored = meta.get("candidates_sha1")
     assert stored, "conformal table has no fingerprint — recalibrate via analyze_r3.py"
-    with open(os.path.join(base, "candidates.py"), "rb") as f:
-        current = hashlib.sha1(f.read()).hexdigest()
-    assert current == stored, (
+    # same file set + same EOL-normalized hash the stamper used (fingerprint.py)
+    assert code_sha1(CONDO_CODE_FILES) == stored, (
         "candidates.py changed since the conformal table was calibrated — re-run "
         "`python -m researcher.backtest.run --sample 8000 --dump <p>` then "
         "`python research/analyze_r3.py <p>`")

@@ -14,13 +14,14 @@ Same protocol as the condo conformal (EXP-0006/0007), so the numbers are compara
 """
 from __future__ import annotations
 
-import hashlib
 import json
 import os
 import sys
 from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from researcher.backtest.fingerprint import LANDED_CODE_FILES, code_sha1  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 BT = os.path.join(os.path.dirname(HERE), "researcher", "backtest")
@@ -97,16 +98,10 @@ def main():
     for ty, v in by_type.items():
         table[f"_type|{ty}"] = [_q(v, NOM_LO), _q(v, NOM_HI)]
 
-    h = hashlib.sha1()
-    # EVERY file whose code determines the point's residuals. landed_benchmarks.py
-    # (_tadj_psf) and local_trend.py (the L2b bridge) were originally OUTSIDE the set —
-    # a hole exactly where L2b operates: the time adjustment could change under a table
-    # that still claimed to be calibrated. Found in the 2026-07-17 Fable review.
-    for f in ("landed_benchmarks.py", "landed_candidates.py", "landed_size_curve.py",
-              "local_trend.py"):
-        with open(os.path.join(BT, f), "rb") as fh:
-            h.update(fh.read())
-    table["_meta"]["code_sha1"] = h.hexdigest()
+    # The file set + the hash live in researcher/backtest/fingerprint.py so the stamper and
+    # the guard test cannot drift apart (they did once: landed_benchmarks.py was outside the
+    # set — a hole exactly where L2b's time adjustment operates).
+    table["_meta"]["code_sha1"] = code_sha1(LANDED_CODE_FILES)
 
     with open(TABLE_OUT, "w", encoding="utf-8", newline="\n") as f:
         json.dump(table, f, ensure_ascii=False, indent=1)

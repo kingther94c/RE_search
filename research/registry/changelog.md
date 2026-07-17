@@ -5,6 +5,29 @@ impact · assets affected.
 
 ---
 
+## 2026-07-17 — Conformal fingerprints made portable (both were silently machine-local)
+- **What:** `researcher/backtest/fingerprint.py` — ONE definition of each table's
+  residual-determining file set + an **EOL-normalized** `code_sha1`; the stampers
+  (`analyze_r3.py`, `analyze_landed.py`) and the guard tests now share it. Added
+  `.gitattributes` (`* text=auto eol=lf`). Both stored fingerprints RE-STAMPED to their
+  normalized values (condo `ceb18bb0`→`9394a968`, landed `534035e9`→`15eb6266`).
+- **Why:** the fingerprints hashed raw file BYTES, so they depended on how git checked the
+  file out — Windows `core.autocrlf=true` writes CRLF, Linux/CI writes LF. The two tables
+  were stamped on different conventions (condo from a CRLF checkout, landed from an LF
+  one), so **each was green only where it was stamped**: a fresh clone or a git worktree
+  went red on one or the other. Found when a rebase into a worktree turned
+  `test_conformal_table_matches_landed_code` red with no code change. The duplicated
+  file-set tuples (stamper vs test) are collapsed too — they had already drifted once
+  (landed_benchmarks.py outside the set, the L2b hole).
+- **Evidence — NO recalibration, and why that is legitimate:** the re-stamp is a pure
+  representation change. The script asserts the stored value equals the RAW hash of the
+  code in one of the checkouts (proving the code TEXT is the calibrated text and only its
+  EOL bytes differ) and that the normalized hash agrees across both checkouts, before
+  writing. Python is EOL-agnostic, so residuals cannot have moved. Verified green in BOTH
+  a CRLF checkout (worktree, full suite 168) and an LF one (main).
+- **Backtest impact:** none — no engine code, no calibration data changed.
+- **Assets affected:** condo + landed (guard tests only).
+
 ## 2026-07-17 — L2b SHIPPED: observed local-trend bridge in the landed time adjustment (EXP-0016/0017)
 - **What:** LV1's time adjustment is now published-PPI-to-last-published-quarter **× an
   OBSERVED bridge** from max(comp month, quarter midpoint) to the newest visible caveat

@@ -1,0 +1,17 @@
+# Deterministic checkouts — byte-identical working files on every platform/clone.
+#
+# Load-bearing, not cosmetic: the conformal tables are fingerprinted with sha1 over the
+# raw BYTES of the point-method sources (tests/test_backtest.py::test_conformal_table_
+# matches_current_c1, tests/test_landed.py::test_conformal_table_matches_landed_code).
+# With no .gitattributes, Windows core.autocrlf=true rewrites LF->CRLF on checkout, so
+# the same commit hashes differently in a fresh clone / a git worktree than in the
+# checkout the table was calibrated in. That is how the two fingerprints ended up
+# calibrated against DIFFERENT eol conventions (condo on CRLF, landed on LF) — each
+# green only on the machine that stamped it. Forcing LF makes a clone, a worktree and CI
+# agree. The fingerprint readers also normalize eol, so a stray CRLF working copy still
+# reads as "code unchanged".
+* text=auto eol=lf
+
+# Never touch these — binary payloads (the frozen URA store snapshots).
+*.gz binary
+*.png binary

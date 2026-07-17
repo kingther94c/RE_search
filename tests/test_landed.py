@@ -84,24 +84,19 @@ def test_lease_parse_does_not_collide_with_the_year():
 def test_conformal_table_matches_landed_code():
     """The band multipliers are calibrated on LC2/curve residuals. If that code changes
     without recalibration the bands silently skew — make it a red test."""
-    import hashlib
     import json
     import os
+
+    from researcher.backtest.fingerprint import LANDED_CODE_FILES, code_sha1
     base = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                         "researcher", "backtest")
     with open(os.path.join(base, "landed_conformal_table.json"), encoding="utf-8") as f:
         meta = json.load(f).get("_meta", {})
     stored = meta.get("code_sha1")
     assert stored, "landed conformal table has no fingerprint — run research/analyze_landed.py"
-    h = hashlib.sha1()
-    # the FULL residual-determining set — incl. the time adjustment (landed_benchmarks)
-    # and the L2b local-trend bridge (local_trend); the original two-file set had a hole
-    # exactly where L2b operates (2026-07-17 review)
-    for fn in ("landed_benchmarks.py", "landed_candidates.py", "landed_size_curve.py",
-               "local_trend.py"):
-        with open(os.path.join(base, fn), "rb") as fh:
-            h.update(fh.read())
-    assert h.hexdigest() == stored, (
+    # same file set + same EOL-normalized hash the stamper used (fingerprint.py) — the test
+    # must not re-derive either, or the two drift apart
+    assert code_sha1(LANDED_CODE_FILES) == stored, (
         "landed point code changed since calibration — re-run "
         "`python -m researcher.backtest.run_landed --dump <p>` then "
         "`python research/analyze_landed.py <p>`")

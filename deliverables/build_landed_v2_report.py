@@ -3,8 +3,8 @@
     python deliverables/build_landed_v2_report.py --street "ALNWICK ROAD" --area 2800 \
            --type Terrace [--condition original] [--asof 2026-07-01]
 
-Writes to RESEARCH_REPORTS_DIR (default G:\\My Drive\\004 RES\\REsearch_Reports; falls back
-to deliverables/). Self-contained, no external assets. Landed-specific emphasis vs the condo
+Writes to the main checkout's gitignored reports/ AND the Drive library — see
+deliverables/report_out.py. Self-contained, no external assets. Landed-specific emphasis vs the condo
 report: LAND-psf vs bundle price, the geometry blind spot, the condition input, and the
 noise floor — because those are what an honest landed number has to disclose.
 """
@@ -16,18 +16,8 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from deliverables.report_out import write_report  # noqa: E402
 from researcher.backtest.value_landed import LandedSpec, value_landed
-
-
-def _reports_dir() -> str:
-    d = os.environ.get("RESEARCH_REPORTS_DIR", r"G:\My Drive\004 RES\REsearch_Reports")
-    if os.path.isdir(os.path.dirname(d)) or os.path.isdir(d):
-        try:
-            os.makedirs(d, exist_ok=True)
-            return d
-        except OSError:
-            pass
-    return os.path.dirname(os.path.abspath(__file__))
 
 
 def _money(x):
@@ -188,10 +178,7 @@ def main():
            f"<title>{html.escape(a.street)} landed valuation</title><style>{_CSS}</style>"
            f"</head><body>{render(v)}</body></html>")
     slug = a.street.lower().replace(" ", "_").replace("'", "")
-    out = os.path.join(_reports_dir(), f"landed_v1_{slug}_{int(a.area)}sf.html")
-    with open(out, "w", encoding="utf-8", newline="\n") as f:
-        f.write(doc)
-    print(f"-> {out}")
+    print(write_report(f"landed_v1_{slug}_{int(a.area)}sf.html", doc).summary())
     if not v.get("error"):
         fv = v["fair_value"]
         print(f"   {a.street} {a.area:,.0f}sf {a.type}: {_money(fv['price'])} "

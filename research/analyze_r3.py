@@ -14,6 +14,10 @@ import sys
 from collections import defaultdict
 from statistics import median
 
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from researcher.backtest.fingerprint import CONDO_CODE_FILES, code_sha1  # noqa: E402
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 TABLE_OUT = os.path.join(os.path.dirname(HERE), "researcher", "backtest", "conformal_table.json")
 CUTOFF = "2025-01"          # calibrate on < CUTOFF, validate on >= CUTOFF
@@ -127,10 +131,7 @@ def conformal(rows, point_method, save=False):
         # Fingerprint the point-method source so a C1 change without recalibration is
         # caught by tests/test_backtest.py::test_conformal_table_matches_current_c1.
         # Convention: the dump this table is calibrated from was produced by the CURRENT code.
-        import hashlib
-        cand = os.path.join(os.path.dirname(HERE), "researcher", "backtest", "candidates.py")
-        with open(cand, "rb") as f:
-            table["_meta"]["candidates_sha1"] = hashlib.sha1(f.read()).hexdigest()
+        table["_meta"]["candidates_sha1"] = code_sha1(CONDO_CODE_FILES)
         with open(TABLE_OUT, "w", encoding="utf-8", newline="\n") as f:
             json.dump(table, f, ensure_ascii=False, indent=1)
         print(f"  -> SAVED table {TABLE_OUT} "
