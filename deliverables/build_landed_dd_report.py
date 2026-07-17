@@ -12,9 +12,8 @@ The split is the point. Facts are reproducible by re-running the chain; judgemen
 agent's and must be argued. Hand-editing the raw file would destroy the only property that
 makes it worth trusting. If a raw number looks wrong, fix the TOOL, re-run, and say so.
 
-Writes a self-contained bilingual HTML file (no JS, no external assets) to
-G:\\My Drive\\004 RES\\REsearch_Reports (override with RESEARCH_REPORTS_DIR; falls back to
-deliverables/).
+Writes a self-contained bilingual HTML file (no JS, no external assets) to the main
+checkout's gitignored reports/ AND the Drive library — see deliverables/report_out.py.
 
 The deep-DD alert section is STRUCTURAL: an empty alert list renders as a contract breach, not
 a clean bill of health. A landed DD that escalates nothing did not look.
@@ -32,6 +31,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
 
 from deliverables import charts  # noqa: E402
+from deliverables.report_out import write_report  # noqa: E402
 
 
 def esc(x) -> str:
@@ -378,17 +378,11 @@ def main():
     except Exception:
         raw["_comps_all"] = (raw.get("comps") or {}).get("subject", {}).get("rows") or []
 
-    reports = os.environ.get("RESEARCH_REPORTS_DIR",
-                             r"G:\My Drive\004 RES\REsearch_Reports")
-    if not os.path.isdir(reports):
-        reports = HERE
-    out = os.path.join(reports, f"{slug}_DD_Report.html")
-    with open(out, "w", encoding="utf-8", newline="\n") as f:
-        f.write(render(raw, cur, slug))
+    res = write_report(f"{slug}_DD_Report.html", render(raw, cur, slug))
 
     alerts = cur.get("dd3_alerts") or []
     gated = [a["item"] for a in alerts if a.get("seller_gated")]
-    print(f"-> {out}")
+    print(res.summary())
     print(f"   comps          : {(raw.get('comps') or {}).get('n', 0)} caveats")
     print(f"   neighbours     : {len(raw.get('neighbours') or [])} zones")
     print(f"   deep-DD alerts : {len(alerts)}  ({len(gated)} seller-gated)")
