@@ -230,13 +230,12 @@ def _suppress_reason_zh(v: dict, area: float, basis: str = "direct") -> str:
     md, fv = v["method_disagreement"], v["fair_value"]
     if basis == "alias":
         # 报告层自己加的一道闸,引擎没有(引擎不知道街道是别名解析来的)。
-        # 实测的理由,不是谨慎的姿态:19 Cardiff Grove 的 URA 桶是 ALNWICK ROAD,桶里
-        # p25/p75 给出 S$3.87M / S$5.02M,而 Cardiff Grove 自己的**原装**房成交在
-        # $1,767-1,946 psf ≈ S$3.25-3.58M —— 照这个"积极买入 < S$3.87M"买会买贵。
-        # 点估值可以留(它是引擎在这个桶上验证过的输出),但**议价门槛不能**:
-        # 门槛的全部意义是「可比的地块实际成交出来的分布」,而这个分布混了别的路。
-        return ("URA 街道是<b>别名解析</b>来的 —— 门槛所依赖的「同街成交分布」里混着同屋苑"
-                "其它路的房子,不是本路的分布")
+        # EXP-0019(L2f)量化了这道闸:混路本身不必然错置门槛 —— 关键是**少数份额**。
+        # 当真实路只占母路桶一小部分时(Cardiff Grove 占 ALNWICK 桶 4%),桶的分位数被
+        # 多数派主导,把门槛推离本路 15.8%;而同屋苑同量级的路(Loyang Rise/View)偏差 <4%。
+        # 点估值可以留(引擎在整桶上验证过),但**议价门槛不能**在少数份额的路上直接用。
+        return ("URA 街道是<b>别名解析</b>来的 —— 本路的成交只占母路桶一小部分,桶的 p25/p75 "
+                "被桶里的多数派主导,不是本路自己的分布(EXP-0019 实测:少数份额的路门槛可偏 15%)")
     if area >= 8000:
         return "地块 ≥8k sqft —— 尺寸曲线在这里identification最差(EXP-0011)"
     if fv["n_street_comps"] == 0:

@@ -174,15 +174,19 @@ to a verdict (ACCEPT / ACCEPT-WITH-SCOPE / MONITOR / REJECT → graveyard).
   is fixable today** by resolving the parent street (Cardiff Grove → ALNWICK ROAD), which
   turns a dead end into a valuation — **DONE** for the report path (`street_alias.py`,
   evidence-only, refuses when unknown; GY-0006 buried the geometric shortcut).
-  **(a) is no longer hypothetical — the first evidence is in, and it says the pool DOES mix
-  sub-markets:** on 19 Cardiff Grove the ALNWICK bucket's own p25/p75 give a buy-below of
-  **S$3.87M** while Cardiff Grove's ORIGINAL stock prints **$1,767-1,946/psf ≈ S$3.25-3.58M**
-  (the bucket's freshest "comparable" print adjusts to 3,175 psf — *above Cardiff Grove's
-  all-time maximum of 2,847*, and it is not on that road). The point itself looks sound
-  (engine 2,312 psf vs the road's own 2024+ same-size median 2,326) — it is the
-  **distribution-derived guidance and the freshest-print flag that break**, so the full report
-  suppresses both on alias-resolved streets pending this module. Next concrete step: harvest
-  ALNWICK ROAD from IS, split the bucket by real road, and backtest LC2 split-vs-pooled. Also unlocks an EXACT per-address same-plot matcher
+  **(a) ANSWERED (EXP-0019, 2026-07-17): splitting is NOT a general engine win; the
+  correction is a MINORITY-SHARE rule.** Walk-forward on the 91 attributable subjects (Loyang
+  bucket fully decomposed + Cardiff-in-Alnwick): split vs pooled median APE **+0.39pp (P3
+  MONITOR)** — worse overall. Per road it splits by SHARE: Cardiff Grove (4% of ALNWICK)
+  **improves 14.1%→11.3%** restricted to its own road (it was diluted); Loyang Rise (77% of
+  its bucket) gets **worse** (starved of sample). So the shipped pooled engine stays, and
+  the report's alias suppression is kept but re-justified: the pool distorts thresholds for a
+  road that is a **small minority** of its parent bucket (Cardiff 15.8% off), not for
+  same-share roads (Loyang View 3.8%). **A within-run criterion bug was caught and fixed**
+  (a rate-above-p25 metric fired on a direct-street control — it was measuring the engine's
+  known low bias, not bucket mixing). Still open: harvest ALNWICK ROAD from IS to lift Cardiff's
+  4% attribution (blocked today — emulator adbd wedged); a genuine minority-share vs pooled
+  point test at scale. Also unlocks an EXACT per-address same-plot matcher
   (today's keys on `(street, area, type)`, EXP-0009). Cost: an IS harvest per street — so
   scope it to streets that matter (refusals + thin/mixed streets), not the island.
 - **L2e Improvement-contribution bounds (the identification problem):** residuals vs the

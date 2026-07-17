@@ -5,7 +5,44 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
-## EXP-0019 — L2f: does the TRUE address road beat the URA bucket as the comp pool? PRE-REGISTRATION (2026-07-17)
+## EXP-0019 — L2f VERDICT: splitting is NOT a general engine win (P3 MONITOR); the alias suppression is JUSTIFIED but is really a MINORITY-SHARE test (2026-07-17)
+- **Status: DONE. P = P3 (MONITOR, keep the pooled engine). D = D1 (suppression justified),
+  but the corrected criterion reframes WHY — it is a minority-share effect, not a generic
+  "mixed bucket" one. `research/run_l2f_split.py`.**
+- **Universe (as pre-registered, scoped):** LOYANG RISE bucket fully decomposed (135/135 via
+  EXP-0018) + Cardiff Grove inside ALNWICK (16/427 attributed — the emulator's adbd is wedged,
+  so an Alnwick-Road IS harvest to lift that 4% is deferred). 91 walk-forward subjects
+  (Cardiff 13 / Loyang Rise 59 / Loyang View 19).
+- **P (point) → P3 INCONCLUSIVE.** Split vs pooled median APE **+0.39pp** (worse, inside the
+  ±0.5pp band), 0 extra declines. **But per-road it splits by minority share, and that is the
+  real finding:** Cardiff Grove, 4% of the ALNWICK bucket, **improves 14.1%→11.3% (−2.8pp)**
+  when restricted to its own road — it was being diluted by 96% Alnwick-proper comps; Loyang
+  Rise, which IS 77% of its bucket, gets **worse** (6.3%→7.0%) — splitting just starves it of
+  sample. So "split the pool" is not a universal upgrade; **"a road that is a small minority of
+  its parent bucket is mispriced by the pool" is.** The shipped pooled engine stays (P2's bar
+  to replace it was not met).
+- **D (distribution) → D1 JUSTIFIED, after a criterion I had to FIX mid-run.** My first D
+  metric ("share of a road's sales above the bucket p25") fired on ALL three roads (85/95/100%
+  vs the published 73-83%) and I nearly reported "the bucket mis-places every road". **That was
+  wrong — it measured the engine's known LOW bias in a rising estate, not bucket mixing:** the
+  same 85-100% shows up on Loyang RISE, a DIRECT street with no alias and no mixing, and Loyang
+  Rise vs Loyang View 2025+ psf are 1,479 vs 1,437 (same sub-market — pooling them cannot
+  misplace them). The corrected criterion compares, **on the same subject**, the pooled
+  threshold vs the true-road threshold (differencing out the common engine bias): **Cardiff
+  Grove 15.8%, Loyang View 3.8%, Loyang Rise 0.7%.** So the alias-street guidance suppression
+  is JUSTIFIED **for a minority-share road (Cardiff)** and near-harmless for same-sized-share
+  roads — which matches the shipped behaviour (report suppresses on `alias` basis; Cardiff is
+  alias-minority, Loyang View is alias but same sub-market).
+- **What ships (report change):** the suppression is kept, but its *reason string* is upgraded
+  from "the bucket mixes roads" to the measured driver — a road that is a **small minority of
+  its parent bucket** is the one whose thresholds the pool distorts (Cardiff 4% of ALNWICK →
+  15.8% off). No engine change; `value_landed` untouched.
+- **Lesson (the third time this exact shape has cost me):** a rate-above-a-quantile metric
+  cannot tell "the pool is wrong" from "the engine is low" — they both push sales above p25.
+  Only a WITHIN-SUBJECT pooled-vs-split difference isolates the pool effect. Caught because the
+  signal fired on a control road (direct-street Loyang Rise) it had no business firing on.
+
+### EXP-0019 — the original PRE-REGISTRATION (committed at `47b27f7` before the run)
 - **Status: PRE-REGISTERED (committed BEFORE the run — the EXP-0017 review's MINOR-8).**
 - **The question.** EXP-0018 proved URA's landed `street` is the DEVELOPMENT's registered
   street, so LC2's "same-street grid" is really a same-PARENT-street grid: `URA "LOYANG RISE"
