@@ -2,12 +2,35 @@
 
 These cover the parts that were wrong when done by hand — the size-cohort split, the
 area/label distinction, and the flood list's evidential weight — plus the geometry the
-zoning lookups stand on.
+zoning lookups stand on, and the URA street-label semantics an empty comp set must not
+be read through (EXP-0018).
 """
 import pytest
 
 from researcher.landed import comps
 from researcher.sources import mp_zoning, pub_flood
+
+
+# ------------------------------------------- URA street semantics (EXP-0018 / R4a)
+def test_empty_street_comps_does_not_mean_no_sales():
+    """URA's `street` is a coarse PARENT label, so an empty comp set is a statement about
+    the NAME, not about the road. Measured (EXP-0018): CARDIFF GROVE has no URA caveats
+    under its own name, yet 16 of its 17 in-window sales are in URA under ALNWICK ROAD
+    (matched on month+price+area). If this ever starts returning rows, URA changed its
+    street convention and the DD chain's "none" wording should be revisited."""
+    assert comps.street_comps("CARDIFF GROVE") == []
+    parent = comps.street_comps("ALNWICK ROAD")
+    assert len(parent) > 100                       # the parent road carries them
+    # the exact print that proves it: 17 Cardiff Grove, 26 Jun 2026, 2,640sf, $4,698,000
+    assert any(round(t["price"]) == 4_698_000 and abs(t["area_sqft"] - 2640) < 2
+               and t["contract_ym"] == "2026-06" for t in parent)
+
+
+def test_street_comps_can_include_adjacent_roads():
+    """The other direction of the same fact: a street set may contain houses that are not
+    on that road. URA's "LOYANG RISE" (135) = Investment Suite's Loyang Rise (104) + Loyang
+    View (31), exactly — so any per-road claim built on a URA street set is approximate."""
+    assert len(comps.street_comps("LOYANG RISE")) == 135
 
 
 # --------------------------------------------------------------------- geometry

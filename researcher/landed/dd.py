@@ -210,7 +210,14 @@ def _fmt(d: dict) -> str:
                 L.append(f"    {r['ym']}  ${r['price']:>10,.0f}  {r['area_sqft']:>5,} sqft  "
                          f"${r['psf']:>6,}/psf")
     else:
-        L.append(f"COMPS     none ({c.get('error', 'no caveats on this street in the window')})")
+        # "no caveats on this street" is a claim we cannot make: URA's street is a PARENT
+        # label, so a small road is often filed under the estate's main road (EXP-0018 —
+        # CARDIFF GROVE's houses sit under ALNWICK ROAD). Report what we know: nothing is
+        # filed under THIS NAME. Concluding "no sales here" from that is the error.
+        L.append(f"COMPS     none ({c.get('error', 'no URA caveats filed under this street NAME '
+                                        'in the ~5y window — URA files small roads under the '
+                                        'estate parent road, so check the main road before '
+                                        'concluding there were no sales')})")
 
     f = d["flood"]
     L.append("")

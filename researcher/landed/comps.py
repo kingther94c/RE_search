@@ -28,6 +28,16 @@ URA limits that shape every figure here (see researcher/sources/ura.py):
   - Rolling ~5 years of caveats only.
   - Landed project names are anonymised to "LANDED HOUSING DEVELOPMENT", so the street is the
     only join key -- you cannot pin a caveat to a house number from URA alone.
+  - **URA's `street` is a COARSE PARENT/LOCALITY LABEL, not the address street** (measured,
+    EXP-0018): it merges adjacent roads of the same estate. Two consequences for every number
+    below. (1) A street set can contain houses that are NOT on that road: URA's "LOYANG RISE"
+    (135 caveats) is exactly IS's Loyang Rise (104) + IS's Loyang View (31), 0 unexplained.
+    (2) An EMPTY result does not prove there were no sales -- the road may be filed under its
+    parent: CARDIFF GROVE returns [] here while its houses sit in URA under "ALNWICK ROAD"
+    (16 of 17 in-window sales matched on month+price+area). Investment Suite is the only
+    source that resolves a caveat to a real address; whether splitting to the true address
+    street helps or hurts a comp set is open (roadmap L2f) -- so this module keeps URA's
+    definition and DECLARES it rather than guessing.
   - Caveats lag the transaction, so the most recent months are under-reported.
 """
 from __future__ import annotations
@@ -61,8 +71,14 @@ def _load() -> list[dict]:
 
 def street_comps(street: str, landed_only: bool = True) -> list[dict]:
     """Every URA caveat on a street, oldest first. Matching is case-insensitive exact on
-    URA's street name — pass the street as URA spells it. Returns [] for an unknown street,
-    which is a real answer (no caveats in the ~5y window), not an error."""
+    URA's street name — pass the street as URA spells it.
+
+    An EMPTY result means URA has no caveats filed UNDER THAT NAME. It does NOT prove the
+    road had no sales: URA's street is a parent label (see the module docstring), so a small
+    road can be filed under the estate's main road — CARDIFF GROVE returns [] here while its
+    houses are in URA under "ALNWICK ROAD" (EXP-0018). On an empty result, look up the parent
+    road before reporting "no transactions"; conversely, a non-empty set may include houses on
+    adjacent roads."""
     s = street.strip().upper()
     rows = [t for t in _load() if (t.get("street") or "").upper() == s]
     if landed_only:
