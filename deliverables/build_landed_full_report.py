@@ -24,12 +24,14 @@ import argparse
 import html
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from deliverables.report_out import write_report                      # noqa: E402
-from researcher.backtest.value_landed import LandedSpec, value_landed  # noqa: E402
+from researcher.backtest.value_landed import (NOISE_FLOOR, LandedSpec,  # noqa: E402
+                                              value_landed)
 from researcher.landed import costs as costs_mod                      # noqa: E402
 from researcher.landed import dd as dd_mod                            # noqa: E402
 from researcher.landed import street_alias                            # noqa: E402
@@ -90,6 +92,75 @@ def _alerts_zh(g: dict) -> list[tuple[str, bool, str]]:
     return out
 
 
+# ------------------------------------------------- F1:判断层 alerts 与自动 alerts 合并
+# 第一版只渲染了 digest 的 verdict/archetype/highlights,把 8 条 authored `dd3_alerts`
+# **静默丢弃** —— 丢掉的里面有 archetype 指名的头号风险("Defects and build quality",
+# turnkey 原型特有,自动规则永远推不出来)。合并原则:
+#   - 同主题时**用人写的**(它是为这个地址写的,更具体),自动版让位;
+#   - 人写独有的照登(标「人写」);自动独有的照登(标「工具推导」);
+#   - 与本报告现状**冲突**的人写条目(digest 写于引擎接入之前,其「刻意不给估值」一条
+#     已被第 1 节推翻)不删也不照登 —— 显式标注「已被本报告取代」,读者能看见判断的时间线。
+_SUPERSEDED_ITEMS = {
+    # authored item 的英文开头 -> 取代说明
+    "Fair value": "该条写于估值引擎接入之前,当时「不给估值」是对的立场;本报告第 1 节"
+                  "现已给出引擎 LV1 的估值 —— 此条保留存档,按已取代读。",
+}
+_MATCH_RULES = [
+    # (authored item(en) 里的关键词, 自动标题里的关键词) —— 命中即视为同主题
+    ("BCA", "BCA"),
+    ("Legal land area", "法定地块面积"),
+    ("pond", "积水"),
+    ("SchoolQuery", "1km 学区"),
+]
+
+
+def _merged_alerts(g: dict) -> list[dict]:
+    """[{title, gated, why, src('tool'|'authored'|'superseded'), meta, sup}] 顺序 =
+    自动清单为骨架(同主题处换成人写版),其后接人写独有项,最后是已取代项。"""
+    autos = [{"title": t, "gated": gd, "why": w, "src": "tool", "meta": "", "sup": ""}
+             for t, gd, w in _alerts_zh(g)]
+    authored = list(((g.get("digest") or {}).get("dd3_alerts")) or [])
+
+    def _match(a_en: str, auto_title: str) -> bool:
+        low = a_en.lower()
+        for k_en, k_auto in _MATCH_RULES:
+            if k_en.lower() in low and k_auto in auto_title:
+                return True
+        if "用地在" in auto_title:                       # 邻地分区项:按 zone 名对上
+            zone = auto_title.split(" 用地在")[0].strip()
+            if zone and zone.lower() in low:
+                return True
+        return False
+
+    def _entry(a: dict, src: str, sup: str = "") -> dict:
+        meta = " · ".join(x for x in (
+            f"谁:{a['who_zh']}" if a.get("who_zh") else "",
+            f"何时:{a['when_zh']}" if a.get("when_zh") else "",
+            f"费用:{a['cost']}" if a.get("cost") else "") if x)
+        return {"title": a.get("item_zh") or a.get("item") or "",
+                "gated": bool(a.get("seller_gated")),
+                "why": a.get("why_zh") or a.get("why") or "",
+                "src": src, "meta": meta, "sup": sup}
+
+    out, used = [], set()
+    for auto in autos:
+        hit = next((i for i, a in enumerate(authored) if i not in used
+                    and not any(a.get("item", "").startswith(k) for k in _SUPERSEDED_ITEMS)
+                    and _match(a.get("item", ""), auto["title"])), None)
+        if hit is None:
+            out.append(auto)
+        else:
+            used.add(hit)
+            out.append(_entry(authored[hit], "authored"))
+    for i, a in enumerate(authored):
+        if i in used:
+            continue
+        sup = next((v for k, v in _SUPERSEDED_ITEMS.items()
+                    if a.get("item", "").startswith(k)), "")
+        out.append(_entry(a, "superseded" if sup else "authored", sup))
+    return out
+
+
 # --------------------------------------------------------------- 中文叙述层
 # 引擎(value_landed)返回的是英文散文。这里**不改引擎**(它的字符串有回归测试、也被别的
 # 调用方依赖),而是用它返回的**结构化字段**重新渲染中文,并把引擎原文折叠在旁边备查 ——
@@ -107,6 +178,51 @@ _COND_ZH = {
 _COND_NONE_ZH = ("<b>未提供 condition,引擎也不会去猜。</b>区间本身已经含了"
                  "<b>平均意义上的</b> condition 无知(它是在 condition-blind 的残差上校准的),"
                  "因此不会再为此加宽。请现场确认 —— 这是 bundle 价格里最大的未观测驱动因素。")
+
+
+# ------------------------------------------------- F3:方法分歧与置信度的中文叙述
+_READ_NAMES = {"LC2_street_grid": "街道网格 LC2", "LA1_pooled": "池化锚 LA1",
+               "LB4_spatial_knn": "空间 kNN LB4"}
+
+
+def _reads_zh(v: dict) -> str:
+    """独立方法读数 + 分歧,放在**明面**(此前折叠在证据层)。这个信息决定读者该多信这个点:
+    实测 14 Seletar Green Walk 分歧 17%,离 hard-case 抑制线 18% 只差 1pp —— 读者有权知道
+    自己站在线边,而不是只看到一个没有解释的「置信度 63」。"""
+    reads = {k: x for k, x in v["independent_reads_land_psf"].items() if x}
+    if len(reads) < 2:
+        return ""
+    sp = v["method_disagreement"].get("spread_rel")
+    line = " · ".join(f"{_READ_NAMES.get(k, k)} {x:,.0f}" for k, x in reads.items())
+    txt = f"<p class=note><b>独立方法读数(land psf):</b>{line}"
+    if sp is not None:
+        txt += f" —— 分歧 <b>{sp*100:.0f}%</b>(hard-case 抑制阈值 18%)"
+        if sp >= 0.10:
+            vals = sorted(reads.values())
+            med = vals[len(vals) // 2]
+            outk, outv = max(reads.items(), key=lambda kv: abs(kv[1] - med))
+            if outk == "LA1_pooled":
+                txt += ";分歧主要来自池化锚 —— 它跨街取样,在已重估的微观市场会系统性偏低"
+            else:
+                txt += (f";分歧主要来自{_READ_NAMES.get(outk, outk)}"
+                        f"(偏离中位读数 {abs(outv/med-1)*100:.0f}%)")
+        if sp >= 0.14:
+            txt += ";<b>已接近抑制线</b>,出价前先用 Investment Suite 佐证"
+    return txt + "。</p>"
+
+
+def _conf_zh(v: dict) -> str:
+    """置信度的构成,由结构化字段生成(引擎的英文 confidence_label 折叠备查)。"""
+    fv, md = v["fair_value"], v["method_disagreement"]
+    n, sp = fv["n_street_comps"], md.get("spread_rel")
+    ptype = v["subject"]["property_type"]
+    floor = NOISE_FLOOR.get(ptype, 0.06)
+    depth = ("同街证据深" if n >= 8 else "同街证据中等" if n >= 3 else
+             "同街证据薄" if n >= 1 else "无同街证据,点来自 pooled 兜底")
+    drag = (f",但方法分歧 {sp*100:.0f}% 把它拉低了" if sp and sp > 0.06 else "")
+    return (f"<p class=note><b>置信度 {fv['confidence']}/100 的构成:</b>{depth}(n={n}){drag};"
+            f"无论证据多深,精度都受 <b>~{floor*100:.0f}%/笔</b>({ptype})的捆绑噪声下界约束"
+            f"(EXP-0010,同地块重复成交实测)。</p>")
 
 
 def _suppress_reason_zh(v: dict, area: float, basis: str = "direct") -> str:
@@ -205,9 +321,24 @@ def gather(address: str, ptype: str, area: float | None, tenure: str | None,
     area_src = ("用户提供(地契/实测)" if area else
                 "MP2025 宗地面积 —— 指示性,非地籍丘块" if plot.get("area_sqft") else None)
 
+    # F4:同一份报告里会出现两个可比数(判断层说街道 63 笔、估值说 n=54)—— 都对,但差在
+    # 过滤,必须解释。F6:MP2025 面积若与 URA 桶内成交的地块面积大量重合,那是比「指示性」
+    # 强得多的交叉验证(两个互不通气的官方源),要说出来。
+    street_total, area_xval = 0, ""
+    if res["ura_street"]:
+        rows = street_comps(res["ura_street"])
+        street_total = len(rows)
+        if land_area and not area:                      # 面积来自 MP2025 时才谈交叉验证
+            k = sum(1 for t in rows if abs((t.get("area_sqft") or 0) - land_area) <= 2)
+            if k >= 10:
+                area_xval = (f";与 URA 该桶 {k}/{street_total} 笔成交的地块面积一致 "
+                             f"—— 两个互不通气的官方源交叉验证")
+    if area_src and area_xval:
+        area_src += area_xval
+
     val, val_error = None, None
     if not res["ura_street"]:
-        val_error = res["evidence"]
+        val_error = res.get("evidence_zh") or res["evidence"]
     elif not land_area:
         val_error = ("没有地块面积:MP2025 在此处没有宗地,且未提供 --area。"
                      "land psf x 面积 是估值的全部,面积缺失即无法估值。")
@@ -229,7 +360,8 @@ def gather(address: str, ptype: str, area: float | None, tenure: str | None,
                 "be_5y": costs_mod.breakeven_gain_pct(p, profile, count, 5)}
     return {"address": address, "dd": d, "resolve": res, "land_area": land_area,
             "area_src": area_src, "val": val, "val_error": val_error, "ptype": ptype,
-            "cost": cost, "profile": profile, "count": count, "digest": digest}
+            "cost": cost, "profile": profile, "count": count, "digest": digest,
+            "street_total": street_total}
 
 
 # --------------------------------------------------------------------------- 渲染
@@ -248,17 +380,29 @@ def _l0(g: dict) -> str:
     z = d.get("zoning") or {}
     lh = d.get("landed_housing_area") or {}
     f = d.get("flood") or {}
+    sch = d.get("schools_primary") or []
     chips = [
         ("地块", f"{g['land_area']:,.0f} sqft" if g["land_area"] else "未知"),
         ("分区", z.get("zone") or "—"),
         ("landed housing area", (lh.get("type") or "不在范围内")),
+        # 学区是量到的 landed 最大价值驱动 —— 它属于首屏,不属于第 2 节
+        ("最近小学", f"{sch[0]['name']} · {sch[0]['km']}km" if sch else "2.2km 内无"),
         ("PUB 水浸名单", "在名单上" if f.get("on_list") else "不在名单上"),
     ]
     chip_html = "".join(f"<div class=chip><b>{_esc(a)}</b><span>{_esc(b)}</span></div>"
                         for a, b in chips)
+    # F5:结论先行。人写的 verdict 是这份报告真正的「结论」,不能埋在第 4 节 ——
+    # L0 放一句话版本,第 4 节保留全文与 archetype。
+    vd = ((g.get("digest") or {}).get("verdict")) or {}
+    verdict_strip = ""
+    if vd.get("call_zh") or vd.get("call"):
+        verdict_strip = (f"<div class='banner ok'><b>结论(人写)</b> —— "
+                         f"{vd.get('call_zh') or vd.get('call')} "
+                         f"<span class=note>依据与 archetype 详见第 4 节</span></div>")
     return f"""<div class=hero>{head}</div>
 <p class=addr>{_esc(g['address'])} · blk {_esc(geo['blk_no'])} {_esc(geo['road_name'])}
 S({_esc(geo['postal'])}) · 估值基准日 {_esc(d['as_of'])}</p>
+{verdict_strip}
 <div class=chips>{chip_html}</div>"""
 
 
@@ -271,7 +415,7 @@ def _street_banner(g: dict) -> str:
             f"<b>{_esc(g['dd']['street'])}</b>" if r["ura_street"] else "URA 街道无法解析")
     return (f"<div class='banner {cls}'><b>街道口径提示</b> —— {lead}。URA 的 landed 街道是"
             f"<b>发展项目登记的街道</b>,不是房子所在的路(EXP-0018)。<span class=note>"
-            f"{_esc(r['evidence'])}</span></div>")
+            f"{r.get('evidence_zh') or _esc(r['evidence'])}</span></div>")
 
 
 def _l1_valuation(g: dict) -> str:
@@ -281,6 +425,7 @@ def _l1_valuation(g: dict) -> str:
                 f"<div class='banner stop'>{_esc(g['val_error'])}</div></div>")
     fv, s = v["fair_value"], v["subject"]
     bg, sg = v["buyer_guidance"], v["seller_guidance"]
+    ref = v.get("recent_street_reference")
     alias = g["resolve"]["basis"] == "alias"
     if sg.get("ask") is None or alias:
         guide = (f"<div class='banner warn'><b>买卖指导已抑制</b> —— "
@@ -309,8 +454,29 @@ def _l1_valuation(g: dict) -> str:
 <b>p25/p75</b> —— 也就是「可比的地块<b>实际</b>成交出来的」便宜端/贵端,<b>不是</b>引擎的误差棒。
 实测(EXP-0013/0017):约 <b>73-83%</b> 的真实成交落在 p25 之上、约 <b>32-38%</b> 落在 p75 之上,
 且该比例<b>随 regime 漂移</b> —— 这是<b>证据标记</b>,不是校准过的概率。</p>"""
+        # F2a:引擎的 seller note 自带「最新可比高于点」的内联提示,第一版中文层把它渲染丢了 ——
+        # ask 4.83M 与「上月同尺寸孪生房成交 5.22M」隔了两屏。凡与表格同屏才有效的警示,必须内联。
+        area_sf = v["subject"]["land_area_sqft"]
+        if ref and v.get("directional_flag"):
+            fresh_price = ref["adj_psf"] * area_sf
+            if sg.get("ask") and fresh_price > sg["ask"]:
+                guide += (f"<p class=note>⚠ <b>与上表并读:</b>最新同尺寸成交"
+                          f"({ref['contract_ym']},调整后 {ref['adj_psf']:,.0f} psf ≈ "
+                          f"{_money(fresh_price)})比表中 ask <b>高 "
+                          f"{(fresh_price/sg['ask']-1)*100:.0f}%</b> —— 60 个月分位数在正在"
+                          f"加速的街道上偏保守(这正是实测里 32-38% 成交高于 p75 的来源)。"
+                          f"卖方定价可参考近窗成交;买方勿把上表当上限读。</p>")
+            elif bg.get("attractive_below") and fresh_price < bg["attractive_below"]:
+                guide += (f"<p class=note>⚠ <b>与上表并读:</b>最新同尺寸成交"
+                          f"({_money(fresh_price)})已低于「积极买入」线 —— 街道可能转弱,"
+                          f"勿把门槛当下限读。</p>")
+        # F2b:近 12 个月窗口的补充标记(引擎 additive 输出;同过滤、同调整,纯观测)
+        gr = v.get("guidance_recent_12mo")
+        if gr:
+            guide += (f"<p class=note><b>近 12 个月窗(n={gr['n']}):</b>"
+                      f"p25 {_money(gr['p25'])} · p75 {_money(gr['p75'])} —— "
+                      f"热市中比 60 个月窗更贴近当前水平;样本更薄,只作参照,不替代主门槛。</p>")
     flag = ""
-    ref = v.get("recent_street_reference")
     # 别名桶里的「最新同街成交」可能根本不在本路上 —— 实测:19 Cardiff Grove 的这条提示由一笔
     # 2,301sf @ $2,816psf 的成交驱动,调整后 3,175 psf,**高过 Cardiff Grove 自己的历史最高价
     # (2,847)**,而它并不在 Cardiff Grove 上。所以别名情况下不给方向性结论,只陈述事实。
@@ -343,12 +509,16 @@ def _l1_valuation(g: dict) -> str:
     <td class=r>{_money(fv['low'])} – {_money(fv['high'])}</td></tr>
 <tr><td>置信度</td><td class=r>{fv['confidence']}/100</td></tr>
 <tr><td>同街可比数 <span class=note>(URA {_esc(g['resolve']['ura_street'])})</span></td>
-    <td class=r>{fv['n_street_comps']}</td></tr>
+    <td class=r>{fv['n_street_comps']}{(f" <span class=note>(桶内 5 年全量 {g['street_total']} 笔;"
+    f"n 为 60 个月窗 + lease-match + 同房型过滤后)</span>")
+    if g.get('street_total', 0) > fv['n_street_comps'] else ''}</td></tr>
 <tr><td>地契 tenure</td><td class=r>{_esc(s['tenure_type'])}
     {('· 剩余 %d 年' % s['remaining_lease_years']) if s.get('remaining_lease_years') else ''}</td></tr>
 <tr><td>地块面积(估值输入)</td><td class=r>{g['land_area']:,.0f} sqft</td></tr>
-<tr><td>面积来源</td><td class=r>{_esc(g['area_src'])}</td></tr>
+<tr><td>面积来源</td><td class=r>{g['area_src'] or '—'}</td></tr>
 </table>
+{_reads_zh(v)}
+{_conf_zh(v)}
 {ref_html}
 <h3>建筑状况 condition</h3>
 <p class=note>{_COND_ZH.get((s.get('condition') or '').lower(), _COND_NONE_ZH)}</p>
@@ -368,16 +538,29 @@ def _l1_dd(g: dict) -> str:
     sch = d.get("schools_primary") or []
     mrt = d.get("mrt") or []
     scope = d.get("amenity_scope") or {}
+    am = d.get("amenity_meta") or {}
     # 「2.2km 内无小学」只有在清单是**全岛**时才是关于新加坡的陈述;此前它是关于
     # dd.py 里那 15 所硬编码学校的陈述,而报告把它当成前者印了出来。
     near = [f"{n['name']} · {n['km']}km" for n in sch[:3]] or [
         "2.2km 内无" if scope.get("schools_primary") else "清单未覆盖本区域"]
     mrts = [f"{n['name']} · {n['km']}km" for n in mrt[:2]] or [
         "4km 内无" if scope.get("mrt") else "清单未覆盖本区域"]
+    gpr = str(z.get("gpr") or "—")
+    gpr_txt = "LND(有地住宅,无数值容积率)" if gpr.upper() == "LND" else gpr
+    scope_zh = (f"清单口径:小学与 MRT/LRT 为<b>全岛官方清单</b>({am['n_schools']} 所招收 P1 "
+                f"的 MOE 学校 · {am['n_mrt']} 个车站;构建于 {am['built']})"
+                if am else "清单口径:未声明")
+    flood_zh = (("<b>在 PUB 易涝名单上</b>"
+                 + (f"(匹配:{_esc(f.get('matches'))})" if f.get("matches") else "")
+                 + " —— 强信号,列入 DD-3 重点核查。")
+                if f.get("on_list") else
+                ("不在名单上 —— 但对<b>单一地块</b>这几乎没有证据力:名单按<b>地名</b>匹配,"
+                 "仅覆盖全国约 73,000 公顷中的 23.3 公顷(<b>0.032%</b>)、36 个命名地点;"
+                 "几乎所有地址都「不在其上」,包括确实积水的。本址是否积水属实地问题(DD-3)。"))
     return f"""<div class=card><h2>2 · 尽调 Due Diligence <span class=note>(免费官方源:OneMap ·
 MP2025 · PUB)</span></h2>
 <table class=kv>
-<tr><td>MP2025 分区 zone</td><td class=r>{_esc(z.get('zone'))} · GPR {_esc(z.get('gpr'))}</td></tr>
+<tr><td>MP2025 分区 zone</td><td class=r>{_esc(z.get('zone'))} · 容积率 {_esc(gpr_txt)}</td></tr>
 <tr><td>宗地面积 <span class=note>(指示性,非地籍)</span></td>
     <td class=r>{(f"{p['area_sqft']:,.0f} sqft" if p.get('area_sqft') else '—')}</td></tr>
 <tr><td>landed housing area</td><td class=r>{_esc(lh.get('type'))}
@@ -387,10 +570,9 @@ MP2025 · PUB)</span></h2>
     <td class=r>{_esc(' / '.join(near))}</td></tr>
 <tr><td>最近 MRT/LRT</td><td class=r>{_esc(' / '.join(mrts))}</td></tr>
 </table>
-<p class=note>清单口径:小学 {_esc(scope.get('schools_primary', '未声明'))};
-MRT {_esc(scope.get('mrt', '未声明'))}。<b>商场/高速是人工清单</b> —— 报的是「这几个里最近的」,
+<p class=note>{scope_zh};<b>商场/高速为人工短清单</b> —— 报的是「这几个里最近的」,
 不是「全新加坡最近的」。</p>
-<p class=note>水浸:{_esc((f.get('evidential_weight') or '')[:220])}</p>
+<p class=note>水浸:{flood_zh}</p>
 </div>"""
 
 
@@ -449,11 +631,17 @@ ABSD 的夫妻联名 remission、FTA 国民豁免等情形本表未计。
 
 
 def _l1_alerts(g: dict) -> str:
-    """深度尽调提示 —— DD-3:专业/实地/需卖方授权,与 OTP 挂钩。"""
+    """深度尽调提示 —— DD-3:专业/实地/需卖方授权,与 OTP 挂钩。自动推导与人写合并渲染。"""
     rows = ""
-    for item, gated, why in _alerts_zh(g):
-        tag = "<span class=gate>需卖方授权</span>" if gated else ""
-        rows += f"<li><b>{item}</b> {tag}<div class=note>{why}</div></li>"
+    for a in _merged_alerts(g):
+        tag = "<span class=gate>需卖方授权</span>" if a["gated"] else ""
+        src = {"tool": "<span class=src>工具推导</span>",
+               "authored": "<span class=src>人写</span>",
+               "superseded": "<span class='src sup'>已取代</span>"}[a["src"]]
+        title = f"<s>{a['title']}</s>" if a["sup"] else a["title"]
+        sup = f"<div class=note><b>已被本报告取代:</b>{a['sup']}</div>" if a["sup"] else ""
+        meta = f"<div class=note>{a['meta']}</div>" if a["meta"] else ""
+        rows += f"<li><b>{title}</b> {tag}{src}{sup}<div class=note>{a['why']}</div>{meta}</li>"
     dig = g.get("digest") or {}
     verdict = ""
     if dig.get("verdict"):
@@ -492,23 +680,34 @@ def _l1_alerts(g: dict) -> str:
 </div>"""
 
 
+_HL_ZH = re.compile(r"<span class=['\"]zh['\"]>(.*?)</span>\s*$", re.S)
+
+
 def _l1_highlights(g: dict) -> str:
     """判断层的 highlights —— 挂载了就渲染,不丢弃。
 
-    它们是**英文**的(digest 的作者只给 verdict 写了 `_zh`)。本报告主体是中文,所以这里
-    如实标为「原文,英文」并折叠 —— 不假装它是中文,也不因为语言不合就把人已经看出来的
-    东西扔掉。有 `_zh` 的字段(verdict)照常用中文。"""
+    作者写的是**双语**:英文正文 + 末尾一个 `<span class='zh'>` 中文(第一版复审只看了
+    截断文本,误判成纯英文)。本报告主体是中文,所以把 zh 段解析出来当正文,英文原文
+    折叠备查;没有 zh 段的条目按英文照登并标注。"""
     hl = (g.get("digest") or {}).get("highlights") or []
-    items = ""
+    zh_items, en_items = "", ""
     for h in hl:
-        t = (h.get("text_zh") or h.get("text") or "") if isinstance(h, dict) else h
-        if t:
-            items += f"<li>{t}</li>"
-    if not items:
+        t = (h.get("text_zh") or h.get("text") or "") if isinstance(h, dict) else str(h)
+        if not t:
+            continue
+        m = _HL_ZH.search(t)
+        if m:
+            zh_items += f"<li>{m.group(1).strip()}</li>"
+            en_items += f"<li>{t[:m.start()].strip()}</li>"
+        else:
+            zh_items += f"<li>{t}<span class=note>(原文,英文)</span></li>"
+    if not zh_items:
         return ""
+    fold = (f"<details><summary class=note>英文原文 original wording</summary>"
+            f"<ul class=alerts>{en_items}</ul></details>" if en_items else "")
     return (f"<details><summary>要点 highlights · {len(hl)} 条 <span class=note>"
-            f"(判断层原文,英文 —— 人写的,非工具产出)</span></summary>"
-            f"<div class=card><ul class=alerts>{items}</ul></div></details>")
+            f"(判断层,人写 —— 非工具产出)</span></summary>"
+            f"<div class=card><ul class=alerts>{zh_items}</ul>{fold}</div></details>")
 
 
 def _l2_evidence(g: dict) -> str:
@@ -534,8 +733,11 @@ def _l2_evidence(g: dict) -> str:
     tr = ""
     for t in (d.get("transects") or []):
         steps = " → ".join(f"{s['zone']}" for s in t["steps"][:6])
+        # note 是英文工具串 —— 用结构化字段(reaches_target)自己组中文,不印英文
+        warn = ("　⚠ 射线未进入该地块(它瞄准的是共享边界上的最近点)—— 步进只说明中间隔着"
+                "什么,不代表到达" if t.get("note") else "")
         tr += (f"<p class=note><b>朝 {_esc(t['toward'])}</b>({t['edge_m']:.0f}m):{_esc(steps)}"
-               f"{'　⚠ ' + _esc(t['note'][:120]) if t.get('note') else ''}</p>")
+               f"{warn}</p>")
     return f"""<details><summary>3 · 证据层 —— 可比、邻地、剖面(展开)</summary>
 <div class=card>{comps}
 <h3>邻近分区 neighbours</h3>
@@ -570,7 +772,22 @@ def _l3_limits(g: dict) -> str:
            "成本栈只算<b>交易</b>侧(BSD/ABSD/SSD)。</li>"
            "<li><b>判断</b> —— archetype、go/no-go、议价策略。工具给事实、估值、成本、必查项;"
            "结论需要实地与你的持有意图(可用 <code>--digest</code> 挂载已撰写的判断层)。</li>")
-    prov = "".join(f"<li><b>{_esc(k)}</b> — {_esc(val)}</li>"
+    # provenance 的英文串按 key 映射为中文(它们描述的是我们自己的固定数据源);
+    # 没映射到的 key 保留原文 —— 宁可露出英文,不可静默丢来源。
+    prov_zh = {
+        "geocode": "OneMap 搜索 API(免费,无需密钥);路名已断言校验",
+        "plot/zoning/neighbours": "URA Master Plan 2025(2025-12-01 宪报)Land Use + SDCP "
+                                  "Landed 图层,经 data.gov.sg —— 指示性,非法定边界",
+        "comps": "URA Data Service caveat(免费注册密钥)。landed 的 area = 土地面积;月粒度;"
+                 "滚动约 5 年;caveat 滞后;landed 项目名匿名化 → street 是唯一 join 键,"
+                 "且是母路标签(EXP-0018)",
+        "flood": "PUB 易涝名单(2025-11)按地名匹配 + data.gov.sg 全国公顷数",
+        "schools/mrt": "全岛清单:MOE School Directory(data.gov.sg)+ OneMap 车站枚举,"
+                       "预地理编码;直线距离到目标点。P1 官方口径 = OneMap SchoolQuery"
+                       "(量到校地边界),本报告的直线是保守高估",
+        "amenities/expressways": "人工东北片区短清单 —— 「这几个里最近的」,非全岛",
+    }
+    prov = "".join(f"<li><b>{_esc(k)}</b> — {prov_zh.get(k) or _esc(val)}</li>"
                    for k, val in (d.get("provenance") or {}).items())
     eng = "".join(f"<li>{_esc(x)}</li>" for x in (v["limitations"] if v else []))
     eng += "".join(f"<li>{_esc(x)}</li>" for x in (v["verify_before_offer"] if v else []))
@@ -611,6 +828,10 @@ th{color:#9aa4b2;font-weight:500}.r{text-align:right}
 .alerts>li{border-left:2px solid #3a4560;padding:2px 0 8px 12px;margin:10px 0;font-size:13px}
 .gate{background:#4a2320;border:1px solid #7a3a33;border-radius:4px;padding:1px 6px;
  font-size:11px;margin-left:6px;white-space:nowrap}
+.src{background:#1d2634;border:1px solid #33405a;border-radius:4px;padding:1px 6px;
+ font-size:11px;margin-left:6px;color:#9fb0cf;white-space:nowrap}
+.src.sup{background:#241d2e;border-color:#4a3a5c;color:#b39fcf}
+s{opacity:.65}
 .banner .note{display:block;margin-top:5px}
 details{margin:12px 0}summary{cursor:pointer;color:#cfd6e4;font-size:14px;padding:8px 0}
 ul{margin:6px 0;padding-left:18px}li{font-size:13px;margin:3px 0}

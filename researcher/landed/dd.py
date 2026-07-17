@@ -169,6 +169,11 @@ def run(address: str, expect_road: str | None = None) -> dict:
             "amenities/expressways": "CURATED north-east list — 'nearest of these', "
                                      "NOT 'nearest in Singapore'",
         },
+        # structured twin of amenity_scope so a renderer can compose its own language
+        # instead of printing English prose into a Chinese-primary report
+        "amenity_meta": {"n_schools": len(amenities.primary_schools()),
+                         "n_mrt": len(amenities.mrt_stations()),
+                         "built": amenities.built_on()},
         "comps": cmp_,
         "flood": pub_flood.check(street),
         "provenance": {

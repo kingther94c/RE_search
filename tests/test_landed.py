@@ -137,6 +137,20 @@ def test_landed_valuation_invariants(store, street, area, ptype):
     assert any("bundle" in s.lower() for s in v["limitations"])
 
 
+def test_guidance_recent_window_is_additive_and_sane(store):
+    """F2b:近 12 个月补充标记 —— 只在主指导给出且近窗 n>=4 时出现;出现时必须自洽。
+    (一位 Fable 复审量到:热街上 60 个月分位数比最新同尺寸成交低 10% —— 近窗标记是
+    并排的观测,不是替代。)"""
+    v = _v(store, "LOYANG RISE", 1635, "Terrace")
+    gr = v.get("guidance_recent_12mo")
+    if v["seller_guidance"]["ask"] is None:
+        assert gr is None                        # 主指导被抑制时,近窗标记必须一并沉默
+    elif gr is not None:
+        assert gr["n"] >= 4
+        assert gr["p25"] <= gr["p75"]
+        assert gr["window_mo"] == 12
+
+
 def test_leasehold_street_is_lease_matched_and_confident(store):
     """LOYANG RISE is 99yr: remaining lease must be surfaced and the methods should AGREE
     once lease-matched (this is the slice that used to be 232% wrong)."""

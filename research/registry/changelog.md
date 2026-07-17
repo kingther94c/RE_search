@@ -5,6 +5,32 @@ impact · assets affected.
 
 ---
 
+## 2026-07-17 — 全面报告 Fable 复审(PASS w/ revisions ~7.8)→ F1-F6 全部修复;主体中文定稿
+- **What(按复审优先级):**
+  **F1** 挂载判断层的 8 条 authored `dd3_alerts` 此前被**静默丢弃**(丢了 archetype 指名的
+  头号风险「turnkey 缺陷与施工质量」——自动规则永远推不出来)。现在与自动清单**合并渲染**:
+  同主题用人写版(为该地址而写,更具体)、来源打标(工具推导/人写)、与本报告冲突的条目
+  (「刻意不给估值」写于引擎接入之前)标「已取代」而非删除 —— 判断的时间线可见。
+  **F2** 卖家看到 ask S$4.83M,而**同尺寸孪生房上月成交 S$5.22M** 在两屏之外:引擎自带的
+  内联提示被中文层渲染丢了 → 补回表格正下方;并新增**近 12 个月窗口 p25/p75**(引擎 additive
+  输出 `guidance_recent_12mo`,同过滤同调整,n≥4 才给)—— Seletar 实测近窗 4.70/4.97M vs
+  60 个月窗 4.55/4.83M,**证实了主门槛在热街上偏保守**,两个窗口并排、各标口径。
+  **F3** 方法分歧 17%(离 hard-case 抑制线 18% 仅 1pp)此前只藏在折叠层 → 独立方法读数+
+  分歧+离群方法(数据判定,非叙事)+置信度构成,全部明面中文。
+  **F5** 人写 verdict 从第 4 节提升一句话版到 L0(结论先行);第 4 节保留全文+archetype。
+  **F4** n=54 与街道全量 63 的差异加注(60 个月窗+lease-match+同房型过滤)。
+  **F6** 首屏加最近小学 chip;GPR「LND」译注;highlights 实为作者双语(`<span class='zh'>`,
+  复审误判为纯英文)→ 解析中文为正文、英文折叠;MP2025 面积与 URA 桶内成交的交叉验证浮出
+  明面(Seletar:40/63 笔一致);水浸/剖面警示/清单口径/provenance/别名证据全部中文化
+  (`street_alias` 增 `evidence_zh`,`dd.py` 增结构化 `amenity_meta`)。
+- **Why:** 用户定稿要求「主体中文,英文仅限专业术语」;复审的三个 MAJOR 都属于
+  「证据在报告里、读者看不见」—— 与 L4 六轮的教训同类:败的是面向客户那一层。
+- **Evidence:** 三份报告重出并逐项验证(Seletar 14 项 / Cardiff 3 项 / Loyang 4 项检查,
+  唯一 ✗ 是检查预期本身错了 —— Loyang 的面积交叉验证 k<10 不该宣称,代码行为正确);
+  248 tests pass(+6:合并策略、取代注记、近窗标记、别名中文证据)。
+- **Assets affected:** landed 全面报告(渲染层)+ value_landed additive 输出。引擎点位、
+  区间、conformal 均未动(value_landed.py 不在指纹集,无需重校准)。
+
 ## 2026-07-17 — DD 链的学校/MRT 清单从「一个片区」换成「全岛」——它此前在静默地撒谎
 - **What:** `researcher/sources/amenities.py` —— 全岛 **182 所招 P1 的 MOE 学校**(School
   Directory,data.gov.sg,官方,带 postal → OneMap 逐个地理编码)+ 全岛 MRT/LRT 站

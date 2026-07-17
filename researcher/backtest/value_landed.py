@@ -131,19 +131,26 @@ def _confidence(n_comps, fallback, anchor_spread, big_plot, ptype) -> tuple[int,
     return max(20, round(c)), label
 
 
-def _adjusted_comp_psfs(subject, market, ctx) -> list[float]:
+def _adjusted_comp_psfs(subject, market, ctx, window_mo: int = 60) -> list[float]:
     """The lease-matched street prints, moved to the subject for time (capped) and size —
     i.e. WHAT COMPARABLE PLOTS ACTUALLY PRINTED, expressed at this subject's spec. This is
     the OBSERVED evidence distribution, and it is what buyer/seller thresholds must be built
     from. (The conformal band is the engine's PREDICTIVE ERROR; deriving an ask from it made
-    72% of asks land above every comp on their own page — three hostile rounds' blocker.)"""
+    72% of asks land above every comp on their own page — three hostile rounds' blocker.)
+
+    `window_mo`: 60 = the LC2 comp universe (the shipped thresholds). 12 gives the
+    supplementary RECENT markers (`guidance_recent_12mo`): on a street that outran the
+    island index, quartiles of a 60-month pool sit below where the street currently
+    trades (a Fable review measured a size-twin print 10% above the shipped ask), so the
+    report shows the recent window BESIDE the main one — observation only, same filters,
+    never a replacement."""
     area, asof_ym = subject["area_sqft"], ctx["asof_ym"]
     out = []
     for r in market.landed_on_street(subject["street"]):
         if r["property_type"] != subject["property_type"]:
             continue
-        if not (0 <= months_between(r["contract_ym"], asof_ym) < 60):
-            continue          # same 60mo window as the LC2 point — one comp universe
+        if not (0 <= months_between(r["contract_ym"], asof_ym) < window_mo):
+            continue          # default = same 60mo window as the LC2 point
         if not lease_compatible(r, subject, asof_ym):
             continue
         # use the SAME adjustment the point is built from,
@@ -347,6 +354,15 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
     band_rel = (hi - lo) / price if price else 0.0
     adj = _adjusted_comp_psfs(subject, market, ctx)
     guidance_ok = not (big or fallback or hard) and conf >= 55 and len(adj) >= 4
+    # Supplementary RECENT markers (12mo), only when the main guidance stands and the
+    # recent window alone can carry quartiles. Additive: same filters, same adjustment.
+    guidance_recent = None
+    if guidance_ok:
+        adj12 = _adjusted_comp_psfs(subject, market, ctx, window_mo=12)
+        if len(adj12) >= 4:
+            guidance_recent = {"window_mo": 12, "n": len(adj12),
+                               "p25": round(_pctl(adj12, 0.25) * area, 0),
+                               "p75": round(_pctl(adj12, 0.75) * area, 0)}
     if guidance_ok:
         p25, p75 = round(_pctl(adj, 0.25) * area, 0), round(_pctl(adj, 0.75) * area, 0)
         # HONEST LABELS. These are the cheap/dear END of the observed evidence — NOT
@@ -409,6 +425,7 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
         "comps": _comps(subject, market, ctx),
         "buyer_guidance": buyer,
         "seller_guidance": seller,
+        "guidance_recent_12mo": guidance_recent,
         "verify_before_offer": [
             "TITLE & PLANNING (INLIS/URA): exact land area, tenure, road reserve/drainage "
             "reserve take, setbacks, conservation or landed-housing-area controls",
