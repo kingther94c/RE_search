@@ -26,6 +26,21 @@ bulk data*, not modelling slack. **Never promise condo-grade precision on landed
   engine's store excludes it); streets with no URA caveat in the rolling 5y window.
 
 ## Run it
+
+**An ADDRESS → the full report (估值 + DD + 成本栈). This is the default entry point:**
+```bash
+python deliverables/build_landed_full_report.py "19 CARDIFF GROVE" --type Terrace \
+       --area 1839.57 --condition original --profile PR --count 2
+```
+Chinese-primary, layered (结论 → 关键数据 → 证据 → 局限), and it does three things this skill
+alone cannot: resolves the address's road to the URA street it is actually filed under
+(`street_alias.py` — **evidence only, refuses when unknown**, GY-0006), takes the plot area
+from MP2025 when `--area` is absent (declared as indicative — the valuation is `land psf ×
+area`, so a wrong area is a wrong report), and prices the **cost stack** (BSD/ABSD/SSD), which
+dominates any short hold. `--digest <slug>` mounts an authored judgement layer; without it the
+report says plainly that it gives **no go/no-go**.
+
+**A STREET + area (no address, no DD):**
 ```bash
 python deliverables/build_landed_v2_report.py --street "ALNWICK ROAD" --area 2800 \
        --type Terrace --condition original

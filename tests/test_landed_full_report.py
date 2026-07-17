@@ -14,7 +14,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import pytest  # noqa: E402
 
-from deliverables.build_landed_full_report import _suppress_reason_zh  # noqa: E402
+from deliverables.build_landed_full_report import (_ssd_vs_entry_zh,  # noqa: E402
+                                                   _suppress_reason_zh)
+from researcher.landed import costs as costs_mod  # noqa: E402
 from researcher.landed import street_alias  # noqa: E402
 from researcher.landed.comps import street_comps  # noqa: E402
 
@@ -81,3 +83,27 @@ def test_direct_street_keeps_the_engine_s_own_reasons():
 ])
 def test_alias_reason_outranks_the_others(area, basis, want):
     assert want in _suppress_reason_zh(_v(), area, basis=basis)
+
+
+# ------------------------------------------------------------- 成本栈的叙述
+def _c(profile, count, price=4_250_000):
+    return {"entry": costs_mod.entry_costs(price, profile, count),
+            "ssd": costs_mod.ssd_clock(price),
+            "be_1y": costs_mod.breakeven_gain_pct(price, profile, count, 1),
+            "be_5y": costs_mod.breakeven_gain_pct(price, profile, count, 5)}
+
+
+def test_ssd_vs_entry_prose_is_computed_not_asserted():
+    """这句话原本写死为「SSD 比全部买入成本还大」——只在公民首套(ABSD 0%)成立。
+    换成 PR 二套(ABSD 30% → 买入 S$1.47M)后,S$680k 并不更大,报告就在用自己的表格
+    打自己的脸。凡是能被同一份报告的数字证伪的句子,必须由那些数字生成。"""
+    sc = _ssd_vs_entry_zh(_c("SC", 1))          # 买入 ~168k vs SSD 680k
+    assert "还大" in sc and "主导一切" in sc
+    pr = _ssd_vs_entry_zh(_c("PR", 2))          # 买入 ~1.47M vs SSD 680k
+    assert "还大" not in pr and "两头都很重" in pr
+
+
+def test_ssd_vs_entry_flips_exactly_at_the_crossover():
+    """公民二套(ABSD 20% → 买入 ~1.05M)已经超过 SSD 680k —— 断言必须跟着翻。"""
+    assert "还大" not in _ssd_vs_entry_zh(_c("SC", 2))
+    assert "还大" in _ssd_vs_entry_zh(_c("SC", 1))

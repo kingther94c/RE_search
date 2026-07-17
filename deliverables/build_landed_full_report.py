@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import json
 import os
 import sys
 
@@ -29,9 +30,64 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from deliverables.report_out import write_report                      # noqa: E402
 from researcher.backtest.value_landed import LandedSpec, value_landed  # noqa: E402
+from researcher.landed import costs as costs_mod                      # noqa: E402
 from researcher.landed import dd as dd_mod                            # noqa: E402
 from researcher.landed import street_alias                            # noqa: E402
 from researcher.landed.comps import street_comps                      # noqa: E402
+
+
+# ------------------------------------------------------- 深度尽调提示(由事实推导)
+# 这一层此前是**手写**的(researcher/landed/<slug>_dd.json 的 dd3_alerts)。手写的问题不是
+# 质量,是**会漏**:漏掉的那条不会留下任何痕迹。所以凡是能从事实+规则推出来的,这里自动推;
+# 剩下真正需要判断的(archetype / verdict / highlights),由 --digest 挂载,没有就明说没有。
+_UNIVERSAL = [
+    ("BCA 批准的建筑与结构图纸", True,
+     "<b>你买不到</b> —— BCA 的 Plan Purchase 只受理注册业主本人、其公司职员、MCST 主席,"
+     "或持<b>业主签字授权</b>+业主房产税单的获授权人。拿不到就无法把「实际建成」和「批准图则」"
+     "对照,违建与其整改责任在成交后属于你。"),
+    ("法定地块面积、地契起算日、他项权利", False,
+     "本链条给的是 MP2025 的<b>指示性</b>宗地与街道级 tenure,<b>都不是法律事实</b>。"
+     "业主、抵押、地役权、法定面积、Certified Plan —— 需 INLIS(DD-2,约 S$16)。"),
+    ("这块地会不会积水?", False,
+     "PUB 名单是<b>按名称</b>匹配的全国清单(23.3 ha / 全国约 73,000 ha,0.032%),"
+     "「不在名单上」对<b>单一地块</b>几乎没有证据力。隔壁路淹不会命中你。属实地问题(DD-3)。"),
+]
+
+
+def _alerts_zh(g: dict) -> list[tuple[str, bool, str]]:
+    """(标题, 是否受制于卖家, 为什么) —— 普适项 + 从本地址事实推出的项。"""
+    out = list(_UNIVERSAL)
+    d, v = g["dd"], g["val"]
+    for nb in (d.get("neighbours") or []):
+        z, m = (nb.get("zone") or ""), nb.get("metres") or 9e9
+        if z in dd_mod.TRANSECT_ZONES and m <= dd_mod.TRANSECT_WITHIN_M:
+            out.append((f"{_esc(z)} 用地在 {m:.0f} m {_esc(nb.get('bearing_deg') and str(int(nb['bearing_deg'])) + '°' or '')}",
+                        False,
+                        f"分区<b>标签</b>不等于地上<b>今天</b>在做什么 —— 标签本身误导过人。"
+                        f"要看的是:实际经营内容、作业时段、噪音/气味,以及中间隔着什么。"
+                        f"报告里的剖面只说明「隔着什么」,不代表已经到达。属实地问题(DD-3)。"))
+    sch = (d.get("schools_primary") or [])
+    ring = [s for s in sch if s["km"] <= 1.2]
+    if ring:
+        out.append((f"{_esc(ring[0]['name'])} 的 1km 学区身份({ring[0]['km']}km,本报告为直线估计)",
+                    False,
+                    "官方口径是 OneMap <b>SchoolQuery</b>(量的是<b>校地边界</b>到住址),"
+                    "我们的直线距离量到<b>校点</b>,是<b>保守的高估</b> —— 说「在圈内」安全,"
+                    "贴近 1km 线时<b>未定</b>。且学区不是永久属性,报名当年要重新核。"))
+    if v and (g["land_area"] or 0) >= 8000:
+        out.append(("大地块的估值仅供指示", False,
+                    "≥8k sqft 上尺寸曲线 identification 最差(EXP-0011);点估值请走 case protocol。"))
+    if g["resolve"]["basis"] == "alias":
+        out.append((f"本路({_esc(g['dd']['street'])})自己的成交分布", False,
+                    f"URA 把本路的 caveat 归在「{_esc(g['resolve']['ura_street'])}」桶里,桶内混着"
+                    f"同屋苑其它路 —— 议价门槛因此在本报告中<b>被抑制</b>。要门槛,得用 "
+                    f"Investment Suite 拉本路自己的分布(见 harvest_street_sale.py)。"))
+    if v:
+        out.append(("建筑状况 condition —— bundle 价里最大的未观测项", False,
+                    "引擎是 condition-blind 的。实测(Cardiff Grove,同期同尺寸):原装 "
+                    "$1,767-1,946/psf、翻建 $2,327-2,848/psf —— <b>同一条路上价差 60%</b>。"
+                    "现场定原装/翻新/翻建与 GFA,否则这份估值的最大不确定性没有被消除。"))
+    return out
 
 
 # --------------------------------------------------------------- 中文叙述层
@@ -136,7 +192,8 @@ def _esc(x) -> str:
 
 
 def gather(address: str, ptype: str, area: float | None, tenure: str | None,
-           lease_start: int | None, condition: str | None, asof: str | None) -> dict:
+           lease_start: int | None, condition: str | None, asof: str | None,
+           profile: str = "SC", count: int = 1, digest: dict | None = None) -> dict:
     """DD 链 + 街道解析 + 估值。任何一环诚实失败都不阻断其余部分。"""
     d = dd_mod.run(address)
     road = d["street"]
@@ -162,8 +219,17 @@ def gather(address: str, ptype: str, area: float | None, tenure: str | None,
             val_error = f"{v['error']}: {v['message']}"
         else:
             val = v
+    # 成本栈锚在**引擎的点估值**上(而不是某个挂牌价):没有成交价时,这是唯一诚实的锚。
+    cost = None
+    if val:
+        p = val["fair_value"]["price"]
+        cost = {"entry": costs_mod.entry_costs(p, profile, count),
+                "ssd": costs_mod.ssd_clock(p),
+                "be_1y": costs_mod.breakeven_gain_pct(p, profile, count, 1),
+                "be_5y": costs_mod.breakeven_gain_pct(p, profile, count, 5)}
     return {"address": address, "dd": d, "resolve": res, "land_area": land_area,
-            "area_src": area_src, "val": val, "val_error": val_error, "ptype": ptype}
+            "area_src": area_src, "val": val, "val_error": val_error, "ptype": ptype,
+            "cost": cost, "profile": profile, "count": count, "digest": digest}
 
 
 # --------------------------------------------------------------------------- 渲染
@@ -320,6 +386,89 @@ MP2025 · PUB)</span></h2>
 </div>"""
 
 
+def _ssd_vs_entry_zh(c: dict) -> str:
+    """SSD 与买入成本孰大 —— **算出来**,不写死。
+
+    这句话原本是硬编码的「一年内的 SSD 比全部买入成本还大」。它只在**公民首套**(ABSD 0%)
+    时成立;换成 PR 二套(ABSD 30% → 买入成本 S$1.47M)后,报告就在用自己的表格打自己的脸:
+    S$680k 并不比 S$1.47M 大。凡是能被同一份报告里的数字证伪的句子,都必须由那些数字生成。
+    """
+    y1, entry = c["ssd"][0]["amount"], c["entry"]["total"]
+    if y1 > entry:
+        return (f"<b>短持有期上,SSD 主导一切</b>:一年内卖出的 SSD ≈ {_money(y1)},"
+                f"比全部买入成本({_money(entry)})<b>还大</b>。")
+    return (f"<b>两头都很重</b>:一年内卖出的 SSD ≈ {_money(y1)},买入成本 {_money(entry)}"
+            f"(ABSD {c['entry']['absd_rate']*100:.0f}% 占了大头)—— "
+            f"合计 {_money(y1 + entry)} ≈ 房价的 {(y1+entry)/c['entry']['price']*100:.0f}%。")
+
+
+def _l1_costs(g: dict) -> str:
+    """成本栈 —— 一份只有估值和 DD 的报告是不完整的:短持有期上 SSD 压倒一切。"""
+    c = g["cost"]
+    if not c:
+        return ""
+    e, cm = c["entry"], costs_mod
+    prof = costs_mod.PROFILES.get(g["profile"], g["profile"])
+    ssd_rows = "".join(
+        f"<tr><td>{_esc(r['held'])}</td><td class=r>{r['rate']*100:.0f}%</td>"
+        f"<td class=r>{'—' if not r['amount'] else _money(r['amount'])}</td></tr>"
+        for r in c["ssd"])
+    return f"""<div class=card><h2>3 · 成本栈 Cost stack <span class=note>(按引擎点估值
+{_money(e['price'])} 计;税率会变 —— 出价前以 IRAS 为准)</span></h2>
+<table class=kv>
+<tr><td>买家画像</td><td class=r>{_esc(prof)} · 第 {g['count']} 套</td></tr>
+<tr><td>BSD <span class=note>(1-6% 累进,{_esc(cm.BSD_META['effective'])} 起)</span></td>
+    <td class=r>{_money(e['bsd'])}</td></tr>
+<tr><td>ABSD <span class=note>({e['absd_rate']*100:.0f}%,{_esc(cm.ABSD_META['effective'])} 起)</span></td>
+    <td class=r>{_money(e['absd'])}</td></tr>
+<tr><td>律师费(估)</td><td class=r>{_money(e['legal'])}</td></tr>
+<tr><td><b>买入总成本</b></td>
+    <td class=r><b>{_money(e['total'])}</b> <span class=note>= 房价的 {e['total_pct']*100:.1f}%</span></td></tr>
+</table>
+<h3>SSD 时钟 <span class=note>({_esc(cm.SSD_META['effective'])} 起购入:<b>4 年</b>期,按卖出价计,
+起算 = 行使 OTP 之日)</span></h3>
+<table><tr><th>持有</th><th class=r>SSD</th><th class=r>金额</th></tr>{ssd_rows}</table>
+<p class=note><b>{_ssd_vs_entry_zh(c)}</b> 盈亏平衡所需涨幅:1 年内退出约
+<b>{c['be_1y']*100:.0f}%</b>,4 年后退出约 <b>{c['be_5y']*100:.0f}%</b>
+(含 BSD/ABSD + 2% 中介,未计利息与持有成本)。差出来的
+<b>{(c['be_1y']-c['be_5y'])*100:.0f} 个百分点</b>就是 SSD 窗口的价格 —— 这也是 landed 的 alpha
+主要在<b>买入那一刻</b>决定的算术原因。</p>
+<p class=note>不含:中介佣金(landed 通常卖方付)、贷款利息、装修、房产税与持有成本。
+ABSD 的夫妻联名 remission、FTA 国民豁免等情形本表未计。
+来源:{_esc(cm.ABSD_META['source'])};{_esc(cm.SSD_META['source'])}。
+{_esc(cm.ABSD_META['note'])}</p>
+</div>"""
+
+
+def _l1_alerts(g: dict) -> str:
+    """深度尽调提示 —— DD-3:专业/实地/需卖方授权,与 OTP 挂钩。"""
+    rows = ""
+    for item, gated, why in _alerts_zh(g):
+        tag = "<span class=gate>需卖方授权</span>" if gated else ""
+        rows += f"<li><b>{item}</b> {tag}<div class=note>{why}</div></li>"
+    dig = g.get("digest") or {}
+    verdict = ""
+    if dig.get("verdict"):
+        v = dig["verdict"]
+        verdict = (f"<div class='banner ok'><b>结论 verdict</b> —— "
+                   f"{_esc(v.get('call_zh') or v.get('call'))}</div>")
+    else:
+        verdict = ("<div class='banner warn'><b>本报告不给 go/no-go</b> —— "
+                   "买/不买是<b>判断</b>,不是这条链条的产物。它需要 archetype(这条街这个年代的"
+                   "房子该怎么看)、实地、以及你的持有意图。工具给的是事实、估值、成本与必查项;"
+                   "结论请在做完下面这些之后自己下,或用 <code>--digest</code> 挂载已撰写的判断层。"
+                   "</div>")
+    return f"""<div class=card><h2>4 · 深度尽调 DD-3 <span class=note>(专业/实地/需卖方授权,
+与 OTP 挂钩)</span></h2>
+{verdict}
+<ul class=alerts>{rows}</ul>
+<p class=note>层级说明:<b>DD-1</b> 本人桌面、免费、每个候选都做(本报告的事实层);
+<b>DD-2</b> 本人桌面、约 S$5-200、出价前完成(INLIS 产权);
+<b>DD-3</b> 上面这些 —— 专业/实地/需卖方授权。三层分的是<b>「谁能定、何时定」</b>,
+不是「免费还是收费」。</p>
+</div>"""
+
+
 def _l2_evidence(g: dict) -> str:
     v, d = g["val"], g["dd"]
     comps = ""
@@ -370,6 +519,15 @@ def _l3_limits(g: dict) -> str:
     for x in (d.get("not_covered") or []):
         zh = next((t for k, t in _NOT_COVERED_ZH.items() if x.startswith(k)), None)
         nc += f"<li>{zh or _esc(x)}</li>"
+    # 本报告自己的边界 —— 说清楚没覆盖什么,和覆盖了什么一样重要
+    nc += ("<li><b>租金收益 rental yield</b> —— URA 的 caveat 只有<b>成交</b>,没有租约。"
+           "Investment Suite 有街道级与 500m 的 rental yield;要它就得去拉(本链条不自动调 IS)。</li>"
+           "<li><b>重建经济 rebuild economics</b> —— 拆建成本、GFA 上限的实际可建量、施工期"
+           "机会成本,都不在免费官方源里。分区/层数包络在上面,但「重建划不划算」是另一件事。</li>"
+           "<li><b>持有成本</b> —— 贷款利息、房产税(自住 vs 出租税率不同)、维护。"
+           "成本栈只算<b>交易</b>侧(BSD/ABSD/SSD)。</li>"
+           "<li><b>判断</b> —— archetype、go/no-go、议价策略。工具给事实、估值、成本、必查项;"
+           "结论需要实地与你的持有意图(可用 <code>--digest</code> 挂载已撰写的判断层)。</li>")
     prov = "".join(f"<li><b>{_esc(k)}</b> — {_esc(val)}</li>"
                    for k, val in (d.get("provenance") or {}).items())
     eng = "".join(f"<li>{_esc(x)}</li>" for x in (v["limitations"] if v else []))
@@ -406,6 +564,11 @@ th{color:#9aa4b2;font-weight:500}.r{text-align:right}
 .banner{border-radius:8px;padding:10px 12px;margin:8px 0;font-size:13px}
 .banner.warn{background:#2a2412;border:1px solid #5c4a1a}
 .banner.stop{background:#2a1616;border:1px solid #5c2020}
+.banner.ok{background:#14231a;border:1px solid #2c5c3a}
+.alerts{list-style:none;padding:0}
+.alerts>li{border-left:2px solid #3a4560;padding:2px 0 8px 12px;margin:10px 0;font-size:13px}
+.gate{background:#4a2320;border:1px solid #7a3a33;border-radius:4px;padding:1px 6px;
+ font-size:11px;margin-left:6px;white-space:nowrap}
 .banner .note{display:block;margin-top:5px}
 details{margin:12px 0}summary{cursor:pointer;color:#cfd6e4;font-size:14px;padding:8px 0}
 ul{margin:6px 0;padding-left:18px}li{font-size:13px;margin:3px 0}
@@ -422,6 +585,8 @@ def render(g: dict) -> str:
 {_street_banner(g)}
 {_l1_valuation(g)}
 {_l1_dd(g)}
+{_l1_costs(g)}
+{_l1_alerts(g)}
 {_l2_evidence(g)}
 {_l3_limits(g)}
 <p class=note>估值 = 引擎 LV1(URA walk-forward:中位 APE 9.1%,区间覆盖 78.9%)。
@@ -440,9 +605,23 @@ def main() -> None:
     ap.add_argument("--lease-start", type=int, default=None)
     ap.add_argument("--condition", default=None, choices=["original", "renovated", "rebuilt"])
     ap.add_argument("--asof", default=None)
+    ap.add_argument("--profile", default="SC", choices=sorted(costs_mod.ABSD_RATES),
+                    help="买家画像(决定 ABSD)")
+    ap.add_argument("--count", type=int, default=1, help="这是买家的第几套住宅")
+    ap.add_argument("--digest", default=None,
+                    help="判断层 slug(researcher/landed/<slug>_dd.json:archetype/verdict/"
+                         "highlights)。不给则报告明说「不给 go/no-go」")
     a = ap.parse_args()
 
-    g = gather(a.address, a.type, a.area, a.tenure, a.lease_start, a.condition, a.asof)
+    digest = None
+    if a.digest:
+        p = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                         "researcher", "landed", f"{a.digest}_dd.json")
+        with open(p, encoding="utf-8-sig") as f:
+            digest = json.load(f)
+
+    g = gather(a.address, a.type, a.area, a.tenure, a.lease_start, a.condition, a.asof,
+               profile=a.profile, count=a.count, digest=digest)
     slug = "".join(c if c.isalnum() else "_" for c in a.address.lower()).strip("_")
     res = write_report(f"{slug}_landed_full_report.html", render(g))
     print(res.summary())

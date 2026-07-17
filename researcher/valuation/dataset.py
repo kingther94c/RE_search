@@ -138,9 +138,15 @@ MACRO = {
     "sale_volume_qoq_q1_2026": -40,       # %
     "sora_feb_2026": 1.00,                # %
     "fixed_mortgage_from": 1.40,          # % p.a.
+    # ABSD, effective 2023-04-27 (IRAS / MAS-MOF-MND). PR 3rd was recorded here as 30% —
+    # WRONG; IRAS says 35% (verified 2026-07-17 against IRAS + the MAS 27 Apr 2023 release).
+    # The same wrong value sat in property-buy-sell-advisory's table: two internal sources
+    # agreeing is not verification when they share an origin. Canonical table + the arithmetic
+    # now live in researcher/landed/costs.py (with source/effective/verify_at on every rate).
     "absd_sc": {"1st": 0, "2nd": 20, "3rd": 30},
-    "absd_pr": {"1st": 5, "2nd": 30, "3rd": 30},
+    "absd_pr": {"1st": 5, "2nd": 30, "3rd": 35},
     "absd_foreigner": 60,
+    "absd_entity": 65,
     "ssd_new": {"<=1y": 16, "1-2y": 12, "2-3y": 8, "3-4y": 4, ">4y": 0},  # bought on/after 4 Jul 2025
     "catalyst": "Cantonment MRT (Circle Line 6) opens 12 Jul 2026 — ~4th line in walking distance",
 }

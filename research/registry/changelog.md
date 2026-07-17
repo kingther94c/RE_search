@@ -5,6 +5,27 @@ impact · assets affected.
 
 ---
 
+## 2026-07-17 — 全面报告补齐「其他因素」:成本栈 + 深度尽调提示;并更正了一个错的 ABSD 税率
+- **What:** `researcher/landed/costs.py`(BSD / ABSD / SSD 时钟 / 盈亏平衡涨幅,每张表带
+  `source`+`effective`+`verify_at`)接进 full report 的第 3 层;第 4 层「深度尽调 DD-3」由
+  **事实自动推导**(普适项 BCA图纸/INLIS产权/是否积水 + 从邻地、学区、大地块、别名街道、
+  condition 推出的项),取代原先只存在于手写 digest 里的清单;`--digest` 挂载判断层
+  (archetype/verdict/highlights),不给就**明说本报告不给 go/no-go**;`--profile/--count`
+  决定 ABSD。报告的范围声明补上租金收益、重建经济、持有成本、判断 —— 四项明确「未覆盖」。
+- **更正了一个会误导人的税率:PR 第三套 ABSD 仓库写 30%,正确是 35%**(IRAS + MAS/MOF/MND
+  2023-04-27 新政,三次交叉核对)。错值同时存在于 `researcher/valuation/dataset.py` 与
+  `property-buy-sell-advisory` SKILL —— **两个内部来源一致不等于对:它们同源。**
+- **Why:** 「完整的 landed report」少了成本栈就是不完整的:S$4.25M 的成交,一年内退出的 SSD
+  ≈ **S$680k**,对公民首套买家**比全部买入成本(S$96k…S$168k)还大**;PR 二套则是买入
+  S$1.47M + SSD S$680k ≈ **房价的 51%**。这是报告里最大的单笔数字,此前完全缺席。
+- **成品自查抓到的错:** 我把「SSD 比全部买入成本还大」**写死成断言** —— 它只在公民首套
+  (ABSD 0%)成立;换成 PR 二套后报告就在用自己的表格打自己的脸(S$680k 并不比 S$1.47M 大)。
+  改为由数字生成(`_ssd_vs_entry_zh`),并用测试锁住两个分支与交叉点。**凡是能被同一份报告里
+  的数字证伪的句子,都必须由那些数字生成。**
+- **Evidence:** 11 条成本栈算术测试对齐公开 worked example(BSD S$1.686M→S$53.9k;
+  SC二套 ABSD→S$337k;外国人→S$1.01M);4 年 SSD 悬崖;两个叙述分支。**235 tests pass**。
+- **Assets affected:** landed(全面报告成为地址级主入口);condo advisory 的税率表已更正。
+
 ## 2026-07-17 — 新交付:地址 → 中文全面报告(估值 + DD 合流),并在成品里抓到一个会让人买贵的错误
 - **What:** `deliverables/build_landed_full_report.py` — 一个地址进,一份**中文为主、详略分层**
   (结论 → 关键数据 → 证据 → 局限,用 `<details>` 折叠)的 HTML 出,把两条本来分开的链子接起来:

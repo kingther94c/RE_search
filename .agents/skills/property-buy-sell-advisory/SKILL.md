@@ -67,8 +67,14 @@ The largest swing factor in any SG decision — compute it on the **transacting 
 | Buyer | 1st property | 2nd | 3rd+ |
 |---|---|---|---|
 | Singapore Citizen | 0% | 20% | 30% |
-| Permanent Resident | 5% | 30% | 30% |
+| Permanent Resident | 5% | 30% | **35%** |
 | Foreigner | 60% | 60% | 60% |
+| Entity / Trustee | 65% | 65% | 65% |
+
+*(PR 3rd+ was stated here as 30% until 2026-07-17 — wrong. Verified against IRAS and the
+MAS/MOF/MND release of 27 Apr 2023. The arithmetic + the sourced table now live in
+`researcher/landed/costs.py`; rates change, so print the effective date and send the reader
+to IRAS rather than trusting a table in a repo.)*
 
 > Worked on S$1.686M: SC 2nd-property ABSD ≈ **S$337k**; foreigner ABSD ≈ **S$1.01M**.
 > ABSD is the dominant gate for additional/foreign buyers.
