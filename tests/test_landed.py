@@ -94,7 +94,11 @@ def test_conformal_table_matches_landed_code():
     stored = meta.get("code_sha1")
     assert stored, "landed conformal table has no fingerprint — run research/analyze_landed.py"
     h = hashlib.sha1()
-    for fn in ("landed_candidates.py", "landed_size_curve.py"):
+    # the FULL residual-determining set — incl. the time adjustment (landed_benchmarks)
+    # and the L2b local-trend bridge (local_trend); the original two-file set had a hole
+    # exactly where L2b operates (2026-07-17 review)
+    for fn in ("landed_benchmarks.py", "landed_candidates.py", "landed_size_curve.py",
+               "local_trend.py"):
         with open(os.path.join(base, fn), "rb") as fh:
             h.update(fh.read())
     assert h.hexdigest() == stored, (
@@ -238,7 +242,7 @@ def test_shipped_point_is_the_backtested_point(store):
     must equal the engine's."""
     import datetime as dt
     from researcher.backtest.index import PriceIndex
-    from researcher.backtest.landed_engine import landed_engine
+    from researcher.backtest.landed_engine import landed_engine, shipped_time_ctx
     from researcher.backtest.market import MarketView
     from researcher.backtest.value_landed import _infer, _landed_store
     ls = _landed_store(store)
@@ -249,9 +253,12 @@ def test_shipped_point_is_the_backtested_point(store):
         subj = _infer(spec, ls)
         t = dt.date.fromisoformat("2026-07-01")
         idx = PriceIndex.load()
+        view = ls.as_of(t, lag_days=56)
+        # the ONE shipped configuration (landed_engine.shipped_time_ctx) on both paths
         ctx = {"asof_ym": "2026-07", "asof_date": t, "index": idx,
-               "asof_q": idx.as_of_quarter(t)}
-        est = landed_engine(subj, MarketView(ls.as_of(t, lag_days=56).txs, "2026-07"), ctx)
+               "asof_q": idx.as_of_quarter(t),
+               **shipped_time_ctx(view.txs, "2026-07")}
+        est = landed_engine(subj, MarketView(view.txs, "2026-07"), ctx)
         assert v["fair_value"]["land_psf"] == est["psf"], f"{street}: shipped point != engine"
         assert v["fair_value"]["price"] == est["price"]
 
@@ -280,10 +287,14 @@ def test_no_momentum_extrapolation_in_time_adjustment():
 
 def test_hard_case_suppresses_guidance(store):
     """Review blocker: the gate keyed on band_rel, which is a per-CELL constant from the
-    conformal table and therefore BLIND to a subject-level hard case — ALNWICK (hard_case,
-    18% spread) still emitted an ask above every comp on its own page."""
-    v = _v(store, "ALNWICK ROAD", 2800, "Terrace")
+    conformal table and therefore BLIND to a subject-level hard case — a hard subject
+    still emitted an ask above every comp on its own page. Archetype: EMERALD HILL ROAD
+    (conservation-terrace street — methods disagree ~33%, and SHOULD: conservation stock
+    is idiosyncratic). ALNWICK (spread ~18%, the original archetype) stopped being hard
+    once the L2b bridge freshened the anchors — a borderline case makes a brittle test."""
+    v = _v(store, "EMERALD HILL ROAD", 1992, "Terrace")
     assert v["method_disagreement"]["hard_case"] is True
+    assert v["method_disagreement"]["spread_rel"] > 0.25
     assert v["seller_guidance"]["ask"] is None
     assert "hard case" in v["seller_guidance"]["note"]
 

@@ -21,6 +21,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from researcher.backtest.index import PriceIndex
+from researcher.backtest.landed_engine import shipped_time_ctx
 from researcher.backtest.landed_size_curve import size_factor
 from researcher.backtest.market import MarketView
 from researcher.backtest.store import TransactionStore, month_end
@@ -35,7 +36,11 @@ def _prev_ym(ym: str) -> str:
 
 
 def main():
-    n_want = int(sys.argv[1]) if len(sys.argv) > 1 else 600
+    # default 800 = the invocation behind the SHIPPED marker rates (EXP-0017: n=547 scored,
+    # p25 73.3/83.4, p75 31.6/37.8). A hostile reviewer re-ran the then-default 600 and got
+    # p75 29.2% — OUTSIDE the quoted range — purely from the smaller sample: the documented
+    # command must reproduce the documented number.
+    n_want = int(sys.argv[1]) if len(sys.argv) > 1 else 800
     store = _landed_store(TransactionStore.load())
     idx = PriceIndex.load()
     subs = [t for t in store.txs
@@ -57,8 +62,13 @@ def main():
     for asof_ym, group in by_month.items():
         t = month_end(asof_ym)
         mkt = MarketView(store.as_of(t, lag_days=56).txs, asof_ym)
+        # NOTE: view built once more inside ctx below — kept identical (same as_of args)
+        view = store.as_of(t, lag_days=56)
         ctx = {"asof_ym": asof_ym, "asof_date": t, "index": idx,
-               "asof_q": idx.as_of_quarter(t)}
+               "asof_q": idx.as_of_quarter(t),
+               # the SHIPPED time adjustment (EXP-0017 lt_tail) — marker rates must be
+               # measured under the same adjustment production applies
+               **shipped_time_ctx(view.txs, asof_ym)}
         for s in group:
             adj = _adjusted_comp_psfs(s, mkt, ctx)
             if len(adj) < 4:

@@ -13,6 +13,14 @@
 Everything here is the SAME shape as `engine_v2.py` for condo. That is deliberate: the
 architecture ("best method where it applies + fallback + calibrated band", NOT an ensemble
 blend) is the thing the condo programme actually validated.
+
+TIME ADJUSTMENT (EXP-0017): comps ride the published landed PPI to the last published
+quarter PLUS an observed bridge (fitted local trend, `local_trend.py`) from that quarter's
+midpoint to the newest visible caveat month — closing ~2 of the ~4.5 months of publication
+staleness with observations, never forecasts. `shipped_time_ctx` is the ONE constructor of
+that configuration; production (`value_landed`), the harness default (`run_landed`) and the
+regression tests all call it, so the shipped point IS the backtested point by construction
+(the EXP-0015 P1 lesson, enforced structurally).
 """
 from __future__ import annotations
 
@@ -21,6 +29,13 @@ import os
 
 from .landed_candidates import la1_pooled_anchor, lc2_fitted_curve
 from .landed_size_curve import is_big_plot
+from .local_trend import fit_landed_trend
+
+
+def shipped_time_ctx(view_txs, asof_ym: str) -> dict:
+    """The SHIPPED time-adjustment configuration (EXP-0017 verdict: V2 "lt_tail").
+    Fit ONLY on an as-of view — the caller guarantees visibility."""
+    return {"ltrend": fit_landed_trend(view_txs, asof_ym), "tadj_mode": "lt_tail"}
 
 _TABLE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                            "landed_conformal_table.json")

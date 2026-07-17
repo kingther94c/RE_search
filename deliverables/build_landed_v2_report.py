@@ -110,7 +110,7 @@ def render(v: dict) -> str:
 <h1>{html.escape(s['street'])} · {s['land_area_sqft']:,.0f} sqft land · {html.escape(s['property_type'])}</h1>
 <p class=meta>{html.escape(s['market_segment'])} · District {html.escape(s['district'])} ·
 {html.escape(s['tenure_type'])} ({lease}) · valued as of {html.escape(s['asof'])} ·
-engine LV1 (URA walk-forward: 9.3% median APE, 78.9% held-out band coverage)</p>
+engine LV1 (URA walk-forward: 9.1% median APE, 78.9% held-out band coverage)</p>
 
 <div class=hero>
   <div><div class=lbl>公允价 Fair value <span class=note>(land+building bundle)</span></div>

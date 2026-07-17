@@ -83,37 +83,10 @@ class PriceIndex:
             return 1.0
         return b / a
 
-    def drift_factor(self, from_q: str, to_ym: str, kind: str = "non-landed",
-                     lookback_q: int = 4, cap: float = 0.06) -> float:
-        """Extrapolate the index from the last PUBLISHED quarter `from_q` to `to_ym`.
-
-        Adjusting a comp only to the last published quarter leaves the estimate structurally
-        1-2 quarters stale: at as-of 2026-07 the newest published quarter is 2026Q1, so in a
-        market running ~7.6%/yr the point is ~1.2pp low — a one-directional bias measured on
-        the landed engine (actual exceeded the point 63% of the time). This projects the
-        gap forward at the recent PUBLISHED trend, so no unpublished data is used (the
-        drift is estimated only from quarters already visible at the valuation date).
-
-        Capped: an extrapolation is a forecast, not an observation. Returns 1.0 when the
-        series is too short to establish a trend.
-        """
-        s = self._series(kind)
-        if not s or from_q not in s:
-            return 1.0
-        hist = sorted(q for q in s if q <= from_q)
-        if len(hist) < lookback_q + 1:
-            return 1.0
-        base, prior = s[hist[-1]], s[hist[-1 - lookback_q]]
-        if prior <= 0:
-            return 1.0
-        per_q = (base / prior) ** (1.0 / lookback_q) - 1.0      # avg quarterly growth
-        y, m = (int(x) for x in to_ym.split("-"))
-        fy, fq = int(from_q[:4]), int(from_q[-1])
-        q_gap = (y - fy) * 4 + ((m - 1) // 3 + 1 - fq)
-        if q_gap <= 0:
-            return 1.0
-        f = (1.0 + per_q) ** q_gap
-        return min(max(f, 1.0 - cap), 1.0 + cap)
+    # NOTE: a `drift_factor` (index-momentum extrapolation beyond the last published
+    # quarter) used to live here. REJECTED — GY-0003: sliced by regime it broke the four
+    # already-unbiased half-years while worsening the one it targeted. Deleted so nobody
+    # rediscovers it from this file; the record lives in the method graveyard.
 
     def as_of_quarter(self, t, pub_lag_days: int = 35) -> str | None:
         """Latest quarter whose index was published by date t (quarter-end + lag <= t)."""

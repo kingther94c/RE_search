@@ -64,5 +64,43 @@ Format per entry:
   every half-year) while the **sign test** swung 47.6%→66.5% in the same slices. Flat APE is
   not flat bias. The sign test now ships in every slice of the landed leaderboard.
 
+### GY-0004 — Widening TIME_ADJ_CAP as the regime-bias fix (landed, 2026-07-17)
+- **Claim it made:** the shipped ×1.25 cap swallows PUBLISHED landed-PPI growth (×1.335
+  2021Q3→2025Q4 > cap inside LC2's 60mo window), and that swallowed growth IS the 2025+
+  low bias — so lifting the cap on an *observed* factor should repair it "for free".
+- **How tested:** EXP-0016 (research/diagnose_l2b.py): P1 measured the cap-bound WEIGHT
+  inside LC2's own comp universe by half-year; P3 ran the full walk-forward counterfactual
+  at cap hi ∈ {1.25, 1.60, 2.50}.
+- **Why rejected:** the arithmetic was right but the EXPOSURE is negligible — the 18mo
+  recency half-life strips old comps of weight: cap-bound weight share 2025H1 **0.0%**,
+  2025H2 3.1%, 2026H1 7.3%, and the HIGHEST of all (**8.5%**) sits in 2024H2 — an UNBIASED
+  regime; mean capped-away effect ≤0.32% vs a −4~5% medSigned bias.
+  Counterfactual: cap 1.25→2.50 moved 2025H2 sign 66.5→66.1 — nothing.
+- **Scope of the rejection:** cap widening as a BIAS fix. The cap itself stays (a
+  data-error guard that costs ~nothing). The real mechanism is published-quarter
+  staleness (~4.5mo at every valuation date) × market pace — see EXP-0016 P2.
+- **Do not resurrect unless:** the comp recency weighting changes materially (e.g.
+  half-life ≥3y or window-uniform weights), which would re-expose old comps' factors.
+
+### GY-0005 — Fitted caveat trend as the WHOLE time adjustment ("lt_full", landed, 2026-07-17)
+- **Claim it made:** a month-granular two-way-FE curve fitted as-of from visible caveats
+  (ln psf ~ (street,type) + month) tracks the landed market better than the quarterly PPI
+  over the FULL comp window — replace the index outright.
+- **How tested:** EXP-0017 (research/run_l2b_variants.py), full walk-forward n=7,027,
+  regime panel against the PRE-REGISTERED gates of EXP-0016.
+- **Why rejected:** it fails gate **A2** — the GY-0003 failure class: 2023H1 was unbiased
+  at baseline (sign 51.6) and lt_full drives it to **43.4** (pred too HIGH, direction
+  flipped) because the FE curve reads the 2021-22 run-up steeper than the PPI (×1.218 vs
+  ×1.139 to 2022-12) and 2023 flatter (×1.011 vs ×1.080) — on the LONG span the monthly
+  caveat curve is noisier/mix-fragile vs the stratified official index. Pooled numbers
+  looked BETTER (sign 53.1, medSigned −1.0%) — regime cancellation again, caught only
+  because the regime panel is now mandatory.
+- **Scope of the rejection:** full replacement of the published index. The SAME fitted
+  curve used only as a SHORT observed bridge (published quarter midpoint → newest visible
+  caveat month, "lt_tail") passed every no-harm gate and shipped in EXP-0017.
+- **Do not resurrect unless:** the fitted curve demonstrably matches PPI cumulative moves
+  on stable years AND a regime panel shows no stable-regime damage — i.e. the long-span
+  noise problem is actually solved, not re-hidden in a pooled number.
+
 **Watch-list (tested, retained as benchmarks, not yet buried):** none outstanding — the two
 proxy methods the user flagged are now measured and filed above.

@@ -20,6 +20,8 @@ import os
 import sys
 from collections import defaultdict
 
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 BT = os.path.join(os.path.dirname(HERE), "researcher", "backtest")
 TABLE_OUT = os.path.join(BT, "landed_conformal_table.json")
@@ -96,7 +98,12 @@ def main():
         table[f"_type|{ty}"] = [_q(v, NOM_LO), _q(v, NOM_HI)]
 
     h = hashlib.sha1()
-    for f in ("landed_candidates.py", "landed_size_curve.py"):
+    # EVERY file whose code determines the point's residuals. landed_benchmarks.py
+    # (_tadj_psf) and local_trend.py (the L2b bridge) were originally OUTSIDE the set —
+    # a hole exactly where L2b operates: the time adjustment could change under a table
+    # that still claimed to be calibrated. Found in the 2026-07-17 Fable review.
+    for f in ("landed_benchmarks.py", "landed_candidates.py", "landed_size_curve.py",
+              "local_trend.py"):
         with open(os.path.join(BT, f), "rb") as fh:
             h.update(fh.read())
     table["_meta"]["code_sha1"] = h.hexdigest()
@@ -105,6 +112,24 @@ def main():
         json.dump(table, f, ensure_ascii=False, indent=1)
     print(f"-> SAVED {TABLE_OUT} "
           f"({len([k for k in table if not k.startswith('_')])} cells, fingerprinted)")
+
+    # A5 check through the PRODUCTION band code (landed_engine._band), big-plot widening
+    # included — the sweep above rebuilds band logic in miniature and used to skip the
+    # widening, so the published held-out number understated the shipped band (78.91% vs
+    # 79.62% in EXP-0015). Score the SAVED table exactly as production will apply it.
+    from researcher.backtest import landed_engine as _le
+    _le._TABLE = json.load(open(TABLE_OUT, encoding="utf-8"))
+    cov = wsum = n = 0
+    for r in test:
+        if not r.get("area_sqft"):
+            continue
+        lo, hi = _le._band(r["pred"], r["n_comps"], r.get("property_type"),
+                           r["area_sqft"])
+        cov += lo <= r["actual"] <= hi
+        wsum += (hi - lo) / r["actual"]
+        n += 1
+    print(f"-> A5 (production _band, incl. big-plot widening): held-out coverage "
+          f"{cov / n:.4f}, width {wsum / n:.3f}  (n={n})")
 
 
 if __name__ == "__main__":

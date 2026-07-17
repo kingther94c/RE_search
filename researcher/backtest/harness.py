@@ -70,7 +70,11 @@ class WalkForwardResult:
 def walk_forward(store: TransactionStore, subjects: list[dict], methods: dict,
                  *, lag_days: int = 56, index: PriceIndex | None = None,
                  index_pub_lag_days: int = 35,
-                 max_subjects: int | None = None) -> WalkForwardResult:
+                 max_subjects: int | None = None,
+                 extra_ctx: dict | None = None, ctx_hook=None) -> WalkForwardResult:
+    """`extra_ctx` merges experiment knobs into every month's ctx; `ctx_hook(view, ctx)`
+    may return additions computed FROM THE AS-OF VIEW ONLY (e.g. a fitted local trend) —
+    the hook sees the same firewalled information set the methods do, nothing more."""
     index = index or PriceIndex.load()
     if max_subjects:
         subjects = subjects[:max_subjects]
@@ -89,6 +93,10 @@ def walk_forward(store: TransactionStore, subjects: list[dict], methods: dict,
         market = MarketView(view.txs, asof_ym)
         asof_q = index.as_of_quarter(t, index_pub_lag_days)
         ctx = {"asof_ym": asof_ym, "asof_date": t, "index": index, "asof_q": asof_q}
+        if extra_ctx:
+            ctx.update(extra_ctx)
+        if ctx_hook:
+            ctx.update(ctx_hook(view, ctx) or {})
         for subj in group:
             base = {k: subj.get(k) for k in _KEEP}
             base["actual"] = subj["price"]

@@ -28,7 +28,7 @@ from .index import PriceIndex
 from .landed_benchmarks import _tadj_psf, lb4_spatial_knn
 from .landed_candidates import (la1_pooled_anchor, lc2_fitted_curve, lease_compatible,
                                 remaining_lease)
-from .landed_engine import landed_engine
+from .landed_engine import landed_engine, shipped_time_ctx
 from .landed_size_curve import is_big_plot, size_factor
 from .market import MarketView
 from .store import LANDED_PSF_BAND, TransactionStore, months_between
@@ -53,10 +53,11 @@ class LandedSpec:
 
 
 def _landed_store(store=None):
+    # EXACTLY the backtest universe (is_pure_landed = Land + Terrace/Semi-D/Detached):
+    # production inference, comps AND the fitted local trend must see the same rows the
+    # walk-forward validated, or "shipped = backtested" quietly stops being true.
     s = store or TransactionStore.load()
-    return s.exclude_bulk().where(
-        lambda t: t["type_of_area"].lower() == "land"
-        and LANDED_PSF_BAND[0] <= t["psf"] <= LANDED_PSF_BAND[1])
+    return s.is_pure_landed().exclude_bulk().psf_band(*LANDED_PSF_BAND)
 
 
 def _infer(spec, store) -> dict | None:
@@ -141,9 +142,11 @@ def _adjusted_comp_psfs(subject, market, ctx) -> list[float]:
     for r in market.landed_on_street(subject["street"]):
         if r["property_type"] != subject["property_type"]:
             continue
+        if not (0 <= months_between(r["contract_ym"], asof_ym) < 60):
+            continue          # same 60mo window as the LC2 point — one comp universe
         if not lease_compatible(r, subject, asof_ym):
             continue
-        # use the SAME adjustment the point is built from (incl. the publication-lag drift),
+        # use the SAME adjustment the point is built from,
         # or the guidance and the exhibit silently drift apart from the estimate
         out.append(_tadj_psf(r, ctx) * size_factor(r["area_sqft"], area))
     return sorted(out)
@@ -168,7 +171,7 @@ def _street_ref(subject, market, ctx):
     if not sim:
         return None
     fresh = max(sim, key=lambda r: r["contract_ym"])
-    # same single adjustment path as the point/guidance (incl. the publication-lag drift)
+    # same single adjustment path as the point/guidance
     return {"contract_ym": fresh["contract_ym"], "area_sqft": fresh["area_sqft"],
             "raw_psf": fresh["psf"],
             "adj_psf": round(_tadj_psf(fresh, ctx)
@@ -185,6 +188,7 @@ def _comps(subject, market, ctx, n=8):
     area, asof_ym = subject["area_sqft"], ctx["asof_ym"]
     rows = [r for r in market.landed_on_street(subject["street"])
             if r["property_type"] == subject["property_type"]
+            and 0 <= months_between(r["contract_ym"], asof_ym) < 60
             and lease_compatible(r, subject, asof_ym)]
     ranked = sorted(rows, key=lambda r: (abs(_math.log(r["area_sqft"] / area)),
                                          -months_between("2000-01", r["contract_ym"])))
@@ -225,7 +229,11 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
         view = store.as_of(t, lag_days=lag_days)
     market = MarketView(view.txs, asof[:7])
     idx = PriceIndex.load()
-    ctx = {"asof_ym": asof[:7], "asof_date": t, "index": idx, "asof_q": idx.as_of_quarter(t)}
+    ctx = {"asof_ym": asof[:7], "asof_date": t, "index": idx, "asof_q": idx.as_of_quarter(t),
+           # L2b (EXP-0017): the observed local-trend bridge — fitted on THIS view, so a
+           # live valuation reads the freshest visible caveat months (in live mode the
+           # bridge reaches the current partial month; reconstruction stops at the lag).
+           **shipped_time_ctx(view.txs, asof[:7])}
 
     # CONDITION: the engine is condition-BLIND (URA carries none). There is no validated
     # condition effect yet (L2e backlog), so we must NOT shift the point or fake a band
@@ -351,9 +359,10 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
         # pretending to a calibrated probability.
         src = (f"p25/p75 of {len(adj)} lease-matched street prints, time+size-adjusted to "
                f"this plot — the cheap/dear END of what comparable plots ACTUALLY printed")
-        measured = ("Measured (EXP-0013): ~68-81% of real sales land above the p25 marker "
-                    "and ~33-40% above p75, drifting with the regime — evidence markers, "
-                    "NOT calibrated probabilities.")
+        measured = ("Measured (EXP-0013, re-measured under the L2b adjustment, EXP-0017): "
+                    "~73-83% of real sales land above the p25 marker and ~32-38% above "
+                    "p75, still drifting with the regime — evidence markers, NOT "
+                    "calibrated probabilities.")
         drift = (f" NOTE: {directional.split(' — ')[0]} — see the directional flag."
                  if directional else "")
         buyer = {"attractive_below": p25, "walk_away_above": p75,
@@ -419,12 +428,17 @@ def value_landed(spec: LandedSpec, store: TransactionStore | None = None,
             f"URA prices a LAND+BUILDING BUNDLE and carries no condition/GFA/geometry -> an "
             f"irreducible per-print noise floor of ~{NOISE_FLOOR.get(spec.property_type, DEFAULT_NOISE)*100:.0f}% "
             f"(EXP-0010, same-plot repeats). No model on this data can beat it.",
-            "Engine LV1 measured 9.3% median APE / 78.9% held-out band coverage "
-            "walk-forward landed resales (EXP-0012) — honest high-single-digit, not condo-grade.",
-            "REGIME BIAS (EXP-0014): the engine is unbiased in stable markets but runs LOW "
-            "when the market accelerates (actual exceeded the point ~50% of the time in "
-            "2023-24 but ~66% in 2025) — median APE is FLAT across regimes, so the error "
-            "is directional, not larger. In a hot market read the point as a FLOOR.",
+            "Engine LV1 measured 9.1% median APE / 78.9% held-out band coverage "
+            "walk-forward landed resales (EXP-0017) — honest high-single-digit, not condo-grade.",
+            "REGIME BIAS (EXP-0014, partially closed by EXP-0017): the engine is unbiased in "
+            "stable markets but runs LOW when the market accelerates. The L2b observed "
+            "local-trend bridge closed ~5pp of the ~16pp hot-regime excess (actual exceeded "
+            "the point ~66% of the time in 2025 before; ~60-62% now; stable regimes stay "
+            "~47-53%) — the residual did NOT meet the pre-registered 'fixed' bar and stays "
+            "disclosed. In a hot market still read the point as a FLOOR. (Live valuations "
+            "carry LESS residual staleness than this backtest bound: the bridge reads "
+            "caveats to the current month, the backtest reconstruction stops ~2 months "
+            "earlier.)",
             "The engine is CONDITION-BLIND and GEOMETRY-BLIND: it does not shift the point for "
             "condition (no validated effect — L2e backlog) and cannot see frontage/shape/"
             "corner/reserve at all. The band embeds AVERAGE condition ignorance because it is "

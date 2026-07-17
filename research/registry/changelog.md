@@ -5,6 +5,31 @@ impact · assets affected.
 
 ---
 
+## 2026-07-17 — L2b SHIPPED: observed local-trend bridge in the landed time adjustment (EXP-0016/0017)
+- **What:** LV1's time adjustment is now published-PPI-to-last-published-quarter **× an
+  OBSERVED bridge** from max(comp month, quarter midpoint) to the newest visible caveat
+  month — `local_trend.py`, an as-of two-way-FE monthly curve (ln psf ~ (street,type) +
+  month), 3-mo median smoothed, clamped, **never extrapolated**. One constructor
+  (`landed_engine.shipped_time_ctx`) feeds production, the harness default and the tests.
+  Conformal recalibrated; fingerprint extended to the FULL residual-determining file set
+  (the old 2-file set had a hole exactly where L2b operates). Guidance marker rates
+  re-measured under the shipped adjustment. Fable-review fixes in the same change: dead
+  `drift_factor` deleted from `index.py`, guidance/exhibit pools aligned to LC2's 60mo
+  window, `analyze_landed` A5 now scored through production `_band`.
+- **Why:** EXP-0016 refuted the cap hypothesis by measurement and located the regime bias
+  in publication staleness (~4.5mo) × market pace; GY-0003 already proved forecasts break
+  stable regimes — only an OBSERVATION can close the gap.
+- **Evidence:** walk-forward n=7,027 — median APE **9.34→9.05%**, hot-regime sign test
+  **66.3/66.5/60.4 → 60.8/62.1/59.6**, stable regimes 47.1-53.0 (unharmed), lag-stable,
+  bar cleared same-adjustment (LC1 10.45%), conformal held-out **78.9%** via production
+  band code. Pre-registered "fixed" bar (all regimes ∈[42,58]) **NOT met → the regime-bias
+  disclosure stays**, updated. Field catch: the first bridge double-counted fresh comps
+  (a subject's own same-month print +4%) — found on BOWMONT GARDENS live, fixed as the
+  per-comp anchor, regression-locked. 158 tests.
+- **Backtest impact:** all landed methods share `_tadj_psf`, so LB/LC/LA rows all move;
+  the leaderboard stays internally consistent. Condo untouched.
+- **Assets affected:** landed only. GY-0004 (cap widening), GY-0005 (lt_full) buried.
+
 ## 2026-07-16 — L1 landed baseline DONE — GL1 PASS: bar 10.5%, floor ~5.5-6% (EXP-0010)
 - **What:** the honest landed leaderboard (LB1-LB5 + LC1 craft port, walk-forward over
   7,027 resale pure-landed subjects, lag-stable) + the same-plot NOISE-FLOOR study.

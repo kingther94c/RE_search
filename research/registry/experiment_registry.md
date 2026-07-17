@@ -5,6 +5,122 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0017 — L2b VERDICT: the observed local-trend bridge ships (engine upgrade); the "fixed" bar is NOT met; two variants graveyarded (2026-07-17)
+- **Status: DONE. Verdict: ACCEPT-WITH-SCOPE for V2 "lt_tail" as an ENGINE change — LV1
+  9.34% → 9.05% median APE, hot-regime bias reduced ~5pp with zero stable-regime damage.
+  The pre-registered A1 ("bias fixed": every regime sign ∈[42,58]) FAILED — hot regimes
+  measure 59.6-62.1 — so the regime-bias DISCLOSURE STAYS, with updated numbers. V1 (cap
+  widening) → GY-0004; V3 (lt_full replacement) → GY-0005.**
+- **What V2 is:** `local_trend.py` — a month-granular ln-level curve fitted AS-OF each
+  valuation month from visible caveats only (two-way FE: ln psf ~ (street,type) + month;
+  alternating demeaning; 3-mo median smoothing; clamps at the fitted range — never
+  extrapolates). `_tadj_psf` bridges each comp from **max(comp month, published quarter's
+  midpoint)** to the newest fitted month, multiplying the capped PPI leg. One constructor
+  (`landed_engine.shipped_time_ctx`) feeds production, the harness default AND the tests —
+  the EXP-0015 "shipped ≠ backtested" class is now structurally impossible at this seam.
+- **Gates (pre-registered in EXP-0016 BEFORE any V-run):** A1 **FAIL** (2025H1 60.8, 2025H2
+  62.1, 2026H1 59.6 — target ≤58; so NO "fixed" claim anywhere). A2 PASS (stable four:
+  53.0/47.1/53.0/51.4, all inside [44,56]). A3 PASS (9.05 ≤ 9.49; actually beats the
+  shipped 9.34 by 0.29pp). A4 PASS (P90 0.288). A5 PASS (recalibrated conformal, held-out
+  **78.88%** through the PRODUCTION band code incl. big-plot widening). A6 PASS (lag 42/56
+  identical; 70d +0.05pp). Leaderboard same-adjustment: LV1 9.05% vs LC1 bar 10.45%.
+  **Design had ZERO tuning iterations against the test panel** — the bridge construction,
+  smoothing window and fit window were fixed a priori; the temptation to nudge smoothing
+  until 60.8→58 was explicitly refused (that would be selection on the validation set).
+- **A real defect caught by a FIELD case, not the backtest:** the first bridge implementation
+  anchored EVERY comp at the published quarter's midpoint — double-bridging comps newer than
+  it (the freshest, highest-weight prints; a subject's own same-month print came out +4%
+  above itself — BOWMONT GARDENS' 2026-07 S$14.00M caveat). The walk-forward had IMPROVED
+  anyway (the over-adjustment mimicked the missing hot-regime signal — a right-direction
+  wrong-mechanism artifact). Fixed to the per-comp anchor; hot-regime gains held (60.3/61.6
+  flawed → 60.8/62.1 corrected) and pooled medAPE improved further (9.09 → 9.05).
+  Regression-locked: `test_tadj_lt_tail_fresh_comp_is_not_double_bridged`.
+- **Field re-renders (live, corrected engine):** LOYANG RISE 1,635sf → **S$2.45M — exactly
+  on its 2026-05 size-twin print** (pre-L2b: S$2.38M). BOWMONT GARDENS 9,225sf → S$14.77M
+  vs its own 2026-07 print S$14.00M (+5.5%, inside the 8.2% detached noise floor; conf 45
+  case-tier; the flawed bridge had said 14.98). ALNWICK 2,800sf → S$5.22M, and it STOPPED
+  being a hard case (the bridge freshened the anchors; spread now <18%) — the suppression
+  test archetype moved to EMERALD HILL ROAD (conservation street, spread 33%, hard by
+  nature). AROOZOO 4,518sf → S$6.22M. CARDIFF GROVE still refuses (street_not_found → IS).
+- **Marker rates re-measured under the shipped adjustment** (`python
+  research/calibrate_landed_guidance.py`, sample default now 800 → 547 scored): ~73-83% of
+  sales land above p25, ~32-38% above p75; the regime drift REMAINS (p50 hit 53.1%
+  pre-2025H2 vs 67.2% after) — markers stay labelled as evidence, not probabilities.
+  T3 same-plot repeat signal MEASURED (not just the ~6.5/mo prior): median **24 pairs/mo**
+  — still under the ~30 an index needs; verdict "cross-check only" stands on the number.
+- **Residual bias, understood and disclosed:** the un-bridgeable tail is the caveat
+  visibility lag itself (~2-3 months in reconstruction; less live). 2026H1 illustrates why
+  no in-window trick closes it: the fitted curve's visible months were flat/falling while
+  the market re-accelerated intra-half — only fresher OBSERVATIONS (IS live pulls) can
+  shrink it further, not more model.
+- **Files:** `local_trend.py` (+`shipped_time_ctx`), `_tadj_psf` modes, harness
+  `extra_ctx`/`ctx_hook`, `run_landed --no-ltrend` ablation, conformal fingerprint extended
+  to the FULL residual-determining set (benchmarks+candidates+size_curve+local_trend — the
+  old 2-file set had a hole exactly where L2b operates), `analyze_landed` A5 now scored
+  through production `_band`. Scripts: `diagnose_l2b.py`, `run_l2b_variants.py`,
+  `validate_l2b_v2.py`, re-run `calibrate_landed_guidance.py`. Tests: 159 (8 new).
+- **HOSTILE REVIEW: PASS 8.4/10 (fresh reviewer, one round).** Every load-bearing number
+  reproduced exactly (baseline panel regenerated by a full independent V0 run; conformal
+  table regenerated BYTE-IDENTICAL from the dump; dump row-identical on 3 re-run months;
+  leakage + bridge + regime-cancellation attacks all failed; "A1 declared FAILED" called
+  the strongest honesty signal). Findings, all fixed in the acceptance commit: MAJOR-1 the
+  tree mutated mid-review (my docstring edit during the review — the reviewed object must
+  be frozen; fixed by committing, and next cycle the EXP gates get committed BEFORE the
+  first candidate run, which also answers MINOR-8 "pre-registration is asserted, not
+  provable"); MAJOR-2 the shipped marker rates needed an undocumented `800` arg (the
+  documented default gave p75 29.2%, OUTSIDE the quoted range — sample-size artifact;
+  default now 800 so the documented command reproduces the documented number); MINOR-3
+  p50 pre-2025H2 is 53.1 not 52.8; MINOR-4 T3 measured 24 pairs/mo (the ~6.5 prior was 4×
+  off; verdict unchanged); MINOR-5 sweep-coverage is 78.2% (a 78.4% typo lived only in the
+  review handoff) + 2024H2's 8.5% cap exposure now stated (strengthens GY-0004); MINOR-6
+  the observed bridge no longer silently drops when no quarter is published (latent);
+  MINOR-7 a live partial terminal month under 5 prints is dropped from the fit (the
+  backtest only ever validated complete months; min complete-month n=90); MINOR-9 the
+  2026H2 thin slice (n=28) is footnoted in the SKILL table instead of silently omitted.
+
+## EXP-0016 — L2b diagnosis: cap hypothesis REFUTED; the mechanism is staleness × market pace (2026-07-17)
+- **Status: DONE (diagnosis).** Hypothesis tested: the regime bias (sign 47.6-51.6% in
+  2023-24 → 66.3-66.5% in 2025) is **TIME_ADJ_CAP (0.80, 1.25) swallowing PUBLISHED index
+  growth** (the landed PPI moved ×1.335 2021Q3→2025Q4 — above the cap inside LC2's 60mo
+  window). The arithmetic was right and the hypothesis is still **REFUTED — this is why we
+  measure**: the 18mo recency half-life leaves almost no WEIGHT on comps old enough to bind.
+- **P1 (cap-bound weight inside LC2's own comp universe):** 2025H1 **0.0%**, 2025H2 3.1%,
+  2026H1 7.3% — and the HIGHEST exposure of all, **8.5%, sits in 2024H2, an UNBIASED
+  regime** (sign 50.1), which strengthens the refutation; mean capped-away effect ≤0.32% —
+  two orders of magnitude below the −4~5% medSigned bias. **P3 (counterfactual, full walk-forward):** cap 1.25→2.50 moves 2025H2
+  sign 66.5→66.1, medSigned −5.18→−5.11, everything else ~unchanged. **V1 (cap widening)
+  is DEAD as a fix** (kept only as an experiment knob).
+- **P2 — the real mechanism (measured):** the last PUBLISHED PPI quarter's midpoint is
+  **~4.5 months stale at EVERY valuation date** (uniform 4.4-4.6 across regimes). Staleness
+  is invisible when the market is flat (2024: +0.9%/yr → ~0.3%) and is exactly the observed
+  bias when it runs (2025: +7.6%/yr × ~4.5-5.5mo ≈ **3.2-3.5%**, vs measured medSigned
+  −4.2~−5.2%). This also explains GY-0003 cleanly: a TRAILING-4Q extrapolation is late at
+  every turn — it pushed 2022's rise into flat 2023-24 (breaking them) and 2025's rise into
+  falling 2026Q1 (overshooting). Staleness must be closed with an **OBSERVATION** — visible
+  caveats reach ~asof−2mo (56d-lag reconstruction) and ~asof (live) — not a forecast.
+- **Baseline regime panel (full n=7,027 run, for EXP-0017 comparison):** sign 51.6 / 47.6 /
+  49.6 / 50.1 / 66.3 / 66.5 / 60.4 (2026H1, n=1,162) / 60.7 (2026H2, n=28); pooled 9.34%
+  median APE, P90 0.287.
+- **PRE-REGISTERED acceptance criteria for ANY L2b fix (fixed BEFORE reading P3/EXP-0017
+  results; validated on the walk-forward regime panel, never APE alone):**
+  - **A1** every half-year regime sign test ∈ [42, 58] (baseline worst: 66.5);
+  - **A2** no regime that sat in [47, 53] at baseline leaves [44, 56] (the GY-0003 failure
+    mode — breaking already-unbiased regimes — is an automatic REJECT);
+  - **A3** pooled median APE ≤ 9.49% (no worse than +0.15pp vs the shipped 9.34%);
+  - **A4** pooled P90 APE ≤ baseline + 0.02;
+  - **A5** conformal recalibrated (fingerprint) with held-out coverage ∈ [75, 85]%;
+  - **A6** lag-stability: median APE at lag 42/70 within ±0.3pp of lag 56.
+  - **Selection rule:** the SIMPLEST variant passing A1-A6 ships (guardrail 4); ties break
+    on max|sign−50| across 2025H1/2025H2/2026H1. If nothing passes → graveyard the variants,
+    keep the disclosure (EXP-0014's stance stands).
+- **Candidate ladder (EXP-0017, simplest first):** V1 = cap treatment only (published factor
+  is an OBSERVATION; keep only a wide data-error guard). V2 = V1 + fitted local trend as an
+  OBSERVATION-ONLY bridge from the published quarter's midpoint to the newest VISIBLE caveat
+  month (`local_trend.py`: two-way FE ln(psf) ~ (street,type) + month, alternating demeaning,
+  3-mo median smoothing, clamps — never extrapolates). V3 = fitted local trend as the whole
+  adjustment (PPI unused; sanity clamp only). T3 (same-plot repeat signal as an index) is
+  measured for feasibility only (expected too thin: ~6.5 pairs/mo).
+
 ## EXP-0015 — L4 ACCEPTED: hostile review PASS 8.05, GL4 MET (2026-07-17)
 - **Status: DONE. `landed-valuation` SHIPPED. GL4 PASS.** Six hostile rounds, fresh reviewer
   each: **6.9 → 7.05 → 7.8 → 7.55 → 6.65 → 8.05 PASS** (zero blockers, every dimension ≥7.0).

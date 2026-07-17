@@ -46,24 +46,60 @@ def _pct(vals: list[float], q: float) -> float:
 
 
 def _tadj_psf(c: dict, ctx) -> float:
-    """Time-adjust a comp's land-psf to the last PUBLISHED index quarter (35d pub lag), capped.
+    """Time-adjust a comp's land-psf: published landed PPI to the last PUBLISHED quarter
+    (35d pub lag), capped — PLUS, when ctx carries the shipped L2b configuration
+    (`landed_engine.shipped_time_ctx`), an OBSERVED local-trend bridge from that quarter's
+    midpoint to the newest visible caveat month ("lt_tail", EXP-0017).
 
-    NO momentum extrapolation. A trailing-trend `drift_factor` was tried to close the ~1-2
-    quarters of publication staleness and is REJECTED (GY-0003): sliced BY REGIME it broke
-    the periods that were already unbiased (2023H1 sign test 51.6%->41.6%, 2023H2 47.6%->37.6%,
-    2024H2 50.1%->44.7%) while barely moving the accelerating regime it targeted (2025H2
-    66.5%->67.1%, worse) and costing median APE (9.34%->9.49%). Its pooled "51.7% = unbiased"
-    was a HIGH bias cancelling a LOW one — no regime measured 50%. It also projected momentum
-    against the latest observation (2026Q1 landed PPI FELL 0.40%).
+    NO forecasts, ever. What died here, in order:
+      - GY-0003 `drift_factor` (trailing-index momentum): broke the four already-unbiased
+        regimes (2023H1 51.6->41.6 ... 2024H2 50.1->44.7) while worsening its target
+        (2025H2 66.5->67.1) — a trailing trend is late at every turn.
+      - GY-0004 cap widening: the published PPI moved x1.335 2021Q3->2025Q4 (over the
+        x1.25 cap inside LC2's 60mo window) but the 18mo recency half-life leaves ~0-7%
+        of comp WEIGHT on comps old enough to bind — counterfactual moved nothing.
+      - GY-0005 "lt_full" (fitted caveat trend replacing the PPI outright): pooled numbers
+        looked better but it broke 2023H1 (51.6->43.4) — the monthly caveat curve is
+        noisier than the stratified official index on the LONG span.
+    What shipped (EXP-0017 "lt_tail"): PPI stays the long-span backbone; the fitted local
+    trend (local_trend.py, as-of two-way FE, clamped, never extrapolated) closes ~2 of the
+    ~4.5 months of publication staleness WITH OBSERVATIONS, each comp bridged from
+    max(its own month, the published quarter's midpoint) — a fresh comp must not be
+    double-bridged. Regime panel: stable half-years stay 47.1-53.0; hot regimes improve
+    66.3/66.5/60.4 -> 60.8/62.1/59.6; pooled median APE 9.34% -> 9.05%. The residual
+    hot-regime bias (~-3.9% medSigned) did NOT meet the pre-registered "fixed" bar (all
+    regimes in [42,58]) and stays DISCLOSED: in an accelerating market the point still
+    reads as a floor.
 
-    The residual is REGIME-dependent and is DISCLOSED, not papered over: a comp-based estimate
-    structurally lags an accelerating market. The proper fix is a fitted LOCAL trend (L2b),
-    not an index momentum hack — see the roadmap backlog."""
+    ctx knobs (defaults with a bare ctx = PPI-only, for ablations):
+      - ctx["ltrend"] + ctx["tadj_mode"]="lt_tail": the shipped bridge (above).
+      - ctx["tadj_mode"]="lt_full": REJECTED, kept for experiments (GY-0005).
+      - ctx["tadj_cap"]: (lo, hi) clamp on the published factor (data-error guard;
+        widening it is NOT a bias fix, GY-0004).
+    """
     idx, to_q = ctx["index"], ctx["asof_q"]
+    lt, mode = ctx.get("ltrend"), ctx.get("tadj_mode")
+    if lt is not None and mode == "lt_full":
+        f = lt.factor(c["contract_ym"], ctx["asof_ym"])
+        return c["psf"] * min(max(f, 0.50), 2.00)       # data-error guard only
     if not to_q:
+        # no published index yet — the OBSERVED bridge needs none: anchor at the comp's
+        # own month (unreachable on the current store's subject window; latent-consistency
+        # fix from the L2b hostile review)
+        if lt is not None and mode == "lt_tail":
+            return c["psf"] * lt.factor(c["contract_ym"], ctx["asof_ym"])
         return c["psf"]
-    f = idx.factor(c["contract_ym"], to_q, "landed")
-    return c["psf"] * min(max(f, TIME_ADJ_CAP[0]), TIME_ADJ_CAP[1])
+    cap = ctx.get("tadj_cap", TIME_ADJ_CAP)
+    f = min(max(idx.factor(c["contract_ym"], to_q, "landed"), cap[0]), cap[1])
+    if lt is not None and mode == "lt_tail":
+        # PER-COMP anchor: a comp NEWER than the published quarter's midpoint is already
+        # at (or past) that level and the PPI leg was ~1.0 — bridging it from the quarter
+        # mid would DOUBLE-COUNT the recent move on exactly the comps that carry the most
+        # recency weight (caught live: a subject's own same-month print was pushed +4%).
+        y, q = int(to_q[:4]), int(to_q[-1])
+        anchor = max(c["contract_ym"], f"{y}-{q * 3 - 1:02d}")
+        f *= lt.factor(anchor, ctx["asof_ym"])       # observed bridge, never a forecast
+    return c["psf"] * f
 
 
 def _recent(rows, ctx, window=WINDOW_MO):

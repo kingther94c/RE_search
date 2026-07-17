@@ -8,14 +8,14 @@ description: Use to value a specific Singapore LANDED house (terrace / semi-deta
 ## When to use
 Put a defensible market value on a specific SG landed property. The engine is
 **quant-validated**: time-consistent walk-forward on 7,027 landed resales gives
-**~9.3% median APE / 78.9% held-out band coverage / 100% answer rate**
-(research/registry/ EXP-0010/0011/0012).
+**~9.1% median APE / 78.9% held-out band coverage / 100% answer rate**
+(research/registry/ EXP-0010/0011/0012/0017).
 
 **Read this number honestly.** Landed accuracy is structurally worse than condo's 3.7%,
 and that is not a defect: URA prices a **LAND+BUILDING BUNDLE** and carries no condition,
 GFA, age or plot geometry. Same-plot repeat sales put an **irreducible noise floor of
 ~6% (terrace) / ~7.8% (semi-D) / ~8.2% (detached, thin: n=17 pairs) per print**
-(EXP-0010). At 9.3% the engine is within ~3pp of the floor — most of the remaining error is *unobservable from
+(EXP-0010). At ~9.1% the engine is within ~3pp of the floor — most of the remaining error is *unobservable from
 bulk data*, not modelling slack. **Never promise condo-grade precision on landed.**
 
 ## Inputs
@@ -44,34 +44,50 @@ explicit past `--asof` reconstructs what was knowable then (56d caveat lag).
   (street FE, n=10,399): elasticity is **−0.51 to −0.64 below 5k sqft** but **collapses to
   ~−0.2 above 8k**. Economically: small terraces trade on QUANTUM (extra land ≈ free);
   big plots trade on LAND (每 sqft 计价). Applying one constant to both is what made the old
-  method explode: **LV1 (what you actually get) measures 11% @8-15k and 20% @15k+, vs LC1's
-  24% / 41%.** (The prettier 11%/17% belongs to LC2, which declines ~29% of 15k+ subjects;
+  method explode: **LV1 (what you actually get) measures ~11% @8-15k and ~21% @15k+ (n=49),
+  vs LC1's 24% / 41%.** (LC2 alone looks prettier because it declines ~29% of 15k+ subjects;
   LV1 answers 100% by picking those up on the pooled anchor, at somewhat worse error.)
 - **Lease matching is mandatory, not a nicety.** L1's decisive failure: spatial kNN priced
   ~20-year-left 99yr terraces off freehold neighbours — **median APE 232%**. Quasi-freehold
   (FH/999yr) and real leasehold are NEVER comparable; leaseholds must be within ±25y of
   remaining lease.
+- **Time adjustment = published PPI + an OBSERVED bridge (EXP-0017).** Comps ride the
+  official landed PPI to the last published quarter — whose midpoint is **~4.5 months
+  stale at every valuation date** — then a **fitted local trend** (`local_trend.py`:
+  as-of two-way FE on ln psf ~ (street,type)+month) bridges each comp from
+  **max(its own month, the quarter's midpoint)** to the newest *visible* caveat month
+  (per-comp anchor — a fresh comp must not be double-bridged). Observations only, never a
+  forecast: three forecast/replacement variants are in the graveyard (GY-0003/0004/0005).
+  Live valuations read the freshest months automatically.
 - **Range = split-conformal** per (street-liquidity × type) cell, calibrated on an earlier
-  slice, validated **78.9%** held-out. It is the ENGINE'S predictive error — not a
-  negotiation target.
+  slice, validated **78.9%** held-out through the production band code. It is the ENGINE'S
+  predictive error — not a negotiation target.
 - **Confidence** is MOTIVATED BY the measured error curve (street depth, method spread,
   big-plot) — an ordering, not a fitted probability — and the label carries the bundle noise
   floor that caps achievable precision.
 
 ## The regime-dependent bias — READ THIS BEFORE QUOTING THE POINT
-The engine is **unbiased in stable markets and runs LOW when the market accelerates**
-(EXP-0014, sign test = % of actual sales above the point; 50% = unbiased):
+The engine is **unbiased in stable markets and runs LOW when the market accelerates**.
+The L2b observed bridge (EXP-0017) closed **~5pp of the ~16pp hot-regime sign-test
+excess**; the residual did **not** meet the pre-registered "fixed" bar and stays disclosed
+(sign test = % of actual sales above the point; 50% = unbiased):
 
 | regime | 2023H1 | 2023H2 | 2024H1 | 2024H2 | 2025H1 | 2025H2 | 2026H1 |
 |---|---|---|---|---|---|---|---|
-| sign test | 51.6% | 47.6% | 49.6% | 50.1% | **66.3%** | **66.5%** | **60.4%** |
-| median APE | 9.3% | 9.0% | 10.0% | 8.4% | 9.4% | 9.7% | 9.2% |
+| sign test (shipped, EXP-0017) | 53.0% | 47.1% | 53.0% | 51.4% | **60.8%** | **62.1%** | **59.6%** |
+| — pre-L2b (EXP-0014) | 51.6% | 47.6% | 49.6% | 50.1% | 66.3% | 66.5% | 60.4% |
+| median APE | 9.1% | 8.9% | 10.1% | 8.2% | 9.0% | 9.5% | 9.2% |
 
-**Median APE is flat across every regime while the bias swings ~19pp** — a comp-based
-estimate structurally lags an accelerating market. In a hot market treat the point as a
-**floor**, not a centre. An index-momentum correction was tried and REJECTED (GY-0003): it
-broke the regimes that were already unbiased. The proper fix is a fitted local trend (L2b,
-backlog) — until then this is disclosed, not corrected.
+*(2026H2 omitted: n=28 — too thin to read; it measures 46.4% under the shipped engine vs
+60.7% pre-L2b.)*
+
+**Median APE is flat across every regime while the bias still swings ~15pp** — a comp-based
+estimate structurally lags an accelerating market; the un-bridgeable tail (newest visible
+caveat month → the sale, ~2-3 months in this backtest, less on a live run) is where the
+residual lives. In a hot market treat the point as a **floor**, not a centre. Three
+mechanical "fixes" are in the graveyard: index-momentum extrapolation (GY-0003, broke the
+unbiased regimes), cap widening (GY-0004, the exposure was ~zero), full PPI replacement
+(GY-0005, broke 2023H1). Only the observed bridge survived its regime panel.
 
 ## Scope limits (declare them, don't paper over)
 - **≥8k sqft plots**: EXP-0011 found the size curve is *worst identified* exactly where the
@@ -96,12 +112,13 @@ backlog) — until then this is disclosed, not corrected.
   **Seller:** ask `= p75`, expected clear `= point`, quick sale `= p25`.
   *Deriving thresholds from the band instead made 72% of asks land above every comp on the
   subject's own page — a guardrail built from engine ignorance cannot bind.*
-- **These are evidence MARKERS, not calibrated probabilities** (EXP-0013, 627 as-of-firewalled
-  resales): ~68-81% of real sales land above the p25 marker and ~33-40% above p75, and the
-  rate **drifts with the regime** (p50 → 50.8% on 2024-2025H1 vs 62.6% on 2025H2+ — the
-  index-based time adjustment lags an accelerating market). We tried to re-cut the upper
-  marker to deliver a true 25%; **it did not transfer out-of-sample**, so the markers ship
-  with their measured rates rather than a fabricated "quartile" claim.
+- **These are evidence MARKERS, not calibrated probabilities** (EXP-0013; re-measured under
+  the shipped L2b adjustment in EXP-0017 — `python research/calibrate_landed_guidance.py`,
+  547 as-of-firewalled resales): **~73-83% of real sales land above the p25 marker and
+  ~32-38% above p75**, and the rate **still drifts with the regime** (p50 → 53.1%
+  pre-2025H2 vs 67.2% after — the residual hot-market lag, see the regime table). We tried
+  to re-cut the upper marker to deliver a true 25%; **it did not transfer out-of-sample**,
+  so the markers ship with their measured rates rather than a fabricated "quartile" claim.
 - **Guidance is SUPPRESSED** (with the reason) when the evidence can't carry quartiles:
   ≥8k plot, pooled fallback, hard case, confidence <55, or <4 lease-matched prints.
   `directional_flag` does not suppress — it annotates *expected clear*, since the quartiles
@@ -123,17 +140,22 @@ layer; this one does not duplicate it.** For a real bid, run both.
 - Pooled fallback used → confidence ≤40; don't offer on the number alone.
 
 ## Reliability / regression
-`tests/test_landed.py` — size-curve continuity/regimes, the lease-matching guard (the 232%
-fix), big-plot scope limit, guidance separation, and the Cardiff escalation. **Rerun on every
-engine change; the conformal table is fingerprinted against the point code, so changing LC2
-or the curve without recalibrating turns the suite RED.**
+`tests/test_landed.py` + `tests/test_local_trend.py` — size-curve continuity/regimes, the
+lease-matching guard (the 232% fix), big-plot scope limit, guidance separation, the Cardiff
+escalation, and the trend estimator (mix-robustness, no-extrapolation). **Rerun on every
+engine change; the conformal table is fingerprinted against the FULL residual-determining
+code (`landed_benchmarks` + `landed_candidates` + `landed_size_curve` + `local_trend`), so
+changing the point OR the time adjustment without recalibrating turns the suite RED.** The
+harness default (`run_landed`) IS the shipped configuration; `--no-ltrend` is the ablation.
 
 ## Related
 - `researcher/backtest/value_landed.py` — this skill's engine room
-- `researcher/backtest/landed_engine.py` (LV1) · `landed_candidates.py` (LC2/LA1 + lease)
-  · `landed_size_curve.py` (EXP-0011) · `landed_benchmarks.py` (the L1 bar)
+- `researcher/backtest/landed_engine.py` (LV1 + `shipped_time_ctx`) · `landed_candidates.py`
+  (LC2/LA1 + lease) · `landed_size_curve.py` (EXP-0011) · `landed_benchmarks.py` (the L1
+  bar + time adjustment) · `local_trend.py` (the L2b observed bridge, EXP-0017)
 - `research/fit_land_size_curve.py` · `research/analyze_landed.py` (conformal) ·
-  `research/landed_noise_floor.py`
-- `research/registry/` — EXP-0009..0012, the graveyard, the roadmap's L-track
+  `research/landed_noise_floor.py` · `research/diagnose_l2b.py` (EXP-0016) ·
+  `research/run_l2b_variants.py` / `research/validate_l2b_v2.py` (EXP-0017)
+- `research/registry/` — EXP-0009..0017, the graveyard, the roadmap's L-track
 - `landed-property-due-diligence` (verification) · `landed-area-research` (area layer) ·
   `screen-landed-listings` (listing layer)

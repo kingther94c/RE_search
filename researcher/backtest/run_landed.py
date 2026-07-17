@@ -19,7 +19,7 @@ import os
 from .harness import walk_forward
 from .landed_benchmarks import LANDED_BENCHMARKS
 from .landed_candidates import LANDED_CANDIDATES
-from .landed_engine import LANDED_ENGINE
+from .landed_engine import LANDED_ENGINE, shipped_time_ctx
 from .store import LANDED_PSF_BAND, TransactionStore
 
 _OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results_landed.json")
@@ -48,6 +48,8 @@ def main() -> None:
     ap.add_argument("--slices", action="store_true", help="standard GL1 slice panel")
     ap.add_argument("--dump", default=None, help="save all per-subject rows to JSON path")
     ap.add_argument("--method", default="LB2_street_district_pooled")
+    ap.add_argument("--no-ltrend", action="store_true",
+                    help="ablation: drop the shipped L2b local-trend bridge (EXP-0017)")
     args = ap.parse_args()
 
     store = (TransactionStore.load().is_pure_landed().exclude_bulk()
@@ -63,9 +65,14 @@ def main() -> None:
         print("no subjects — is the store populated and the date window sane?")
         return
 
+    # DEFAULT = the SHIPPED configuration (EXP-0017 lt_tail). The harness must backtest
+    # what production runs — a default that silently diverges from `value_landed` is the
+    # EXP-0015 "shipped point was not the backtested point" failure at the harness level.
+    hook = (None if args.no_ltrend else
+            (lambda view, ctx: shipped_time_ctx(view.txs, ctx["asof_ym"])))
     res = walk_forward(store, subjects,
                        {**LANDED_BENCHMARKS, **LANDED_CANDIDATES, **LANDED_ENGINE},
-                       lag_days=args.lag_days, max_subjects=args.max)
+                       lag_days=args.lag_days, max_subjects=args.max, ctx_hook=hook)
     print("\n=== landed benchmark leaderboard (sorted by median APE) ===")
     print(res.table())
 

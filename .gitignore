@@ -34,6 +34,7 @@ research/ura_cache/
 researcher/backtest/results_condo.json
 researcher/backtest/results_landed.json
 researcher/backtest/rows_landed_*.json
+research/rows_*.json
 # generated HTML reports — regenerable artifacts, never source. Every builder writes here
 # AND syncs to G:\My Drive\004 RES\REsearch_Reports (deliverables/report_out.py).
 # They used to fall back into the TRACKED deliverables/ when the Drive was unmounted,

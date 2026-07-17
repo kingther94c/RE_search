@@ -9,7 +9,7 @@ work its plan. Amend via changelog, not silently._
 
 | Track | Status |
 |---|---|
-| **Landed (L0–L4)** | **COMPLETE — `landed-valuation` SHIPPED (GL0/GL1/GL2/GL3/GL4 all PASS).** Engine LV1: 9.34% median APE / 100% coverage / 78.9% held-out band (vs the L1 bar 10.5%). Hostile review **PASS 8.05** after 6 rounds (EXP-0009..0015). Open + disclosed: **L2b fitted local trend** (the regime bias) is the highest-value next module |
+| **Landed (L0–L4 + L2b)** | **COMPLETE — `landed-valuation` SHIPPED (GL0/GL1/GL2/GL3/GL4 all PASS; hostile review PASS 8.05, EXP-0009..0015). L2b LANDED (EXP-0016/0017):** engine LV1 now **9.05% median APE / 100% coverage / 78.9% held-out band** (bar 10.45 same-adjustment). The observed local-trend bridge closed ~5pp of the ~16pp hot-regime sign-test excess with zero stable-regime damage; the pre-registered "fixed" bar was NOT met → the regime-bias **disclosure stays** (hot regimes ~60-62% vs 47-53% stable). Residual = the caveat-visibility lag itself → shrinks further only via fresher observations (IS live pulls, R4), not more model. GY-0004/0005 buried |
 | Condo resale | **SHIPPED & FROZEN** — `condo-resale-valuation` accepted (PASS 8.7/10; engine v2.1: 3.71% median APE / 100% coverage / ~82–85% held-out interval). Backlog below; nothing ships without its gate |
 | New launch (was R7) | PARKED (plan preserved below) |
 | IS calibration bridge (was R4) | PARKED — becomes relevant again for condo hard-cases and landed condition evidence |
@@ -142,16 +142,19 @@ to a verdict (ACCEPT / ACCEPT-WITH-SCOPE / MONITOR / REJECT → graveyard).
   same-street near-simultaneous different-size pairs + a pooled hedonic cross-check. A
   1,600 sqft terrace plot must never price a 7,000 sqft detached (the condo shoebox lesson,
   transposed). Kills or scopes "flat average land psf" with numbers (mandate 6c).
-- **L2b Time adjustment — RE-OPENED (EXP-0014), and now the HIGHEST-VALUE open landed
-  module.** It was closed in L1 on the WRONG METRIC: "regime slices are flat" was true of
-  **APE** (8.4-10.0% across every half-year) while the **SIGN TEST** in those same slices
-  swings **47.6% → 66.5%** — the engine is unbiased in stable markets and ~15pp low when the
-  market accelerates. An index-momentum hack was tried and REJECTED (GY-0003: it broke the
-  regimes that were already unbiased). The proper fix is a **fitted LOCAL trend**, validated
-  by the regime sign test — never by APE alone. Candidates: island landed PPI vs segment
-  sub-indices vs local fitted trend vs the same-plot repeat-sales signal. Hypothesis from the
-  factor study (asymmetric capture 0.95/0.74): landed lags downside — test, don't assume.
-  Until it lands, the regime bias ships as a DISCLOSURE (SKILL + every report).
+- **L2b Time adjustment — DONE (EXP-0016 diagnosis + EXP-0017 verdict, 2026-07-17).**
+  History: closed in L1 on the WRONG METRIC (flat **APE** hid a **sign test** swinging
+  47.6→66.5); re-opened after EXP-0014. Diagnosis REFUTED the cap-binding hypothesis by
+  measurement (GY-0004) and located the mechanism: **published-quarter staleness (~4.5mo
+  at every valuation date) × market pace**. Verdict: the **observed local-trend bridge**
+  (`local_trend.py`, as-of two-way FE; per-comp anchor max(comp month, quarter mid) →
+  newest visible month; never extrapolates) SHIPPED as an engine upgrade — 9.34→9.05%
+  median APE, hot regimes 66.3/66.5→60.8/62.1, stable regimes unharmed. The pre-registered
+  "fixed" bar (all regimes ∈[42,58]) was NOT met → **disclosure stays**. Full replacement
+  of the PPI by the fitted curve REJECTED (GY-0005: broke 2023H1 — long-span noise).
+  Same-plot repeat signal measured too thin for an index (median 24 pairs/mo). The residual
+  bias is the **caveat-visibility lag itself** — the R4 IS bridge (fresher live data) is
+  the only remaining lever; in-window modelling is exhausted.
 - **L2c Retrieval/pooling:** spatial-kNN vs street-cluster (enclave) pooling weights;
   validated ONLY through backtest accuracy (geography earns its keep via retrieval, never
   via clustering scores).
