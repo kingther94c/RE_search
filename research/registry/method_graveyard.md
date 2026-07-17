@@ -102,5 +102,33 @@ Format per entry:
   on stable years AND a regime panel shows no stable-regime damage — i.e. the long-span
   noise problem is actually solved, not re-hidden in a pooled number.
 
+### GY-0006 — Resolving an address's URA street by NEAREST STREET CENTROID (landed, 2026-07-17)
+- **Claim it made:** EXP-0018 proved URA files small roads under a parent street, and URA's
+  landed caveats carry one SVY21 x/y per street. So an address whose own road has no URA
+  caveats (the `street_not_found` class) could be resolved automatically to the nearest URA
+  landed street centroid — geocode the address (OneMap returns SVY21), take the nearest of
+  the 778 street points, done. No hand-built alias map.
+- **How tested:** built it, then scored it against the only two roads whose parent is KNOWN
+  from transaction evidence (EXP-0018).
+- **Why rejected:** it is **right by luck and wrong in silence**. 43 LOYANG VIEW → LOYANG RISE
+  at 189m (correct). **19 CARDIFF GROVE → CHUAN DRIVE at 158m — wrong, and not close: the
+  proven parent, ALNWICK ROAD, ranks #17 at 710m**, with 16 nearer streets, several in a
+  DIFFERENT ESTATE (Lorong Chuan). It would have priced a Serangoon Garden 999-yr house off
+  Chuan Drive comps at high confidence.
+- **Why the premise was wrong:** the mechanism is not "URA merges *adjacent* roads". URA's
+  landed `street` is **the DEVELOPMENT's registered street** (landed project names are
+  anonymised to "LANDED HOUSING DEVELOPMENT" — the street is what survives), and an estate's
+  roads can sit 650m+ from the one it is filed under. Proximity does not imply the same URA
+  bucket, and the same bucket does not imply proximity. Corroborated on the subject of the
+  #19 craft study: 19 Cardiff Grove (1,839.57 sqft, sold 2023-03 $4.15M) appears in URA as an
+  ALNWICK ROAD Terrace, 1,840 sqft, 2023-03, $4,150,000.
+- **Scope of the rejection:** geometry as an AUTOMATIC resolver. Distance is still fine as a
+  *display* hint or a sanity check on a resolution obtained some other way.
+- **Do not resurrect unless:** the resolution is evidence-based — the honest resolver matches
+  an address's ACTUAL transactions (from Investment Suite, which alone knows addresses)
+  against URA buckets on month+price+area, which is how ALNWICK ROAD was established in the
+  first place. That costs one IS harvest per road; a wrong parent is worse than a refusal, so
+  the engine refuses rather than guesses (L2f).
+
 **Watch-list (tested, retained as benchmarks, not yet buried):** none outstanding — the two
 proxy methods the user flagged are now measured and filed above.

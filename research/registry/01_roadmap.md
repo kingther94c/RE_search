@@ -172,7 +172,17 @@ to a verdict (ACCEPT / ACCEPT-WITH-SCOPE / MONITOR / REJECT → graveyard).
   improve or hurt LC2? — thinner but purer pools, and L1 already showed even 1-2 same-street
   comps beat cross-street pools; (b) **the `street_not_found` refusal is a naming failure and
   is fixable today** by resolving the parent street (Cardiff Grove → ALNWICK ROAD), which
-  turns a dead end into a valuation. Also unlocks an EXACT per-address same-plot matcher
+  turns a dead end into a valuation — **DONE** for the report path (`street_alias.py`,
+  evidence-only, refuses when unknown; GY-0006 buried the geometric shortcut).
+  **(a) is no longer hypothetical — the first evidence is in, and it says the pool DOES mix
+  sub-markets:** on 19 Cardiff Grove the ALNWICK bucket's own p25/p75 give a buy-below of
+  **S$3.87M** while Cardiff Grove's ORIGINAL stock prints **$1,767-1,946/psf ≈ S$3.25-3.58M**
+  (the bucket's freshest "comparable" print adjusts to 3,175 psf — *above Cardiff Grove's
+  all-time maximum of 2,847*, and it is not on that road). The point itself looks sound
+  (engine 2,312 psf vs the road's own 2024+ same-size median 2,326) — it is the
+  **distribution-derived guidance and the freshest-print flag that break**, so the full report
+  suppresses both on alias-resolved streets pending this module. Next concrete step: harvest
+  ALNWICK ROAD from IS, split the bucket by real road, and backtest LC2 split-vs-pooled. Also unlocks an EXACT per-address same-plot matcher
   (today's keys on `(street, area, type)`, EXP-0009). Cost: an IS harvest per street — so
   scope it to streets that matter (refusals + thin/mixed streets), not the island.
 - **L2e Improvement-contribution bounds (the identification problem):** residuals vs the

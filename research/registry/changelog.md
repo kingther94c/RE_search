@@ -5,6 +5,33 @@ impact · assets affected.
 
 ---
 
+## 2026-07-17 — 新交付:地址 → 中文全面报告(估值 + DD 合流),并在成品里抓到一个会让人买贵的错误
+- **What:** `deliverables/build_landed_full_report.py` — 一个地址进,一份**中文为主、详略分层**
+  (结论 → 关键数据 → 证据 → 局限,用 `<details>` 折叠)的 HTML 出,把两条本来分开的链子接起来:
+  DD 链(OneMap/MP2025/PUB)给地理、地块面积、分区、学校、水浸;引擎 LV1 给公允价、区间、可比、
+  指导。新增 `researcher/landed/street_alias.py`(**只认证据**的地址路名→URA街道解析,未知即拒答)。
+  报告层用引擎的**结构化字段**重新渲染中文叙述(不改引擎的英文串——它有回归测试和别的调用方),
+  引擎原文折叠备查。`report_out` 统一了 stdout 的 UTF-8(中文报告的 print 会在 cp1252 控制台上
+  炸掉——文件已写出、进程却死了,调用方以为失败)。
+- **Why:** 用户指出这是最常见的任务形态:给一个 landed 地址,要一份含估值和 DD 的全面分析。
+- **它立刻解锁了一个此前拒答的类别:19 CARDIFF GROVE → S$4.25M**(经证据支撑的母路 ALNWICK ROAD,
+  n=201),而昨天它还是 `street_not_found`。与 #19 craft 研究(PASS 8.5,$2,075psf/S$3.82M)相差
+  +11%,而这个差**正好是 condition**:同尺寸同期,Cardiff Grove 原装房 $1,767-1,946psf、翻建房
+  $2,327-2,848psf —— 引擎是 condition-blind 的,它自己的 note 早就说「对原装房这个点可能是天花板」。
+  两者都没错,分歧被解释掉了。
+- **成品里抓到的错误(报告层新增两道闸):** 别名解析出的 URA 桶**混着别的路**,于是
+  (1) 引擎的 p25/p75 门槛给出「积极买入 < S$3.87M」,而本路原装房成交在 S$3.25-3.58M —— **照它买会
+  买贵**;(2)「最新同街可比」是一笔调整后 3,175 psf 的成交,**高过 Cardiff Grove 历史最高价
+  2,847**,而且它根本不在这条路上,却驱动了一句「把点估值当地板读」的方向性建议 —— 与同一份报告里
+  「对原装房这个点是天花板」直接矛盾。**别名街道现在一律抑制议价门槛与方向性提示**,并给出该怎么
+  正确解决(用 IS 拉本路自己的分布)。点估值保留(它是引擎在该桶上验证过的输出)。
+- **Evidence:** 两个真实地址端到端跑通(19 Cardiff Grove 别名路径;385 Loyang Rise 直连路径,
+  且 MP2025 宗地反推的 1,645sf 与 IS 页面的 `Land Size: 1645.82 sqft` 吻合 —— 地块面积链交叉验证)。
+  9 个接缝测试锁住解析与两道闸;222 tests pass。
+- **Backtest impact:** 无(报告层与解析层,引擎未动)。**L2f 由此从假设升级为有实证的模块**:
+  桶内确实混着不同价位的子市场。
+- **Assets affected:** landed(新交付 + 一个拒答类别解锁)。
+
 ## 2026-07-17 — R4a: our "fresher data" claim STRUCK; URA's "street" turns out to be a parent label (EXP-0018)
 - **What:** first measured comparison of Investment Suite against the URA API spine.
   New: `research/harvest_street_sale.py` (the landed STREET path — no existing harvester

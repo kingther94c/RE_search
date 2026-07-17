@@ -26,7 +26,16 @@ from __future__ import annotations
 
 import os
 import shutil
+import sys
 from dataclasses import dataclass
+
+# Report builders print a summary line, and reports are increasingly Chinese-primary — but a
+# Windows console is cp1252, so the first CJK character in a print() kills the run AFTER the
+# report was already written (the file lands, the process dies, the caller thinks it failed).
+# Normalise the streams once, here: every builder imports this module.
+for _s in (sys.stdout, sys.stderr):
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _CHECKOUT = os.path.dirname(_HERE)      # the checkout THIS file lives in (maybe a worktree)

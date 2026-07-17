@@ -96,6 +96,12 @@ def geocode(query: str, expect_road: str | None = None) -> dict | None:
             "postal": top.get("POSTAL", ""),
             "lat": float(top["LATITUDE"]),
             "lon": float(top["LONGITUDE"]),
+            # SVY21 metres — the CRS URA's caveats carry (`x`/`y`). Keeping both means an
+            # address can be located against URA's own street coordinates without a
+            # projection transform; that is how the URA street behind an address is resolved
+            # (EXP-0018: URA files small roads under the estate's parent road).
+            "x": float(top["X"]) if top.get("X") not in (None, "") else None,
+            "y": float(top["Y"]) if top.get("Y") not in (None, "") else None,
         }
     out = _cache[key]
     if expect_road is not None and out is not None:
