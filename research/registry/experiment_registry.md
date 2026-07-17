@@ -5,6 +5,48 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0019 — L2f: does the TRUE address road beat the URA bucket as the comp pool? PRE-REGISTRATION (2026-07-17)
+- **Status: PRE-REGISTERED (committed BEFORE the run — the EXP-0017 review's MINOR-8).**
+- **The question.** EXP-0018 proved URA's landed `street` is the DEVELOPMENT's registered
+  street, so LC2's "same-street grid" is really a same-PARENT-street grid: `URA "LOYANG RISE"
+  (135) = Loyang Rise (104) + Loyang View (31)`, and ALNWICK ROAD's 427 include Cardiff Grove.
+  **This is not automatically wrong** — adjacent roads of one estate may be the right pool, and
+  LV1's shipped 9.05% was measured WITH that pooling. Two separate things must be tested, and
+  the report currently assumes an answer to the second one:
+  - **(P) the POINT**: does restricting LC2's comps to the subject's TRUE road improve median
+    APE? Purer but thinner (Loyang View subjects drop from 135 to 31 candidate rows).
+  - **(D) the DISTRIBUTION**: the full report SUPPRESSES buyer/seller thresholds on
+    alias-resolved streets because the bucket's p25/p75 mix roads. That suppression is
+    currently justified by ONE observation (19 Cardiff Grove: bucket p25 S$3.87M vs the road's
+    own original stock at S$3.25-3.58M). D tests it properly: **do a sub-road's actual sales
+    land inside the BUCKET's p25/p75 at the rate the report claims (~73-83% above p25,
+    ~32-38% above p75), or does the bucket systematically mis-place them?**
+- **Universe (fixed here).** Only rows whose TRUE road is known from an IS harvest
+  (EXP-0018 attribution on month+price+area): the **LOYANG RISE bucket, fully decomposed**
+  (135/135 attributed → the clean case), plus **Cardiff Grove subjects inside ALNWICK ROAD**
+  (17 in-window attributed → the case that motivated the module). This is ONE fully-decomposed
+  estate + one partial: **any verdict is scoped to that, and says so.** Extending to ALNWICK
+  needs an IS harvest of Alnwick Road itself (blocked today: the emulator's adbd is wedged —
+  `adb get-state` says device but every `shell` call times out).
+- **PRE-REGISTERED criteria:**
+  - **P1 — SPLIT WINS (ship it)** iff split median APE ≤ pooled − 0.5pp AND the extra decline
+    rate ≤ 15pp AND no regime half-year that was unbiased under pooling (sign ∈[45,55]) leaves
+    [42,58] under split (the GY-0003/GY-0005 failure mode).
+  - **P2 — POOLING WINS (keep the shipped engine)** iff split median APE > pooled + 0.5pp.
+    Then the parent-street pool is doing real work and the roadmap's L2f(a) is answered NO.
+  - **P3 — INCONCLUSIVE (MONITOR)** iff |Δ| < 0.5pp, or either arm scores < 25 subjects.
+    A tie on this sample is not evidence of equivalence — say so, do not ship on it.
+  - **D1 — the report's suppression is JUSTIFIED** iff, for at least one sub-road, the share of
+    its actual sales above the bucket's p25 (or p75) deviates from the published band
+    (73-83% / 32-38%) by **>10pp** — i.e. the bucket genuinely mis-places that road.
+  - **D2 — the suppression is UNJUSTIFIED and must be relaxed** iff every sub-road's rates sit
+    inside the published bands. Then the alias guard is over-cautious and costs real guidance.
+- **Guardrails.** Walk-forward + as-of firewall (the harness, unchanged); the attribution map
+  is built ONLY from IS harvests already on disk; a split arm that declines is counted as
+  declined, never back-filled from the pooled arm (that would launder the coverage cost).
+- **Deliverable:** `research/run_l2f_split.py` + this entry's verdict + whatever the verdict
+  forces to change (engine, report guard, or the graveyard).
+
 ## EXP-0018 — R4a VERDICT: F1 REFUTED (our own claim struck); the real finding is that URA's "street" is a PARENT LABEL (2026-07-17)
 - **Status: DONE. The pre-registered claim FAILED and is being struck from three documents.
   The finding that replaced it is bigger than the one we went looking for.**
