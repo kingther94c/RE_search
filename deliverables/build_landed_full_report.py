@@ -457,9 +457,24 @@ def _l1_alerts(g: dict) -> str:
     dig = g.get("digest") or {}
     verdict = ""
     if dig.get("verdict"):
-        v = dig["verdict"]
+        vd = dig["verdict"]
+        # 判断层是**作者手写的 HTML**(highlights 里就带 <b>)。对它 _esc() 会把 <b> 当成
+        # 字面文本印给读者 —— 实测在 14 Seletar Green Walk 的报告里就是这样。它是本仓库里的
+        # 受信任文件、由人撰写,和引擎返回的字符串不同,按 HTML 渲染。
+        arche = ""
+        if dig.get("archetype_zh") or dig.get("archetype"):
+            note = dig.get("archetype_note_zh") or dig.get("archetype_note") or ""
+            arche = (f"<p class=note><b>archetype:</b> "
+                     f"{dig.get('archetype_zh') or dig.get('archetype')}"
+                     f"{'　' + note if note else ''}</p>")
+        # 不截断:这是作者写下的结论,截一半比不显示更糟
+        detail = vd.get("detail_zh") or vd.get("detail") or ""
         verdict = (f"<div class='banner ok'><b>结论 verdict</b> —— "
-                   f"{_esc(v.get('call_zh') or v.get('call'))}</div>")
+                   f"{vd.get('call_zh') or vd.get('call')}"
+                   f"{'<span class=note>' + detail + '</span>' if detail else ''}</div>"
+                   f"{arche}"
+                   f"<p class=note>以上来自<b>已撰写的判断层</b>(<code>--digest</code>),"
+                   f"不是工具产出 —— 它是人的判断,请按人的判断来核。</p>")
     else:
         verdict = ("<div class='banner warn'><b>本报告不给 go/no-go</b> —— "
                    "买/不买是<b>判断</b>,不是这条链条的产物。它需要 archetype(这条街这个年代的"
@@ -475,6 +490,25 @@ def _l1_alerts(g: dict) -> str:
 <b>DD-3</b> 上面这些 —— 专业/实地/需卖方授权。三层分的是<b>「谁能定、何时定」</b>,
 不是「免费还是收费」。</p>
 </div>"""
+
+
+def _l1_highlights(g: dict) -> str:
+    """判断层的 highlights —— 挂载了就渲染,不丢弃。
+
+    它们是**英文**的(digest 的作者只给 verdict 写了 `_zh`)。本报告主体是中文,所以这里
+    如实标为「原文,英文」并折叠 —— 不假装它是中文,也不因为语言不合就把人已经看出来的
+    东西扔掉。有 `_zh` 的字段(verdict)照常用中文。"""
+    hl = (g.get("digest") or {}).get("highlights") or []
+    items = ""
+    for h in hl:
+        t = (h.get("text_zh") or h.get("text") or "") if isinstance(h, dict) else h
+        if t:
+            items += f"<li>{t}</li>"
+    if not items:
+        return ""
+    return (f"<details><summary>要点 highlights · {len(hl)} 条 <span class=note>"
+            f"(判断层原文,英文 —— 人写的,非工具产出)</span></summary>"
+            f"<div class=card><ul class=alerts>{items}</ul></div></details>")
 
 
 def _l2_evidence(g: dict) -> str:
@@ -595,6 +629,7 @@ def render(g: dict) -> str:
 {_l1_dd(g)}
 {_l1_costs(g)}
 {_l1_alerts(g)}
+{_l1_highlights(g)}
 {_l2_evidence(g)}
 {_l3_limits(g)}
 <p class=note>估值 = 引擎 LV1(URA walk-forward:中位 APE 9.1%,区间覆盖 78.9%)。
