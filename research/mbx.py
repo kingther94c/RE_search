@@ -19,13 +19,37 @@ from __future__ import annotations
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
 
-ADB = os.environ.get(
-    "MBX_ADB", r"C:\Users\remoteuser\AppData\Local\Android\Sdk\platform-tools\adb.exe"
-)
+# The app's UI text carries glyphs outside the Windows console codepage (a sort
+# arrow U+25BC on every table header). Printing one to a cp1252 stdout raises
+# UnicodeEncodeError and kills the run mid-harvest — so normalise the streams
+# once, here, for every script that imports mbx (harvesters, doctor).
+for _s in (sys.stdout, sys.stderr):
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
+
+
+def _find_adb() -> str:
+    """MBX_ADB -> PATH -> known SDK locations. Hardcoding one absolute path made
+    the harness depend on a stale SDK copy surviving on C:."""
+    env = os.environ.get("MBX_ADB")
+    if env:
+        return env
+    on_path = shutil.which("adb")
+    if on_path:
+        return on_path
+    for cand in (r"D:\Android\Sdk\platform-tools\adb.exe",
+                 os.path.expandvars(r"%LOCALAPPDATA%\Android\Sdk\platform-tools\adb.exe")):
+        if os.path.isfile(cand):
+            return cand
+    return "adb"          # let it fail loudly with a clear "not found" from doctor
+
+
+ADB = _find_adb()
 SERIAL = os.environ.get("MBX_SERIAL", "emulator-5554")
 OUT = os.environ.get(
     "MBX_OUT",

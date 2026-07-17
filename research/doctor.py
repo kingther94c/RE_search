@@ -22,6 +22,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import shutil
 import sys
 
 import mbx
@@ -49,10 +50,11 @@ def _check() -> tuple[bool, list[dict]]:
     def ok(name: str, note: str = "") -> None:
         steps.append({"check": name, "ok": True, "note": note})
 
-    # 1. adb binary
-    if not os.path.isfile(mbx.ADB):
-        return fail("adb-binary", f"adb not found at {mbx.ADB}",
-                    "install Android SDK platform-tools or set MBX_ADB to the full adb.exe path")
+    # 1. adb binary (mbx resolves: MBX_ADB -> PATH -> known SDK locations)
+    if not (os.path.isfile(mbx.ADB) or shutil.which(mbx.ADB)):
+        return fail("adb-binary", f"adb not found (resolved to {mbx.ADB!r})",
+                    "install Android SDK platform-tools, put adb on PATH, or set MBX_ADB "
+                    "to the full adb.exe path")
     ok("adb-binary", mbx.ADB)
 
     # 2. device online

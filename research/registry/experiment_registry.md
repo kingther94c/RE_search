@@ -5,6 +5,55 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
+## EXP-0018 — R4a: what does Investment Suite actually carry that URA doesn't? PRE-REGISTRATION (2026-07-17)
+- **Status: PRE-REGISTERED (this entry is committed BEFORE the first harvest — the EXP-0017
+  review's MINOR-8: "pre-registration is asserted, not provable" when gates and results land
+  in one commit).**
+- **The claim under test is OUR OWN.** The L2b verdict (EXP-0017) closed with a sentence now
+  sitting in the roadmap, the master methodology and the SKILL: *"the residual bias is the
+  caveat-visibility lag itself → only fresher observations (R4 IS live pulls) can shrink it,
+  not more model."* **That is an untested assertion about a data source we have never
+  measured against the spine.** L2b's own lesson (the cap hypothesis: arithmetic right,
+  exposure ~zero) is that a mechanism must be measured before it is believed. If IS turns
+  out to carry the SAME caveats at the SAME lag, that sentence is false and must be struck
+  from all three documents — a REFUTATION is a legitimate and publishable outcome here.
+- **Why it is not obvious either way:** both sources ultimately draw on URA caveat data, so
+  IS may be a re-skin (no freshness gain); but the URA *public API* pull of 2026-07-15
+  already contained 2026-07 caveats, so the API's real-world lag is far shorter than the
+  backtest's conservative `month_end + 56d` firewall — meaning the LIVE freshness gap IS may
+  close could be small or nil. Separately, IS demonstrably has *something* URA lacks: CARDIFF
+  GROVE carries a PASS-8.5 craft valuation off app street history while the URA 5y window has
+  **zero** caveats there (EXP-0015).
+- **Sample (fixed here, before looking):** landed streets LOYANG RISE · BOWMONT GARDENS ·
+  ALNWICK ROAD · AROOZOO AVENUE · EMERALD HILL ROAD · CARDIFF GROVE (the known URA-gap case),
+  plus 2 condo projects. Per street/project: harvest the IS Sale table at its widest time
+  window; compare against the URA store slice for the same street/project; match rows on
+  (contract month, land/strata area, price) with a tolerance; classify every row.
+- **PRE-REGISTERED criteria (each is a claim that either survives or is struck):**
+  - **F1 — the freshness lever EXISTS** iff IS's newest caveat is newer than URA's newest on
+    **≥50% of sampled streets** AND the median date advantage is **≥30 days**. Only then does
+    "fresher observations shrink the landed residual bias" survive as a hypothesis, and only
+    then does an IS-fed trend bridge get built (it would then need its own regime-panel
+    validation — no shipping on a freshness claim alone).
+  - **F2 — the lever is REFUTED** iff IS's newest ≤ URA's newest on ≥50% of streets. Then the
+    sentence above is **struck from the roadmap, 00_master_methodology and the SKILL**, the
+    landed residual is declared structurally irreducible on available data, and R4 re-scopes
+    to depth + per-unit detail only.
+  - **D1 — depth** iff IS's oldest < the URA window start on ≥50% of streets → the CARDIFF
+    class (`street_not_found`) is systematically addressable, and the refusal gets a
+    documented IS route rather than a dead end.
+  - **A1 — agreement** iff, on matched rows, price AND area agree exactly on **≥95%**. Below
+    95%, the disagreement is itself the finding: two "Tier-1" sources that contradict each
+    other means the URA spine's trust — and every number built on it — needs a verdict, and
+    `data-source-trust-hierarchy` must be rewritten to say which wins and why.
+  - **C1 — completeness** iff URA-only rows inside IS's own window are **<10%**. At ≥10% IS
+    is provably missing caveats → it may supplement the spine, never replace it.
+- **Guardrails.** UI only, no auth bypass, no web fallback (Tier-1 rule); every harvested row
+  carries provenance (screen, window, harvest timestamp) so the comparison is auditable; the
+  IS reads are the DEPENDENT variable — the URA store is frozen and untouched by this work.
+- **Deliverable:** `research/reconcile_is_ura.py` (offline-testable matcher + report) +
+  this entry's verdict + whatever documents the verdict forces to change.
+
 ## EXP-0017 — L2b VERDICT: the observed local-trend bridge ships (engine upgrade); the "fixed" bar is NOT met; two variants graveyarded (2026-07-17)
 - **Status: DONE. Verdict: ACCEPT-WITH-SCOPE for V2 "lt_tail" as an ENGINE change — LV1
   9.34% → 9.05% median APE, hot-regime bias reduced ~5pp with zero stable-regime damage.
