@@ -161,6 +161,59 @@ All four are dedup-on-scroll with stale-stop; zero-row runs refuse to overwrite 
 Then reconstruct the complete comp set: `python reconstruct_comps.py <slug> --asof YYYY-MM-DD
 --subject "#NN-SS"` — or go straight to the condo pipeline (see `value-a-property`).
 
+## LANDED is a DIFFERENT path — address-first, not project-first (R4a/R4b, EXP-0018)
+
+The four harvesters above drive a **condo development** screen. **Landed has no project id** —
+the app is address-first — so it has its own harvester (`research/harvest_street_sale.py
+"<STREET>"`) and its own screen shape. Use it whenever you need a landed street's caveats
+(e.g. to resolve a `street_not_found`, or to attribute a URA parent bucket to real roads).
+
+**Why you need IS at all for landed** (measured, EXP-0018): **URA's landed `street` is the
+DEVELOPMENT's registered street, not the house's road.** URA anonymises landed projects to
+"LANDED HOUSING DEVELOPMENT", so one estate's several roads collapse into ONE street bucket —
+`URA "LOYANG RISE" (135) = Loyang Rise (104) + Loyang View (31)`, and Cardiff Grove's houses
+sit under `ALNWICK ROAD`. **IS is the only source that maps a caveat to a real address.**
+
+**Navigation contract** (verified 1080×2400 phone; re-derive coords for a tablet):
+1. **Property Analysis** → tap the search bar → type the STREET → tap any address result.
+   *Verify the field before searching* — a residual char turns "LOYANG RISE" into "ELOYANG
+   RISE" and returns nothing, which looks exactly like "no data". The harvester's
+   `_set_search` reads the field back and retries.
+2. **Sale** tab → pick the window (**5Y** matches the URA API's rolling window; 10Y/custom for
+   depth). Re-enter Sale from **Property Info** to reset — Back can land on a "Type Summary"
+   view with no scope selector.
+3. Scope defaults to **Street**. Scroll DOWN gently (≈500px/650ms — 600px flings past the
+   whole section) to the **"View All (N)"** under *Street Transactions* and tap it.
+
+**THE TRAP — two panels, only one is caveats.** The Sale screen stacks *Street Transactions*
+(URA caveats, real tenure strings) ABOVE *Realtime Agency Data* (**Tier-2** agency listings,
+tenure renders as `-`). The agency panel carries NEWER dates the caveats don't — reading "the
+newest date on the Sale screen" scores IS as fresher on **asking data**, not transactions. The
+two `View All` footers look identical; which one a blind tap hits depends on scroll offset.
+`harvest_street_sale.assert_caveat_table()` refuses anything but the expanded caveat table, and
+it has fired for real. **Never mix the agency panel into caveat data.**
+
+**Parsing a table WIDER than the screen** (the tablet fit every column; a phone never does):
+- The **"Contract Date"** column is FROZEN — its node y-centres are byte-identical across a
+  horizontal swipe, so dump each screen twice (left half: address/type/tenure; right half:
+  area/psf/price/sale-type) and JOIN on the frozen date's y-band. Exact, unlike joining on the
+  date TEXT (a street prints twice on one day).
+- **Classify cells by FORMAT, not x-coordinate.** Three things break coordinate snapping: the
+  header is not sticky (scrolls away after screen 1), the h-swipe lands on a different offset
+  each time, and column x-centres are device-specific. This table's columns are mutually
+  exclusive by shape (`99 yrs from …` = tenure, `$1,301` = psf, `$2,100,000` = price by
+  magnitude, `Resale` = sale type), so a cell says what it is. Order matters — test tenure
+  before address (a tenure string also matches a loose "number word" address pattern).
+
+**Completeness check that needs no second tool:** the harvested rows must reproduce the app's
+own band header to the dollar (Loyang Rise: mean **$2,183,582**, matched exactly at 104 rows).
+One missing/extra row moves the mean.
+
+**Attribution (the L2f input):** `research/reconcile_is_ura.py "<STREET>"` matches an IS harvest
+against the URA bucket on **month+price+area** and reports which rows are the same estate under
+a different name. That map feeds `researcher/landed/street_alias.py` (evidence-only aliases,
+never geographic guessing — GY-0006) and `research/run_l2f_split.py` (EXP-0019).
+
 ## Gotchas
 - **No resource-ids.** UI is Compose-style (classes like `s2.e2`). Do **not** build
   per-element id selectors; use text/desc selectors and full-screen dumps.
@@ -193,7 +246,13 @@ Then reconstruct the complete comp set: `python reconstruct_comps.py <slug> --as
 - `research/mbx.py` — the harness (this repo, RE_search)
 - `research/doctor.py` — automated readiness gate (run it first, every session)
 - `research/harvest_sale.py`, `harvest_profitability.py`, `harvest_rent.py`,
-  `harvest_towerview.py` — one harvester per tab (all offline-testable parsers)
+  `harvest_towerview.py` — one harvester per CONDO tab (all offline-testable parsers)
+- `research/harvest_street_sale.py` — the **LANDED street** harvester (address-first path,
+  caveat/agency guard, coordinate-free format parser). `--here` skips navigation if you are
+  already on the expanded caveat table; `--window 10Y` for depth. Parser tested offline in
+  `tests/test_harvest_street.py`.
+- `research/reconcile_is_ura.py` — IS↔URA attribution on month+price+area (the L2f input)
+- `researcher/landed/street_alias.py` — evidence-only address-road → URA-bucket map
 - `research/reconstruct_comps.py` — three-surface comp reconstruction + trend ladder
 - `mobile_bridge/apps/investment_suite.py` — the bridge profile, in the SEPARATE
   mobile_bridge repo (optional; selectors, ready/detail-ready)
