@@ -74,9 +74,10 @@ def _v(conf=75, n=201, hard=False, spread=0.05):
 
 def test_alias_suppresses_guidance_even_when_the_engine_is_happy():
     """引擎不知道街道是别名来的(它只看到一个正常的街道),所以这道闸只能在报告层。
-    conf 75 / n=201 / 不 hard —— 引擎会照常给门槛,报告必须拦下。"""
+    conf 75 / n=201 / 不 hard —— 引擎会照常给门槛,报告必须拦下。
+    理由措辞在 EXP-0019 后升级为**少数份额**这个实测驱动(不再是笼统的「混路」)。"""
     why = _suppress_reason_zh(_v(), 1839.57, basis="alias")
-    assert "别名解析" in why and "不是本路的分布" in why
+    assert "别名解析" in why and "少数份额" in why and "多数派" in why
 
 
 def test_direct_street_keeps_the_engine_s_own_reasons():
