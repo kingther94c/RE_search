@@ -84,7 +84,10 @@ excess**; the residual did **not** meet the pre-registered "fixed" bar and stays
 **Median APE is flat across every regime while the bias still swings ~15pp** — a comp-based
 estimate structurally lags an accelerating market; the un-bridgeable tail (newest visible
 caveat month → the sale, ~2-3 months in this backtest, less on a live run) is where the
-residual lives. In a hot market treat the point as a **floor**, not a centre. Three
+residual lives. **This is permanent, not pending** (EXP-0018): Investment Suite — the only
+other Tier-1 source — carries the SAME caveats at the SAME lag (0 of 104 rows newer than
+URA's), so no data fixes it either. Its newer-looking rows are the Tier-2 *Realtime Agency
+Data* panel: asking/agency data, never caveats. In a hot market treat the point as a **floor**, not a centre. Three
 mechanical "fixes" are in the graveyard: index-momentum extrapolation (GY-0003, broke the
 unbiased regimes), cap widening (GY-0004, the exposure was ~zero), full PPI replacement
 (GY-0005, broke 2023H1). Only the observed bridge survived its regime panel.
@@ -131,10 +134,16 @@ landed-housing-area controls, condition & GFA on site. **That skill is the verif
 layer; this one does not duplicate it.** For a real bid, run both.
 
 ## Failure & escalation
-- `street_not_found` → the URA 5y window has nothing on that street (real: **Cardiff Grove**,
-  which has a PASS-8.5 craft valuation but zero URA caveats). **Escalate to Investment Suite**:
-  address → Sale → Street scope → tap the type count → **Type Summary** (deeper history than
-  the URA API window). The engine does NOT call IS automatically.
+- `street_not_found` → **usually a street-NAMING mismatch, not a data gap** (EXP-0018).
+  **URA's `street` is a coarse PARENT/locality label that merges adjacent roads**; the app
+  resolves the true address street. Proven: **Cardiff Grove** (the engine's classic refusal)
+  is carried by URA under **`ALNWICK ROAD`** — 16 of its 17 in-window sales match an ALNWICK
+  ROAD caveat on month+price+area; likewise `URA "LOYANG RISE" = IS Loyang Rise (104) + IS
+  Loyang View (31) = 135`, exactly. **So: find the PARENT street and value there** (confirm
+  via IS: address → Sale → Street scope → the transactions listed there carry real addresses).
+  Only escalate for history older than URA's rolling 5y window — which IS genuinely has
+  (10Y street window; per-address history back to ~1996). The engine does NOT call IS
+  automatically.
 - `hard_case` (methods disagree >18%) / `directional_flag` (point above the freshest street
   print) → treat the point as indicative, corroborate with IS, say so.
 - Pooled fallback used → confidence ≤40; don't offer on the number alone.

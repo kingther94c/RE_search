@@ -5,6 +5,30 @@ impact · assets affected.
 
 ---
 
+## 2026-07-17 — R4a: our "fresher data" claim STRUCK; URA's "street" turns out to be a parent label (EXP-0018)
+- **What:** first measured comparison of Investment Suite against the URA API spine.
+  New: `research/harvest_street_sale.py` (the landed STREET path — no existing harvester
+  covered it; caveat-vs-agency-panel guard; a coordinate-free, format-based parser),
+  `research/reconcile_is_ura.py`, `tests/test_harvest_street.py`. Struck the "only fresher
+  observations can shrink the landed residual bias" sentence from the roadmap,
+  `00_master_methodology` and the SKILL; rewrote the SKILL's `street_not_found` escalation.
+  Opened **L2f (street identity)**.
+- **Why:** that sentence was OUR assertion about a source we had never measured — exactly the
+  shape of the cap hypothesis L2b refuted. EXP-0018's pre-registration (committed at `1f43c90`
+  BEFORE the first harvest) pre-committed to striking it if IS proved no fresher.
+- **Evidence:** IS is NOT fresher (0 of 104 LOYANG RISE rows newer than URA; both newest
+  2026-06) → **F2 fired**. Agreement 100% on price and area for all matched rows. Depth
+  CONFIRMED (10Y street window to 2016; per-address history to 1996). The 31-row "gap" is
+  **not incompleteness**: `URA "LOYANG RISE" = IS Loyang Rise (104) + IS Loyang View (31) =
+  135`, exactly 0 unexplained — and **Cardiff Grove**, the engine's classic `street_not_found`,
+  sits in URA under **`ALNWICK ROAD`** (16/17 on month+price+area). Harvest completeness proven
+  independently: the 104 rows reproduce the app's own header mean to the dollar ($2,183,582).
+- **Backtest impact:** none yet — no engine change. L2f will decide whether LC2's pooling
+  should split by true address street.
+- **Assets affected:** landed (a refusal class is now known-fixable); the trust hierarchy
+  (on caveats the two sources are the SAME data at the SAME lag — IS's edge is address
+  resolution, depth, per-unit detail, not freshness or volume).
+
 ## 2026-07-17 — Conformal fingerprints made portable (both were silently machine-local)
 - **What:** `researcher/backtest/fingerprint.py` — ONE definition of each table's
   residual-determining file set + an **EOL-normalized** `code_sha1`; the stampers

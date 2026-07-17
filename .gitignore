@@ -50,3 +50,5 @@ research/.secrets/
 # normalized URA store: 71MB, regenerable. A frozen gzipped snapshot is committed
 # separately (researcher/sources/snapshots/) for backtest reproducibility.
 researcher/sources/ura_transactions.json
+# ad-hoc IS exploration captures (curated ones are committed deliberately)
+research/captures/r4_*

@@ -5,10 +5,74 @@ Newest first. One row per experiment; link to code/commit. Verdict vocabulary in
 
 ---
 
-## EXP-0018 — R4a: what does Investment Suite actually carry that URA doesn't? PRE-REGISTRATION (2026-07-17)
-- **Status: PRE-REGISTERED (this entry is committed BEFORE the first harvest — the EXP-0017
-  review's MINOR-8: "pre-registration is asserted, not provable" when gates and results land
-  in one commit).**
+## EXP-0018 — R4a VERDICT: F1 REFUTED (our own claim struck); the real finding is that URA's "street" is a PARENT LABEL (2026-07-17)
+- **Status: DONE. The pre-registered claim FAILED and is being struck from three documents.
+  The finding that replaced it is bigger than the one we went looking for.**
+- **F1 (freshness) — REFUTED. Our own sentence is struck.** L2b closed by asserting, in the
+  roadmap, `00_master_methodology` and the SKILL, that *"the residual bias is the caveat-
+  visibility lag itself → only fresher observations (R4 IS live pulls) can shrink it"*.
+  Measured: **IS is not fresher.** LOYANG RISE newest caveat — IS `19 Jun 2026`, URA
+  `2026-06`; the same transaction. IS has **zero** rows URA lacks (0/104). Per the
+  pre-registration, F2 fires: **the sentence is struck** and the landed residual is declared
+  **not shrinkable by any live-data source we have**.
+  - **The trap that would have inverted this:** the Sale screen stacks *Street Transactions*
+    (caveats) above *Realtime Agency Data* (Tier-2 agency rows, tenure renders as `-`). The
+    agency panel DID carry newer dates (Loyang Rise: `30 Jun 2026`, `10 Jun 2026` — absent
+    from caveats). Reading "the newest date on the Sale screen" scores IS as FRESHER **on
+    asking data**. `harvest_street_sale.assert_caveat_table` refuses to harvest that panel;
+    it fired for real during this run when a `View All` tap landed on it.
+- **A1 (agreement) — CONFIRMED, 100%.** All 104 matched LOYANG RISE rows agree on price
+  exactly and on area to the rounding (IS renders `1,615`, URA carries `1,614.6`). *Our
+  first pass reported 98.1% — that was OUR bug*: the matcher popped an arbitrary member of a
+  (month, price) group and crossed two same-price sales, then reported the crossing as a data
+  disagreement. Pair-by-nearest-area → **1.0**. Nearly published as "the two Tier-1 sources
+  disagree on area".
+- **D1 (depth) — CONFIRMED.** IS's 10Y window reaches `02 Sep 2016`; the per-ADDRESS *Unit
+  Transaction History* on the Property Info tab reaches **1996** (385 Loyang Rise: 1996 New
+  Sale $1,136,116 → 2003 $760k → 2006 $680k — the post-1997 crash, correctly rendered).
+  URA's API is a rolling ~5y window. IS adds ~25 years of history URA cannot serve.
+- **C1 (completeness) — THE QUESTION WAS MIS-POSED, and the answer is the discovery.**
+  URA's LOYANG RISE bucket holds 135 rows; IS's Loyang Rise holds 104; the 31-row gap looked
+  like "IS is missing 23% of caveats". It is not. **URA's `street` field is a coarse PARENT /
+  locality label that merges adjacent roads; IS resolves the TRUE address street.** Proven
+  in both directions, exactly:
+  - `IS Loyang Rise (104) + IS Loyang View (31) = 135 = URA "LOYANG RISE"` — all 31 orphans
+    are Loyang View transactions (same month+price+area), **0 unexplained**;
+  - **CARDIFF GROVE**, which the engine REFUSES as `street_not_found`, is carried by URA under
+    **`ALNWICK ROAD`**: 16 of its 17 in-window IS transactions match an ALNWICK ROAD caveat on
+    month+price+area (incl. `26 Jun 2026, 17 Cardiff Grove, 2,640sf, $4,698,000`). Tenure
+    corroborates: IS says Cardiff Grove is `999 yrs from 01/01/1956`; the engine infers
+    ALNWICK ROAD as `freehold_equiv, lease_start 1955`. Same estate.
+- **Harvest completeness — proven independently of the harvester.** The 104 harvested rows
+  reproduce the app's OWN 5Y header to the dollar: LOWEST `$1,500,000` ✓, **AVERAGE
+  `$2,183,582` ✓ (exact)**, HIGHEST `$2,780,000` ✓. One missing or extra row moves that mean.
+  And URA holds two ALNWICK-bucket sales ABOVE the app's stated maximum (`2024-07 $2,940,000`,
+  `2026-03 $2,800,000`) — the app's own aggregate proves the app's own scope, not a harvest gap.
+- **What this means for the programme (the real R4 dividend):**
+  1. **`street_not_found` is a NAMING failure, not a data gap** — the Cardiff class is
+     valuable *today* via the parent street. The SKILL's "escalate to IS because URA has
+     nothing" is FALSE and is corrected.
+  2. **LC2's "same-street grid" is a same-PARENT-STREET grid** — it already pools adjacent
+     roads (ALNWICK ROAD's 201 comps include Cardiff Grove). Whether splitting to the true
+     address street helps or hurts is now a measurable open module (**L2f**), not an assumption.
+  3. **IS's unique asset is the ADDRESS↔caveat mapping**, not freshness and not volume: it is
+     the only source that says WHICH road (and which house) a caveat belongs to. That also
+     makes an exact per-address same-plot matcher possible (today's matcher keys on
+     `(street, area, type)` — EXP-0009).
+  4. `data-source-trust-hierarchy` needs amending: on caveats the two sources are the SAME
+     data at the SAME lag; IS is not "far more data" for bulk street work (it is a strict
+     subset per road). Its edge is per-address detail, history depth, rents, Est.Val.
+- **Deliverables:** `research/harvest_street_sale.py` (landed street harvester + the caveat/
+  agency guard + a format-based, coordinate-free parser), `research/reconcile_is_ura.py`,
+  `tests/test_harvest_street.py` (9 offline parser tests), harvested sets for LOYANG RISE /
+  LOYANG VIEW / CARDIFF GROVE.
+- **Method note — three self-inflicted bugs caught before publication**, each of which would
+  have produced a confident wrong finding: (a) hardcoded column x-centres shifted 28/125 rows
+  and swallowed the price → replaced with format-based classification (the header is NOT
+  sticky and the h-swipe offset varies, so no coordinate map can work); (b) the greedy matcher
+  → fake area disagreement; (c) a `View All` tap that silently opened the agency panel.
+
+### EXP-0018 — the original PRE-REGISTRATION (2026-07-17, committed at `1f43c90` before the first harvest)
 - **The claim under test is OUR OWN.** The L2b verdict (EXP-0017) closed with a sentence now
   sitting in the roadmap, the master methodology and the SKILL: *"the residual bias is the
   caveat-visibility lag itself → only fresher observations (R4 IS live pulls) can shrink it,

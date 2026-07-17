@@ -9,10 +9,10 @@ work its plan. Amend via changelog, not silently._
 
 | Track | Status |
 |---|---|
-| **Landed (L0–L4 + L2b)** | **COMPLETE — `landed-valuation` SHIPPED (GL0/GL1/GL2/GL3/GL4 all PASS; hostile review PASS 8.05, EXP-0009..0015). L2b LANDED (EXP-0016/0017):** engine LV1 now **9.05% median APE / 100% coverage / 78.9% held-out band** (bar 10.45 same-adjustment). The observed local-trend bridge closed ~5pp of the ~16pp hot-regime sign-test excess with zero stable-regime damage; the pre-registered "fixed" bar was NOT met → the regime-bias **disclosure stays** (hot regimes ~60-62% vs 47-53% stable). Residual = the caveat-visibility lag itself → shrinks further only via fresher observations (IS live pulls, R4), not more model. GY-0004/0005 buried |
+| **Landed (L0–L4 + L2b)** | **COMPLETE — `landed-valuation` SHIPPED (GL0/GL1/GL2/GL3/GL4 all PASS; hostile review PASS 8.05, EXP-0009..0015). L2b LANDED (EXP-0016/0017):** engine LV1 now **9.05% median APE / 100% coverage / 78.9% held-out band** (bar 10.45 same-adjustment). The observed local-trend bridge closed ~5pp of the ~16pp hot-regime sign-test excess with zero stable-regime damage; the pre-registered "fixed" bar was NOT met → the regime-bias **disclosure stays** (hot regimes ~60-62% vs 47-53% stable). ~~Residual shrinks further only via fresher observations (IS live pulls, R4)~~ **— STRUCK (EXP-0018): IS is NOT fresher (identical caveats, identical lag; 0/104 rows newer). No available source is fresher than the URA API, so the residual is not shrinkable by data either — it is a property of caveat publication itself.** GY-0004/0005 buried |
 | Condo resale | **SHIPPED & FROZEN** — `condo-resale-valuation` accepted (PASS 8.7/10; engine v2.1: 3.71% median APE / 100% coverage / ~82–85% held-out interval). Backlog below; nothing ships without its gate |
 | New launch (was R7) | PARKED (plan preserved below) |
-| IS calibration bridge (was R4) | PARKED — becomes relevant again for condo hard-cases and landed condition evidence |
+| **IS bridge (R4)** | **R4a DONE (EXP-0018) — and it re-scoped the whole work-line.** Measured, not assumed: IS is **NOT fresher** (same caveats, same lag → our "fresher data will fix the residual bias" claim STRUCK) and is **NOT more data per road** (a strict subset — 104 vs URA's 135 on LOYANG RISE). **IS's real and unique asset is the ADDRESS↔caveat mapping**: URA's `street` is a coarse PARENT label merging adjacent roads (`URA "LOYANG RISE" = Loyang Rise 104 + Loyang View 31`, exact; **Cardiff Grove lives under `ALNWICK ROAD`**, 16/17) — plus history depth (10Y street / ~1996 per address), per-unit detail, rents, Est.Val. **Next: L2f (below) + R4b guided-harvest skill v2.** R4c premium study still gated |
 | Operations (was R8) | NOT STARTED — after L4, build ONE refresh runbook covering both shipped skills |
 
 Infrastructure is DONE and asset-agnostic: as-of store + leakage firewall, walk-forward
@@ -162,6 +162,19 @@ to a verdict (ACCEPT / ACCEPT-WITH-SCOPE / MONITOR / REJECT → graveyard).
   log(price) anchor. **Expectation set by the condo reversal: anchors buy COVERAGE and
   hard-case detection, not point accuracy where local comps exist.** Stated up front so
   nobody re-learns it expensively.
+- **L2f Street identity — OPENED by EXP-0018 (R4a), currently the highest-value landed
+  module.** URA's `street` is a **coarse parent label**, so LC2's "same-street grid" is
+  really a same-PARENT-street grid: ALNWICK ROAD's 201 comps silently include Cardiff Grove,
+  and LOYANG RISE's 135 include 31 Loyang View houses. **This is not automatically wrong** —
+  adjacent roads in one estate may be the right pool, and the pooling is part of what LV1's
+  9.05% was measured with. Two things to settle, by backtest, never by assumption:
+  (a) does splitting to the TRUE address street (via an IS-derived address→street map)
+  improve or hurt LC2? — thinner but purer pools, and L1 already showed even 1-2 same-street
+  comps beat cross-street pools; (b) **the `street_not_found` refusal is a naming failure and
+  is fixable today** by resolving the parent street (Cardiff Grove → ALNWICK ROAD), which
+  turns a dead end into a valuation. Also unlocks an EXACT per-address same-plot matcher
+  (today's keys on `(street, area, type)`, EXP-0009). Cost: an IS harvest per street — so
+  scope it to streets that matter (refusals + thin/mixed streets), not the island.
 - **L2e Improvement-contribution bounds (the identification problem):** residuals vs the
   land model; same-plot long-gap jumps as rebuild signals. MEASURE what URA can and cannot
   resolve → the ±X% condition band the skill will carry. A verdict of "bulk-unresolvable

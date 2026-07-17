@@ -1,0 +1,1052 @@
+{
+ "meta": {
+  "source": "investment_suite",
+  "screen": "Street Transactions (expanded View All) — CAVEATS, not agency data",
+  "street": "LOYANG RISE",
+  "harvested_at": "2026-07-17T11:40:05",
+  "device": "emulator-5554 1080x2400",
+  "n_rows": 104
+ },
+ "rows": [
+  {
+   "date": "19 Jun 2026",
+   "address": "150 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,153",
+   "psf": "$1,231",
+   "price": "$2,650,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "29 May 2026",
+   "address": "228 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,618",
+   "psf": "$1,514",
+   "price": "$2,450,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "28 Apr 2026",
+   "address": "233 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,750",
+   "psf": "$1,326",
+   "price": "$2,320,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "19 Mar 2026",
+   "address": "271 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,793",
+   "psf": "$1,449",
+   "price": "$2,598,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "13 Mar 2026",
+   "address": "165 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$1,253",
+   "price": "$2,550,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "20 Feb 2026",
+   "address": "319 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,153",
+   "psf": "$1,250",
+   "price": "$2,690,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "19 Nov 2025",
+   "address": "82 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,479",
+   "price": "$2,388,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "17 Oct 2025",
+   "address": "210 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,623",
+   "price": "$2,620,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "08 Oct 2025",
+   "address": "176 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,664",
+   "psf": "$1,592",
+   "price": "$2,650,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "29 Sep 2025",
+   "address": "68 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,491",
+   "price": "$2,408,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "17 Sep 2025",
+   "address": "86 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,479",
+   "price": "$2,388,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "01 Sep 2025",
+   "address": "291 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,649",
+   "psf": "$1,461",
+   "price": "$2,410,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "22 Aug 2025",
+   "address": "67 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,641",
+   "price": "$2,650,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "05 Aug 2025",
+   "address": "48 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,479",
+   "price": "$2,388,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "06 Jun 2025",
+   "address": "247 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,153",
+   "psf": "$1,115",
+   "price": "$2,400,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "04 Jun 2025",
+   "address": "7 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,769",
+   "psf": "$1,504",
+   "price": "$2,660,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "17 Apr 2025",
+   "address": "2 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,182",
+   "psf": "$1,134",
+   "price": "$2,475,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "26 Mar 2025",
+   "address": "232 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,626",
+   "psf": "$1,709",
+   "price": "$2,780,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "03 Feb 2025",
+   "address": "349 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,598",
+   "price": "$2,580,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "03 Feb 2025",
+   "address": "289 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,644",
+   "psf": "$1,253",
+   "price": "$2,058,888",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "16 Jan 2025",
+   "address": "139 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$1,234",
+   "price": "$2,510,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "22 Nov 2024",
+   "address": "89 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,713",
+   "psf": "$885",
+   "price": "$2,400,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "30 Oct 2024",
+   "address": "381 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,631",
+   "psf": "$1,423",
+   "price": "$2,320,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "17 Oct 2024",
+   "address": "23 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,511",
+   "price": "$2,439,888",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "30 Sep 2024",
+   "address": "195 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$1,081",
+   "price": "$2,200,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "25 Sep 2024",
+   "address": "297 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,196",
+   "psf": "$1,038",
+   "price": "$2,280,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "17 Sep 2024",
+   "address": "90 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,517",
+   "price": "$2,450,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "10 Sep 2024",
+   "address": "128 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,425",
+   "price": "$2,300,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "10 Sep 2024",
+   "address": "40 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,830",
+   "psf": "$972",
+   "price": "$2,750,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "09 Sep 2024",
+   "address": "339 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,153",
+   "psf": "$1,287",
+   "price": "$2,770,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "26 Aug 2024",
+   "address": "62 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,398",
+   "price": "$2,258,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "07 Aug 2024",
+   "address": "43 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,682",
+   "psf": "$1,379",
+   "price": "$2,320,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "20 Jun 2024",
+   "address": "21 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,381",
+   "price": "$2,230,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "06 May 2024",
+   "address": "239 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,750",
+   "psf": "$1,428",
+   "price": "$2,500,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "02 May 2024",
+   "address": "237 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,750",
+   "psf": "$1,303",
+   "price": "$2,280,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "22 Apr 2024",
+   "address": "144 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,394",
+   "price": "$2,250,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "05 Apr 2024",
+   "address": "212 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,486",
+   "price": "$2,400,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "01 Apr 2024",
+   "address": "29 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,301",
+   "price": "$2,100,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "26 Mar 2024",
+   "address": "351 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,394",
+   "price": "$2,250,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "22 Mar 2024",
+   "address": "17 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,301",
+   "price": "$2,100,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "04 Mar 2024",
+   "address": "369 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,617",
+   "psf": "$1,299",
+   "price": "$2,100,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "01 Mar 2024",
+   "address": "35 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,648",
+   "psf": "$1,364",
+   "price": "$2,248,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "15 Feb 2024",
+   "address": "387 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,645",
+   "psf": "$1,417",
+   "price": "$2,330,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "27 Dec 2023",
+   "address": "102 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,455",
+   "price": "$2,350,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "14 Dec 2023",
+   "address": "264 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,190",
+   "psf": "$1,096",
+   "price": "$2,400,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "11 Dec 2023",
+   "address": "158 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,301",
+   "price": "$2,100,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "05 Dec 2023",
+   "address": "240 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,635",
+   "psf": "$1,315",
+   "price": "$2,150,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "02 Nov 2023",
+   "address": "15 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,616",
+   "psf": "$1,349",
+   "price": "$2,180,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "24 Oct 2023",
+   "address": "254 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,632",
+   "psf": "$1,409",
+   "price": "$2,300,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "05 Oct 2023",
+   "address": "97 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$1,126",
+   "price": "$2,290,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "31 Aug 2023",
+   "address": "205 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$1,121",
+   "price": "$2,280,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "30 Aug 2023",
+   "address": "116 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,504",
+   "price": "$2,428,888",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "22 Aug 2023",
+   "address": "33 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,171",
+   "psf": "$1,013",
+   "price": "$2,200,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "04 Aug 2023",
+   "address": "122 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,400",
+   "price": "$2,260,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "03 Aug 2023",
+   "address": "124 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,412",
+   "price": "$2,280,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "24 May 2023",
+   "address": "88 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,425",
+   "price": "$2,300,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "22 Feb 2023",
+   "address": "367 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,618",
+   "psf": "$1,174",
+   "price": "$1,900,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "18 Jan 2023",
+   "address": "353 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,158",
+   "price": "$1,870,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "04 Jan 2023",
+   "address": "196 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,660",
+   "psf": "$1,416",
+   "price": "$2,350,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "27 Dec 2022",
+   "address": "250 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,633",
+   "psf": "$1,427",
+   "price": "$2,330,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "14 Dec 2022",
+   "address": "165 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$934",
+   "price": "$1,900,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "09 Dec 2022",
+   "address": "181 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$1,155",
+   "price": "$2,350,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "20 Oct 2022",
+   "address": "123 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,058",
+   "psf": "$1,060",
+   "price": "$2,181,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "20 Oct 2022",
+   "address": "133 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$959",
+   "price": "$1,950,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "22 Sep 2022",
+   "address": "138 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,270",
+   "price": "$2,050,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "01 Sep 2022",
+   "address": "156 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,610",
+   "price": "$2,600,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "30 Aug 2022",
+   "address": "269 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,786",
+   "psf": "$1,064",
+   "price": "$1,900,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "21 Jul 2022",
+   "address": "95 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$1,081",
+   "price": "$2,200,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "19 Jul 2022",
+   "address": "126 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,335",
+   "price": "$2,155,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "18 Jul 2022",
+   "address": "143 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$929",
+   "price": "$1,890,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "12 Jul 2022",
+   "address": "238 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,634",
+   "psf": "$1,408",
+   "price": "$2,300,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "07 Jul 2022",
+   "address": "190 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,656",
+   "psf": "$1,196",
+   "price": "$1,980,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "15 Jun 2022",
+   "address": "131 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "3,880",
+   "psf": "$683",
+   "price": "$2,650,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "15 Jun 2022",
+   "address": "207 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$909",
+   "price": "$1,850,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "13 Jun 2022",
+   "address": "222 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,220",
+   "price": "$1,970,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "30 May 2022",
+   "address": "293 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,636",
+   "psf": "$1,314",
+   "price": "$2,150,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "19 May 2022",
+   "address": "331 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,133",
+   "price": "$1,830,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "04 May 2022",
+   "address": "153 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,041",
+   "psf": "$964",
+   "price": "$1,968,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "28 Apr 2022",
+   "address": "147 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$1,000",
+   "price": "$2,035,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "07 Apr 2022",
+   "address": "103 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$1,008",
+   "price": "$2,050,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "25 Mar 2022",
+   "address": "397 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,486",
+   "psf": "$897",
+   "price": "$2,230,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "24 Feb 2022",
+   "address": "233 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,750",
+   "psf": "$1,000",
+   "price": "$1,750,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "23 Feb 2022",
+   "address": "8 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,654",
+   "psf": "$1,179",
+   "price": "$1,950,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "16 Feb 2022",
+   "address": "100 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,121",
+   "price": "$1,810,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "04 Feb 2022",
+   "address": "59 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,146",
+   "price": "$1,850,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "11 Jan 2022",
+   "address": "371 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,617",
+   "psf": "$1,051",
+   "price": "$1,700,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "05 Jan 2022",
+   "address": "319 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,153",
+   "psf": "$850",
+   "price": "$1,830,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "21 Dec 2021",
+   "address": "299 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,310",
+   "psf": "$818",
+   "price": "$1,890,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "16 Dec 2021",
+   "address": "271 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,793",
+   "psf": "$892",
+   "price": "$1,600,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "16 Dec 2021",
+   "address": "281 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,809",
+   "psf": "$934",
+   "price": "$1,690,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "22 Nov 2021",
+   "address": "349 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$929",
+   "price": "$1,500,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "01 Nov 2021",
+   "address": "68 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,084",
+   "price": "$1,750,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "22 Oct 2021",
+   "address": "4 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,623",
+   "psf": "$1,109",
+   "price": "$1,800,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "14 Oct 2021",
+   "address": "187 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$1,022",
+   "price": "$2,080,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "07 Oct 2021",
+   "address": "84 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,003",
+   "price": "$1,620,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "04 Oct 2021",
+   "address": "101 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$934",
+   "price": "$1,900,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "01 Oct 2021",
+   "address": "49 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,644",
+   "psf": "$919",
+   "price": "$1,510,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "22 Sep 2021",
+   "address": "189 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,713",
+   "psf": "$848",
+   "price": "$2,300,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "21 Sep 2021",
+   "address": "46 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,615",
+   "psf": "$1,057",
+   "price": "$1,706,888",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "09 Sep 2021",
+   "address": "224 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,153",
+   "psf": "$873",
+   "price": "$1,880,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "30 Aug 2021",
+   "address": "45 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "1,674",
+   "psf": "$1,004",
+   "price": "$1,680,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "25 Aug 2021",
+   "address": "215 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$811",
+   "price": "$1,650,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "23 Aug 2021",
+   "address": "175 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$903",
+   "price": "$1,838,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "16 Jul 2021",
+   "address": "115 Loyang Rise",
+   "type": "Terrace House",
+   "tenure": "99 yrs from 01/05/1993",
+   "area_sqft": "2,034",
+   "psf": "$860",
+   "price": "$1,750,000",
+   "sale_type": "Resale"
+  }
+ ]
+}
