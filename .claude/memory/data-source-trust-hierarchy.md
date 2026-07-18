@@ -13,7 +13,7 @@ number as fact:
 **Tier 1 — ground truth (anchor every load-bearing number here):**
 - **PropNex Investment Suite** (the Android app) — URA-caveat transactions, per-unit **Est. Val**
   (AVM benchmark), **realised returns** (buy/sell pairs), rental contracts. Read via the
-  `read-investment-suite` skill / `research/mbx.py`. See [[investment-suite-valuation]].
+  `read-investment-suite` skill / `research/lib/mbx.py`. See [[investment-suite-valuation]].
   **MEASURED against the URA API (EXP-0018, 2026-07-17) — three corrections:**
   (1) on caveats IS and the URA API are the **SAME data at the SAME lag** — IS is NOT fresher
   (0 of 104 rows newer) and NOT "far more data" per road (a strict subset: 104 vs URA's 135,

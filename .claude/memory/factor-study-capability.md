@@ -15,7 +15,7 @@ reports + analysis skills). Data layer all committed in RE_search:
   **asymmetric capture** (landed vs nonlanded: up 0.95 / down 0.74 — the honest
   replacement for "low beta + alpha"; alpha is start-date sensitive: ≈0 from 1996
   peak, +1.8%/yr t=2.25 over 51y), price/rent 130 vs peak 146.
-- `research/harvest_nearby.py` — Nearby Properties table = the panel multiplier
+- `research/lib/harvest_nearby.py` — Nearby Properties table = the panel multiplier
   (tenure/TOP/units/psf range/yield per surrounding project + frozen Dist column).
   Radius is fixed ~200m; panel breadth comes from visiting more anchors.
   **Landed pages have NO condo Nearby table** (that slot is Tier-2 agency listings).

@@ -117,5 +117,5 @@ both are defensible, the review round is where the argument happens and gets rec
 - `researcher/legacy/pipelines/condo_valuation.py` — the pipeline CLI (this skill's engine room)
 - `research/lib/reconstruct_comps.py` — three-surface union, trend ladder
 - `researcher/legacy/valuation/engine.py` — grid; `researcher/legacy/valuation/validate_digest.py` — gates
-- `research/tools/doctor.py` — readiness; `research/harvest_{sale,profitability,rent,towerview}.py`
+- `research/tools/doctor.py` — readiness; `research/lib/harvest_{sale,profitability,rent,towerview}.py`
 - `deliverables/legacy/build_condo_report.py` — bilingual HTML renderer

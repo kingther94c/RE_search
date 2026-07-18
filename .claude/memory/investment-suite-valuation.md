@@ -13,7 +13,7 @@ metadata:
   investment_suite.py` (the app profile = bridge config).
 - **`RE_search`** (github.com/kingther94c/RE_search) = the cross-source **Researcher**
   ("大脑"). Sibling folder `D:\projects\git_projects\RE_search`. Houses the migrated
-  `research/` (mbx.py adb harness, harvest_sale.py, captures/), `researcher/valuation/`
+  `research/` (mbx.py adb harness, harvest_sale.py, captures/), `researcher/legacy/valuation/`
   (comparable-adjustment engine), `deliverables/` (bilingual HTML report), and
   `.claude/skills/` (native Claude Code skills). Run: `python -m researcher.valuation.run`,
   `python deliverables/build_report.py`. mobile_bridge moved here = removed from mobile_bridge.
@@ -21,7 +21,7 @@ metadata:
 **Design decision (validated by a judge-panel workflow + the user's key point that
 data-gathering is Claude-driven with NO fixed tool):** the Researcher is a *skills-centric*
 project; data is fetched by Claude with whatever fits (WebFetch/WebSearch for web,
-`research/mbx.py` for Android apps). Dependency arrow one-way `RE_search → mobile_bridge`,
+`research/lib/mbx.py` for Android apps). Dependency arrow one-way `RE_search → mobile_bridge`,
 and currently there's NO code dep (mbx shells `adb` directly). Future sources: web, and
 小红书/Xiaohongshu. Skills live in `.claude/skills/` (auto-discovered via frontmatter),
 de-machine-pinned (no baked-in `emulator-5554`/coords/paths). See `RE_search/ARCHITECTURE.md`.
@@ -46,7 +46,7 @@ by treating the 2021 covid-dip own-purchase ($2,020) as neutral (stack's 2013 pr
 mid-window rows) ∪ Profitability sell-legs ∪ Tower View PP fields, fuzzy-dedup cross-surface
 (same unit+price within 30 days = one caveat, date fields differ ~4 days between surfaces).
 Band-head figures (e.g. 5Y low $1,968) are the app's own opaque aggregates — never
-force-reconcile per-print. NEW tool `research/harvest_towerview.py` (block-verified, dual-axis,
+force-reconcile per-print. NEW tool `research/lib/harvest_towerview.py` (block-verified, dual-axis,
 offline-testable parser). CCL6 Cantonment opens 2026-07-12 (LTA) — re-check prints in August.
 
 **2026-07-08 harvest lessons (One Pearl Bank run + hostile review findings):**

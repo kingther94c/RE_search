@@ -72,7 +72,7 @@ See [[condo-valuation-pipeline]], [[data-source-trust-hierarchy]].
 - `researcher/sources/onemap.py` — public OneMap Search API geocode + haversine + `ring_check`
   (margin classification, 429 backoff, apostrophe sanitization: "KING'S ROAD" finds NOTHING,
   "KINGS ROAD" works). CLI: `python -m researcher.sources.onemap "<street>" --anchor "<school>"`.
-- `researcher/sources/propertyguru.py` — `rank_listings()` + `screen_verdict()` (quality × value
+- `researcher/landed/screen.py` — `rank_listings()` + `screen_verdict()` (quality × value
   band × data completeness; unknown tenure/flood/land ⇒ VERIFY DATA, never PURSUE).
 - `deliverables/build_landed_report.py <slug>` / `build_newlaunch_report.py <slug>` /
   `build_condo_report.py <slug>` (generic; build_report.py is the Spottiswoode one-off) —

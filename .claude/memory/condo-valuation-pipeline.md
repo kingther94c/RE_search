@@ -11,9 +11,9 @@ metadata:
 hand-build comps/valuation/cost_stack in a digest again — run:
 
 ```
-python research/doctor.py                                  # readiness gate (5 checks, exact fixes)
-python research/harvest_{sale,profitability,rent,towerview}.py <slug>   # app on that tab, 5Y window
-python -m researcher.pipelines.condo_valuation <slug> --digest-slug <slug>_<unit> --asof DATE [--init]
+python research/tools/doctor.py                                  # readiness gate (5 checks, exact fixes)
+python research/lib/harvest_{sale,profitability,rent,towerview}.py <slug>   # app on that tab, 5Y window
+python -m researcher.legacy.pipelines.condo_valuation <slug> --digest-slug <slug>_<unit> --asof DATE [--init]
 ```
 
 The pipeline reconstructs the three-surface comp set (per-row **price=psf×sqft arithmetic

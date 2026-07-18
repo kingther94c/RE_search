@@ -84,7 +84,7 @@ sessions. Start every session from the roadmap's current phase.
   anchors buy COVERAGE (~0.6% no-comp fallback) + INTERVALS, not point accuracy. So the
   simpler "best-method + fallback + calibrated band" beat the team's E0-E3 blends (all
   superseded). Conformal (held-out 82%/0.197 width) ~30-57% sharper than union bands.
-  `research/analyze_r3.py` = thin-comp matrix + conformal calibrate/validate; run.py --dump.
+  `research/tools/analyze_r3.py` = thin-comp matrix + conformal calibrate/validate; run.py --dump.
 - **7 commits pushed to main (62da2ce latest). 109 tests pass. R0-R3 COMPLETE.**
 
 **R5 SHIPPED (2026-07-16), G3+G5 MET.** `condo-resale-valuation` skill accepted — hostile
@@ -93,7 +93,7 @@ v2.1 = C1 same-project grid (segment elasticity re-fit EXP-0007, size-gating, ti
 lease-aware anchor fallback + split-conformal band. `value_unit.py` = production entry
 (infer→value→confidence→guidance); hard-case honesty (freshest same-size ref, directional
 "stale-comp" flag, point blended toward it, band widened, conf smooth, IS-corroboration
-mandated). `build_condo_v2_report.py` bilingual HTML; `tests/test_value_unit.py` regression
+mandated). `build_condo_valuation_report.py` bilingual HTML; `tests/test_value_unit.py` regression
 suite; value-a-property SUPERSEDED. Numbers: median 3.71% / 100% cover / ~82% held-out
 interval (85% nominal). Review lesson: the hostile round CAUGHT a real guardrail-#5
 violation (ported −0.08 elasticity) and fixing it IMPROVED the population 4.1%→3.7%.
@@ -112,7 +112,7 @@ after SIX rounds (6.9→7.05→7.8→7.55→6.65→8.05).** Engine LV1 = LC2 lea
 78.9% held-out band** (L1 bar 10.45 same-adjustment). Files: `value_landed.py`,
 `landed_engine.py` (+`shipped_time_ctx` — ONE ctx constructor for production+harness+tests),
 `landed_candidates.py`, `landed_size_curve.py`, `landed_benchmarks.py`, `local_trend.py`,
-`build_landed_v2_report.py`, `tests/test_landed.py`+`test_local_trend.py`. EXP-0009..0017;
+`build_landed_valuation_report.py`, `tests/test_landed.py`+`test_local_trend.py`. EXP-0009..0017;
 GY-0003/0004/0005.
 
 **The landed findings that matter (all measured):**
@@ -153,7 +153,7 @@ HALF-YEAR) exposed it.
 
 **Emulator (verified 2026-07-17):** adb + AVD moved to **D:\Android\Sdk**; `mb_play` AVD in
 mobile_bridge `.local/android/avd`; boot windowed via `scripts\start_emulator.ps1 -AvdName
-mb_play`; `com.investmentsuite` already logged in. `research/doctor.py` first, every session.
+mb_play`; `com.investmentsuite` already logged in. `research/tools/doctor.py` first, every session.
 
 **R4a MEASURED IS vs URA (EXP-0018, 2026-07-17) — it refuted two of my own beliefs:**
 - **"IS is fresher" — FALSE.** Same caveats, same lag (0 of 104 LOYANG RISE rows newer;
@@ -178,7 +178,7 @@ mb_play`; `com.investmentsuite` already logged in. `research/doctor.py` first, e
 GROVE" --type Terrace --area 1839.57 --condition original --profile PR --count 2` → 一个地址进,
 中文为主、详略分层(结论→关键数据→证据→局限,`<details>` 折叠)的 HTML 出。四层内容:
 **估值**(引擎 LV1)+ **DD**(OneMap/MP2025/PUB:地块、分区、学校、水浸、邻地剖面)+
-**成本栈**(`researcher/landed/costs.py`:BSD/ABSD/SSD 时钟/盈亏平衡)+ **深度尽调 DD-3**
+**成本栈**(`researcher/tax.py`:BSD/ABSD/SSD 时钟/盈亏平衡)+ **深度尽调 DD-3**
 (由事实自动推导;`--digest` 挂载判断层,不给就明说不给 go/no-go)。范围声明:租金收益、
 重建经济、持有成本、判断 —— 四项明确未覆盖。
 - **`street_alias.py`**:地址路名→URA街道,**只认证据**(EXP-0018 交易匹配),未知即拒答。
