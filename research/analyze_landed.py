@@ -21,10 +21,10 @@ from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from researcher.backtest.fingerprint import LANDED_CODE_FILES, code_sha1  # noqa: E402
+from researcher.engine.fingerprint import LANDED_CODE_FILES, code_sha1  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BT = os.path.join(os.path.dirname(HERE), "researcher", "backtest")
+BT = os.path.join(os.path.dirname(HERE), "researcher", "engine")
 TABLE_OUT = os.path.join(BT, "landed_conformal_table.json")
 CUTOFF = "2025-01"
 MIN_CELL_N = 40
@@ -112,7 +112,7 @@ def main():
     # included — the sweep above rebuilds band logic in miniature and used to skip the
     # widening, so the published held-out number understated the shipped band (78.91% vs
     # 79.62% in EXP-0015). Score the SAVED table exactly as production will apply it.
-    from researcher.backtest import landed_engine as _le
+    from researcher.engine import landed_engine as _le
     _le._TABLE = json.load(open(TABLE_OUT, encoding="utf-8"))
     cov = wsum = n = 0
     for r in test:

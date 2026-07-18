@@ -1,6 +1,6 @@
 """Production condo valuation — value ONE unit with engine v2 (the R5 skill's engine room).
 
-    from researcher.backtest.value_unit import value, SubjectSpec
+    from researcher.engine.value_unit import value, SubjectSpec
     v = value(SubjectSpec(project="TREASURE AT TAMPINES", area_sqft=936, floor=12))
 
 Wraps the VALIDATED engine (EXP-0006: C1 point + anchor fallback + conformal band) with:
@@ -21,14 +21,14 @@ import math as _math
 from dataclasses import dataclass
 from statistics import median
 
-from .avm import avm_hedonic
-from .avm_knn import avm_knn
-from .avm_pooled import avm_pooled
-from .candidates import c1_grid_adapted
+from researcher.backtest.avm import avm_hedonic
+from researcher.backtest.avm_knn import avm_knn
+from researcher.backtest.avm_pooled import avm_pooled
+from researcher.backtest.candidates import c1_grid_adapted
 from .engine_v2 import engine_v2
-from .index import PriceIndex
-from .market import MarketView
-from .store import TransactionStore, months_between
+from researcher.backtest.index import PriceIndex
+from researcher.backtest.market import MarketView
+from researcher.backtest.store import TransactionStore, months_between
 
 
 @dataclass
@@ -111,7 +111,7 @@ def _recent_ref(subject, market, ctx):
     time (capped) AND size — so the directional check compares apples to apples — the single
     most credible evidence point. On a hard case the model point can drift above it
     (stale-comp inflation); surfacing it keeps the report honest."""
-    from .candidates import SEG_ELASTICITY, DEFAULT_ELASTICITY
+    from researcher.backtest.candidates import SEG_ELASTICITY, DEFAULT_ELASTICITY
     area = subject["area_sqft"]
     sim = [r for r in market.same_project(subject["project"])
            if abs(_math.log(r["area_sqft"] / area)) <= 0.22]

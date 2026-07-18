@@ -30,7 +30,7 @@ def test_regression_reproduces_the_passed_digest_comps():
     assert res["meta"]["surface_counts"] == {"sale": 16, "profitability": 6, "towerview": 15}
     assert res["meta"]["total"] == 37
     digest = json.load(open(os.path.join(
-        ROOT, "researcher", "valuation", "spottiswoode_1803_digest.json"), encoding="utf-8"))
+        ROOT, "researcher", "legacy", "valuation", "spottiswoode_1803_digest.json"), encoding="utf-8"))
     want = sorted((c["date"], int(c["price"])) for c in digest["comps_table"])
     got = sorted((c["date"], c["price"]) for c in res["comps"])
     assert got == want, "tool must reproduce the hand-built, analyst-PASSed 37-row set"

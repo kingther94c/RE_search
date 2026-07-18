@@ -17,7 +17,7 @@ import pytest  # noqa: E402
 from deliverables.build_landed_full_report import (_merged_alerts,  # noqa: E402
                                                    _ssd_vs_entry_zh,
                                                    _suppress_reason_zh)
-from researcher.landed import costs as costs_mod  # noqa: E402
+from researcher import tax as costs_mod  # noqa: E402
 from researcher.landed import street_alias  # noqa: E402
 from researcher.landed.comps import street_comps  # noqa: E402
 

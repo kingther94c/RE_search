@@ -7,12 +7,12 @@ way every time; the model's job is only the narrative sections (summary,
 risks, catalysts, advisory stance, verification claims) — and the validation
 gates refuse to ship while TODO placeholders remain or any number disagrees.
 
-    python -m researcher.pipelines.condo_valuation <harvest_slug>
+    python -m researcher.legacy.pipelines.condo_valuation <harvest_slug>
            --digest-slug <digest_slug> --asof YYYY-MM-DD [--years 5]
            [--init] [--no-report]
 
     harvest_slug  names research/<slug>_{transactions,profitability,towerview,rents}.json
-    digest_slug   names researcher/valuation/<digest_slug>_digest.json (and the report)
+    digest_slug   names researcher/legacy/valuation/<digest_slug>_digest.json (and the report)
 
 Typical first run for a new subject:
     python research/doctor.py                       # readiness gate
@@ -20,9 +20,9 @@ Typical first run for a new subject:
     python research/harvest_profitability.py mydev  # on the Profitability tab (5Y)
     python research/harvest_rent.py mydev           # on the Rent tab (5Y)
     python research/harvest_towerview.py mydev      # on the Tower View tab
-    python -m researcher.pipelines.condo_valuation mydev --digest-slug mydev_0503 \
+    python -m researcher.legacy.pipelines.condo_valuation mydev --digest-slug mydev_0503 \
            --asof 2026-07-08 --init      # writes a skeleton digest; fill subject + TODOs
-    python -m researcher.pipelines.condo_valuation mydev --digest-slug mydev_0503 \
+    python -m researcher.legacy.pipelines.condo_valuation mydev --digest-slug mydev_0503 \
            --asof 2026-07-08             # compute + validate + render
 
 The pipeline REFUSES to guess: missing inputs stop it with the exact command
@@ -40,12 +40,12 @@ import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(os.path.dirname(HERE))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
 sys.path.insert(0, ROOT)
 
-from researcher.newlaunch.pricing import bsd  # noqa: E402
-from researcher.valuation import validate_digest  # noqa: E402
-from researcher.valuation.engine import Comp, Params, Subject, value  # noqa: E402
+from researcher.tax import bsd  # noqa: E402
+from researcher.legacy.valuation import validate_digest  # noqa: E402
+from researcher.legacy.valuation.engine import Comp, Params, Subject, value  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
     "reconstruct_comps", os.path.join(ROOT, "research", "reconstruct_comps.py"))
@@ -54,7 +54,7 @@ sys.modules.setdefault("mbx", type(sys)("mbx"))  # rc imports nothing from mbx, 
 _spec.loader.exec_module(rc)
 
 RESEARCH = os.path.join(ROOT, "research")
-VALUATION = os.path.join(ROOT, "researcher", "valuation")
+VALUATION = os.path.join(ROOT, "researcher", "legacy", "valuation")
 
 MORTGAGE_LTV, MORTGAGE_RATE, MORTGAGE_YEARS = 0.75, 0.014, 30
 
@@ -372,7 +372,7 @@ def run(args: argparse.Namespace) -> int:
         k in g for k in ("Tower View 只暴露", "View All 尾部", "户型未解析",
                          "窗口下采集", "跨座重复"))]
     d["data_gaps"] = gaps + hand
-    d["pipeline"] = {"tool": "researcher.pipelines.condo_valuation", "asof": args.asof,
+    d["pipeline"] = {"tool": "researcher.legacy.pipelines.condo_valuation", "asof": args.asof,
                      "harvest_slug": args.slug, "trend": trend,
                      "floor_premium": {"rate_per_floor": floor_pp, "method": floor_method},
                      "cross_surface_merges": res["meta"]["cross_surface_merges"]}
@@ -418,7 +418,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("slug", help="harvest slug (research/<slug>_*.json)")
     ap.add_argument("--digest-slug", required=True,
-                    help="digest slug (researcher/valuation/<digest_slug>_digest.json)")
+                    help="digest slug (researcher/legacy/valuation/<digest_slug>_digest.json)")
     ap.add_argument("--asof", required=True, help="YYYY-MM-DD")
     ap.add_argument("--years", type=int, default=5)
     ap.add_argument("--default-trend", type=float, default=0.018,

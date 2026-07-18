@@ -41,8 +41,6 @@ import sys
 from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.dirname(os.path.dirname(HERE))
-sys.path.insert(0, REPO)
 
 from researcher.landed import comps as comps_mod          # noqa: E402
 from researcher.sources import amenities, mp_zoning, onemap, pub_flood  # noqa: E402

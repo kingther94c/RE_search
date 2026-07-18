@@ -27,9 +27,9 @@ from __future__ import annotations
 import json
 import os
 
-from .landed_candidates import la1_pooled_anchor, lc2_fitted_curve
-from .landed_size_curve import is_big_plot
-from .local_trend import fit_landed_trend
+from researcher.backtest.landed_candidates import la1_pooled_anchor, lc2_fitted_curve
+from researcher.backtest.landed_size_curve import is_big_plot
+from researcher.backtest.local_trend import fit_landed_trend
 
 
 def shipped_time_ctx(view_txs, asof_ym: str) -> dict:

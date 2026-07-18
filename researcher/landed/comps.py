@@ -42,36 +42,32 @@ URA limits that shape every figure here (see researcher/sources/ura.py):
 """
 from __future__ import annotations
 
-import json
-import os
 import statistics
 import sys
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.dirname(os.path.dirname(HERE))
-TX = os.path.join(REPO, "researcher", "sources", "ura_transactions.json")
+from researcher.backtest.store import PURE_LANDED_TYPES, TransactionStore
 
-LANDED_TYPES = {"Terrace", "Semi-detached", "Detached",
-                "Strata Terrace", "Strata Semi-detached", "Strata Detached"}
 _tx_cache: list[dict] | None = None
 
 
 def _load() -> list[dict]:
+    # Same access path as the engines: the local URA pull if present, else the
+    # newest committed snapshot — so a fresh clone/worktree works offline.
     global _tx_cache
     if _tx_cache is None:
-        if not os.path.exists(TX):
-            raise RuntimeError(
-                f"No URA transactions at {TX}. Pull them first:\n"
-                "    python -m researcher.sources.ura\n"
-                "(needs a free URA_ACCESS_KEY — see researcher/sources/ura.py)")
-        with open(TX, encoding="utf-8") as f:
-            _tx_cache = json.load(f)
+        _tx_cache = TransactionStore.load().txs
     return _tx_cache
 
 
 def street_comps(street: str, landed_only: bool = True) -> list[dict]:
     """Every URA caveat on a street, oldest first. Matching is case-insensitive exact on
     URA's street name — pass the street as URA spells it.
+
+    `landed_only=True` keeps only PURE landed rows (type_of_area='Land' AND
+    Terrace/Semi-detached/Detached), because every figure downstream is labelled LAND
+    psf. Strata-landed rows (cluster housing) carry STRATA-area psf — a different
+    quantity — and must never sit in a land-psf cohort; `summarise` reports their count
+    separately so they stay visible.
 
     An EMPTY result means URA has no caveats filed UNDER THAT NAME. It does NOT prove the
     road had no sales: URA's street is a parent label (see the module docstring), so a small
@@ -82,7 +78,9 @@ def street_comps(street: str, landed_only: bool = True) -> list[dict]:
     s = street.strip().upper()
     rows = [t for t in _load() if (t.get("street") or "").upper() == s]
     if landed_only:
-        rows = [t for t in rows if t.get("property_type") in LANDED_TYPES]
+        rows = [t for t in rows
+                if t.get("type_of_area") == "Land"
+                and t.get("property_type") in PURE_LANDED_TYPES]
     return sorted(rows, key=lambda t: t["contract_ym"])
 
 
@@ -166,11 +164,15 @@ def tenure_summary(comps: list[dict]) -> dict:
 
 def summarise(street: str, area_sqft: float | None = None) -> dict:
     c = street_comps(street)
+    strata_n = sum(1 for t in street_comps(street, landed_only=False)
+                   if (t.get("property_type") or "").startswith("Strata"))
     out = {"street": street.upper(), "n": len(c),
            "first_ym": c[0]["contract_ym"] if c else None,
            "last_ym": c[-1]["contract_ym"] if c else None,
            "tenure": tenure_summary(c), "cohorts": size_cohorts(c),
-           "trend": trend(c), "types": {}}
+           "trend": trend(c), "types": {},
+           # strata-landed on the same street: visible but never in the land-psf figures
+           "strata_n": strata_n}
     for t in c:
         out["types"][t["property_type"]] = out["types"].get(t["property_type"], 0) + 1
     if area_sqft:

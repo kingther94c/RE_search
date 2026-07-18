@@ -142,7 +142,7 @@ MACRO = {
     # WRONG; IRAS says 35% (verified 2026-07-17 against IRAS + the MAS 27 Apr 2023 release).
     # The same wrong value sat in property-buy-sell-advisory's table: two internal sources
     # agreeing is not verification when they share an origin. Canonical table + the arithmetic
-    # now live in researcher/landed/costs.py (with source/effective/verify_at on every rate).
+    # now live in researcher/tax.py (with source/effective/verify_at on every rate).
     "absd_sc": {"1st": 0, "2nd": 20, "3rd": 30},
     "absd_pr": {"1st": 5, "2nd": 30, "3rd": 35},
     "absd_foreigner": 60,

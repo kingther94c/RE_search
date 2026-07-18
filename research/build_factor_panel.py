@@ -7,7 +7,7 @@ Condo panel rows come from:
   * research/captures/<slug>_info.json   (anchor Property Info: region/district/
                                    subtown/plot ratio/land size)
   * research/tier1_comps.json     (prior study: 6 projects' info + sale bands)
-  * researcher/valuation/*_digest.json   (deep studies: fitted trends, yields)
+  * researcher/legacy/valuation/*_digest.json   (deep studies: fitted trends, yields)
 
 Landed panel rows (one per ADDRESS transaction) come from:
   * research/tier1_landed_*.json  (street transaction files)
@@ -31,7 +31,7 @@ import statistics
 HERE = os.path.dirname(os.path.abspath(__file__))
 CAP = os.path.join(HERE, "captures")
 FACTORS = os.path.join(os.path.dirname(HERE), "researcher", "factors")
-VALUATION = os.path.join(os.path.dirname(HERE), "researcher", "valuation")
+VALUATION = os.path.join(os.path.dirname(HERE), "researcher", "legacy", "valuation")
 
 _ADDR = re.compile(r"^\d+[A-Z]? [A-Z' ]{3,}$")          # '23 FRANKEL AVENUE'
 _PP = re.compile(r"PP: \$([\d,]+) \(\$([\d,]+) psf\)")

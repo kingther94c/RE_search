@@ -20,7 +20,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)  # so `python deliverables/build_landed_report.py` finds researcher/
 
 from deliverables.report_out import write_report  # noqa: E402
-from researcher.sources.propertyguru import rank_listings, screen_verdict  # noqa: E402
+from researcher.landed.screen import rank_listings, screen_verdict  # noqa: E402
 
 
 def esc(x) -> str:

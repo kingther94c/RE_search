@@ -17,10 +17,10 @@ from __future__ import annotations
 import json
 import os
 
-from .avm import avm_hedonic
-from .avm_knn import avm_knn
-from .avm_pooled import avm_pooled
-from .candidates import c1_grid_adapted
+from researcher.backtest.avm import avm_hedonic
+from researcher.backtest.avm_knn import avm_knn
+from researcher.backtest.avm_pooled import avm_pooled
+from researcher.backtest.candidates import c1_grid_adapted
 
 _TABLE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "conformal_table.json")
 _TABLE: dict | None = None

@@ -386,9 +386,9 @@ def test_conformal_table_matches_current_c1():
     import json
     import os
 
-    from researcher.backtest.fingerprint import CONDO_CODE_FILES, code_sha1
+    from researcher.engine.fingerprint import CONDO_CODE_FILES, code_sha1
     base = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                        "researcher", "backtest")
+                        "researcher", "engine")
     with open(os.path.join(base, "conformal_table.json"), encoding="utf-8") as f:
         meta = json.load(f).get("_meta", {})
     stored = meta.get("candidates_sha1")
@@ -401,7 +401,7 @@ def test_conformal_table_matches_current_c1():
 
 
 def test_engine_v2_point_band_and_fallback():
-    from researcher.backtest.engine_v2 import engine_v2
+    from researcher.engine.engine_v2 import engine_v2
     mkt, ctx = _big_condo_market()
     # C1 available -> V2 point comes from C1, with a conformal band around it
     est = engine_v2(_tx("P3", "2024-10", 2000, area=800, x=100, y=100), mkt, ctx)

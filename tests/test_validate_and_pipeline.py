@@ -12,10 +12,10 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
-from researcher.valuation import validate_digest  # noqa: E402
+from researcher.legacy.valuation import validate_digest  # noqa: E402
 
-DIGEST = os.path.join(ROOT, "researcher", "valuation", "spottiswoode_1803_digest.json")
-TMP = os.path.join(ROOT, "researcher", "valuation", "_tmptest_digest.json")
+DIGEST = os.path.join(ROOT, "researcher", "legacy", "valuation", "spottiswoode_1803_digest.json")
+TMP = os.path.join(ROOT, "researcher", "legacy", "valuation", "_tmptest_digest.json")
 
 
 def _load():
@@ -58,7 +58,7 @@ def test_gate_catches_broken_arithmetic():
 
 def _pipeline(*extra):
     return subprocess.run(
-        [sys.executable, "-m", "researcher.pipelines.condo_valuation", "spottiswoode",
+        [sys.executable, "-m", "researcher.legacy.pipelines.condo_valuation", "spottiswoode",
          "--digest-slug", "_tmptest", "--asof", "2026-07-03", "--no-report", *extra],
         capture_output=True, text=True, encoding="utf-8", cwd=ROOT,
         env={**os.environ, "PYTHONIOENCODING": "utf-8"})

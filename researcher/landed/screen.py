@@ -1,4 +1,4 @@
-"""PropertyGuru landed-listings source → screening.
+"""Landed-listings screening (PropertyGuru payloads → scorecard → GO/CHECK ranking).
 
 PropertyGuru blocks server-side fetches (WebFetch → HTTP 403), so listings are
 gathered by **WebSearch** (which surfaces and summarises live PropertyGuru
@@ -7,7 +7,7 @@ patterns. The pulled listings live in `researcher/landed/<area>_listings.json`.
 
 This module normalises each listing into the landed `scorecard` input, scores it
 (quality), and flags **value** = land psf vs the area benchmark band, then ranks.
-Run:  python -m researcher.sources.propertyguru [area_slug]
+Run:  python -m researcher.landed.screen [area_slug]
 """
 from __future__ import annotations
 

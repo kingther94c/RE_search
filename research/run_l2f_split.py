@@ -32,11 +32,11 @@ for _s in (sys.stdout, sys.stderr):
 from researcher.backtest.harness import _prev_ym                       # noqa: E402
 from researcher.backtest.index import PriceIndex                       # noqa: E402
 from researcher.backtest.landed_candidates import lc2_fitted_curve     # noqa: E402
-from researcher.backtest.landed_engine import shipped_time_ctx         # noqa: E402
+from researcher.engine.landed_engine import shipped_time_ctx         # noqa: E402
 from researcher.backtest.market import MarketView                      # noqa: E402
 from researcher.backtest.store import (LANDED_PSF_BAND, TransactionStore,  # noqa: E402
                                        month_end)
-from researcher.backtest.value_landed import _adjusted_comp_psfs, _pctl  # noqa: E402
+from researcher.engine.value_landed import _adjusted_comp_psfs, _pctl  # noqa: E402
 
 IS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "is_street")
 # IS 采集 slug -> 它在 URA 里被归到哪个母路桶(EXP-0018 已证)

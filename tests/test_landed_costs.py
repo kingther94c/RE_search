@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import pytest
 
-from researcher.landed.costs import (ABSD_RATES, absd, bsd, breakeven_gain_pct,
+from researcher.tax import (ABSD_RATES, absd, bsd, breakeven_gain_pct,
                                      entry_costs, ssd, ssd_clock)
 
 

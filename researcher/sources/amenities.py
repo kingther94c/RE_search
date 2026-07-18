@@ -30,10 +30,13 @@ import urllib.parse
 import urllib.request
 from datetime import date
 
-# 中文进度输出会在 cp1252 控制台上抛 UnicodeEncodeError(和 mbx / report_out 同一个坑)
-for _s in (sys.stdout, sys.stderr):
-    if hasattr(_s, "reconfigure"):
-        _s.reconfigure(encoding="utf-8", errors="replace")
+def _utf8_stdio() -> None:
+    # 中文进度输出会在 cp1252 控制台上抛 UnicodeEncodeError(和 mbx / report_out 同一个坑)。
+    # 只在作为 CLI 运行时调用 —— import 本模块不得改动全局 stdout/stderr。
+    for _s in (sys.stdout, sys.stderr):
+        if hasattr(_s, "reconfigure"):
+            _s.reconfigure(encoding="utf-8", errors="replace")
+
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CACHE = os.path.join(HERE, "amenities_cache.json")
@@ -171,7 +174,7 @@ def built_on() -> str:
 
 
 if __name__ == "__main__":
-    sys.path.insert(0, os.path.dirname(os.path.dirname(HERE)))
+    _utf8_stdio()
     if "--rebuild" in sys.argv:
         rebuild()
     else:

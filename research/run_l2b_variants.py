@@ -28,7 +28,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from researcher.backtest.harness import walk_forward                    # noqa: E402
 from researcher.backtest.index import PriceIndex                        # noqa: E402
-from researcher.backtest.landed_engine import LANDED_ENGINE             # noqa: E402
+from researcher.engine.landed_engine import LANDED_ENGINE             # noqa: E402
 from researcher.backtest.local_trend import fit_landed_trend            # noqa: E402
 from researcher.backtest.store import LANDED_PSF_BAND, TransactionStore  # noqa: E402
 

@@ -36,7 +36,7 @@ from researcher.backtest.index import PriceIndex, quarter_end           # noqa: 
 from researcher.backtest.landed_benchmarks import (TIME_ADJ_CAP, _recent)  # noqa: E402
 from researcher.backtest.landed_candidates import (CRAFT_HALFLIFE_MO,   # noqa: E402
                                                    lease_compatible)
-from researcher.backtest.landed_engine import LANDED_ENGINE             # noqa: E402
+from researcher.engine.landed_engine import LANDED_ENGINE             # noqa: E402
 from researcher.backtest.market import MarketView                       # noqa: E402
 from researcher.backtest.store import (LANDED_PSF_BAND, TransactionStore,  # noqa: E402
                                        month_end, months_between)

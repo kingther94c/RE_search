@@ -19,7 +19,7 @@ import os
 from .harness import walk_forward
 from .landed_benchmarks import LANDED_BENCHMARKS
 from .landed_candidates import LANDED_CANDIDATES
-from .landed_engine import LANDED_ENGINE, shipped_time_ctx
+from researcher.engine.landed_engine import LANDED_ENGINE, shipped_time_ctx
 from .store import LANDED_PSF_BAND, TransactionStore
 
 _OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results_landed.json")

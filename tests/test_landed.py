@@ -8,7 +8,7 @@ import pytest
 from researcher.backtest.landed_candidates import (lease_compatible, remaining_lease)
 from researcher.backtest.landed_size_curve import BANDS, is_big_plot, size_factor
 from researcher.backtest.store import TransactionStore
-from researcher.backtest.value_landed import LandedSpec, value_landed
+from researcher.engine.value_landed import LandedSpec, value_landed
 
 
 # ---------------------------------------------------------------- L2a size curve
@@ -87,9 +87,9 @@ def test_conformal_table_matches_landed_code():
     import json
     import os
 
-    from researcher.backtest.fingerprint import LANDED_CODE_FILES, code_sha1
+    from researcher.engine.fingerprint import LANDED_CODE_FILES, code_sha1
     base = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                        "researcher", "backtest")
+                        "researcher", "engine")
     with open(os.path.join(base, "landed_conformal_table.json"), encoding="utf-8") as f:
         meta = json.load(f).get("_meta", {})
     stored = meta.get("code_sha1")
@@ -251,9 +251,9 @@ def test_shipped_point_is_the_backtested_point(store):
     must equal the engine's."""
     import datetime as dt
     from researcher.backtest.index import PriceIndex
-    from researcher.backtest.landed_engine import landed_engine, shipped_time_ctx
+    from researcher.engine.landed_engine import landed_engine, shipped_time_ctx
     from researcher.backtest.market import MarketView
-    from researcher.backtest.value_landed import _infer, _landed_store
+    from researcher.engine.value_landed import _infer, _landed_store
     ls = _landed_store(store)
     for street, area, ptype in (("ALNWICK ROAD", 2800, "Terrace"),
                                 ("LOYANG RISE", 1635, "Terrace")):
@@ -277,7 +277,7 @@ def test_directional_flag_is_symmetric(store):
     engine is NOT biased on — and was silent on 58 BELOW-side cases where the gap genuinely
     predicts error. It must annotate BOTH directions, and never move the point."""
     import inspect
-    from researcher.backtest import value_landed as m
+    from researcher.engine import value_landed as m
     src = inspect.getsource(m.value_landed)
     assert "gap < -0.06" in src and "gap > 0.06" in src, "directional flag is not symmetric"
     assert "point_psf = round((est" not in src, "the rejected blend is back (see GY-0003)"
@@ -313,7 +313,7 @@ def test_guidance_comes_from_observed_prints_not_the_error_bar(store):
     band — the engine's PREDICTIVE error — so 72% of asks landed above every comp on their
     own page. Guidance must come from the lease-matched adjusted comp distribution, and an
     ask must therefore never exceed the dearest comparable print."""
-    from researcher.backtest.value_landed import _adjusted_comp_psfs, _infer, _landed_store
+    from researcher.engine.value_landed import _adjusted_comp_psfs, _infer, _landed_store
     from researcher.backtest.index import PriceIndex
     from researcher.backtest.market import MarketView
     import datetime as dt
@@ -343,7 +343,7 @@ def test_live_mode_sees_the_current_partial_month(store):
     prints (the EXP-0008 defect, fixed for condo, reintroduced here)."""
     import datetime as dt
     from researcher.backtest.market import MarketView
-    from researcher.backtest.value_landed import _landed_store
+    from researcher.engine.value_landed import _landed_store
     ls = _landed_store(store)
     ym = dt.date.today().strftime("%Y-%m")
     n_this_month = sum(1 for t in ls.txs if t["contract_ym"] == ym)

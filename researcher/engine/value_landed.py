@@ -1,6 +1,6 @@
 """L4: production landed valuation — value ONE landed house with the LV1 engine.
 
-    from researcher.backtest.value_landed import value_landed, LandedSpec
+    from researcher.engine.value_landed import value_landed, LandedSpec
     v = value_landed(LandedSpec(street="CARDIFF GROVE", land_area_sqft=1839.6,
                                 property_type="Terrace"))
 
@@ -24,14 +24,14 @@ import math as _math
 from dataclasses import dataclass
 from statistics import median
 
-from .index import PriceIndex
-from .landed_benchmarks import _tadj_psf, lb4_spatial_knn
-from .landed_candidates import (la1_pooled_anchor, lc2_fitted_curve, lease_compatible,
+from researcher.backtest.index import PriceIndex
+from researcher.backtest.landed_benchmarks import _tadj_psf, lb4_spatial_knn
+from researcher.backtest.landed_candidates import (la1_pooled_anchor, lc2_fitted_curve, lease_compatible,
                                 remaining_lease)
 from .landed_engine import landed_engine, shipped_time_ctx
-from .landed_size_curve import is_big_plot, size_factor
-from .market import MarketView
-from .store import LANDED_PSF_BAND, TransactionStore, months_between
+from researcher.backtest.landed_size_curve import is_big_plot, size_factor
+from researcher.backtest.market import MarketView
+from researcher.backtest.store import LANDED_PSF_BAND, TransactionStore, months_between
 
 # Measured in EXP-0010: same-plot repeat dispersion = the irreducible per-print bundle noise.
 NOISE_FLOOR = {"Terrace": 0.060, "Semi-detached": 0.078, "Detached": 0.082}

@@ -24,12 +24,9 @@ import json
 import os
 import sys
 
+from researcher.sources import onemap
+
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(os.path.dirname(HERE))
-sys.path.insert(0, ROOT)
-
-from researcher.sources import onemap  # noqa: E402
-
 CACHE_PATH = os.path.join(HERE, "onemap_cache.json")
 
 # ── curated reference layers (geocoded via OneMap at run time) ───────────────

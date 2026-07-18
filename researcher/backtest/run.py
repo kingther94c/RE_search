@@ -22,7 +22,7 @@ from .benchmarks import BENCHMARKS
 from .candidates import CANDIDATES
 from .ensemble import ENSEMBLES
 from .ensemble_learned import ENSEMBLES_LEARNED
-from .engine_v2 import ENGINE_V2
+from researcher.engine.engine_v2 import ENGINE_V2
 from .harness import walk_forward
 from .store import TransactionStore
 
@@ -41,6 +41,8 @@ def main() -> None:
     ap.add_argument("--slices", action="store_true", help="standard G1 slice panel")
     ap.add_argument("--dump", default=None, help="save all per-subject rows to JSON path")
     ap.add_argument("--method", default="C1_grid_adapted")
+    ap.add_argument("--legacy-ensembles", action="store_true",
+                    help="also run the superseded E0-E3 ensembles (4 extra methods/subject)")
     args = ap.parse_args()
 
     # R0 hygiene: drop bulk/en-bloc and gross psf outliers as subject AND comp
@@ -55,8 +57,12 @@ def main() -> None:
         print("no subjects — is the store populated and the date window sane?")
         return
 
+    # E0-E3 are superseded by engine v2 (engine_v2.py docstring) — off by default,
+    # every run used to pay 4 extra method evaluations per subject for them.
     methods = {**BENCHMARKS, **CANDIDATES, **ANCHORS, **ANCHORS_POOLED,
-               **KNN_ANCHORS, **ENSEMBLES, **ENSEMBLES_LEARNED, **ENGINE_V2}
+               **KNN_ANCHORS, **ENGINE_V2}
+    if args.legacy_ensembles:
+        methods = {**methods, **ENSEMBLES, **ENSEMBLES_LEARNED}
     res = walk_forward(store, subjects, methods,
                        lag_days=args.lag_days, max_subjects=args.max)
     print("\n=== benchmark leaderboard (sorted by median APE) ===")

@@ -14,7 +14,7 @@ spec = importlib.util.spec_from_file_location(
 blr = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(blr)
 
-from researcher.sources.propertyguru import (  # noqa: E402
+from researcher.landed.screen import (  # noqa: E402
     normalize, rank_listings, screen, screen_verdict, value_flag,
 )
 
@@ -100,7 +100,7 @@ def test_screen_tolerates_missing_fields(tmp_path, monkeypatch, capsys):
     landed = tmp_path / "researcher" / "landed"
     landed.mkdir(parents=True)
     (landed / "t_listings.json").write_text(json.dumps(data), encoding="utf-8")
-    monkeypatch.setattr("researcher.sources.propertyguru.ROOT", str(tmp_path))
+    monkeypatch.setattr("researcher.landed.screen.ROOT", str(tmp_path))
     rows = screen("t")
     out = capsys.readouterr().out
     assert len(rows) == 1 and "NoNumbers Rd" in out and "?" in out

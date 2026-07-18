@@ -28,7 +28,11 @@ from __future__ import annotations
 import hashlib
 import os
 
-_HERE = os.path.dirname(os.path.abspath(__file__))
+# The fingerprinted point-method sources live in researcher/backtest (the lab);
+# this module moved to researcher/engine with the production surface. Hashing is
+# content-only, so the move itself did not change any table's fingerprint.
+_BACKTEST = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                         "backtest")
 
 #: condo engine v2 point method (C1 grid)
 CONDO_CODE_FILES = ("candidates.py",)
@@ -38,7 +42,7 @@ LANDED_CODE_FILES = ("landed_benchmarks.py", "landed_candidates.py",
                      "landed_size_curve.py", "local_trend.py")
 
 
-def code_sha1(filenames, base: str = _HERE) -> str:
+def code_sha1(filenames, base: str = _BACKTEST) -> str:
     """sha1 over the named researcher/backtest sources, EOL-normalized (CRLF->LF).
 
     Order matters and is the tuple's order — keep the constants above as the only callers'

@@ -7,12 +7,15 @@
 税率是**会变的**,而且这里的数字会被人拿去做决策 —— 所以每张表都带 `source` / `effective` /
 `verify_at`,报告必须把生效日印出来。本模块只做**算术**,不做建议。
 
-    from researcher.landed.costs import entry_costs, ssd_clock, PROFILES
+**这是全仓库唯一的 BSD/ABSD/SSD 实现**(2026-07-18 起):newlaunch/pricing、报告构建器、
+skills 全部从这里取数;不要在别处复制税率表。
+
+    from researcher.tax import entry_costs, ssd_clock, PROFILES
     entry_costs(4_250_000, "PR", 2)     -> {'bsd':…, 'absd':…, 'total':…, …}
     ssd_clock(4_250_000)                -> [{'held':'≤1 年','rate':0.16,'amount':680000}, …]
 
 核对记录(2026-07-17):仓库原先在两处把 **PR 第三套 ABSD 写成 30%**
-(`researcher/valuation/dataset.py`、`property-buy-sell-advisory` SKILL)。经 IRAS 与 MAS
+(`researcher/legacy/valuation/dataset.py`、`property-buy-sell-advisory` SKILL)。经 IRAS 与 MAS
 2023-04-27 新政三次交叉核对,正确值是 **35%** —— 已一并更正。两个内部来源一致不等于对:
 它们同源。
 """
@@ -71,11 +74,15 @@ def absd(price: float, profile: str, count: int = 1) -> float:
     return float(price) * ABSD_RATES[p][min(max(int(count), 1), 3)]
 
 
-def ssd(price: float, holding_years: float) -> float:
+def ssd_rate(holding_years: float) -> float:
     for yrs, rate in SSD_BANDS:
         if holding_years <= yrs:
-            return float(price) * rate
+            return rate
     return 0.0
+
+
+def ssd(price: float, holding_years: float) -> float:
+    return float(price) * ssd_rate(holding_years)
 
 
 def entry_costs(price: float, profile: str = "SC", count: int = 1,

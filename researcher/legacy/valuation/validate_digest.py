@@ -8,7 +8,7 @@ Windows codepages, Tier-3-sourced load-bearing rows. Run it after ANY digest
 edit; the condo-valuation pipeline runs it automatically.
 
 Usage:
-    python -m researcher.valuation.validate_digest <digest.json> [--report <report.html>]
+    python -m researcher.legacy.valuation.validate_digest <digest.json> [--report <report.html>]
 
 Exit 0 = all gates pass. Exit 1 = at least one FAIL (each printed with a fix
 hint). Narrative TODO markers also fail — a digest ships only when a human/

@@ -33,7 +33,7 @@ def esc(x) -> str:
 
 
 def load(slug: str) -> dict:
-    p = os.path.join(ROOT, "researcher", "valuation", f"{slug}_digest.json")
+    p = os.path.join(ROOT, "researcher", "legacy", "valuation", f"{slug}_digest.json")
     return json.load(open(p, encoding="utf-8"))
 
 

@@ -7,7 +7,7 @@ import datetime as dt
 import pytest
 
 from researcher.backtest.store import TransactionStore
-from researcher.backtest.value_unit import value, SubjectSpec
+from researcher.engine.value_unit import value, SubjectSpec
 
 
 @pytest.fixture(scope="module")

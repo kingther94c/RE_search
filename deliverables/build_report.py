@@ -18,13 +18,13 @@ from datetime import date
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
-sys.path.insert(0, os.path.join(ROOT, "researcher", "valuation"))
+sys.path.insert(0, os.path.join(ROOT, "researcher", "legacy", "valuation"))
 import dataset as D  # noqa: E402
 
 from deliverables.report_out import write_report  # noqa: E402
 
 CAPS = os.path.join(ROOT, "research", "captures")
-RESULTS = json.load(open(os.path.join(ROOT, "researcher", "valuation", "results.json"), encoding="utf-8"))
+RESULTS = json.load(open(os.path.join(ROOT, "researcher", "legacy", "valuation", "results.json"), encoding="utf-8"))
 VAL = RESULTS["valuation"]
 ADV = RESULTS["advisory"]
 

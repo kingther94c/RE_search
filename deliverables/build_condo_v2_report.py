@@ -3,7 +3,7 @@
     python deliverables/build_condo_v2_report.py --project "TREASURE AT TAMPINES" \
            --area 936 --floor 12 [--asof 2026-07-01]
 
-Values the unit with researcher.backtest.value_unit, then writes an HTML report to the
+Values the unit with researcher.engine.value_unit, then writes an HTML report to the
 repo's gitignored reports/ AND syncs it to the Drive library (deliverables/report_out.py).
 Self-contained (inline CSS), no external assets.
 """
@@ -16,7 +16,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from deliverables.report_out import write_report  # noqa: E402
-from researcher.backtest.value_unit import SubjectSpec, value
+from researcher.engine.value_unit import SubjectSpec, value
 
 
 def _money(x):

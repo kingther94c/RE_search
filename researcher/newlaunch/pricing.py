@@ -14,31 +14,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 
-def bsd(price: float) -> float:
-    tiers = [(180_000, .01), (180_000, .02), (640_000, .03), (500_000, .04),
-             (1_500_000, .05), (float("inf"), .06)]
-    duty, rem = 0.0, price
-    for band, rate in tiers:
-        take = min(rem, band)
-        duty += take * rate
-        rem -= take
-        if rem <= 0:
-            break
-    return duty
-
-
-def ssd_rate(holding_years: float) -> float:
-    """Seller's Stamp Duty on exit (residential bought on/after 4 Jul 2025):
-    16/12/8/4% within years 1-4, zero after. Holding counts from purchase."""
-    if holding_years <= 1:
-        return .16
-    if holding_years <= 2:
-        return .12
-    if holding_years <= 3:
-        return .08
-    if holding_years <= 4:
-        return .04
-    return 0.0
+from researcher.tax import bsd, ssd_rate
 
 
 @dataclass

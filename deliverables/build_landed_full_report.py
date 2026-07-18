@@ -5,7 +5,7 @@
 
 把两条本来分开的链子接成一个入口:
   - `researcher.landed.dd.run(address)`      -> 地理编码、MP2025 地块/分区/邻地、学校/MRT、水浸
-  - `researcher.backtest.value_landed`       -> 引擎 LV1 的公允价、区间、可比、买卖指导
+  - `researcher.engine.value_landed`       -> 引擎 LV1 的公允价、区间、可比、买卖指导
 
 接缝上有三件事必须做对,否则整份报告是错的:
 
@@ -30,9 +30,9 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from deliverables.report_out import write_report                      # noqa: E402
-from researcher.backtest.value_landed import (NOISE_FLOOR, LandedSpec,  # noqa: E402
+from researcher.engine.value_landed import (NOISE_FLOOR, LandedSpec,  # noqa: E402
                                               value_landed)
-from researcher.landed import costs as costs_mod                      # noqa: E402
+from researcher import tax as costs_mod                      # noqa: E402
 from researcher.landed import dd as dd_mod                            # noqa: E402
 from researcher.landed import street_alias                            # noqa: E402
 from researcher.landed.comps import street_comps                      # noqa: E402

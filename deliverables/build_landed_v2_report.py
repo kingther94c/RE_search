@@ -17,7 +17,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from deliverables.report_out import write_report  # noqa: E402
-from researcher.backtest.value_landed import LandedSpec, value_landed
+from researcher.engine.value_landed import LandedSpec, value_landed
 
 
 def _money(x):

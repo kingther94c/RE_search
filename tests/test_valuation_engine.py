@@ -1,7 +1,7 @@
 """Valuation engine: identity adjustment, direction of adjustments, guards."""
 import pytest
 
-from researcher.valuation.engine import Comp, Params, Subject, adjust, value
+from researcher.legacy.valuation.engine import Comp, Params, Subject, adjust, value
 
 P = Params(asof="2026-06-30", time_trend_pa=0.02, floor_premium_pp=0.003,
            size_elasticity=-0.08, compact3br_discount=0.03)
