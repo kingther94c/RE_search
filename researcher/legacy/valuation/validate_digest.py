@@ -22,11 +22,7 @@ import os
 import re
 import sys
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(os.path.dirname(HERE))
-sys.path.insert(0, ROOT)
-
-from researcher.newlaunch.pricing import bsd  # noqa: E402
+from researcher.tax import bsd
 
 REQUIRED = ["subject", "asof", "summary", "valuation", "comps_table",
             "advisory", "verification", "data_gaps", "sources", "report_basename"]

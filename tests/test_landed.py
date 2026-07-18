@@ -7,7 +7,6 @@ import pytest
 
 from researcher.backtest.landed_candidates import (lease_compatible, remaining_lease)
 from researcher.backtest.landed_size_curve import BANDS, is_big_plot, size_factor
-from researcher.backtest.store import TransactionStore
 from researcher.engine.value_landed import LandedSpec, value_landed
 
 
@@ -103,11 +102,7 @@ def test_conformal_table_matches_landed_code():
 
 
 # --------------------------------------------------- L4 production regression cases
-@pytest.fixture(scope="module")
-def store():
-    return TransactionStore.load()
-
-
+# (`store` comes from tests/conftest.py — one session-scoped spine parse.)
 def _v(store, street, area, ptype):
     return value_landed(LandedSpec(street, area, ptype, asof="2026-07-01"), store)
 

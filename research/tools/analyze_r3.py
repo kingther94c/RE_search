@@ -4,7 +4,7 @@
   2. split-conformal: replace the union band with per-(liquidity x segment) cell intervals
      calibrated on an EARLY time slice and validated on a LATER one (leakage-safe), to hit
      exactly 80% coverage and (ideally) SHARPER bands than the 87-94% union bands.
-Pure analysis; writes the calibrated conformal table to researcher/backtest/conformal_table.json.
+Pure analysis; writes the calibrated conformal table to researcher/engine/conformal_table.json.
 """
 from __future__ import annotations
 

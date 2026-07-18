@@ -98,7 +98,7 @@ def main():
     for ty, v in by_type.items():
         table[f"_type|{ty}"] = [_q(v, NOM_LO), _q(v, NOM_HI)]
 
-    # The file set + the hash live in researcher/backtest/fingerprint.py so the stamper and
+    # The file set + the hash live in researcher/engine/fingerprint.py so the stamper and
     # the guard test cannot drift apart (they did once: landed_benchmarks.py was outside the
     # set — a hole exactly where L2b's time adjustment operates).
     table["_meta"]["code_sha1"] = code_sha1(LANDED_CODE_FILES)

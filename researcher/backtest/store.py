@@ -46,6 +46,14 @@ _LANDED_KEYS = ("terrace", "detached", "semi-detached")
 # roadmap). 'Apartment' rows with Land area (walk-up / whole-building deals) are excluded
 # by the type test.
 PURE_LANDED_TYPES = {"Terrace", "Semi-detached", "Detached"}
+
+
+def is_pure_landed_row(x: dict) -> bool:
+    """THE row-level pure-landed predicate — every land-psf consumer must use this one
+    statement of the rule (comps.py, market.py, audits), never restate it inline.
+    Case-insensitive on type_of_area: URA passes casing through unnormalized."""
+    return ((x.get("type_of_area") or "").lower() == "land"
+            and x.get("property_type") in PURE_LANDED_TYPES)
 # Land-psf sanity band (L0 / EXP-0009, percentile-verified): today's extremes are REAL —
 # p0=107 psf is a ~8-years-left 70yr-lease terrace (Jalan Chempaka Kuning), p100=5,756 is
 # an Emerald Hill conservation terrace. The band wraps the verified range to catch future
@@ -133,8 +141,7 @@ class TransactionStore:
         """Land-titled landed homes only: type_of_area='Land' AND an exact landed type.
         Excludes strata-landed (different sub-market) and Apartment+Land whole-building
         rows. psf/area on every row returned = LAND psf / LAND area."""
-        return self.where(lambda x: x["type_of_area"].lower() == "land"
-                          and x["property_type"] in PURE_LANDED_TYPES)
+        return self.where(is_pure_landed_row)
 
     def is_strata_landed(self) -> "TransactionStore":
         """Cluster housing (Strata Terrace/Semi-detached/Detached) — trades on STRATA

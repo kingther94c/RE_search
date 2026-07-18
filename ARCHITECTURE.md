@@ -13,7 +13,7 @@ for an Android app, an API when one exists. No skill hard-requires a specific to
 |---|---|---|---|
 | **Skills** | `.claude/skills/` (canonical) → `.agents/skills/` (generated Codex mirror: `python tools/sync_agents_skills.py`) | nothing (pure playbooks) | the durable asset — method, auto-discovered by Claude |
 | **Engine** | `researcher/engine/` | `researcher/backtest` (point methods + store) | the PRODUCTION valuation surface: engine v2 (condo) + LV1 (landed), conformal tables + sha1 fingerprints |
-| **Lab** | `researcher/backtest/` | stdlib | walk-forward harness, benchmarks/candidates/anchors, the as-of TransactionStore (URA spine, committed-snapshot fallback) |
+| **Lab** | `researcher/backtest/` | stdlib; the two leaderboard runners (`run.py`, `run_landed.py`) also import `researcher/engine` — see the sanctioned back-edge below | walk-forward harness, benchmarks/candidates/anchors, the as-of TransactionStore (URA spine, committed-snapshot fallback) |
 | **Domain** | `researcher/{landed,newlaunch,factors,sources}/`, `researcher/tax.py` | stdlib (+ store where noted) | street comps & DD, new-launch math, factor panels, official-data adapters, THE one BSD/ABSD/SSD implementation |
 | **Legacy** | `researcher/legacy/`, `deliverables/legacy/` | frozen | the runnable engine-v1 condo chain — the `value-a-property` craft reference; bug-fix only |
 | **Harness** | `research/lib/` (mbx + harvesters), `research/tools/` (doctor, conformal stampers, audits) | `adb` on PATH | Tier-1 extraction from the Investment Suite app + the sanctioned recalibration path |
@@ -29,6 +29,12 @@ for an Android app, an API when one exists. No skill hard-requires a specific to
               → deliverables (render)      → reports/ + Drive
 ```
 
+- **Sanctioned back-edge (the ONE cycle):** the Lab's leaderboard runners
+  (`researcher/backtest/run.py`, `run_landed.py`) import the shipped engines from
+  `researcher/engine` so every walk-forward run scores THE production code path — a
+  leaderboard entry that silently diverged from `value_unit`/`value_landed` is exactly
+  the failure the leaderboard exists to catch. Everything else in `researcher/backtest/`
+  stays engine-free; don't add engine imports outside the two runners.
 - **Fingerprint guard:** the conformal tables in `researcher/engine/` are sha1-locked to
   the point-method sources in `researcher/backtest/` (`researcher/engine/fingerprint.py`).
   Touch those files → recalibrate via `research/tools/analyze_r3.py` /

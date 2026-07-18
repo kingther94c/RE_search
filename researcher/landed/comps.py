@@ -45,7 +45,7 @@ from __future__ import annotations
 import statistics
 import sys
 
-from researcher.backtest.store import PURE_LANDED_TYPES, TransactionStore
+from researcher.backtest.store import TransactionStore, is_pure_landed_row
 
 _tx_cache: list[dict] | None = None
 
@@ -78,9 +78,7 @@ def street_comps(street: str, landed_only: bool = True) -> list[dict]:
     s = street.strip().upper()
     rows = [t for t in _load() if (t.get("street") or "").upper() == s]
     if landed_only:
-        rows = [t for t in rows
-                if t.get("type_of_area") == "Land"
-                and t.get("property_type") in PURE_LANDED_TYPES]
+        rows = [t for t in rows if is_pure_landed_row(t)]
     return sorted(rows, key=lambda t: t["contract_ym"])
 
 
@@ -163,8 +161,10 @@ def tenure_summary(comps: list[dict]) -> dict:
 
 
 def summarise(street: str, area_sqft: float | None = None) -> dict:
-    c = street_comps(street)
-    strata_n = sum(1 for t in street_comps(street, landed_only=False)
+    # One store scan: the unfiltered street set is a superset of the landed set.
+    rows = street_comps(street, landed_only=False)
+    c = [t for t in rows if is_pure_landed_row(t)]
+    strata_n = sum(1 for t in rows
                    if (t.get("property_type") or "").startswith("Strata"))
     out = {"street": street.upper(), "n": len(c),
            "first_ym": c[0]["contract_ym"] if c else None,
