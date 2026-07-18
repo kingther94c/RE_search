@@ -15,9 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import pytest  # noqa: E402
 
 from deliverables.build_landed_full_report import (_merged_alerts,  # noqa: E402
-                                                   _ssd_vs_entry_zh,
                                                    _suppress_reason_zh)
-from researcher import tax as costs_mod  # noqa: E402
 from researcher.landed import street_alias  # noqa: E402
 from researcher.landed.comps import street_comps  # noqa: E402
 
@@ -151,25 +149,6 @@ def test_merged_alerts_without_digest_is_the_auto_list():
     assert all(a["src"] == "tool" for a in out) and len(out) == 3
 
 
-# ------------------------------------------------------------- 成本栈的叙述
-def _c(profile, count, price=4_250_000):
-    return {"entry": costs_mod.entry_costs(price, profile, count),
-            "ssd": costs_mod.ssd_clock(price),
-            "be_1y": costs_mod.breakeven_gain_pct(price, profile, count, 1),
-            "be_5y": costs_mod.breakeven_gain_pct(price, profile, count, 5)}
-
-
-def test_ssd_vs_entry_prose_is_computed_not_asserted():
-    """这句话原本写死为「SSD 比全部买入成本还大」——只在公民首套(ABSD 0%)成立。
-    换成 PR 二套(ABSD 30% → 买入 S$1.47M)后,S$680k 并不更大,报告就在用自己的表格
-    打自己的脸。凡是能被同一份报告的数字证伪的句子,必须由那些数字生成。"""
-    sc = _ssd_vs_entry_zh(_c("SC", 1))          # 买入 ~168k vs SSD 680k
-    assert "还大" in sc and "主导一切" in sc
-    pr = _ssd_vs_entry_zh(_c("PR", 2))          # 买入 ~1.47M vs SSD 680k
-    assert "还大" not in pr and "两头都很重" in pr
-
-
-def test_ssd_vs_entry_flips_exactly_at_the_crossover():
-    """公民二套(ABSD 20% → 买入 ~1.05M)已经超过 SSD 680k —— 断言必须跟着翻。"""
-    assert "还大" not in _ssd_vs_entry_zh(_c("SC", 2))
-    assert "还大" in _ssd_vs_entry_zh(_c("SC", 1))
+# 注:「SSD 与买入成本孰大」的叙述函数及其两条测试已随 SSD 时钟一并删除(2026-07-18,
+# 用户裁定):landed 按自住/长持读,4 年内退出这个前提不存在,比较孰大没有决策含量。
+# SSD 的税率算术仍由 tests/test_landed_costs.py 锁着(它守的是 costs.py 的表本身)。

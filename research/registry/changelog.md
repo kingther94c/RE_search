@@ -18,7 +18,7 @@ impact · assets affected.
   ④ `research/` 由平铺拆为 `lib/`(mbx+harvesters,可 import)、`tools/`(doctor +
   conformal stamper + 审计)、`experiments/`(EXP-0007..0019 冻结脚本,含索引 README)、
   `data/`(收获落盘);`recon/` 删除;importlib+mbx-stub 加载与 12 处 sys.path hack 清除。
-  ⑤ v1 条o链隔离 `researcher/legacy/` + `deliverables/legacy/`(可运行、只修 bug;
+  ⑤ v1 condo 链隔离 `researcher/legacy/` + `deliverables/legacy/`(可运行、只修 bug;
   value-a-property 的手艺参考);run.py 的 import 时执行副作用修复(套 main())。
   ⑥ builders 按功能改名:build_condo_v2→build_condo_valuation_report、
   build_landed_v2→build_landed_valuation_report、build_landed_report→build_landed_area_report。
@@ -36,6 +36,17 @@ impact · assets affected.
 - **Backtest impact:** 无(数值路径未动;comps.py 的 strata 过滤只影响 DD 报告的
   街道 cohort 展示口径,引擎 LV1 一直用的就是 store 的 PURE_LANDED 过滤)。
 - **Assets:** 全部 13 个 skills 路径引用已更新并同步镜像;README/ARCHITECTURE 重写。
+
+## 2026-07-18 — 用户裁定:SSD 逐年时钟表从全面报告删除 —— 税务算术不是决策输入
+- **What:** 成本栈第 3 节删掉「SSD 时钟」表(≤1/2/3/4 年 × 16/12/8/4% × 金额)及随之的
+  「1 年内退出盈亏平衡 28%」「SSD 与买入成本孰大」叙述(`_ssd_vs_entry_zh` 函数与其 2 条
+  测试一并删除)。压缩为两句有决策含量的话:**4 年 = 硬性最短持有期**(4 年内不存在合理
+  退出)+ **4 年后退出的盈亏平衡涨幅**(Seletar ≈7%,覆盖 BSD/ABSD + 2% 中介)。
+  `costs.py` 的 `ssd_clock()` 与税率算术测试保留(守表本身,不守渲染)。
+- **Why(用户的理由,成立):** landed 按自住/数十年持有读 —— 「4 年内哪年卖」这个决策
+  **不存在**,枚举它的表格对任何真实决策都没有输入。我此前的辩护(「它是报告里最大的
+  单笔数字」)只讲了量级,没讲决策相关性;没有活的决策,量级只是 trivia。
+- **Assets affected:** landed 全面报告(渲染层);三份样例报告已重出。246 tests。
 
 ## 2026-07-17 — 全面报告 Fable 复审(PASS w/ revisions ~7.8)→ F1-F6 全部修复;主体中文定稿
 - **What(按复审优先级):**

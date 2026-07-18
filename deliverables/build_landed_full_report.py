@@ -350,13 +350,14 @@ def gather(address: str, ptype: str, area: float | None, tenure: str | None,
         else:
             val = v
     # 成本栈锚在**引擎的点估值**上(而不是某个挂牌价):没有成交价时,这是唯一诚实的锚。
+    # 只算买入侧 + SSD 窗口后的盈亏平衡。逐年 SSD 时钟表已删(用户裁定,2026-07-18):
+    # landed 是自住/数十年持有资产,没人规划 4 年内退出 —— 枚举 16/12/8/4% 对任何真实
+    # 决策都没有输入。有决策含量的只有「4 年 = 硬性最短持有期」和「窗口后盈亏平衡」。
     cost = None
     if val:
         p = val["fair_value"]["price"]
         cost = {"entry": costs_mod.entry_costs(p, profile, count),
-                "ssd": costs_mod.ssd_clock(p),
-                "be_1y": costs_mod.breakeven_gain_pct(p, profile, count, 1),
-                "be_5y": costs_mod.breakeven_gain_pct(p, profile, count, 5)}
+                "be_after": costs_mod.breakeven_gain_pct(p, profile, count, 5)}
     return {"address": address, "dd": d, "resolve": res, "land_area": land_area,
             "area_src": area_src, "val": val, "val_error": val_error, "ptype": ptype,
             "cost": cost, "profile": profile, "count": count, "digest": digest,
@@ -575,33 +576,19 @@ MP2025 · PUB)</span></h2>
 </div>"""
 
 
-def _ssd_vs_entry_zh(c: dict) -> str:
-    """SSD 与买入成本孰大 —— **算出来**,不写死。
-
-    这句话原本是硬编码的「一年内的 SSD 比全部买入成本还大」。它只在**公民首套**(ABSD 0%)
-    时成立;换成 PR 二套(ABSD 30% → 买入成本 S$1.47M)后,报告就在用自己的表格打自己的脸:
-    S$680k 并不比 S$1.47M 大。凡是能被同一份报告里的数字证伪的句子,都必须由那些数字生成。
-    """
-    y1, entry = c["ssd"][0]["amount"], c["entry"]["total"]
-    if y1 > entry:
-        return (f"<b>短持有期上,SSD 主导一切</b>:一年内卖出的 SSD ≈ {_money(y1)},"
-                f"比全部买入成本({_money(entry)})<b>还大</b>。")
-    return (f"<b>两头都很重</b>:一年内卖出的 SSD ≈ {_money(y1)},买入成本 {_money(entry)}"
-            f"(ABSD {c['entry']['absd_rate']*100:.0f}% 占了大头)—— "
-            f"合计 {_money(y1 + entry)} ≈ 房价的 {(y1+entry)/c['entry']['price']*100:.0f}%。")
-
-
 def _l1_costs(g: dict) -> str:
-    """成本栈 —— 一份只有估值和 DD 的报告是不完整的:短持有期上 SSD 压倒一切。"""
+    """成本栈 —— 买入侧现金成本 + 最短持有期约束。
+
+    逐年 SSD 时钟表已删(用户裁定,2026-07-18):landed 按自住/数十年持有读,没人规划
+    4 年内退出 —— 按年枚举 16/12/8/4% 对任何真实决策都没有输入,是税务算术当占位。
+    有决策含量的只有两句:4 年是硬性最短持有期;窗口后退出的盈亏平衡涨幅是多少。
+    随之删掉的还有「1 年内退出盈亏平衡 28%」和「SSD 与买入成本孰大」的叙述 —— 都是
+    只有在「打算短炒」这个对 landed 不存在的前提下才有意义的数字。"""
     c = g["cost"]
     if not c:
         return ""
     e, cm = c["entry"], costs_mod
     prof = costs_mod.PROFILES.get(g["profile"], g["profile"])
-    ssd_rows = "".join(
-        f"<tr><td>{_esc(r['held'])}</td><td class=r>{r['rate']*100:.0f}%</td>"
-        f"<td class=r>{'—' if not r['amount'] else _money(r['amount'])}</td></tr>"
-        for r in c["ssd"])
     return f"""<div class=card><h2>3 · 成本栈 Cost stack <span class=note>(按引擎点估值
 {_money(e['price'])} 计;税率会变 —— 出价前以 IRAS 为准)</span></h2>
 <table class=kv>
@@ -614,14 +601,11 @@ def _l1_costs(g: dict) -> str:
 <tr><td><b>买入总成本</b></td>
     <td class=r><b>{_money(e['total'])}</b> <span class=note>= 房价的 {e['total_pct']*100:.1f}%</span></td></tr>
 </table>
-<h3>SSD 时钟 <span class=note>({_esc(cm.SSD_META['effective'])} 起购入:<b>4 年</b>期,按卖出价计,
-起算 = 行使 OTP 之日)</span></h3>
-<table><tr><th>持有</th><th class=r>SSD</th><th class=r>金额</th></tr>{ssd_rows}</table>
-<p class=note><b>{_ssd_vs_entry_zh(c)}</b> 盈亏平衡所需涨幅:1 年内退出约
-<b>{c['be_1y']*100:.0f}%</b>,4 年后退出约 <b>{c['be_5y']*100:.0f}%</b>
-(含 BSD/ABSD + 2% 中介,未计利息与持有成本)。差出来的
-<b>{(c['be_1y']-c['be_5y'])*100:.0f} 个百分点</b>就是 SSD 窗口的价格 —— 这也是 landed 的 alpha
-主要在<b>买入那一刻</b>决定的算术原因。</p>
+<p class=note><b>最短持有期(SSD,{_esc(cm.SSD_META['effective'])} 起购入):</b>4 年内退出按
+<b>卖出价</b>征 16/12/8/4%(起算 = 行使 OTP 之日)—— 对 landed 这不是一张时间表,而是一条
+<b>硬约束:4 年内不存在合理退出</b>。4 年后退出的盈亏平衡涨幅约 <b>{c['be_after']*100:.0f}%</b>
+(覆盖 BSD/ABSD + 2% 中介;未计利息与持有成本)—— 这也是 landed 的 alpha 主要在
+<b>买入那一刻</b>决定的算术原因。</p>
 <p class=note>不含:中介佣金(landed 通常卖方付)、贷款利息、装修、房产税与持有成本。
 ABSD 的夫妻联名 remission、FTA 国民豁免等情形本表未计。
 来源:{_esc(cm.ABSD_META['source'])};{_esc(cm.SSD_META['source'])}。
