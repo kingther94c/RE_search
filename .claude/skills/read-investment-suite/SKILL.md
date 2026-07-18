@@ -15,13 +15,13 @@ dumps and select by visible **text/desc**, not by id. This is the entry point be
 `harvest-scrolling-android-table` and `value-a-property`.
 
 ## This skill spans two repos
-- **RE_search** (this repo): you read the app with the **`research/mbx.py`** adb harness.
+- **RE_search** (this repo): you read the app with the **`research/lib/mbx.py`** adb harness.
   That is all you need to harvest data.
-- **mobile_bridge** (a SEPARATE repo): the Investment Suite **bridge profile** —
-  selectors, ready/detail-ready checks for an Appium-style driver — lives at
-  `mobile_bridge/apps/investment_suite.py`. It is **optional** and only relevant if you
-  drive the app through that bridge instead of the plain `mbx` harness. In RE_search you
-  do not need it; reach into the mobile_bridge repo only if you want that profile.
+- **mobile_bridge** (a SEPARATE repo): supplies the RUNNING EMULATOR only — the mb_play
+  AVD and `scripts\start_emulator.ps1` live there (device profile truth: its
+  `AGENTS.md`). Its old Appium bridge + IS explorer were retired to `legacy/`
+  (2026-07-18); Investment Suite harvesting is owned entirely by this repo's
+  `research/lib/` harness.
 
 ## Calibrate for your device
 The values below were measured on one specific tablet. Re-derive them for yours before
@@ -31,7 +31,7 @@ you trust any coordinate.
 |---|---|---|
 | `$SERIAL` | adb device serial (the reference machine used `emulator-5554`) | `adb devices` |
 | `$ADB` | path to `adb` (reference: `…\Android\Sdk\platform-tools\adb.exe`) | use it from PATH, or set the full path |
-| resolution | reference device was **2560x1600** | `adb shell wm size` |
+| resolution | **current mb_play: 1080x2400 portrait (Pixel 6, 420dpi)** — single source of truth is mobile_bridge `AGENTS.md`; the old 2560x1600 tablet numbers below are historical examples | `adb shell wm size` |
 
 Point the harness at your device via env vars: `MBX_ADB` (→ `$ADB`),
 `MBX_SERIAL` (→ `$SERIAL`), `MBX_OUT` (capture output dir).
@@ -46,7 +46,7 @@ Point the harness at your device via env vars: `MBX_ADB` (→ `$ADB`),
 - An Android emulator/device with the app **already logged in** (sign-in is the
   operator's job — UI only, no auth bypass).
 - `adb` available (see `$ADB` above).
-- The `mbx` harness at `research/mbx.py`. Override defaults via env vars if needed:
+- The `mbx` harness at `research/lib/mbx.py`. Override defaults via env vars if needed:
   `MBX_ADB`, `MBX_SERIAL`, `MBX_OUT`.
 - App package `com.investmentsuite`, launch activity `com.propnex.investmentsuite.MainActivity2`.
 
@@ -57,7 +57,7 @@ is told to source its load-bearing numbers here first. So if the app cannot be r
 correct move is to **stop and hand back to the user — never silently substitute web-aggregator or
 research-report data** (those are Tier-2/3 and are exactly what this skill exists to replace).
 
-**The protocol is automated: run `python research/doctor.py` FIRST, every session.** It checks
+**The protocol is automated: run `python research/tools/doctor.py` FIRST, every session.** It checks
 adb → device → app-foreground → UI dump → logged-in, prints PASS/FAIL per step with the exact
 remediation (including the emulator start command and the launch intent), and exits 0 only when
 READY. On NOT READY do what it prints; if the fix is the user's (start emulator, sign in), stop
@@ -108,7 +108,7 @@ Each parsed node carries: `text`, `desc`, `id` (short), `full_id`, `cls`, `click
 4. **Read each tab** (see the tab map below) and harvest scrolling tables with the
    table-harvest technique rather than per-element selectors.
 5. **Persist** what you read into a single dataset module (see
-   `researcher/valuation/dataset.py` for the shape) — one source of truth per development.
+   `researcher/legacy/valuation/dataset.py` for the shape) — one source of truth per development.
 
 ## Tab / nav map and what each yields
 Analysis tabs across the top of a development screen:
@@ -164,7 +164,7 @@ Then reconstruct the complete comp set: `python reconstruct_comps.py <slug> --as
 ## LANDED is a DIFFERENT path — address-first, not project-first (R4a/R4b, EXP-0018)
 
 The four harvesters above drive a **condo development** screen. **Landed has no project id** —
-the app is address-first — so it has its own harvester (`research/harvest_street_sale.py
+the app is address-first — so it has its own harvester (`research/lib/harvest_street_sale.py
 "<STREET>"`) and its own screen shape. Use it whenever you need a landed street's caveats
 (e.g. to resolve a `street_not_found`, or to attribute a URA parent bucket to real roads).
 
@@ -209,10 +209,10 @@ it has fired for real. **Never mix the agency panel into caveat data.**
 own band header to the dollar (Loyang Rise: mean **$2,183,582**, matched exactly at 104 rows).
 One missing/extra row moves the mean.
 
-**Attribution (the L2f input):** `research/reconcile_is_ura.py "<STREET>"` matches an IS harvest
+**Attribution (the L2f input):** `research/tools/reconcile_is_ura.py "<STREET>"` matches an IS harvest
 against the URA bucket on **month+price+area** and reports which rows are the same estate under
 a different name. That map feeds `researcher/landed/street_alias.py` (evidence-only aliases,
-never geographic guessing — GY-0006) and `research/run_l2f_split.py` (EXP-0019).
+never geographic guessing — GY-0006) and `research/experiments/run_l2f_split.py` (EXP-0019).
 
 ## Gotchas
 - **No resource-ids.** UI is Compose-style (classes like `s2.e2`). Do **not** build
@@ -243,17 +243,18 @@ never geographic guessing — GY-0006) and `research/run_l2f_split.py` (EXP-0019
   on an exact count match — a partial screen would misalign every value below it.
 
 ## Related files
-- `research/mbx.py` — the harness (this repo, RE_search)
-- `research/doctor.py` — automated readiness gate (run it first, every session)
-- `research/harvest_sale.py`, `harvest_profitability.py`, `harvest_rent.py`,
+- `research/lib/mbx.py` — the harness (this repo, RE_search)
+- `research/tools/doctor.py` — automated readiness gate (run it first, every session)
+- `research/lib/harvest_sale.py`, `harvest_profitability.py`, `harvest_rent.py`,
   `harvest_towerview.py` — one harvester per CONDO tab (all offline-testable parsers)
-- `research/harvest_street_sale.py` — the **LANDED street** harvester (address-first path,
+- `research/lib/harvest_street_sale.py` — the **LANDED street** harvester (address-first path,
   caveat/agency guard, coordinate-free format parser). `--here` skips navigation if you are
   already on the expanded caveat table; `--window 10Y` for depth. Parser tested offline in
   `tests/test_harvest_street.py`.
-- `research/reconcile_is_ura.py` — IS↔URA attribution on month+price+area (the L2f input)
+- `research/tools/reconcile_is_ura.py` — IS↔URA attribution on month+price+area (the L2f input)
 - `researcher/landed/street_alias.py` — evidence-only address-road → URA-bucket map
-- `research/reconstruct_comps.py` — three-surface comp reconstruction + trend ladder
-- `mobile_bridge/apps/investment_suite.py` — the bridge profile, in the SEPARATE
-  mobile_bridge repo (optional; selectors, ready/detail-ready)
-- `researcher/valuation/dataset.py` — example of a persisted, single-source-of-truth dataset
+- `research/lib/reconstruct_comps.py` — three-surface comp reconstruction + trend ladder
+- mobile_bridge repo — emulator host only (`scripts\start_emulator.ps1`, device profile
+  in its `AGENTS.md`; the old bridge profile is frozen at
+  `legacy/mobile_bridge/apps/investment_suite.py` there)
+- `researcher/legacy/valuation/dataset.py` — example of a persisted, single-source-of-truth dataset

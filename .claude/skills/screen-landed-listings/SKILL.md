@@ -14,7 +14,7 @@ Turns "what's actually for sale here" into a ranked shortlist. Runs AFTER
 The **listings themselves** are portal-sourced (a listing only exists on PropertyGuru/99.co — see
 "Access reality" below), but the **benchmark they are scored and value-graded against** — the area's
 transaction / land-psf bands and any per-development AVM — **must come from Tier-1 ground truth:
-PropNex Investment Suite** (via `read-investment-suite` / `research/mbx.py`) and **SG-official**
+PropNex Investment Suite** (via `read-investment-suite` / `research/lib/mbx.py`) and **SG-official**
 sources (URA / URA REALIS, OneMap for the 1km ring). A listing's asking price and self-declared
 "1km" / land size are Tier-3 claims — verify land area and catchment against Tier-1 before the
 value grade counts. Portal transaction summaries are **Tier-2** (reconcile against Tier-1); research
@@ -34,8 +34,10 @@ PropertyGuru blocks server-side fetches — **`WebFetch` → HTTP 403**. Working
    `allowed_domains: ["propertyguru.com.sg"]`.
 2. **Claude-in-Chrome** browser extension — for full structured pulls / pagination (real
    browser session bypasses the bot wall). Use when WebSearch coverage is thin.
-3. **PropertyGuru Android app via `mobile_bridge`** — UI-automation route (a profile +
-   `research/mbx.py`) when you want the app's filters/sort.
+3. **PropertyGuru Android app via `mobile_bridge`** — the tested implementation is the
+   explorer CLI in that repo: `scripts\propertyguru.ps1 guide` (offline JSON contract
+   first), skill `explore-propertyguru`, docs `docs/propertyguru-explorer.md`. Use when
+   you want the app's filters/sort + verified HTML evidence reports.
 
 ## Useful PropertyGuru URL patterns (cite, don't WebFetch)
 
@@ -59,7 +61,7 @@ PropertyGuru blocks server-side fetches — **`WebFetch` → HTTP 403**. Working
    shape, incl. the `benchmark_land_psf` bands from `landed-area-research`). Add any known
    per-listing screen hints (topography for a "hilltop", `flood_risk: "low"` for a known
    flood street, `rebuild_status`).
-3. **Screen**: `python -m researcher.sources.propertyguru <area>` — normalises each listing
+3. **Screen**: `python -m researcher.landed.screen <area>` — normalises each listing
    to the scorecard, scores **quality** (0–100) and flags **value** = land psf vs the area
    band (VALUE / FAIR / RICH / BUILD-PRICED), then ranks.
 4. **Act**: take the top FAIR/VALUE picks into `landed-property-due-diligence` (INLIS title,
@@ -70,7 +72,8 @@ PropertyGuru blocks server-side fetches — **`WebFetch` → HTTP 403**. Working
 - Listings' **"1km" claims are marketing** — confirm with OneMap before trusting catchment.
 - **Tiny-plot high psf = build-priced**, not land value: a 2,500 sqft semi-D at S$5,000 psf is
   you paying for a brand-new house, not the land. Prefer FAIR-banded larger regular plots for
-  land value; price original houses as **land + rebuild** (S$450–700 psf GFA).
+  land value; price original houses as **land + rebuild** (S$450–700 psf GFA;
+  canonical range: `landed-investment-analysis`).
 - Land **psf alone hides plot quality** — shape/frontage/topography aren't in the listing;
   the scorecard leaves them at neutral defaults and flags "verify on site". A hilltop /
   cul-de-sac / above-road note is a real positive; low-lying near a canal is a real negative.

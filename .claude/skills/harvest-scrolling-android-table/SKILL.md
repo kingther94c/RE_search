@@ -11,12 +11,14 @@ screen** and you need every row as structured records — but the app exposes no
 (typically) no per-cell resource-ids. The technique is **app-agnostic**: dump the
 accessibility tree, rebuild rows by snapping cells to header columns, scroll the data
 region, dedup, and stop when no new rows appear. Reference implementation:
-`research/harvest_sale.py` (built on the `research/mbx.py` harness; see
+`research/lib/harvest_sale.py` (built on the `research/lib/mbx.py` harness; see
 `read-investment-suite` for the harness commands).
 
 ## Calibrate for your device
-Every coordinate in this skill is **screen-specific**. The reference values below were
-measured on a **2560x1600** tablet (find your resolution with `adb shell wm size`). Before
+Every coordinate in this skill is **screen-specific**. The CURRENT reference device is
+**mb_play: 1080x2400 portrait** (single source of truth: mobile_bridge `AGENTS.md`);
+the worked examples below were measured on the RETIRED **2560x1600** tablet profile
+(find your resolution with `adb shell wm size`). Before
 harvesting on a different device, re-derive the column x-centres and swipe band from a
 live header dump's `bounds`/`center` — treat the numbers here as worked examples, not
 gospel. Point the harness at your device with `MBX_SERIAL` (your `adb devices` serial),
@@ -122,5 +124,5 @@ stale-stop  <-  dedup into a seen{} map  <-  scroll the DATA region (loop)
   across scrolls usually fill them in; the last/first visible row is the most at-risk.
 
 ## Related files
-- `research/harvest_sale.py` — the reference harvester (snap-to-column, dedup, stale-stop)
-- `research/mbx.py` — `dump_xml()`, `parse()`, `swipe_region()` used above
+- `research/lib/harvest_sale.py` — the reference harvester (snap-to-column, dedup, stale-stop)
+- `research/lib/mbx.py` — `dump_xml()`, `parse()`, `swipe_region()` used above

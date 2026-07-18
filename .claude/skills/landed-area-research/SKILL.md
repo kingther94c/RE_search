@@ -17,7 +17,7 @@ source" next.**
 
 Every load-bearing figure — land-psf bands, named transactions, rents and any per-development
 AVM — **must come from Tier-1 ground truth: PropNex Investment Suite** (via
-`read-investment-suite` / `research/mbx.py`) and **SG-official** sources (URA / URA REALIS,
+`read-investment-suite` / `research/lib/mbx.py`) and **SG-official** sources (URA / URA REALIS,
 OneMap for the 1km school ring via `researcher/sources/onemap.py`, PUB for flood, SLA for title,
 MOE for balloting). EdgeProp / PropertyGuru / 99.co / SRX are **Tier-2** (usable, but reconcile
 against Tier-1); property research reports and agent/marketing sites are **Tier-3** — conflicted,
@@ -81,7 +81,7 @@ URA REALIS / **EdgeProp** / squarefoot / PropertyGuru transactions. For the micr
 
 1. **Area report** — estates table (type, GCBA, indicative land psf, note), price-by-segment,
    zoning/future-planning notes, hazards-by-location, regulatory context, and a clear
-   "best-for / watch-outs". Generate HTML with `deliverables/build_landed_report.py` (writes to
+   "best-for / watch-outs". Generate HTML with `deliverables/build_landed_area_report.py` (writes to
    BOTH the gitignored `reports/` and `G:\My Drive\004 RES\REsearch_Reports`).
 2. **Screening shortlist** — the filter to apply to listings, e.g.: estate ⊂ 1km ring; regular
    rectangular plot; frontage ≥ target; land psf ≤ ceiling; not low-lying/near canal; freehold;

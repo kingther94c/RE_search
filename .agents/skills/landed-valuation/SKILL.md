@@ -42,10 +42,10 @@ report says plainly that it gives **no go/no-go**.
 
 **A STREET + area (no address, no DD):**
 ```bash
-python deliverables/build_landed_v2_report.py --street "ALNWICK ROAD" --area 2800 \
+python deliverables/build_landed_valuation_report.py --street "ALNWICK ROAD" --area 2800 \
        --type Terrace --condition original
 ```
-Programmatic: `from researcher.backtest.value_landed import value_landed, LandedSpec`.
+Programmatic: `from researcher.engine.value_landed import value_landed, LandedSpec`.
 As-of: **omit `--asof` for a LIVE valuation** (the pulled store is the info set); an
 explicit past `--asof` reconstructs what was knowable then (56d caveat lag).
 
@@ -131,7 +131,7 @@ unbiased regimes), cap widening (GY-0004, the exposure was ~zero), full PPI repl
   *Deriving thresholds from the band instead made 72% of asks land above every comp on the
   subject's own page — a guardrail built from engine ignorance cannot bind.*
 - **These are evidence MARKERS, not calibrated probabilities** (EXP-0013; re-measured under
-  the shipped L2b adjustment in EXP-0017 — `python research/calibrate_landed_guidance.py`,
+  the shipped L2b adjustment in EXP-0017 — `python research/tools/calibrate_landed_guidance.py`,
   547 as-of-firewalled resales): **~73-83% of real sales land above the p25 marker and
   ~32-38% above p75**, and the rate **still drifts with the regime** (p50 → 53.1%
   pre-2025H2 vs 67.2% after — the residual hot-market lag, see the regime table). We tried
@@ -173,13 +173,13 @@ changing the point OR the time adjustment without recalibrating turns the suite 
 harness default (`run_landed`) IS the shipped configuration; `--no-ltrend` is the ablation.
 
 ## Related
-- `researcher/backtest/value_landed.py` — this skill's engine room
-- `researcher/backtest/landed_engine.py` (LV1 + `shipped_time_ctx`) · `landed_candidates.py`
+- `researcher/engine/value_landed.py` — this skill's engine room
+- `researcher/engine/landed_engine.py` (LV1 + `shipped_time_ctx`) · `landed_candidates.py`
   (LC2/LA1 + lease) · `landed_size_curve.py` (EXP-0011) · `landed_benchmarks.py` (the L1
   bar + time adjustment) · `local_trend.py` (the L2b observed bridge, EXP-0017)
-- `research/fit_land_size_curve.py` · `research/analyze_landed.py` (conformal) ·
-  `research/landed_noise_floor.py` · `research/diagnose_l2b.py` (EXP-0016) ·
-  `research/run_l2b_variants.py` / `research/validate_l2b_v2.py` (EXP-0017)
+- `research/experiments/fit_land_size_curve.py` · `research/tools/analyze_landed.py` (conformal) ·
+  `research/experiments/landed_noise_floor.py` · `research/experiments/diagnose_l2b.py` (EXP-0016) ·
+  `research/experiments/run_l2b_variants.py` / `research/experiments/validate_l2b_v2.py` (EXP-0017)
 - `research/registry/` — EXP-0009..0017, the graveyard, the roadmap's L-track
 - `landed-property-due-diligence` (verification) · `landed-area-research` (area layer) ·
   `screen-landed-listings` (listing layer)

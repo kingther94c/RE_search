@@ -6,7 +6,8 @@ description: Use when you have a unit's value and need a buy/hold/sell call for 
 # Property buy / hold / sell advisory (Singapore condo)
 
 ## When to use this
-Use this once you have a value for a unit (see `value-a-property`) and need to turn it
+Use this once you have a value for a unit (see `condo-resale-valuation`; the superseded
+`value-a-property` remains the IS corroboration path) and need to turn it
 into an actionable **buy / hold / sell** recommendation. It layers the income picture
 (rental yield), realised-return history, the Singapore transaction **cost stack**
 (BSD / ABSD / SSD), financing context, and catalyst/timing into a clear decision rule.
@@ -17,7 +18,7 @@ Spottiswoode Suites. Inputs come from the app's Rent, Profitability, and Nearby 
 ## Data source — Investment Suite first (MANDATORY)
 
 Rental yield, realised-return history and the transaction comps behind the value **must come from
-Tier-1 ground truth: PropNex Investment Suite** (via `read-investment-suite` / `research/mbx.py`)
+Tier-1 ground truth: PropNex Investment Suite** (via `read-investment-suite` / `research/lib/mbx.py`)
 — Rent, Profitability and Nearby tabs — plus **SG-official** sources (URA / URA REALIS, IRAS for
 the BSD/ABSD/SSD stack, MAS for SORA, LTA for catalysts). EdgeProp / PropertyGuru / 99.co / SRX are
 **Tier-2** (usable, but reconcile against Tier-1); property research reports and agent/marketing
@@ -51,6 +52,12 @@ line/stack have actually banked.
 ## 3. The SG transaction cost stack
 The largest swing factor in any SG decision — compute it on the **transacting price**.
 
+> **Canonical implementation: `researcher/tax.py`** (single BSD/ABSD/SSD source, each
+> table carrying `source`/`effective`/`verify_at`; print the effective dates in any
+> report). The tables below are a teaching snapshot — when they disagree with
+> `researcher/tax.py`, the module wins. `from researcher.tax import entry_costs,
+> ssd_clock, breakeven_gain_pct`.
+
 ### Buyer's Stamp Duty (BSD) — progressive, everyone
 | Band of price | Rate |
 |---|---|
@@ -73,7 +80,7 @@ The largest swing factor in any SG decision — compute it on the **transacting 
 
 *(PR 3rd+ was stated here as 30% until 2026-07-17 — wrong. Verified against IRAS and the
 MAS/MOF/MND release of 27 Apr 2023. The arithmetic + the sourced table now live in
-`researcher/landed/costs.py`; rates change, so print the effective date and send the reader
+`researcher/tax.py`; rates change, so print the effective date and send the reader
 to IRAS rather than trusting a table in a repo.)*
 
 > Worked on S$1.686M: SC 2nd-property ABSD ≈ **S$337k**; foreigner ABSD ≈ **S$1.01M**.
@@ -138,6 +145,8 @@ soft tape. Time the listing into catalyst-driven demand if one is imminent.
   their own buyer profile, count, and tax position.
 
 ## Related files
-- `researcher/valuation/dataset.py` — rents, profitability pairs, nearby yields, macro/regulatory facts
-- `researcher/valuation/run.py` — computes BSD/ABSD/SSD and the advisory metrics
-- `deliverables/build_report.py` — turns the valuation + advisory into a report
+- `researcher/tax.py` — THE BSD/ABSD/SSD implementation (`entry_costs`, `ssd_clock`,
+  `breakeven_gain_pct`, with source/effective/verify_at metadata)
+- `researcher/engine/value_unit.py` — engine v2 fair value + guidance the advisory layers on
+- `researcher/legacy/valuation/{dataset,run}.py` + `deliverables/legacy/build_report.py`
+  — the Spottiswoode #18-03 worked example (legacy craft reference, bug-fix only)

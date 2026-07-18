@@ -12,7 +12,7 @@ starting point, not truth.** Output: a research report + a BUY/SELECTIVE/WAIT/AV
 ## Data source — Investment Suite first (MANDATORY)
 
 Comparable transacted psf (nearby resale + recent launches), rents and take-up context **must come
-from Tier-1 ground truth: PropNex Investment Suite** (via `read-investment-suite` / `research/mbx.py`)
+from Tier-1 ground truth: PropNex Investment Suite** (via `read-investment-suite` / `research/lib/mbx.py`)
 and **SG-official** sources (URA / URA REALIS for caveats and the price index, URA GLS/planning for
 site origin, LTA for MRT catalysts, MAS for SORA, IRAS for stamp duty). A new launch has no resale
 history of its own, so the *indicative launch psf* is a marketing claim (Tier-3) — position it

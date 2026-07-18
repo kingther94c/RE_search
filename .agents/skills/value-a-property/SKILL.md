@@ -4,8 +4,8 @@ description: SUPERSEDED by condo-resale-valuation (the walk-forward-validated en
 ---
 
 > **SUPERSEDED (2026-07-16).** The default condo valuation skill is now
-> **`condo-resale-valuation`** — engine v2, quant-validated on 136k URA caveats (~4.1%
-> median APE, 82% interval coverage; research/registry/ EXP-0003/0006). This IS-based
+> **`condo-resale-valuation`** — engine v2, quant-validated on 136k URA caveats (~3.7%
+> median APE, ~82% held-out interval coverage; research/registry/ EXP-0006/0007). This IS-based
 > craft pipeline is retained as the Investment-Suite corroboration path (exact
 > floor/stack/twin/AVM-cohort that URA lacks) — the R4 enrichment layer — not the primary
 > engine. Use it to CORROBORATE hard cases, not as the fair-value source of record.
@@ -15,7 +15,7 @@ description: SUPERSEDED by condo-resale-valuation (the walk-forward-validated en
 ## When to use this
 Put a defensible market value on a specific condo unit ("the subject"). Since 2026-07
 this is a PIPELINE, not a craft: every number (comp set, trend, grid, sensitivities,
-AVM cohort, cost stack, yield) is computed by `researcher/pipelines/condo_valuation.py`
+AVM cohort, cost stack, yield) is computed by `researcher/legacy/pipelines/condo_valuation.py`
 the same way every time. Your job is (a) harvesting with the right tabs/windows,
 (b) writing the narrative sections, (c) passing the hostile review. **Never hand-edit
 numeric sections of the digest** (valuation / comps_table / cost_stack) — the
@@ -26,7 +26,7 @@ Comparables, AVM cohort, rents and realised pairs come from **Tier-1: PropNex
 Investment Suite** (skill: `read-investment-suite`), policy/planning facts from
 SG-official sources (URA/OneMap/PUB/SLA/MOE/IRAS/MAS/LTA). Portals are Tier-2
 (reconcile); research/agent reports are Tier-3 (claims, never facts). **If the app
-won't open: STOP** — run `python research/doctor.py`, do exactly what it prints, wait
+won't open: STOP** — run `python research/tools/doctor.py`, do exactly what it prints, wait
 for the user if it says so. Never silently fall back to web data.
 
 ## The checklist (each step = one command + one gate)
@@ -38,23 +38,23 @@ to the word 点估 fails the stale-base gate by design.
 
 ```bash
 # 0. readiness gate — must print READY
-python research/doctor.py
+python research/tools/doctor.py
 
 # 1. open the development in the app (read-investment-suite skill), then per tab:
-#    Sale tab, 5Y window        ->  python research/harvest_sale.py <slug>
-#    Profitability tab, 5Y      ->  python research/harvest_profitability.py <slug>
-#    Rent tab, 5Y               ->  python research/harvest_rent.py <slug>
-#    Tower View tab             ->  python research/harvest_towerview.py <slug>
+#    Sale tab, 5Y window        ->  python research/lib/harvest_sale.py <slug>
+#    Profitability tab, 5Y      ->  python research/lib/harvest_profitability.py <slug>
+#    Rent tab, 5Y               ->  python research/lib/harvest_rent.py <slug>
+#    Tower View tab             ->  python research/lib/harvest_towerview.py <slug>
 #    GATE: each prints "saved N ..." — zero rows refuses to overwrite; the selected
 #    window is recorded in meta.window (the tab after the "..." token) — check it says 5Y.
 
 # 2. skeleton digest (once per subject)
-python -m researcher.pipelines.condo_valuation <slug> --digest-slug <slug>_<unit> \
+python -m researcher.legacy.pipelines.condo_valuation <slug> --digest-slug <slug>_<unit> \
        --asof YYYY-MM-DD --init
 #    fill subject{} from Property Info + Tower View (size/floor/bedrooms/unit/tenure)
 
 # 3. compute + validate (+ render once gates pass)
-python -m researcher.pipelines.condo_valuation <slug> --digest-slug <slug>_<unit> \
+python -m researcher.legacy.pipelines.condo_valuation <slug> --digest-slug <slug>_<unit> \
        --asof YYYY-MM-DD
 #    GATE: prints 点估/区间/三角谈判带 and runs all digest gates. TODO placeholders
 #    fail the gates by design — write the narrative (summary/risks/catalysts/advisory
@@ -64,7 +64,7 @@ python -m researcher.pipelines.condo_valuation <slug> --digest-slug <slug>_<unit
 ```
 
 ## What the pipeline computes (so you can explain it, not redo it)
-- **Three-surface comp reconstruction** (`research/reconstruct_comps.py`): Sale table ∪
+- **Three-surface comp reconstruction** (`research/lib/reconstruct_comps.py`): Sale table ∪
   Profitability sell-legs ∪ Tower View PP, fuzzy dedup (same unit+price within 31 days =
   one caveat; surfaces disagree on dates by a few days). The Sale table lazy-loads AND
   skips mid-window rows — single-surface sets are structurally incomplete. Residual gaps
@@ -75,7 +75,7 @@ python -m researcher.pipelines.condo_valuation <slug> --digest-slug <slug>_<unit
   run. Segments differ (#18-03 study: 1-2BR flat, 3BR rising) — never pool them. A
   reviewer round may justify overriding: rerun with `--trend 0.025` and write the
   rationale into the summary; the override is recorded in `digest.pipeline.trend`.
-- **Adjustment grid** (`researcher/valuation/engine.py`): time/floor/size
+- **Adjustment grid** (`researcher/legacy/valuation/engine.py`): time/floor/size
   (elasticity −0.08)/compact-3BR(≤800sf, 3%) on each comp. The floor premium is
   FITTED per development from same-spec ±90d cross-floor pairs when ≥8 exist
   (One Pearl Bank fitted 0.43%/floor vs the 0.30% default — high-rise new-TOP
@@ -86,7 +86,7 @@ python -m researcher.pipelines.condo_valuation <slug> --digest-slug <slug>_<unit
 - **Triangulation** (`valuation.triangulation`): negotiation band = envelope of AVM-cohort
   median ∪ model point ∪ freshest same-spec print. The AVM's bias vs fresh prints is
   NOT one-directional (measured: −3.4% Spottiswoode, +1.4% Gallop, +3.7% One Pearl Bank
-  low floors — see deliverables/build_yield_ladder_memo.py) — never treat the AVM as a
+  low floors — see deliverables/legacy/build_yield_ladder_memo.py) — never treat the AVM as a
   floor or ceiling a priori; **the freshest same-spec direct print is always the
   negotiation anchor**, the AVM is just one leg.
 - **Cost stack / yield**: BSD, 75% LTV mortgage, gross yield off same-type recent
@@ -114,8 +114,8 @@ both are defensible, the review round is where the argument happens and gets rec
   opaque — never force-reconcile them per print.
 
 ## Related files
-- `researcher/pipelines/condo_valuation.py` — the pipeline CLI (this skill's engine room)
-- `research/reconstruct_comps.py` — three-surface union, trend ladder
-- `researcher/valuation/engine.py` — grid; `researcher/valuation/validate_digest.py` — gates
-- `research/doctor.py` — readiness; `research/harvest_{sale,profitability,rent,towerview}.py`
-- `deliverables/build_condo_report.py` — bilingual HTML renderer
+- `researcher/legacy/pipelines/condo_valuation.py` — the pipeline CLI (this skill's engine room)
+- `research/lib/reconstruct_comps.py` — three-surface union, trend ladder
+- `researcher/legacy/valuation/engine.py` — grid; `researcher/legacy/valuation/validate_digest.py` — gates
+- `research/tools/doctor.py` — readiness; `research/harvest_{sale,profitability,rent,towerview}.py`
+- `deliverables/legacy/build_condo_report.py` — bilingual HTML renderer

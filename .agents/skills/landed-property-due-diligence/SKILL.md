@@ -51,13 +51,6 @@ question; they differ only in **who can answer it, what it costs, and how late i
 can wait**. Never file an item by "free vs paid" — an S$16 title search is not deep DD, and a
 free site visit at 7am is not a desk check.
 
-## It is all DD — the tiers are about who settles it and when
-
-There is no "screening" phase that is somehow not due diligence. Every question is a DD
-question; they differ only in **who can answer it, what it costs, and how late in the deal it
-can wait**. Never file an item by "free vs paid" — an S$16 title search is not deep DD, and a
-free site visit at 7am is not a desk check.
-
 | Tier | Who runs it | Cost | When | Gate |
 |---|---|---|---|---|
 | **DD-1** | you, at the desk | free | **every** candidate, before viewing | none |
@@ -226,7 +219,8 @@ to your plans is a lawyer's and a QP's call — that part is DD-3.
 
 ## Rebuild economics (teardown / A&A archetypes only)
 
-- SG landed reconstruction (2025–2026): ~**S$450–600/psf GFA** normal, **S$700+/psf** high-end.
+- SG landed reconstruction (2025–2026): ~**S$450–600/psf GFA** normal, **S$700+/psf** high-end
+  (canonical range lives in `landed-investment-analysis` — update it there first).
   Add demolition, professional fees, authority fees, GST, contingency, 18–24 months.
 - Value = land value + rebuild − teardown/holding, vs a comparable already-rebuilt house.
   Don't pay rebuilt-price for original-condition. "TOP year" is a trap — ask when it was last
@@ -239,7 +233,8 @@ to your plans is a lawyer's and a QP's call — that part is DD-3.
   commencement year off the title, not the listing.
 - **Foreign ownership**: landed is restricted under the Residential Property Act (SLA **LDAU**
   approval; Sentosa Cove the main exception). A restricted title narrows the resale pool.
-- **SSD — changed 4 Jul 2025.** For residential bought **on/after 4 July 2025** the holding
+- **SSD — changed 4 Jul 2025** (rates: `researcher/tax.py`, the single implementation).
+  **Detail:** For residential bought **on/after 4 July 2025** the holding
   period is **4 years** (was 3) and rates are **4pp higher at each tier (4%–16%)**. No
   transition. It runs off the OTP-exercise date. On any hold shorter than 4 years this is
   usually a bigger number than everything else in the report — carry it explicitly.

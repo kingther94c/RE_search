@@ -33,9 +33,9 @@ Portals are Tier-2 (reconcile); agent reports Tier-3 (claims, never facts).
 ## Run it
 ```bash
 # one unit -> full valuation + bilingual HTML report (repo reports/ + the Drive library)
-python deliverables/build_condo_v2_report.py --project "TREASURE AT TAMPINES" --area 936 --floor 12
+python deliverables/build_condo_valuation_report.py --project "TREASURE AT TAMPINES" --area 936 --floor 12
 ```
-Programmatic: `from researcher.backtest.value_unit import value, SubjectSpec`.
+Programmatic: `from researcher.engine.value_unit import value, SubjectSpec`.
 As-of semantics: **omit `--asof` for a LIVE valuation** (the pulled store is the info set —
 freshest prints included); an explicit past `--asof` reconstructs what was knowable then
 (56-day caveat-lag, day-granular). Don't backdate asof for a live question.
@@ -86,8 +86,8 @@ agreement; boutique → flagged; unknown → escalates; guidance separated). **R
 engine change; an update that breaks a green case does not ship.**
 
 ## Related
-- `researcher/backtest/value_unit.py` — this skill's engine room (valuation + guidance)
-- `researcher/backtest/engine_v2.py` — C1 point + anchor fallback + conformal
+- `researcher/engine/value_unit.py` — this skill's engine room (valuation + guidance)
+- `researcher/engine/engine_v2.py` — C1 point + anchor fallback + conformal
 - `researcher/backtest/{candidates,avm,avm_pooled,avm_knn}.py` — the methods
 - `research/registry/` — the validation record (EXP-0003/0005/0006, method graveyard)
-- `deliverables/build_condo_v2_report.py` — the bilingual HTML renderer
+- `deliverables/build_condo_valuation_report.py` — the bilingual HTML renderer

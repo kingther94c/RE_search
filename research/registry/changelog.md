@@ -5,6 +5,38 @@ impact · assets affected.
 
 ---
 
+## 2026-07-18 — 全库重构(结构层,方法学不变):engine 拆包 · 税表单源 · research 四区 · legacy 隔离
+- **What(结构,不动数值):**
+  ① 生产估值面拆出 `researcher/engine/`(engine_v2 / value_unit / landed_engine /
+  value_landed / 两张 conformal 表 / fingerprint);point-method 源文件留在
+  `researcher/backtest/`,**内容未动 → 指纹 sha1 不变,无需重校准**。
+  ② `researcher/tax.py`(原 landed/costs.py)成为唯一 BSD/ABSD/SSD 实现;
+  newlaunch/pricing 删除本地副本改为 import。
+  ③ **数据正确性修复:`landed/comps.py`** 改走 TransactionStore(snapshot 回退,
+  新 clone 不再挂 7 个测试),并把 Strata Terrace/Semi-D/Detached(strata-psf 口径)
+  **排除出标注为 LAND psf 的 cohort**,另报 `strata_n`。
+  ④ `research/` 由平铺拆为 `lib/`(mbx+harvesters,可 import)、`tools/`(doctor +
+  conformal stamper + 审计)、`experiments/`(EXP-0007..0019 冻结脚本,含索引 README)、
+  `data/`(收获落盘);`recon/` 删除;importlib+mbx-stub 加载与 12 处 sys.path hack 清除。
+  ⑤ v1 条o链隔离 `researcher/legacy/` + `deliverables/legacy/`(可运行、只修 bug;
+  value-a-property 的手艺参考);run.py 的 import 时执行副作用修复(套 main())。
+  ⑥ builders 按功能改名:build_condo_v2→build_condo_valuation_report、
+  build_landed_v2→build_landed_valuation_report、build_landed_report→build_landed_area_report。
+  ⑦ skills:README 全量重写(13 skills);value-a-property 的两处旧路由 repoint 到
+  condo-resale-valuation;税表/重建成本/设备参数标注单源;`.agents/skills` 改为脚本生成
+  (tools/sync_agents_skills.py),新增 tests/test_skills_references.py 守卫(路径存在 +
+  镜像一致)。E0-E3 退出默认 leaderboard(--legacy-ensembles 保留)。
+  ⑧ 跨仓库:mobile_bridge 重定位为「模拟器宿主 + PG explorer」(其 Appium 桥与 IS
+  explorer 退役进 legacy/);agent 记忆归一——本仓库 `.claude/memory/` 为唯一 tracked
+  主日志(EXP-0018 修正与 valuation-research-system 从 mobile_bridge 合并回来)。
+- **Why:** 三套并行安卓栈、税表三处漂移(曾各带错误税率)、strata 混入 land-psf、
+  生产入口住在名为 backtest 的包里、7 个新 clone 必挂的测试 —— 结构债开始伤数据口径。
+- **Evidence:** 251 tests pass(重构前 241 pass + 7 fail;新增 renderer 冒烟 3 项 +
+  skills 引用守卫 2 项);两张 conformal 表指纹逐字节不变。
+- **Backtest impact:** 无(数值路径未动;comps.py 的 strata 过滤只影响 DD 报告的
+  街道 cohort 展示口径,引擎 LV1 一直用的就是 store 的 PURE_LANDED 过滤)。
+- **Assets:** 全部 13 个 skills 路径引用已更新并同步镜像;README/ARCHITECTURE 重写。
+
 ## 2026-07-17 — 全面报告 Fable 复审(PASS w/ revisions ~7.8)→ F1-F6 全部修复;主体中文定稿
 - **What(按复审优先级):**
   **F1** 挂载判断层的 8 条 authored `dd3_alerts` 此前被**静默丢弃**(丢了 archetype 指名的
