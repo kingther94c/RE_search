@@ -28,9 +28,12 @@ import re
 import sys
 import time
 
-import mbx
+if __package__:
+    from . import mbx
+else:  # direct script run: python research/lib/<tool>.py
+    import mbx
 
-OUT = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 
 _UNIT = re.compile(r"^#(\d{2})-(\d{2})$")
 

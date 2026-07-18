@@ -93,13 +93,13 @@ def test_conformal_table_matches_landed_code():
     with open(os.path.join(base, "landed_conformal_table.json"), encoding="utf-8") as f:
         meta = json.load(f).get("_meta", {})
     stored = meta.get("code_sha1")
-    assert stored, "landed conformal table has no fingerprint — run research/analyze_landed.py"
+    assert stored, "landed conformal table has no fingerprint — run research/tools/analyze_landed.py"
     # same file set + same EOL-normalized hash the stamper used (fingerprint.py) — the test
     # must not re-derive either, or the two drift apart
     assert code_sha1(LANDED_CODE_FILES) == stored, (
         "landed point code changed since calibration — re-run "
         "`python -m researcher.backtest.run_landed --dump <p>` then "
-        "`python research/analyze_landed.py <p>`")
+        "`python research/tools/analyze_landed.py <p>`")
 
 
 # --------------------------------------------------- L4 production regression cases

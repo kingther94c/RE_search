@@ -397,7 +397,7 @@ def test_conformal_table_matches_current_c1():
     assert code_sha1(CONDO_CODE_FILES) == stored, (
         "candidates.py changed since the conformal table was calibrated — re-run "
         "`python -m researcher.backtest.run --sample 8000 --dump <p>` then "
-        "`python research/analyze_r3.py <p>`")
+        "`python research/tools/analyze_r3.py <p>`")
 
 
 def test_engine_v2_point_band_and_fallback():

@@ -32,7 +32,7 @@ import os
 import sys
 from collections import Counter
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from researcher.backtest.landed_pairs import repeat_pairs, same_plot_groups
 from researcher.backtest.store import (LANDED_PSF_BAND, PURE_LANDED_TYPES,
                                        TransactionStore)

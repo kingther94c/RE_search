@@ -17,7 +17,7 @@ import sys
 from collections import defaultdict
 from statistics import median
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from researcher.backtest.store import TransactionStore, months_between
 
 MIN_LOG_AREA = 0.20     # only pairs whose sizes differ by >~22% (elasticity is ill-defined near 1)

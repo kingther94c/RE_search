@@ -19,7 +19,7 @@ import os
 import random
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from researcher.backtest.index import PriceIndex
 from researcher.engine.landed_engine import shipped_time_ctx
 from researcher.backtest.landed_size_curve import size_factor

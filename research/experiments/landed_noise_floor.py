@@ -26,7 +26,7 @@ import os
 import sys
 from collections import defaultdict
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from researcher.backtest.index import PriceIndex, q_of_ym
 from researcher.backtest.landed_pairs import repeat_pairs
 from researcher.backtest.store import LANDED_PSF_BAND, TransactionStore

@@ -23,11 +23,11 @@ import sys
 from collections import defaultdict
 from datetime import datetime
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from researcher.backtest.store import LANDED_PSF_BAND, TransactionStore  # noqa: E402
 
-IS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "is_street")
+IS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "is_street")
 AREA_TOL = 1.5          # sqft — absorbs IS's rounding of URA's decimals
 
 

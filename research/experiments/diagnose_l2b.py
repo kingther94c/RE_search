@@ -29,7 +29,7 @@ import sys
 from collections import defaultdict
 from statistics import median
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from researcher.backtest.harness import walk_forward, _prev_ym          # noqa: E402
 from researcher.backtest.index import PriceIndex, quarter_end           # noqa: E402

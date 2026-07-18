@@ -19,12 +19,12 @@ import os
 import sys
 from collections import defaultdict
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from researcher.engine.fingerprint import LANDED_CODE_FILES, code_sha1  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BT = os.path.join(os.path.dirname(HERE), "researcher", "engine")
+BT = os.path.join(os.path.dirname(os.path.dirname(HERE)), "researcher", "engine")
 TABLE_OUT = os.path.join(BT, "landed_conformal_table.json")
 CUTOFF = "2025-01"
 MIN_CELL_N = 40

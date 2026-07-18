@@ -5,7 +5,7 @@
              pool (the condo thin-comp reversal, transposed), so we do NOT blend an anchor
              into it. Else fall back to LA1 (lease-matched pooled anchor) purely for COVERAGE.
   INTERVAL = split-conformal per (street-liquidity x type) cell, calibrated on an earlier
-             time slice (`research/analyze_landed.py`), fingerprinted against the code that
+             time slice (`research/tools/analyze_landed.py`), fingerprinted against the code that
              produced its residuals so drift is a red test, not a silent skew.
   SCOPE    = >=8k sqft plots ride a widened band and route to the case protocol: EXP-0011
              showed the size curve is worst-identified exactly where the error is largest.

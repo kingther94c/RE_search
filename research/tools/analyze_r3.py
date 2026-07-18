@@ -14,12 +14,12 @@ import sys
 from collections import defaultdict
 from statistics import median
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from researcher.engine.fingerprint import CONDO_CODE_FILES, code_sha1  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TABLE_OUT = os.path.join(os.path.dirname(HERE), "researcher", "engine", "conformal_table.json")
+TABLE_OUT = os.path.join(os.path.dirname(os.path.dirname(HERE)), "researcher", "engine", "conformal_table.json")
 CUTOFF = "2025-01"          # calibrate on < CUTOFF, validate on >= CUTOFF
 MIN_CELL_N = 50             # below this, a cell falls back to segment then global quantiles
 

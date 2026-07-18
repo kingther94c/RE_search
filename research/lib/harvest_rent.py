@@ -39,9 +39,12 @@ import re
 import sys
 import time
 
-import mbx
+if __package__:
+    from . import mbx
+else:  # direct script run: python research/lib/<tool>.py
+    import mbx
 
-OUT = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 
 _TYPE = re.compile(r"^(\d(BR|Br)|-)$")            # unit type can be '-' (not disclosed)
 _BAND = re.compile(r"^[\d,]+ - [\d,]+$")

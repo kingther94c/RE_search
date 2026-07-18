@@ -53,7 +53,7 @@ ADB = _find_adb()
 SERIAL = os.environ.get("MBX_SERIAL", "emulator-5554")
 OUT = os.environ.get(
     "MBX_OUT",
-    os.path.join(os.path.dirname(os.path.abspath(__file__)), "captures"),
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "captures"),
 )
 os.makedirs(OUT, exist_ok=True)
 

@@ -4,7 +4,7 @@ A conformal table is calibrated on one specific point-method's residuals. Change
 without recalibrating and the bands silently skew, so each table carries a sha1 of the code
 that produced it and a test turns drift red. Two things this module exists to prevent:
 
-  1. **Drifting file sets.** The stamper (research/analyze_*.py) and the guard test each
+  1. **Drifting file sets.** The stamper (research/tools/analyze_*.py) and the guard test each
      used to hard-code their own tuple of filenames. They can disagree — and did: the
      landed set omitted `landed_benchmarks.py`, a hole exactly where L2b's time adjustment
      lives, so an engine change there hashed as "unchanged" (found 2026-07-17). The sets

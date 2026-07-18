@@ -18,7 +18,10 @@ import os
 import re
 import time
 
-import mbx
+if __package__:
+    from . import mbx
+else:  # direct script run: python research/lib/<tool>.py
+    import mbx
 
 DATE_RE = re.compile(r"^\d\d \w{3} \d{4}$")
 
@@ -36,7 +39,7 @@ COLUMNS = [
 ]
 DATA_COLS = COLUMNS[1:]  # everything except the frozen date column
 
-OUT = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 
 
 def nearest_col(x: int) -> str:

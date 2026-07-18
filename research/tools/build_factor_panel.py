@@ -29,9 +29,11 @@ import re
 import statistics
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CAP = os.path.join(HERE, "captures")
-FACTORS = os.path.join(os.path.dirname(HERE), "researcher", "factors")
-VALUATION = os.path.join(os.path.dirname(HERE), "researcher", "legacy", "valuation")
+RESEARCH = os.path.dirname(HERE)
+DATA = os.path.join(RESEARCH, "data")
+CAP = os.path.join(RESEARCH, "captures")
+FACTORS = os.path.join(os.path.dirname(RESEARCH), "researcher", "factors")
+VALUATION = os.path.join(os.path.dirname(RESEARCH), "researcher", "legacy", "valuation")
 
 _ADDR = re.compile(r"^\d+[A-Z]? [A-Z' ]{3,}$")          # '23 FRANKEL AVENUE'
 _PP = re.compile(r"PP: \$([\d,]+) \(\$([\d,]+) psf\)")
@@ -160,7 +162,7 @@ def assemble_condo() -> dict:
 
     # 1) nearby tables
     for slug in CONDO_ANCHORS:
-        p = os.path.join(HERE, f"{slug}_nearby.json")
+        p = os.path.join(DATA, f"{slug}_nearby.json")
         if not os.path.exists(p):
             continue
         data = json.load(open(p, encoding="utf-8"))
@@ -192,7 +194,7 @@ def assemble_condo() -> dict:
                     rec["psf_source"] = "5Y sale band (anchor backfill)"
         merge(name, rec)
     # 3) prior-study tier1 comps
-    t1 = os.path.join(HERE, "tier1_comps.json")
+    t1 = os.path.join(DATA, "tier1_comps.json")
     if os.path.exists(t1):
         for slug, rec in json.load(open(t1, encoding="utf-8")).items():
             info = rec.get("info") or {}
@@ -267,7 +269,7 @@ def assemble_landed() -> dict:
     # prior tier1 landed files (already-clean transaction rows)
     for fn, label in (("tier1_landed_nanyang.json", "nanyang"),
                       ("tier1_landed_rosyth.json", "rosyth")):
-        p = os.path.join(HERE, fn)
+        p = os.path.join(DATA, fn)
         if not os.path.exists(p):
             continue
         for street_key, rows in json.load(open(p, encoding="utf-8")).items():

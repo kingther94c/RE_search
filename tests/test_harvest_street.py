@@ -6,14 +6,9 @@ real price). These lock the format-based classifier against exactly that.
 """
 from __future__ import annotations
 
-import sys
-from pathlib import Path
+import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "research"))
-
-import pytest  # noqa: E402
-
-from harvest_street_sale import _rows_at, assert_caveat_table, classify  # noqa: E402
+from research.lib.harvest_street_sale import _rows_at, assert_caveat_table, classify
 
 
 def _n(text, x, y):

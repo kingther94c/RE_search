@@ -23,9 +23,9 @@ parent prices a house off another estate at full confidence, which is worse than
 
 HOW TO ADD ONE (the only accepted method):
   1. harvest the road from Investment Suite — it is the only source that knows addresses:
-       python research/harvest_street_sale.py "SOME ROAD" --window 5Y
+       python -m research.lib.harvest_street_sale "SOME ROAD" --window 5Y
   2. match those transactions against URA buckets on month+price+area:
-       python research/reconcile_is_ura.py "SOME ROAD"
+       python -m research.tools.reconcile_is_ura "SOME ROAD"
   3. if a bucket carries them, add the entry below WITH its evidence string.
 """
 from __future__ import annotations
@@ -91,15 +91,15 @@ def resolve(road: str, has_caveats) -> dict:
             f"caveats under the DEVELOPMENT's street, which can be a different road 650m away "
             f"(EXP-0018). Guessing the parent geographically is rejected (GY-0006: it picked a "
             f"different estate for Cardiff Grove). Resolve it with evidence: "
-            f"`python research/harvest_street_sale.py \"{r}\" --window 5Y` then "
-            f"`python research/reconcile_is_ura.py \"{r}\"`, and add the alias."
+            f"`python -m research.lib.harvest_street_sale \"{r}\" --window 5Y` then "
+            f"`python -m research.tools.reconcile_is_ura \"{r}\"`, and add the alias."
         ),
         "evidence_zh": (
             f"URA 名下没有以「{r}」归档的 landed caveat,也没有经证据确认的母路别名。这**不**代表"
             f"这条路没有成交 —— URA 按**发展项目登记的街道**归档,母路可以是 650m 外的另一条路"
             f"(EXP-0018)。按地理就近去猜母路已被否证(GY-0006:它会把 Cardiff Grove 配到另一个"
-            f"屋苑的 Chuan Drive)。正确解法(用证据):先 `python research/harvest_street_sale.py "
-            f"\"{r}\" --window 5Y` 拉本路的 IS 成交,再 `python research/reconcile_is_ura.py "
+            f"屋苑的 Chuan Drive)。正确解法(用证据):先 `python -m research.lib.harvest_street_sale "
+            f"\"{r}\" --window 5Y` 拉本路的 IS 成交,再 `python -m research.tools.reconcile_is_ura "
             f"\"{r}\"` 对账,命中后把别名与证据一起登记进本文件。"
         ),
     }

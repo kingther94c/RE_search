@@ -20,4 +20,9 @@ xiaohongshu = []  # filled in when that source is built
 android = []      # `pip install -e ../mobile_bridge` if a skill wants the tested Appium path
 
 [tool.setuptools.packages.find]
-include = ["researcher*"]
+include = ["researcher*", "research*", "deliverables*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]

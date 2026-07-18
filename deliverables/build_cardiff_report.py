@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Render the 19 Cardiff Grove landed valuation report (bilingual HTML).
-Numbers are read from research/cardiff19_valuation.json + cardiff_transactions.json
+Numbers are read from research/data/cardiff19_valuation.json + cardiff_transactions.json
 so the prose can never drift from the computed figures. Output -> repo reports/ (gitignored)
 + synced to the Drive library (deliverables/report_out.py).
 R2 revision: leads with the honest comp-based decline (not the flattering flat framing),
@@ -12,13 +12,13 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO)
 
 from deliverables.report_out import write_report  # noqa: E402
-V = json.load(open(os.path.join(REPO, "research", "cardiff19_valuation.json"), encoding="utf-8"))
-T = json.load(open(os.path.join(REPO, "research", "cardiff_transactions.json"), encoding="utf-8"))
+V = json.load(open(os.path.join(REPO, "research", "data", "cardiff19_valuation.json"), encoding="utf-8"))
+T = json.load(open(os.path.join(REPO, "research", "data", "cardiff_transactions.json"), encoding="utf-8"))
 S = V["subject"]; VAL = V["valuation"]; CC = V["crosschecks"]; VP = V["vs_purchase"]
 cost = V["costs"]; yld = V["yield"]; CN = V["comp_counts"]; last = S["last_sale"]
 ML = V["market_layers"]; L3 = ML["L3_nearby_500m"]; L5 = ML["L5_sg_landed_daipan"]
 try:
-    NL = json.load(open(os.path.join(REPO, "research", "cardiff_nearby_listings.json"), encoding="utf-8"))["rows"]
+    NL = json.load(open(os.path.join(REPO, "research", "data", "cardiff_nearby_listings.json"), encoding="utf-8"))["rows"]
 except Exception:
     NL = []
 
@@ -362,7 +362,7 @@ ul{{margin:6px 0 6px 0;padding-left:20px}} li{{margin:4px 0}}
 <li><b>完整性校验：</b> 抓取 {CN['street_terraces_10y']} 笔均价 $3,663,164 = app 街道带均价 $3,663,165（差 $1）→ 集合完整、解析正确。</li>
 <li><b>政策核对：</b> BSD 现行6档（$3m 以上 6%，2023-02起）→ 点估 {money(pt)} 对应 {k(cost['bsd_at_point'])}；SSD 旧3年规则（2025-07-04前购入）→ 2023-03 购入者2026-03后为 nil。</li>
 <li><b>Tier-2/3（仅作现挂牌情景，未用于承重数字）：</b> propertygiant / propertyvow / 99.co / bgdev 的 Cardiff Grove 挂牌（单层地皮 S$3.3m、8号重建屋规格）——标注为"挂牌/claim"，非成交。</li>
-<li><b>脚本与 digest：</b> <code>research/cardiff_transactions.json</code>、<code>research/cardiff19_valuation.json</code>、<code>deliverables/build_cardiff_report.py</code>。</li>
+<li><b>脚本与 digest：</b> <code>research/data/cardiff_transactions.json</code>、<code>research/data/cardiff19_valuation.json</code>、<code>deliverables/build_cardiff_report.py</code>。</li>
 </ul>
 
 <div class="foot">

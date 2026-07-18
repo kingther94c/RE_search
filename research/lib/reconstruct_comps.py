@@ -46,7 +46,7 @@ import re
 import statistics
 from datetime import date, timedelta
 
-OUT = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 
 _MON = {m: i for i, m in enumerate(
     ("Jan", "Feb", "Mar", "Apr", "May", "Jun",

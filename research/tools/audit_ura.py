@@ -14,7 +14,7 @@ import os
 import sys
 from collections import Counter
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from researcher.backtest.store import TransactionStore
 
 OUT_PSF_LO, OUT_PSF_HI = 500, 6500        # psf sanity band (private residential)

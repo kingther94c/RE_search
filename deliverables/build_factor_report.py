@@ -282,7 +282,7 @@ Spearman 5% 临界值约 0.75，本样本量不足以证明『不存在』。实
 <ul>
 <li>官方指数：SingStat TableBuilder M212261/M212311（URA 官方序列）→ python -m researcher.marketdata.singstat</li>
 <li>β 层：python -m researcher.factors.beta_layer；横截面与模型：python -m researcher.factors.factor_model</li>
-<li>面板：research/build_factor_panel.py（Investment Suite Tier-1 captures）+ researcher/factors/enrich_onemap.py（OneMap 官方地理编码）</li>
+<li>面板：research/tools/build_factor_panel.py（Investment Suite Tier-1 captures）+ researcher/factors/enrich_onemap.py（OneMap 官方地理编码）</li>
 <li>估值案例：spottiswoode_1803 / gallop_0304 / onepearl_0316 数字化估值报告（独立敌对评审 PASS 8.8 / 8.35 / 8.7；
 另一份 Gallop Gables 面研究为 PASS 8.55——面板 review_overall 字段取的是后者）</li>
 </ul>
@@ -421,7 +421,7 @@ landed 公民限购是额外的需求侧刚性（双向）</li>
 <h2>方法学与来源 <span class='en'>Method & sources（可复算）</span></h2>
 <ul>
 <li>官方指数与 β：python -m researcher.marketdata.singstat；python -m researcher.factors.beta_layer</li>
-<li>街道面板：research/build_factor_panel.py（Investment Suite 街道 PP 面/成交表 capture 留痕）</li>
+<li>街道面板：research/tools/build_factor_panel.py（Investment Suite 街道 PP 面/成交表 capture 留痕）</li>
 <li>学区研究：researcher/landed/nanyang_digest.json（PASS 8.45）/ rosyth_digest.json（PASS 8.6）</li>
 <li>地理事实：OneMap 官方 API（学校坐标、1km 实测）</li></ul>
 <p class="foot">仅供研究与说明，非投资建议。Generated {today}.</p>

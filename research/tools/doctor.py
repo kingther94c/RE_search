@@ -25,15 +25,26 @@ import re
 import shutil
 import sys
 
-import mbx
+if __package__:
+    from ..lib import mbx
+else:  # direct script run: python research/tools/doctor.py
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "lib"))
+    import mbx
 
 PACKAGE = "com.investmentsuite"
 ACTIVITY = "com.propnex.investmentsuite.MainActivity2"
+# mobile_bridge owns the emulator/AVD lifecycle; the default points there but the
+# dependency is configurable instead of hardcoded (override: MBX_EMULATOR_CMD).
+EMULATOR_CMD = os.environ.get(
+    "MBX_EMULATOR_CMD",
+    "powershell -File D:\\projects\\git_projects\\mobile_bridge\\scripts\\"
+    "start_emulator.ps1 -AvdName mb_play",
+)
 EMULATOR_HINT = (
     "start it WINDOWED (visible, never headless) via the mobile_bridge repo:\n"
-    "      powershell -File D:\\projects\\git_projects\\mobile_bridge\\scripts\\"
-    "start_emulator.ps1 -AvdName mb_play\n"
-    "    then wait for the home screen and re-run doctor."
+    f"      {EMULATOR_CMD}\n"
+    "    then wait for the home screen and re-run doctor.\n"
+    "    (override the start command with the MBX_EMULATOR_CMD env var)"
 )
 # nav labels that prove we are inside the logged-in app
 _NAV = ("Market", "Property Analysis", "ProTrend", "ProMap")

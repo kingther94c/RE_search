@@ -13,7 +13,7 @@ import json
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from researcher.backtest.harness import walk_forward                    # noqa: E402
 from researcher.backtest.landed_benchmarks import LANDED_BENCHMARKS     # noqa: E402

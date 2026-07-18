@@ -47,13 +47,9 @@ from researcher.tax import bsd  # noqa: E402
 from researcher.legacy.valuation import validate_digest  # noqa: E402
 from researcher.legacy.valuation.engine import Comp, Params, Subject, value  # noqa: E402
 
-_spec = importlib.util.spec_from_file_location(
-    "reconstruct_comps", os.path.join(ROOT, "research", "reconstruct_comps.py"))
-rc = importlib.util.module_from_spec(_spec)
-sys.modules.setdefault("mbx", type(sys)("mbx"))  # rc imports nothing from mbx, but be safe
-_spec.loader.exec_module(rc)
+from research.lib import reconstruct_comps as rc  # noqa: E402
 
-RESEARCH = os.path.join(ROOT, "research")
+RESEARCH = os.path.join(ROOT, "research", "data")
 VALUATION = os.path.join(ROOT, "researcher", "legacy", "valuation")
 
 MORTGAGE_LTV, MORTGAGE_RATE, MORTGAGE_YEARS = 0.75, 0.014, 30

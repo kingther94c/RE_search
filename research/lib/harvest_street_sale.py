@@ -38,10 +38,13 @@ import os
 import re
 import time
 
-import mbx
+if __package__:
+    from . import mbx
+else:  # direct script run: python research/lib/<tool>.py
+    import mbx
 
 DATE_RE = re.compile(r"^\d\d \w{3} \d{4}$")
-OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "is_street")
+OUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "is_street")
 
 # Cells are classified by FORMAT, never by x-coordinate. Three things defeated coordinate
 # snapping here, and this design answers all of them at once:

@@ -24,7 +24,7 @@ from collections import defaultdict
 from datetime import datetime
 from statistics import median
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 for _s in (sys.stdout, sys.stderr):
     if hasattr(_s, "reconfigure"):
         _s.reconfigure(encoding="utf-8", errors="replace")
@@ -38,7 +38,7 @@ from researcher.backtest.store import (LANDED_PSF_BAND, TransactionStore,  # noq
                                        month_end)
 from researcher.engine.value_landed import _adjusted_comp_psfs, _pctl  # noqa: E402
 
-IS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "is_street")
+IS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "is_street")
 # IS 采集 slug -> 它在 URA 里被归到哪个母路桶(EXP-0018 已证)
 ATTRIBUTION = {
     "loyang_rise": ("LOYANG RISE", "LOYANG RISE"),

@@ -1,15 +1,10 @@
 """Tower View parser: pure-function tests, incl. a real-capture regression fixture."""
-import importlib.util
 import json
 import os
-import sys
+
+from research.lib import harvest_towerview as htv
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.modules.setdefault("mbx", type(sys)("mbx"))  # stub the adb harness for offline import
-spec = importlib.util.spec_from_file_location(
-    "harvest_towerview", os.path.join(ROOT, "research", "harvest_towerview.py"))
-htv = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(htv)
 
 
 def test_parses_full_cell():

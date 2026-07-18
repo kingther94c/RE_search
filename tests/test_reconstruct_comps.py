@@ -1,21 +1,16 @@
 """Three-surface reconstruction: regression against the analyst-PASSed #18-03
 digest (its 37-row comps_table was built by hand from the same inputs) plus
 unit tests for windowing, dedup, subject exclusion and the trend ladder."""
-import importlib.util
 import json
 import os
-import sys
+
+from research.lib import reconstruct_comps as rc
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.modules.setdefault("mbx", type(sys)("mbx"))
-spec = importlib.util.spec_from_file_location(
-    "reconstruct_comps", os.path.join(ROOT, "research", "reconstruct_comps.py"))
-rc = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(rc)
 
 
 def _load(name):
-    return json.load(open(os.path.join(ROOT, "research", name), encoding="utf-8"))
+    return json.load(open(os.path.join(ROOT, "research", "data", name), encoding="utf-8"))
 
 
 def _spott():
@@ -56,7 +51,7 @@ def test_cross_surface_merge_is_fuzzy_on_date():
 
 def test_multiblock_gallop_dedup_and_subject_block():
     def load(n):
-        return json.load(open(os.path.join(ROOT, "research", n), encoding="utf-8"))
+        return json.load(open(os.path.join(ROOT, "research", "data", n), encoding="utf-8"))
 
     res = rc.reconstruct(load("gallop_transactions.json"), load("gallop_profitability.json"),
                          load("gallop_towerview.json"), asof="2026-07-03", years=5,

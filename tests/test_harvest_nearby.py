@@ -1,15 +1,10 @@
 """Nearby-Properties parser: pure-function tests over real captures."""
-import importlib.util
 import json
 import os
-import sys
+
+from research.lib import harvest_nearby as hn
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.modules.setdefault("mbx", type(sys)("mbx"))
-spec = importlib.util.spec_from_file_location(
-    "harvest_nearby", os.path.join(ROOT, "research", "harvest_nearby.py"))
-hn = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(hn)
 
 
 def _texts(name):

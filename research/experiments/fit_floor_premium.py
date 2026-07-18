@@ -20,7 +20,7 @@ import sys
 from collections import defaultdict
 from statistics import median
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from researcher.backtest.store import TransactionStore, months_between
 
 MAX_MONTHS = 3

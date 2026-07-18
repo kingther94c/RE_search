@@ -1,15 +1,10 @@
 """Rent parser: pure-function tests over real captures + synthetics."""
-import importlib.util
 import json
 import os
-import sys
+
+from research.lib import harvest_rent as hr
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.modules.setdefault("mbx", type(sys)("mbx"))  # stub the adb harness for offline import
-spec = importlib.util.spec_from_file_location(
-    "harvest_rent", os.path.join(ROOT, "research", "harvest_rent.py"))
-hr = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(hr)
 
 
 def _texts(name):
