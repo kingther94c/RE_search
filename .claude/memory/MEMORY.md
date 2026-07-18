@@ -1,13 +1,14 @@
 # Memory index
 
+- [valuation-research-system](valuation-research-system.md) — research-to-skill quant program on the URA backtest spine; condo SHIPPED+FROZEN (PASS 8.7, 3.7%); **landed SHIPPED (PASS 8.05) + L2b observed bridge landed: LV1 9.05% / 78.9% band, regime bias partially closed & still disclosed** — start sessions at research/registry/01_roadmap.md; next = ops runbook / R4 IS bridge (the residual-bias lever)
 - [factor-study-capability](factor-study-capability.md) — condo+landed 因子研究:官方 beta 层、27 项目面板、辩证团口径(不对称捕获 0.95/0.74、school>age>MRT≈FH、摩擦门槛 α)、2 报告 + 2 分析 skill
 - [condo-valuation-pipeline](condo-valuation-pipeline.md) — one-command condo valuation (doctor → 4 harvesters → pipeline → 12 gates); sonnet-proven; AVM bias is NOT one-directional, freshest same-spec print is the anchor
-- [android-read-bridge](android-read-bridge.md) — mobile_bridge service, toolchain locations, worktree isolation, two-tier tests, the Appium page_source vs `<node>` parser gotcha
+- [android-read-bridge](android-read-bridge.md) — mobile_bridge repo scope after 2026-07-18 refactor (emulator ops + PG explorer; Appium service in legacy/), toolchain locations, the page_source vs `<node>` parser gotcha
 - [investment-suite-valuation](investment-suite-valuation.md) — PropNex Investment Suite app + the Researcher work; now split into its own repo RE_search (mobile_bridge is back to a clean tool); extraction gotchas + #18-03 trial result
 - [re-search-reports-dir](re-search-reports-dir.md) — HTML reports go to BOTH the gitignored reports/ AND G:\My Drive\004 RES\REsearch_Reports (never a tracked folder)
-- [landed-research-capability](landed-research-capability.md) — RE_search 4-study suite (Nanyang PASS 8.3, Rosyth, Dunearn House 新盘, Gallop Gables condo) + OneMap tool + hostile-analyst critique loop + geography gotchas
+- [landed-research-capability](landed-research-capability.md) — RE_search landed studies (Nanyang/Rosyth 1km areas, Dunearn 新盘) + **#19 Cardiff Grove single-house valuation PASS 8.5** (app "Type Summary" count-link drill for street comps; land-psf quantum method; LEVEL-vs-SLOPE review lesson) + OneMap tool + hostile-critique loop + geography gotchas
 - [multiagent-budget-lessons](multiagent-budget-lessons.md) — fleet sizing after the session-limit burn: sonnet gatherers ×3-4, Fable only for synthesis/critique, sequence heavy workflows
-- [data-source-trust-hierarchy](data-source-trust-hierarchy.md) — Investment Suite + SG-official data = ground truth; property research/agent reports are low-trust (conflicted) — anchor every load-bearing number to Tier 1
+- [data-source-trust-hierarchy](data-source-trust-hierarchy.md) — Investment Suite + SG-official data = ground truth (EXP-0018: IS is NOT fresher than URA on caveats; its edge = address mapping/history/rents; Realtime Agency Data panel is NOT Tier 1); property research/agent reports are low-trust — anchor every load-bearing number to Tier 1
 - [emulator-windowed-visible](emulator-windowed-visible.md) — drive the Android emulator windowed/visible (never headless) for interactive Investment Suite work so the user can intervene
 - [git-default-main](git-default-main.md) — default git workflow: commit & push directly to main (local + remote) for both repos, no feature branches/worktrees (supersedes old worktree isolation)
 - [kelvin-user](kelvin-user.md) — user is Kelvin; prefers Chinese; wants end-to-end runnable+tested work, "pull a team"; git default = push to main

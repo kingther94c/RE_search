@@ -14,6 +14,16 @@ number as fact:
 - **PropNex Investment Suite** (the Android app) — URA-caveat transactions, per-unit **Est. Val**
   (AVM benchmark), **realised returns** (buy/sell pairs), rental contracts. Read via the
   `read-investment-suite` skill / `research/mbx.py`. See [[investment-suite-valuation]].
+  **MEASURED against the URA API (EXP-0018, 2026-07-17) — three corrections:**
+  (1) on caveats IS and the URA API are the **SAME data at the SAME lag** — IS is NOT fresher
+  (0 of 104 rows newer) and NOT "far more data" per road (a strict subset: 104 vs URA's 135,
+  because **URA's `street` is a coarse PARENT label merging adjacent roads**);
+  (2) IS's genuine, unique edge is **address↔caveat mapping** (URA carries no address at all),
+  **history depth** (10Y street window; per-address back to ~1996), per-unit floor/stack,
+  rents, Est.Val — use it for THOSE, not for freshness;
+  (3) **inside the app, one panel is NOT Tier 1**: *Realtime Agency Data* (sits directly under
+  the caveat table, tenure renders as `-`) is agency/asking data — it carries newer dates than
+  the caveats and mixing it in silently turns asks into "transactions". Caveats only.
 - **Singapore official / primary sources**: URA (SPACE Master Plan, price index, REALIS), OneMap
   (school 1km query, geocoding — use `researcher/sources/onemap.py`), PUB (flood-prone list), SLA
   (INLIS title, LDAU foreign-ownership), MOE (P1 balloting / school data), IRAS (BSD/ABSD/SSD,
