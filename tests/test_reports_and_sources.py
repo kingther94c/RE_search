@@ -10,7 +10,7 @@ import pytest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 spec = importlib.util.spec_from_file_location(
-    "build_landed_report", os.path.join(ROOT, "deliverables", "build_landed_report.py"))
+    "build_landed_area_report", os.path.join(ROOT, "deliverables", "build_landed_area_report.py"))
 blr = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(blr)
 

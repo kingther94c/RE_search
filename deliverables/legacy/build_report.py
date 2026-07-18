@@ -16,7 +16,7 @@ import sys
 from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(HERE)
+ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "researcher", "legacy", "valuation"))
 import dataset as D  # noqa: E402
@@ -369,4 +369,5 @@ ul{{margin:6px 0 6px 0;padding-left:20px}} li{{margin:4px 0}}
 
 </div></body></html>"""
 
-print(write_report("Spottiswoode_18-03_Valuation_Report.html", HTML).summary())
+if __name__ == "__main__":
+    print(write_report("Spottiswoode_18-03_Valuation_Report.html", HTML).summary())

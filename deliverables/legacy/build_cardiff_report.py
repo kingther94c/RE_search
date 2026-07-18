@@ -8,7 +8,7 @@ buyer target anchored to freshest same-spec prints, ABSD/property-tax quantified
 comp counts disambiguated (29 street terraces vs 8 same-spec originals in the grid)."""
 import json, os, re, html, sys
 
-REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, REPO)
 
 from deliverables.report_out import write_report  # noqa: E402
@@ -370,4 +370,5 @@ ul{{margin:6px 0 6px 0;padding-left:20px}} li{{margin:4px 0}}
 </div>
 </div></body></html>"""
 
-print(write_report("cardiff_grove_19_Landed_Valuation_Report.html", HTML).summary())
+if __name__ == "__main__":
+    print(write_report("cardiff_grove_19_Landed_Valuation_Report.html", HTML).summary())

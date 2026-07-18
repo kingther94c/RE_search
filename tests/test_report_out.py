@@ -64,7 +64,7 @@ def test_live_reports_dir_is_the_main_checkout_not_a_worktree():
 
 
 def test_every_builder_routes_through_report_out():
-    """No builder may re-derive the destination. build_landed_v2_report.py shipped with a
+    """No builder may re-derive the destination. build_landed_valuation_report.py (then build_landed_v2_report.py) shipped with a
     copy-pasted `_reports_dir()` that fell back to the TRACKED deliverables/ — the exact
     defect the rule exists to kill. Catch the next copy-paste here, not in git history."""
     builders = sorted(glob.glob(os.path.join(_DELIVERABLES, "build_*.py")))

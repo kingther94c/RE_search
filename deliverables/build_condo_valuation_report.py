@@ -1,6 +1,6 @@
 """Render a condo-resale-valuation report (engine v2) to bilingual HTML.
 
-    python deliverables/build_condo_v2_report.py --project "TREASURE AT TAMPINES" \
+    python deliverables/build_condo_valuation_report.py --project "TREASURE AT TAMPINES" \
            --area 936 --floor 12 [--asof 2026-07-01]
 
 Values the unit with researcher.engine.value_unit, then writes an HTML report to the

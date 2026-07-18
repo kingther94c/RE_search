@@ -1,6 +1,6 @@
 """Render a Singapore landed-AREA research report (HTML) from a synthesized digest.
 
-  python deliverables/build_landed_report.py <area_slug>
+  python deliverables/build_landed_area_report.py <area_slug>
 
 Reads  researcher/landed/<slug>_digest.json  (shape = the research workflow's synth
 schema) and writes a self-contained HTML report to
@@ -17,7 +17,7 @@ from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-sys.path.insert(0, ROOT)  # so `python deliverables/build_landed_report.py` finds researcher/
+sys.path.insert(0, ROOT)  # so `python deliverables/build_landed_area_report.py` finds researcher/
 
 from deliverables.report_out import write_report  # noqa: E402
 from researcher.landed.screen import rank_listings, screen_verdict  # noqa: E402

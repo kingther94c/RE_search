@@ -1,6 +1,6 @@
 """Render a landed-valuation report (engine LV1) to bilingual HTML.
 
-    python deliverables/build_landed_v2_report.py --street "ALNWICK ROAD" --area 2800 \
+    python deliverables/build_landed_valuation_report.py --street "ALNWICK ROAD" --area 2800 \
            --type Terrace [--condition original] [--asof 2026-07-01]
 
 Writes to the main checkout's gitignored reports/ AND the Drive library — see

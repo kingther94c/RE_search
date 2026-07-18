@@ -164,7 +164,7 @@ def check(d: dict, report_path: str | None = None) -> list[dict]:
     # 8. report render check
     if report_path:
         if not os.path.exists(report_path):
-            gate("report-exists", False, report_path, "run deliverables/build_condo_report.py")
+            gate("report-exists", False, report_path, "run deliverables/legacy/build_condo_report.py")
         else:
             html_txt = open(report_path, encoding="utf-8").read()
             gate("report-exists", True, f"{len(html_txt) / 1024:.0f} KB")

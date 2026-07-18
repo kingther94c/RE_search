@@ -4,7 +4,7 @@ import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 spec = importlib.util.spec_from_file_location(
-    "build_condo_report", os.path.join(ROOT, "deliverables", "build_condo_report.py"))
+    "build_condo_report", os.path.join(ROOT, "deliverables", "legacy", "build_condo_report.py"))
 bcr = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(bcr)
 

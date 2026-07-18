@@ -399,7 +399,7 @@ def run(args: argparse.Namespace) -> int:
     # ── 6. report ────────────────────────────────────────────────────────────
     if not args.no_report:
         r = subprocess.run([sys.executable,
-                            os.path.join(ROOT, "deliverables", "build_condo_report.py"),
+                            os.path.join(ROOT, "deliverables", "legacy", "build_condo_report.py"),
                             args.digest_slug],
                            capture_output=True, text=True, encoding="utf-8")
         print(r.stdout.strip() or r.stderr.strip())
