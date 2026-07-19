@@ -25,6 +25,7 @@ import html
 import json
 import os
 import re
+import statistics
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -292,6 +293,98 @@ def _verify_zh(v: dict, g: dict) -> list[str]:
     return out
 
 
+# ------------------------------------------- A/B 回移(2026-07-19):近窗读数与年度趋势
+# 来自 AI 盲写对照实验:AI 臂用「近12月/近半年/最近簇」三个口径互证当前市场水平,并给出
+# 街道 vs 标的队列的年度趋势 —— 都是纯观测(原始 caveat,未调整),引擎报告此前没有渲染。
+# 口径必须与引擎分开标注:这里是 RAW psf;引擎的点估值/门槛活在 adj psf(时间+尺寸调整)上。
+def _ym_idx(ym: str) -> int:
+    y, m = ym.split("-")
+    return int(y) * 12 + int(m) - 1
+
+
+def _cohort_rows(rows: list[dict], area: float, tol: float = 0.06) -> list[dict]:
+    lo, hi = area * (1 - tol), area * (1 + tol)
+    return [r for r in rows if lo <= (r.get("area_sqft") or 0) <= hi]
+
+
+def _recent_windows(rows: list[dict], area: float) -> dict | None:
+    """标的队列(±6%)的近窗观测:近12月 / 近半年 / 最近3笔簇 + 累计重估与隐含月漂移。
+    rows = street_comps(...)(已按 contract_ym 升序)。全部 RAW psf。"""
+    c = _cohort_rows(rows, area)
+    if len(c) < 4:
+        return None
+    end = _ym_idx(c[-1]["contract_ym"])
+    w12 = [r for r in c if _ym_idx(r["contract_ym"]) > end - 12]
+    w6 = [r for r in c if _ym_idx(r["contract_ym"]) > end - 6]
+    prev6 = [r for r in c if end - 12 < _ym_idx(r["contract_ym"]) <= end - 6]
+    cluster = c[-3:]
+    out = {
+        "last_ym": c[-1]["contract_ym"], "cohort_n": len(c),
+        "n12": len(w12), "med12_psf": statistics.median(r["psf"] for r in w12) if w12 else None,
+        "med12_price": statistics.median(r["price"] for r in w12) if w12 else None,
+        "n6": len(w6), "med6_psf": statistics.median(r["psf"] for r in w6) if w6 else None,
+        "cluster": [(r["contract_ym"], r["psf"]) for r in cluster],
+        "cluster_med": statistics.median(r["psf"] for r in cluster),
+        "drift_mo": None, "cum_pct": None, "cum_from_year": None,
+    }
+    # 隐含月漂移:近6月中位 vs 其前6月中位,除以 6 —— 两窗各 ≥3 笔才报,否则是噪声
+    if len(w6) >= 3 and len(prev6) >= 3:
+        m_now = statistics.median(r["psf"] for r in w6)
+        m_prev = statistics.median(r["psf"] for r in prev6)
+        out["drift_mo"] = (m_now / m_prev - 1) / 6
+    # 累计重估:首个日历年队列中位 -> 近12月中位(首年 ≥3 笔才报)
+    first_year = c[0]["contract_ym"][:4]
+    fy = [r for r in c if r["contract_ym"].startswith(first_year)]
+    if len(fy) >= 3 and out["med12_psf"]:
+        base = statistics.median(r["psf"] for r in fy)
+        out["cum_pct"] = out["med12_psf"] / base - 1
+        out["cum_from_year"] = first_year
+    return out
+
+
+def _year_trend(rows: list[dict], area: float) -> list[dict]:
+    """按日历年:街道全体 vs 标的队列(±6%)的 n 与中位 —— 面积效应逼着两列分开看。"""
+    c_set = {id(r) for r in _cohort_rows(rows, area)}
+    years: dict[str, dict] = {}
+    for r in rows:
+        y = r["contract_ym"][:4]
+        b = years.setdefault(y, {"street": [], "cohort": []})
+        b["street"].append(r)
+        if id(r) in c_set:
+            b["cohort"].append(r)
+    out, prev_med = [], None
+    for y in sorted(years):
+        b = years[y]
+        med_c = statistics.median(r["psf"] for r in b["cohort"]) if b["cohort"] else None
+        out.append({
+            "year": y, "n_street": len(b["street"]),
+            "med_street": statistics.median(r["psf"] for r in b["street"]),
+            "n_cohort": len(b["cohort"]), "med_cohort": med_c,
+            "price_cohort": statistics.median(r["price"] for r in b["cohort"]) if b["cohort"] else None,
+            "yoy": (med_c / prev_med - 1) if (med_c and prev_med) else None,
+        })
+        if med_c:
+            prev_med = med_c
+    return out
+
+
+def _fresh_vs_cluster(comps: list[dict]) -> dict | None:
+    """最新一笔 adj psf 相对其前 3 笔簇中位的偏离 —— 决定它是「锚」还是「上/下尾单笔」。
+    comps = 引擎输出(按月份降序,adj_land_psf 已调整到本宗地)。"""
+    if len(comps) < 3:
+        return None
+    fresh, cluster = comps[0], comps[1:4]
+    med = statistics.median(c["adj_land_psf"] for c in cluster)
+    return {"gap": fresh["adj_land_psf"] / med - 1, "cluster_med": med, "n_cluster": len(cluster)}
+
+
+def _split_stations(mrt: list[dict]) -> tuple[list[dict], list[dict]]:
+    """全岛车站清单拆成 (MRT 重轨, LRT 轻轨) —— 混标会把 1.35km 的 LRT 报成「最近 MRT」。"""
+    lrt = [n for n in mrt if "LRT" in (n.get("name") or "").upper()]
+    heavy = [n for n in mrt if n not in lrt]
+    return heavy, lrt
+
+
 def _money(x) -> str:
     if x is None:
         return "—"
@@ -323,10 +416,10 @@ def gather(address: str, ptype: str, area: float | None, tenure: str | None,
     # F4:同一份报告里会出现两个可比数(判断层说街道 63 笔、估值说 n=54)—— 都对,但差在
     # 过滤,必须解释。F6:MP2025 面积若与 URA 桶内成交的地块面积大量重合,那是比「指示性」
     # 强得多的交叉验证(两个互不通气的官方源),要说出来。
-    street_total, area_xval = 0, ""
+    street_total, street_rows, area_xval = 0, [], ""
     if res["ura_street"]:
         rows = street_comps(res["ura_street"])
-        street_total = len(rows)
+        street_total, street_rows = len(rows), rows
         if land_area and not area:                      # 面积来自 MP2025 时才谈交叉验证
             k = sum(1 for t in rows if abs((t.get("area_sqft") or 0) - land_area) <= 2)
             if k >= 10:
@@ -361,7 +454,7 @@ def gather(address: str, ptype: str, area: float | None, tenure: str | None,
     return {"address": address, "dd": d, "resolve": res, "land_area": land_area,
             "area_src": area_src, "val": val, "val_error": val_error, "ptype": ptype,
             "cost": cost, "profile": profile, "count": count, "digest": digest,
-            "street_total": street_total}
+            "street_total": street_total, "street_rows": street_rows}
 
 
 # --------------------------------------------------------------------------- 渲染
@@ -399,10 +492,25 @@ def _l0(g: dict) -> str:
         verdict_strip = (f"<div class='banner ok'><b>结论(人写)</b> —— "
                          f"{vd.get('call_zh') or vd.get('call')} "
                          f"<span class=note>依据与 archetype 详见第 4 节</span></div>")
+    # A/B 回移:主要风险按「对价格路径的影响」排序,跟在结论后 —— 判断层人写,
+    # 与 DD 的「谁能定/何时定」分层互补:那边回答怎么核,这边回答什么最可能改变价格。
+    risks = ((g.get("digest") or {}).get("price_path_risks")) or []
+    risk_html = ""
+    if risks:
+        items = ""
+        for r in risks:
+            t = r.get("title_zh") or r.get("title") or ""
+            b = r.get("body_zh") or r.get("body") or ""
+            items += (f"<li><b>{t}</b>"
+                      + (f"<details><summary class=note>展开</summary>"
+                         f"<div class=note>{b}</div></details>" if b else "") + "</li>")
+        risk_html = (f"<div class=card><h3>主要风险 <span class=note>(按对价格路径的影响排序 · "
+                     f"判断层,人写)</span></h3><ol class=alerts>{items}</ol></div>")
     return f"""<div class=hero>{head}</div>
 <p class=addr>{_esc(g['address'])} · blk {_esc(geo['blk_no'])} {_esc(geo['road_name'])}
 S({_esc(geo['postal'])}) · 估值基准日 {_esc(d['as_of'])}</p>
 {verdict_strip}
+{risk_html}
 <div class=chips>{chip_html}</div>"""
 
 
@@ -476,6 +584,15 @@ def _l1_valuation(g: dict) -> str:
             guide += (f"<p class=note><b>近 12 个月窗(n={gr['n']}):</b>"
                       f"p25 {_money(gr['p25'])} · p75 {_money(gr['p75'])} —— "
                       f"热市中比 60 个月窗更贴近当前水平;样本更薄,只作参照,不替代主门槛。</p>")
+        # A/B 回移:出价指引叙事行 —— 裸的 p25/p75 拦不住「为单笔背书」这种错误;
+        # 把「超过门槛需要什么」和「最高单笔是谁」写成一句话,和表同屏。
+        max_c = max(v["comps"], key=lambda c: c["adj_land_psf"]) if v.get("comps") else None
+        if max_c and sg.get("ask"):
+            top_price = max_c["adj_land_psf"] * area_sf
+            guide += (f"<p class=note><b>读法:</b>超过 p75({_money(bg['walk_away_above'])})的出价"
+                      f"需要<b>可验证的理由</b>(高标准装修、已批准加建、边间/几何优势 —— 现场核实,"
+                      f"不是听中介说);高于 {_money(top_price)} 即是在为桶内最高单笔"
+                      f"({max_c['adj_land_psf']:,.0f} adj psf,{_esc(max_c['contract_ym'])})背书。</p>")
     flag = ""
     # 别名桶里的「最新同街成交」可能根本不在本路上 —— 实测:19 Cardiff Grove 的这条提示由一笔
     # 2,301sf @ $2,816psf 的成交驱动,调整后 3,175 psf,**高过 Cardiff Grove 自己的历史最高价
@@ -497,9 +614,25 @@ def _l1_valuation(g: dict) -> str:
                     f"高 {-gap*100:.0f}%({ref['adj_psf']:,.0f} land-psf 调整后,"
                     f"{ref['contract_ym']}):在加速的市场里把这个点当<b>地板</b>读(见 regime 偏差)。"
                     f"</div>")
-    ref_html = (f"<p class=note>最新可比成交:<b>{ref['adj_psf']:,.0f}</b> land-psf(已按时间+尺寸"
-                f"调整到本宗地,{ref['contract_ym']},原成交 {ref['area_sqft']:,.0f} sqft)"
-                f"—— 单条最可信的证据点</p>" if ref else "")
+    # A/B 回移:单笔 vs 近簇。「最新 = 最可信」只有在它与其前的成交簇一致时才成立;
+    # 偏离近簇中位 >5% 的最新单笔是上/下尾,不做锚(实测:2026-06 尾数 888 的一笔比
+    # 5 月三印簇高 8.7%,把它当「最可信」会系统性带高读数)。regime 地板提示保持不变。
+    ref_html = ""
+    if ref:
+        fc = _fresh_vs_cluster(v["comps"])
+        if fc and abs(fc["gap"]) > 0.05:
+            side = "上尾" if fc["gap"] > 0 else "下尾"
+            ref_html = (f"<p class=note>最新可比成交:<b>{ref['adj_psf']:,.0f}</b> land-psf"
+                        f"(已按时间+尺寸调整到本宗地,{ref['contract_ym']})—— "
+                        f"比其前 {fc['n_cluster']} 笔簇的中位 {fc['cluster_med']:,.0f} "
+                        f"{'高' if fc['gap'] > 0 else '低'} {abs(fc['gap'])*100:.0f}%,属<b>{side}单笔,"
+                        f"不做锚</b>;<b>近簇(n={fc['n_cluster']},adj psf {fc['cluster_med']:,.0f})"
+                        f"才是最可信读数</b>。单笔保留为区间{'上' if fc['gap'] > 0 else '下'}界的证据。</p>")
+        else:
+            ref_html = (f"<p class=note>最新可比成交:<b>{ref['adj_psf']:,.0f}</b> land-psf(已按时间+尺寸"
+                        f"调整到本宗地,{ref['contract_ym']},原成交 {ref['area_sqft']:,.0f} sqft)"
+                        + (f" —— 与其前 {fc['n_cluster']} 笔簇一致(偏离 {abs(fc['gap'])*100:.0f}%),"
+                           f"可作当前水平读数" if fc else " —— 单条最可信的证据点") + "</p>")
     return f"""<div class=card><h2>1 · 估值 Valuation <span class=note>(引擎 LV1)</span></h2>
 {flag}
 <table class=kv>
@@ -524,11 +657,36 @@ def _l1_valuation(g: dict) -> str:
 <p class=note>{_COND_ZH.get((s.get('condition') or '').lower(), _COND_NONE_ZH)}</p>
 <h3>买卖指导 <span class=note>(与公允价分开:读的是已成交的可比分布,不是引擎误差棒)</span></h3>
 {guide}
+{_recent_windows_zh(g)}
 <details><summary class=note>引擎原文 engine's own words(备查,未翻译)</summary>
 <p class=note>{_esc(fv['confidence_label'])}</p>
 <p class=note>{_esc(v['condition_note'])}</p>
 <p class=note>{_esc(sg['note'])}</p></details>
 </div>"""
+
+
+def _recent_windows_zh(g: dict) -> str:
+    """近窗读数(A/B 回移):近12月 / 近半年 / 最近簇三个口径互证当前市场水平。
+    仅 direct 街道渲染 —— 别名桶混路,近窗中位不是本路的读数。RAW psf,与引擎 adj 口径分开标。"""
+    v = g["val"]
+    if not v or g["resolve"]["basis"] != "direct" or not g.get("street_rows"):
+        return ""
+    rw = _recent_windows(g["street_rows"], v["subject"]["land_area_sqft"])
+    if not rw or not rw["med12_psf"]:
+        return ""
+    cl = "、".join(f"{ym} ${psf:,.0f}" for ym, psf in rw["cluster"])
+    drift = (f";隐含月漂移约 <b>{rw['drift_mo']*100:+.1f}%/月</b>(近6月中位 vs 前6月中位)"
+             if rw["drift_mo"] is not None else "")
+    cum = (f"自 {rw['cum_from_year']} 年队列中位累计重估 <b>{rw['cum_pct']*100:+.0f}%</b>{drift}。"
+           if rw["cum_pct"] is not None else "")
+    six = (f"近半年(n={rw['n6']})中位 <b>${rw['med6_psf']:,.0f}</b>;"
+           if rw["med6_psf"] and rw["n6"] >= 3 else "")
+    return (f"<h3>近窗读数 <span class=note>(标的队列 ±6%,原始 psf 未调整 —— 观测,"
+            f"非引擎口径;数据端 {_esc(rw['last_ym'])})</span></h3>"
+            f"<p class=note>近 12 个月(n={rw['n12']})中位 <b>${rw['med12_psf']:,.0f}</b> psf · "
+            f"价格中位 {_money(rw['med12_price'])};{six}"
+            f"最近 3 笔:{cl}。多口径彼此接近 = 当前水平可信;彼此背离 = 市场在动,读趋势表。"
+            f"{cum}</p>")
 
 
 def _l1_dd(g: dict) -> str:
@@ -543,8 +701,12 @@ def _l1_dd(g: dict) -> str:
     # dd.py 里那 15 所硬编码学校的陈述,而报告把它当成前者印了出来。
     near = [f"{n['name']} · {n['km']}km" for n in sch[:3]] or [
         "2.2km 内无" if scope.get("schools_primary") else "清单未覆盖本区域"]
-    mrts = [f"{n['name']} · {n['km']}km" for n in mrt[:2]] or [
-        "4km 内无" if scope.get("mrt") else "清单未覆盖本区域"]
+    # A/B 回移:MRT 与 LRT 分行 —— 混在一行时,1.35km 的 LRT 会被读成「最近 MRT」,
+    # 而「无步行可达重轨」这个结论只有分开标注才能被读者正确得出。
+    heavy, lrt = _split_stations(mrt)
+    mrt_txt = (f"{heavy[0]['name']} · {heavy[0]['km']}km" if heavy else
+               ("4km 内无" if scope.get("mrt") else "清单未覆盖本区域"))
+    lrt_txt = f"{lrt[0]['name']} · {lrt[0]['km']}km" if lrt else "4km 内无"
     gpr = str(z.get("gpr") or "—")
     gpr_txt = "LND(有地住宅,无数值容积率)" if gpr.upper() == "LND" else gpr
     scope_zh = (f"清单口径:小学与 MRT/LRT 为<b>全岛官方清单</b>({am['n_schools']} 所招收 P1 "
@@ -568,7 +730,8 @@ MP2025 · PUB)</span></h2>
 <tr><td>PUB 水浸名单</td><td class=r>{'<b>在名单上</b>' if f.get('on_list') else '不在名单上'}</td></tr>
 <tr><td>最近小学 <span class=note>(1km 官方口径以 OneMap SchoolQuery 为准)</span></td>
     <td class=r>{_esc(' / '.join(near))}</td></tr>
-<tr><td>最近 MRT/LRT</td><td class=r>{_esc(' / '.join(mrts))}</td></tr>
+<tr><td>最近 MRT <span class=note>(重轨)</span></td><td class=r>{_esc(mrt_txt)}</td></tr>
+<tr><td>最近 LRT</td><td class=r>{_esc(lrt_txt)}</td></tr>
 </table>
 <p class=note>{scope_zh};<b>商场/高速为人工短清单</b> —— 报的是「这几个里最近的」,
 不是「全新加坡最近的」。</p>
@@ -710,6 +873,25 @@ def _l2_evidence(g: dict) -> str:
 <th class=r>adj psf</th><th class=r>价格</th><th>tenure</th></tr>{rows}</table>
 <h3>独立方法读数 <span class=note>(收敛=信号,发散=hard case)</span></h3>
 <table><tr><th>method</th><th class=r>land psf</th></tr>{reads}</table>"""
+    # A/B 回移:年度趋势表(街道全体 vs 标的队列)。面积效应逼着两列分开;读趋势先读 n。
+    trend = ""
+    if g.get("street_rows") and g["land_area"] and g["resolve"]["basis"] == "direct":
+        yrs = _year_trend(g["street_rows"], g["land_area"])
+        if len(yrs) >= 2:
+            trows = ""
+            for y in yrs:
+                med_c = f"{y['med_cohort']:,.0f}" if y["med_cohort"] else "—"
+                price_c = _money(y["price_cohort"]) if y["price_cohort"] else "—"
+                yoy = f"{y['yoy']*100:+.1f}%" if y["yoy"] is not None else "—"
+                trows += (f"<tr><td>{_esc(y['year'])}</td><td class=r>{y['n_street']}</td>"
+                          f"<td class=r>{y['med_street']:,.0f}</td><td class=r>{y['n_cohort']}</td>"
+                          f"<td class=r>{med_c}</td><td class=r>{price_c}</td>"
+                          f"<td class=r>{yoy}</td></tr>")
+            trend = f"""<h3>年度趋势 <span class=note>(街道全体 vs 标的队列 ±6%,RAW psf 中位;
+读趋势先读 n —— landed 街道年样本 4-15 笔,单笔即可扰动中位)</span></h3>
+<table><tr><th>年份</th><th class=r>街道 n</th><th class=r>街道 psf 中位</th>
+<th class=r>队列 n</th><th class=r>队列 psf 中位</th><th class=r>队列价格中位</th>
+<th class=r>队列 YoY</th></tr>{trows}</table>"""
     nb = "".join(f"<tr><td>{_esc(n['zone'])}</td><td class=r>{n['metres']:.0f} m</td>"
                  f"<td class=r>{n['bearing_deg']:.0f}°</td></tr>"
                  for n in (d.get("neighbours") or [])[:8])
@@ -721,8 +903,9 @@ def _l2_evidence(g: dict) -> str:
                 "什么,不代表到达" if t.get("note") else "")
         tr += (f"<p class=note><b>朝 {_esc(t['toward'])}</b>({t['edge_m']:.0f}m):{_esc(steps)}"
                f"{warn}</p>")
-    return f"""<details><summary>3 · 证据层 —— 可比、邻地、剖面(展开)</summary>
+    return f"""<details><summary>3 · 证据层 —— 可比、趋势、邻地、剖面(展开)</summary>
 <div class=card>{comps}
+{trend}
 <h3>邻近分区 neighbours</h3>
 <table><tr><th>zone</th><th class=r>距离</th><th class=r>方位</th></tr>{nb}</table>
 {tr}

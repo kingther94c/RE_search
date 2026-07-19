@@ -152,3 +152,57 @@ def test_merged_alerts_without_digest_is_the_auto_list():
 # 注:「SSD 与买入成本孰大」的叙述函数及其两条测试已随 SSD 时钟一并删除(2026-07-18,
 # 用户裁定):landed 按自住/长持读,4 年内退出这个前提不存在,比较孰大没有决策含量。
 # SSD 的税率算术仍由 tests/test_landed_costs.py 锁着(它守的是 costs.py 的表本身)。
+
+
+# ------------------------------------------------- A/B 回移的观测层帮助函数(2026-07-19)
+from deliverables.build_landed_full_report import (_fresh_vs_cluster,  # noqa: E402
+                                                   _recent_windows, _split_stations,
+                                                   _year_trend)
+
+
+def _row(ym, psf, area=1615.0):
+    return {"contract_ym": ym, "psf": float(psf), "price": psf * area, "area_sqft": area}
+
+
+def test_recent_windows_medians_and_cluster():
+    rows = ([_row("2021-0%d" % (i + 1), 2000 + i) for i in range(4)]          # 首年 4 笔
+            + [_row("2025-08", 2800), _row("2025-10", 2850), _row("2025-12", 2880)]
+            + [_row("2026-03", 2900), _row("2026-05", 2960), _row("2026-06", 3000)])
+    rw = _recent_windows(rows, 1615.0)
+    assert rw["last_ym"] == "2026-06" and rw["n12"] == 6
+    assert rw["med12_psf"] == 2890.0                       # 2800..3000 六笔的中位
+    assert [ym for ym, _ in rw["cluster"]] == ["2026-03", "2026-05", "2026-06"]
+    assert rw["cluster_med"] == 2960.0
+    assert rw["cum_from_year"] == "2021" and rw["cum_pct"] > 0.40   # 2001.5 -> 2890
+    # 近6月(2026 三笔)与前6月(2025 三笔)各 >=3 -> 漂移可报,且为正
+    assert rw["drift_mo"] is not None and rw["drift_mo"] > 0
+
+
+def test_recent_windows_needs_a_cohort():
+    rows = [_row("2026-01", 2900, area=3000.0)]           # 面积不在 ±6% 队列内
+    assert _recent_windows(rows, 1615.0) is None
+
+
+def test_year_trend_separates_street_from_cohort():
+    rows = [_row("2021-03", 2100), _row("2021-06", 2000, area=2200.0),
+            _row("2022-04", 2400), _row("2022-08", 2500)]
+    yrs = _year_trend(rows, 1615.0)
+    assert [y["year"] for y in yrs] == ["2021", "2022"]
+    assert yrs[0]["n_street"] == 2 and yrs[0]["n_cohort"] == 1     # 2200 sqft 不进队列
+    assert yrs[0]["med_cohort"] == 2100.0
+    assert yrs[1]["yoy"] == pytest.approx(2450.0 / 2100.0 - 1)
+
+
+def test_fresh_print_far_from_cluster_is_not_an_anchor():
+    comps = [{"adj_land_psf": 3252.0}, {"adj_land_psf": 2962.0},
+             {"adj_land_psf": 2913.0}, {"adj_land_psf": 2956.0}]
+    fc = _fresh_vs_cluster(comps)
+    assert fc["cluster_med"] == 2956.0
+    assert fc["gap"] > 0.05                                # 上尾单笔 -> 措辞降级为「不做锚」
+
+
+def test_split_stations_keeps_lrt_out_of_the_mrt_row():
+    mrt = [{"name": "FERNVALE LRT STATION (SW5)", "km": 1.35},
+           {"name": "BUANGKOK MRT STATION (NE15)", "km": 2.15}]
+    heavy, lrt = _split_stations(mrt)
+    assert heavy[0]["name"].startswith("BUANGKOK") and lrt[0]["name"].startswith("FERNVALE")

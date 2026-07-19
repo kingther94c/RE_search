@@ -255,6 +255,12 @@ You write `<slug>_dd.json`:
    condition / priced-and-accepted) · **seller_gated?*** An empty list renders as a contract
    breach, because a landed DD that escalates nothing did not look.
 5. **tax_clock** — carry SSD explicitly; on a short hold it dominates everything else here.
+6. **price_path_risks** (recommended) — top-3 risks ordered by **impact on the price path**,
+   each `{title_zh, body_zh}`; the full report renders them right after the conclusion.
+   Complementary to `dd3_alerts`: alerts answer *how to settle it and who can*, these answer
+   *what is most likely to move the price*. Authored judgement — verified numbers only (the
+   first instance was the 2026-07-19 AI-blind arm's R1–R3, each checked against the raw file
+   before merging).
 
 **Do not state a fair value.** A caveat price bundles land AND building and is not decomposable
 into land value by dividing by land area — a cohort median is a market observation, not this

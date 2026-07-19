@@ -40,6 +40,44 @@ area`, so a wrong area is a wrong report), and prices the **cost stack** (BSD/AB
 dominates any short hold. `--digest <slug>` mounts an authored judgement layer; without it the
 report says plainly that it gives **no go/no-go**.
 
+The renderer also carries four observational blocks ported from the 2026-07-19 A/B experiment
+(all computed from data already in the run, RAW psf, direct-street only): **近窗读数**
+(trailing-12m / 6m / last-3-print cluster medians + cumulative re-rating + implied monthly
+drift), **年度趋势表** (street vs subject-cohort by year, in the evidence layer), **离群值语境化**
+(a freshest print >5% off its preceding 3-print cluster is labelled 上/下尾单笔·不做锚 instead of
+"most credible evidence"), and the **出价读法叙事行** (beyond p75 needs a verifiable reason;
+above the top adjusted print you are endorsing one outlier). The digest may carry
+`price_path_risks` (see landed-property-due-diligence) — rendered right after the conclusion.
+
+## The AI-blind second arm — run it for EVERY full report
+
+After the tools report is written, spawn ONE subagent to write an independent AI-authored
+report of the same subject, **blind**: its only inputs are `researcher/landed/<slug>_dd_raw.json`
+and `<slug>_dd.json`. It must NOT open `reports/`, must NOT run engine/builder/comps code, and
+every load-bearing number must trace to those two files or to arithmetic it shows. Output:
+`<slug>_landed_full_report_AI.html`, published through `write_report` in
+`deliverables/report_out.py` (same dual destination), with a top banner
+「AI 直写对照版 — 非 walk-forward 验证引擎输出」.
+
+Why (measured, 2026-07-19, 14 Seletar Green Walk): blind arm landed 2.5% off the engine point
+— but its band was ±5% where the calibrated band is −15%/+22%, and it self-scored confidence 70
+vs the engine's 63. The arm's residual value is **independent reasoning + risk surfacing**
+(its top-3 price-path risks were verified and merged into the digest), not uncertainty.
+
+**The blind prompt MUST carry these prohibitions** (each is a failure we observed):
+1. The band is a **judgement band** — say so, never present it as calibrated, and do not
+   self-score confidence above what "uncalibrated" honestly supports.
+2. **No SSD year-by-year enumeration** (user ruling 2026-07-18: tax arithmetic is not a
+   decision input) — state only the 4-year hard minimum hold.
+3. Stations split **MRT vs LRT** per the official island-wide list — no "nearest station"
+   conflation.
+4. No estate names or attributes not present in the two input files; every number sourced.
+
+**Compare, then act:** point estimates >5% apart → treat as a hard case (corroborate via
+Investment Suite before quoting either; note the divergence in the report tail). Risks the AI
+surfaces that the digest lacks → verify each against the raw file, then merge into the digest's
+`price_path_risks`. Within 5% and risks overlapping → record one line, done.
+
 **A STREET + area (no address, no DD):**
 ```bash
 python deliverables/build_landed_valuation_report.py --street "ALNWICK ROAD" --area 2800 \

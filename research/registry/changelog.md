@@ -5,6 +5,25 @@ impact · assets affected.
 
 ---
 
+## 2026-07-19 — A/B 盲写实验回移:渲染器四个观测块 · price_path_risks 判断层 · AI 盲写成为标准工序
+- **What:** 对 14 Seletar Green Walk 跑了引擎版 vs AI 盲写版(只喂 dd_raw+dd 两份 JSON)对照。
+  点估仅差 2.5%(4.72M vs 4.84M),但 AI 区间 ±5% vs 校准带 −15%/+22% —— AI 臂的价值在
+  推理叙事与风险综合,不在不确定度。四个优点回移进 build_landed_full_report(全部由已有
+  数据计算):① 近窗读数(近12月/近半年/最近3笔簇 + 累计重估 + 隐含月漂移,RAW psf,仅
+  direct 街道);② 年度趋势表(街道 vs 队列,证据层);③ 离群值语境化 —— 最新单笔偏离其前
+  3 笔簇中位 >5% 时降级为「上/下尾单笔,不做锚」(实测 2026-06 尾数 888 那笔 adj +10%);
+  ④ 出价读法叙事行(超 p75 需可验证理由;高于桶内最高单笔即为其背书)。另:MRT/LRT 分行
+  (混标曾把 1.35km 的 Fernvale LRT 读成最近 MRT)。判断层 schema 新增 price_path_risks
+  (按价格路径影响排序 top-3,人写),Seletar digest 以核实后的 AI R1-R3 首填。
+- **Workflow:** AI 盲写对照成为每份 landed 全报告的标准工序(landed-valuation skill §AI-blind
+  second arm):盲臂只见两份 DD 文件,提示词带四条反模式禁令(区间须自称判断带/禁 SSD 逐年
+  枚举/车站分 MRT-LRT/禁无源楼盘名);点估差 >5% 按 hard case 处理,互补风险核实后并入
+  price_path_risks。
+- **Evidence:** 256 tests(新增 5 项帮助函数单测);Seletar 报告重出,近窗读数 n=11 中位
+  $2,960、累计 +41% 与 raw 逐一核对一致。
+- **Assets:** build_landed_full_report.py、seletar_green_walk_14_dd.json、landed-valuation 与
+  landed-property-due-diligence 两个 skill(+ .agents 镜像)、报告已重出并同步 Drive。
+
 ## 2026-07-18 — 全库重构(结构层,方法学不变):engine 拆包 · 税表单源 · research 四区 · legacy 隔离
 - **What(结构,不动数值):**
   ① 生产估值面拆出 `researcher/engine/`(engine_v2 / value_unit / landed_engine /
