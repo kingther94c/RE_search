@@ -5,6 +5,27 @@ impact · assets affected.
 
 ---
 
+## 2026-07-19 — landed 双拉取链补完最后一公里:is_street_compare · pg_listings_import
+- **What(自我 review 发现的缺口):**报告与 skill 里两句指令(「alias 桶:用 IS 拉本路自己的
+  分布」「hard case:先用 IS 佐证」)此前没有可执行工具,全靠手工;PG explorer 的 listings.json
+  与筛选层 schema 之间没有桥。补上:
+  ① `research/lib/is_rows.py` —— IS 收获的唯一解析器(money/日期/真实路名/房型 + 分布统计);
+  `reconcile_is_ura.py` 改用它(LOYANG RISE 复现 EXP-0018 原数:104 matched · area agree 1.0
+  · URA-only 23%)。
+  ② `research/tools/is_street_compare.py` —— 按真实路切分布(n/p25/med/p75/近12月/最近簇,
+  RAW 口径显式声明),`--engine-street` 与 LV1 并排,互证规则:|IS 近12月中位 vs 引擎点|≤10%
+  读作互证。Cardiff demo:本路 n=30(2016 起,URA 空桶)vs ALNWICK 引擎点差 −4% → 互证。
+  ③ `research/lib/pg_cards.py` + `research/tools/pg_listings_import.py` —— explorer 卡片 →
+  `<slug>_listings.json`;rent 卡剔除;**非 (land) 面积绝不产生 land_psf**(进 VERIFY-DATA
+  闸);导入标 `flood_risk: unverified`;merge 保留全部人写判断字段,消失的 id 只报告不自动
+  stale。
+- **Wiring:** 全面报告的 alias 抑制横幅 / verify-before-offer / DD alias 项现在给出确切命令链;
+  read-investment-suite(landed 链五步)、landed-valuation(hard-case 与 A/B 分歧佐证)、
+  screen-landed-listings(路线 3:explorer → import → screen)三个 skill 同步更新。
+- **Evidence:** 266 tests(新增 test_is_pg_chain.py 10 项:解析、分布窗口、rent/floor 闸、
+  merge 保judgment);真实数据冒烟:cardiff_grove 对照、loyang reconcile、rent 卡剔除。
+- **Assets:** 两个 lib 模块、两个 tools CLI、builder 三处文案、三个 skill(+镜像)。
+
 ## 2026-07-19 — A/B 盲写实验回移:渲染器四个观测块 · price_path_risks 判断层 · AI 盲写成为标准工序
 - **What:** 对 14 Seletar Green Walk 跑了引擎版 vs AI 盲写版(只喂 dd_raw+dd 两份 JSON)对照。
   点估仅差 2.5%(4.72M vs 4.84M),但 AI 区间 ±5% vs 校准带 −15%/+22% —— AI 臂的价值在

@@ -16,35 +16,20 @@ integer because IS renders '2,153' where URA carries 2152.8.
 """
 from __future__ import annotations
 
-import json
 import os
-import re
 import sys
 from collections import defaultdict
-from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
+from research.lib import is_rows as is_lib  # noqa: E402
 from researcher.backtest.store import LANDED_PSF_BAND, TransactionStore  # noqa: E402
 
-IS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "is_street")
 AREA_TOL = 1.5          # sqft — absorbs IS's rounding of URA's decimals
 
-
-def _num(s: str) -> float:
-    return float(re.sub(r"[^\d.]", "", s or "0") or 0)
-
-
-def load_is(slug: str) -> dict:
-    with open(os.path.join(IS_DIR, f"{slug}_sale.json"), encoding="utf-8") as f:
-        d = json.load(f)
-    for r in d["rows"]:
-        dt = datetime.strptime(r["date"], "%d %b %Y")
-        r["_date"] = dt.date().isoformat()
-        r["_ym"] = dt.strftime("%Y-%m")
-        r["_area"] = _num(r.get("area_sqft"))
-        r["_price"] = _num(r.get("price"))
-    return d
+# Parsing lives in research/lib/is_rows.py — the ONE normalizer every IS-harvest
+# consumer shares (is_street_compare.py uses the same load).
+load_is = is_lib.load_harvest
 
 
 def load_ura(street: str) -> list[dict]:
@@ -123,7 +108,7 @@ def report(street: str, slug: str) -> dict:
 
 def main() -> None:
     want = sys.argv[1:]
-    files = sorted(f for f in os.listdir(IS_DIR) if f.endswith("_sale.json"))
+    files = sorted(f for f in os.listdir(is_lib.IS_DIR) if f.endswith("_sale.json"))
     rows = []
     for f in files:
         slug = f[:-len("_sale.json")]

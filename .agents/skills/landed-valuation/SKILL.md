@@ -73,8 +73,11 @@ vs the engine's 63. The arm's residual value is **independent reasoning + risk s
    conflation.
 4. No estate names or attributes not present in the two input files; every number sourced.
 
-**Compare, then act:** point estimates >5% apart → treat as a hard case (corroborate via
-Investment Suite before quoting either; note the divergence in the report tail). Risks the AI
+**Compare, then act:** point estimates >5% apart → treat as a hard case — corroborate via
+Investment Suite before quoting either (`research/lib/harvest_street_sale.py "<street>"` on
+the device, then `research/tools/is_street_compare.py <slug> --area … --engine-street …` for
+the true-road distribution beside the engine point) and note the divergence in the report
+tail. Risks the AI
 surfaces that the digest lacks → verify each against the raw file, then merge into the digest's
 `price_path_risks`. Within 5% and risks overlapping → record one line, done.
 
@@ -198,7 +201,8 @@ layer; this one does not duplicate it.** For a real bid, run both.
   (10Y street window; per-address history back to ~1996). The engine does NOT call IS
   automatically.
 - `hard_case` (methods disagree >18%) / `directional_flag` (point above the freshest street
-  print) → treat the point as indicative, corroborate with IS, say so.
+  print) → treat the point as indicative, corroborate with IS
+  (`harvest_street_sale.py` → `is_street_compare.py --engine-street …`), say so.
 - Pooled fallback used → confidence ≤40; don't offer on the number alone.
 
 ## Reliability / regression

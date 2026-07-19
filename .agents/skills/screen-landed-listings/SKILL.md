@@ -37,7 +37,24 @@ PropertyGuru blocks server-side fetches — **`WebFetch` → HTTP 403**. Working
 3. **PropertyGuru Android app via `mobile_bridge`** — the tested implementation is the
    explorer CLI in that repo: `scripts\propertyguru.ps1 guide` (offline JSON contract
    first), skill `explore-propertyguru`, docs `docs/propertyguru-explorer.md`. Use when
-   you want the app's filters/sort + verified HTML evidence reports.
+   you want the app's filters/sort + verified HTML evidence reports. **Its output plugs
+   straight into this screening** via the importer:
+   ```bash
+   # in mobile_bridge:
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\propertyguru.ps1 `
+       --out .\artifacts_propertyguru\<run> listings "<area or MRT>" --intent buy `
+       --property-type Landed --max-results 30
+   # in RE_search:
+   python research/tools/pg_listings_import.py <mobile_bridge>\artifacts_propertyguru\<run> \
+       --slug <area_slug>
+   python -m researcher.landed.screen <area_slug>
+   ```
+   The importer (mapping: `research/lib/pg_cards.py`) drops rent cards, refuses to mint
+   `land_psf` from a floor/built-up area (those listings rank VERIFY-DATA until land size
+   is established), marks `flood_risk: unverified`, and on re-import **preserves every
+   judgment field you filled by hand** (estate_tier/catchment/flood/rebuild/notes). Ids
+   that vanish from a pull are reported, never auto-marked stale. You still fill the
+   judgment layer and the area benchmark band (from `landed-area-research`) yourself.
 
 ## Useful PropertyGuru URL patterns (cite, don't WebFetch)
 

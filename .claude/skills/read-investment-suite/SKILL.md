@@ -168,6 +168,22 @@ the app is address-first — so it has its own harvester (`research/lib/harvest_
 "<STREET>"`) and its own screen shape. Use it whenever you need a landed street's caveats
 (e.g. to resolve a `street_not_found`, or to attribute a URA parent bucket to real roads).
 
+**The landed chain has a last mile — run it, don't eyeball the JSON:**
+```bash
+python research/lib/harvest_street_sale.py "LOYANG RISE"          # on-device harvest
+python research/tools/is_street_compare.py loyang_rise \
+    --road "LOYANG VIEW" --area 1650 --engine-street "LOYANG RISE"   # true-road slice vs LV1
+python research/tools/reconcile_is_ura.py "LOYANG RISE"           # EXP-0018 four-gate check
+```
+`is_street_compare` slices the harvest by **true road** (the IS superpower URA lacks), gives
+n / p25 / med / p75 / trailing-12m / last-3-cluster on RAW bundle psf, and — with
+`--engine-street --area` — prints the engine's adjusted point beside it. Reading rule printed
+by the tool: |IS trailing-12m median vs engine point| ≤10% reads as corroboration (the two
+are DIFFERENT bases: raw vs time+size-adjusted); bigger gaps → check area basis, condition
+mix, or a majority-dominated parent bucket (EXP-0019). Parsing lives in
+`research/lib/is_rows.py` — one normalizer for every consumer; never re-parse the app's
+strings ad hoc.
+
 **Why you need IS at all for landed** (measured, EXP-0018): **URA's landed `street` is the
 DEVELOPMENT's registered street, not the house's road.** URA anonymises landed projects to
 "LANDED HOUSING DEVELOPMENT", so one estate's several roads collapse into ONE street bucket —
@@ -251,6 +267,10 @@ never geographic guessing — GY-0006) and `research/experiments/run_l2f_split.p
   caveat/agency guard, coordinate-free format parser). `--here` skips navigation if you are
   already on the expanded caveat table; `--window 10Y` for depth. Parser tested offline in
   `tests/test_harvest_street.py`.
+- `research/lib/is_rows.py` — THE normalizer for landed harvests (money/date/road/ptype +
+  distribution stats); every consumer imports it, nobody re-parses app strings
+- `research/tools/is_street_compare.py` — true-road distribution + optional engine LV1
+  side-by-side (the alias/hard-case corroboration step, runnable offline once harvested)
 - `research/tools/reconcile_is_ura.py` — IS↔URA attribution on month+price+area (the L2f input)
 - `researcher/landed/street_alias.py` — evidence-only address-road → URA-bucket map
 - `research/lib/reconstruct_comps.py` — three-surface comp reconstruction + trend ladder

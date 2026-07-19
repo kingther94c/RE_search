@@ -84,7 +84,8 @@ def _alerts_zh(g: dict) -> list[tuple[str, bool, str]]:
         out.append((f"本路({_esc(g['dd']['street'])})自己的成交分布", False,
                     f"URA 把本路的 caveat 归在「{_esc(g['resolve']['ura_street'])}」桶里,桶内混着"
                     f"同屋苑其它路 —— 议价门槛因此在本报告中<b>被抑制</b>。要门槛,得用 "
-                    f"Investment Suite 拉本路自己的分布(见 harvest_street_sale.py)。"))
+                    f"Investment Suite 拉本路自己的分布:research/lib/harvest_street_sale.py "
+                    f"收获 → research/tools/is_street_compare.py --road 本路 出分布。"))
     if v:
         out.append(("建筑状况 condition —— bundle 价里最大的未观测项", False,
                     "引擎是 condition-blind 的。实测(Cardiff Grove,同期同尺寸):原装 "
@@ -285,8 +286,10 @@ def _verify_zh(v: dict, g: dict) -> list[str]:
                       f"与同屋苑其它路的房子 —— 这个池子是否该按真实门牌路拆分,尚未有回测结论"
                       f"(roadmap L2f)。对本宗地,请人工核一眼可比表里的成交是否可比。")
     if fv["n_street_comps"] < 3 or md.get("hard_case"):
-        out.append("<b>同街证据薄或方法分歧</b> —— 下单前先从 Investment Suite 拉这条街的 "
-                   "Type Summary 佐证")
+        out.append("<b>同街证据薄或方法分歧</b> —— 下单前先用 Investment Suite 佐证:"
+                   "<code>research/lib/harvest_street_sale.py</code> 收获本街,"
+                   "<code>research/tools/is_street_compare.py --area … --engine-street …</code> "
+                   "出分布并与引擎并排")
     if g["land_area"] and g["land_area"] >= 8000:
         out.append("<b>大地块(≥8k sqft)</b>:尺寸曲线在这里identification最差(EXP-0011)—— "
                    "点估值只作<b>指示性</b>,走 case protocol")
@@ -543,8 +546,9 @@ def _l1_valuation(g: dict) -> str:
                  f"condition 与几何,用 Investment Suite 佐证后再重估。</span></div>"
                  + (f"<p class=note>参考:引擎按 URA「{_esc(g['resolve']['ura_street'])}」桶算出的"
                     f"门槛是 {_money(bg['attractive_below'])} / {_money(bg['walk_away_above'])}"
-                    f" —— <b>不要直接用</b>,先用 Investment Suite 拉本路"
-                    f"(<code>{_esc(g['dd']['street'])}</code>)自己的成交分布。</p>"
+                    f" —— <b>不要直接用</b>,先拉本路(<code>{_esc(g['dd']['street'])}</code>)"
+                    f"自己的分布:<code>research/lib/harvest_street_sale.py</code>(设备上收获)→ "
+                    f"<code>research/tools/is_street_compare.py --road</code>。</p>"
                     if alias and bg.get("attractive_below") else ""))
     else:
         guide = f"""<table class=kv>
