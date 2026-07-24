@@ -1,0 +1,112 @@
+{
+ "meta": {
+  "source": "investment_suite",
+  "screen": "Street Transactions (expanded View All) — CAVEATS, not agency data",
+  "street": "NAMLY AVENUE",
+  "harvested_at": "2026-07-21T21:44:35",
+  "device": "emulator-5554 1080x2400",
+  "n_rows": 10
+ },
+ "rows": [
+  {
+   "date": "07 Apr 2026",
+   "address": "120 Namly Avenue",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "3,193",
+   "psf": "$2,756",
+   "price": "$8,800,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "23 Dec 2025",
+   "address": "89 Namly Avenue",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "3,594",
+   "psf": "$2,473",
+   "price": "$8,888,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "16 Jul 2025",
+   "address": "94 Namly Avenue",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "3,157",
+   "psf": "$4,150",
+   "price": "$13,102,820",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "10 Jun 2025",
+   "address": "93 Namly Avenue",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "3,232",
+   "psf": "$3,233",
+   "price": "$10,450,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "26 Dec 2024",
+   "address": "2 Namly Avenue",
+   "type": "Detached House",
+   "tenure": "99 yrs from 18/11/2008",
+   "area_sqft": "7,771",
+   "psf": "$910",
+   "price": "$7,075,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "29 Nov 2024",
+   "address": "97 Namly Avenue",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "3,239",
+   "psf": "$2,742",
+   "price": "$8,880,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "01 Oct 2024",
+   "address": "94 Namly Avenue",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "3,157",
+   "psf": "$2,328",
+   "price": "$7,350,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "17 May 2023",
+   "address": "131 Namly Avenue",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "3,460",
+   "psf": "$2,197",
+   "price": "$7,600,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "21 Sep 2022",
+   "address": "101 Namly Avenue",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "3,154",
+   "psf": "$2,499",
+   "price": "$7,880,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "24 Jun 2022",
+   "address": "76 Namly Avenue",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "4,415",
+   "psf": "$2,152",
+   "price": "$9,500,000",
+   "sale_type": "Resale"
+  }
+ ]
+}

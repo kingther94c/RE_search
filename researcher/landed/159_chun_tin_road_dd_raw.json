@@ -1,0 +1,786 @@
+{
+ "address": "159 CHUN TIN ROAD",
+ "as_of": "2026-07-24",
+ "geocode": {
+  "match": "MANDARIN PARK",
+  "blk_no": "159",
+  "road_name": "CHUN TIN ROAD",
+  "postal": "599707",
+  "lat": 1.34500106639577,
+  "lon": 103.771379548269,
+  "x": 21106.8642830132,
+  "y": 36348.9879686628
+ },
+ "street": "CHUN TIN ROAD",
+ "plot": {
+  "area_sqm": 184.7,
+  "area_sqft": 1988,
+  "is_landed_zone": true,
+  "objectid": 644975,
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "caveat": "indicative zoning parcel, not a cadastral lot — confirm with INLIS PTI"
+ },
+ "zoning": {
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "gpr_num": null,
+  "area_sqm": 184.7,
+  "area_sqft": 1988,
+  "objectid": 644975,
+  "updated": "20251229172138"
+ },
+ "landed_housing_area": {
+  "classification": "LANDED HOUSING AREA",
+  "type": "MIXED LANDED",
+  "envelope": "3-STOREY ENVELOPE",
+  "name": null,
+  "updated": "20251230175452"
+ },
+ "neighbours": [
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "LND",
+   "metres": 3,
+   "bearing_deg": 234.5,
+   "area_sqm": 184.67110595,
+   "objectid": 644975
+  },
+  {
+   "zone": "ROAD",
+   "gpr": "",
+   "metres": 12,
+   "bearing_deg": 144.1,
+   "area_sqm": 10828.212924835,
+   "objectid": 639923
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.4",
+   "metres": 76,
+   "bearing_deg": 316.7,
+   "area_sqm": 24700.63841069,
+   "objectid": 590982
+  },
+  {
+   "zone": "UTILITY",
+   "gpr": "EVA",
+   "metres": 83,
+   "bearing_deg": 35.3,
+   "area_sqm": 92.7843053,
+   "objectid": 644390
+  },
+  {
+   "zone": "TRANSPORT FACILITIES",
+   "gpr": "EVA",
+   "metres": 113,
+   "bearing_deg": 28.9,
+   "area_sqm": 1830.577883785,
+   "objectid": 634766
+  },
+  {
+   "zone": "COMMERCIAL",
+   "gpr": "1.4",
+   "metres": 123,
+   "bearing_deg": 52.5,
+   "area_sqm": 1413.994309755,
+   "objectid": 696935
+  },
+  {
+   "zone": "PARK",
+   "gpr": "EVA",
+   "metres": 178,
+   "bearing_deg": 121.7,
+   "area_sqm": 3873.7466059,
+   "objectid": 698162
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.92",
+   "metres": 196,
+   "bearing_deg": 38.3,
+   "area_sqm": 25893.682929375,
+   "objectid": 608519
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.6",
+   "metres": 235,
+   "bearing_deg": 302.5,
+   "area_sqm": 22203.098984355,
+   "objectid": 619130
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.7",
+   "metres": 268,
+   "bearing_deg": 229.1,
+   "area_sqm": 72963.37145083,
+   "objectid": 694672
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.99",
+   "metres": 274,
+   "bearing_deg": 237.7,
+   "area_sqm": 1878.695952005,
+   "objectid": 621204
+  },
+  {
+   "zone": "RESERVE SITE",
+   "gpr": "EVA",
+   "metres": 297,
+   "bearing_deg": 309.8,
+   "area_sqm": 23549.391133515,
+   "objectid": 668034
+  },
+  {
+   "zone": "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY",
+   "gpr": "EVA",
+   "metres": 358,
+   "bearing_deg": 163.5,
+   "area_sqm": 305.72140541,
+   "objectid": 690180
+  },
+  {
+   "zone": "COMMERCIAL",
+   "gpr": "EVA",
+   "metres": 415,
+   "bearing_deg": 110.5,
+   "area_sqm": 281.117718,
+   "objectid": 626521
+  },
+  {
+   "zone": "PLACE OF WORSHIP",
+   "gpr": "EVA",
+   "metres": 447,
+   "bearing_deg": 93.3,
+   "area_sqm": 1727.129082385,
+   "objectid": 608248
+  },
+  {
+   "zone": "OPEN SPACE",
+   "gpr": "EVA",
+   "metres": 484,
+   "bearing_deg": 29.6,
+   "area_sqm": 1545733.64136912,
+   "objectid": 603217
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "EVA",
+   "metres": 494,
+   "bearing_deg": 241.4,
+   "area_sqm": 579.73263529,
+   "objectid": 691655
+  },
+  {
+   "zone": "COMMERCIAL",
+   "gpr": "3.0",
+   "metres": 494,
+   "bearing_deg": 106.7,
+   "area_sqm": 6246.004117585,
+   "objectid": 649235
+  },
+  {
+   "zone": "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY",
+   "gpr": "3.0",
+   "metres": 511,
+   "bearing_deg": 134.0,
+   "area_sqm": 17574.677214545,
+   "objectid": 627611
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.5",
+   "metres": 528,
+   "bearing_deg": 169.7,
+   "area_sqm": 101429.644166135,
+   "objectid": 622355
+  },
+  {
+   "zone": "COMMERCIAL & RESIDENTIAL",
+   "gpr": "3.0",
+   "metres": 557,
+   "bearing_deg": 116.8,
+   "area_sqm": 780.4270929,
+   "objectid": 588360
+  },
+  {
+   "zone": "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY",
+   "gpr": "2.5",
+   "metres": 569,
+   "bearing_deg": 163.6,
+   "area_sqm": 1106.08271111,
+   "objectid": 669394
+  },
+  {
+   "zone": "EDUCATIONAL INSTITUTION",
+   "gpr": "EVA",
+   "metres": 670,
+   "bearing_deg": 266.4,
+   "area_sqm": 13563.248187,
+   "objectid": 634765
+  },
+  {
+   "zone": "CIVIC & COMMUNITY INSTITUTION",
+   "gpr": "EVA",
+   "metres": 679,
+   "bearing_deg": 143.8,
+   "area_sqm": 12036.377775945,
+   "objectid": 631810
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "3.0",
+   "metres": 689,
+   "bearing_deg": 124.9,
+   "area_sqm": 4611.289401335,
+   "objectid": 641749
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "SDP",
+   "metres": 691,
+   "bearing_deg": 207.9,
+   "area_sqm": 30277.504518155,
+   "objectid": 656562
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.1",
+   "metres": 715,
+   "bearing_deg": 176.2,
+   "area_sqm": 4103.82022531,
+   "objectid": 616715
+  },
+  {
+   "zone": "WATERBODY",
+   "gpr": "",
+   "metres": 925,
+   "bearing_deg": 310.8,
+   "area_sqm": 18664.798209545,
+   "objectid": 614866
+  },
+  {
+   "zone": "SPORTS & RECREATION",
+   "gpr": "EVA",
+   "metres": 942,
+   "bearing_deg": 84.4,
+   "area_sqm": 30286.057927665,
+   "objectid": 611120
+  }
+ ],
+ "transects": [
+  {
+   "toward": "UTILITY",
+   "bearing_deg": 35.3,
+   "edge_m": 83,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 60,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 80,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 120,
+     "zone": "TRANSPORT FACILITIES",
+     "gpr": "EVA"
+    },
+    {
+     "m": 140,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 200,
+     "zone": "RESIDENTIAL",
+     "gpr": "1.92"
+    }
+   ],
+   "reaches_target": false,
+   "note": "ray never lands in UTILITY within 203m — it is aimed at the nearest edge point, which lies on a shared boundary. The steps still show what separates you from it; they do not confirm arrival."
+  },
+  {
+   "toward": "TRANSPORT FACILITIES",
+   "bearing_deg": 28.9,
+   "edge_m": 113,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 60,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 80,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 120,
+     "zone": "TRANSPORT FACILITIES",
+     "gpr": "EVA"
+    },
+    {
+     "m": 160,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 220,
+     "zone": "RESIDENTIAL",
+     "gpr": "1.92"
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  },
+  {
+   "toward": "RESERVE SITE",
+   "bearing_deg": 309.8,
+   "edge_m": 297,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 40,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 60,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 80,
+     "zone": "RESIDENTIAL",
+     "gpr": "1.4"
+    },
+    {
+     "m": 300,
+     "zone": "ROAD",
+     "gpr": null
+    }
+   ],
+   "reaches_target": false,
+   "note": "ray never lands in RESERVE SITE within 417m — it is aimed at the nearest edge point, which lies on a shared boundary. The steps still show what separates you from it; they do not confirm arrival."
+  }
+ ],
+ "schools_primary": [
+  {
+   "name": "PEI HWA PRESBYTERIAN PRIMARY SCHOOL",
+   "km": 0.94,
+   "postal": "597610"
+  },
+  {
+   "name": "BUKIT TIMAH PRIMARY SCHOOL",
+   "km": 0.95,
+   "postal": "598112"
+  },
+  {
+   "name": "KEMING PRIMARY SCHOOL",
+   "km": 1.66,
+   "postal": "659762"
+  },
+  {
+   "name": "METHODIST GIRLS' SCHOOL (PRIMARY)",
+   "km": 1.91,
+   "postal": "599986"
+  },
+  {
+   "name": "BUKIT VIEW PRIMARY SCHOOL",
+   "km": 1.97,
+   "postal": "659634"
+  },
+  {
+   "name": "LIANHUA PRIMARY SCHOOL",
+   "km": 2.17,
+   "postal": "659243"
+  }
+ ],
+ "mrt": [
+  {
+   "name": "BEAUTY WORLD MRT STATION",
+   "km": 0.67,
+   "postal": ""
+  },
+  {
+   "name": "HUME MRT STATION (DT4)",
+   "km": 1.1,
+   "postal": ""
+  },
+  {
+   "name": "KING ALBERT PARK MRT STATION (DT6)",
+   "km": 1.69,
+   "postal": ""
+  },
+  {
+   "name": "HILLVIEW MRT STATION",
+   "km": 2.03,
+   "postal": ""
+  }
+ ],
+ "amenities": [],
+ "expressways": [
+  {
+   "name": "PAN ISLAND EXPRESSWAY",
+   "km": 5.3,
+   "matched": "PAN ISLAND EXPRESSWAY",
+   "postal": "NIL"
+  }
+ ],
+ "amenity_scope": {
+  "schools_primary": "island-wide — all 182 P1-bearing MOE schools (built 2026-07-17)",
+  "mrt": "island-wide — 200 MRT/LRT stations (built 2026-07-17)",
+  "amenities/expressways": "CURATED north-east list — 'nearest of these', NOT 'nearest in Singapore'"
+ },
+ "amenity_meta": {
+  "n_schools": 182,
+  "n_mrt": 200,
+  "built": "2026-07-17"
+ },
+ "comps": {
+  "street": "CHUN TIN ROAD",
+  "n": 35,
+  "first_ym": "2021-07",
+  "last_ym": "2026-07",
+  "tenure": {
+   "distinct": {
+    "Freehold": 35
+   },
+   "n": 35,
+   "unanimous": true
+  },
+  "cohorts": [
+   {
+    "band": "<1,800",
+    "lo_sqft": 0.0,
+    "hi_sqft": 1800,
+    "n": 1,
+    "psf_min": 2419,
+    "psf_med": 2419,
+    "psf_max": 2419,
+    "price_med": 4218000,
+    "area_med": 1744
+   },
+   {
+    "band": "1,800-2,500",
+    "lo_sqft": 1800,
+    "hi_sqft": 2500,
+    "n": 16,
+    "psf_min": 1563,
+    "psf_med": 2081,
+    "psf_max": 2827,
+    "price_med": 4244000,
+    "area_med": 2069
+   },
+   {
+    "band": "2,500-3,500",
+    "lo_sqft": 2500,
+    "hi_sqft": 3500,
+    "n": 15,
+    "psf_min": 1442,
+    "psf_med": 1886,
+    "psf_max": 2622,
+    "price_med": 6100000,
+    "area_med": 3237
+   },
+   {
+    "band": ">=3,500",
+    "lo_sqft": 3500,
+    "hi_sqft": null,
+    "n": 3,
+    "psf_min": 1816,
+    "psf_med": 1848,
+    "psf_max": 1882,
+    "price_med": 8015000,
+    "area_med": 4337
+   }
+  ],
+  "trend": [
+   {
+    "period": "2021",
+    "n": 3,
+    "psf_med": 1778,
+    "price_med": 4218000,
+    "area_med": 2162
+   },
+   {
+    "period": "2022",
+    "n": 3,
+    "psf_med": 1602,
+    "price_med": 4600000,
+    "area_med": 3189
+   },
+   {
+    "period": "2023",
+    "n": 8,
+    "psf_med": 1799,
+    "price_med": 4600000,
+    "area_med": 2278
+   },
+   {
+    "period": "2024",
+    "n": 9,
+    "psf_med": 1926,
+    "price_med": 4500000,
+    "area_med": 2145
+   },
+   {
+    "period": "2025",
+    "n": 7,
+    "psf_med": 1913,
+    "price_med": 6100000,
+    "area_med": 3189
+   },
+   {
+    "period": "2026",
+    "n": 5,
+    "psf_med": 2062,
+    "price_med": 6420000,
+    "area_med": 3192
+   }
+  ],
+  "types": {
+   "Semi-detached": 10,
+   "Terrace": 25
+  },
+  "strata_n": 0,
+  "subject": {
+   "n": 5,
+   "area_sqft": 1988,
+   "tol": 0.06,
+   "psf_min": 1926,
+   "psf_med": 2257,
+   "psf_max": 2827,
+   "first_ym": "2023-04",
+   "last_ym": "2026-02",
+   "recent": [
+    {
+     "ym": "2023-04",
+     "price": 4450000.0,
+     "psf": 2350,
+     "area_sqft": 1893,
+     "type": "Terrace"
+    },
+    {
+     "ym": "2024-04",
+     "price": 4100000.0,
+     "psf": 2063,
+     "area_sqft": 1987,
+     "type": "Terrace"
+    },
+    {
+     "ym": "2024-12",
+     "price": 4000000.0,
+     "psf": 1926,
+     "area_sqft": 2077,
+     "type": "Terrace"
+    },
+    {
+     "ym": "2025-09",
+     "price": 4652888.0,
+     "psf": 2257,
+     "area_sqft": 2061,
+     "type": "Terrace"
+    },
+    {
+     "ym": "2026-02",
+     "price": 5538000.0,
+     "psf": 2827,
+     "area_sqft": 1959,
+     "type": "Terrace"
+    }
+   ],
+   "rows": [
+    {
+     "id": "HOOVER PARK|2023-04|4450000|175.9|-|6",
+     "project": "HOOVER PARK",
+     "street": "CHUN TIN ROAD",
+     "market_segment": "RCR",
+     "district": "21",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "Freehold",
+     "tenure_type": "freehold",
+     "lease_start": null,
+     "contract_ym": "2023-04",
+     "area_sqm": 175.9,
+     "area_sqft": 1893.4,
+     "price": 4450000.0,
+     "psf": 2350.3,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 21219.7504840167,
+     "y": 36025.0004045961,
+     "no_of_units": 1
+    },
+    {
+     "id": "HOOVER PARK|2024-04|4100000|184.6|-|10",
+     "project": "HOOVER PARK",
+     "street": "CHUN TIN ROAD",
+     "market_segment": "RCR",
+     "district": "21",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "Freehold",
+     "tenure_type": "freehold",
+     "lease_start": null,
+     "contract_ym": "2024-04",
+     "area_sqm": 184.6,
+     "area_sqft": 1987.0,
+     "price": 4100000.0,
+     "psf": 2063.4,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 21219.7504840167,
+     "y": 36025.0004045961,
+     "no_of_units": 1
+    },
+    {
+     "id": "MANDARIN PARK|2024-12|4000000|193.0|-|12",
+     "project": "MANDARIN PARK",
+     "street": "CHUN TIN ROAD",
+     "market_segment": "RCR",
+     "district": "21",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "Freehold",
+     "tenure_type": "freehold",
+     "lease_start": null,
+     "contract_ym": "2024-12",
+     "area_sqm": 193.0,
+     "area_sqft": 2077.4,
+     "price": 4000000.0,
+     "psf": 1925.5,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 21022.64114,
+     "y": 36227.46602,
+     "no_of_units": 1
+    },
+    {
+     "id": "MANDARIN PARK|2025-09|4652888|191.5|-|17",
+     "project": "MANDARIN PARK",
+     "street": "CHUN TIN ROAD",
+     "market_segment": "RCR",
+     "district": "21",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "Freehold",
+     "tenure_type": "freehold",
+     "lease_start": null,
+     "contract_ym": "2025-09",
+     "area_sqm": 191.5,
+     "area_sqft": 2061.3,
+     "price": 4652888.0,
+     "psf": 2257.3,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 21022.64114,
+     "y": 36227.46602,
+     "no_of_units": 1
+    },
+    {
+     "id": "HOOVER PARK|2026-02|5538000|182.0|-|1",
+     "project": "HOOVER PARK",
+     "street": "CHUN TIN ROAD",
+     "market_segment": "RCR",
+     "district": "21",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "Freehold",
+     "tenure_type": "freehold",
+     "lease_start": null,
+     "contract_ym": "2026-02",
+     "area_sqm": 182.0,
+     "area_sqft": 1959.0,
+     "price": 5538000.0,
+     "psf": 2826.9,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 21219.7504840167,
+     "y": 36025.0004045961,
+     "no_of_units": 1
+    }
+   ]
+  }
+ },
+ "flood": {
+  "terms": [
+   "CHUN TIN ROAD"
+  ],
+  "on_list": false,
+  "matches": [],
+  "list_vintage": "Nov 2025",
+  "list_size": 36,
+  "national_hectares": {
+   "year": 2025,
+   "hectares": 23.3
+  },
+  "national_series": [
+   {
+    "year": 2022,
+    "hectares": 27.0
+   },
+   {
+    "year": 2023,
+    "hectares": 24.1
+   },
+   {
+    "year": 2024,
+    "hectares": 23.6
+   },
+   {
+    "year": 2025,
+    "hectares": 23.3
+   }
+  ],
+  "national_pct_of_land": 0.032,
+  "method": "NAME match against a PDF list — not geospatial. A flooding road next to yours will not match.",
+  "evidential_weight": "NOT on the list — near-zero evidence for this plot. The designation covers 23.3 ha of ~73,000 ha of Singapore (0.032% of the country) across 36 named locations. Almost every address is 'not on it', including ones that pond. Whether THIS plot ponds is a site question (DD-3): visit in rain, check plot-vs-road level, ask neighbours."
+ },
+ "provenance": {
+  "geocode": "OneMap search API — free, no key. Road asserted.",
+  "plot/zoning/neighbours": "URA Master Plan 2025 (gazetted 1 Dec 2025) Land Use + SDCP Landed Housing Area layers via data.gov.sg — free, no key. Indicative, not a legal boundary.",
+  "comps": "URA Data Service caveats (free registered key). Landed `area` is LAND area. Month granularity; ~5y rolling; caveats lag; landed project names anonymised so STREET is the only join key.",
+  "flood": "PUB flood-prone list (Nov 2025) by name + data.gov.sg national hectares.",
+  "schools/mrt": "ISLAND-WIDE: every P1-bearing MOE school (School Directory on data.gov.sg) + every MRT/LRT station (OneMap), pre-geocoded. Haversine to the target's POINT. For P1 the official measure is OneMap SchoolQuery (school LAND BOUNDARY to home) — ours over-estimates, so 'inside' is safe and near the line undecided.",
+  "amenities/expressways": "CURATED north-east list — there is no official mall register. 'Nearest of these', never 'nearest in SG'."
+ },
+ "not_covered": [
+  "Valuation — caveat prices bundle land+building; no fair value is derivable here.",
+  "Legal: owner, encumbrances, legal land area, Certified Plan — INLIS (DD-2, S$16).",
+  "Approved plans / unauthorised works — BCA, and SELLER-GATED (owner's signed authorisation required; a buyer cannot buy them).",
+  "Anything site-observable: noise, ponding, light, traffic, condition — DD-3."
+ ]
+}

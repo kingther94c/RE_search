@@ -1,0 +1,758 @@
+{
+ "address": "97 KING'S ROAD",
+ "as_of": "2026-07-24",
+ "geocode": {
+  "match": "KING'S GARDEN",
+  "blk_no": "97",
+  "road_name": "KING'S ROAD",
+  "postal": "268145",
+  "lat": 1.31723464400681,
+  "lon": 103.805629184866,
+  "x": 24918.4397071423,
+  "y": 33278.6489207502
+ },
+ "street": "KING'S ROAD",
+ "plot": {
+  "area_sqm": 250.6,
+  "area_sqft": 2697,
+  "is_landed_zone": true,
+  "objectid": 664752,
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "caveat": "indicative zoning parcel, not a cadastral lot — confirm with INLIS PTI"
+ },
+ "zoning": {
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "gpr_num": null,
+  "area_sqm": 250.6,
+  "area_sqft": 2697,
+  "objectid": 664752,
+  "updated": "20251229172143"
+ },
+ "landed_housing_area": {
+  "classification": "LANDED HOUSING AREA",
+  "type": "SEMI-DETACHED",
+  "envelope": "2-STOREY ENVELOPE",
+  "name": null,
+  "updated": "20251230175452"
+ },
+ "neighbours": [
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "LND",
+   "metres": 4,
+   "bearing_deg": 331.2,
+   "area_sqm": 250.60529305,
+   "objectid": 664752
+  },
+  {
+   "zone": "ROAD",
+   "gpr": "",
+   "metres": 16,
+   "bearing_deg": 218.6,
+   "area_sqm": 519.74285374,
+   "objectid": 651192
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.8",
+   "metres": 31,
+   "bearing_deg": 151.2,
+   "area_sqm": 137.214193295,
+   "objectid": 618046
+  },
+  {
+   "zone": "PLACE OF WORSHIP",
+   "gpr": "EVA",
+   "metres": 36,
+   "bearing_deg": 328.0,
+   "area_sqm": 3437.7318115,
+   "objectid": 592758
+  },
+  {
+   "zone": "EDUCATIONAL INSTITUTION",
+   "gpr": "EVA",
+   "metres": 54,
+   "bearing_deg": 16.5,
+   "area_sqm": 2140.8986721,
+   "objectid": 615886
+  },
+  {
+   "zone": "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY",
+   "gpr": "2.8",
+   "metres": 56,
+   "bearing_deg": 184.1,
+   "area_sqm": 1431.96529986,
+   "objectid": 663620
+  },
+  {
+   "zone": "PARK",
+   "gpr": "EVA",
+   "metres": 59,
+   "bearing_deg": 236.8,
+   "area_sqm": 3497.343587755,
+   "objectid": 596695
+  },
+  {
+   "zone": "COMMERCIAL",
+   "gpr": "EVA",
+   "metres": 71,
+   "bearing_deg": 163.0,
+   "area_sqm": 2949.50665015,
+   "objectid": 649236
+  },
+  {
+   "zone": "UTILITY",
+   "gpr": "EVA",
+   "metres": 82,
+   "bearing_deg": 26.2,
+   "area_sqm": 490.369723,
+   "objectid": 632804
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.6",
+   "metres": 158,
+   "bearing_deg": 144.4,
+   "area_sqm": 17129.39511397,
+   "objectid": 699608
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.4",
+   "metres": 216,
+   "bearing_deg": 120.9,
+   "area_sqm": 14688.64281901,
+   "objectid": 672264
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "EVA",
+   "metres": 321,
+   "bearing_deg": 269.8,
+   "area_sqm": 5290.06410035,
+   "objectid": 676942
+  },
+  {
+   "zone": "SPECIAL USE",
+   "gpr": "EVA",
+   "metres": 512,
+   "bearing_deg": 134.9,
+   "area_sqm": 85081.833161925,
+   "objectid": 619503
+  },
+  {
+   "zone": "WATERBODY",
+   "gpr": "",
+   "metres": 609,
+   "bearing_deg": 26.9,
+   "area_sqm": 4054.20613303,
+   "objectid": 633188
+  },
+  {
+   "zone": "OPEN SPACE",
+   "gpr": "EVA",
+   "metres": 715,
+   "bearing_deg": 34.1,
+   "area_sqm": 265.495251095,
+   "objectid": 664120
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.1",
+   "metres": 806,
+   "bearing_deg": 56.7,
+   "area_sqm": 6499.33146554,
+   "objectid": 689216
+  },
+  {
+   "zone": "COMMERCIAL & RESIDENTIAL",
+   "gpr": "3.0",
+   "metres": 846,
+   "bearing_deg": 39.8,
+   "area_sqm": 929.66870682,
+   "objectid": 671957
+  },
+  {
+   "zone": "TRANSPORT FACILITIES",
+   "gpr": "EVA",
+   "metres": 864,
+   "bearing_deg": 22.5,
+   "area_sqm": 1857.175326595,
+   "objectid": 597434
+  },
+  {
+   "zone": "CIVIC & COMMUNITY INSTITUTION",
+   "gpr": "EVA",
+   "metres": 938,
+   "bearing_deg": 50.2,
+   "area_sqm": 2065.32596962,
+   "objectid": 643142
+  },
+  {
+   "zone": "RESERVE SITE",
+   "gpr": "EVA",
+   "metres": 947,
+   "bearing_deg": 53.2,
+   "area_sqm": 2817.91042818,
+   "objectid": 660405
+  }
+ ],
+ "transects": [
+  {
+   "toward": "PLACE OF WORSHIP",
+   "bearing_deg": 328.0,
+   "edge_m": 36,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 40,
+     "zone": "PLACE OF WORSHIP",
+     "gpr": "EVA"
+    },
+    {
+     "m": 100,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  },
+  {
+   "toward": "UTILITY",
+   "bearing_deg": 26.2,
+   "edge_m": 82,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 40,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 100,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    }
+   ],
+   "reaches_target": false,
+   "note": "ray never lands in UTILITY within 202m — it is aimed at the nearest edge point, which lies on a shared boundary. The steps still show what separates you from it; they do not confirm arrival."
+  }
+ ],
+ "schools_primary": [
+  {
+   "name": "NANYANG PRIMARY SCHOOL",
+   "km": 0.48,
+   "postal": "268097"
+  },
+  {
+   "name": "RAFFLES GIRLS' PRIMARY SCHOOL",
+   "km": 1.43,
+   "postal": "289072"
+  },
+  {
+   "name": "NEW TOWN PRIMARY SCHOOL",
+   "km": 2.04,
+   "postal": "148812"
+  }
+ ],
+ "mrt": [
+  {
+   "name": "FARRER ROAD MRT STATION (CC20)",
+   "km": 0.2,
+   "postal": ""
+  },
+  {
+   "name": "TAN KAH KEE MRT STATION",
+   "km": 1.02,
+   "postal": ""
+  },
+  {
+   "name": "HOLLAND VILLAGE MRT STATION (CC21)",
+   "km": 1.17,
+   "postal": ""
+  },
+  {
+   "name": "BOTANIC GARDENS MRT STATION",
+   "km": 1.23,
+   "postal": ""
+  }
+ ],
+ "amenities": [],
+ "expressways": [
+  {
+   "name": "PAN ISLAND EXPRESSWAY",
+   "km": 2.1,
+   "matched": "PAN ISLAND EXPRESSWAY",
+   "postal": "NIL"
+  },
+  {
+   "name": "CENTRAL EXPRESSWAY",
+   "km": 4.97,
+   "matched": "CENTRAL EXPRESSWAY",
+   "postal": "NIL"
+  }
+ ],
+ "amenity_scope": {
+  "schools_primary": "island-wide — all 182 P1-bearing MOE schools (built 2026-07-17)",
+  "mrt": "island-wide — 200 MRT/LRT stations (built 2026-07-17)",
+  "amenities/expressways": "CURATED north-east list — 'nearest of these', NOT 'nearest in Singapore'"
+ },
+ "amenity_meta": {
+  "n_schools": 182,
+  "n_mrt": 200,
+  "built": "2026-07-17"
+ },
+ "comps": {
+  "street": "KING'S ROAD",
+  "n": 38,
+  "first_ym": "2021-07",
+  "last_ym": "2026-06",
+  "tenure": {
+   "distinct": {
+    "102 yrs lease commencing from 1996": 26,
+    "Freehold": 12
+   },
+   "n": 38,
+   "unanimous": false
+  },
+  "cohorts": [
+   {
+    "band": "1,800-2,500",
+    "lo_sqft": 1800,
+    "hi_sqft": 2500,
+    "n": 16,
+    "psf_min": 1362,
+    "psf_med": 1774,
+    "psf_max": 3443,
+    "price_med": 4260000,
+    "area_med": 2413
+   },
+   {
+    "band": "2,500-3,500",
+    "lo_sqft": 2500,
+    "hi_sqft": 3500,
+    "n": 19,
+    "psf_min": 1292,
+    "psf_med": 1678,
+    "psf_max": 3147,
+    "price_med": 4820000,
+    "area_med": 2821
+   },
+   {
+    "band": ">=3,500",
+    "lo_sqft": 3500,
+    "hi_sqft": null,
+    "n": 3,
+    "psf_min": 1250,
+    "psf_med": 2158,
+    "psf_max": 2158,
+    "price_med": 8200000,
+    "area_med": 3800
+   }
+  ],
+  "trend": [
+   {
+    "period": "2021",
+    "n": 4,
+    "psf_med": 2197,
+    "price_med": 5064000,
+    "area_med": 2302
+   },
+   {
+    "period": "2022",
+    "n": 4,
+    "psf_med": 1486,
+    "price_med": 4190000,
+    "area_med": 2863
+   },
+   {
+    "period": "2023",
+    "n": 7,
+    "psf_med": 1604,
+    "price_med": 4200000,
+    "area_med": 2952
+   },
+   {
+    "period": "2024",
+    "n": 9,
+    "psf_med": 1714,
+    "price_med": 5150000,
+    "area_med": 2610
+   },
+   {
+    "period": "2025",
+    "n": 10,
+    "psf_med": 1799,
+    "price_med": 4950000,
+    "area_med": 2558
+   },
+   {
+    "period": "2026",
+    "n": 4,
+    "psf_med": 2498,
+    "price_med": 6990000,
+    "area_med": 2600
+   }
+  ],
+  "types": {
+   "Semi-detached": 32,
+   "Terrace": 6
+  },
+  "strata_n": 2,
+  "subject": {
+   "n": 10,
+   "area_sqft": 2697,
+   "tol": 0.06,
+   "psf_min": 1416,
+   "psf_med": 1768,
+   "psf_max": 3147,
+   "first_ym": "2021-07",
+   "last_ym": "2026-06",
+   "recent": [
+    {
+     "ym": "2024-11",
+     "price": 4380000.0,
+     "psf": 1678,
+     "area_sqft": 2610,
+     "type": "Semi-detached"
+    },
+    {
+     "ym": "2025-04",
+     "price": 4320000.0,
+     "psf": 1692,
+     "area_sqft": 2553,
+     "type": "Semi-detached"
+    },
+    {
+     "ym": "2025-05",
+     "price": 4480000.0,
+     "psf": 1748,
+     "area_sqft": 2563,
+     "type": "Semi-detached"
+    },
+    {
+     "ym": "2025-07",
+     "price": 4820000.0,
+     "psf": 1788,
+     "area_sqft": 2696,
+     "type": "Semi-detached"
+    },
+    {
+     "ym": "2026-06",
+     "price": 8180000.0,
+     "psf": 3147,
+     "area_sqft": 2600,
+     "type": "Terrace"
+    },
+    {
+     "ym": "2026-06",
+     "price": 8180000.0,
+     "psf": 3147,
+     "area_sqft": 2600,
+     "type": "Terrace"
+    }
+   ],
+   "rows": [
+    {
+     "id": "KINGS VILLE|2021-07|3628000|238.1|-|2",
+     "project": "KINGS VILLE",
+     "street": "KING'S ROAD",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Semi-detached",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "102 yrs lease commencing from 1996",
+     "tenure_type": "leasehold",
+     "lease_start": 1996,
+     "contract_ym": "2021-07",
+     "area_sqm": 238.1,
+     "area_sqft": 2562.9,
+     "price": 3628000.0,
+     "psf": 1415.6,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 24970.7913022303,
+     "y": 33386.0652648734,
+     "no_of_units": 1
+    },
+    {
+     "id": "KINGS VILLE|2023-04|4200000|250.8|-|8",
+     "project": "KINGS VILLE",
+     "street": "KING'S ROAD",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Semi-detached",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "102 yrs lease commencing from 1996",
+     "tenure_type": "leasehold",
+     "lease_start": 1996,
+     "contract_ym": "2023-04",
+     "area_sqm": 250.8,
+     "area_sqft": 2699.6,
+     "price": 4200000.0,
+     "psf": 1555.8,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 24970.7913022303,
+     "y": 33386.0652648734,
+     "no_of_units": 1
+    },
+    {
+     "id": "LANDED HOUSING DEVELOPMENT|2024-03|8380000|262.1|-|3",
+     "project": "LANDED HOUSING DEVELOPMENT",
+     "street": "KING'S ROAD",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Semi-detached",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "Freehold",
+     "tenure_type": "freehold",
+     "lease_start": null,
+     "contract_ym": "2024-03",
+     "area_sqm": 262.1,
+     "area_sqft": 2821.2,
+     "price": 8380000.0,
+     "psf": 2970.3,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 24832.58197,
+     "y": 33289.75693,
+     "no_of_units": 1
+    },
+    {
+     "id": "LANDED HOUSING DEVELOPMENT|2024-03|8380000|262.1|-|9",
+     "project": "LANDED HOUSING DEVELOPMENT",
+     "street": "KING'S ROAD",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Semi-detached",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "Freehold",
+     "tenure_type": "freehold",
+     "lease_start": null,
+     "contract_ym": "2024-03",
+     "area_sqm": 262.1,
+     "area_sqft": 2821.2,
+     "price": 8380000.0,
+     "psf": 2970.3,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 24832.58197,
+     "y": 33289.75693,
+     "no_of_units": 1
+    },
+    {
+     "id": "KINGS VILLE|2024-11|4380000|242.5|-|13",
+     "project": "KINGS VILLE",
+     "street": "KING'S ROAD",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Semi-detached",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "102 yrs lease commencing from 1996",
+     "tenure_type": "leasehold",
+     "lease_start": 1996,
+     "contract_ym": "2024-11",
+     "area_sqm": 242.5,
+     "area_sqft": 2610.2,
+     "price": 4380000.0,
+     "psf": 1678.0,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 24970.7913022303,
+     "y": 33386.0652648734,
+     "no_of_units": 1
+    },
+    {
+     "id": "KINGS VILLE|2025-04|4320000|237.2|-|23",
+     "project": "KINGS VILLE",
+     "street": "KING'S ROAD",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Semi-detached",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "102 yrs lease commencing from 1996",
+     "tenure_type": "leasehold",
+     "lease_start": 1996,
+     "contract_ym": "2025-04",
+     "area_sqm": 237.2,
+     "area_sqft": 2553.2,
+     "price": 4320000.0,
+     "psf": 1692.0,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 24970.7913022303,
+     "y": 33386.0652648734,
+     "no_of_units": 1
+    },
+    {
+     "id": "KINGS VILLE|2025-05|4480000|238.1|-|21",
+     "project": "KINGS VILLE",
+     "street": "KING'S ROAD",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Semi-detached",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "102 yrs lease commencing from 1996",
+     "tenure_type": "leasehold",
+     "lease_start": 1996,
+     "contract_ym": "2025-05",
+     "area_sqm": 238.1,
+     "area_sqft": 2562.9,
+     "price": 4480000.0,
+     "psf": 1748.0,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 24970.7913022303,
+     "y": 33386.0652648734,
+     "no_of_units": 1
+    },
+    {
+     "id": "KINGS VILLE|2025-07|4820000|250.5|-|19",
+     "project": "KINGS VILLE",
+     "street": "KING'S ROAD",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Semi-detached",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "102 yrs lease commencing from 1996",
+     "tenure_type": "leasehold",
+     "lease_start": 1996,
+     "contract_ym": "2025-07",
+     "area_sqm": 250.5,
+     "area_sqft": 2696.4,
+     "price": 4820000.0,
+     "psf": 1787.6,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 24970.7913022303,
+     "y": 33386.0652648734,
+     "no_of_units": 1
+    },
+    {
+     "id": "LANDED HOUSING DEVELOPMENT|2026-06|8180000|241.5|-|0",
+     "project": "LANDED HOUSING DEVELOPMENT",
+     "street": "KING'S ROAD",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "Freehold",
+     "tenure_type": "freehold",
+     "lease_start": null,
+     "contract_ym": "2026-06",
+     "area_sqm": 241.5,
+     "area_sqft": 2599.5,
+     "price": 8180000.0,
+     "psf": 3146.8,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 24832.58197,
+     "y": 33289.75693,
+     "no_of_units": 1
+    },
+    {
+     "id": "LANDED HOUSING DEVELOPMENT|2026-06|8180000|241.5|-|6",
+     "project": "LANDED HOUSING DEVELOPMENT",
+     "street": "KING'S ROAD",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Terrace",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "Freehold",
+     "tenure_type": "freehold",
+     "lease_start": null,
+     "contract_ym": "2026-06",
+     "area_sqm": 241.5,
+     "area_sqft": 2599.5,
+     "price": 8180000.0,
+     "psf": 3146.8,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 24832.58197,
+     "y": 33289.75693,
+     "no_of_units": 1
+    }
+   ]
+  }
+ },
+ "flood": {
+  "terms": [
+   "KING'S ROAD"
+  ],
+  "on_list": false,
+  "matches": [],
+  "list_vintage": "Nov 2025",
+  "list_size": 36,
+  "national_hectares": {
+   "year": 2025,
+   "hectares": 23.3
+  },
+  "national_series": [
+   {
+    "year": 2022,
+    "hectares": 27.0
+   },
+   {
+    "year": 2023,
+    "hectares": 24.1
+   },
+   {
+    "year": 2024,
+    "hectares": 23.6
+   },
+   {
+    "year": 2025,
+    "hectares": 23.3
+   }
+  ],
+  "national_pct_of_land": 0.032,
+  "method": "NAME match against a PDF list — not geospatial. A flooding road next to yours will not match.",
+  "evidential_weight": "NOT on the list — near-zero evidence for this plot. The designation covers 23.3 ha of ~73,000 ha of Singapore (0.032% of the country) across 36 named locations. Almost every address is 'not on it', including ones that pond. Whether THIS plot ponds is a site question (DD-3): visit in rain, check plot-vs-road level, ask neighbours."
+ },
+ "provenance": {
+  "geocode": "OneMap search API — free, no key. Road asserted.",
+  "plot/zoning/neighbours": "URA Master Plan 2025 (gazetted 1 Dec 2025) Land Use + SDCP Landed Housing Area layers via data.gov.sg — free, no key. Indicative, not a legal boundary.",
+  "comps": "URA Data Service caveats (free registered key). Landed `area` is LAND area. Month granularity; ~5y rolling; caveats lag; landed project names anonymised so STREET is the only join key.",
+  "flood": "PUB flood-prone list (Nov 2025) by name + data.gov.sg national hectares.",
+  "schools/mrt": "ISLAND-WIDE: every P1-bearing MOE school (School Directory on data.gov.sg) + every MRT/LRT station (OneMap), pre-geocoded. Haversine to the target's POINT. For P1 the official measure is OneMap SchoolQuery (school LAND BOUNDARY to home) — ours over-estimates, so 'inside' is safe and near the line undecided.",
+  "amenities/expressways": "CURATED north-east list — there is no official mall register. 'Nearest of these', never 'nearest in SG'."
+ },
+ "not_covered": [
+  "Valuation — caveat prices bundle land+building; no fair value is derivable here.",
+  "Legal: owner, encumbrances, legal land area, Certified Plan — INLIS (DD-2, S$16).",
+  "Approved plans / unauthorised works — BCA, and SELLER-GATED (owner's signed authorisation required; a buyer cannot buy them).",
+  "Anything site-observable: noise, ponding, light, traffic, condition — DD-3."
+ ]
+}

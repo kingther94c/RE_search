@@ -1,0 +1,17 @@
+{
+ "_provenance": "price_path_risks authored 2026-07-23 from IS true-road harvest (research/data/is_street/king_s_road_sale.json, 16 rows) + is_street_compare (engine vs IS 12mo RAW: +2%); revised same day after hostile review (bucket denominator deduped 38->32; detached band widened) + AI-blind arm concordance (blind $3,050 vs engine $3,087, gap 1.2%).",
+ "price_path_risks": [
+  {
+   "title_zh": "本路是三种制度拼成的街:FH 排屋段(97-107 单号)、102 年地契半独立段(60-104 偶号)、FH 大独立段(54 段)——可比只能在段内读",
+   "body_zh": "IS 真实路核实(2026-07-23,16 行):King's Road 上同时存在 Freehold 排屋(97/101/103/107 号,2,033-3,800 sqft)、「102 yrs from 1996」地契半独立(78/104 号,同尺寸段仅 $1,444-1,678 psf——比 FH 低约四成)与 Freehold 大独立(54D/54H/56M:近期 2025-11/2026-06 在 $18M-21M,早年低至 54D 2022-06 $11.85M、54H 2021-08 $14.08M)。引擎已按 lease-match 把 102 年段剔出可比,但看房时任何跨段类比(中介最常用)都会错价。本宗地(97 号)属 FH 排屋段。"
+  },
+  {
+   "title_zh": "引擎点 $3,087 与 IS 真实路近窗互证(+2%),盲写对照臂亦 +1.2% 同点——但近窗高读数由两笔小样本撑起",
+   "body_zh": "IS 本路近 12 月 RAW 中位 $3,147(n=3:26A 号 2025-10 $3,443 / 107 号 2026-06 $3,147 / 54H 号 2026-06 $2,005 大独立不可比),与引擎点差 +2%;独立盲写臂(只读原始事实)得 $3,050,与引擎差 1.2%——三口径收敛,方向互证成立。但排屋段近窗实际只有两笔:107 号(2,600 sqft,S$8.18M)与 26A 号(2,033 sqft,S$7.00M)。本宗地 2024-04 自身成交 $2,669/S$7.20M 也在引擎可比里——点估值隐含近两年本段重估约 +16%,这个斜率立在两笔之上,出价时把 S$8.18M(107 号,几乎同规格)当最硬的锚。"
+  },
+  {
+   "title_zh": "URA「KING'S ROAD」桶去重后 32 笔,本路只占 16 笔(50%)——King's Close / King's Drive 等支路混在同一桶",
+   "body_zh": "IS 地址核实:URA 同名桶原始 38 行,剔除双批次重复 caveat 后 32 笔;本路(IS 逐门牌)16 笔,份额 50%,其余散在 King's Close、King's Drive 等支路。本报告的议价门槛(p25/p75)算自整桶;真实路(含段内区分)的分布以上两条为准。另:学校本体在 52 King's Road——本段到南洋小学 0.3-0.5km,深处 1km 圈内(直线口径,报名年仍需按 SchoolQuery 复核)。"
+  }
+ ]
+}

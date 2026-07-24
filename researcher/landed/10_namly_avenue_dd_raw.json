@@ -1,0 +1,602 @@
+{
+ "address": "10 NAMLY AVENUE",
+ "as_of": "2026-07-24",
+ "geocode": {
+  "match": "SHAMROCK PARK",
+  "blk_no": "10",
+  "road_name": "NAMLY AVENUE",
+  "postal": "267613",
+  "lat": 1.32783175125435,
+  "lon": 103.80088788806,
+  "x": 24390.7947457293,
+  "y": 34450.4292045515
+ },
+ "street": "NAMLY AVENUE",
+ "plot": {
+  "area_sqm": 1053.0,
+  "area_sqft": 11334,
+  "is_landed_zone": true,
+  "objectid": 663622,
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "caveat": "indicative zoning parcel, not a cadastral lot — confirm with INLIS PTI"
+ },
+ "zoning": {
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "gpr_num": null,
+  "area_sqm": 1053.0,
+  "area_sqft": 11334,
+  "objectid": 663622,
+  "updated": "20251229172143"
+ },
+ "landed_housing_area": {
+  "classification": "GOOD CLASS BUNGALOW AREA",
+  "type": "BUNGALOWS",
+  "envelope": "2-STOREY ENVELOPE",
+  "name": "FIRST / THIRD AVENUE",
+  "updated": "20251230175452"
+ },
+ "neighbours": [
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "LND",
+   "metres": 13,
+   "bearing_deg": 290.0,
+   "area_sqm": 1150.82699785,
+   "objectid": 643453
+  },
+  {
+   "zone": "ROAD",
+   "gpr": "",
+   "metres": 20,
+   "bearing_deg": 126.6,
+   "area_sqm": 18582.80932527,
+   "objectid": 619132
+  },
+  {
+   "zone": "EDUCATIONAL INSTITUTION",
+   "gpr": "EVA",
+   "metres": 34,
+   "bearing_deg": 126.6,
+   "area_sqm": 259565.69007493,
+   "objectid": 700095
+  },
+  {
+   "zone": "WATERBODY",
+   "gpr": "",
+   "metres": 196,
+   "bearing_deg": 19.3,
+   "area_sqm": 22591.29482969,
+   "objectid": 685626
+  },
+  {
+   "zone": "COMMERCIAL & RESIDENTIAL",
+   "gpr": "3.0",
+   "metres": 241,
+   "bearing_deg": 325.6,
+   "area_sqm": 1627.63959557,
+   "objectid": 624180
+  },
+  {
+   "zone": "TRANSPORT FACILITIES",
+   "gpr": "EVA",
+   "metres": 287,
+   "bearing_deg": 319.2,
+   "area_sqm": 1631.01283432,
+   "objectid": 641589
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "EVA",
+   "metres": 333,
+   "bearing_deg": 308.4,
+   "area_sqm": 20077.725206575,
+   "objectid": 676387
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.4",
+   "metres": 339,
+   "bearing_deg": 159.3,
+   "area_sqm": 412.6837978,
+   "objectid": 699683
+  },
+  {
+   "zone": "UTILITY",
+   "gpr": "EVA",
+   "metres": 346,
+   "bearing_deg": 256.0,
+   "area_sqm": 84.7810065,
+   "objectid": 634769
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.8",
+   "metres": 452,
+   "bearing_deg": 289.4,
+   "area_sqm": 18492.373840585,
+   "objectid": 594401
+  },
+  {
+   "zone": "PARK",
+   "gpr": "EVA",
+   "metres": 542,
+   "bearing_deg": 317.2,
+   "area_sqm": 6752.626966245,
+   "objectid": 601358
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.5",
+   "metres": 556,
+   "bearing_deg": 316.0,
+   "area_sqm": 52424.844788475,
+   "objectid": 655991
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.62",
+   "metres": 581,
+   "bearing_deg": 289.4,
+   "area_sqm": 7877.17714758,
+   "objectid": 631170
+  },
+  {
+   "zone": "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY",
+   "gpr": "EVA",
+   "metres": 582,
+   "bearing_deg": 230.4,
+   "area_sqm": 239.78767,
+   "objectid": 635603
+  },
+  {
+   "zone": "COMMERCIAL",
+   "gpr": "1.4",
+   "metres": 597,
+   "bearing_deg": 297.8,
+   "area_sqm": 4602.2268336,
+   "objectid": 596948
+  },
+  {
+   "zone": "RESERVE SITE",
+   "gpr": "EVA",
+   "metres": 667,
+   "bearing_deg": 311.5,
+   "area_sqm": 3308.72823272,
+   "objectid": 695539
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.8",
+   "metres": 776,
+   "bearing_deg": 309.3,
+   "area_sqm": 24534.934019765,
+   "objectid": 621285
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.1",
+   "metres": 825,
+   "bearing_deg": 334.8,
+   "area_sqm": 26129.164795965,
+   "objectid": 627854
+  },
+  {
+   "zone": "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY",
+   "gpr": "1.6",
+   "metres": 907,
+   "bearing_deg": 329.0,
+   "area_sqm": 26810.443543915,
+   "objectid": 621288
+  },
+  {
+   "zone": "OPEN SPACE",
+   "gpr": "EVA",
+   "metres": 957,
+   "bearing_deg": 304.4,
+   "area_sqm": 2201.68879599,
+   "objectid": 695542
+  },
+  {
+   "zone": "PLACE OF WORSHIP",
+   "gpr": "EVA",
+   "metres": 961,
+   "bearing_deg": 229.7,
+   "area_sqm": 699.58741787,
+   "objectid": 638001
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.4",
+   "metres": 972,
+   "bearing_deg": 304.1,
+   "area_sqm": 13491.70073889,
+   "objectid": 656498
+  }
+ ],
+ "transects": [
+  {
+   "toward": "TRANSPORT FACILITIES",
+   "bearing_deg": 319.2,
+   "edge_m": 287,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 60,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 80,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 220,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 240,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 300,
+     "zone": "TRANSPORT FACILITIES",
+     "gpr": "EVA"
+    },
+    {
+     "m": 360,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 400,
+     "zone": "WATERBODY",
+     "gpr": null
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  },
+  {
+   "toward": "UTILITY",
+   "bearing_deg": 256.0,
+   "edge_m": 346,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 220,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 240,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 360,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 380,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    }
+   ],
+   "reaches_target": false,
+   "note": "ray never lands in UTILITY within 466m — it is aimed at the nearest edge point, which lies on a shared boundary. The steps still show what separates you from it; they do not confirm arrival."
+  }
+ ],
+ "schools_primary": [
+  {
+   "name": "RAFFLES GIRLS' PRIMARY SCHOOL",
+   "km": 0.66,
+   "postal": "289072"
+  },
+  {
+   "name": "NANYANG PRIMARY SCHOOL",
+   "km": 1.07,
+   "postal": "268097"
+  },
+  {
+   "name": "METHODIST GIRLS' SCHOOL (PRIMARY)",
+   "km": 2.02,
+   "postal": "599986"
+  }
+ ],
+ "mrt": [
+  {
+   "name": "SIXTH AVENUE MRT STATION (DT7)",
+   "km": 0.56,
+   "postal": ""
+  },
+  {
+   "name": "TAN KAH KEE MRT STATION",
+   "km": 0.65,
+   "postal": ""
+  },
+  {
+   "name": "FARRER ROAD MRT STATION (CC20)",
+   "km": 1.36,
+   "postal": ""
+  },
+  {
+   "name": "BOTANIC GARDENS MRT STATION",
+   "km": 1.72,
+   "postal": ""
+  }
+ ],
+ "amenities": [],
+ "expressways": [
+  {
+   "name": "PAN ISLAND EXPRESSWAY",
+   "km": 1.89,
+   "matched": "PAN ISLAND EXPRESSWAY",
+   "postal": "NIL"
+  },
+  {
+   "name": "CENTRAL EXPRESSWAY",
+   "km": 5.6,
+   "matched": "CENTRAL EXPRESSWAY",
+   "postal": "NIL"
+  }
+ ],
+ "amenity_scope": {
+  "schools_primary": "island-wide — all 182 P1-bearing MOE schools (built 2026-07-17)",
+  "mrt": "island-wide — 200 MRT/LRT stations (built 2026-07-17)",
+  "amenities/expressways": "CURATED north-east list — 'nearest of these', NOT 'nearest in Singapore'"
+ },
+ "amenity_meta": {
+  "n_schools": 182,
+  "n_mrt": 200,
+  "built": "2026-07-17"
+ },
+ "comps": {
+  "street": "NAMLY AVENUE",
+  "n": 53,
+  "first_ym": "2021-07",
+  "last_ym": "2026-06",
+  "tenure": {
+   "distinct": {
+    "Freehold": 51,
+    "99 yrs lease commencing from 1992": 1,
+    "99 yrs lease commencing from 2008": 1
+   },
+   "n": 53,
+   "unanimous": false
+  },
+  "cohorts": [
+   {
+    "band": "<1,800",
+    "lo_sqft": 0.0,
+    "hi_sqft": 1800,
+    "n": 1,
+    "psf_min": 2793,
+    "psf_med": 2793,
+    "psf_max": 2793,
+    "price_med": 5020000,
+    "area_med": 1798
+   },
+   {
+    "band": "1,800-2,500",
+    "lo_sqft": 1800,
+    "hi_sqft": 2500,
+    "n": 5,
+    "psf_min": 2410,
+    "psf_med": 2779,
+    "psf_max": 2994,
+    "price_med": 6388880,
+    "area_med": 2220
+   },
+   {
+    "band": "2,500-3,500",
+    "lo_sqft": 2500,
+    "hi_sqft": 3500,
+    "n": 21,
+    "psf_min": 1978,
+    "psf_med": 2605,
+    "psf_max": 4150,
+    "price_med": 8200000,
+    "area_med": 3196
+   },
+   {
+    "band": ">=3,500",
+    "lo_sqft": 3500,
+    "hi_sqft": null,
+    "n": 26,
+    "psf_min": 910,
+    "psf_med": 2204,
+    "psf_max": 2831,
+    "price_med": 9750000,
+    "area_med": 4485
+   }
+  ],
+  "trend": [
+   {
+    "period": "2021",
+    "n": 9,
+    "psf_med": 2367,
+    "price_med": 6388880,
+    "area_med": 3185
+   },
+   {
+    "period": "2022",
+    "n": 8,
+    "psf_med": 2552,
+    "price_med": 8030000,
+    "area_med": 3287
+   },
+   {
+    "period": "2023",
+    "n": 9,
+    "psf_med": 2208,
+    "price_med": 9000000,
+    "area_med": 3978
+   },
+   {
+    "period": "2024",
+    "n": 9,
+    "psf_med": 2360,
+    "price_med": 8400000,
+    "area_med": 3736
+   },
+   {
+    "period": "2025",
+    "n": 15,
+    "psf_med": 2588,
+    "price_med": 10000000,
+    "area_med": 3477
+   },
+   {
+    "period": "2026",
+    "n": 3,
+    "psf_med": 2756,
+    "price_med": 9030000,
+    "area_med": 3204
+   }
+  ],
+  "types": {
+   "Terrace": 6,
+   "Semi-detached": 39,
+   "Detached": 8
+  },
+  "strata_n": 0,
+  "subject": {
+   "n": 2,
+   "area_sqft": 11334,
+   "tol": 0.06,
+   "psf_min": 2273,
+   "psf_med": 2529,
+   "psf_max": 2785,
+   "first_ym": "2023-11",
+   "last_ym": "2025-10",
+   "recent": [
+    {
+     "ym": "2023-11",
+     "price": 25200000.0,
+     "psf": 2273,
+     "area_sqft": 11087,
+     "type": "Detached"
+    },
+    {
+     "ym": "2025-10",
+     "price": 30300000.0,
+     "psf": 2785,
+     "area_sqft": 10880,
+     "type": "Detached"
+    }
+   ],
+   "rows": [
+    {
+     "id": "SHAMROCK PARK|2023-11|25200000|1030.0|-|32",
+     "project": "SHAMROCK PARK",
+     "street": "NAMLY AVENUE",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Detached",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "Freehold",
+     "tenure_type": "freehold",
+     "lease_start": null,
+     "contract_ym": "2023-11",
+     "area_sqm": 1030.0,
+     "area_sqft": 11086.8,
+     "price": 25200000.0,
+     "psf": 2273.0,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 23765.2430272883,
+     "y": 34131.0258312156,
+     "no_of_units": 1
+    },
+    {
+     "id": "SHAMROCK PARK|2025-10|30300000|1010.8|-|40",
+     "project": "SHAMROCK PARK",
+     "street": "NAMLY AVENUE",
+     "market_segment": "CCR",
+     "district": "10",
+     "property_type": "Detached",
+     "type_of_area": "Land",
+     "type_of_sale": "Resale",
+     "tenure_raw": "Freehold",
+     "tenure_type": "freehold",
+     "lease_start": null,
+     "contract_ym": "2025-10",
+     "area_sqm": 1010.8,
+     "area_sqft": 10880.2,
+     "price": 30300000.0,
+     "psf": 2784.9,
+     "floor_range": "-",
+     "floor_lo": null,
+     "floor_hi": null,
+     "x": 23765.2430272883,
+     "y": 34131.0258312156,
+     "no_of_units": 1
+    }
+   ]
+  }
+ },
+ "flood": {
+  "terms": [
+   "NAMLY AVENUE"
+  ],
+  "on_list": false,
+  "matches": [],
+  "list_vintage": "Nov 2025",
+  "list_size": 36,
+  "national_hectares": {
+   "year": 2025,
+   "hectares": 23.3
+  },
+  "national_series": [
+   {
+    "year": 2022,
+    "hectares": 27.0
+   },
+   {
+    "year": 2023,
+    "hectares": 24.1
+   },
+   {
+    "year": 2024,
+    "hectares": 23.6
+   },
+   {
+    "year": 2025,
+    "hectares": 23.3
+   }
+  ],
+  "national_pct_of_land": 0.032,
+  "method": "NAME match against a PDF list — not geospatial. A flooding road next to yours will not match.",
+  "evidential_weight": "NOT on the list — near-zero evidence for this plot. The designation covers 23.3 ha of ~73,000 ha of Singapore (0.032% of the country) across 36 named locations. Almost every address is 'not on it', including ones that pond. Whether THIS plot ponds is a site question (DD-3): visit in rain, check plot-vs-road level, ask neighbours."
+ },
+ "provenance": {
+  "geocode": "OneMap search API — free, no key. Road asserted.",
+  "plot/zoning/neighbours": "URA Master Plan 2025 (gazetted 1 Dec 2025) Land Use + SDCP Landed Housing Area layers via data.gov.sg — free, no key. Indicative, not a legal boundary.",
+  "comps": "URA Data Service caveats (free registered key). Landed `area` is LAND area. Month granularity; ~5y rolling; caveats lag; landed project names anonymised so STREET is the only join key.",
+  "flood": "PUB flood-prone list (Nov 2025) by name + data.gov.sg national hectares.",
+  "schools/mrt": "ISLAND-WIDE: every P1-bearing MOE school (School Directory on data.gov.sg) + every MRT/LRT station (OneMap), pre-geocoded. Haversine to the target's POINT. For P1 the official measure is OneMap SchoolQuery (school LAND BOUNDARY to home) — ours over-estimates, so 'inside' is safe and near the line undecided.",
+  "amenities/expressways": "CURATED north-east list — there is no official mall register. 'Nearest of these', never 'nearest in SG'."
+ },
+ "not_covered": [
+  "Valuation — caveat prices bundle land+building; no fair value is derivable here.",
+  "Legal: owner, encumbrances, legal land area, Certified Plan — INLIS (DD-2, S$16).",
+  "Approved plans / unauthorised works — BCA, and SELLER-GATED (owner's signed authorisation required; a buyer cannot buy them).",
+  "Anything site-observable: noise, ponding, light, traffic, condition — DD-3."
+ ]
+}

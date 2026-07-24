@@ -1,0 +1,17 @@
+{
+ "_provenance": "price_path_risks authored 2026-07-21 after IS true-road corroboration (research/data/is_street/chun_tin_road_sale.json, 12 rows, completeness gate: harvested mean $5,661,917 == app band avg, <$1). Hard-case protocol per landed-valuation skill: AI-blind arm point $2,300 vs engine $2,556 = 10.0% gap.",
+ "price_path_risks": [
+  {
+   "title_zh": "本路在自己的 URA 桶里是少数派(12/35)——引擎可比混着邻路成交,点估值偏乐观一侧",
+   "body_zh": "IS 真实路核实(2026-07-21,12 行,与 app 街道均值对账 <$1):Chun Tin Road 本路 5 年只有 12 笔,而 URA「CHUN TIN ROAD」桶有 35 笔——桶里混着邻路(如 HOOVER PARK 屋苑)。本路近 12 月 RAW 中位 $1,986 psf,最近三笔 $2,373(2025-10 半独立)/ $1,961(2026-06)/ $2,012(2026-07);引擎点 $2,556 是在整桶上按时间+尺寸调整后的读数,较真实路近窗高约 19%(其中一部分可由本宗地更小、psf 应更高解释,但方向仍偏高)。买方出价锚请从真实路近窗出发,勿直接用桶分位数。"
+  },
+  {
+   "title_zh": "URA 队列里的同尺寸高价单($2,827,2026-02)不在本路上——A&A 价差上沿是邻路翻建房",
+   "body_zh": "报告 A&A 节引用的队列上沿 $2,827 psf(2026-02,1,959 sqft,S$5.54M)经 IS 核实属 HOOVER PARK,不在 Chun Tin Road 门牌上。本路同尺寸的真实成交是 40 Chun Tin Road(1,987 sqft,与本宗地几乎同尺寸):2024-04 $2,063 psf / S$4.10M。加盖/翻建的价值方向仍然成立(本区 3 层包络),但它的市场上沿证据来自邻路,本路自己尚无翻建高价印花。"
+  },
+  {
+   "title_zh": "盲写对照臂与引擎差 10%(hard case)——差异主要就是「用不用邻路高价单」,IS 佐证后按保守侧读",
+   "body_zh": "AI 盲写对照臂(仅读原始 DD 事实)点 $2,300 psf vs 引擎 $2,556,差 10.0%。盲臂锚在 2024 年两笔同尺寸成交($1,926-2,063,现证实至少一笔不在本路);引擎被桶内邻路高价单拉高。IS 真实路分布落在两臂之间偏下。结论:出价参考区间整体下移,先以 ~$2,000-2,300 psf(约 S$4.0-4.6M)为谈判起点,高于引擎点的出价需要现场核实的翻建/状态理由。"
+  }
+ ]
+}

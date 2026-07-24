@@ -1,0 +1,102 @@
+{
+ "meta": {
+  "source": "investment_suite",
+  "screen": "Street Transactions (expanded View All) — CAVEATS, not agency data",
+  "street": "PRINCESS OF WALES ROAD",
+  "harvested_at": "2026-07-23T21:05:27",
+  "device": "emulator-5554 1080x2400",
+  "n_rows": 9
+ },
+ "rows": [
+  {
+   "date": "13 Jul 2026",
+   "address": "30 Princess Of Wales Road",
+   "type": "Detached House",
+   "tenure": "999 yrs from 27/12/1875",
+   "area_sqft": "6,485",
+   "psf": "$2,698",
+   "price": "$17,500,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "17 Apr 2026",
+   "address": "14A Princess Of Wales Road",
+   "type": "Semi-Detached House",
+   "tenure": "999 yrs from 27/12/1875",
+   "area_sqft": "3,777",
+   "psf": "$2,753",
+   "price": "$10,400,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "11 Aug 2025",
+   "address": "10A Princess Of Wales Road",
+   "type": "Semi-Detached House",
+   "tenure": "999 yrs from 27/12/1875",
+   "area_sqft": "3,786",
+   "psf": "$2,635",
+   "price": "$9,976,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "12 Jul 2024",
+   "address": "54 Princess Of Wales Road",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "3,829",
+   "psf": "$2,494",
+   "price": "$9,550,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "12 Jun 2024",
+   "address": "12 Princess Of Wales Road",
+   "type": "Semi-Detached House",
+   "tenure": "999 yrs from 27/12/1875",
+   "area_sqft": "3,786",
+   "psf": "$2,575",
+   "price": "$9,750,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "26 Apr 2024",
+   "address": "1 Princess Of Wales Road",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "2,900",
+   "psf": "$3,755",
+   "price": "$10,888,888",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "05 Sep 2023",
+   "address": "18A Princess Of Wales Road",
+   "type": "Semi-Detached House",
+   "tenure": "999 yrs from 27/12/1875",
+   "area_sqft": "3,774",
+   "psf": "$3,233",
+   "price": "$12,200,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "07 Feb 2023",
+   "address": "12A Princess Of Wales Road",
+   "type": "Semi-Detached House",
+   "tenure": "999 yrs from 27/12/1875",
+   "area_sqft": "3,778",
+   "psf": "$2,462",
+   "price": "$9,300,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "29 Mar 2022",
+   "address": "16A Princess Of Wales Road",
+   "type": "Semi-Detached House",
+   "tenure": "999 yrs from 27/12/1875",
+   "area_sqft": "3,774",
+   "psf": "$2,223",
+   "price": "$8,388,888",
+   "sale_type": "Resale"
+  }
+ ]
+}

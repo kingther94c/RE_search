@@ -97,12 +97,16 @@ def _near(lat: float, lon: float, points: list[dict], cap_km: float,
     return sorted(out, key=lambda r: r["km"])[:limit]
 
 
-def run(address: str, expect_road: str | None = None) -> dict:
+def run(address: str, expect_road: str | None = None, query: str | None = None) -> dict:
     # 1 — pin the address. Assert the road: OneMap substitutes silently and a wrong-road
     # answer would poison every distance below it.
-    geo = onemap.geocode(address, expect_road=expect_road)
+    # `query` (usually the POSTAL) exists because some addresses only resolve by postal:
+    # measured 2026-07-21 — OneMap has no hit for "97 KING'S ROAD" *or* "97 KINGS ROAD",
+    # but "268145" returns blk 97 KING'S ROAD exactly. The display address stays `address`;
+    # the road assert still runs against the postal's result, so a wrong postal still fails.
+    geo = onemap.geocode(query or address, expect_road=expect_road)
     if not geo:
-        raise RuntimeError(f"OneMap has no match for {address!r}")
+        raise RuntimeError(f"OneMap has no match for {query or address!r}")
     lat, lon = geo["lat"], geo["lon"]
     street = geo["road_name"]
 

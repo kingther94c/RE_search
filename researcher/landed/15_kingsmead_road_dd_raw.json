@@ -1,0 +1,484 @@
+{
+ "address": "15 KINGSMEAD ROAD",
+ "as_of": "2026-07-24",
+ "geocode": {
+  "match": "15 KINGSMEAD ROAD SINGAPORE 267966",
+  "blk_no": "15",
+  "road_name": "KINGSMEAD ROAD",
+  "postal": "267966",
+  "lat": 1.32006147638302,
+  "lon": 103.804685959816,
+  "x": 24813.4715200616,
+  "y": 33591.2267518137
+ },
+ "street": "KINGSMEAD ROAD",
+ "plot": {
+  "area_sqm": 970.6,
+  "area_sqft": 10447,
+  "is_landed_zone": true,
+  "objectid": 682980,
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "caveat": "indicative zoning parcel, not a cadastral lot — confirm with INLIS PTI"
+ },
+ "zoning": {
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "gpr_num": null,
+  "area_sqm": 970.6,
+  "area_sqft": 10447,
+  "objectid": 682980,
+  "updated": "20251229172153"
+ },
+ "landed_housing_area": {
+  "classification": "GOOD CLASS BUNGALOW AREA",
+  "type": "BUNGALOWS",
+  "envelope": "2-STOREY ENVELOPE",
+  "name": "VICTORIA PARK",
+  "updated": "20251230175452"
+ },
+ "neighbours": [
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "LND",
+   "metres": 10,
+   "bearing_deg": 31.7,
+   "area_sqm": 790.824365845,
+   "objectid": 594020
+  },
+  {
+   "zone": "ROAD",
+   "gpr": "",
+   "metres": 15,
+   "bearing_deg": 305.8,
+   "area_sqm": 2766.234753855,
+   "objectid": 656493
+  },
+  {
+   "zone": "PARK",
+   "gpr": "EVA",
+   "metres": 154,
+   "bearing_deg": 129.9,
+   "area_sqm": 2085.88382965,
+   "objectid": 593111
+  },
+  {
+   "zone": "EDUCATIONAL INSTITUTION",
+   "gpr": "EVA",
+   "metres": 189,
+   "bearing_deg": 51.4,
+   "area_sqm": 30825.491450385,
+   "objectid": 669224
+  },
+  {
+   "zone": "PLACE OF WORSHIP",
+   "gpr": "EVA",
+   "metres": 224,
+   "bearing_deg": 162.3,
+   "area_sqm": 3437.7318115,
+   "objectid": 592758
+  },
+  {
+   "zone": "UTILITY",
+   "gpr": "EVA",
+   "metres": 242,
+   "bearing_deg": 150.6,
+   "area_sqm": 490.369723,
+   "objectid": 632804
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.8",
+   "metres": 349,
+   "bearing_deg": 132.1,
+   "area_sqm": 28480.30998995,
+   "objectid": 685096
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "EVA",
+   "metres": 381,
+   "bearing_deg": 214.5,
+   "area_sqm": 5290.06410035,
+   "objectid": 676942
+  },
+  {
+   "zone": "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY",
+   "gpr": "2.8",
+   "metres": 382,
+   "bearing_deg": 164.7,
+   "area_sqm": 1431.96529986,
+   "objectid": 663620
+  },
+  {
+   "zone": "WATERBODY",
+   "gpr": "",
+   "metres": 385,
+   "bearing_deg": 19.7,
+   "area_sqm": 3546.504378165,
+   "objectid": 674474
+  },
+  {
+   "zone": "COMMERCIAL",
+   "gpr": "EVA",
+   "metres": 401,
+   "bearing_deg": 161.7,
+   "area_sqm": 2949.50665015,
+   "objectid": 649236
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.4",
+   "metres": 434,
+   "bearing_deg": 19.7,
+   "area_sqm": 678.321835,
+   "objectid": 640948
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.6",
+   "metres": 461,
+   "bearing_deg": 146.5,
+   "area_sqm": 28.36558254,
+   "objectid": 688273
+  },
+  {
+   "zone": "OPEN SPACE",
+   "gpr": "EVA",
+   "metres": 560,
+   "bearing_deg": 57.0,
+   "area_sqm": 265.495251095,
+   "objectid": 664120
+  },
+  {
+   "zone": "TRANSPORT FACILITIES",
+   "gpr": "EVA",
+   "metres": 648,
+   "bearing_deg": 38.7,
+   "area_sqm": 1857.175326595,
+   "objectid": 597434
+  },
+  {
+   "zone": "COMMERCIAL & RESIDENTIAL",
+   "gpr": "3.0",
+   "metres": 687,
+   "bearing_deg": 44.2,
+   "area_sqm": 149.52886918,
+   "objectid": 694575
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.1",
+   "metres": 790,
+   "bearing_deg": 80.5,
+   "area_sqm": 6499.33146554,
+   "objectid": 689216
+  },
+  {
+   "zone": "SPECIAL USE",
+   "gpr": "EVA",
+   "metres": 820,
+   "bearing_deg": 145.2,
+   "area_sqm": 85081.833161925,
+   "objectid": 619503
+  },
+  {
+   "zone": "CIVIC & COMMUNITY INSTITUTION",
+   "gpr": "EVA",
+   "metres": 874,
+   "bearing_deg": 70.7,
+   "area_sqm": 2065.32596962,
+   "objectid": 643142
+  },
+  {
+   "zone": "RESERVE SITE",
+   "gpr": "EVA",
+   "metres": 900,
+   "bearing_deg": 73.6,
+   "area_sqm": 2817.91042818,
+   "objectid": 660405
+  },
+  {
+   "zone": "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY",
+   "gpr": "EVA",
+   "metres": 960,
+   "bearing_deg": 296.6,
+   "area_sqm": 238.55139,
+   "objectid": 632730
+  }
+ ],
+ "transects": [
+  {
+   "toward": "PLACE OF WORSHIP",
+   "bearing_deg": 162.3,
+   "edge_m": 224,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 60,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 80,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 240,
+     "zone": "PLACE OF WORSHIP",
+     "gpr": "EVA"
+    },
+    {
+     "m": 300,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 320,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  },
+  {
+   "toward": "UTILITY",
+   "bearing_deg": 150.6,
+   "edge_m": 242,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 40,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 60,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 80,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 100,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 240,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 260,
+     "zone": "EDUCATIONAL INSTITUTION",
+     "gpr": "EVA"
+    },
+    {
+     "m": 280,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 300,
+     "zone": "PLACE OF WORSHIP",
+     "gpr": "EVA"
+    },
+    {
+     "m": 320,
+     "zone": "ROAD",
+     "gpr": null
+    }
+   ],
+   "reaches_target": false,
+   "note": "ray never lands in UTILITY within 362m — it is aimed at the nearest edge point, which lies on a shared boundary. The steps still show what separates you from it; they do not confirm arrival."
+  }
+ ],
+ "schools_primary": [
+  {
+   "name": "NANYANG PRIMARY SCHOOL",
+   "km": 0.35,
+   "postal": "268097"
+  },
+  {
+   "name": "RAFFLES GIRLS' PRIMARY SCHOOL",
+   "km": 1.13,
+   "postal": "289072"
+  }
+ ],
+ "mrt": [
+  {
+   "name": "FARRER ROAD MRT STATION (CC20)",
+   "km": 0.42,
+   "postal": ""
+  },
+  {
+   "name": "TAN KAH KEE MRT STATION",
+   "km": 0.73,
+   "postal": ""
+  },
+  {
+   "name": "BOTANIC GARDENS MRT STATION",
+   "km": 1.22,
+   "postal": ""
+  },
+  {
+   "name": "HOLLAND VILLAGE MRT STATION (CC21)",
+   "km": 1.27,
+   "postal": ""
+  }
+ ],
+ "amenities": [],
+ "expressways": [
+  {
+   "name": "PAN ISLAND EXPRESSWAY",
+   "km": 1.94,
+   "matched": "PAN ISLAND EXPRESSWAY",
+   "postal": "NIL"
+  },
+  {
+   "name": "CENTRAL EXPRESSWAY",
+   "km": 5.07,
+   "matched": "CENTRAL EXPRESSWAY",
+   "postal": "NIL"
+  }
+ ],
+ "amenity_scope": {
+  "schools_primary": "island-wide — all 182 P1-bearing MOE schools (built 2026-07-17)",
+  "mrt": "island-wide — 200 MRT/LRT stations (built 2026-07-17)",
+  "amenities/expressways": "CURATED north-east list — 'nearest of these', NOT 'nearest in Singapore'"
+ },
+ "amenity_meta": {
+  "n_schools": 182,
+  "n_mrt": 200,
+  "built": "2026-07-17"
+ },
+ "comps": {
+  "street": "KINGSMEAD ROAD",
+  "n": 5,
+  "first_ym": "2022-02",
+  "last_ym": "2026-03",
+  "tenure": {
+   "distinct": {
+    "Freehold": 5
+   },
+   "n": 5,
+   "unanimous": true
+  },
+  "cohorts": [
+   {
+    "band": ">=3,500",
+    "lo_sqft": 3500,
+    "hi_sqft": null,
+    "n": 5,
+    "psf_min": 1808,
+    "psf_med": 2271,
+    "psf_max": 2516,
+    "price_med": 17420000,
+    "area_med": 6924
+   }
+  ],
+  "trend": [
+   {
+    "period": "2022",
+    "n": 2,
+    "psf_med": 2240,
+    "price_med": 14617500,
+    "area_med": 6530
+   },
+   {
+    "period": "2024",
+    "n": 1,
+    "psf_med": 2516,
+    "price_med": 17420000,
+    "area_med": 6924
+   },
+   {
+    "period": "2025",
+    "n": 1,
+    "psf_med": 2271,
+    "price_med": 26800000,
+    "area_med": 11802
+   },
+   {
+    "period": "2026",
+    "n": 1,
+    "psf_med": 1808,
+    "price_med": 21998000,
+    "area_med": 12168
+   }
+  ],
+  "types": {
+   "Detached": 5
+  },
+  "strata_n": 0,
+  "subject": {
+   "n": 0,
+   "area_sqft": 10447,
+   "tol": 0.06,
+   "rows": [],
+   "note": "no comps within +/-6% of 10,447 sqft"
+  }
+ },
+ "flood": {
+  "terms": [
+   "KINGSMEAD ROAD"
+  ],
+  "on_list": false,
+  "matches": [],
+  "list_vintage": "Nov 2025",
+  "list_size": 36,
+  "national_hectares": {
+   "year": 2025,
+   "hectares": 23.3
+  },
+  "national_series": [
+   {
+    "year": 2022,
+    "hectares": 27.0
+   },
+   {
+    "year": 2023,
+    "hectares": 24.1
+   },
+   {
+    "year": 2024,
+    "hectares": 23.6
+   },
+   {
+    "year": 2025,
+    "hectares": 23.3
+   }
+  ],
+  "national_pct_of_land": 0.032,
+  "method": "NAME match against a PDF list — not geospatial. A flooding road next to yours will not match.",
+  "evidential_weight": "NOT on the list — near-zero evidence for this plot. The designation covers 23.3 ha of ~73,000 ha of Singapore (0.032% of the country) across 36 named locations. Almost every address is 'not on it', including ones that pond. Whether THIS plot ponds is a site question (DD-3): visit in rain, check plot-vs-road level, ask neighbours."
+ },
+ "provenance": {
+  "geocode": "OneMap search API — free, no key. Road asserted.",
+  "plot/zoning/neighbours": "URA Master Plan 2025 (gazetted 1 Dec 2025) Land Use + SDCP Landed Housing Area layers via data.gov.sg — free, no key. Indicative, not a legal boundary.",
+  "comps": "URA Data Service caveats (free registered key). Landed `area` is LAND area. Month granularity; ~5y rolling; caveats lag; landed project names anonymised so STREET is the only join key.",
+  "flood": "PUB flood-prone list (Nov 2025) by name + data.gov.sg national hectares.",
+  "schools/mrt": "ISLAND-WIDE: every P1-bearing MOE school (School Directory on data.gov.sg) + every MRT/LRT station (OneMap), pre-geocoded. Haversine to the target's POINT. For P1 the official measure is OneMap SchoolQuery (school LAND BOUNDARY to home) — ours over-estimates, so 'inside' is safe and near the line undecided.",
+  "amenities/expressways": "CURATED north-east list — there is no official mall register. 'Nearest of these', never 'nearest in SG'."
+ },
+ "not_covered": [
+  "Valuation — caveat prices bundle land+building; no fair value is derivable here.",
+  "Legal: owner, encumbrances, legal land area, Certified Plan — INLIS (DD-2, S$16).",
+  "Approved plans / unauthorised works — BCA, and SELLER-GATED (owner's signed authorisation required; a buyer cannot buy them).",
+  "Anything site-observable: noise, ponding, light, traffic, condition — DD-3."
+ ]
+}

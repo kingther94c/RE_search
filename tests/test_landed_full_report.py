@@ -194,11 +194,33 @@ def test_year_trend_separates_street_from_cohort():
 
 
 def test_fresh_print_far_from_cluster_is_not_an_anchor():
-    comps = [{"adj_land_psf": 3252.0}, {"adj_land_psf": 2962.0},
-             {"adj_land_psf": 2913.0}, {"adj_land_psf": 2956.0}]
+    comps = [{"adj_land_psf": 3252.0, "contract_ym": "2026-06"},
+             {"adj_land_psf": 2962.0, "contract_ym": "2026-05"},
+             {"adj_land_psf": 2913.0, "contract_ym": "2026-05"},
+             {"adj_land_psf": 2956.0, "contract_ym": "2026-04"}]
     fc = _fresh_vs_cluster(comps)
     assert fc["cluster_med"] == 2956.0
     assert fc["gap"] > 0.05                                # 上尾单笔 -> 措辞降级为「不做锚」
+
+
+def test_fresh_vs_cluster_sorts_by_month_not_position():
+    """2026-07-21 评审的回归:引擎 comps 按**权重**排,不是按月份 —— 三份 Bukit Timah
+    样本报告的「最新 vs 近簇」全算在错误的行上。位置 0 是旧成交时,「最新」必须仍取
+    月份最大的一笔;显式给 ref 时以 ref 为「最新」,簇 = 严格早于它的成交。"""
+    weight_ordered = [{"adj_land_psf": 3055.8, "contract_ym": "2024-11"},   # 权重最高,但旧
+                      {"adj_land_psf": 3507.8, "contract_ym": "2025-06"},
+                      {"adj_land_psf": 2857.6, "contract_ym": "2026-06"},   # 真正的最新
+                      {"adj_land_psf": 2700.4, "contract_ym": "2021-10"},
+                      {"adj_land_psf": 2762.6, "contract_ym": "2025-10"}]
+    fc = _fresh_vs_cluster(weight_ordered)
+    # 最新 = 2026-06;其前 3 笔 = 2025-10 / 2025-06 / 2024-11,中位 3055.8
+    assert fc["cluster_med"] == 3055.8
+    assert abs(fc["gap"] - (2857.6 / 3055.8 - 1)) < 1e-9
+    # ref(引擎的 recent_street_reference)优先作「最新」
+    ref = {"adj_psf": 2900.0, "contract_ym": "2026-07"}
+    fc2 = _fresh_vs_cluster(weight_ordered, ref)
+    assert fc2["cluster_med"] == 2857.6                    # 簇 = 2026-06/2025-10/2025-06
+    assert abs(fc2["gap"] - (2900.0 / 2857.6 - 1)) < 1e-9
 
 
 def test_split_stations_keeps_lrt_out_of_the_mrt_row():

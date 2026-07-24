@@ -1,0 +1,172 @@
+{
+ "meta": {
+  "source": "investment_suite",
+  "screen": "Street Transactions (expanded View All) — CAVEATS, not agency data",
+  "street": "KING'S ROAD",
+  "harvested_at": "2026-07-23T21:01:20",
+  "device": "emulator-5554 1080x2400",
+  "n_rows": 16
+ },
+ "rows": [
+  {
+   "date": "15 Jun 2026",
+   "address": "107 King's Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "2,600",
+   "psf": "$3,147",
+   "price": "$8,180,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "05 Jun 2026",
+   "address": "54H King's Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "8,977",
+   "psf": "$2,005",
+   "price": "$18,000,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "10 Oct 2025",
+   "address": "26A King's Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "2,033",
+   "psf": "$3,443",
+   "price": "$7,000,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "20 Feb 2025",
+   "address": "103 King's Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "3,800",
+   "psf": "$2,158",
+   "price": "$8,200,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "01 Nov 2024",
+   "address": "78 King's Road",
+   "type": "Semi-Detached House",
+   "tenure": "102 yrs from 01/08/1996",
+   "area_sqft": "2,610",
+   "psf": "$1,678",
+   "price": "$4,380,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "30 Jul 2024",
+   "address": "67A King's Road",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "4,117",
+   "psf": "$2,339",
+   "price": "$9,630,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "25 Apr 2024",
+   "address": "97 King's Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "2,697",
+   "psf": "$2,669",
+   "price": "$7,200,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "08 Apr 2024",
+   "address": "130 King's Road",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "2,467",
+   "psf": "$2,999",
+   "price": "$7,400,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "25 Mar 2024",
+   "address": "30A King's Road",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "2,821",
+   "psf": "$2,970",
+   "price": "$8,380,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "10 Jul 2023",
+   "address": "101 King's Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "2,144",
+   "psf": "$2,658",
+   "price": "$5,700,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "06 Oct 2022",
+   "address": "56M King's Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "11,457",
+   "psf": "$1,833",
+   "price": "$21,000,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "09 Jun 2022",
+   "address": "54D King's Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "4,644",
+   "psf": "$2,552",
+   "price": "$11,850,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "07 Mar 2022",
+   "address": "104 King's Road",
+   "type": "Semi-Detached House",
+   "tenure": "102 yrs from 01/08/1996",
+   "area_sqft": "3,241",
+   "psf": "$1,444",
+   "price": "$4,680,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "13 Dec 2021",
+   "address": "132 King's Road",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "2,183",
+   "psf": "$2,978",
+   "price": "$6,500,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "26 Aug 2021",
+   "address": "54H King's Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "8,977",
+   "psf": "$1,568",
+   "price": "$14,080,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "22 Jul 2021",
+   "address": "63 King's Road",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "3,416",
+   "psf": "$1,742",
+   "price": "$5,950,000",
+   "sale_type": "Resale"
+  }
+ ]
+}

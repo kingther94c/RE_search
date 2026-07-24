@@ -1,0 +1,17 @@
+{
+ "_provenance": "price_path_risks authored 2026-07-23 from IS true-road harvest (research/data/is_street/kingsmead_road_sale.json, 5 rows == View All (5) == URA n — no bucket merge on this street) + is_street_compare. AI-blind arm: $2,050/S$21.42M vs engine $2,409/S$25.17M (gap 14.9%, hard case) — the blind point sits inside the print-anchored S$19-24M band this digest already recommends.",
+ "price_path_risks": [
+  {
+   "title_zh": "两笔最新大地块印花都低于引擎点:2026-03 1 号 $1,808、2025-11 2 号 $2,271——$2,409 的点估值立在偏乐观一侧",
+   "body_zh": "IS 真实路核实(2026-07-23,5/5 与 URA 完全一致——本街无桶合并):与本宗地(10,447 sqft)同量级的两笔近期成交是 1 Kingsmead Road(12,168 sqft,2026-03,$1,808 psf / S$21.998M)与 2 Kingsmead Road(11,802 sqft,2025-11,$2,271 psf / S$26.80M)。尺寸曲线在 >8k 段弹性仅约 -0.2:从这两笔调整到 10,447 sqft 大约支撑 $1,86x-2,33x,引擎点 $2,409 高于该带。≥8k 的点估值本就仅指示性(置信 45)——出价请以两笔真实印花为锚,S$19M-24M 才是印花支撑的区间,S$25.17M 是模型外推。独立盲写臂(只读原始事实)以两笔大地块印花为锚得 $2,050/S$21.42M——与引擎差 14.9%(hard case),但恰落在本条建议的印花支撑区间内,进一步支持「以印花为锚」的读法。"
+  },
+  {
+   "title_zh": "同街两笔近期成交 psf 相差 26%($1,808 vs $2,271)——大地块的单笔定价由地块个性与买家决定,分布概念在这里失效",
+   "body_zh": "1 号与 2 号地块面积几乎相同(12,168 vs 11,802 sqft)、成交仅隔四个月,psf 却差 26%。大地块市场是逐笔谈判市场:形状、进深、朝向、屋况、买家诉求各自定价,没有「街道水平」可言。本宗地的实际可成交价取决于这些个性因素——QP/中介逐项核,勿在两笔之间取中位当真相。"
+  },
+  {
+   "title_zh": "0.35km 深处南洋 1km 圈 + 全街 Freehold——稀缺性真实,但变现窗口极长",
+   "body_zh": "本街 5/5 全 Freehold、5 年仅 5 笔成交(年均 1 笔),0.30-0.40km 到南洋小学。S$20M+ 的大地块买家池极窄(公民、全现金为主),挂牌到成交以年计。学区叙事对这个价位段的边际作用有限——买家买的是地块与地段本身。持有人以 10 年计;短于此的资金不应碰这个标的。"
+  }
+ ]
+}

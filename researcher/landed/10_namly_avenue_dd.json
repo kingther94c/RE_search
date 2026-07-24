@@ -1,0 +1,17 @@
+{
+ "_provenance": "price_path_risks authored 2026-07-21 after IS true-road corroboration (research/data/is_street/namly_avenue_sale.json). Blind-arm gap 10.1% (hard case) + engine method disagreement 20% (> 18% line) + big-plot indicative + GCBA sub-size plot: all flags point the same way.",
+ "price_path_risks": [
+  {
+   "title_zh": "真实路上没有任何同量级 detached 成交——引擎的 7 笔可比全部来自屋苑其它路,点估值只剩量级参考",
+   "body_zh": "IS 真实路核实(2026-07-21,10 行):Namly Avenue 本路 5 年内的 detached 成交仅两笔——76 Namly Ave(4,415 sqft,永久地契,2022-06,$2,152 psf / S$9.50M)与 2 Namly Ave(7,771 sqft,99 年地契,2024-12,$910 psf / S$7.08M),没有一笔接近本宗地的 ~11,334 sqft。引擎的 n=7 detached 可比全部来自 URA 桶内屋苑其它路。叠加 ≥8k sqft 尺寸曲线证据最薄、方法分歧 20% 越线、盲写对照臂差 10%:S$28.83M 这个数只能当量级读,不能当出价依据。"
+  },
+  {
+   "title_zh": "GCBA(FIRST / THIRD AVENUE)内的次标准地块——按 GCB 还是按普通 detached 定价,是本案第一个要解决的问题",
+   "body_zh": "本址在宪报 GCBA 内,但宗地 ~11,334 sqft ≈ 1,053 sqm,低于 GCB 的 1,400 sqm 细分下限,属存量次标准地块。GCB 市场(SC-only、全现金、独立流动性池)与普通 detached 市场的定价可以差出一个量级的溢价方向;用哪套可比,普通估值链回答不了。前置动作:INLIS 拿法定面积与地契 → QP 核 GCBA 内次标准地块的重建规则 → GCB 专营中介出可比意见。"
+  },
+  {
+   "title_zh": "99 年地契陷阱就在本路:2 Namly Ave $910 psf——地契一错,估值全错",
+   "body_zh": "本报告以 freehold 为输入(街道桶 51/53 为永久地契),但真实路上就有 99 年地契 detached 以 $910 psf 成交(2024-12)——不到永久地契水平的一半。本宗地的地契必须以 INLIS 为准(S$16,当天出),在它确认之前,本报告的一切价格数字都是条件性的。"
+  }
+ ]
+}

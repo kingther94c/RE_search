@@ -1,0 +1,132 @@
+{
+ "meta": {
+  "source": "investment_suite",
+  "screen": "Street Transactions (expanded View All) — CAVEATS, not agency data",
+  "street": "CHUN TIN ROAD",
+  "harvested_at": "2026-07-21T21:39:58",
+  "device": "emulator-5554 1080x2400",
+  "n_rows": 12
+ },
+ "rows": [
+  {
+   "date": "07 Jul 2026",
+   "address": "141 Chun Tin Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "3,192",
+   "psf": "$2,012",
+   "price": "$6,420,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "26 Jun 2026",
+   "address": "133 Chun Tin Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "2,703",
+   "psf": "$1,961",
+   "price": "$5,300,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "08 Oct 2025",
+   "address": "64C Chun Tin Road",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "3,467",
+   "psf": "$2,373",
+   "price": "$8,228,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "26 Aug 2025",
+   "address": "50 Chun Tin Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "3,189",
+   "psf": "$1,913",
+   "price": "$6,100,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "26 Mar 2025",
+   "address": "139 Chun Tin Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "4,337",
+   "psf": "$1,848",
+   "price": "$8,015,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "10 Dec 2024",
+   "address": "101 Chun Tin Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "1,854",
+   "psf": "$2,374",
+   "price": "$4,400,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "12 Apr 2024",
+   "address": "40 Chun Tin Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "1,987",
+   "psf": "$2,063",
+   "price": "$4,100,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "23 Jan 2024",
+   "address": "125 Chun Tin Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "2,311",
+   "psf": "$1,839",
+   "price": "$4,250,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "26 Dec 2023",
+   "address": "99 Chun Tin Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "1,846",
+   "psf": "$2,573",
+   "price": "$4,750,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "20 Oct 2023",
+   "address": "59E Chun Tin Road",
+   "type": "Semi-Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "4,464",
+   "psf": "$1,882",
+   "price": "$8,400,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "04 Feb 2022",
+   "address": "50 Chun Tin Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "3,189",
+   "psf": "$1,442",
+   "price": "$4,600,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "08 Sep 2021",
+   "address": "54 Chun Tin Road",
+   "type": "Terrace House",
+   "tenure": "Freehold",
+   "area_sqft": "2,162",
+   "psf": "$1,563",
+   "price": "$3,380,000",
+   "sale_type": "Resale"
+  }
+ ]
+}

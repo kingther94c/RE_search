@@ -40,20 +40,36 @@ area`, so a wrong area is a wrong report), and prices the **cost stack** (BSD/AB
 dominates any short hold. `--digest <slug>` mounts an authored judgement layer; without it the
 report says plainly that it gives **no go/no-go**.
 
-The renderer also carries four observational blocks ported from the 2026-07-19 A/B experiment
-(all computed from data already in the run, RAW psf, direct-street only): **近窗读数**
+The renderer also carries five observational blocks (four ported from the 2026-07-19 A/B
+experiment, all computed from data already in the run, RAW psf, direct-street only): **近窗读数**
 (trailing-12m / 6m / last-3-print cluster medians + cumulative re-rating + implied monthly
 drift), **年度趋势表** (street vs subject-cohort by year, in the evidence layer), **离群值语境化**
 (a freshest print >5% off its preceding 3-print cluster is labelled 上/下尾单笔·不做锚 instead of
-"most credible evidence"), and the **出价读法叙事行** (beyond p75 needs a verifiable reason;
-above the top adjusted print you are endorsing one outlier). The digest may carry
-`price_path_risks` (see landed-property-due-diligence) — rendered right after the conclusion.
+"most credible evidence" — the fresh print is月份-resolved, never comps[0]: engine comps are
+WEIGHT-ordered, and reading position as recency mispriced all three 2026-07-21 Bukit Timah
+samples), and the **出价读法叙事行** (beyond p75 needs a verifiable reason; above the top
+adjusted print *in the displayed top-8* you are endorsing one outlier — the table is
+weight-truncated, so the narrative must say 表内, never 桶内). The fifth is the
+**A&A/重建潜力节** (2026-07-21 review): MP2025 landed TYPE + storey ENVELOPE + GCBA
+classification/name rendered as the 管制读数 (the envelope is the first entry point of any
+加盖 question and was previously dropped silently); the three-question frame (①管制几层=known /
+②现楼几层与 GFA=site+plans / ③结构与退界=QP); the subject-cohort ±6% raw-psf extreme spread as
+the observed market price of built state (with a time-mixing caveat when the two extremes are
+>12 months apart); and the not-priced valuation frame (rebuilt comp − S$450–600/psf GFA build −
+carry − taxes; fails if it needs >5%/yr land appreciation). GCBA subjects additionally get the
+GCB-regime banner (SC-only pool, 1,400 sqm subdivision floor, sub-size-plot warning, and the
+note that the engine does NOT split GCBA vs non-GCBA prints on the same street). The digest may
+carry `price_path_risks` (see landed-property-due-diligence) — rendered right after the
+conclusion.
 
 ## The AI-blind second arm — run it for EVERY full report
 
 After the tools report is written, spawn ONE subagent to write an independent AI-authored
 report of the same subject, **blind**: its only inputs are `researcher/landed/<slug>_dd_raw.json`
-and `<slug>_dd.json`. It must NOT open `reports/`, must NOT run engine/builder/comps code, and
+and `<slug>_dd.json` (if no digest was authored, the raw file alone — the arm must say so).
+`build_landed_full_report.py` persists `<slug>_dd_raw.json` on every run (2026-07-21 — before
+that the DD facts lived only in memory and the blind arm's input file did not exist unless you
+re-ran the dd chain by hand). It must NOT open `reports/`, must NOT run engine/builder/comps code, and
 every load-bearing number must trace to those two files or to arithmetic it shows. Output:
 `<slug>_landed_full_report_AI.html`, published through `write_report` in
 `deliverables/report_out.py` (same dual destination), with a top banner

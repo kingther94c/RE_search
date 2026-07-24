@@ -1,0 +1,17 @@
+{
+ "_provenance": "price_path_risks authored 2026-07-21 after IS true-road corroboration (research/data/is_street/namly_avenue_sale.json, 10 rows == View All (10)). Blind-arm gap 3.1% (not a hard case).",
+ "price_path_risks": [
+  {
+   "title_zh": "同址成交对:94 Namly Avenue 九个半月 +78%($2,328→$4,150 psf)——建筑状态价差在本路被市场实付,这是 A&A 价值最硬的一笔证据",
+   "body_zh": "IS 真实路核实(2026-07-21):94 Namly Avenue(半独立,3,157 sqft,永久地契)2024-10-01 以 $2,328 psf / S$7.35M 成交,2025-07-16 以 $4,150 psf / S$13.10M 再成交——同一门牌、同一尺寸,9.5 个月价差 +78%。成交对未披露中间发生了什么(翻建/大改/转售时点),但它把「同尺寸段的价差大头在建筑状态与交易状态」从推断变成了本路的实测。买原装房勿对标 $4,150;卖翻建房的天花板证据即此。"
+  },
+  {
+   "title_zh": "引擎点 $2,858 与 IS 真实路分布方向互证(±6% 切片中位 $2,749;近 12 月 RAW 中位 $3,233 被 $4,150 拉高)",
+   "body_zh": "IS 真实路 ±6% 同尺寸切片(n=6,2022-09..2026-04):p25 $2,560 / 中位 $2,749 / p75 $3,114;最新一笔 2026-04(120 Namly Ave,3,193 sqft)$2,756 psf / S$8.80M。引擎点 $2,858(调整后口径)落在切片中位与 p75 之间,方向与量级互证成立。你最终落在哪一侧,几乎完全由建筑状态决定——原装对标 $2,5xx-2,7xx,翻建对标 $3,1xx+。"
+  },
+  {
+   "title_zh": "URA「NAMLY AVENUE」桶(53 笔)≈ 整个 Namly 屋苑,本路只占 10 笔——门槛分位数含邻路",
+   "body_zh": "IS 核实:Namly Avenue 本路 5 年仅 10 笔成交,URA 同名桶 53 笔——桶内混着 Namly View / Crescent / Drive / Garden / Hill 等整个屋苑的路(与 EXP-0018 的母路标签结论一致,且发生在「路名直接匹配」的街道上)。报告的 p25/p75 议价门槛算自整桶;本路自己的分布见上条。另:桶内确有 99 年地契零星成交(2 Namly Ave,2024-12,$910 psf)——地契错配的价差极大,INLIS 核地契是绝对前置项。"
+  }
+ ]
+}

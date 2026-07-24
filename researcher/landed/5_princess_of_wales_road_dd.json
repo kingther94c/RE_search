@@ -1,0 +1,17 @@
+{
+ "_provenance": "price_path_risks authored 2026-07-23 from IS true-road harvest (research/data/is_street/princess_of_wales_road_sale.json, 9 rows == View All (9)) + is_street_compare; revised same day after hostile review (tenure split corrected to 7x999/2xFH, 999 commencement 1875) + AI-blind arm hard case (blind $2,750 vs engine $3,006, gap 8.5%).",
+ "price_path_risks": [
+  {
+   "title_zh": "本宗地(3,382 sqft)卡在街道的两个尺寸队列之间——引擎点 $3,006 是尺寸曲线插值;AI 盲写对照臂落在下锚($2,750,差 8.5%,hard case)",
+   "body_zh": "IS 真实路核实(2026-07-23,9 行):本街半独立成交集中在两档——3,774-3,829 sqft 主力档(近三笔 RAW:2025-08 $2,635 / 2026-04 $2,753)与一笔 2,900 sqft 小地块(1 号,2024-04,$3,755 psf / S$10.89M)。本宗地 3,382 sqft 恰在两档之间,±6% 切片为空。引擎点 $3,006 由 3,78x 档按尺寸曲线上调而来,方向有 2,900 档的 $3,755 支撑,但它是插值。独立盲写臂(只读原始事实)把小地块溢价保守封顶 +3%,得 $2,750/S$9.30M——与引擎差 8.5%,属 hard case:分歧不是数据错,是「空窗内插值给多少」的真实判断缝。出价时下锚 = 3,78x 档近窗(约 $2,635-2,753 × 3,382 ≈ S$8.9-9.3M),上不越 1 号那笔单例。"
+  },
+  {
+   "title_zh": "街内 999 年与 Freehold 混存(7:2)——同为准永久,价格上可视同一桶,但 INLIS 必须核到本宗地",
+   "body_zh": "IS 逐门牌:9 笔中 7 笔「999 yrs from 27/12/1875」、2 笔 Freehold(54 号与 1 号),引擎按准永久合并 lease-match(与 999≈FH 的定价共识一致)。本宗地自身地契(FH 还是 999)在桌面数据里未定——INLIS(S$16)核实;若出现 99 年等真租赁地契则本估值整体作废。"
+  },
+  {
+   "title_zh": "街道极新鲜:2026-07-13 隔壁 30 号独立宅 $2,698/S$17.5M——比 URA 快照还新,街道水平就在 $2,6xx-2,8xx",
+   "body_zh": "IS 捕捉到 URA 快照(2026-07-15 拉取)尚未收录的最新 caveat:30 Princess Of Wales Road(独立,6,485 sqft,999 年)2026-07-13 以 $2,698 psf / S$17.50M 成交。连同 2026-04 14A 号 $2,753、2025-08 10A 号 $2,635,本街近一年三个不同尺寸/型态的成交都落在 $2,635-2,753 RAW——当前街道水平可信度高,市场未见跳档。本街 0.28-0.38km 深处南洋 1km 圈内。"
+  }
+ ]
+}

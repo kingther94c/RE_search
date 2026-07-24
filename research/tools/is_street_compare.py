@@ -23,6 +23,12 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
+# Windows 控制台默认 cp1252,第一个中文字符就把整次比较杀死在打印上(报告链在
+# report_out.py 里早修过同一类问题)—— 输出流统一 UTF-8。
+for _s in (sys.stdout, sys.stderr):
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
+
 from research.lib import is_rows  # noqa: E402
 
 

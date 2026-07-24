@@ -1,0 +1,576 @@
+{
+ "address": "5 PRINCESS OF WALES ROAD",
+ "as_of": "2026-07-24",
+ "geocode": {
+  "match": "5 PRINCESS OF WALES ROAD SINGAPORE 266904",
+  "blk_no": "5",
+  "road_name": "PRINCESS OF WALES ROAD",
+  "postal": "266904",
+  "lat": 1.32410876584266,
+  "lon": 103.808798584804,
+  "x": 25271.170621654,
+  "y": 34038.7503929082
+ },
+ "street": "PRINCESS OF WALES ROAD",
+ "plot": {
+  "area_sqm": 314.2,
+  "area_sqft": 3382,
+  "is_landed_zone": true,
+  "objectid": 644434,
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "caveat": "indicative zoning parcel, not a cadastral lot — confirm with INLIS PTI"
+ },
+ "zoning": {
+  "zone": "RESIDENTIAL",
+  "gpr": "LND",
+  "gpr_num": null,
+  "area_sqm": 314.2,
+  "area_sqft": 3382,
+  "objectid": 644434,
+  "updated": "20251229172138"
+ },
+ "landed_housing_area": {
+  "classification": "LANDED HOUSING AREA",
+  "type": "SEMI-DETACHED",
+  "envelope": "2-STOREY ENVELOPE",
+  "name": null,
+  "updated": "20251230175452"
+ },
+ "neighbours": [
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "LND",
+   "metres": 4,
+   "bearing_deg": 213.9,
+   "area_sqm": 280.85305255,
+   "objectid": 656656
+  },
+  {
+   "zone": "ROAD",
+   "gpr": "",
+   "metres": 10,
+   "bearing_deg": 303.8,
+   "area_sqm": 2352.399495445,
+   "objectid": 588216
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "EVA",
+   "metres": 30,
+   "bearing_deg": 343.5,
+   "area_sqm": 798.5464925,
+   "objectid": 687246
+  },
+  {
+   "zone": "TRANSPORT FACILITIES",
+   "gpr": "EVA",
+   "metres": 44,
+   "bearing_deg": 329.8,
+   "area_sqm": 1857.175326595,
+   "objectid": 597434
+  },
+  {
+   "zone": "COMMERCIAL & RESIDENTIAL",
+   "gpr": "3.0",
+   "metres": 49,
+   "bearing_deg": 30.8,
+   "area_sqm": 149.52886918,
+   "objectid": 694575
+  },
+  {
+   "zone": "WATERBODY",
+   "gpr": "",
+   "metres": 63,
+   "bearing_deg": 124.1,
+   "area_sqm": 4054.20613303,
+   "objectid": 633188
+  },
+  {
+   "zone": "EDUCATIONAL INSTITUTION",
+   "gpr": "EVA",
+   "metres": 106,
+   "bearing_deg": 303.9,
+   "area_sqm": 259565.69007493,
+   "objectid": 700095
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.4",
+   "metres": 110,
+   "bearing_deg": 289.6,
+   "area_sqm": 2651.81674695,
+   "objectid": 695965
+  },
+  {
+   "zone": "OPEN SPACE",
+   "gpr": "EVA",
+   "metres": 140,
+   "bearing_deg": 174.3,
+   "area_sqm": 265.495251095,
+   "objectid": 664120
+  },
+  {
+   "zone": "PLACE OF WORSHIP",
+   "gpr": "EVA",
+   "metres": 149,
+   "bearing_deg": 34.7,
+   "area_sqm": 1074.119379425,
+   "objectid": 590924
+  },
+  {
+   "zone": "UTILITY",
+   "gpr": "EVA",
+   "metres": 176,
+   "bearing_deg": 176.7,
+   "area_sqm": 1411.76206945,
+   "objectid": 639606
+  },
+  {
+   "zone": "PARK",
+   "gpr": "EVA",
+   "metres": 202,
+   "bearing_deg": 350.5,
+   "area_sqm": 10708.631943965,
+   "objectid": 596959
+  },
+  {
+   "zone": "CIVIC & COMMUNITY INSTITUTION",
+   "gpr": "EVA",
+   "metres": 401,
+   "bearing_deg": 113.4,
+   "area_sqm": 2065.32596962,
+   "objectid": 643142
+  },
+  {
+   "zone": "RESERVE SITE",
+   "gpr": "EVA",
+   "metres": 438,
+   "bearing_deg": 106.8,
+   "area_sqm": 2817.91042818,
+   "objectid": 660405
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.1",
+   "metres": 451,
+   "bearing_deg": 132.0,
+   "area_sqm": 6499.33146554,
+   "objectid": 689216
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "2.8",
+   "metres": 469,
+   "bearing_deg": 180.9,
+   "area_sqm": 28480.30998995,
+   "objectid": 685096
+  },
+  {
+   "zone": "COMMERCIAL & RESIDENTIAL",
+   "gpr": "EVA",
+   "metres": 543,
+   "bearing_deg": 107.1,
+   "area_sqm": 1599.586237235,
+   "objectid": 672674
+  },
+  {
+   "zone": "HEALTH & MEDICAL CARE",
+   "gpr": "EVA",
+   "metres": 552,
+   "bearing_deg": 58.9,
+   "area_sqm": 1818.1667557,
+   "objectid": 615761
+  },
+  {
+   "zone": "COMMERCIAL",
+   "gpr": "EVA",
+   "metres": 557,
+   "bearing_deg": 88.6,
+   "area_sqm": 4850.57873739,
+   "objectid": 687593
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "SDP",
+   "metres": 672,
+   "bearing_deg": 95.1,
+   "area_sqm": 64886.354016955,
+   "objectid": 645341
+  },
+  {
+   "zone": "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY",
+   "gpr": "EVA",
+   "metres": 790,
+   "bearing_deg": 348.8,
+   "area_sqm": 1945.864218655,
+   "objectid": 661635
+  },
+  {
+   "zone": "RESIDENTIAL",
+   "gpr": "1.6",
+   "metres": 856,
+   "bearing_deg": 193.7,
+   "area_sqm": 28.36558254,
+   "objectid": 688273
+  },
+  {
+   "zone": "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY",
+   "gpr": "2.8",
+   "metres": 889,
+   "bearing_deg": 203.1,
+   "area_sqm": 1431.96529986,
+   "objectid": 663620
+  },
+  {
+   "zone": "SPORTS & RECREATION",
+   "gpr": "EVA",
+   "metres": 996,
+   "bearing_deg": 47.0,
+   "area_sqm": 5534.899482625,
+   "objectid": 700917
+  }
+ ],
+ "transects": [
+  {
+   "toward": "TRANSPORT FACILITIES",
+   "bearing_deg": 329.8,
+   "edge_m": 44,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 20,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 40,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 60,
+     "zone": "TRANSPORT FACILITIES",
+     "gpr": "EVA"
+    },
+    {
+     "m": 100,
+     "zone": "RESIDENTIAL",
+     "gpr": "EVA"
+    },
+    {
+     "m": 120,
+     "zone": "EDUCATIONAL INSTITUTION",
+     "gpr": "EVA"
+    },
+    {
+     "m": 160,
+     "zone": "ROAD",
+     "gpr": null
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  },
+  {
+   "toward": "PLACE OF WORSHIP",
+   "bearing_deg": 34.7,
+   "edge_m": 149,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 60,
+     "zone": "COMMERCIAL & RESIDENTIAL",
+     "gpr": "3.0"
+    },
+    {
+     "m": 80,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 120,
+     "zone": "WATERBODY",
+     "gpr": null
+    },
+    {
+     "m": 140,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 160,
+     "zone": "PLACE OF WORSHIP",
+     "gpr": "EVA"
+    },
+    {
+     "m": 200,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  },
+  {
+   "toward": "UTILITY",
+   "bearing_deg": 176.7,
+   "edge_m": 176,
+   "steps": [
+    {
+     "m": 0,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 100,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 120,
+     "zone": "WATERBODY",
+     "gpr": null
+    },
+    {
+     "m": 140,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 160,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 180,
+     "zone": "UTILITY",
+     "gpr": "EVA"
+    },
+    {
+     "m": 240,
+     "zone": "ROAD",
+     "gpr": null
+    },
+    {
+     "m": 260,
+     "zone": "RESIDENTIAL",
+     "gpr": "LND"
+    },
+    {
+     "m": 280,
+     "zone": "ROAD",
+     "gpr": null
+    }
+   ],
+   "reaches_target": true,
+   "note": null
+  }
+ ],
+ "schools_primary": [
+  {
+   "name": "NANYANG PRIMARY SCHOOL",
+   "km": 0.36,
+   "postal": "268097"
+  },
+  {
+   "name": "RAFFLES GIRLS' PRIMARY SCHOOL",
+   "km": 0.71,
+   "postal": "289072"
+  },
+  {
+   "name": "SINGAPORE CHINESE GIRLS' PRIMARY SCHOOL",
+   "km": 2.19,
+   "postal": "309437"
+  }
+ ],
+ "mrt": [
+  {
+   "name": "TAN KAH KEE MRT STATION",
+   "km": 0.36,
+   "postal": ""
+  },
+  {
+   "name": "BOTANIC GARDENS MRT STATION",
+   "km": 0.76,
+   "postal": ""
+  },
+  {
+   "name": "FARRER ROAD MRT STATION (CC20)",
+   "km": 0.76,
+   "postal": ""
+  },
+  {
+   "name": "SIXTH AVENUE MRT STATION (DT7)",
+   "km": 1.52,
+   "postal": ""
+  }
+ ],
+ "amenities": [],
+ "expressways": [
+  {
+   "name": "PAN ISLAND EXPRESSWAY",
+   "km": 1.3,
+   "matched": "PAN ISLAND EXPRESSWAY",
+   "postal": "NIL"
+  },
+  {
+   "name": "CENTRAL EXPRESSWAY",
+   "km": 4.66,
+   "matched": "CENTRAL EXPRESSWAY",
+   "postal": "NIL"
+  }
+ ],
+ "amenity_scope": {
+  "schools_primary": "island-wide — all 182 P1-bearing MOE schools (built 2026-07-17)",
+  "mrt": "island-wide — 200 MRT/LRT stations (built 2026-07-17)",
+  "amenities/expressways": "CURATED north-east list — 'nearest of these', NOT 'nearest in Singapore'"
+ },
+ "amenity_meta": {
+  "n_schools": 182,
+  "n_mrt": 200,
+  "built": "2026-07-17"
+ },
+ "comps": {
+  "street": "PRINCESS OF WALES ROAD",
+  "n": 11,
+  "first_ym": "2022-03",
+  "last_ym": "2026-04",
+  "tenure": {
+   "distinct": {
+    "999 yrs lease commencing from 1875": 9,
+    "Freehold": 2
+   },
+   "n": 11,
+   "unanimous": false
+  },
+  "cohorts": [
+   {
+    "band": "2,500-3,500",
+    "lo_sqft": 2500,
+    "hi_sqft": 3500,
+    "n": 1,
+    "psf_min": 3755,
+    "psf_med": 3755,
+    "psf_max": 3755,
+    "price_med": 10888888,
+    "area_med": 2900
+   },
+   {
+    "band": ">=3,500",
+    "lo_sqft": 3500,
+    "hi_sqft": null,
+    "n": 10,
+    "psf_min": 2223,
+    "psf_med": 2586,
+    "psf_max": 3233,
+    "price_med": 9775000,
+    "area_med": 3778
+   }
+  ],
+  "trend": [
+   {
+    "period": "2022",
+    "n": 1,
+    "psf_med": 2223,
+    "price_med": 8388888,
+    "area_med": 3774
+   },
+   {
+    "period": "2023",
+    "n": 2,
+    "psf_med": 2847,
+    "price_med": 10750000,
+    "area_med": 3776
+   },
+   {
+    "period": "2024",
+    "n": 4,
+    "psf_med": 2535,
+    "price_med": 9650000,
+    "area_med": 3782
+   },
+   {
+    "period": "2025",
+    "n": 3,
+    "psf_med": 2635,
+    "price_med": 9976000,
+    "area_med": 3786
+   },
+   {
+    "period": "2026",
+    "n": 1,
+    "psf_med": 2754,
+    "price_med": 10400000,
+    "area_med": 3777
+   }
+  ],
+  "types": {
+   "Semi-detached": 11
+  },
+  "strata_n": 0,
+  "subject": {
+   "n": 0,
+   "area_sqft": 3382,
+   "tol": 0.06,
+   "rows": [],
+   "note": "no comps within +/-6% of 3,382 sqft"
+  }
+ },
+ "flood": {
+  "terms": [
+   "PRINCESS OF WALES ROAD"
+  ],
+  "on_list": false,
+  "matches": [],
+  "list_vintage": "Nov 2025",
+  "list_size": 36,
+  "national_hectares": {
+   "year": 2025,
+   "hectares": 23.3
+  },
+  "national_series": [
+   {
+    "year": 2022,
+    "hectares": 27.0
+   },
+   {
+    "year": 2023,
+    "hectares": 24.1
+   },
+   {
+    "year": 2024,
+    "hectares": 23.6
+   },
+   {
+    "year": 2025,
+    "hectares": 23.3
+   }
+  ],
+  "national_pct_of_land": 0.032,
+  "method": "NAME match against a PDF list — not geospatial. A flooding road next to yours will not match.",
+  "evidential_weight": "NOT on the list — near-zero evidence for this plot. The designation covers 23.3 ha of ~73,000 ha of Singapore (0.032% of the country) across 36 named locations. Almost every address is 'not on it', including ones that pond. Whether THIS plot ponds is a site question (DD-3): visit in rain, check plot-vs-road level, ask neighbours."
+ },
+ "provenance": {
+  "geocode": "OneMap search API — free, no key. Road asserted.",
+  "plot/zoning/neighbours": "URA Master Plan 2025 (gazetted 1 Dec 2025) Land Use + SDCP Landed Housing Area layers via data.gov.sg — free, no key. Indicative, not a legal boundary.",
+  "comps": "URA Data Service caveats (free registered key). Landed `area` is LAND area. Month granularity; ~5y rolling; caveats lag; landed project names anonymised so STREET is the only join key.",
+  "flood": "PUB flood-prone list (Nov 2025) by name + data.gov.sg national hectares.",
+  "schools/mrt": "ISLAND-WIDE: every P1-bearing MOE school (School Directory on data.gov.sg) + every MRT/LRT station (OneMap), pre-geocoded. Haversine to the target's POINT. For P1 the official measure is OneMap SchoolQuery (school LAND BOUNDARY to home) — ours over-estimates, so 'inside' is safe and near the line undecided.",
+  "amenities/expressways": "CURATED north-east list — there is no official mall register. 'Nearest of these', never 'nearest in SG'."
+ },
+ "not_covered": [
+  "Valuation — caveat prices bundle land+building; no fair value is derivable here.",
+  "Legal: owner, encumbrances, legal land area, Certified Plan — INLIS (DD-2, S$16).",
+  "Approved plans / unauthorised works — BCA, and SELLER-GATED (owner's signed authorisation required; a buyer cannot buy them).",
+  "Anything site-observable: noise, ponding, light, traffic, condition — DD-3."
+ ]
+}

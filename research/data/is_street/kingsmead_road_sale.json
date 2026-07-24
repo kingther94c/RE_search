@@ -1,0 +1,62 @@
+{
+ "meta": {
+  "source": "investment_suite",
+  "screen": "Street Transactions (expanded View All) — CAVEATS, not agency data",
+  "street": "KINGSMEAD ROAD",
+  "harvested_at": "2026-07-23T21:12:57",
+  "device": "emulator-5554 1080x2400",
+  "n_rows": 5
+ },
+ "rows": [
+  {
+   "date": "30 Mar 2026",
+   "address": "1 Kingsmead Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "12,168",
+   "psf": "$1,808",
+   "price": "$21,998,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "18 Nov 2025",
+   "address": "2 Kingsmead Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "11,802",
+   "psf": "$2,271",
+   "price": "$26,800,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "26 Feb 2024",
+   "address": "36 Kingsmead Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "6,924",
+   "psf": "$2,516",
+   "price": "$17,420,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "13 May 2022",
+   "address": "26 Kingsmead Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "6,750",
+   "psf": "$2,183",
+   "price": "$14,735,000",
+   "sale_type": "Resale"
+  },
+  {
+   "date": "14 Feb 2022",
+   "address": "34 Kingsmead Road",
+   "type": "Detached House",
+   "tenure": "Freehold",
+   "area_sqft": "6,310",
+   "psf": "$2,298",
+   "price": "$14,500,000",
+   "sale_type": "Resale"
+  }
+ ]
+}

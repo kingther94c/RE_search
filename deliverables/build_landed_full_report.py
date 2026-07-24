@@ -61,14 +61,24 @@ def _alerts_zh(g: dict) -> list[tuple[str, bool, str]]:
     """(标题, 是否受制于卖家, 为什么) —— 普适项 + 从本地址事实推出的项。"""
     out = list(_UNIVERSAL)
     d, v = g["dd"], g["val"]
+    # F12(2026-07-21 评审):每个敏感邻地各占一条、三行说明逐字重复 —— 159 Chun Tin 渲染成
+    # 重复墙。合并为一条,并带上地块**面积**与 GPR:「先识别再评级」是这条链自己的规矩
+    # (14.5 sqm 的 UTILITY 是电箱不是变电站),此前面积恰恰被丢掉了。
+    nb_hits = []
     for nb in (d.get("neighbours") or []):
         z, m = (nb.get("zone") or ""), nb.get("metres") or 9e9
         if z in dd_mod.TRANSECT_ZONES and m <= dd_mod.TRANSECT_WITHIN_M:
-            out.append((f"{_esc(z)} 用地在 {m:.0f} m {_esc(nb.get('bearing_deg') and str(int(nb['bearing_deg'])) + '°' or '')}",
-                        False,
-                        f"分区<b>标签</b>不等于地上<b>今天</b>在做什么 —— 标签本身误导过人。"
-                        f"要看的是:实际经营内容、作业时段、噪音/气味,以及中间隔着什么。"
-                        f"报告里的剖面只说明「隔着什么」,不代表已经到达。属实地问题(DD-3)。"))
+            area = nb.get("area_sqm")
+            gpr = nb.get("gpr")
+            nb_hits.append(f"<b>{_esc(z)}</b> @ {m:.0f}m"
+                           f"{'(' + format(area, ',.0f') + ' sqm' + (' · GPR ' + _esc(gpr) if gpr else '') + ')' if area else ''}"
+                           f"{' · 方位 ' + str(int(nb['bearing_deg'])) + '°' if nb.get('bearing_deg') is not None else ''}")
+    if nb_hits:
+        out.append(("邻近敏感用地(合并核查):" + ";".join(nb_hits),
+                    False,
+                    "分区<b>标签</b>不等于地上<b>今天</b>在做什么 —— 标签本身误导过人。先读"
+                    "<b>面积</b>(小地块多为电箱/设施,不是厂站),再走剖面(只说明「隔着什么」,"
+                    "不代表已经到达),最后按时段实地看:经营内容、噪音/气味、车流。属实地问题(DD-3)。"))
     sch = (d.get("schools_primary") or [])
     ring = [s for s in sch if s["km"] <= 1.2]
     if ring:
@@ -79,13 +89,20 @@ def _alerts_zh(g: dict) -> list[tuple[str, bool, str]]:
                     "贴近 1km 线时<b>未定</b>。且学区不是永久属性,报名当年要重新核。"))
     if v and (g["land_area"] or 0) >= 8000:
         out.append(("大地块的估值仅供指示", False,
-                    "≥8k sqft 上尺寸曲线 identification 最差(EXP-0011);点估值请走 case protocol。"))
+                    "≥8k sqft 的地块上,尺寸曲线的证据最薄、拟合最不可靠(EXP-0011);"
+                    "点估值只作指示,须逐案人工复核(可比逐笔核 + IS 佐证)后才可引用。"))
     if g["resolve"]["basis"] == "alias":
         out.append((f"本路({_esc(g['dd']['street'])})自己的成交分布", False,
                     f"URA 把本路的 caveat 归在「{_esc(g['resolve']['ura_street'])}」桶里,桶内混着"
                     f"同屋苑其它路 —— 议价门槛因此在本报告中<b>被抑制</b>。要门槛,得用 "
-                    f"Investment Suite 拉本路自己的分布:research/lib/harvest_street_sale.py "
-                    f"收获 → research/tools/is_street_compare.py --road 本路 出分布。"))
+                    f"Investment Suite 拉本路自己的分布(操作命令见估值节折叠)。"))
+    lh = d.get("landed_housing_area") or {}
+    if (lh.get("classification") or "").upper().startswith("GOOD CLASS"):
+        out.append((f"GCBA 身份与本宗地的适用规则({_esc(lh.get('name') or 'GCBA')})", False,
+                    "本址在 Good Class Bungalow Area 内 —— 买家池(实质 SC-only 高净值现金盘)、"
+                    "细分下限(1,400 sqm)、层高基调(2 层)都自成制度。本宗地按 GCB 还是按普通"
+                    "detached 定价、能否按 GCB 规则重建,须 QP + GCB 专营中介逐项核;"
+                    "上文估值未区分街内 GCBA 段与非 GCBA 段的成交。"))
     if v:
         out.append(("建筑状况 condition —— bundle 价里最大的未观测项", False,
                     "引擎是 condition-blind 的。实测(Cardiff Grove,同期同尺寸):原装 "
@@ -208,7 +225,11 @@ def _reads_zh(v: dict) -> str:
             else:
                 txt += (f";分歧主要来自{_READ_NAMES.get(outk, outk)}"
                         f"(偏离中位读数 {abs(outv/med-1)*100:.0f}%)")
-        if sp >= 0.14:
+        # F15(2026-07-21 评审):10 Namly 分歧 20% 已**越过** 18% 的抑制线,此前仍写
+        # 「已接近」—— 与同页的 hard-case 事实矛盾。
+        if v["method_disagreement"].get("hard_case"):
+            txt += ";<b>已越过抑制线(hard case)</b>,出价前先用 Investment Suite 佐证"
+        elif sp >= 0.14:
             txt += ";<b>已接近抑制线</b>,出价前先用 Investment Suite 佐证"
     return txt + "。</p>"
 
@@ -239,7 +260,7 @@ def _suppress_reason_zh(v: dict, area: float, basis: str = "direct") -> str:
         return ("URA 街道是<b>别名解析</b>来的 —— 本路的成交只占母路桶一小部分,桶的 p25/p75 "
                 "被桶里的多数派主导,不是本路自己的分布(EXP-0019 实测:少数份额的路门槛可偏 15%)")
     if area >= 8000:
-        return "地块 ≥8k sqft —— 尺寸曲线在这里identification最差(EXP-0011)"
+        return "地块 ≥8k sqft —— 尺寸曲线在这里证据最薄、拟合最不可靠(EXP-0011)"
     if fv["n_street_comps"] == 0:
         return "同街没有 lease-compatible 可比,点估值来自 pooled 兜底"
     if md.get("hard_case"):
@@ -286,13 +307,15 @@ def _verify_zh(v: dict, g: dict) -> list[str]:
                       f"与同屋苑其它路的房子 —— 这个池子是否该按真实门牌路拆分,尚未有回测结论"
                       f"(roadmap L2f)。对本宗地,请人工核一眼可比表里的成交是否可比。")
     if fv["n_street_comps"] < 3 or md.get("hard_case"):
-        out.append("<b>同街证据薄或方法分歧</b> —— 下单前先用 Investment Suite 佐证:"
-                   "<code>research/lib/harvest_street_sale.py</code> 收获本街,"
-                   "<code>research/tools/is_street_compare.py --area … --engine-street …</code> "
-                   "出分布并与引擎并排")
+        out.append("<b>同街证据薄或方法分歧</b> —— 下单前先用 Investment Suite 拉本街同型"
+                   "分布,与引擎点并排佐证"
+                   "<details><summary class=note>内部操作命令</summary>"
+                   "<code>research/lib/harvest_street_sale.py</code> 收获本街 → "
+                   "<code>research/tools/is_street_compare.py --area … --engine-street …</code>"
+                   "</details>")
     if g["land_area"] and g["land_area"] >= 8000:
-        out.append("<b>大地块(≥8k sqft)</b>:尺寸曲线在这里identification最差(EXP-0011)—— "
-                   "点估值只作<b>指示性</b>,走 case protocol")
+        out.append("<b>大地块(≥8k sqft)</b>:尺寸曲线在这里证据最薄、拟合最不可靠(EXP-0011)—— "
+                   "点估值只作<b>指示性</b>,逐案人工复核后再用")
     return out
 
 
@@ -355,7 +378,7 @@ def _year_trend(rows: list[dict], area: float) -> list[dict]:
         b["street"].append(r)
         if id(r) in c_set:
             b["cohort"].append(r)
-    out, prev_med = [], None
+    out, prev_med, prev_year = [], None, None
     for y in sorted(years):
         b = years[y]
         med_c = statistics.median(r["psf"] for r in b["cohort"]) if b["cohort"] else None
@@ -365,20 +388,163 @@ def _year_trend(rows: list[dict], area: float) -> list[dict]:
             "n_cohort": len(b["cohort"]), "med_cohort": med_c,
             "price_cohort": statistics.median(r["price"] for r in b["cohort"]) if b["cohort"] else None,
             "yoy": (med_c / prev_med - 1) if (med_c and prev_med) else None,
+            # F18(2026-07-21 评审):YoY 与上一个**有数**的年份比 —— 跨了空档年必须说
+            "yoy_gap": (int(y) - prev_year) if (med_c and prev_med and prev_year and
+                                                int(y) - prev_year > 1) else None,
         })
         if med_c:
-            prev_med = med_c
+            prev_med, prev_year = med_c, int(y)
     return out
 
 
-def _fresh_vs_cluster(comps: list[dict]) -> dict | None:
+def _fresh_vs_cluster(comps: list[dict], ref: dict | None = None) -> dict | None:
     """最新一笔 adj psf 相对其前 3 笔簇中位的偏离 —— 决定它是「锚」还是「上/下尾单笔」。
-    comps = 引擎输出(按月份降序,adj_land_psf 已调整到本宗地)。"""
-    if len(comps) < 3:
+
+    F7(2026-07-21 评审):引擎的 comps 是**按权重**排的,不是按月份 —— 第一版把 comps[0]
+    当「最新」,三份 Bukit Timah 样本报告的「最新 vs 近簇」段全部算在错误的行上,与同段
+    引用的 ref 月份自相矛盾。修正:先按月份降序排;「最新」优先取引擎自己的
+    recent_street_reference(它才是引擎口径的最新可比),簇 = 严格早于它的 3 笔。"""
+    rows = sorted(comps, key=lambda c: c["contract_ym"], reverse=True)
+    if ref and ref.get("contract_ym") is not None:
+        fresh_psf, fresh_ym = ref["adj_psf"], ref["contract_ym"]
+        prior = [c for c in rows if c["contract_ym"] < fresh_ym][:3]
+    elif rows:
+        fresh_psf, fresh_ym = rows[0]["adj_land_psf"], rows[0]["contract_ym"]
+        prior = rows[1:4]
+    else:
         return None
-    fresh, cluster = comps[0], comps[1:4]
-    med = statistics.median(c["adj_land_psf"] for c in cluster)
-    return {"gap": fresh["adj_land_psf"] / med - 1, "cluster_med": med, "n_cluster": len(cluster)}
+    if len(prior) < 3:
+        return None
+    med = statistics.median(c["adj_land_psf"] for c in prior)
+    return {"gap": fresh_psf / med - 1, "cluster_med": med, "n_cluster": len(prior)}
+
+
+def _envelope_zh(env: str | None) -> str:
+    """MP2025 SDCP 的 PERM_ENV("3-STOREY ENVELOPE")→ 中文读数。不认识的值原样保留。"""
+    if not env:
+        return "—"
+    m = re.match(r"^(\d+)[- ]STOREY", env.upper())
+    return f"{m.group(1)} 层包络" if m else env
+
+
+def _aa_evidence(g: dict) -> dict | None:
+    """A&A 节的市场证据(标的队列 ±6% 同型、同地契制度、去重后、近 24 个月)。
+    F22(2026-07-23 评审):抽出来的原因是「读法句」要引用它 —— 第一版无条件写
+    「原始极值见 A&A 节」,而 97/5 的 A&A 节根本没渲染极值段(悬空引用)。
+    返回 kind ∈ {spread(≥15% 价差可读), flat(有样本但价差小), thin(样本不足)} 或 None。"""
+    if not (g.get("street_rows_subject") and g["land_area"]):
+        return None
+    lo_a, hi_a = g["land_area"] * 0.94, g["land_area"] * 1.06
+    coh = [r for r in g["street_rows_subject"]
+           if r.get("property_type") == g["ptype"] and lo_a <= (r.get("area_sqft") or 0) <= hi_a]
+    coh = sorted(coh, key=lambda r: r["contract_ym"], reverse=True)[:12]
+    recent = ([r for r in coh if _ym_idx(coh[0]["contract_ym"]) - _ym_idx(r["contract_ym"]) <= 23]
+              if coh else [])
+    if len(recent) >= 2:
+        hi = max(recent, key=lambda r: r["psf"])
+        lo = min(recent, key=lambda r: r["psf"])
+        spread = hi["psf"] / lo["psf"] - 1
+        return dict(kind="spread" if spread > 0.15 else "flat", hi=hi, lo=lo, spread=spread,
+                    n=len(recent), gap_mo=abs(_ym_idx(hi["contract_ym"]) - _ym_idx(lo["contract_ym"])))
+    if coh:
+        return dict(kind="thin", n=len(coh))
+    return None
+
+
+def _aa_block(g: dict) -> str:
+    """A&A/重建潜力 —— 观测层(2026-07-21 评审新增,Bukit Timah 三样本驱动)。
+
+    这一节回答的是「能不能加盖」被拆开后的三个问题里,桌面上答得了的那一个:
+      ① 管制允许盖到几层 —— MP2025 SDCP,本节给出(此前渲染层把 envelope 键读错,
+         层数管制被静默丢弃 —— 三份样本报告的 HTML 里 "ENVELOPE" 出现 0 次);
+      ② 现楼是几层、GFA 多少 —— 只有现场/批准图则知道,本报告不知道,明说;
+      ③ 结构与退界能否承载加建 —— QP(DD-3)。
+    市场证据用标的队列(±6% 同型)的原始 psf 极值呈现:同尺寸段的价差主要由建筑状态
+    (原装 vs 翻建/GFA)承载 —— 这就是 A&A 价值被本街市场支付的观测,caveat 拆不出来,
+    所以它**不进点估值**(引擎 condition-blind),但读者必须看见它。"""
+    d = g["dd"]
+    lh = d.get("landed_housing_area") or {}
+    if not lh:
+        return ""
+    env = (lh.get("envelope") or "").upper()
+    cls = (lh.get("classification") or "").upper()
+    gcba = cls.startswith("GOOD CLASS")
+    n_storey = int(re.match(r"^(\d+)", env).group(1)) if re.match(r"^\d", env) else None
+    # —— 管制读数
+    rows = (f"<tr><td>landed 类型(MP2025 SDCP)</td><td class=r>{_esc(lh.get('type'))}</td></tr>"
+            f"<tr><td>层数包络 storey envelope</td><td class=r><b>{_esc(_envelope_zh(lh.get('envelope')))}</b>"
+            f" <span class=note>({_esc(lh.get('envelope'))})</span></td></tr>")
+    if cls:
+        rows += (f"<tr><td>管制类别</td><td class=r>{_esc(cls)}"
+                 + (f" · <b>{_esc(lh.get('name'))}</b>" if lh.get("name") else "") + "</td></tr>")
+    # —— 分制度的余量语言(管制是「面」的属性;这块地能否实现,②③说了算)
+    if gcba:
+        head = (f"<div class='banner warn'><b>本址位于 GCBA(Good Class Bungalow Area:"
+                f"{_esc(lh.get('name') or '')})</b> —— 独立的管制与买家制度:仅限独立洋房形态,"
+                f"细分地块下限 <b>1,400 sqm</b>(约 15,069 sqft),层高管制以 2 层为基调,"
+                f"且 landed 买家池本就限公民,GCB 市场实质上是<b>全现金、超高净值、SC-only</b> 的"
+                f"独立流动性池。规则细节以 URA 现行指引为准(DD-3 由 QP 核)。</div>")
+        if g["land_area"] and g["land_area"] / 10.7639 < 1400:
+            head += (f"<p class=note>⚠ 本宗地 {g['land_area']:,.0f} sqft ≈ "
+                     f"{g['land_area']/10.7639:,.0f} sqm,<b>低于 GCB 的 1,400 sqm 细分下限</b> —— "
+                     f"属 GCBA 内的「次标准尺寸」存量地块:不可再分割,能否按 GCB 规则重建、"
+                     f"市场是否按 GCB 定价,都必须由 QP 与可比逐一核实;"
+                     f"上文估值用的是全街 detached 成交,<b>未区分 GCBA 段与非 GCBA 段</b>。</p>")
+        updown = ("向上空间:GCBA 以 2 层为基调(阁楼/地下室按现行指引)——「加盖」不是 GCB "
+                  "价值的主轴;这里的重建价值轴是<b>地块本身</b>(形状、朝向、进深)与建筑品质。")
+    elif n_storey and n_storey >= 3:
+        updown = (f"管制允许 <b>{n_storey} 层</b>(+阁楼,按 URA envelope control 在包络内计)。"
+                  f"若现楼低于 {n_storey} 层 —— 本报告<b>不知道现楼层数</b>(见下)—— 则存在"
+                  f"实打实的包络余量:同地块通过 A&amp;A/重建增加 GFA,是本区(3 层混合 landed)"
+                  f"价值最直接的一条路。能否实现取决于结构、退界、保留树、车位与 QP 可研。")
+    else:
+        updown = ("管制为 <b>2 层包络</b> —— 向上加盖空间受限;A&amp;A 的余量主要在"
+                  "<b>阁楼(envelope control 在屋顶包络内)、地下室、后部/侧部扩建</b>,"
+                  "每一项都要 QP 按退界与包络逐条核,不能从分区标签直接推。")
+    # —— 三个问题,谁答得了
+    tri = ("<table class=kv>"
+           "<tr><td>① 管制允许几层</td><td class=r>已知 —— 上表(MP2025 SDCP)</td></tr>"
+           "<tr><td>② 现楼几层 / 现有 GFA</td><td class=r><b>本报告不知道</b> —— 现场 + 批准图则"
+           "(图则需业主授权,DD-3)</td></tr>"
+           "<tr><td>③ 结构/退界能否承载加建</td><td class=r>QP 可研(DD-3)</td></tr></table>")
+    # —— 市场证据:标的队列近 24 个月的原始 psf 极值(同型 ±6%,同地契制度,已去重)
+    aa_ev = _aa_evidence(g)
+    ev = ""
+    if aa_ev and aa_ev["kind"] == "spread":
+        hi, lo, spread, n = aa_ev["hi"], aa_ev["lo"], aa_ev["spread"], aa_ev["n"]
+        gap_mo = aa_ev["gap_mo"]
+        # 两笔相隔一年以上时,「相近月份」不成立 —— 价差里混着时间,必须说(10 Namly:
+        # n=2、相隔 23 个月,23% 里有一段是 2023→2025 的市场重估,不全是建筑状态)。
+        time_cav = (f"两笔相隔 {gap_mo} 个月 —— 价差里<b>混着这段时间的市场变动</b>,"
+                    f"建筑状态承载的是其中大头但不是全部;" if gap_mo > 12 else
+                    "同一条街、同一尺寸段、相近月份,")
+        ev = (f"<h3>市场证据:同尺寸段的价差,大头在建筑状态</h3>"
+              f"<p class=note>标的队列(同型 ±6%,近 24 个月,n={n})原始 psf 极值:"
+              f"<b>${lo['psf']:,.0f}</b>({_esc(lo['contract_ym'])},{lo['area_sqft']:,.0f} sqft,"
+              f"{_money(lo['price'])})至 <b>${hi['psf']:,.0f}</b>({_esc(hi['contract_ym'])},"
+              f"{hi['area_sqft']:,.0f} sqft,{_money(hi['price'])})—— 价差 <b>{spread*100:.0f}%</b>。"
+              f"{time_cav}这个量级的价差不是地价的波动,主要是"
+              f"<b>建筑状态(原装 vs 翻建 / GFA 差异)</b>在 bundle 价里的体现 —— 即市场"
+              f"实际支付的 A&amp;A/重建价值。caveat 无法把它拆出来,故它<b>不在</b>上文"
+              f"点估值里;买翻建房请对照队列上沿,买原装房请对照下沿,勿用中位一把抹。</p>")
+    elif aa_ev and aa_ev["kind"] == "flat":
+        ev = (f"<p class=note>标的队列(同型 ±6%,近 24 个月,n={aa_ev['n']})原始 psf 价差仅 "
+              f"{aa_ev['spread']*100:.0f}% —— 近窗未见显著的建筑状态分层;A&amp;A 价值的市场上沿"
+              f"请以邻街/邻段已翻建可比实地核。</p>")
+    elif aa_ev and aa_ev["kind"] == "thin":
+        ev = (f"<p class=note>标的队列(同型 ±6%)近窗样本不足以呈现状态价差"
+              f"(n={aa_ev['n']})—— A&amp;A 价值的市场证据请以已翻建可比实地核。</p>")
+    # —— 评估框架(不计价)
+    frame = ("<h3>评估框架(本报告不为潜力计价)</h3>"
+             "<p class=note>A&amp;A/重建是否划算,只能这样核:<b>已翻建同型可比价 − 建安成本"
+             "(2025-26 行情约 S$450–600/psf GFA,高端 S$700+,以 QP 可研 + 2-3 家承包商报价为准)"
+             "− 拆除与 18-24 个月持有/机会成本 − 税费</b>,与「直接买已翻建」对照。"
+             "若这笔账只有在地价年涨 &gt;5% 的假设下才成立,它不成立。"
+             "引擎对 condition 与包络双盲 —— <b>潜力没有进入上文估值</b>,这是纪律不是遗漏:"
+             "潜力值多少,由已翻建可比与成本核出来,不由分区标签想象出来。</p>")
+    return (f"<div class=card><h2>3 · A&amp;A / 重建潜力 <span class=note>(观测层 —— 管制读数 + "
+            f"市场证据;不计价,逐项核)</span></h2>{head if gcba else ''}"
+            f"<table class=kv>{rows}</table><p class=note>{updown}</p>{tri}{ev}{frame}</div>")
 
 
 def _split_stations(mrt: list[dict]) -> tuple[list[dict], list[dict]]:
@@ -404,9 +570,11 @@ def _esc(x) -> str:
 
 def gather(address: str, ptype: str, area: float | None, tenure: str | None,
            lease_start: int | None, condition: str | None, asof: str | None,
-           profile: str = "SC", count: int = 1, digest: dict | None = None) -> dict:
-    """DD 链 + 街道解析 + 估值。任何一环诚实失败都不阻断其余部分。"""
-    d = dd_mod.run(address)
+           profile: str = "SC", count: int = 1, digest: dict | None = None,
+           postal: str | None = None) -> dict:
+    """DD 链 + 街道解析 + 估值。任何一环诚实失败都不阻断其余部分。
+    postal:部分地址只有邮编能在 OneMap 命中(实测 97 KING'S ROAD)—— 显示地址不变。"""
+    d = dd_mod.run(address, query=postal)
     road = d["street"]
     res = street_alias.resolve(road, lambda s: bool(street_comps(s)))
 
@@ -454,10 +622,44 @@ def gather(address: str, ptype: str, area: float | None, tenure: str | None,
         p = val["fair_value"]["price"]
         cost = {"entry": costs_mod.entry_costs(p, profile, count),
                 "be_after": costs_mod.breakeven_gain_pct(p, profile, count, 5)}
+    # F20(2026-07-23 评审):URA 快照的重复 caveat(同月+同面积+同价,双批次入库)让 97 King's
+    # 的可比表 6 行实为 3 笔×2、近窗 n=4 实为 2 —— 观测层一律按 (月,面积,价) 去重;引擎的 n
+    # 保持原样(conformal 在未去重的库上校准),但表侧必须注明。
+    n_raw = len(street_rows)
+    seen_k, dedup = set(), []
+    for t in street_rows:
+        k = (t.get("contract_ym"), t.get("area_sqft"), t.get("price"))
+        if k in seen_k:
+            continue
+        seen_k.add(k)
+        dedup.append(t)
+    street_rows = dedup
+    street_total = len(street_rows)          # 分母统一用去重口径(F20 —— 16/32 不是 16/38)
+    # F21(2026-07-23 评审):观测窗(近窗/年度趋势/A&A 队列)此前混着地契制度 —— 97 King's 的
+    # 近窗把 102 年地契段的 $1,788 和 FH 排屋的 $3,147 摆在一行,还接「多口径彼此接近」的模板句。
+    # 有 subject tenure 时,观测窗只读同制度(准永久 vs 真租赁)的行。
+    def _quasi(tt): return tt in ("freehold", "freehold_equiv")
+    subj_tenure = (val or {}).get("subject", {}).get("tenure_type") or tenure
+    if subj_tenure:
+        rows_subject = [t for t in street_rows
+                        if _quasi(t.get("tenure_type")) == _quasi(subj_tenure)]
+    else:
+        rows_subject = street_rows
+    # F17(2026-07-21 评审,F21 收紧):裸的 "freehold" 读起来像已核实的事实 —— 它是输入/推断。
+    # 只有**准永久与真租赁混桶**才警告(FH 与 999y 同为准永久,视同一桶 —— 此前把它们也报成
+    # 混合,和风险区「可视同一桶」自相矛盾)。
+    tenure_mix = None
+    if street_rows:
+        q = sum(1 for t in street_rows if _quasi(t.get("tenure_type")))
+        l = len(street_rows) - q
+        if q and l:
+            tenure_mix = f"准永久(FH/999y){q} / 真租赁 {l}"
     return {"address": address, "dd": d, "resolve": res, "land_area": land_area,
             "area_src": area_src, "val": val, "val_error": val_error, "ptype": ptype,
             "cost": cost, "profile": profile, "count": count, "digest": digest,
-            "street_total": street_total, "street_rows": street_rows}
+            "street_total": street_total, "street_rows": street_rows,
+            "street_rows_subject": rows_subject, "street_dups": n_raw - len(street_rows),
+            "tenure_mix": tenure_mix}
 
 
 # --------------------------------------------------------------------------- 渲染
@@ -477,10 +679,17 @@ def _l0(g: dict) -> str:
     lh = d.get("landed_housing_area") or {}
     f = d.get("flood") or {}
     sch = d.get("schools_primary") or []
+    # 层数管制属于首屏:它是「能不能加盖」的第一入口(2026-07-21 评审 —— 此前 envelope
+    # 在整份报告里被静默丢弃)。GCBA 身份同理,它改写整个买家池。
+    lh_chip = lh.get("type") or "不在范围内"
+    if lh.get("envelope"):
+        lh_chip += f" · {_envelope_zh(lh.get('envelope'))}"
+    if (lh.get("classification") or "").upper().startswith("GOOD CLASS"):
+        lh_chip = "GCBA · " + lh_chip
     chips = [
         ("地块", f"{g['land_area']:,.0f} sqft" if g["land_area"] else "未知"),
         ("分区", z.get("zone") or "—"),
-        ("landed housing area", (lh.get("type") or "不在范围内")),
+        ("landed housing area", lh_chip),
         # 学区是量到的 landed 最大价值驱动 —— 它属于首屏,不属于第 2 节
         ("最近小学", f"{sch[0]['name']} · {sch[0]['km']}km" if sch else "2.2km 内无"),
         ("PUB 水浸名单", "在名单上" if f.get("on_list") else "不在名单上"),
@@ -490,11 +699,16 @@ def _l0(g: dict) -> str:
     # F5:结论先行。人写的 verdict 是这份报告真正的「结论」,不能埋在第 4 节 ——
     # L0 放一句话版本,第 4 节保留全文与 archetype。
     vd = ((g.get("digest") or {}).get("verdict")) or {}
-    verdict_strip = ""
     if vd.get("call_zh") or vd.get("call"):
         verdict_strip = (f"<div class='banner ok'><b>结论(人写)</b> —— "
                          f"{vd.get('call_zh') or vd.get('call')} "
-                         f"<span class=note>依据与 archetype 详见第 4 节</span></div>")
+                         f"<span class=note>依据与 archetype 详见「深度尽调」节</span></div>")
+    else:
+        # F11(2026-07-21 评审):无判断层时,「不给 go/no-go」的声明此前埋在第 5 节,
+        # 而买卖指导表在它之前就已经读起来像建议 —— 声明必须先于指导出现。
+        verdict_strip = ("<p class=note><b>本报告不含人写判断层(go/no-go)</b> —— 以下为工具"
+                         "产出的事实、估值、成本与必查项;结论需要实地与持有意图,完整说明见"
+                         "「深度尽调」节。</p>")
     # A/B 回移:主要风险按「对价格路径的影响」排序,跟在结论后 —— 判断层人写,
     # 与 DD 的「谁能定/何时定」分层互补:那边回答怎么核,这边回答什么最可能改变价格。
     risks = ((g.get("digest") or {}).get("price_path_risks")) or []
@@ -510,8 +724,7 @@ def _l0(g: dict) -> str:
         risk_html = (f"<div class=card><h3>主要风险 <span class=note>(按对价格路径的影响排序 · "
                      f"判断层,人写)</span></h3><ol class=alerts>{items}</ol></div>")
     return f"""<div class=hero>{head}</div>
-<p class=addr>{_esc(g['address'])} · blk {_esc(geo['blk_no'])} {_esc(geo['road_name'])}
-S({_esc(geo['postal'])}) · 估值基准日 {_esc(d['as_of'])}</p>
+<p class=addr>{_esc(g['address'])} · S({_esc(geo['postal'])}) · 估值基准日 {_esc(d['as_of'])}</p>
 {verdict_strip}
 {risk_html}
 <div class=chips>{chip_html}</div>"""
@@ -539,16 +752,22 @@ def _l1_valuation(g: dict) -> str:
     ref = v.get("recent_street_reference")
     alias = g["resolve"]["basis"] == "alias"
     if sg.get("ask") is None or alias:
+        # F16(2026-07-21 评审):抑制横幅只说了「为什么不给」,没给读者一条能走的路 ——
+        # 10 Namly 的读者拿着一个指示性点估值,不知道下一步是什么。给三步,命令折叠。
         guide = (f"<div class='banner warn'><b>买卖指导已抑制</b> —— "
                  f"{_suppress_reason_zh(v, g['land_area'] or 0, g['resolve']['basis'])}。"
                  f"<span class=note>门槛只能来自<b>观测到的成交</b>;此时只剩引擎自己的误差棒,"
-                 f"拿它当议价线是把「无知」包装成「进取」。请把点估值当<b>指示性</b>,现场确认 "
-                 f"condition 与几何,用 Investment Suite 佐证后再重估。</span></div>"
+                 f"拿它当议价线是把「无知」包装成「进取」。下一步:"
+                 f"① INLIS 拿法定面积与地契(约 S$16,当天出);"
+                 f"② 现场/图则确定 condition 与现有 GFA;"
+                 f"③ 用 Investment Suite 拉本街同型分布与本报告并读,再决定出价锚。</span></div>"
                  + (f"<p class=note>参考:引擎按 URA「{_esc(g['resolve']['ura_street'])}」桶算出的"
                     f"门槛是 {_money(bg['attractive_below'])} / {_money(bg['walk_away_above'])}"
-                    f" —— <b>不要直接用</b>,先拉本路(<code>{_esc(g['dd']['street'])}</code>)"
-                    f"自己的分布:<code>research/lib/harvest_street_sale.py</code>(设备上收获)→ "
-                    f"<code>research/tools/is_street_compare.py --road</code>。</p>"
+                    f" —— <b>不要直接用</b>:桶内混着同屋苑其它路。"
+                    f"<details><summary class=note>内部操作命令(第 ③ 步)</summary>"
+                    f"先拉本路(<code>{_esc(g['dd']['street'])}</code>)自己的分布:"
+                    f"<code>research/lib/harvest_street_sale.py</code>(设备上收获)→ "
+                    f"<code>research/tools/is_street_compare.py --road</code></details></p>"
                     if alias and bg.get("attractive_below") else ""))
     else:
         guide = f"""<table class=kv>
@@ -590,13 +809,22 @@ def _l1_valuation(g: dict) -> str:
                       f"热市中比 60 个月窗更贴近当前水平;样本更薄,只作参照,不替代主门槛。</p>")
         # A/B 回移:出价指引叙事行 —— 裸的 p25/p75 拦不住「为单笔背书」这种错误;
         # 把「超过门槛需要什么」和「最高单笔是谁」写成一句话,和表同屏。
+        # F8(2026-07-21 评审):证据层可比表只是引擎**权重前 8 笔**,不是整个桶 —— 第一版把
+        # 表内最高说成「桶内最高」,而 119 Namly 队列里真正的天花板(2025-07 $4,150 psf /
+        # S$13.1M)根本不在表里。措辞收敛为「表内」,队列的原始极值由 A&A 节呈现。
         max_c = max(v["comps"], key=lambda c: c["adj_land_psf"]) if v.get("comps") else None
         if max_c and sg.get("ask"):
             top_price = max_c["adj_land_psf"] * area_sf
+            # F22:队列极值的指引只在 A&A 节真的渲染了极值段时才给(此前是悬空引用)
+            aa_ev = _aa_evidence(g)
+            tail = ("标的队列的原始极值见「A&amp;A/重建潜力」节。"
+                    if aa_ev and aa_ev["kind"] == "spread" else
+                    "标的队列近窗无可读的状态价差(见「A&amp;A/重建潜力」节)。")
             guide += (f"<p class=note><b>读法:</b>超过 p75({_money(bg['walk_away_above'])})的出价"
                       f"需要<b>可验证的理由</b>(高标准装修、已批准加建、边间/几何优势 —— 现场核实,"
-                      f"不是听中介说);高于 {_money(top_price)} 即是在为桶内最高单笔"
-                      f"({max_c['adj_land_psf']:,.0f} adj psf,{_esc(max_c['contract_ym'])})背书。</p>")
+                      f"不是听中介说);高于 {_money(top_price)} 即是在为<b>可比表内</b>最高单笔"
+                      f"({max_c['adj_land_psf']:,.0f} adj psf,{_esc(max_c['contract_ym'])})背书 "
+                      f"—— 表仅为权重前 {len(v['comps'])} 笔,{tail}</p>")
     flag = ""
     # 别名桶里的「最新同街成交」可能根本不在本路上 —— 实测:19 Cardiff Grove 的这条提示由一笔
     # 2,301sf @ $2,816psf 的成交驱动,调整后 3,175 psf,**高过 Cardiff Grove 自己的历史最高价
@@ -623,7 +851,7 @@ def _l1_valuation(g: dict) -> str:
     # 5 月三印簇高 8.7%,把它当「最可信」会系统性带高读数)。regime 地板提示保持不变。
     ref_html = ""
     if ref:
-        fc = _fresh_vs_cluster(v["comps"])
+        fc = _fresh_vs_cluster(v["comps"], ref)
         if fc and abs(fc["gap"]) > 0.05:
             side = "上尾" if fc["gap"] > 0 else "下尾"
             ref_html = (f"<p class=note>最新可比成交:<b>{ref['adj_psf']:,.0f}</b> land-psf"
@@ -650,10 +878,14 @@ def _l1_valuation(g: dict) -> str:
     f"n 为 60 个月窗 + lease-match + 同房型过滤后)</span>")
     if g.get('street_total', 0) > fv['n_street_comps'] else ''}</td></tr>
 <tr><td>地契 tenure</td><td class=r>{_esc(s['tenure_type'])}
-    {('· 剩余 %d 年' % s['remaining_lease_years']) if s.get('remaining_lease_years') else ''}</td></tr>
+    {('· 剩余 %d 年' % s['remaining_lease_years']) if s.get('remaining_lease_years') else ''}
+    {('<span class=note> ⚠ 街道桶混合地契(' + _esc(g['tenure_mix']) + ')—— 本宗地以 INLIS 为准</span>')
+     if g.get('tenure_mix') else ''}</td></tr>
 <tr><td>地块面积(估值输入)</td><td class=r>{g['land_area']:,.0f} sqft</td></tr>
 <tr><td>面积来源</td><td class=r>{g['area_src'] or '—'}</td></tr>
 </table>
+<p class=note>注:文中 EXP-XXXX / GY-XXXX 为内部研究注册号 —— 标记该结论的实验出处,详见
+「局限与方法」。</p>
 {_reads_zh(v)}
 {_conf_zh(v)}
 {ref_html}
@@ -673,9 +905,9 @@ def _recent_windows_zh(g: dict) -> str:
     """近窗读数(A/B 回移):近12月 / 近半年 / 最近簇三个口径互证当前市场水平。
     仅 direct 街道渲染 —— 别名桶混路,近窗中位不是本路的读数。RAW psf,与引擎 adj 口径分开标。"""
     v = g["val"]
-    if not v or g["resolve"]["basis"] != "direct" or not g.get("street_rows"):
+    if not v or g["resolve"]["basis"] != "direct" or not g.get("street_rows_subject"):
         return ""
-    rw = _recent_windows(g["street_rows"], v["subject"]["land_area_sqft"])
+    rw = _recent_windows(g["street_rows_subject"], v["subject"]["land_area_sqft"])
     if not rw or not rw["med12_psf"]:
         return ""
     cl = "、".join(f"{ym} ${psf:,.0f}" for ym, psf in rw["cluster"])
@@ -685,8 +917,8 @@ def _recent_windows_zh(g: dict) -> str:
            if rw["cum_pct"] is not None else "")
     six = (f"近半年(n={rw['n6']})中位 <b>${rw['med6_psf']:,.0f}</b>;"
            if rw["med6_psf"] and rw["n6"] >= 3 else "")
-    return (f"<h3>近窗读数 <span class=note>(标的队列 ±6%,原始 psf 未调整 —— 观测,"
-            f"非引擎口径;数据端 {_esc(rw['last_ym'])})</span></h3>"
+    return (f"<h3>近窗读数 <span class=note>(标的队列 ±6% · 同地契制度 · 已去重 —— 原始 psf "
+            f"未调整,观测,非引擎口径;数据端 {_esc(rw['last_ym'])})</span></h3>"
             f"<p class=note>近 12 个月(n={rw['n12']})中位 <b>${rw['med12_psf']:,.0f}</b> psf · "
             f"价格中位 {_money(rw['med12_price'])};{six}"
             f"最近 3 笔:{cl}。多口径彼此接近 = 当前水平可信;彼此背离 = 市场在动,读趋势表。"
@@ -710,12 +942,24 @@ def _l1_dd(g: dict) -> str:
     heavy, lrt = _split_stations(mrt)
     mrt_txt = (f"{heavy[0]['name']} · {heavy[0]['km']}km" if heavy else
                ("4km 内无" if scope.get("mrt") else "清单未覆盖本区域"))
-    lrt_txt = f"{lrt[0]['name']} · {lrt[0]['km']}km" if lrt else "4km 内无"
+    # F9(2026-07-21 评审):mrt 列表在 dd 链里截断为最近 4 站(4km 半径)。四席都被 MRT 占满时,
+    # 「LRT:4km 内无」是数据支撑不了的全称否定(159 Chun Tin 的 4km 内其实有武吉班让 LRT)。
+    # 只陈述数据真正覆盖的范围。
+    lrt_txt = (f"{lrt[0]['name']} · {lrt[0]['km']}km" if lrt else
+               (f"最近 {len(mrt)} 站均为 MRT(清单截断于最近 {len(mrt)} 站 —— 更远的 LRT 未列)"
+                if len(mrt) >= 4 else "4km 内无"))
     gpr = str(z.get("gpr") or "—")
     gpr_txt = "LND(有地住宅,无数值容积率)" if gpr.upper() == "LND" else gpr
     scope_zh = (f"清单口径:小学与 MRT/LRT 为<b>全岛官方清单</b>({am['n_schools']} 所招收 P1 "
                 f"的 MOE 学校 · {am['n_mrt']} 个车站;构建于 {am['built']})"
                 if am else "清单口径:未声明")
+    # F10(2026-07-21 评审):商场/高速是人工东北片区短清单 —— Bukit Timah 的报告里它常是空的,
+    # 但注脚仍宣称在报「这几个里最近的」,指向根本没渲染的数据。有数据才渲染,有渲染才注脚。
+    exps = d.get("expressways") or []
+    exp_row = (f"<tr><td>最近高速 <span class=note>(人工短清单,非全岛)</span></td>"
+               f"<td class=r>{_esc(exps[0]['name'])} · {exps[0]['km']}km</td></tr>" if exps else "")
+    mall_note = (";<b>商场/高速为人工短清单</b> —— 报的是「这几个里最近的」,不是「全新加坡最近的」"
+                 if (d.get("amenities") or exps) else "")
     flood_zh = (("<b>在 PUB 易涝名单上</b>"
                  + (f"(匹配:{_esc(f.get('matches'))})" if f.get("matches") else "")
                  + " —— 强信号,列入 DD-3 重点核查。")
@@ -730,15 +974,17 @@ MP2025 · PUB)</span></h2>
 <tr><td>宗地面积 <span class=note>(指示性,非地籍)</span></td>
     <td class=r>{(f"{p['area_sqft']:,.0f} sqft" if p.get('area_sqft') else '—')}</td></tr>
 <tr><td>landed housing area</td><td class=r>{_esc(lh.get('type'))}
-    {('· ' + str(lh.get('storeys')) + ' 层') if lh.get('storeys') else ''}</td></tr>
+    {('· <b>' + _esc(_envelope_zh(lh.get('envelope'))) + '</b>') if lh.get('envelope') else ''}
+    {('· ' + _esc(lh.get('classification')) + (' — ' + _esc(lh.get('name')) if lh.get('name') else ''))
+     if (lh.get('classification') or '').upper().startswith('GOOD CLASS') else ''}</td></tr>
 <tr><td>PUB 水浸名单</td><td class=r>{'<b>在名单上</b>' if f.get('on_list') else '不在名单上'}</td></tr>
 <tr><td>最近小学 <span class=note>(1km 官方口径以 OneMap SchoolQuery 为准)</span></td>
     <td class=r>{_esc(' / '.join(near))}</td></tr>
 <tr><td>最近 MRT <span class=note>(重轨)</span></td><td class=r>{_esc(mrt_txt)}</td></tr>
 <tr><td>最近 LRT</td><td class=r>{_esc(lrt_txt)}</td></tr>
+{exp_row}
 </table>
-<p class=note>{scope_zh};<b>商场/高速为人工短清单</b> —— 报的是「这几个里最近的」,
-不是「全新加坡最近的」。</p>
+<p class=note>{scope_zh}{mall_note}</p>
 <p class=note>水浸:{flood_zh}</p>
 </div>"""
 
@@ -756,7 +1002,7 @@ def _l1_costs(g: dict) -> str:
         return ""
     e, cm = c["entry"], costs_mod
     prof = costs_mod.PROFILES.get(g["profile"], g["profile"])
-    return f"""<div class=card><h2>3 · 成本栈 Cost stack <span class=note>(按引擎点估值
+    return f"""<div class=card><h2>4 · 成本栈 Cost stack <span class=note>(按引擎点估值
 {_money(e['price'])} 计;税率会变 —— 出价前以 IRAS 为准)</span></h2>
 <table class=kv>
 <tr><td>买家画像</td><td class=r>{_esc(prof)} · 第 {g['count']} 套</td></tr>
@@ -817,9 +1063,9 @@ def _l1_alerts(g: dict) -> str:
         verdict = ("<div class='banner warn'><b>本报告不给 go/no-go</b> —— "
                    "买/不买是<b>判断</b>,不是这条链条的产物。它需要 archetype(这条街这个年代的"
                    "房子该怎么看)、实地、以及你的持有意图。工具给的是事实、估值、成本与必查项;"
-                   "结论请在做完下面这些之后自己下,或用 <code>--digest</code> 挂载已撰写的判断层。"
+                   "结论请在做完下面这些之后自己下(已撰写的判断层可由内部流程挂载)。"
                    "</div>")
-    return f"""<div class=card><h2>4 · 深度尽调 DD-3 <span class=note>(专业/实地/需卖方授权,
+    return f"""<div class=card><h2>5 · 深度尽调 DD-3 <span class=note>(专业/实地/需卖方授权,
 与 OTP 挂钩)</span></h2>
 {verdict}
 <ul class=alerts>{rows}</ul>
@@ -864,54 +1110,83 @@ def _l2_evidence(g: dict) -> str:
     v, d = g["val"], g["dd"]
     comps = ""
     if v:
+        # F13(2026-07-21 评审):表按引擎权重序渲染,读者当成「乱序」;且表只有权重前 8 笔,
+        # n 声称 37 —— 不解释就是自相矛盾。显示按月份倒序,截断写明。
+        # F20(2026-07-23 评审):URA 双批次重复 caveat 让 97 King's 的表 6 行实为 3 笔×2 ——
+        # 显示层去重并标 ×2;引擎的 n 保持原口径,注里说清。
+        comp_groups: dict = {}
+        for c in v["comps"]:
+            k = (c["contract_ym"], c["land_area_sqft"], c["price"])
+            comp_groups.setdefault(k, {**c, "_dup": 0})["_dup"] += 1
+        comp_rows = sorted(comp_groups.values(), key=lambda c: c["contract_ym"], reverse=True)
         rows = "".join(
-            f"<tr><td>{_esc(c['contract_ym'])}</td><td class=r>{c['land_area_sqft']:,.0f}</td>"
+            f"<tr><td>{_esc(c['contract_ym'])}{' ×' + str(c['_dup']) if c['_dup'] > 1 else ''}</td>"
+            f"<td class=r>{c['land_area_sqft']:,.0f}</td>"
             f"<td class=r>{c['land_psf']:,.0f}</td><td class=r><b>{c['adj_land_psf']:,.0f}</b></td>"
             f"<td class=r>{_money(c['price'])}</td><td>{_esc(c['tenure'])}</td></tr>"
-            for c in v["comps"])
+            for c in comp_rows)
+        n_all = v["fair_value"]["n_street_comps"]
+        dup_note = ("×N = URA 同月同面积同价的重复 caveat(双批次入库),按一笔读 —— "
+                    "引擎 n 含重复;" if any(c["_dup"] > 1 for c in comp_rows) else "")
+        trunc = (f"表为引擎<b>权重前 {len(v['comps'])} 笔</b>(参与计算共 {n_all} 笔);"
+                 if n_all > len(v["comps"]) else "") + dup_note
         reads = "".join(f"<tr><td>{_esc(k)}</td><td class=r>{('%.0f' % x) if x else '—'}</td></tr>"
                         for k, x in v["independent_reads_land_psf"].items())
-        comps = f"""<h3>同街可比 <span class=note>(lease-matched;adj psf = 该成交按时间+尺寸
-调整到本宗地后的值 —— 点估值与指导都活在这一列上)</span></h3>
+        comps = f"""<h3>同街可比 <span class=note>(lease-matched;{trunc}按月份倒序显示,
+引擎实际加权与表序无关;adj psf = 该成交按时间+尺寸调整到本宗地后的值 ——
+点估值与指导都活在这一列上)</span></h3>
 <table><tr><th>月份</th><th class=r>地块 sqft</th><th class=r>原始 psf</th>
 <th class=r>adj psf</th><th class=r>价格</th><th>tenure</th></tr>{rows}</table>
 <h3>独立方法读数 <span class=note>(收敛=信号,发散=hard case)</span></h3>
 <table><tr><th>method</th><th class=r>land psf</th></tr>{reads}</table>"""
     # A/B 回移:年度趋势表(街道全体 vs 标的队列)。面积效应逼着两列分开;读趋势先读 n。
     trend = ""
-    if g.get("street_rows") and g["land_area"] and g["resolve"]["basis"] == "direct":
-        yrs = _year_trend(g["street_rows"], g["land_area"])
+    if g.get("street_rows_subject") and g["land_area"] and g["resolve"]["basis"] == "direct":
+        yrs = _year_trend(g["street_rows_subject"], g["land_area"])
         if len(yrs) >= 2:
             trows = ""
             for y in yrs:
                 med_c = f"{y['med_cohort']:,.0f}" if y["med_cohort"] else "—"
                 price_c = _money(y["price_cohort"]) if y["price_cohort"] else "—"
-                yoy = f"{y['yoy']*100:+.1f}%" if y["yoy"] is not None else "—"
+                yoy = (f"{y['yoy']*100:+.1f}%" + (f"(跨 {y['yoy_gap']} 年)" if y.get("yoy_gap") else "")
+                       if y["yoy"] is not None else "—")
                 trows += (f"<tr><td>{_esc(y['year'])}</td><td class=r>{y['n_street']}</td>"
                           f"<td class=r>{y['med_street']:,.0f}</td><td class=r>{y['n_cohort']}</td>"
                           f"<td class=r>{med_c}</td><td class=r>{price_c}</td>"
                           f"<td class=r>{yoy}</td></tr>")
-            trend = f"""<h3>年度趋势 <span class=note>(街道全体 vs 标的队列 ±6%,RAW psf 中位;
-读趋势先读 n —— landed 街道年样本 4-15 笔,单笔即可扰动中位)</span></h3>
+            trend = f"""<h3>年度趋势 <span class=note>(街道同地契制度全体 vs 标的队列 ±6%,已去重,
+RAW psf 中位;读趋势先读 n —— landed 街道年样本个位数,单笔即可扰动中位)</span></h3>
 <table><tr><th>年份</th><th class=r>街道 n</th><th class=r>街道 psf 中位</th>
 <th class=r>队列 n</th><th class=r>队列 psf 中位</th><th class=r>队列价格中位</th>
 <th class=r>队列 YoY</th></tr>{trows}</table>"""
+    # F14(2026-07-21 评审):邻地表此前丢掉面积与 GPR —— 而「先读面积再评级」是这条链
+    # 自己的规矩。剖面此前截断在 6 段:119 的 PLACE OF WORSHIP 剖面把水体穿越和到达段
+    # 都截没了 —— 连续重复段合并计数后全部渲染,到达与否用结构化字段标注。
     nb = "".join(f"<tr><td>{_esc(n['zone'])}</td><td class=r>{n['metres']:.0f} m</td>"
-                 f"<td class=r>{n['bearing_deg']:.0f}°</td></tr>"
+                 f"<td class=r>{n['bearing_deg']:.0f}°</td>"
+                 f"<td class=r>{format(n['area_sqm'], ',.0f') + ' sqm' if n.get('area_sqm') else '—'}</td>"
+                 f"<td class=r>{_esc(n.get('gpr') or '—')}</td></tr>"
                  for n in (d.get("neighbours") or [])[:8])
     tr = ""
     for t in (d.get("transects") or []):
-        steps = " → ".join(f"{s['zone']}" for s in t["steps"][:6])
-        # note 是英文工具串 —— 用结构化字段(reaches_target)自己组中文,不印英文
-        warn = ("　⚠ 射线未进入该地块(它瞄准的是共享边界上的最近点)—— 步进只说明中间隔着"
-                "什么,不代表到达" if t.get("note") else "")
+        zs, comp = [s["zone"] for s in t["steps"]], []
+        for z in zs:
+            if comp and comp[-1][0] == z:
+                comp[-1][1] += 1
+            else:
+                comp.append([z, 1])
+        steps = " → ".join(z + (f"×{k}" if k > 1 else "") for z, k in comp)
+        warn = ("　✓ 步进抵达目标地块" if t.get("reaches_target") is True else
+                "　⚠ 射线未进入该地块(它瞄准的是共享边界上的最近点)—— 步进只说明中间隔着"
+                "什么,不代表已经到达")
         tr += (f"<p class=note><b>朝 {_esc(t['toward'])}</b>({t['edge_m']:.0f}m):{_esc(steps)}"
                f"{warn}</p>")
-    return f"""<details><summary>3 · 证据层 —— 可比、趋势、邻地、剖面(展开)</summary>
+    return f"""<details><summary>6 · 证据层 —— 可比、趋势、邻地、剖面(展开)</summary>
 <div class=card>{comps}
 {trend}
-<h3>邻近分区 neighbours</h3>
-<table><tr><th>zone</th><th class=r>距离</th><th class=r>方位</th></tr>{nb}</table>
+<h3>邻近分区 neighbours <span class=note>(先读面积:小地块多为电箱/设施)</span></h3>
+<table><tr><th>zone</th><th class=r>距离</th><th class=r>方位</th><th class=r>地块面积</th>
+<th class=r>GPR</th></tr>{nb}</table>
 {tr}
 </div></details>"""
 
@@ -937,7 +1212,8 @@ def _l3_limits(g: dict) -> str:
     nc += ("<li><b>租金收益 rental yield</b> —— URA 的 caveat 只有<b>成交</b>,没有租约。"
            "Investment Suite 有街道级与 500m 的 rental yield;要它就得去拉(本链条不自动调 IS)。</li>"
            "<li><b>重建经济 rebuild economics</b> —— 拆建成本、GFA 上限的实际可建量、施工期"
-           "机会成本,都不在免费官方源里。分区/层数包络在上面,但「重建划不划算」是另一件事。</li>"
+           "机会成本,都不在免费官方源里。管制读数与评估框架见「A&amp;A/重建潜力」节,"
+           "但「重建划不划算」的实数只能由 QP 可研 + 承包商报价 + 已翻建可比核出来。</li>"
            "<li><b>持有成本</b> —— 贷款利息、房产税(自住 vs 出租税率不同)、维护。"
            "成本栈只算<b>交易</b>侧(BSD/ABSD/SSD)。</li>"
            "<li><b>判断</b> —— archetype、go/no-go、议价策略。工具给事实、估值、成本、必查项;"
@@ -961,8 +1237,10 @@ def _l3_limits(g: dict) -> str:
                    for k, val in (d.get("provenance") or {}).items())
     eng = "".join(f"<li>{_esc(x)}</li>" for x in (v["limitations"] if v else []))
     eng += "".join(f"<li>{_esc(x)}</li>" for x in (v["verify_before_offer"] if v else []))
-    return f"""<details><summary>4 · 局限与方法 —— 下单前必读(展开)</summary>
+    return f"""<details open><summary>7 · 局限与方法 —— 下单前必读</summary>
 <div class=card>
+<p class=note>注:文中 EXP-XXXX / GY-XXXX 为内部研究注册号(research/registry)——
+标记该结论出自哪个实验/哪次否定,供追溯,不影响阅读。</p>
 <h3>下单前必查 verify before offer</h3><ul>{verify or '<li>—</li>'}</ul>
 <h3>估值的局限 —— 这些不是免责声明,是量出来的</h3><ul>{lims or '<li>—</li>'}</ul>
 <h3>本链条不覆盖</h3><ul>{nc}</ul>
@@ -1018,6 +1296,7 @@ def render(g: dict) -> str:
 {_street_banner(g)}
 {_l1_valuation(g)}
 {_l1_dd(g)}
+{_aa_block(g)}
 {_l1_costs(g)}
 {_l1_alerts(g)}
 {_l1_highlights(g)}
@@ -1045,6 +1324,8 @@ def main() -> None:
     ap.add_argument("--digest", default=None,
                     help="判断层 slug(researcher/landed/<slug>_dd.json:archetype/verdict/"
                          "highlights)。不给则报告明说「不给 go/no-go」")
+    ap.add_argument("--postal", default=None,
+                    help="OneMap 查询用邮编(地址含撇号等只在邮编下命中时用;显示地址不变)")
     a = ap.parse_args()
 
     digest = None
@@ -1055,8 +1336,15 @@ def main() -> None:
             digest = json.load(f)
 
     g = gather(a.address, a.type, a.area, a.tenure, a.lease_start, a.condition, a.asof,
-               profile=a.profile, count=a.count, digest=digest)
+               profile=a.profile, count=a.count, digest=digest, postal=a.postal)
     slug = "".join(c if c.isalnum() else "_" for c in a.address.lower()).strip("_")
+    # F19(2026-07-21 评审):skill 规定 AI-blind 对照臂只准读 <slug>_dd_raw.json,而本入口
+    # 此前把 DD 事实留在内存里 —— 标准步骤的输入文件根本不存在,得再跑一遍 dd 链才能补。
+    # 与 researcher.landed.dd 的落盘保持同路径同格式;报告可再生,raw 同理。
+    raw_p = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                         "researcher", "landed", f"{slug}_dd_raw.json")
+    with open(raw_p, "w", encoding="utf-8") as f:
+        json.dump(g["dd"], f, ensure_ascii=False, indent=1)
     res = write_report(f"{slug}_landed_full_report.html", render(g))
     print(res.summary())
     v = g["val"]
